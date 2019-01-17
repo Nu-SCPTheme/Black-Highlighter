@@ -1,4 +1,4 @@
-@charset utf-8;
+@charset "utf-8";
 @import url(https://nu-scptheme.github.io/Nu-SCP/styles/normalize.css);
 @import url(https://fonts.googleapis.com/css?family=Martel+Sans:400,700,900|PT+Mono);
 
@@ -263,7 +263,13 @@ a:visited
 {
   position:absolute;
   top:0;
-  background:rgba(48,7,7,1) repeating-linear-gradient(0deg,rgba(255,255,255,0.1), rgba(255,255,255,0.1) 1px transparent 1px transparent 3px );
+  background:rgba(48, 7, 7, 1)
+            repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px,
+            transparent 3px
   height:105px;
   z-index:-1;
   margin:0 -9999rem;
@@ -1048,7 +1054,7 @@ div.block-right,div.block-left
 .thread-container .post .head
 {
   background-color:#eee;
-  background:linear-gradient(toright,#eee,#eeecec);
+  background:linear-gradient(to right,#eee,#eeecec);
   box-shadow:inset 2px 3px 6px rgba(0,0,0,0.15);
   border-radius:5px 5px 0 0;
   padding:.5em 1em;
