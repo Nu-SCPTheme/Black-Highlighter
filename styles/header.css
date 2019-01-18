@@ -1,3 +1,13 @@
+#header
+{
+  width:90%;
+  height:calc(70px + 32px);
+  position:relative;
+  z-index:10;
+  
+  --offset-from-page-top: 24px; /* space between the top of the page and the start of the header */
+}
+
 #header,#top-bar
 {
   max-width:980px;
@@ -25,18 +35,10 @@
   z-index:9999;
 }
 
-#header
-{
-  width:90%;
-  height:70px;
-  position:relative;
-  z-index:10;
-}
-
 #header h1
 {
-  margin-top:.7em;
-  margin-bottom:-.7em;
+  margin-top:calc(5px + var(--offset-from-page-top));
+  margin-bottom:-18px;
   max-height:95px;
 }
 
@@ -79,7 +81,7 @@
   position:absolute;
   top:0;
   background:linear-gradient(to top right,rgba(69, 41, 36, 1) 20%, rgb(78, 0, 12) 55%, rgb(127, 0, 20));
-  height:105px;
+  height:calc(105px + var(--offset-from-page-top));
   z-index:-1;
   margin:0 -9999rem;
   padding:0 9999rem;
@@ -94,10 +96,11 @@
   background:url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg) 10px 40px no-repeat;
   background-position:center left;
   background-clip:border-box;
-  background-size:contain;
+  /*background-size:contain;*/
+  background-size:86px; /* appears to be the same as "contain" when the height is 80px */
   z-index:9999;
   margin-top:10px;
-  height:80px;
+  height:calc(80px + var(--offset-from-page-top));
   width:100%;
   pointer-events:none;
 }
@@ -156,7 +159,7 @@
   font-size:90% !important;
   z-index:10000;
   right:1em;
-  top:1em;
+  top:0.5em;
 }
 
 #login-status a
@@ -214,7 +217,7 @@
   line-height:20px;
   font-size:90%;
   display:inline-flex;
-  margin:20px -9999em;
+  margin:33px -9999em 20px -9999em;
   padding:0 9999em .25em;
 }
 
