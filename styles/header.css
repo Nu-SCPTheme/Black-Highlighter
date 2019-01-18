@@ -1,11 +1,13 @@
+:root {
+  --offset-from-page-top: 1.5rem; /* space between the top of the page and the start of the header */
+}
+
 #header
 {
   width:90%;
-  height:calc(70px + 32px);
+  height:calc(4.375rem + var(--offset-from-page-top));
   position:relative;
   z-index:10;
-  
-  --offset-from-page-top: 24px; /* space between the top of the page and the start of the header */
 }
 
 body {
@@ -15,12 +17,12 @@ body {
                                       rgb(78, 0, 12) 30%,
                                       rgb(100, 3, 15) 100%),
                       linear-gradient(to bottom, /* creates the grey part of the header */
-                                      rgba(0,0,0,1) 120px,
-                                      rgba(66,66,66,1) 121px,
+                                      rgba(0,0,0,1) 7.5rem,
+                                      rgba(66,66,66,1) calc(7.5rem + 2px),
                                       rgba(66,66,66,1) calc(100% - 2px),
                                       rgba(0,0,0,1) calc(100% - 2px),
                                       rgba(0,0,0,1) 100%);
-    background-size: 100% 120px, 100% 150px;
+    background-size: 100% 7.5rem, 100% 9.375rem; /* 120px, 150px */
     background-repeat: no-repeat;
 }
 
@@ -46,16 +48,16 @@ body {
 {
   display:none;
   position:relative;
-  left:1em;
+  left:1rem;
   bottom:0;
   z-index:9999;
 }
 
 #header h1
 {
-  margin-top:calc(5px + var(--offset-from-page-top));
-  margin-bottom:-18px;
-  max-height:95px;
+  margin-top:calc(0.3125rem + var(--offset-from-page-top));
+  margin-bottom:0;
+  max-height:5.9375rem; /* 95px */
 }
 
 #header h1,#header h2
@@ -69,9 +71,9 @@ body {
 #header h2
 {
   font-size:105%;
-  margin-top:1.5em;
-  margin-bottom:-1em;
-  max-height:38px;
+  margin-top:0;
+  margin-bottom:0;
+  max-height:2.375rem; /* 38px */
 }
 
 #header h1 a
@@ -167,8 +169,8 @@ body {
   color:#fff;
   font-size:90% !important;
   z-index:10000;
-  right:1em;
-  top:0.5em;
+  right:1rem;
+  top:0.5rem;
 }
 
 #login-status a
@@ -220,12 +222,12 @@ body {
   width:100%;
   position:initial;
   z-index:50;
-  height:auto;
+  height:calc(calc(7.5rem + 2px) - calc(9.375rem - 2px));
   line-height:20px;
   font-size:90%;
   display:inline-flex;
-  margin:33px 0 20px 0;
-  padding:0 0 .25em;
+  margin:1.5625rem 0 1.75rem 0;
+  padding:0 0 0.25rem;
 }
 
 #top-bar ul
