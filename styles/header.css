@@ -4,7 +4,7 @@
 
 #header
 {
-  width:90%;
+  width:90vw;
   height:calc(4.375rem + var(--offset-from-page-top));
   position:relative;
   z-index:10;
@@ -28,7 +28,7 @@ body {
 
 #header,#top-bar
 {
-  max-width:980px;
+  max-width:61.25rem; /* 980px */
   font-weight:600;
   margin:0 auto;
 }
@@ -91,7 +91,7 @@ body {
   text-shadow:none;
   z-index:9999;
   margin:0;
-  padding:30px 0 0;
+  padding:1.875rem 0 0; /* 30px */
 }
 
 #header-extra-div-1
@@ -99,7 +99,7 @@ body {
   display: none; 
 }
 
-#header-extra-div-2
+#header-extra-div-2 /* SCP logo */
 {
   content:" ";
   position:absolute;
@@ -110,10 +110,11 @@ body {
   /*background-size:contain;*/
   background-size:86px; /* appears to be the same as "contain" when the height is 80px */
   z-index:9999;
-  margin-top:10px;
-  height:calc(80px + var(--offset-from-page-top));
+  margin-top:0;
+  height:7.5rem;
   width:100%;
   pointer-events:none;
+  /*left: calc(calc(100vw - 61.25rem) / 2); /* undo header margin to match page width */
 }
 
 #search-top-box
@@ -396,11 +397,6 @@ body {
     width:100vw;
   }
   
-  #header-extra-div-2
-  {
-    height:70px;
-  }
-  
   #header > h1 > a > span
   {
     top:-3.2rem;
@@ -413,13 +409,12 @@ body {
   
   #header-extra-div-2
   {
-    background:none;
-  }
-  
-  #header-extra-div-1
-  {
-    background: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg) calc(9999rem - 3.8rem) calc(50% - var(--offset-from-page-top) / 2)/calc(105px + var(--offset-from-page-top) + 14px) no-repeat,
-                linear-gradient(to top right,rgba(69, 41, 36, 1) 20%, rgb(78, 0, 12) 55%, rgb(127, 0, 20));   
+    background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg);
+    background-position: calc(5vw + 5.5rem - 10.4rem) calc(4% - var(--offset-from-page-top) / 2);
+    background-size: calc(8.75rem + var(--offset-from-page-top));
+    background-repeat: no-repeat;
+    width:100vw;
+    left:calc(-50vw + 50%);
   }
   
 }
