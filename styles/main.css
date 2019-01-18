@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(https://nu-scptheme.github.io/Nu-SCP/styles/normalize.css);
+@import url(https://nu-scptheme.github.io/Nu-SCP/styles/structure.css);
 @import url(https://nu-scptheme.github.io/Nu-SCP/styles/sidebar.css);
 @import url(https://nu-scptheme.github.io/Nu-SCP/styles/header.css);
 /*
@@ -7,41 +8,6 @@ Styles in main.css will override styles in sidebar.css
 Consider having a stylesheet whose sole function is to @import sub stylesheets (including main.css) in the correct order?
 */
 @import url(https://fonts.googleapis.com/css?family=Martel+Sans:400,700,900|PT+Mono);
-
-html
-{
-  color:#222;
-  font-size:1em;
-  line-height:1.5;
-}
-
-hr
-{
-  display:block;
-  height:1px;
-  border:0;
-  border-top:1px solid #ccc;
-  margin:1em 0;
-  padding:0;
-}
-
-audio,canvas,iframe,img,svg,video
-{
-  vertical-align:middle;
-}
-
-fieldset
-{
-  border:0;
-  margin:0;
-  padding:0;
-}
-
-textarea
-{
-  resize:vertical;
-  line-height:1.5;
-}
 
 .browserupgrade
 {
@@ -51,32 +17,12 @@ textarea
   padding:.2em 0;
 }
 
-body
-{
-  background-color:#fcfcfc;
-  color:rgb(85,85,85);
-  font-size:.82em;
-}
-
-p,span,div,li
-{
-  font-family:"Martel Sans", sans-serif;
-  font-kerning:auto;
-  orphans:2;
-  -webkit-hyphens:auto;
-  -moz-hyphens:auto;
-  -ms-hyphens:auto;
-  hyphens:auto;
-  word-break:break-word;
-  text-rendering:optimizeLegibility;
-}
-
 .code
 {
   background-color:#f6f6f6;
 }
 
-.code *,pre *
+.code *
 {
   font-family:"PT Mono", "Andale Mono", "Courier New", Courier, monospace;
   max-width:90vw;
@@ -103,7 +49,7 @@ p,span,div,li
   margin:3em auto 0;
 }
 
-h1,#page-title
+#page-title
 {
   color:#000;
   font-weight:600;
@@ -111,60 +57,9 @@ h1,#page-title
   padding:0 0 .25em;
 }
 
-sup
-{
-  vertical-align:top;
-  position:relative;
-  top:-.5em;
-}
-
-h1
-{
-  margin-top:.7em;
-  font-weight:700;
-  padding:0;
-}
-
-h2,h3,h4,h5,h6,h7
-{
-  letter-spacing:1px;
-  margin:.5em 0 .4em;
-  padding:0;
-}
-
 #page-title
 {
   border-color:#bbb;
-}
-
-ul
-{
-  list-style:square;
-}
-
-a
-{
-  color:#da0d0d;
-  text-decoration:none;
-  background:transparent;
-}
-
-a.newpage
-{
-  color:#a3ccc7;
-  text-decoration:none;
-  background:transparent;
-}
-
-a:hover
-{
-  text-decoration:underline;
-  background-color:transparent;
-}
-
-a:visited
-{
-  color:#2e0000;
 }
 
 .form-control
@@ -578,7 +473,9 @@ div.block-right,div.block-left
   padding:.5em 1em;
 }
 
-.ruby,ruby
+
+
+.ruby
 {
   display:inline-table;
   text-align:center;
@@ -588,7 +485,7 @@ div.block-right,div.block-left
   vertical-align:text-bottom;
 }
 
-.rt,rt
+.rt
 {
   display:table-header-group;
   font-size:.6em;
@@ -681,24 +578,6 @@ div.block-right,div.block-left
 {
   text-emphasis-style:dot;
   -webkit-text-emphasis-style:dot;
-}
-
-::-webkit-scrollbar
-{
-  width:9px;
-  height:9px;
-  border:solid 1px rgba(0,0,0,0.1);
-  border-round:.5px;
-}
-
-::-webkit-scrollbar-track
-{
-  background:rgba(0,0,0,0.1);
-}
-
-::-webkit-scrollbar-thumb
-{
-  background:rgba(175,175,175,0.4);
 }
 
 .page-source
@@ -806,7 +685,7 @@ text-area,.yui-navset li
   text-decoration:none;
 }
 
-img,embed,video,object,iframe,table,#page-content div,#page-content div table
+#page-content div,#page-content div table
 {
   max-width:100%;
 }
@@ -972,9 +851,7 @@ img,embed,video,object,iframe,table,#page-content div,#page-content div table
   {
     width:100%;
   }
-}
-
-@media max-width 450px {
+    
   div.block-right,div.block-left
   {
     min-width:100%;
