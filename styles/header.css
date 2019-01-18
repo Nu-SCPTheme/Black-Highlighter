@@ -1,5 +1,5 @@
 :root {
-  --offset-from-page-top: 1.5rem; /* space between the top of the page and the start of the header */
+  --offset-from-page-top: 1.2rem; /* space between the top of the page and the start of the header */
 }
 
 #header
@@ -78,20 +78,19 @@ body {
 
 #header h1 a
 {
-  font-family:var(--headerFont) !important;
-  letter-spacing:.9px;
-  display:block;
-  content:"The SCP Foundation";
-  line-height:0;
-  max-height:0;
-  color:transparent;
-  background:transparent;
-  font-size:100%;
-  text-decoration:none;
-  text-shadow:none;
-  z-index:9999;
-  margin:0;
-  padding:1.875rem 0 0; /* 30px */
+  font-family: var(--headerFont) !important;
+  letter-spacing: -0.02em;
+  display: block;
+  line-height: 0;
+  content: "The SCP Foundation";
+  max-height: 0;
+  color: transparent;
+  background: transparent;
+  font-size: 135%;
+  text-decoration: none;
+  text-shadow: none;
+  z-index: 9999;
+  padding: 1.875rem 0 0;
 }
 
 #header-extra-div-1
@@ -195,7 +194,7 @@ body {
 #header h1 a::before
 {
   content:"The SCP Foundation";
-  color:#fff;
+  color:transparent;
   text-shadow:1px 1px 1px #000;
 }
 
