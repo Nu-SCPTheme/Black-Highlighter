@@ -8,6 +8,13 @@
   --offset-from-page-top: 24px; /* space between the top of the page and the start of the header */
 }
 
+body {
+    background-color: #fcfcfc;
+    background-image: linear-gradient(to top right,rgba(69, 41, 36, 1) 20%, rgb(78, 0, 12) 55%, rgb(127, 0, 20) 100%), linear-gradient(to right, rgba(66,66,66,1) 0, rgba(66,66,66,1) 100%);
+    background-size: 100% 120px, 100% 150px;
+    background-repeat: no-repeat;
+}
+
 #header,#top-bar
 {
   max-width:980px;
@@ -80,12 +87,7 @@
 {
   position:absolute;
   top:0;
-  background:linear-gradient(to top right,rgba(69, 41, 36, 1) 20%, rgb(78, 0, 12) 55%, rgb(127, 0, 20));
-  height:calc(105px + var(--offset-from-page-top));
-  z-index:-1;
-  margin:0 -9999rem;
-  padding:0 9999rem;
-  
+  z-index:-1;  
 }
 
 #header-extra-div-2
@@ -217,8 +219,8 @@
   line-height:20px;
   font-size:90%;
   display:inline-flex;
-  margin:33px -9999em 20px -9999em;
-  padding:0 9999em .25em;
+  margin:33px 0 20px 0;
+  padding:0 0 .25em;
 }
 
 #top-bar ul
