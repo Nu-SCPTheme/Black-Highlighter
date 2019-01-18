@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url(https://nu-scptheme.github.io/Nu-SCP/styles/normalize.css);
 @import url(https://nu-scptheme.github.io/Nu-SCP/styles/sidebar.css);
+@import url(https://nu-scptheme.github.io/Nu-SCP/styles/header.css);
 /*
 Styles in main.css will override styles in sidebar.css
 Consider having a stylesheet whose sole function is to @import sub stylesheets (including main.css) in the correct order?
@@ -183,357 +184,15 @@ a:visited
   padding:4px 0;
 }
 
-#header,#top-bar
-{
-  max-width:980px;
-  font-weight:600;
-  margin:0 auto;
-}
-
-#header > h1 > a > span
-{
-  position:relative;
-  display:inline-table;
-  width:25rem;
-  height:5.75rem;
-  z-index:9999;
-  left:-23rem;
-  top:-2rem;
-}
-
-.mobile-top-bar
-{
-  display:none;
-  position:relative;
-  left:1em;
-  bottom:0;
-  z-index:9999;
-}
-
+/* no idea what this does - croque */
 .info-container .collapsible-block-link,.info-container:hover .collapsible-block-link
 {
   line-height:1.6em;
 }
 
-#header
-{
-  width:90%;
-  height:70px;
-  position:relative;
-  z-index:10;
-}
-
-#header h1
-{
-  margin-top:.7em;
-  margin-bottom:-.7em;
-  max-height:95px;
-}
-
-#header h1,#header h2
-{
-  font-family:"Martel Sans", sans-serif!important;
-  margin-left:6.75rem;
-  font-weight:900;
-  text-transform:uppercase;
-}
-
-#header h2
-{
-  font-size:105%;
-  margin-top:1.5em;
-  margin-bottom:-1em;
-  max-height:38px;
-}
-
-#header h1 a
-{
-  font-family:"Martel Sans", sans-serif !important;
-  letter-spacing:.9px;
-  display:block;
-  content:"The SCP Foundation";
-  line-height:0;
-  max-height:0;
-  color:transparent;
-  background:transparent;
-  font-size:100%;
-  text-decoration:none;
-  text-shadow:none;
-  z-index:9999;
-  margin:0;
-  padding:30px 0 0;
-}
-
-#header-extra-div-1
-{
-  position:absolute;
-  top:0;
-  background:linear-gradient(to top right,rgba(69, 41, 36, 1) 20%, rgb(78, 0, 12) 55%, rgb(127, 0, 20));
-  height:105px;
-  z-index:-1;
-  margin:0 -9999rem;
-  padding:0 9999rem;
-  
-}
-
-#header-extra-div-2
-{
-  content:" ";
-  position:absolute;
-  top:0;
-  background:url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg) 10px 40px no-repeat;
-  background-position:center left;
-  background-clip:border-box;
-  background-size:contain;
-  z-index:9999;
-  margin-top:10px;
-  height:80px;
-  width:100%;
-  pointer-events:none;
-}
-
-#search-top-box
-{
-  display:infline-flex;
-  position:absolute;
-  top:70%;
-  right:-2%;
-  width:250px;
-  text-align:center;
-}
-
-#search-top-box-input
-{
-  border:solid 1px #000;
-  border-radius:1px;
-  color:#fff;
-  background-color:#424242 !important;
-}
-
-#search-top-box-input:hover,#search-top-box-input:focus
-{
-  border:solid 1px #000;
-  border-radius:1px;
-  color:#fff;
-  background:#424242 !important;
-}
-
-#search-top-box-form input[type="submit"]
-{
-  border:solid 1px #000;
-  border-radius:1px;
-  font-size:90%;
-  color:#fff;
-  background:#590505 !important;
-  box-shadow:none !important;
-  cursor:pointer;
-  padding:3px 5px 2px;
-}
-
-#search-top-box-form input[type="submit"]:hover,#search-top-box-form input[type="submit"]:focus
-{
-  border:solid 1px #000;
-  border-radius:1px;
-  color:#fff;
-  text-shadow:0 0 1px rgba(255,255,255,0.25);
-  background:#590505 !important;
-  box-shadow:none!important;
-}
-
-#login-status
-{
-  color:#fff;
-  font-size:90% !important;
-  z-index:10000;
-  right:1em;
-  top:1em;
-}
-
-#login-status a
-{
-  background-color:transparent;
-  color:#fff;
-}
-
-#login-status ul a
-{
-  color:#000;
-  background-color:transparent;
-}
-
-#account-topbutton
-{
-  background:silver;
-  color:#000;
-}
-
 .printuser img.small
 {
   margin-right:1px;
-}
-
-#header h1 a::before
-{
-  content:"The SCP Foundation";
-  color:#fff;
-  text-shadow:1px 1px 1px #000;
-}
-
-#header h2 span
-{
-  display:block;
-  line-height:0;
-  max-height:0;
-  font-weight:400;
-  color:transparent;
-  text-shadow:none;
-  padding:19px 0;
-}
-
-#header h2 span::before
-{
-  content:"Secure, Contain, Protect";
-  color:#fafafa;
-  text-shadow:1px 1px 1px #000;
-  width:100vw;
-}
-
-#top-bar
-{
-  width:100%;
-  background-color:rgba(66,66,66,1);
-  border:1px solid #000;
-  position:initial;
-  z-index:50;
-  height:auto;
-  line-height:20px;
-  font-size:90%;
-  display:inline-flex;
-  margin:20px -9999em;
-  padding:0 9999em .25em;
-}
-
-#top-bar ul
-{
-  float:right;
-}
-
-#top-bar ul li
-{
-  border:0;
-  position:relative;
-}
-
-#top-bar ul li ul
-{
-  border:solid 1px #000;
-  box-shadow:0 2px 6px rgba(0,0,0,0.5);
-  border-top:0;
-  width:auto;
-  border-width:0 1px 1px;
-}
-
-#top-bar ul li a
-{
-  border-left:solid 1px rgba(64,64,64,0.1);
-  border-right:solid 1px rgba(64,64,64,0.1);
-  text-decoration:none;
-  padding-top:9px;
-  padding-bottom:10px;
-  line-height:1px;
-  max-height:1px;
-  overflow:hidden;
-}
-
-#top-bar ul li.sfhover a,#top-bar ul li:hover a
-{
-  color:#000;
-  border-left:solid 1px rgba(64,64,64,1);
-  border-right:solid 1px rgba(64,64,64,1);
-  background:#dedede;
-}
-
-#top-bar ul li.sfhover ul li a,#top-bar ul li:hover ul li a
-{
-  width:150px;
-  border-top:1px solid #ddd;
-  line-height:160%;
-  height:auto;
-  max-height:none;
-  padding-top:0;
-  padding-bottom:0;
-  border-width:0;
-}
-
-#top-bar ul li.sfhover a:hover,#top-bar ul li:hover a:hover
-{
-  background:silver;
-  text-decoration:none;
-}
-
-#top-bar ul li ul a,#top-bar a:hover
-{
-  color:#a01;
-}
-
-.top-bar ul li:last-of-type ul
-{
-  right:0;
-}
-
-#top-bar .top-bar,#top-bar .top-bar > ul,#top-bar .top-bar > ul > li > ul
-{
-  display:flex;
-  z-index:20;
-}
-
-#top-bar .top-bar
-{
-  align-content:stretch;
-  justify-content:space-around;
-}
-
-#top-bar .top-bar > ul
-{
-  width:90vw;
-  flex-direction:row;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:stretch;
-  max-width:61.25rem;
-  height:auto;
-  z-index:20;
-}
-
-#top-bar .top-bar > ul > li > a,#top-bar .mobile-top-bar > ul > li > a
-{
-  white-space:pre;
-  padding-top:1.25em;
-}
-
-#top-bar .top-bar > ul > li,#top-bar .top-bar > ul > li > a,#top-bar .mobile-top-bar > ul,#top-bar .mobile-top-bar > ul > li,#top-bar .mobile-top-bar > ul > li > a
-{
-  width:auto;
-  flex-grow:2;
-  flex-shrink:2;
-}
-
-#top-bar .top-bar > ul > li > ul,#top-bar .mobile-top-bar > ul > li > ul
-{
-  flex-direction:column;
-  margin-top:0;
-}
-
-#top-bar .top-bar > ul > li > ul > li > a,#top-bar .mobile-top-bar > ul > li > ul > li > a
-{
-  white-space:pre-wrap;
-  line-height:140%;
-  padding:.5em 1em!important;
-}
-
-#top-bar ul > li > ul
-{
-  margin-top:-4px;
 }
 
 #main-content
@@ -1168,7 +827,7 @@ img,embed,video,object,iframe,table,#page-content div,#page-content div table
   }
 }
 
-@media max-width 1024px {
+@media only screen and (max-width: 1024px) {
   body,html
   {
     overflow-x:hidden;
@@ -1188,24 +847,6 @@ img,embed,video,object,iframe,table,#page-content div,#page-content div table
     -o-transition:.5s ease-in-out .1s;
     transition:.5s ease-in-out .1s;
     margin:0 5%;
-    padding:0;
-  }
-  
-  #header,.mobile-top-bar
-  {
-    max-width:90vw;
-  }
-  
-  .top-bar
-  {
-    display:none!important;
-  }
-  
-  .mobile-top-bar
-  {
-    display:flex;
-    position:relative;
-    width:100vw;
     padding:0;
   }
   
@@ -1233,45 +874,6 @@ img,embed,video,object,iframe,table,#page-content div,#page-content div table
   {
     width:35%;
     font-size:1.5rem;
-  }
-  
-  #header h1
-  {
-    font-size:1.5em;
-    margin-top:1em!important;
-    margin-bottom:-1em!important;
-  }
-  
-  #header h2
-  {
-    margin-top:1.5em!important;
-    margin-bottom:-1.5em!important;
-  }
-  
-  #header h1,#header h2
-  {
-    margin-left:5.5rem;
-  }
-  
-  #header h2 span::before
-  {
-    display:inline-block;
-    width:100vw;
-  }
-  
-  #header-extra-div-2
-  {
-    height:70px;
-  }
-  
-  #header > h1 > a > span
-  {
-    top:-3.2rem;
-  }
-  
-  #login-status
-  {
-    font-size:70%;
   }
   
   .owindow
