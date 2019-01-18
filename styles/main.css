@@ -53,7 +53,6 @@ textarea
 
 body
 {
-  overflow-x:hidden;
   background-color:#fcfcfc;
   color:#000;
   font-size:.82em;
@@ -827,12 +826,7 @@ img,embed,video,object,iframe,table,#page-content div,#page-content div table
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  body,html
-  {
-    overflow-x:hidden;
-  }
-  
+@media only screen and (max-width: 768px) {
   #page-content
   {
     font-size:.9em;
