@@ -49,14 +49,19 @@ border-color: #b7a9a9;
 .yui-navset-left .yui-content {
     border-left-color: #b7a9a9; /* different border color */
 }
+
+/* BLOCKQUOTE */
  
 blockquote {
   border-style: dashed;
   border-color: #a7a7a7;
   border-width: 0.063em;
   background-color: #f7f7f7;
-  box-shadow: 0em 0.063em 0.125em rgba(0,0,0,0.1); }
- 
+  box-shadow: 0em 0.063em 0.125em rgba(0,0,0,0.1);
+ }
+
+/* IMAGE BLOCK */
+
 div.image-block {
  float:right;
  margin:0 2em 1em 2em;
@@ -65,4 +70,110 @@ div.image-block {
  
 div.image-block img {
 width:300px;
+}
+
+/* RATING */
+
+.page-rate-widget-box
+{
+  overflow:hidden;
+  display:inline-block;
+  border-radius:0;
+  box-shadow:1px 1px 3px rgba(0,0,0,0.5);
+  margin-bottom:10px;
+  margin-right:2em;
+  padding:4px 0;
+}
+
+.page-rate-widget-box .rate-points
+{
+  background-color:#590505!important;
+  border:solid 1px #000;
+  border-right:0;
+  border-radius:0;
+  color:#fff;
+}
+
+.page-rate-widget-box .rateup,.page-rate-widget-box .ratedown
+{
+  background-color:#590505;
+  border-top:solid 1px #000;
+  border-bottom:solid 1px #000;
+  font-weight:700;
+}
+
+.page-rate-widget-box .rateup a,.page-rate-widget-box .ratedown a
+{
+  background-color:#590505;
+  color:#fff;
+  margin:0 1px;
+  padding:0 4px;
+}
+
+.page-rate-widget-box .rateup a:hover,.page-rate-widget-box .ratedown a:hover
+{
+  background-color:#6c1616;
+  color:#fff;
+  text-decoration:none;
+}
+
+.page-rate-widget-box .cancel
+{
+  background-color:#590505;
+  border:solid 1px #000;
+  border-left:0;
+  border-radius:0;
+}
+
+.page-rate-widget-box .cancel a
+{
+  background:transparent;
+  text-transform:uppercase;
+  color:#fff;
+}
+
+.page-rate-widget-box .cancel a:hover
+{
+  border-radius:0 3px 3px 0;
+  background-color:#6c1616;
+  color:#fff;
+  text-decoration:none;
+}
+
+.heritage-rating-module
+{
+  display:inline-block;
+  background-color:#633;
+  border:solid 1px #ccc066;
+  border-radius:8px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+  margin-right:2em;
+  margin-bottom:10px;
+  padding:2px 8px 2px 5px;
+}
+
+.heritage-rating-module .page-rate-widget-box
+{
+  box-shadow:none;
+  margin-bottom:0;
+  margin-right:0;
+}
+
+.heritage-rating-module .heritage-emblem
+{
+  float:left;
+  position:relative;
+  top:-2px;
+  left:2px;
+  height:16px;
+  width:16px;
+  overflow:visible;
+  margin-right:2px;
+}
+
+.heritage-rating-module .heritage-emblem img
+{
+  width:20px;
+  height:20px;
+  border:0;
 }
