@@ -55,6 +55,7 @@ body {
   margin-top:calc(0.3125rem + var(--offset-from-page-top));
   margin-bottom:0.1em;
   max-height:5.9375rem; /* 95px */
+  height:1.875rem; /* 30px - the height shouldn't be affected by the font size, as it's a structural element */
 }
 
 #header h1 a::before
@@ -78,6 +79,7 @@ body {
   margin-top: 0.5em;
   margin-bottom: -0.4em;
   max-height:2.375rem; /* 38px */
+  height:2.375rem; /* 38px - the height shouldn't be affected by the font size, as it's a structural element */
 }
 
 #header h1 a
@@ -213,7 +215,6 @@ body {
   content:"Secure, Contain, Protect";
   color:#fafafa;
   text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
-  width:100vw;
 }
 
 #top-bar
@@ -324,7 +325,9 @@ body {
 #top-bar .top-bar > ul > li > a,#top-bar .mobile-top-bar > ul > li > a
 {
   white-space:pre;
-  padding-top:1.25em;
+  padding-top:0.8125;
+  padding-bottom:0.8125rem;
+  /* the total padding MUST add up to 1.625rem, but the top/bottom amounts will depend on font */
 }
 
 #top-bar .top-bar > ul > li,#top-bar .top-bar > ul > li > a,#top-bar .mobile-top-bar > ul,#top-bar .mobile-top-bar > ul > li,#top-bar .mobile-top-bar > ul > li > a
@@ -392,7 +395,6 @@ body {
   #header h2 span::before
   {
     display:inline-block;
-    width:100vw;
   }
   
   #header > h1 > a > span
