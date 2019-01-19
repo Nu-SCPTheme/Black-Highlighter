@@ -226,7 +226,7 @@ body {
   line-height:1.250rem; /* 20px */
   font-size:90%;
   display:inline-flex;
-  margin:1.5625rem 0 1.75rem 0;
+  margin:1.75rem 0 1.75rem 0;
   padding:0 0 0.25rem;
 }
 
@@ -325,9 +325,10 @@ body {
 #top-bar .top-bar > ul > li > a,#top-bar .mobile-top-bar > ul > li > a
 {
   white-space:pre;
-  padding-top:0.8125;
+  padding-top:0.8125rem;
   padding-bottom:0.8125rem;
   /* the total padding MUST add up to 1.625rem, but the top/bottom amounts will depend on font */
+  height:0;
 }
 
 #top-bar .top-bar > ul > li,#top-bar .top-bar > ul > li > a,#top-bar .mobile-top-bar > ul,#top-bar .mobile-top-bar > ul > li,#top-bar .mobile-top-bar > ul > li > a
@@ -414,8 +415,13 @@ body {
     background-position: calc(5vw + 5.5rem - 10.4rem) calc(4% - var(--offset-from-page-top) / 2);
     background-size: calc(8.75rem + var(--offset-from-page-top));
     background-repeat: no-repeat;
-    width:100vw;
+    width:50vw;
     left:calc(-50vw + 50%);
+  }
+  
+  #top-bar
+  {
+  	margin-top:3.375rem;
   }
   
 }
