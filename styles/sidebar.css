@@ -6,8 +6,11 @@
     display: flex;
     flex-direction: column;
     background: rgba(var(--gray-monochrome),0.05);
-    box-shadow: inset -0.094em 0 0 rgb(var(--dark-accent)), 
-        0 0.188em 0.375em rgba(0,0,0,0.16), 0 0.188em 0.375em rgba(0,0,0,0.23), 0 0 0.063em 0 #888880 inset, 0 0 0.063em 0 #888880;
+    box-shadow: inset -0.094rem 0 0 rgb(var(--dark-accent)), 
+        0.188rem 0 0.375rem 0  rgba(var(--black-monochrome),0.16), 
+        0.188rem 0 0.375rem 0  rgba(var(--dark-accent),0.23), 
+        0 0 0.063rem 0 rgb(var(--gray-monochrome)), 
+        0 0 0.063rem 0 rgb(var(--gray-monochrome));
     flex-basis: 13.5rem;
     flex-shrink: 0.1;
     margin: 1rem 0 -1rem -9999rem;
