@@ -60,6 +60,13 @@ body {
   max-height:5.9375rem; /* 95px */
 }
 
+#header h1 a::before
+{
+  content:"The SCP Foundation";
+  color:rgb(var(--coolwhite));
+  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--warmBlack));
+}
+
 #header h1,#header h2
 {
   font-family:var(--headerFont);
@@ -192,13 +199,6 @@ body {
 {
   background:silver;
   color:rgb(var(--warmBlack));
-}
-
-#header h1 a::before
-{
-  content:"The SCP Foundation";
-  color:rgb(var(--coolwhite));
-  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--warmBlack));
 }
 
 #header h2 span
