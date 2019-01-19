@@ -356,6 +356,27 @@ body {
   margin-top:-0.250rem; /* -4px */
 }
 
+.mobile-top-bar > div > p,#main-content .page-tags a[href^="/system:page-tags/tag/_"]
+{
+  display:none;
+}
+
+#top-bar li,.content-panel .panel-heading > p,.content-panel .panel-footer > p,.scp-image-block > p
+{
+  margin:0;
+}
+
+#top-bar a,#footer a
+{
+  color:#fff;
+  background:transparent;
+}
+
+#top-bar ul li ul li,#top-bar ul li ul li.sfhover,#top-bar ul li ul li,#top-bar ul li ul li:hover,#top-bar ul li ul li a
+{
+  border-width:0;
+}
+
 @media only screen and (max-width: 1024px) {
   #header,.mobile-top-bar
   {
