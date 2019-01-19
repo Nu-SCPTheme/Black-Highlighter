@@ -1,8 +1,8 @@
 # Nu-SCP
 
     [2019 Wikidot Theme]
-    Designed by djkaktus & Woedenaz
-    Built by Woedenaz & Aers & Croquembouche & Rounderhouse
+    Designed by djkaktus, Woedenaz & Croquembouche
+    Built by Woedenaz, Aers, Croquembouche & rounderhouse
     
     
 A WiP new theme for the SCP Wiki utilizing more current CSS styling standards.
