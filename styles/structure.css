@@ -1,6 +1,6 @@
 html
 {
-  color:#222;
+  color:rgb(var(--warmBlack));
   font-size:1em;
   line-height:1.5;
 }
@@ -8,8 +8,8 @@ html
 body
 {
   /* coloring */
-  background-color:#fcfcfc;
-  color:rgb(85,85,85);
+  background-color:rgb(var(--coolWhite));
+  color:rgb(var(--warmBlack));
   
   /* font behavior */
   font-size:.9em;
@@ -83,9 +83,9 @@ sup
 hr
 {
   display:block;
-  height:1px;
+  height:0.063rem;
   border:0;
-  border-top:1px solid #ccc;
+  border-top:0.063rem solid #ccc;
   margin:1em 0;
   padding:0;
 }
@@ -98,7 +98,7 @@ h1,h2,h3,h4,h5,h6,h7{
 h1
 {
   font-weight:700;
-  color:#000;
+  color:rgb(var(--warmBlack);
   font-weight:600;
   margin:.7em 0 .6em;
   padding:0 0 .25em;
@@ -106,7 +106,7 @@ h1
 
 h2,h3,h4,h5,h6,h7
 {
-  letter-spacing:1px;
+  letter-spacing:0.063rem;
   margin:.5em 0 .4em;
   padding:0;
 }
@@ -120,14 +120,14 @@ ul
 
 a
 {
-  color:#da0d0d;
+  color:rgb(var(--brightRed);
   text-decoration:none;
   background:transparent;
 }
 
 a.newpage
 {
-  color:#a3ccc7;
+  color:rgb(var(--softTeal);
   text-decoration:none;
   background:transparent;
 }
@@ -140,7 +140,7 @@ a:hover
 
 a:visited
 {
-  color:#2e0000;
+  color:rgb(var(--darkRed);
 }
 
 /* Ruby Text */
@@ -168,18 +168,18 @@ rt
 
 ::-webkit-scrollbar
 {
-  width:9px;
-  height:9px;
-  border:solid 1px rgba(0,0,0,0.1);
-  border-round:.5px;
+  width:0.563rem; /* 9px */
+  height:0.563rem;
+  border:solid 0.063rem rgba(var(--warmBlack),0.1);
+  border-round:0.031rem;
 }
 
 ::-webkit-scrollbar-track
 {
-  background:rgba(0,0,0,0.1);
+  background:rgba(var(--warmBlack),0.1);
 }
 
 ::-webkit-scrollbar-thumb
 {
-  background:rgba(175,175,175,0.4);
+  background:rgba(var(--darkRed),0.4);
 }
