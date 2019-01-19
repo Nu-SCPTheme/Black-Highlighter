@@ -1,2 +1,68 @@
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
 
+/* TABVIEW */
+ 
+.yui-navset .yui-nav,
+.yui-navset .yui-navset-top .yui-nav {
+    border-color:#595959; /* color between tab list and content */
+}
+ 
+.yui-navset .yui-nav a,
+.yui-navset .yui-navset-top .yui-nav a {
+    background-color:#595959 ! important; /* tab background */
+    border-color:#d6c2c2;
+    color:#303030;
+    transition: 0.125s;
+}
+ 
+.yui-navset .yui-nav a em {
+background-color: #c6c6c6;
+box-shadow: 0em 0.063em 0.125em rgba(0,0,0,0.7);
+border-color: #b7a9a9;
+}
+ 
+.yui-navset .yui-nav .selected a,
+.yui-navset .yui-nav .selected a:focus,
+.yui-navset .yui-nav .selected a:hover {
+    background-image: none;
+    background-color: #4D4D4D; /* selected tab background */
+    color:white;
+}
+ 
+.yui-navset .yui-nav .selected a,
+.yui-navset .yui-nav .selected a em {
+    border-color: transparent;
+    box-shadow: 0em 0.063em 0.125em rgba(134,7,7,0.5);
+ background-color: #cc2e2e; 
+}
+ 
+.yui-navset .yui-content {
+    background-color: #e5e3e3; /* content background color */
+}
+ 
+.yui-navset .yui-content,
+.yui-navset .yui-navset-top .yui-content {
+    border-color: #b7a9a9; /* content border */
+    border-top-color:#b7a9a9; /* different border color */
+}
+ 
+.yui-navset-left .yui-content {
+    border-left-color: #b7a9a9; /* different border color */
+}
+ 
+blockquote {
+  border-style: dashed;
+  border-color: #a7a7a7;
+  border-width: 0.063em;
+  background-color: #f7f7f7;
+  box-shadow: 0em 0.063em 0.125em rgba(0,0,0,0.1); }
+ 
+div.image-block {
+ float:right;
+ margin:0 2em 1em 2em;
+ width:300px;
+}
+ 
+div.image-block img {
+width:300px;
+}
