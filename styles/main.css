@@ -55,14 +55,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #page-title
 {
+  font-family:var(--titleFont);
   color:#000;
   font-weight:600;
   margin:0 0 .6em;
   padding:0 0 .25em;
-}
-
-#page-title
-{
   border-color:#bbb;
 }
 
@@ -243,6 +240,7 @@ div.sexy-box div.image-container img
 
 .content-panel .panel-body > .news-title
 {
+  font-family:var(--titleFont);
   font-weight:900;
   text-transform:uppercase;
   font-size:90%;
@@ -695,7 +693,7 @@ text-area,.yui-navset li
 }
 
 @media screen and -ms-high-contrast active,-ms-high-contrast none {
-  .emph
+  .emph 
   {
     font-family:monospace;
     font-style:normal;
@@ -822,6 +820,7 @@ text-area,.yui-navset li
   
   #edit-page-title
   {
+    font-family:var(--titleFont);
     max-width:90%;
   }
   
@@ -838,6 +837,7 @@ text-area,.yui-navset li
   
   #page-content div.title
   {
+    font-family:var(--titleFont);
     word-break:keep-all;
   }
   
