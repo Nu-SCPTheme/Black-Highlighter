@@ -6,11 +6,11 @@
     display: flex;
     flex-direction: column;
     background: rgba(var(--gray-monochrome),0.05);
-    box-shadow: inset -0.094rem 0 0 rgb(var(--dark-accent)), 
-        0.188rem 0 0.375rem 0  rgba(var(--black-monochrome),0.16), 
-        0.188rem 0 0.375rem 0  rgba(var(--dark-accent),0.23), 
-        0 0 0.063rem 0 rgb(var(--gray-monochrome)), 
-        0 0 0.063rem 0 rgb(var(--gray-monochrome));
+    box-shadow: inset -0.094em 0 0 rgb(var(--dark-accent)), 
+        0 0.188em 0.375em rgba(0,0,0,0.16), 
+        0 0.188em 0.375em rgba(0,0,0,0.23), 
+        0 0 0.063em 0 #888880 inset, 
+        0 0 0.063em 0 #888880;
     flex-basis: 13.5rem;
     flex-shrink: 0.1;
     margin: 1rem 0 -1rem -9999rem;
@@ -45,8 +45,8 @@
 
 #side-bar .side-block {
     border: 0;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -66,14 +66,24 @@
 }
 
 #side-bar div.menu-item {
-    margin: 2px 0;
-    /* display:flex;
+    margin: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: transparent;
+    /*display:flex;
   justify-content:center;
   align-items:center;
-  font-size:0;
+  font-size:0; */
 }
 
-#side-bar div.menu-item a
+#side-bar div.menu-item:not(:nth-child(25)),
+#side-bar div.menu-item:nth-child(25) > div.menu-item {
+    height: 2rem;
+}
+
+/*#side-bar div.menu-item a
 {
   font-weight:700;
   color:rgb(var(--black-monochrome));
@@ -86,7 +96,13 @@
 
 #side-bar div.menu-item a:hover
 {
-  text-decoration:none; */
+  text-decoration:none; /*
+}
+
+#side-bar .menu-item > a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.15rem;
 }
 
 #side-bar div.menu-item img {
