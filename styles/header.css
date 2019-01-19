@@ -316,7 +316,7 @@ body {
   width:90vw;
   flex-direction:row;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:stretch;
   max-width:61.25rem;
   height:auto;
@@ -343,6 +343,7 @@ body {
 {
   flex-direction:column;
   margin-top:0;
+  position:absolute;
 }
 
 #top-bar .top-bar > ul > li > ul > li > a,#top-bar .mobile-top-bar > ul > li > ul > li > a
@@ -395,6 +396,30 @@ body {
     position:relative;
     width:100vw;
     padding:0;
+    left:0;
+  }
+  
+  .mobile-top-bar > ul
+  {
+    width:90vw;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    align-items:stretch;
+    max-width:61.25rem;
+    height:auto;
+    z-index:20;
+    display:flex;
+  }
+  
+  .mobile-top-bar ul li
+  {
+    position:relative;
+  }
+  
+  .mobile-top-bar ul li:last-of-type ul
+  {
+  	right:0;
   }
   
   #header h1
@@ -448,6 +473,6 @@ body {
   
   #top-bar .top-bar > ul
   {
-  	/*overflow:hidden; NO */
+  	overflow:hidden;
   }
 }
