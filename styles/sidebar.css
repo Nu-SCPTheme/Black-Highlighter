@@ -78,23 +78,38 @@ img
 #side-bar div.menu-item
 {
   margin:2px 0;
-}
-
-#side-bar div.menu-item img
-{
-  width:13px;
-  height:13px;
-  border:0;
-  margin-right:2px;
-  position:relative;
-  bottom:-2px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:0;
 }
 
 #side-bar div.menu-item a
 {
   font-weight:700;
+  color:rgb(var(--black-monochrome));
+  font-size:var(--base-font-size);
+  flex:auto;
+  margin: 0 0.25em;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
+#side-bar div.menu-item a:hover
+{
+  text-decoration:none;
+}
+
+#side-bar div.menu-item img
+{
+  /* width:13px;
+  height:13px;
+  border:0;
+  margin-right:2px;
+  position:relative;
+  bottom:-2px; */
+  display:none;
+}
 
 #side-bar div.menu-item.inactive a,#side-bar a:visited
 {
