@@ -234,6 +234,7 @@ body {
 #top-bar ul
 {
   float:right;
+  background:rgb(var(--gray-monochrome));
 }
 
 #top-bar ul li
@@ -268,7 +269,7 @@ body {
   color:rgb(var(--black-monochrome));
   border-left:solid 0.063rem rgba(64,64,64,1);
   border-right:solid 0.063rem rgba(64,64,64,1);
-  background:rgb(var(--white-monochrome));
+  background:rgba(var(--white-monochrome),0.7);
 }
 
 #top-bar ul li.sfhover ul li a,#top-bar ul li:hover ul li a
@@ -285,7 +286,7 @@ body {
 
 #top-bar ul li.sfhover a:hover,#top-bar ul li:hover a:hover
 {
-  background:rgba(var(--white-monochrome),0.25);
+  background:rgba(var(--white-monochrome),0.5);
   text-decoration:none;
 }
 
@@ -294,7 +295,7 @@ body {
   color:rgb(var(--bright-accent));
 }
 
-.top-bar ul li:last-of-type ul
+#top-bar ul li:nth-last-of-type(1) ul,#top-bar ul li:nth-last-of-type(2) ul
 {
   right:0;
 }
