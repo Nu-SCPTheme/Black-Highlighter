@@ -15,13 +15,13 @@ body {
     background-image: linear-gradient(to top, /* creates the red part of the header */
                                       rgb(70, 30, 32) 0%,
                                       rgb(78, 0, 12) 30%,
-                                      rgb(100, 3, 15) 100%),
+                                      rgb(var(--darkRed)) 100%),
                       linear-gradient(to bottom, /* creates the grey part of the header */
-                                      rgba(0,0,0,1) 7.5rem,
-                                      rgba(66,66,66,1) calc(7.5rem + 2px),
-                                      rgba(66,66,66,1) calc(100% - 2px),
-                                      rgba(0,0,0,1) calc(100% - 2px),
-                                      rgba(0,0,0,1) 100%);
+                                      rgba(var(--warmBlack),1) 7.5rem,
+                                      rgba(var(--darkGray),1) 7.625rem,
+                                      rgba(var(--darkGray),1) calc(100% - 0.125rem),
+                                      rgba(var(--warmBlack),1) calc(100% - 0.125rem),
+                                      rgba(var(--warmBlack),1) 100%);
     background-size: 100% 7.5rem, 100% 9.375rem; /* 120px, 150px */
     background-repeat: no-repeat;
 }
@@ -63,7 +63,7 @@ body {
 #header h1,#header h2
 {
   font-family:var(--headerFont);
-  margin-left:6.75rem;
+  margin-left:6.75rem; /* 108px */
   font-weight:900;
   text-transform:uppercase;
 }
@@ -103,11 +103,14 @@ body {
   content:" ";
   position:absolute;
   top:0;
-  background:url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg) 10px 40px no-repeat;
+  background:url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg) 
+              0.625rem /* 10px */ 
+              2.500rem /* 40px */ 
+              no-repeat;
   background-position:center left;
   background-clip:border-box;
   /*background-size:contain;*/
-  background-size:86px; /* appears to be the same as "contain" when the height is 80px */
+  background-size:5.375rem; /* 86px */ /* appears to be the same as "contain" when the height is 80px */
   z-index:9999;
   margin-top:0;
   height:7.5rem;
@@ -122,44 +125,44 @@ body {
   position:absolute;
   top:70%;
   right:-2%;
-  width:250px;
+  width:15.625rem; /* 250px */
   text-align:center;
 }
 
 #search-top-box-input
 {
-  border:solid 1px #000;
-  border-radius:1px;
+  border:solid 0.063rem rgb(var(--warmBlack));
+  border-radius:0.063rem;
   color:rgb(var(--coolwhite));
-  background-color:#424242 !important;
+  background-color:rgb(var(--darkGray)) !important;
 }
 
 #search-top-box-input:hover,#search-top-box-input:focus
 {
-  border:solid 1px #000;
-  border-radius:1px;
+  border:solid 0.063rem rgb(var(--warmBlack));
+  border-radius:0.063rem;
   color:rgb(var(--coolwhite));
   background:#424242 !important;
 }
 
 #search-top-box-form input[type="submit"]
 {
-  border:solid 1px #000;
-  border-radius:1px;
+  border:solid 0.063rem rgb(var(--warmBlack));
+  border-radius:0.063rem;
   font-size:90%;
   color:rgb(var(--coolwhite));
   background:#590505 !important;
   box-shadow:none !important;
   cursor:pointer;
-  padding:3px 5px 2px;
+  padding: 0.188rem 0.313rem 0.125rem; /* 3px 5px 2px */
 }
 
 #search-top-box-form input[type="submit"]:hover,#search-top-box-form input[type="submit"]:focus
 {
-  border:solid 1px #000;
-  border-radius:1px;
+  border:solid 0.063rem rgb(var(--warmBlack));
+  border-radius:0.063rem;
   color:rgb(var(--coolwhite));
-  text-shadow:0 0 1px rgba(255,255,255,0.25);
+  text-shadow:0 0 0.063rem rgba(255,255,255,0.25);
   background:#590505 !important;
   box-shadow:none!important;
 }
@@ -181,21 +184,21 @@ body {
 
 #login-status ul a
 {
-  color:#000;
+  color:rgb(var(--warmBlack));
   background-color:transparent;
 }
 
 #account-topbutton
 {
   background:silver;
-  color:#000;
+  color:rgb(var(--warmBlack));
 }
 
 #header h1 a::before
 {
   content:"The SCP Foundation";
   color:rgb(var(--coolwhite));
-  text-shadow:1px 1px 1px #000;
+  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--warmBlack));
 }
 
 #header h2 span
@@ -206,14 +209,14 @@ body {
   font-weight:400;
   color:transparent;
   text-shadow:none;
-  padding:19px 0;
+  padding:1.188rem 0; /* 19px 9 */
 }
 
 #header h2 span::before
 {
   content:"Secure, Contain, Protect";
   color:#fafafa;
-  text-shadow:1px 1px 1px #000;
+  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--warmBlack));
   width:100vw;
 }
 
@@ -222,8 +225,8 @@ body {
   width:100%;
   position:initial;
   z-index:50;
-  height:calc(calc(7.5rem + 2px) - calc(9.375rem - 2px));
-  line-height:20px;
+  height:1.625rem;
+  line-height:1.250rem; /* 20px */
   font-size:90%;
   display:inline-flex;
   margin:1.5625rem 0 1.75rem 0;
@@ -243,37 +246,37 @@ body {
 
 #top-bar ul li ul
 {
-  border:solid 1px #000;
-  box-shadow:0 2px 6px rgba(0,0,0,0.5);
+  border:solid 0.063rem rgb(var(--warmBlack));
+  box-shadow:0 0.125rem 0.375rem rgba(0,0,0,0.5);
   border-top:0;
   width:auto;
-  border-width:0 1px 1px;
+  border-width:0 0.063rem 1px;
 }
 
 #top-bar ul li a
 {
-  border-left:solid 1px rgba(64,64,64,0.1);
-  border-right:solid 1px rgba(64,64,64,0.1);
+  border-left:solid 0.063rem rgba(64,64,64,0.1);
+  border-right:solid 0.063rem rgba(64,64,64,0.1);
   text-decoration:none;
   padding-top:9px;
   padding-bottom:10px;
-  line-height:1px;
-  max-height:1px;
+  line-height:0.063rem;
+  max-height:0.063rem;
   overflow:hidden;
 }
 
 #top-bar ul li.sfhover a,#top-bar ul li:hover a
 {
-  color:#000;
-  border-left:solid 1px rgba(64,64,64,1);
-  border-right:solid 1px rgba(64,64,64,1);
-  background:#dedede;
+  color:rgb(var(--warmBlack));
+  border-left:solid 0.063rem rgba(64,64,64,1);
+  border-right:solid 0.063rem rgba(64,64,64,1);
+  background:rgb(var(--coolWhite));
 }
 
 #top-bar ul li.sfhover ul li a,#top-bar ul li:hover ul li a
 {
   width:150px;
-  border-top:1px solid #ddd;
+  border-top:0.063rem solid rgb(var(--coolWhite));
   line-height:160%;
   height:auto;
   max-height:none;
@@ -284,13 +287,13 @@ body {
 
 #top-bar ul li.sfhover a:hover,#top-bar ul li:hover a:hover
 {
-  background:silver;
+  background:rgba(var(--coolWhite),0.25);
   text-decoration:none;
 }
 
 #top-bar ul li ul a,#top-bar a:hover
 {
-  color:#a01;
+  color:rgb(var(--brightRed));
 }
 
 .top-bar ul li:last-of-type ul
@@ -350,7 +353,7 @@ body {
 
 #top-bar ul > li > ul
 {
-  margin-top:-4px;
+  margin-top:-0.250rem; /* -4px */
 }
 
 @media only screen and (max-width: 1024px) {
