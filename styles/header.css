@@ -56,11 +56,12 @@ body {
   margin-bottom:0.1em;
   max-height:5.9375rem; /* 95px */
   height:1.875rem; /* 30px - the height shouldn't be affected by the font size, as it's a structural element */
+  font-size:1.8rem;
 }
 
 #header h1 a::before
 {
-  content:"The SCP Foundation";
+  content:"SCP Foundation";
   color:rgb(var(--white-monochrome));
   text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
 }
@@ -75,9 +76,9 @@ body {
 
 #header h2
 {
-  font-size:105%;
-  margin-top: 0.5em;
-  margin-bottom: -0.4em;
+  font-size:0.945rem;
+  margin-top:0.4725rem; /* 0.5em */
+  margin-bottom:-0.3816rem; /* -0.4em */
   max-height:2.375rem; /* 38px */
   height:2.375rem; /* 38px - the height shouldn't be affected by the font size, as it's a structural element */
 }
@@ -398,15 +399,15 @@ body {
   
   #header h1
   {
-    font-size:1.5em;
-    margin-top:1em!important;
-    margin-bottom:-1em!important;
+    font-size:1.35rem;
+    margin-top:calc(1.35rem + 0.8rem)!important;
+    margin-bottom:-1.35rem!important;
   }
   
   #header h2
   {
-    margin-top:1.5em!important;
-    margin-bottom:-1.5em!important;
+    margin-top:1.4175rem!important; /* 1.5em */
+    margin-bottom:calc(-1.4175rem - 0.8rem)!important; /* -1.5em */
   }
   
   #header h1,#header h2
