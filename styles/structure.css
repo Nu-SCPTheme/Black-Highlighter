@@ -1,6 +1,6 @@
 html
 {
-  color:rgb(var(--warmBlack));
+  color:rgb(var(--black-monochrome));
   font-size:1em;
   line-height:1.5;
 }
@@ -8,8 +8,8 @@ html
 body
 {
   /* coloring */
-  background-color:rgb(var(--coolWhite));
-  color:rgb(var(--warmBlack));
+  background-color:rgb(var(--white-monochrome));
+  color:rgb(var(--black-monochrome));
   
   /* font behavior */
   font-size:.9em;
@@ -63,12 +63,12 @@ textarea
 
 p,span,div,li
 {
-  font-family:var(--bodyFont);
+  font-family:var(--body-font);
 }
 
 pre *
 {
-  font-family:var(--monoFont);
+  font-family:var(--mono-font);
   max-width:90vw;
   white-space:pre-wrap;
 }
@@ -92,13 +92,13 @@ hr
 
 /* Headers */
 h1,h2,h3,h4,h5,h6,h7{
-  font-family: var(--titleFont);
+  font-family: var(--title-font);
 }
 
 h1
 {
   font-weight:700;
-  color:rgb(var(--warmBlack));
+  color:rgb(var(--black-monochrome));
   font-weight:600;
   margin:.7em 0 .6em;
   padding:0 0 .25em;
@@ -120,7 +120,7 @@ ul
 
 a
 {
-  color:rgb(var(--brightRed));;
+  color:rgb(var(--bright-accent));;
   text-decoration:none;
   background:transparent;
 }
@@ -129,8 +129,8 @@ a.newpage
 {
   /* Temp Changing Color -- 
   CHANGE BACK LATER -- 
-  color:rgb(var(--softTeal)); */
-  color:rgb(var(--brightRed));
+  color:rgb(var(--newpage-color)); */
+  color:rgb(var(--bright-accent)); /* put the new color in --newpage-color */
   text-decoration:none;
   background:transparent;
 }
@@ -143,7 +143,7 @@ a:hover
 
 a:visited
 {
-  color:rgb(var(--darkRed));
+  color:rgb(var(--dark-accent));
 }
 
 /* Ruby Text */
@@ -173,16 +173,16 @@ rt
 {
   width:0.563rem; /* 9px */
   height:0.563rem;
-  border:solid 0.063rem rgba(var(--warmBlack),0.1);
+  border:solid 0.063rem rgba(var(--black-monochrome),0.1);
   border-round:0.031rem;
 }
 
 ::-webkit-scrollbar-track
 {
-  background:rgba(var(--warmBlack),0.1);
+  background:rgba(var(--black-monochrome),0.1);
 }
 
 ::-webkit-scrollbar-thumb
 {
-  background:rgba(var(--darkRed),0.4);
+  background:rgba(var(--dark-accent),0.4);
 }

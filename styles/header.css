@@ -7,17 +7,17 @@
 }
 
 body {
-    background-color: rgb(var(--coolwhite));
+    background-color: rgb(var(--white-monochrome));
     background-image: linear-gradient(to top, /* creates the red part of the header */
                                       rgb(70, 30, 32) 0%,
                                       rgb(78, 0, 12) 30%,
-                                      rgb(var(--darkRed)) 100%),
+                                      rgb(var(--dark-accent)) 100%),
                       linear-gradient(to bottom, /* creates the grey part of the header */
-                                      rgba(var(--warmBlack),1) 7.5rem,
-                                      rgba(var(--darkGray),1) 7.625rem,
-                                      rgba(var(--darkGray),1) calc(100% - 0.125rem),
-                                      rgba(var(--warmBlack),1) calc(100% - 0.125rem),
-                                      rgba(var(--warmBlack),1) 100%);
+                                      rgba(var(--black-monochrome),1) 7.5rem,
+                                      rgba(var(--gray-monochrome),1) 7.625rem,
+                                      rgba(var(--gray-monochrome),1) calc(100% - 0.125rem),
+                                      rgba(var(--black-monochrome),1) calc(100% - 0.125rem),
+                                      rgba(var(--black-monochrome),1) 100%);
     background-size: 100% 7.5rem, 100% 9.375rem; /* 120px, 150px */
     background-repeat: no-repeat;
 }
@@ -60,8 +60,8 @@ body {
 #header h1 a::before
 {
   content:"The SCP Foundation";
-  color:rgb(var(--coolwhite));
-  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--warmBlack));
+  color:rgb(var(--white-monochrome));
+  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
 }
 
 #header h1,#header h2
@@ -88,7 +88,7 @@ body {
   line-height: 0;
   content: "The SCP Foundation";
   max-height: 0;
-  color: rgb(var(--coolWhite));
+  color: rgb(var(--white-monochrome));
   font-size: 135%;
   text-decoration: none;
   text-shadow: none;
@@ -134,26 +134,26 @@ body {
 
 #search-top-box-input
 {
-  border:solid 0.063rem rgb(var(--warmBlack));
+  border:solid 0.063rem rgb(var(--black-monochrome));
   border-radius:0.063rem;
-  color:rgb(var(--coolwhite));
-  background-color:rgb(var(--darkGray)) !important;
+  color:rgb(var(--white-monochrome));
+  background-color:rgb(var(--gray-monochrome)) !important;
 }
 
 #search-top-box-input:hover,#search-top-box-input:focus
 {
-  border:solid 0.063rem rgb(var(--warmBlack));
+  border:solid 0.063rem rgb(var(--black-monochrome));
   border-radius:0.063rem;
-  color:rgb(var(--coolwhite));
+  color:rgb(var(--white-monochrome));
   background:#424242 !important;
 }
 
 #search-top-box-form input[type="submit"]
 {
-  border:solid 0.063rem rgb(var(--warmBlack));
+  border:solid 0.063rem rgb(var(--black-monochrome));
   border-radius:0.063rem;
   font-size:90%;
-  color:rgb(var(--coolwhite));
+  color:rgb(var(--white-monochrome));
   background:#590505 !important;
   box-shadow:none !important;
   cursor:pointer;
@@ -162,9 +162,9 @@ body {
 
 #search-top-box-form input[type="submit"]:hover,#search-top-box-form input[type="submit"]:focus
 {
-  border:solid 0.063rem rgb(var(--warmBlack));
+  border:solid 0.063rem rgb(var(--black-monochrome));
   border-radius:0.063rem;
-  color:rgb(var(--coolwhite));
+  color:rgb(var(--white-monochrome));
   text-shadow:0 0 0.063rem rgba(255,255,255,0.25);
   background:#590505 !important;
   box-shadow:none!important;
@@ -172,7 +172,7 @@ body {
 
 #login-status
 {
-  color:rgb(var(--coolwhite));
+  color:rgb(var(--white-monochrome));
   font-size:90% !important;
   z-index:10000;
   right:1rem;
@@ -182,19 +182,19 @@ body {
 #login-status a
 {
   background-color:transparent;
-  color:rgb(var(--coolwhite));
+  color:rgb(var(--white-monochrome));
 }
 
 #login-status ul a
 {
-  color:rgb(var(--warmBlack));
+  color:rgb(var(--black-monochrome));
   background-color:transparent;
 }
 
 #account-topbutton
 {
   background:silver;
-  color:rgb(var(--warmBlack));
+  color:rgb(var(--black-monochrome));
 }
 
 #header h2 span
@@ -212,7 +212,7 @@ body {
 {
   content:"Secure, Contain, Protect";
   color:#fafafa;
-  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--warmBlack));
+  text-shadow:0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
   width:100vw;
 }
 
@@ -242,7 +242,7 @@ body {
 
 #top-bar ul li ul
 {
-  border:solid 0.063rem rgb(var(--warmBlack));
+  border:solid 0.063rem rgb(var(--black-monochrome));
   box-shadow:0 0.125rem 0.375rem rgba(0,0,0,0.5);
   border-top:0;
   width:auto;
@@ -263,16 +263,16 @@ body {
 
 #top-bar ul li.sfhover a,#top-bar ul li:hover a
 {
-  color:rgb(var(--warmBlack));
+  color:rgb(var(--black-monochrome));
   border-left:solid 0.063rem rgba(64,64,64,1);
   border-right:solid 0.063rem rgba(64,64,64,1);
-  background:rgb(var(--coolWhite));
+  background:rgb(var(--white-monochrome));
 }
 
 #top-bar ul li.sfhover ul li a,#top-bar ul li:hover ul li a
 {
   width:150px;
-  border-top:0.063rem solid rgb(var(--coolWhite));
+  border-top:0.063rem solid rgb(var(--white-monochrome));
   line-height:160%;
   height:auto;
   max-height:none;
@@ -283,13 +283,13 @@ body {
 
 #top-bar ul li.sfhover a:hover,#top-bar ul li:hover a:hover
 {
-  background:rgba(var(--coolWhite),0.25);
+  background:rgba(var(--white-monochrome),0.25);
   text-decoration:none;
 }
 
 #top-bar ul li ul a,#top-bar a:hover
 {
-  color:rgb(var(--brightRed));
+  color:rgb(var(--bright-accent));
 }
 
 .top-bar ul li:last-of-type ul
