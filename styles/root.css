@@ -31,10 +31,11 @@
     --min-viewport-difference: calc(90vw - (var(--unitless-min-viewport) * 1px));
 
     /* responsive fluid type formula */
-    --fontCalc: calc((var(--unitless-min-font-size) * 1em) + var(--font-size-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
-    --lineCalc: calc(var(--min-lineheight) + var(--lineheight-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
+    --font-calc: calc((var(--unitless-min-font-size) * 1em) + var(--font-size-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
+    --line-calc: calc(var(--min-lineheight) + var(--lineheight-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
 
-    --base-font-size: var(--lineCalc);
+    --base-font-size: var(--font-calc);
+    --base-line-height: var(--line-calc)
 
     /* Standard Colors */
     --white-monochrome: 252, 252, 252; /* cool white */
