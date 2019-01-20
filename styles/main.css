@@ -46,11 +46,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #content-wrap {
     width: 100vw;
-    max-width: 64rem;
     min-height: 1300px;
     height: 100%;
     position: initial;
     display: flex;
+    flex-direction: row;
     margin: 3em auto 0;
 }
 
@@ -80,12 +80,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
   margin-right:1px;
 }
 
-#main-content
-{
-  flex-basis:47.188rem;
-  max-width:47.188rem;
-  margin:2.5em auto;
-  padding:1em;
+#main-content {
+    flex-basis: 61.25rem;
+    max-width: 61.25rem;
+    padding: 2.5em 3em 1em 1em;
+    flex-grow: 2;
 }
 
 #breadcrumbs
