@@ -88,7 +88,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     padding: 2em 1.5em 1em 1em;
     margin-top: var(--offset-from-page-top);
     flex-grow: 2;
-    margin-left: calc(50vw - calc(var(--body-width-on-desktop) / 2) - sidebar);
+    margin-left: calc(50vw - calc(var(--body-width-on-desktop) / 2)/* - var(--sidebar-width-on-desktop)*/);
     margin-right: 1.5rem;
 }
 
