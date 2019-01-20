@@ -49,7 +49,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     min-height: 1300px;
     height: 100%;
     position: initial;
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: center;
     margin: 3em auto 0;
@@ -83,12 +83,12 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #main-content {
     background-color: transparent;
-    flex-basis: 44.25rem;
-    max-width: 44.25rem;
+    flex-basis: var(--body-width-on-desktop);
+    max-width: var(--body-width-on-desktop);
     padding: 2em 1.5em 1em 1em;
     margin-top: var(--offset-from-page-top);
     flex-grow: 2;
-    margin-left: 0;
+    margin-left: calc(50vw - calc(var(--body-width-on-desktop) / 2) - sidebar);
     margin-right: 1.5rem;
 }
 
