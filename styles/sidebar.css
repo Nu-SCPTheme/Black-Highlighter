@@ -73,7 +73,7 @@
 
 #side-bar div.menu-item {
     margin: 0;
-    text-align: left;
+    text-align: right;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -81,15 +81,11 @@
     justify-content: flex-end;
     color: transparent;
     height: 2rem;
-    box-shadow: inset 0 -0.063rem 0 0 rgba(var(--black-monochrome),0.25);
+    box-shadow: inset 0 -0.063rem 0 0 rgb(var(--black-monochrome));
 }
 
 #side-bar div.collapsible-block {
     text-align: right;
-}
-
-#side-bar div.menu-item:not(:last-child) {
-    box-shadow: inset 0 -0.063rem 0 0 rgb(var(--black-monochrome));
 }
 
 #side-bar div.menu-item a {
