@@ -15,6 +15,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    font-variant: all-petite-caps;
 }
 
 #side-bar img {
@@ -27,7 +28,7 @@
 }
 
 #side-bar > div:nth-child(5) {
-    background-color: rgba(118, 97, 80, 0.2) !important;
+    background-color: rgba(var(--dark-accent), 1) !important;
 }
 
 #side-bar > div:nth-child(6) {
@@ -85,6 +86,10 @@
   font-size:0; */
 }
 
+#side-bar div.collapsible-block {
+    text-align: right;
+}
+
 #side-bar div.menu-items:not(:last-child) {
     box-shadow: inset 0 -0.063rem 0 0 rgb(var(--black-monochrome));
 }
@@ -103,8 +108,9 @@
 #side-bar div.menu-item a {
     padding: 0 0.3rem;
     margin: 0 -0.3rem 0 0;
-    color:rgb(var(--white-monochrome));
-    font-size:var(--base-font-size);
+    color: rgb(var(--white-monochrome));
+    font-size: calc(var(--base-font-size)*1.15);
+    letter-spacing: 0.04em;
 }
 
 #side-bar div.menu-item a + a {
@@ -136,7 +142,7 @@
 
 #side-bar div.menu-item.inactive a,
 #side-bar a:visited {
-    color: rgb(var(--bright-accent));
+    color: rgb(var(--white-monochrome));
 }
 
 #side-bar div.menu-item.inactive img {
@@ -149,7 +155,7 @@
 }
 
 #side-bar .collapsible-block-link {
-    margin-left: 1rem;
+    padding-right: 1rem;
     font-weight: 700;
 }
 
@@ -159,13 +165,14 @@
 
 #side-bar .collapsible-block-unfolded-link {
     box-shadow: inset 0 -0.063rem 0 0 rgb(var(--black-monochrome));
+    padding-right: 1rem;
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
     margin-top: 0.500rem;
     margin-bottom: 0.250rem;
     font-size: 0.5em;
-    color: rgb(var(--bright-accent));
+    color: rgb(var(--white-monochrome));
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover {
