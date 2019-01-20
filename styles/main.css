@@ -51,7 +51,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     position: initial;
     display: flex;
     flex-direction: row;
-	justify-content: center;
+    justify-content: center;
     margin: 3em auto 0;
 }
 
@@ -82,11 +82,14 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 #main-content {
-    flex-basis:47.188rem;
-    max-width:47.188rem;
-    padding: 2.5em 3em 1em 1em;
+    background-color: rgb(var(--white-monochrome));
+    flex-basis: 44.25rem;
+    max-width: 44.25rem;
+    padding: 2em 1.5em 1em 1em;
+    margin-top: var(--offset-from-page-top);
     flex-grow: 2;
     margin-left: 0;
+    margin-right: 1.5rem;
 }
 
 #breadcrumbs
