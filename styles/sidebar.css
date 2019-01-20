@@ -15,7 +15,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    font-variant: all-petite-caps;
+        font-variant: all-petite-caps;
 }
 
 #side-bar img {
@@ -104,6 +104,11 @@
     line-height: 1.75;
     vertical-align: middle;
     display: table-cell;
+}
+
+#side-bar div.menu-items > a:nth-child(2){
+    flex-grow:2;
+    text-align: right;
 }
 
 #side-bar div.menu-item a + a {
