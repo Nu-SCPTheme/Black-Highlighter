@@ -74,7 +74,7 @@
     font-size: calc(var(--base-font-size) * 1.25);
     font-weight: 700;
     text-align: right;
-    background: rgba(var(--dark-accent),0.35);
+    background: linear-gradient(10deg,rgba(var(--dark-accent),0.35) 0%,rgba(var(--dark-accent),0.65) 100%));
 }
 
 #side-bar div.menu-item {
@@ -96,7 +96,7 @@
     text-align: right;
 }
 
-#side-bar div.menu-item a {
+#side-bar div.menu-item a, #side-bar div.menu-item .text {
     padding: 0 0.6em;
     margin: 0;
     color: rgb(var(--white-monochrome));
@@ -110,9 +110,13 @@
     height: 2rem;
 }
 
+#side-bar div.menu-item .text {
+  cursor: default;
+}
+
 /* SCP Series Specific */
 
-#side-bar div.menu-item > a:nth-child(2){
+#side-bar div.menu-item > :nth-child(2){
     padding-left: calc(var(--base-font-size) * 0.75);
     flex-grow: 2;
     text-align: right;
@@ -123,7 +127,7 @@
     margin-right: 0.0625rem;
 }
 
-#side-bar div.menu-item a + a {
+#side-bar div.menu-item :not(:nth-child(2)) {
     border-left: 0.0625rem solid rgba(var(--black-monochrome),1);
     border-radius: 0.0625rem;
 }
