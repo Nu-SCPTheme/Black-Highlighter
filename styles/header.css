@@ -232,6 +232,116 @@ body {
 	flex-wrap: nowrap;
 }
 
+.mobile-top-bar {
+	display: none;
+	position: relative;
+	left: 1rem;
+	bottom: 0;
+	z-index: 9999;
+}
+
+#top-bar {
+	width: 100%;
+	position: initial;
+	z-index: 50;
+	height: 1.625rem;
+	line-height: 1.250rem;
+	font-size: 90%;
+	display: inline-flex;
+	margin: 1.75rem 0 1.75rem 0;
+	padding: 0 0 0.25rem;
+	flex-wrap: nowrap;
+}
+
+/* In-Progress Top-Bar Implimentation */
+#top-bar div.top-bar > ul,
+div.mobile-top-bar > ul{
+    width: 90vw!important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    max-width: 61.25rem;
+    z-index: 20;
+    height: 100%;
+    display: flex!important;
+}
+
+
+#top-bar div.top-bar > ul > li,
+div.mobile-top-bar > ul > li{
+    flex-shrink: 2;
+    height: 100%;
+    width: auto;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0!important;
+}
+
+
+#top-bar div.top-bar > ul > li > a,
+div.mobile-top-bar > ul > li > a {
+    padding: 0!important;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: rgb(var(--white-monochrome));
+    white-space: pre;
+}
+
+#top-bar div.top-bar > ul > li > ul {
+    border: solid 0.063rem rgb(var(--black-monochrome))!important;
+	background: rgb(var(--dark-gray-monochrome));
+    box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.5);
+    border-top: 0;
+    border-width: 0 0.063rem 1px!important;
+    display: flex!important;
+    z-index: 20;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 2.625rem!important;
+    position: fixed!important;
+    width: 98vw!important;
+    left: 25%;
+    max-width: 61.25rem;
+}
+
+#top-bar div.top-bar > ul > li > ul > li {
+    border: 0;
+    position: relative;
+    margin: 0!important;
+    display: block!important;
+    float: none!important;
+    background: rgba(var(--white-monochrome) , 0.5);
+    height: auto;
+    flex-grow: 2;
+    padding: 1rem!important;
+}
+
+#top-bar div.top-bar > ul > li > ul > li:hover {
+	background: rgba(var(--white-monochrome) , 0.7)
+}
+
+#top-bar div.top-bar > ul > li > ul > li > a {
+	background: transparent;
+    color: rgb(var(--black-monochrome));
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+}
+
+
 @media only screen and (max-width: 768px) {
 
 	#header,
