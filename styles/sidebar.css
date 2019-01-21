@@ -13,8 +13,9 @@
     margin: calc(var(--offset-from-page-top) - 0.1rem) 0 1.5rem -1vw;
     font-variant: all-petite-caps;
     position: sticky;
-    top: 0px;
-    max-height: 100vh;
+    top: -1rem;
+    bottom: 0;
+    max-height: calc(100vh - ((3.375rem + var(--offset-from-page-top))));
     overflow: auto;
 }
 
