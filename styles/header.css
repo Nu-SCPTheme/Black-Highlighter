@@ -305,7 +305,7 @@ body {
     border-width: 0 0.063rem 1px;
     display: flex!important;
     z-index: 20;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
@@ -316,6 +316,7 @@ body {
     align-self: flex-start;
 	left: 50%;
     transform: translate(-50%, 0);
+    max-height: calc(3.375em * 9);
 }
 
 #top-bar div.top-bar > ul > li > ul > li {
@@ -324,19 +325,19 @@ body {
     margin: 0;
     display: block;
     float: none;
-    background: rgba(var(--white-monochrome) , 0.5);
     height: auto;
     flex-grow: 2;
     padding: 1rem;
+	box-shadow: 0.0625rem 0 0 rgba(var(--black-monochrome)), 0 0.0625rem 0 0 rgba(var(--black-monochrome));
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover {
-	background: rgba(var(--white-monochrome) , 0.7)
+	background: rgba(var(--white-monochrome) , 0.15)
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a {
 	background: transparent;
-    color: rgb(var(--black-monochrome));
+    color: rgb(var(--white-monochrome));
     width: 100%;
     height: 100%;
     text-align: center;
