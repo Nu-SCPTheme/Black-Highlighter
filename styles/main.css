@@ -88,9 +88,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     max-width: var(--body-width-on-desktop);
     padding: 2em 1.5em 1em 1em;
     margin-top: var(--offset-from-page-top);
+    margin-bottom: 3rem;
     flex-grow: 2;
     margin-left: calc(50vw - calc(var(--body-width-on-desktop) / 2)/* - var(--sidebar-width-on-desktop)*/);
     margin-right: 1.5rem;
+    max-height: 100%;
 }
 
 #breadcrumbs
@@ -142,8 +144,9 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     margin-top: 15px;
     padding: 3px 10px;
     width: calc(98.7vw - var(--sidebar-width-on-desktop));
+    height: 1rem;
     position: absolute;
-    bottom: 0;
+    bottom: -1rem;
     right: 0;
 }
 
@@ -161,7 +164,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     padding: 0;
     position: relative;
     right: 0;
-    bottom: -2em;
+    bottom: -2.35em;
+    height: 1rem;
 }
 
 div.sexy-box
