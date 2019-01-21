@@ -242,7 +242,7 @@ body {
 
 #top-bar {
 	width: 100%;
-	position: initial;
+	position: absolute;
 	z-index: 50;
 	height: 1.625rem;
 	line-height: 1.250rem;
@@ -316,8 +316,11 @@ body {
     place-items: stretch stretch;
     grid-gap: 0;
     gap: 0;
-    grid-auto-flow: column;
+    grid-auto-flow: row;
     grid-auto-rows: var(--top-bar-grid-height);
+    
+    /* transpose */
+    transform: rotate(90deg) scaleY(-1);
 }
 
 #top-bar div.top-bar > ul > li > ul > li {
@@ -330,6 +333,9 @@ body {
     flex-grow: 2;
     padding: 1rem;
     box-shadow: 0.0625rem 0 0 rgba(var(--black-monochrome)), 0 0.0625rem 0 0 rgba(var(--black-monochrome));
+    
+    /* transpose */
+    transform: scaleX(-1) rotate(90deg);
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover {
