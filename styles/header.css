@@ -286,15 +286,18 @@ body {
     border: 0;
     position: relative;
     margin: 0;
-    display: block;
     float: none;
-    height: auto;
-    flex-grow: 2;
-    padding: 1rem;
+    padding: 0;
     box-shadow: 0.0625rem 0 0 rgba(var(--black-monochrome)), 0 0.0625rem 0 0 rgba(var(--black-monochrome));
+    
+    /* Prevent splitting in half onto the next column */
     break-inside: avoid;
     page-break-inside: avoid;
     -webkit-column-break-inside: avoid;
+    
+    /* Fix height */
+    height: 4rem;
+    display: table;
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover {
@@ -308,16 +311,19 @@ body {
 #top-bar div.top-bar > ul > li > ul > li > a {
 	background: transparent;
     color: rgb(var(--white-monochrome));
-    width: 100%;
+    width: auto;
     height: 100%;
-    text-align: center;
-    display: flex;
+    
+    /* Text positioning */
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 
 @media only screen and (max-width: 768px) {
 	#header {
-		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg), linear-gradient(to top, /* creates the red part of the header */ rgb(70, 30, 32) 0%, rgb(78, 0, 12) 30%, rgb(var(--dark-accent)) 100%);
+		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg), linear-gradient(to top, rgb(70, 30, 32) 0%, rgb(78, 0, 12) 30%, rgb(var(--dark-accent)) 100%);
 		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
 		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
 		background-repeat: no-repeat, repeat;
