@@ -269,6 +269,9 @@ body {
     
     --top-bar-grid-height: 3rem;
     
+    column-count: 4;
+    column-gap: 0;
+    
     /*display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -289,6 +292,9 @@ body {
     flex-grow: 2;
     padding: 1rem;
     box-shadow: 0.0625rem 0 0 rgba(var(--black-monochrome)), 0 0.0625rem 0 0 rgba(var(--black-monochrome));
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover {
