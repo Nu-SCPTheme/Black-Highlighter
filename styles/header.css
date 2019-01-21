@@ -329,10 +329,22 @@ body {
 
 
 @media only screen and (max-width: 768px) {
+	#header {
+		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg), linear-gradient(to top, /* creates the red part of the header */ rgb(70, 30, 32) 0%, rgb(78, 0, 12) 30%, rgb(var(--dark-accent)) 100%);
+		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
+		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
+		background-repeat: no-repeat, repeat;
+		width: 100vw;
+		margin: 0;
+		position: sticky;
+		top: -7.75rem;
+		overflow-x: hidden;
+	}
 
 	#header,
 	.mobile-top-bar {
-		max-width: 90vw;
+		max-width: 100%;
+    	left: 0;
 	}
 
 	.top-bar {
@@ -341,20 +353,10 @@ body {
 
 	#header h1 {
 		font-size: 1.35rem;
-		margin-top: calc(1.35rem + 0.8rem) !important;
-		margin-bottom: -1.35rem !important;
 	}
 
 	#header h2 {
-		margin-top: 1.4175rem !important;
-		/* 1.5em */
-		margin-bottom: calc(-1.4175rem - 0.8rem) !important;
-		/* -1.5em */
-	}
 
-	#header h1,
-	#header h2 {
-		margin-left: 5.5rem;
 	}
 
 	#header h2 span::before {
@@ -370,20 +372,23 @@ body {
 		font-size: 70%;
 	}
 
-	#header-extra-div-2 {
-		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg);
-		background-position: calc(5vw + 5.5rem - 10.4rem) calc(4% - var(--offset-from-page-top) / 2);
-		background-size: calc(8.75rem + var(--offset-from-page-top));
-		background-repeat: no-repeat;
-		width: 50vw;
-		left: calc(-50vw + 50%);
-	}
-
 	#top-bar {
-		margin-top: 3.375rem;
+		padding: 0;
+	}
+	
+	#top-bar .mobile-top-bar {
+		display: flex;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		width:100vw;
 	}
 
 	#top-bar .top-bar > ul {
 		overflow: hidden;
+	}
+	
+	#top-bar .mobile-top-bar {
+		
 	}
 }
