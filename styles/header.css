@@ -252,13 +252,14 @@ body {
 }
 
 #top-bar ul li a {
-	border-left: solid 0.063rem rgba(64, 64, 64, 0.1);
-	border-right: solid 0.063rem rgba(64, 64, 64, 0.1);
-	text-decoration: none;
-	padding: 9px calc(var(--base-font-size) / 2) 10px;
-	line-height: 0.063rem;
-	max-height: 0.063rem;
-	overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    float: none;
+    background: rgba(var(--white-monochrome), 0.5);
+    flex-grow: 2;
+    color: rgb(var(--black-monochrome));
 }
 
 #top-bar li > ul > li {
