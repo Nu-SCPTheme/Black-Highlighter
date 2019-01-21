@@ -4,6 +4,7 @@
   height:calc(4.375rem + var(--offset-from-page-top));
   position:relative;
   z-index:10;
+  height:9.375rem;
 }
 
 body {
@@ -128,9 +129,9 @@ body {
 {
   display:infline-flex;
   position:absolute;
-  top:70%;
-  right:-2%;
-  width:15.625rem; /* 250px */
+  top:47%;
+  right:0;
+  width:auto;
   text-align:center;
 }
 
@@ -160,6 +161,7 @@ body {
   box-shadow:none !important;
   cursor:pointer;
   padding: 0.188rem 0.313rem 0.125rem; /* 3px 5px 2px */
+  margin-right:0;
 }
 
 #search-top-box-form input[type="submit"]:hover,#search-top-box-form input[type="submit"]:focus
@@ -177,7 +179,7 @@ body {
   color:rgb(var(--light-gray-monochrome));
   font-size:90% !important;
   z-index:10000;
-  right:1rem;
+  right:0;
   top:0.5rem;
 }
 
