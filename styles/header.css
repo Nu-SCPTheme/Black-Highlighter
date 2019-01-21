@@ -219,15 +219,16 @@ body {
 
 #top-bar
 {
-  width:100%;
-  position:initial;
-  z-index:50;
-  height:1.625rem;
-  line-height:1.250rem; /* 20px */
-  font-size:90%;
-  display:inline-flex;
-  margin:1.75rem 0 1.75rem 0;
-  padding:0 0 0.25rem;
+    width: 100%;
+    position: initial;
+    z-index: 50;
+    height: 1.625rem;
+    line-height: 1.250rem;
+    font-size: 90%;
+    display: inline-flex;
+    margin: 1.75rem 0 1.75rem 0;
+    padding: 0 0 0.25rem;
+    flex-wrap: nowrap;
 }
 
 #top-bar ul
@@ -253,14 +254,14 @@ body {
 
 #top-bar ul li a
 {
-  border-left:solid 0.063rem rgba(64,64,64,0.1);
-  border-right:solid 0.063rem rgba(64,64,64,0.1);
-  text-decoration:none;
-  padding-top:9px;
-  padding-bottom:10px;
-  line-height:0.063rem;
-  max-height:0.063rem;
-  overflow:hidden;
+    border-left: solid 0.063rem rgba(64,64,64,0.1);
+    border-right: solid 0.063rem rgba(64,64,64,0.1);
+    text-decoration: none;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    line-height: 0.063rem;
+    max-height: 0.063rem;
+    overflow: hidden;
 }
 
 #top-bar ul li.sfhover a,#top-bar ul li:hover a
@@ -315,7 +316,7 @@ body {
 {
   width:90vw;
   flex-direction:row;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   justify-content:flex-start;
   align-items:stretch;
   max-width:61.25rem;
