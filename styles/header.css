@@ -270,12 +270,19 @@ body {
 	flex-grow: 2;
 }
 
+#top-bar > div.top-bar > ul > li > ul > li:hover {
+	background: rgba(var(--white-monochrome), 0.7);
+}
+
+#top-bar > div.top-bar > ul > li:hover > a {
+	background: rgba(var(--white-monochrome), 0.7);
+}
+
 #top-bar ul li.sfhover a,
 #top-bar ul li:hover a {
 	color: rgb(var(--black-monochrome));
 	border-left: solid 0.063rem rgba(64, 64, 64, 1);
 	border-right: solid 0.063rem rgba(64, 64, 64, 1);
-	background: rgba(var(--white-monochrome), 0.7);
 }
 
 #top-bar ul li.sfhover ul li a,
@@ -368,6 +375,7 @@ body {
 
 #top-bar .top-bar > ul > li > ul > li > a,
 #top-bar .mobile-top-bar > ul > li > ul > li > a {
+	text-align: center;
 	white-space: pre-wrap;
 	line-height: 140%;
 	padding: .5em 1em !important;
