@@ -257,9 +257,11 @@ body {
     display: flex;
     align-items: center;
     float: none;
-    background: rgba(var(--white-monochrome), 0.5);
     flex-grow: 2;
-    color: rgb(var(--black-monochrome));
+}
+
+#top-bar > div.top-bar > ul > li > a {
+	color: rgb(var(--white-monochrome))
 }
 
 #top-bar li > ul > li {
@@ -285,6 +287,11 @@ body {
 	border-left: solid 0.063rem rgba(64, 64, 64, 1);
 	border-right: solid 0.063rem rgba(64, 64, 64, 1);
 }
+
+#top-bar > div.top-bar > ul > li > ul > li > a {
+    color: rgb(var(--black-monochrome));	
+}
+
 
 #top-bar ul li.sfhover ul li a,
 #top-bar ul li:hover ul li a {
