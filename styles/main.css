@@ -49,10 +49,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
     min-height: 1300px;
     height: 100%;
     position: initial;
-    /*display: flex;*/
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
-    margin: 3em auto 0;
+    margin: -6em auto -4.1em auto;
+    padding: 9em 0 0 0;
 }
 
 #page-title
@@ -134,12 +135,16 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #footer
 {
-  clear:both;
-  font-size:77%;
-  background:#444;
-  color:#bbb;
-  margin-top:15px;
-  padding:3px 10px;
+    clear: both;
+    font-size: 77%;
+    background: #444;
+    color: #bbb;
+    margin-top: 15px;
+    padding: 3px 10px;
+    width: calc(98.7vw - var(--sidebar-width-on-desktop));
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 #footer .options
@@ -150,6 +155,13 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
   width:50%;
   font-size:100%;
   text-align:right;
+}
+
+#license-area {
+    padding: 0;
+    position: relative;
+    right: 0;
+    bottom: -2em;
 }
 
 div.sexy-box
