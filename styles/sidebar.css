@@ -217,9 +217,7 @@
         position: fixed;
         top: 0;
         left: -25rem;
-        width: 17rem;
         height: 100%;
-        background-color: #b88686;
         overflow-y: auto;
         z-index: 10;
         -webkit-transition: left .5s ease-in-out .1s;
@@ -227,7 +225,6 @@
         -ms-transition: left .5s ease-in-out .1s;
         -o-transition: left .5s ease-in-out .1s;
         transition: left .5s ease-in-out .1s;
-        padding: 1rem 1rem 0;
     }
 
     #side-bar:after {
@@ -238,11 +235,17 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
     }
+    
+    /* We've got two different mobile sidebars going on.
+    The first is "#side-bar:target". This is Wikidot's default.
+    The second is "#skrollr-body:target #side-bar". This gives us a higher level of control over what happens when the sidebar is opened.
+    Both need to be supported, in case certain wikis are unwilling to change the URL in nav:top. */
+    
+    /* DEFAULT SIDEBAR */
 
     #side-bar:target {
         display: block;
         left: 0;
-        width: 75vw;
         box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
         z-index: 10;
         margin: 0;
@@ -253,6 +256,32 @@
     }
 
     #side-bar:target .close-menu {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3) 0.0625rem 0.0625rem repeat;
+        z-index: -1;
+    }
+    
+    /* NEW SIDEBAR */
+
+    #skrollr-body:target #side-bar {
+        display: block;
+        left: 0;
+        width: 75vw;
+        box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
+        z-index: 10;
+        margin: 0;
+    }
+
+    #skrollr-body:target #side-bar + #main-content {
+        left: 0;
+    }
+
+    #skrollr-body:target #side-bar .close-menu {
         display: block;
         position: fixed;
         width: 100%;
