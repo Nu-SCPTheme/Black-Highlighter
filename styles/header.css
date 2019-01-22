@@ -74,6 +74,7 @@ body {
 	font-family: var(--header-font);
 	font-weight: 900;
 	text-transform: uppercase;
+	position: absolute;
 }
 
 #header h1 a {
@@ -207,7 +208,7 @@ body {
     line-height: 1.250rem;
     font-size: 90%;
     display: inline-flex;
-    margin: 3.45em 0 1.75rem 0;
+    margin: calc(7.5rem + 0.125rem) 0 1.75rem 0;
     padding: 0 0 0.25rem;
     flex-wrap: nowrap;
 }
@@ -256,8 +257,8 @@ body {
     border: solid 0.063rem rgb(var(--black-monochrome));
     background: rgb(var(--dark-gray-monochrome));
     box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.5);
-    border-top: 0;
-    border-width: 0 0.063rem 1px;
+    border: 1px solid rgb(var(--black-monochrome));
+    border-top: none;
     z-index: 20;
     margin-top: 1.625rem;
     position: absolute;
@@ -271,6 +272,7 @@ body {
     
     column-count: 4;
     column-gap: 0;
+    column-rule: 1px solid rgb(var(--black-monochrome));
     
     /*display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -288,16 +290,18 @@ body {
     margin: 0;
     float: none;
     padding: 0;
-    box-shadow: 0.0625rem 0 0 rgba(var(--black-monochrome)), 0 0.0625rem 0 0 rgba(var(--black-monochrome));
+    /*box-shadow: 0 0.0625rem 0 0 rgba(var(--black-monochrome));*/
+    border-top: 1px solid rgb(var(--black-monochrome));
     
     /* Prevent splitting in half onto the next column */
     break-inside: avoid;
     page-break-inside: avoid;
     -webkit-column-break-inside: avoid;
     
-    /* Fix height */
+    /* Text positioning */
     height: 4rem;
     display: table;
+    width: 100%;
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover {
