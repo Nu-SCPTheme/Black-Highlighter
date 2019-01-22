@@ -15,8 +15,8 @@ body {
 		rgb(70, 30, 32) 0%,
 		rgb(78, 0, 12) 30%,
 		rgb(var(--dark-accent)) 100%),
-		linear-gradient(to bottom,
 		/* creates the grey part of the header */
+		linear-gradient(to bottom,
 		rgba(var(--black-monochrome), 1) 7.5rem,
 		rgba(var(--gray-monochrome), 1) 7.625rem,
 		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
@@ -253,7 +253,8 @@ body {
 	background: rgb(var(--dark-gray-monochrome));
 }
 
-#top-bar div.top-bar > ul > li > ul {
+#top-bar div.top-bar > ul > li > ul,
+#top-bar div.mobile-top-bar > ul > li > ul{
     border: solid 0.063rem rgb(var(--black-monochrome));
     background: rgb(var(--dark-gray-monochrome));
     box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.5);
@@ -284,14 +285,15 @@ body {
     grid-auto-rows: var(--top-bar-grid-height);*/
 }
 
-#top-bar div.top-bar > ul > li > ul > li {
+#top-bar div.top-bar > ul > li > ul > li,
+#top-bar div.mobile-top-bar > ul > li > ul > li {
     border: 0;
     position: relative;
     margin: 0;
     float: none;
     padding: 0;
     /*box-shadow: 0 0.0625rem 0 0 rgba(var(--black-monochrome));*/
-    border-top: 1px solid rgb(var(--black-monochrome));
+    border-top: 0.0625rem solid rgb(var(--black-monochrome));
     transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
     
     /* Prevent splitting in half onto the next column */
@@ -300,7 +302,7 @@ body {
     -webkit-column-break-inside: avoid;
     
     /* Text positioning */
-    height: 4rem;
+    height: 3rem;
     display: table;
     width: 100%;
 }
@@ -319,30 +321,38 @@ body {
 	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0s;
 }
 
-#top-bar div.top-bar > ul > li > ul {
+#top-bar div.top-bar > ul > li > ul,
+#top-bar div.mobile-top-bar > ul > li > ul{
 	transform: translate(-50%,-0.3rem);
 }
 
-#top-bar div.top-bar > ul > li:hover > ul, #top-bar div.top-bar > ul > li.sfhover > ul {
+#top-bar div.top-bar > ul > li:hover > ul, 
+#top-bar div.top-bar > ul > li.sfhover > ul,
+#top-bar div.mobile-top-bar > ul > li:hover > ul, 
+#top-bar div.mobile-top-bar > ul > li.sfhover > ul{
 	transform: translate(-50%,0);
 }
 
-#top-bar div.top-bar > ul > li > ul > li:hover {
+#top-bar div.top-bar > ul > li > ul > li:hover,
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover{
 	background: rgba(var(--white-monochrome) , 0.15)
 }
 
-#top-bar div.top-bar > ul > li > ul > li:hover > a {
+#top-bar div.top-bar > ul > li > ul > li:hover > a,
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover > a {
 	text-decoration: none;	
 }
 
-#top-bar div.top-bar > ul > li > ul > li > a {
+#top-bar div.top-bar > ul > li > ul > li > a,
+#top-bar div.mobile-top-bar > ul > li > ul > li > a {
 	background: transparent;
     color: rgb(var(--white-monochrome));
     width: auto;
     height: 100%;
+    font-size: 120%;
     
     /* Text positioning */
-    text-align: left;
+    text-align: center;
     display: table-cell;
     vertical-align: middle;
 }
@@ -366,7 +376,7 @@ body {
 	/* Mobile CSS */
 	
 	#header {
-		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg), linear-gradient(to top, rgb(70, 30, 32) 0%, rgb(78, 0, 12) 30%, rgb(var(--dark-accent)) 100%);
+		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg);
 		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
 		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
 		background-repeat: no-repeat, repeat;
@@ -374,7 +384,6 @@ body {
 		margin: 0;
 		position: sticky;
 		top: -6.75rem;
-		overflow-x: hidden;
 	}
 
 	#header,
@@ -419,7 +428,12 @@ body {
 		margin: 0;
 		padding: 0;
 		width:100vw;
-		background-color: rgb(var(--dark-gray-monochrome));
+		background: linear-gradient(to bottom,
+		rgba(var(--black-monochrome), 1) 0,
+		rgba(var(--gray-monochrome), 1) 0.125rem,
+		rgba(var(--gray-monochrome), 1) calc(3rem - 0.125rem),
+		rgba(var(--black-monochrome), 1) calc(3rem - 0.125rem),
+		rgba(var(--black-monochrome), 1) 3rem);
 	}
 
 	#top-bar .top-bar > ul {
@@ -443,8 +457,19 @@ body {
 	}
 	
 	#top-bar div.mobile-top-bar > ul > li > a {
-		font-size: 125%;	
+		font-size: 125%;
+		background: none;
 	}
+	
+	#top-bar div.mobile-top-bar > ul > li > ul {
+		margin-top: 2.625rem;
+		max-height: calc(100vh -  3rem);
+	}
+	
+	#top-bar div.mobile-top-bar > ul > li > ul {
+		height: 3rem;
+	}
+	
 	#top-bar > div.mobile-top-bar > div.open-menu {
 		width: 3rem;
     	height: 3rem;
@@ -462,16 +487,16 @@ body {
 		top: 10%;
 		left: 85%;
 		z-index: 150;
-		font-family: "Nanum Gothic", san-serif;
-		font-size: 30px;
+		font-family: "Lato", san-serif;
+		font-size: 3em;
 		font-weight: 700;
+		text-decoration: none;
 		width: 100%;
 		height: 100%;
 		line-height: 1.2em;
 		text-align: center;
 		display: inline-block;
 		color: rgb(var(--white-monochrome));
-		background-color: rgb(var(--dark-gray-monochrome));
 	}
 	
 }
