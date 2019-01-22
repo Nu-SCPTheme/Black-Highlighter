@@ -349,9 +349,10 @@ body {
     color: rgb(var(--white-monochrome));
     width: auto;
     height: 100%;
+    font-size: 120%;
     
     /* Text positioning */
-    text-align: left;
+    text-align: center;
     display: table-cell;
     vertical-align: middle;
 }
@@ -459,6 +460,16 @@ body {
 		font-size: 125%;
 		background: none;
 	}
+	
+	#top-bar div.mobile-top-bar > ul > li > ul {
+		margin-top: 2.625rem;
+		max-height: calc(100vh -  3rem);
+	}
+	
+	#top-bar div.mobile-top-bar > ul > li > ul {
+		height: 3rem;
+	}
+	
 	#top-bar > div.mobile-top-bar > div.open-menu {
 		width: 3rem;
     	height: 3rem;
