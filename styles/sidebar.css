@@ -217,7 +217,7 @@
         display: block;
         position: fixed;
         top: 0;
-        left: -25rem;
+        left: calc(-14rem - var(--scrollbar-width));
         height: 100%;
         overflow-y: auto;
         z-index: 10;
@@ -272,7 +272,6 @@
     #skrollr-body:target #side-bar {
         display: block;
         left: 0;
-        width: 75vw;
         box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
         z-index: 10;
         margin: 0;
@@ -292,4 +291,12 @@
         background: rgba(0, 0, 0, 0.3) 0.0625rem 0.0625rem repeat;
         z-index: -1;
     }
+
+    #skrollr-body:target #container {
+        transform: translate(14rem,0);
+    }
+
+		#skrollr-body:target#side-bar::-webkit-scrollbar-track {
+		  background:rgba(var(--white-monochrome),0.2);
+		}
 }
