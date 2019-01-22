@@ -259,19 +259,24 @@
     #side-bar:target .close-menu {
         display: block;
         position: fixed;
-        width: 100%;
+        width: calc(100% - 14rem - var(--scrollbar-width));
         height: 100%;
         top: 0;
-        left: 0;
+        left: auto;
+        right: 0;
         background: rgba(0, 0, 0, 0.3) 0.0625rem 0.0625rem repeat;
         z-index: -1;
     }
     
     /* NEW SIDEBAR */
 
+    #skrollr-body:target {
+    	overflow-x: hidden;
+    }
+
     #skrollr-body:target #side-bar {
         display: block;
-        left: 0;
+        left: -14rem;
         box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
         z-index: 10;
         margin: 0;
@@ -284,7 +289,7 @@
     #skrollr-body:target #side-bar .close-menu {
         display: block;
         position: fixed;
-        width: 100%;
+        width: calc(100% - 14rem);
         height: 100%;
         top: 0;
         left: 0;
