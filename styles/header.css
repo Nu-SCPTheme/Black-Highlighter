@@ -464,10 +464,15 @@ body {
 	#top-bar div.mobile-top-bar > ul > li > ul {
 		margin-top: 2.625rem;
 		max-height: calc(100vh -  3rem);
+		column-count: 3;
 	}
 	
-	#top-bar div.mobile-top-bar > ul > li > ul {
-		height: 3rem;
+	#top-bar div.mobile-top-bar > ul > li > ul > li {
+		max-height: 3rem;
+	}
+	
+	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
+		font-size: calc(var(--base-font-size) * 0.8);
 	}
 	
 	#top-bar > div.mobile-top-bar > div.open-menu {
