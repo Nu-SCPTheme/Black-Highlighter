@@ -305,6 +305,28 @@ body {
     width: 100%;
 }
 
+#top-bar li ul {
+	opacity: 0;
+	visibility: hidden;
+	transform: translate(0,-0.3rem);
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0.2s;
+}
+
+#top-bar li:hover ul, #top-bar li.sfhover ul {
+	visibility: visible,
+	transform: translate(0,0);
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0s;
+}
+
+#top-bar div.top-bar > ul > li > ul {
+	transform: translate(-50%,-0.3rem);
+}
+
+#top-bar div.top-bar > ul > li:hover > ul, #top-bar div.top-bar > ul > li.sfhover > ul {
+	transform: translate(-50%,0);
+}
+
 #top-bar div.top-bar > ul > li > ul > li:hover {
 	background: rgba(var(--white-monochrome) , 0.15)
 }
@@ -324,7 +346,6 @@ body {
     display: table-cell;
     vertical-align: middle;
 }
-
 
 @media only screen and (max-width: 768px) {
 	#header {
