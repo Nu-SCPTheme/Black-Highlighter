@@ -418,6 +418,12 @@ body {
 		margin: 0;
 		padding: 0;
 		width:100vw;
+		background: linear-gradient(to bottom,
+		rgba(var(--black-monochrome), 1) 7.5rem,
+		rgba(var(--gray-monochrome), 1) 7.625rem,
+		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--black-monochrome), 1) 100%);
 	}
 
 	#top-bar .top-bar > ul {
@@ -473,12 +479,6 @@ body {
 		text-align: center;
 		display: inline-block;
 		color: rgb(var(--white-monochrome));
-		background-color: linear-gradient(to bottom,
-		rgba(var(--black-monochrome), 1) 7.5rem,
-		rgba(var(--gray-monochrome), 1) 7.625rem,
-		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-		rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
-		rgba(var(--black-monochrome), 1) 100%);
 	}
 	
 }
