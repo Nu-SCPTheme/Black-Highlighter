@@ -15,8 +15,8 @@ body {
 		rgb(70, 30, 32) 0%,
 		rgb(78, 0, 12) 30%,
 		rgb(var(--dark-accent)) 100%),
-		linear-gradient(to bottom,
 		/* creates the grey part of the header */
+		linear-gradient(to bottom,
 		rgba(var(--black-monochrome), 1) 7.5rem,
 		rgba(var(--gray-monochrome), 1) 7.625rem,
 		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
@@ -235,8 +235,7 @@ body {
 }
 
 
-#top-bar div.top-bar > ul > li > a,
-#top-bar div.mobile-top-bar > ul > li > a {
+#top-bar div.top-bar > ul > li > a {
     padding: 0;
     width: 100%;
     height: 100%;
@@ -291,7 +290,7 @@ body {
     float: none;
     padding: 0;
     /*box-shadow: 0 0.0625rem 0 0 rgba(var(--black-monochrome));*/
-    border-top: 1px solid rgb(var(--black-monochrome));
+    border-top: 0.0625rem solid rgb(var(--black-monochrome));
     transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
     
     /* Prevent splitting in half onto the next column */
@@ -366,7 +365,7 @@ body {
 	/* Mobile CSS */
 	
 	#header {
-		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg), linear-gradient(to top, rgb(70, 30, 32) 0%, rgb(78, 0, 12) 30%, rgb(var(--dark-accent)) 100%);
+		background-image: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg);
 		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
 		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
 		background-repeat: no-repeat, repeat;
@@ -419,7 +418,6 @@ body {
 		margin: 0;
 		padding: 0;
 		width:100vw;
-		background-color: rgb(var(--dark-gray-monochrome));
 	}
 
 	#top-bar .top-bar > ul {
@@ -437,6 +435,8 @@ body {
     	left: 0;
     	align-items: center;
 		z-index: 9999;
+		border-top: 0.0625rem solid rgb(var(--black-monochrome));
+    	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	}
 	#top-bar div.mobile-top-bar > ul {
 		width: 100%;	
@@ -471,7 +471,12 @@ body {
 		text-align: center;
 		display: inline-block;
 		color: rgb(var(--white-monochrome));
-		background-color: rgb(var(--dark-gray-monochrome));
+		background-color: linear-gradient(to bottom,
+		rgba(var(--black-monochrome), 1) 7.5rem,
+		rgba(var(--gray-monochrome), 1) 7.625rem,
+		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--black-monochrome), 1) 100%);
 	}
 	
 }
