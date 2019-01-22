@@ -482,27 +482,25 @@ body {
     	display: flex;
 	}
 	#top-bar > div.mobile-top-bar > div.open-menu > p {
-		display: inline-block;
-    	width: 100%;
-    	height: 100%;
-    	padding: 0;
-    	margin: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		align-content: stretch;
+		justify-items: stretch;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
 	}
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
-		position: static;
-		top: 10%;
-		left: 85%;
-		z-index: 150;
 		font-family: "Lato", san-serif;
 		font-size: 3em;
 		font-weight: 700;
 		text-decoration: none;
-		width: 100%;
-		height: 100%;
-		line-height: 1.2em;
 		text-align: center;
 		display: inline-block;
 		color: rgb(var(--white-monochrome));
+		flex: 1;
 	}
 	
 }
