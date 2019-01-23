@@ -239,6 +239,13 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
     }
+	
+	    /* We've got two different mobile sidebars going on.
+    The first is "#side-bar:target". This is Wikidot's default.
+    The second is "#skrollr-body:target #side-bar". This gives us a higher level of control over what happens when the sidebar is opened.
+    Both need to be supported, in case certain wikis are unwilling to change the URL in nav:top. */
+    
+    /* DEFAULT SIDEBAR */
 
     #side-bar .close-menu {
 		display: block;
@@ -246,21 +253,16 @@
 		width: 100%;
 		height: 100%;
 		top: 0;
-		margin-left: calc(14rem + var(--scrollbar-width));
-		background: rgba(0, 0, 0, 0.3) 0.0625rem 0.0625rem repeat;
+		left: 0;
+		margin-left: calc(var(--scrollbar-width));
+		padding-right: calc(14rem + var(--scrollbar-width));
+		background: rgba(var(--black-monochrome),0.3) 0.0625rem 0.0625rem repeat;
 		z-index: -1;
 		visibility: hidden;
 		opacity: 0;
 		pointer-events: none;
 		transition: all var(--sidebar-transition-timing);
     }
-    
-    /* We've got two different mobile sidebars going on.
-    The first is "#side-bar:target". This is Wikidot's default.
-    The second is "#skrollr-body:target #side-bar". This gives us a higher level of control over what happens when the sidebar is opened.
-    Both need to be supported, in case certain wikis are unwilling to change the URL in nav:top. */
-    
-    /* DEFAULT SIDEBAR */
 
     #side-bar:target {
         display: block;
@@ -279,6 +281,7 @@
 		width: calc(100% - 14rem - var(--scrollbar-width));
 		height: 100%;
 		margin-left: calc(14rem + var(--scrollbar-width));
+		padding-right: 0;
 		visibility: visible;
 		pointer-events: auto;
 		opacity: 1;
