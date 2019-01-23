@@ -243,15 +243,33 @@
 
 /* Sigma Overwrite Specific Styles */
 
-#side-bar > div:nth-child(7) {
-	background-color: rgba(204, 104, 104, 0.15) !important;
+#side-bar > div[style="background-color: #e5e5ff;"] {
 	padding: 1rem 0;
 	border: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+}
+
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item {
+	height: auto;
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > a {
+	width: 2rem;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: none;
+}
+
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > a > img {
+	display: block;
 }
 
 @media only screen and (max-width: 768px) {	
@@ -306,10 +324,10 @@
     #side-bar:target {
         display: block;
         left: 0;
-        box-shadow: 8px 0 17px 2px rgba(0,0,0,0.14), 3px 0 14px 2px rgba(0,0,0,0.12), 5px 0 5px -3px rgba(0,0,0,0.2);
+        box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
         z-index: 10;
         margin: 0;
-		    width: 17em;
+		width: 17em;
     }
 
     #side-bar:target + #main-content {
@@ -341,7 +359,7 @@
     #skrollr-body:target #side-bar {
         display: block;
         left: -14rem;
-        box-shadow: inset -24px 0 38px 3px rgba(0,0,0,0.1), inset -9px 0 46px 8px rgba(0,0,0,0.4), inset -11px 0 15px -7px rgba(0,0,0,0.3);
+        box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
         z-index: 10;
         margin: 0;
     }
@@ -356,7 +374,6 @@
         visibility: visible;
         pointer-events: auto;
         opacity: 1;
-        left: auto;
     }
 
     #container {
