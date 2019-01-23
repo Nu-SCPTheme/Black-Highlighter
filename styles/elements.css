@@ -204,12 +204,12 @@ width:300px;
 .scp-image-block img
 {
   border:0;
-  min-width:100%;
+  min-width:100% !important;
 }
 
 .scp-image-caption
 {
-  min-width:100%;
+  min-width:100% !important;
 }
 
 .scp-image-block .scp-image-caption
@@ -231,14 +231,14 @@ width:300px;
 div.block-right,
 div.block-left
 {
-  min-width:30%;
+  min-width:30% !important;
 }
 
 /* Mobile Elements */
 
 @media only screen and (max-width: 768px) {
     div.block-right, div.block-left {
-        min-width: 40%;
+        min-width: 40% !important;
         margin: 0 auto;
     }
 }
