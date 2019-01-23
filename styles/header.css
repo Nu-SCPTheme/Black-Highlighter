@@ -516,12 +516,14 @@ body {
 		text-decoration: none;
 		/* width: 100%; */
 		text-align: center;
-		display: block;
-		color: rgb(var(--white-monochrome));
+		display: block !important;
+		color: rgb(var(--white-monochrome))!important;
 		flex: 2 0 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		border: none !important;
+		background-color: transparent !important;
 	}
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a:hover {
 		background-color: rgb(var(--dark-gray-monochrome));
