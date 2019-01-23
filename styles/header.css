@@ -241,6 +241,10 @@ body {
     background-color: rgb(var(--dark-gray-monochrome));
 }
 
+#top-bar div.top-bar > ul > li:hover > a,
+#top-bar div.mobile-top-bar > ul > li:hover > a {
+    background-color: transparent;
+}
 
 #top-bar div.top-bar > ul > li > a,
 #top-bar div.mobile-top-bar > ul > li > a {
@@ -258,7 +262,7 @@ body {
 #top-bar div.top-bar > ul > li > ul,
 #top-bar div.mobile-top-bar > ul > li > ul{
     border: solid 0.063rem rgb(var(--black-monochrome));
-    background: rgb(var(--dark-gray-monochrome));
+    background: rgba(var(--dark-gray-monochrome),0.25);
     box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.5);
     border: 1px solid rgb(var(--black-monochrome));
     border-top: none;
