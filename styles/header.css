@@ -244,7 +244,7 @@ body {
 
 #top-bar div.top-bar > ul > li:hover > a,
 #top-bar div.mobile-top-bar > ul > li:hover > a {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 #top-bar div.top-bar > ul > li > a,
@@ -256,8 +256,10 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: rgb(var(--white-monochrome));
+    color: rgb(var(--white-monochrome)) !important;
+	background-color: transparent !important;
     white-space: pre;
+	border: none !important;
 }
 
 #top-bar div.top-bar > ul > li > ul,
