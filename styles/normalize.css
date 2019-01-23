@@ -1,349 +1,1207 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+@charset "utf-8";
+ #content-wrap {
+     position: unset;
+     margin: unset;
+     max-width: unset;
+     min-height: unset;
+     height: unset;
+     height: unset;
 }
-
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-  margin: 0;
+ h1, #page-title {
+     color: unset;
+     padding: unset;
+     margin: unset;
+     font-weight: unset;
 }
-
-/**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
+ h1 {
+     margin-top: unset;
+     padding: unset;
+     font-weight: unset;
 }
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+ h2, h3, h4, h5, h6, h7 {
+     margin: unset;
+     padding: unset;
+     letter-spacing: unset;
 }
-
-/* Grouping content
-   ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+ #page-title {
+     border-color: unset;
 }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+ ul {
+    /* list-style-image: unset;
+     */
+     list-style: unset;
 }
-
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
+ #top-bar ul {
+    /* list-style-image: unset;
+    /* IE ONLY! IF list-style-image IS SET */
 }
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+ li, p {
+     line-height: unset;
 }
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
+ a {
+     color: unset;
+     text-decoration: unset;
+     background: unset;
 }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+ #side-bar a:visited {
+     color: unset;
 }
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
+ a:visited {
+     color: unset;
 }
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+ a.newpage {
+     color: unset;
+     text-decoration: unset;
+     background: unset;
 }
-
-sub {
-  bottom: -0.25em;
+ a:hover {
+     text-decoration: unset;
+     background-color: unset;
 }
-
-sup {
-  top: -0.5em;
+ .form-control {
+     width: unset;
 }
-
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-  border-style: none;
+/* GLOBAL WIDTH */
+ #header, #top-bar {
+     width: unset;
+     max-width: unset;
+     margin: unset;
 }
-
-/* Forms
-   ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+ #top-bar {
+     width: unset;
+     margin: unset;
 }
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
-  overflow: visible;
+ .mobile-top-bar {
+     display: unset;
+     position: unset;
+     left: unset;
+     bottom: unset;
+     z-index: unset;
 }
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-  text-transform: none;
+ body {
+     background-color: unset;
+     font-size: unset;
+     color: unset;
 }
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
+ div#container-wrap {
+     background: unset;
 }
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+ sup {
+     vertical-align: unset;
+     position: unset;
+     top: unset;
 }
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+/* HEADER */
+ #header {
+     height: unset;
+     position: unset;
+     z-index: unset;
+     padding-bottom: unset;
+    /* FOR MENU */
+     background: unset;
 }
-
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
+ #search-top-box {
+     position: unset;
+     top: unset;
+     right: unset;
+     width: unset;
+     text-align: unset;
 }
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+ #search-top-box-input {
+     border: unset;
+     border-radius: unset;
+     color: unset;
+     background-color: unset;
+     box-shadow: unset;
 }
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
+ #search-top-box-input:hover, #search-top-box-input:focus {
+     border: unset;
+     color: unset;
+     background-color: unset;
+     box-shadow: unset;
 }
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-  overflow: auto;
+ #search-top-box-form input[type=submit] {
+     border: unset;
+     border-radius: unset;
+     padding: unset;
+     font-size: unset;
+     font-weight: unset;
+     color: unset;
+     background-color: unset;
+     background: unset;
+     box-shadow: unset;
+     cursor: unset;
 }
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+ #search-top-box-form input[type=submit]:hover, #search-top-box-form input[type=submit]:focus {
+     border: unset;
+     color: unset;
+     text-shadow: unset;
+     background: unset;
+     box-shadow: unset;
 }
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+ #login-status {
+     color: unset;
+     font-size: unset;
+     z-index: unset;
 }
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+ #login-status a {
+     background: unset;
+     color: unset;
 }
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+ #login-status ul a {
+     color: unset;
+     background: unset;
 }
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+ #account-topbutton {
+     background: unset;
+     color: unset;
 }
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
+ .printuser img.small {
+     margin-right: unset;
 }
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-  display: list-item;
+ #header h1 {
+     margin-left: unset;
+     padding: unset;
+     float: unset;
+     max-height: unset;
 }
-
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
+ #header h2 {
+     margin-left: unset;
+     padding: unset;
+     clear: unset;
+     float: unset;
+     font-size: unset;
+     max-height: unset;
 }
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-  display: none;
+ #header h1 a {
+     display: unset;
+     margin: unset;
+     padding: unset;
+     line-height: unset;
+     max-height: unset;
+     color: unset;
+     background: unset;
+     font-family: unset;
+     font-size: unset;
+     text-decoration: unset;
+     text-shadow: unset;
+     letter-spacing: unset;
+}
+ #header h2 span {
+     display: unset;
+     margin: unset;
+     padding: unset;
+     line-height: unset;
+     max-height: unset;
+     font-weight: unset;
+     color: unset;
+     text-shadow: unset;
+     text-shadow: unset;
+}
+/* TOP MENU */
+ #top-bar {
+     position: unset;
+     z-index: unset;
+     top: unset;
+     height: unset;
+     line-height: unset;
+     padding: unset;
+     z-index: unset;
+     font-size: unset;
+}
+ #top-bar ul {
+     float: unset;
+}
+ #top-bar li {
+     margin: unset;
+}
+ #top-bar a {
+     color: unset;
+     background: unset;
+}
+ #top-bar ul li {
+     border: unset;
+     position: unset;
+}
+ #top-bar ul li ul {
+     border: unset;
+     box-shadow: unset;
+     border-top: unset;
+}
+ #top-bar ul li a {
+     border-left: unset;
+     border-right: unset;
+     text-decoration: unset;
+     padding-top: unset;
+     padding-bottom: unset;
+     line-height: unset;
+     max-height: unset;
+     overflow: unset;
+}
+ #top-bar ul li.sfhover a, #top-bar ul li:hover a {
+     background: unset;
+     color: unset;
+     border-left: unset;
+     border-right: unset;
+}
+ #top-bar ul li.sfhover ul li a, #top-bar ul li:hover ul li a {
+     border-width: unset;
+     width: unset;
+     border-top: unset;
+     line-height: unset;
+     height: unset;
+     max-height: unset;
+     padding-top: unset;
+     padding-bottom: unset;
+}
+ #top-bar ul li.sfhover a:hover, #top-bar ul li:hover a:hover {
+     background: unset;
+     text-decoration: unset;
+}
+ #top-bar ul li ul {
+     border-width: unset;
+     width: unset;
+}
+ #top-bar ul li ul li, #top-bar ul li ul li.sfhover, #top-bar ul li ul li, #top-bar ul li ul li:hover {
+     border-width: unset;
+}
+ #top-bar ul li ul li a {
+     border-width: unset;
+}
+ #top-bar ul li ul a, #top-bar a:hover {
+     color: unset;
+}
+ .top-bar ul li:last-of-type ul {
+     right: unset;
+}
+/* IE7 HACK */
+ #top-bar ul > li > ul {
+     *margin-top: unset;
+}
+/* SIDE MENU */
+ #side-bar {
+     clear: unset;
+     float: unset;
+     position: unset;
+     top: unset;
+     left: unset;
+     width: unset;
+     padding: unset;
+     border: unset;
+     display: unset;
+}
+ #side-bar .side-block {
+     padding: unset;
+     border: unset;
+     border-radius: unset;
+     box-shadow: unset;
+     background: unset;
+     margin-bottom: unset;
+}
+ #side-bar .side-area {
+     padding: unset;
+}
+ #side-bar .heading {
+     color: unset;
+     border-bottom: unset;
+     padding-left: unset;
+     margin-top: unset;
+     margin-bottom: unset;
+     font-size: unset;
+     font-weight: unset;
+}
+ #side-bar p {
+     margin: unset;
+}
+ #side-bar div.menu-item {
+     margin: unset;
+}
+ #side-bar div.menu-item img {
+     width: unset;
+     height: unset;
+     border: unset;
+     margin-right: unset;
+     position: unset;
+     bottom: unset;
+}
+ #side-bar div.menu-item a {
+     font-weight: unset;
+}
+ #side-bar div.menu-item.inactive img {
+     opacity: unset;
+}
+ #side-bar div.menu-item.inactive a {
+     color: unset;
+}
+ #side-bar div.menu-item .sub-text {
+     font-size: unset;
+     color: unset;
+}
+ #side-bar div.menu-item.sub-item {
+}
+ #side-bar .collapsible-block-folded {
+     background: unset;
+}
+ #side-bar .collapsible-block-link {
+     margin-left: unset;
+     font-weight: unset;
+}
+ #side-bar .collapsible-block-unfolded-link {
+     border-bottom: unset;
+}
+ #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
+     margin-top: unset;
+     margin-bottom: unset;
+     font-size: unset;
+     color: unset;
+}
+ #side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover {
+     color: unset;
+     text-decoration: unset;
+}
+ #side-bar ul {
+     list-style-type: unset;
+     padding: unset;
+}
+/* CONTENT */
+ #main-content {
+     margin: unset;
+     padding: unset;
+     position: unset;
+}
+/* ACTUALLY HIDE HIDDEN TAGS */
+ #main-content .page-tags a[href^="/system:page-tags/tag/_"] {
+     display: unset;
+}
+ #breadcrumbs {
+     margin: unset;
+     font-weight: unset;
+}
+/* YUI-TABS */
+ .yui-navset .yui-content {
+     background-color: unset;
+}
+ .yui-navset .yui-nav a, .yui-navset .yui-navset-top .yui-nav a {
+     background-color: unset;
+     background-image: unset;
+}
+ .yui-navset .yui-nav .selected a, .yui-navset .yui-nav .selected a:focus, 
+/* no focus effect for selected */
+ .yui-navset .yui-nav .selected a:hover {
+    /* no hover effect for selected */
+     background: unset;
+    /* selected tab background */
+     color: unset;
+}
+ .yui-navset .yui-nav a:hover, .yui-navset .yui-nav a:focus {
+     background: unset;
+     text-decoration: unset;
+}
+ .yui-navset .yui-nav, .yui-navset .yui-navset-top .yui-nav {
+     border-color: unset;
+}
+ .yui-navset .yui-nav, .yui-navset .yui-navset-top .yui-nav {
+     border-color: unset;
+}
+ .yui-navset li {
+     line-height: unset;
+}
+/* FOOTER */
+ #footer {
+     clear: unset;
+     font-size: unset;
+     background: unset;
+     color: unset;
+     margin-top: unset;
+     padding: unset;
+}
+ #footer .options {
+     visibility: unset;
+     display: unset;
+     float: unset;
+     width: unset;
+     font-size: unset;
+     text-align: unset;
+}
+ #footer a {
+     color: unset;
+     background: unset;
+}
+/* SOME NICE BOXES */
+ div.sexy-box {
+     background: unset;
+     border: unset;
+     padding: unset;
+     margin: unset;
+     overflow: unset;
+}
+ div.sexy-box div.image-container img {
+     margin: unset;
+     padding: unset;
+     border: unset;
+}
+/* Custom page content classes */
+ #page-content {
+     min-height: unset;
+}
+ .unmargined > p {
+     margin: unset;
+     line-height: unset;
+}
+ .content-panel {
+     border: unset;
+     border-radius: unset;
+     background-color: unset;
+     margin: unset;
+     box-shadow: unset;
+     box-shadow: unset;
+}
+ .content-panel.standalone {
+     background: unset;
+}
+ .content-panel.series {
+     padding: unset;
+     margin-bottom: unset;
+}
+ .content-panel.centered {
+     text-align: unset;
+}
+ .content-panel.left-column {
+     float: unset;
+     width: unset;
+}
+ .content-panel.right-column {
+     float: unset;
+     width: unset;
+}
+ .content-panel .panel-heading {
+     padding: unset;
+     color: unset;
+     font-size: unset;
+     font-weight: unset;
+     text-shadow: unset;
+}
+ .content-panel .panel-heading > p, .content-panel .panel-footer > p {
+     margin: unset;
+}
+ .content-panel .panel-body {
+     padding: unset;
+     background: unset;
+    /* box-shadow: unset; */
+}
+ .content-panel .panel-footer {
+     padding: unset;
+     color: unset;
+     font-size: unset;
+     font-weight: unset;
+     text-align: unset;
+     text-shadow: unset;
+}
+ .content-panel .panel-footer a {
+     color: unset;
+}
+ .content-panel .content-toc {
+     float: unset;
+     padding: unset;
+     background-color: unset;
+     border: unset;
+     border-radius: unset;
+     margin: unset;
+     white-space: unset;
+     box-shadow: unset;
+}
+ .alternate:nth-child(even) {
+     background-color: unset;
+}
+/* Page Rating Module Customizations */
+ .page-rate-widget-box {
+     display: unset;
+     border-radius: unset;
+     box-shadow: unset;
+     margin-bottom: unset;
+     margin-right: unset;
+}
+ .page-rate-widget-box .rate-points {
+     background-color: unset;
+     border: unset;
+     border-right: unset;
+     border-radius: unset;
+}
+ .page-rate-widget-box .rateup, .page-rate-widget-box .ratedown {
+     background-color: unset;
+     border-top: unset;
+     border-bottom: unset;
+     font-weight: unset;
+}
+ .page-rate-widget-box .rateup a, .page-rate-widget-box .ratedown a {
+     background: unset;
+     color: unset;
+     padding: unset;
+     margin: unset;
+}
+ .page-rate-widget-box .rateup a:hover, .page-rate-widget-box .ratedown a:hover {
+     background: unset;
+     color: unset;
+     text-decoration: unset;
+}
+ .page-rate-widget-box .cancel {
+     background-color: unset;
+     border: unset;
+     border-left: unset;
+     border-radius: unset;
+}
+ .page-rate-widget-box .cancel a {
+     background: unset;
+     text-transform: unset;
+     color: unset;
+}
+ .page-rate-widget-box .cancel a:hover {
+     border-radius: unset;
+     background: unset;
+     color: unset;
+     text-decoration: unset;
+}
+/* Heritage Collection Rating Module */
+ .heritage-rating-module {
+     display: unset;
+     background-color: unset;
+     padding: unset;
+     border: unset;
+     border-radius: unset;
+     box-shadow: unset;
+     margin-right: unset;
+     margin-bottom: unset;
+}
+ .heritage-rating-module .page-rate-widget-box {
+     box-shadow: unset;
+     margin-bottom: unset;
+     margin-right: unset;
+}
+ .heritage-rating-module .heritage-emblem {
+     float: unset;
+     position: unset;
+     top: unset;
+     left: unset;
+     height: unset;
+     width: unset;
+     overflow: unset;
+     margin-right: unset;
+}
+ .heritage-rating-module .heritage-emblem img {
+     width: unset;
+     height: unset;
+     border: unset;
+}
+/* Fixes for multi-line page tags */
+ #main-content .page-tags {
+     margin: unset;
+     padding: unset;
+}
+ #main-content .page-tags span {
+     display: unset;
+     padding: unset;
+     max-width: unset;
+}
+ #main-content .page-tags a {
+     display: unset;
+     white-space: unset;
+}
+/* Standard Image Block */
+ .scp-image-block {
+     border: unset;
+     box-shadow: unset;
+     width: unset;
+}
+ .scp-image-block.block-right {
+     float: unset;
+     clear: unset;
+     margin: unset;
+}
+ .scp-image-block.block-left {
+     float: unset;
+     clear: unset;
+     margin: unset;
+}
+ .scp-image-block.block-center {
+     margin-right: unset;
+     margin-left: unset;
+}
+ .scp-image-block img {
+     border: unset;
+     width: unset;
+}
+ .scp-image-block .scp-image-caption {
+     background-color: unset;
+     border-top: unset;
+     padding: unset;
+     font-size: unset;
+     font-weight: unset;
+     text-align: unset;
+     width: unset;
+}
+ .scp-image-block > p {
+     margin: unset;
+}
+ .scp-image-block .scp-image-caption > p {
+     margin: unset;
+     padding: unset;
+}
+/* Wikiwalk Navigation */
+ .footer-wikiwalk-nav {
+     font-weight: unset;
+     font-size: unset;
+}
+/* Forum Customizations */
+ .forum-thread-box .description-block {
+     padding: unset;
+     border-radius: unset;
+     box-shadow: unset;
+}
+ .thread-container .post .head {
+     padding: unset;
+     background-color: unset;
+     background: unset;
+     box-shadow: unset;
+     border-radius: unset;
+}
+/* Hide Forum Signatures */
+ .signature {
+     display: unset;
+}
+/* Ruby by Nanimono Demonai */
+ .ruby, ruby {
+     display: unset;
+     text-align: unset;
+     white-space: unset;
+     line-height: unset;
+     height: unset;
+     vertical-align: unset;
+}
+ .rt, rt {
+     display: unset;
+     font-size: unset;
+     line-height: unset;
+     text-align: unset;
+     white-space: unset;
+}
+/* Keycap */
+ .keycap {
+     border: unset;
+     border-color: unset;
+     border-bottom-width: unset;
+     -moz-border-radius: unset;
+     -webkit-border-radius: unset;
+     border-radius: unset;
+     background-color: unset;
+     padding: unset;
+     font-family: unset;
+     font-size: unset;
+     white-space: unset;
+}
+/* tag style */
+ .tags {
+     display: unset;
+     margin: unset;
+     padding: unset;
+     height: unset;
+     line-height: unset;
+     font-size: unset;
+     background: unset;
+     color: unset;
+     text-decoration: unset;
+     -moz-border-radius-bottomright: unset;
+     -webkit-border-bottom-right-radius: unset;
+     border-bottom-right-radius: unset;
+     -moz-border-radius-topright: unset;
+     -webkit-border-top-right-radius: unset;
+     border-top-right-radius: unset;
+}
+ .tags:before {
+     content: unset;
+     padding: unset;
+     float: unset;
+     position: unset;
+     top: unset;
+     left: unset;
+     width: unset;
+     height: unset;
+     border-color: unset;
+     border-style: unset;
+     border-width: unset;
+}
+ .tags:after {
+     content: unset;
+     position: unset;
+     top: unset;
+     left: unset;
+     float: unset;
+     width: unset;
+     height: unset;
+     -moz-border-radius: unset;
+     -webkit-border-radius: unset;
+     border-radius: unset;
+     background: unset;
+     -moz-box-shadow: unset;
+     -webkit-box-shadow: unset;
+     box-shadow: unset;
+}
+/* Display Black Block by Nanimono Demonai */
+ .bblock {
+     color: unset;
+     background-color: unset;
+     transition: unset;
+     text-decoration: unset;
+}
+ .bblock:hover {
+     background-color: unset;
+     color: unset;
+     text-decoration: unset;
+}
+ .dblock {
+     color: unset;
+     background-color: unset;
+     transition: unset;
+     text-decoration: unset;
+}
+ .dblock:hover {
+     background-color: unset;
+     text-decoration: unset;
+}
+/* 2011-11-13 Minobe Hiroyuki @ Marguerite Site www.marguerite.jp/Nihongo/WWW/CSSTips/EmphasizeDots-CSS3.html Edited for the SCP Foundation by Nanimono_Demonai */
+ .emph {
+     text-emphasis-style: unset;
+     -webkit-text-emphasis-style: unset;
+}
+/* For FireFox */
+ @-moz-document url-prefix() {
+     .emph {
+        /* For the environments which comply with CSS3. */
+         font-family: unset;
+         font-style: unset;
+         font-weight: unset;
+         background-image: unset;
+         background-repeat: unset;
+         padding: unset;
+         background-color: unset;
+         background-clip: unset;
+         background-size: unset;
+    }
+}
+/* For IE10 */
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+     .emph {
+        /* For the environments which comply with CSS3. */
+         font-family: unset;
+         font-style: unset;
+         font-weight: unset;
+         background-image: unset;
+         background-repeat: unset;
+         padding: unset;
+         background-color: unset;
+         background-clip: unset;
+         background-size: unset;
+    }
+}
+/* viewport */
+ @viewport {
+     width: unset;
+     zoom: unset;
+}
+/* IE viewport */
+ @-ms-viewport {
+     width: unset;
+     zoom: unset;
+}
+/* opera viewport */
+ @-o-viewport {
+     width: unset;
+     zoom: unset;
+}
+/* chrome viewport - maybe it isn't work... */
+ @-webkit-viewport {
+     width: unset;
+     zoom: unset;
+}
+/* firefox viewport - maybe it isn't work too... */
+ @-moz-viewport {
+     width: unset;
+     zoom: unset;
+}
+/* webkit scrollbar */
+ ::-webkit-scrollbar {
+     width: unset;
+    /* for vertical scrollbars */
+     height: unset;
+    /* for horizontal scrollbars */
+     border: unset;
+     border-round: unset;
+}
+ ::-webkit-scrollbar-track {
+     background: unset;
+}
+ ::-webkit-scrollbar-thumb {
+     background: unset;
+}
+ .page-source {
+     word-break: unset;
+}
+/* Responsive Web Design */
+ img, embed, video, object, iframe, table {
+     max-width: unset;
+}
+ #page-content div, #page-content div table {
+     max-width: unset;
+}
+ #edit-page-comments {
+     width: unset;
+}
+/* basic Query for mobile devices */
+ @media (max-width: 767px) {
+     .owindow {
+         min-width: unset;
+         max-width: unset;
+    }
+     .modal-body .table, .modal-body .table ~ div {
+         float: unset;
+    }
+     .owindow .button-bar {
+         float: unset;
+    }
+     .owindow div a.btn-primary {
+         width: unset;
+         float: unset;
+    }
+     .mobile-top-bar ul li:last-of-type ul {
+         right: unset;
+    }
+     span, a {
+         word-break: unset;
+    }
+}
+/* Mobile Media Query */
+ @media (max-width: 479px) {
+     #search-top-box-input {
+         display: unset;
+    }
+     #page-content {
+         font-size: unset;
+    }
+     #main-content {
+         margin: unset;
+    }
+     #recent-posts-category {
+         width: unset;
+    }
+     #header, .mobile-top-bar {
+         max-width: unset;
+    }
+     #side-bar {
+         width: unset;
+         position: unset;
+    }
+     .top-bar {
+         display: unset;
+    }
+     .mobile-top-bar {
+         display: unset;
+         padding: unset;
+    }
+     .page-options-bottom a {
+         padding: unset;
+    }
+     #header h1 a {
+         font-size: unset;
+    }
+     blockquote {
+         margin: unset;
+    }
+     .license-area {
+         font-size: unset;
+    }
+     #header {
+         background-position: unset;
+         background-size: unset;
+    }
+     #header h1, #header h2 {
+         margin-left: unset;
+    }
+     table.form td, table.form th {
+         float: unset;
+    }
+    /* td.title {
+         width: unset;
+    }
+     */
+     td.name {
+         width: unset;
+    }
+     table.form td, table.form th {
+         padding: unset;
+    }
+     #edit-page-title {
+         max-width: unset;
+    }
+     .content-panel.left-column, .content-panel.right-column {
+         width: unset;
+         float: unset;
+    }
+     #page-content div, #page-content div table {
+         clear: unset;
+    }
+     #page-content div.title {
+         word-break: unset;
+    }
+}
+/* Note Media Query */
+ @media (min-width: 480px) and (max-width: 580px) {
+     #search-top-box-input {
+         width: unset;
+    }
+     #main-content {
+         margin: unset;
+    }
+     #header, .mobile-top-bar {
+         max-width: unset;
+    }
+     #side-bar {
+         width: unset;
+         position: unset;
+    }
+     .top-bar {
+         display: unset;
+    }
+     .mobile-top-bar {
+         display: unset;
+    }
+     .page-options-bottom a {
+         padding: unset;
+    }
+     #header h1 a {
+         font-size: unset;
+    }
+     blockquote {
+         margin: unset;
+    }
+     .license-area {
+         font-size: unset;
+    }
+     #header {
+         background-position: unset;
+         background-size: unset;
+    }
+     #header h1, #header h2 {
+         margin-left: unset;
+    }
+    /* td.title {
+         width: unset;
+    }
+     */
+     #page-content div.title {
+         word-break: unset;
+    }
+     td.name {
+         width: unset;
+    }
+     .content-panel.left-column, .content-panel.right-column {
+         width: unset;
+         float: unset;
+    }
+     #page-content div, #page-content div table {
+         clear: unset;
+    }
+}
+/* Mini Tablet Media Query */
+ @media (min-width: 581px) and (max-width: 767px) {
+     #search-top-box-input {
+         width: unset;
+    }
+     #side-bar {
+         width: unset;
+         position: unset;
+    }
+     #main-content {
+         margin: unset;
+    }
+     #header, .mobile-top-bar {
+         max-width: unset;
+    }
+     .top-bar {
+         display: unset;
+    }
+     .mobile-top-bar {
+         display: unset;
+    }
+     .page-options-bottom a {
+         padding: unset;
+    }
+     #header h1 a {
+         font-size: unset;
+    }
+     .license-area {
+         font-size: unset;
+    }
+     #header {
+         background-position: unset;
+         background-size: unset;
+    }
+     #header h1, #header h2 {
+         margin-left: unset;
+    }
+}
+/* Tablet Media Query */
+ @media (min-width: 768px) and (max-width: 979px) {
+     #main-content {
+         margin: unset;
+    }
+     #header, #top-bar #side-bar {
+         max-width: unset;
+    }
+     .top-bar li {
+         margin: unset;
+    }
+     #top-bar ul li.sfhover ul li a, #top-bar ul li:hover ul li a {
+         width: unset;
+    }
+     .page-options-bottom a {
+         padding: unset;
+    }
+     #header h1 a {
+         font-size: unset;
+    }
+     .license-area {
+         font-size: unset;
+    }
+     #header {
+         background-position: unset;
+         background-size: unset;
+    }
+     #header h1, #header h2 {
+         margin-left: unset;
+    }
+     .content-panel.left-column, .content-panel.right-column {
+         width: unset;
+         float: unset;
+    }
+     #page-content div, #page-content div table {
+         clear: unset;
+    }
+}
+/* Desktop Media Query ----------- @media (min-width: 980px) and (max-width: 1399px) {
+}
+ ------------------------------------------ */
+/* Wide Monitor Media Query ----- @media (min-width: 1400px) {
+}
+ ------------------------------------------ */
+/* off-canvas */
+ .close-menu {
+     display: unset;
+}
+ @media (max-width: 767px) {
+     .page-history tbody tr td:last-child {
+         width: unset;
+    }
+     .owindow {
+         min-width: unset;
+         max-width: unset;
+    }
+     .modal-body .table, .modal-body .table ~ div {
+         float: unset;
+    }
+     .owindow .button-bar {
+         float: unset;
+    }
+     .owindow div .btn-primary {
+         width: unset;
+         float: unset;
+    }
+     .owindow div .btn-primary ~ div {
+         width: unset;
+    }
+     .yui-navset {
+         z-index: unset;
+    }
+     #navi-bar, #navi-bar-shadow {
+         display: unset;
+    }
+     .open-menu a {
+         position: unset;
+         top: unset;
+         left: unset;
+         z-index: unset;
+         font-family: unset;
+         font-size: unset;
+         font-weight: unset;
+         width: unset;
+         height: unset;
+         line-height: unset;
+         text-align: unset;
+         border: unset;
+         background-color: unset;
+         border-radius: unset;
+         color: unset;
+    }
+     .open-menu a:hover {
+         text-decoration: unset;
+         -webkit-box-shadow: unset;
+         -moz-box-shadow: unset;
+         -ms-box-shadow: unset;
+         -o-box-shadow: unset;
+         box-shadow: unset;
+    }
+     #main-content {
+         max-width: unset;
+         margin: unset;
+         padding: unset;
+         -webkit-transition: unset;
+         -moz-transition: unset;
+         -ms-transition: unset;
+         -o-transition: unset;
+         transition: unset;
+    }
+     #side-bar {
+         display: unset;
+         position: unset;
+         top: unset;
+         left: unset;
+         width: unset;
+         height: unset;
+         background-color: unset;
+         overflow-y: unset;
+         z-index: unset;
+         padding: unset;
+         -webkit-transition: unset;
+         -moz-transition: unset;
+         -ms-transition: unset;
+         -o-transition: unset;
+         transition: unset;
+    }
+     #side-bar:after {
+         content: unset;
+         position: unset;
+         top: unset;
+         width: unset;
+         height: unset;
+         background-color: unset;
+    }
+     #side-bar:target {
+         display: unset;
+         left: unset;
+         width: unset;
+         margin: unset;
+         border: unset;
+         z-index: unset;
+    }
+     #side-bar:target + #main-content {
+         left: unset;
+    }
+     #side-bar:target .close-menu {
+         display: unset;
+         position: unset;
+         width: unset;
+         height: unset;
+         top: unset;
+         left: unset;
+         background: unset;
+         z-index: unset;
+    }
 }
