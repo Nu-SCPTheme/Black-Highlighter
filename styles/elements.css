@@ -93,13 +93,19 @@ width:300px;
     display: block;
     border: none;
     font-size: .95em;
-	background: transparent!important;
 }
 
-.page-rate-widget-box > span,
-.page-rate-widget-box > span > a {
-	color:rgb(var(--white-monochrome))!important;
-	font-weight:700!important;
+.page-rate-widget-box > span.rate-points,
+.page-rate-widget-box > span.rateup,
+.page-rate-widget-box > span.ratedown,
+.page-rate-widget-box > span.cancel,
+.page-rate-widget-box > span.rate-points > a,
+.page-rate-widget-box > span.rateup > a,
+.page-rate-widget-box > span.ratedown > a,
+.page-rate-widget-box > span.cancel > a {
+	color:rgb(var(--white-monochrome));
+	font-weight:700;
+	background: transparent;
 }
 
 .page-rate-widget-box .rateup a,.page-rate-widget-box .ratedown a
