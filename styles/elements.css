@@ -85,18 +85,21 @@ width:300px;
     background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);
 }
 
-.page-rate-widget-box > span {
-    padding: 0.25rem 0.15rem!important;
+.page-rate-widget-box > span.rate-points,
+.page-rate-widget-box > span.rateup,
+.page-rate-widget-box > span.ratedown,
+.page-rate-widget-box > span.cancel {
+    padding: 0.25rem 0.15rem;
     display: block;
-    border: none!important;
+    border: none;
     font-size: .95em;
+	background: transparent!important;
 }
 
 .page-rate-widget-box > span,
 .page-rate-widget-box > span > a {
 	color:rgb(var(--white-monochrome))!important;
 	font-weight:700!important;
-	background: transparent!important;
 }
 
 .page-rate-widget-box .rateup a,.page-rate-widget-box .ratedown a
