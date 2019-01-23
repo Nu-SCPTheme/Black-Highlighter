@@ -12,6 +12,18 @@ Styles in main.css will override styles in sidebar.css
 Consider having a stylesheet whose sole function is to @import sub stylesheets (including main.css) in the correct order?
 */
 
+/* Selection color */
+
+::-moz-selection {
+	background: #FCB3B3;
+	text-shadow: none;
+}
+
+::selection {
+	background: #FCB3B3;
+	text-shadow: none;
+}
+
 /* main css files, yet to be organized */
 
 .browserupgrade {
