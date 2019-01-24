@@ -559,4 +559,20 @@ body {
         background-color: rgb(var(--dark-gray-monochrome));
         text-decoration: none;
     }
+    
+    /* Sigma9 Specific Styling */
+    
+    /* Brute Force Cleaning Up SCP Dropdown */
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+2), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+3), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+4), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+5), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+6), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+7), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+8), 
+    #top-bar > div.mobile-top-bar > ul > li.sfhover > ul > li:nth-child(10n+9) {
+        display: none;
+    }
+    
+    
 }
