@@ -1,62 +1,76 @@
 /* Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|PT+Sans&subset=latin-ext');
-@import url("https://fontlibrary.org/face/glacial-indifference");
+
+@font-face {
+	font-family: 'GIBold';
+	src: url('http://scptestwiki.wikidot.com/local--files/start/GIBold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
 
 /* All Vars Used */
 
 :root {
-    /* Typefaces */
-    --body-font: 'Lato', sans-serif;
-    --header-font: 'GlacialIndifferenceBold', sans-serif;
-    --title-font: 'Lato', sans-serif;
-    --mono-font: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
+	/* Typefaces */
+	--body-font: 'Lato', sans-serif;
+	--header-font: 'GlacialIndifferenceBold', sans-serif;
+	--title-font: 'Lato', sans-serif;
+	--mono-font: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 
-    /* base font size ranges */
-    --unitless-min-font-size: 0.8;
-    --unitless-max-font-size: 1;
+	/* base font size ranges */
+	--unitless-min-font-size: 0.8;
+	--unitless-max-font-size: 1;
 
-    /* base viewport size ranges */
-    --unitless-min-viewport: 768;
-    --unitless-max-viewport: 900;
+	/* base viewport size ranges */
+	--unitless-min-viewport: 768;
+	--unitless-max-viewport: 900;
 
-    /* base line height size ranges */
-    --min-lineheight: 1.2;
-    --max-lineheight: 1.5;
+	/* base line height size ranges */
+	--min-lineheight: 1.2;
+	--max-lineheight: 1.5;
 
-    /* calculating size differences */
-    --font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
-    --lineheight-difference: calc(var(--max-lineheight) - var(--min-lineheight));
-    --viewport-range-difference: calc(var(--unitless-max-viewport) - var(--unitless-min-viewport));
-    --min-viewport-difference: calc(100vw - (var(--unitless-min-viewport) * 1px));
+	/* calculating size differences */
+	--font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
+	--lineheight-difference: calc(var(--max-lineheight) - var(--min-lineheight));
+	--viewport-range-difference: calc(var(--unitless-max-viewport) - var(--unitless-min-viewport));
+	--min-viewport-difference: calc(100vw - (var(--unitless-min-viewport) * 1px));
 
-    /* responsive fluid type formula */
-    --font-calc: calc((var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
-    --line-calc: calc(var(--min-lineheight) + var(--lineheight-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
+	/* responsive fluid type formula */
+	--font-calc: calc((var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
+	--line-calc: calc(var(--min-lineheight) + var(--lineheight-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
 
-    --base-font-size: var(--font-calc);
-    --base-line-height: var(--line-calc);
+	--base-font-size: var(--font-calc);
+	--base-line-height: var(--line-calc);
 
-    /* Standard Colors */
-    --white-monochrome: 252, 252, 252; /* white */
-    --pale-gray-monochrome: 244, 244, 244; /* v light gray for blockquotes and stuff */
-    --light-gray-monochrome: 170, 170, 170; /* light accent gray for login status */
-    --gray-monochrome: 66, 66, 66; /* gray */
-    --dark-gray-monochrome: 48, 48, 48; /* dark accent gray for sidebar background */
-    --black-monochrome: 12, 12, 12; /* black */
-    --bright-accent: 180, 35, 35; /* bright red */
-    --dark-accent: 100, 3, 15; /* dark red */
-    --newpage-color: 221, 102, 17;
-    /* teal but please change this to orange or something */
+	/* Standard Colors */
+	--white-monochrome: 252, 252, 252;
+	/* white */
+	--pale-gray-monochrome: 244, 244, 244;
+	/* v light gray for blockquotes and stuff */
+	--light-gray-monochrome: 170, 170, 170;
+	/* light accent gray for login status */
+	--gray-monochrome: 66, 66, 66;
+	/* gray */
+	--dark-gray-monochrome: 48, 48, 48;
+	/* dark accent gray for sidebar background */
+	--black-monochrome: 12, 12, 12;
+	/* black */
+	--bright-accent: 180, 35, 35;
+	/* bright red */
+	--dark-accent: 100, 3, 15;
+	/* dark red */
+	--newpage-color: 221, 102, 17;
+	/* teal but please change this to orange or something */
 
-    /* spacing measurements */
-    --offset-from-page-top: 1.2rem;
-    /* space between the top of the page and the start of the header */
-    --body-width-on-desktop: 44.25rem;
-    --sidebar-width-on-desktop: calc(var(--base-font-size)*19);
-    --sidebar-width-on-mobile: 14rem;
-    --scrollbar-width: 0.5625rem;
-    
-    /* animations */
+	/* spacing measurements */
+	--offset-from-page-top: 1.2rem;
+	/* space between the top of the page and the start of the header */
+	--body-width-on-desktop: 44.25rem;
+	--sidebar-width-on-desktop: calc(var(--base-font-size)*19);
+	--sidebar-width-on-mobile: 14rem;
+	--scrollbar-width: 0.5625rem;
+
+	/* animations */
 	--sidebar-transition-timing: 0.5s ease-in-out 0.1s;
 }
