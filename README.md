@@ -2,7 +2,7 @@
 
     [2019 Wikidot Theme]
     Designed by djkaktus, Woedenaz & Croquembouche
-    Built by Woedenaz, Aers, Croquembouche & rounderhouse
+    Built by Woedenaz, Croquembouche & rounderhouse for some reason
     
     
 A WiP new theme for the SCP Wiki utilizing more current CSS styling standards.
