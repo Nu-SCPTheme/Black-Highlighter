@@ -80,6 +80,7 @@ width:300px;
 	display: inline-flex;
 	border-radius: 0;
 	width: 10.87rem;
+	height: 2em;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 	padding: 0 0.5rem;
 	margin-bottom: 0.75rem;
@@ -87,16 +88,30 @@ width:300px;
 	background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);
 }
 
-.page-rate-widget-box > span.rate-points,
+.page-rate-widget-box > span.rate-points {
+	flex-shrink: 0.3;	
+}
+
 .page-rate-widget-box > span.rateup,
 .page-rate-widget-box > span.ratedown,
 .page-rate-widget-box > span.cancel {
-	padding: 0.25rem 0.15rem;
-	display: inline-block;
+	flex-grow: 2;	
+}
+
+.page-rate-widget-box > span.rate-points,
+.page-rate-widget-box > span.rateup,
+.page-rate-widget-box > span.ratedown,
+.page-rate-widget-box > span.cancel {	
+	padding: 0 0.15rem;
+	display: inline-flex;
 	border: none;
 	font-size: .95em;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
 	flex-grow: 2;
-	background: linear-gradient(to top, rgba(99, 33, 37, 0) 0%, rgba(76, 25, 30, 0) 100%) !important;
+	background: linear-gradient(to top, rgba(99, 33, 37, 0) 0%, rgba(76, 25, 30, 0) 100%) !important
 }
 
 .page-rate-widget-box > span.rate-points,
@@ -108,9 +123,13 @@ width:300px;
 .page-rate-widget-box > span.ratedown > a,
 .page-rate-widget-box > span.cancel > a {
 	transition: background 0.2s ease-in-out;
-	color:rgb(var(--white-monochrome));
-	font-weight:700;
+	color: rgb(var(--white-monochrome));
+	font-weight: 700;
 	background-color: transparent;
+	flex-grow: 2;
+	width: 100%;
+	height: 2em;
+	line-height: 2em;
 }
 
 .page-rate-widget-box > span.rate-points:hover,
@@ -127,8 +146,8 @@ width:300px;
 
 .page-rate-widget-box .rateup a,.page-rate-widget-box .ratedown a
 {
-  margin:0 0.0625rem;
-  padding:0 0.250rem;
+	margin: 0 0.0625rem;
+	padding: 0 0.250rem;
 }
 
 .page-rate-widget-box .rateup a:hover,.page-rate-widget-box .ratedown a:hover
