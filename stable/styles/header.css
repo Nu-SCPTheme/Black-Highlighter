@@ -143,6 +143,7 @@ body {
 }
 
 #search-top-box-input:hover,
+#search-top-box-input:active,
 #search-top-box-input:focus {
 	border: solid 0.063rem rgb(var(--black-monochrome));
 	border-radius: 0.063rem;
@@ -164,6 +165,7 @@ body {
 }
 
 #search-top-box-form input[type="submit"]:hover,
+#search-top-box-form input[type="submit"]:active,
 #search-top-box-form input[type="submit"]:focus {
 	border: solid 0.063rem rgb(var(--black-monochrome));
 	border-radius: 0.063rem;
@@ -242,12 +244,16 @@ body {
 }
 
 #top-bar div.top-bar > ul > li:hover,
-#top-bar div.mobile-top-bar > ul > li:hover {
+#top-bar div.mobile-top-bar > ul > li:hover,
+#top-bar div.top-bar > ul > li:active,
+#top-bar div.mobile-top-bar > ul > li:active{
 	background-color: rgb(var(--dark-gray-monochrome));
 }
 
 #top-bar div.top-bar > ul > li:hover > a,
-#top-bar div.mobile-top-bar > ul > li:hover > a {
+#top-bar div.mobile-top-bar > ul > li:hover > a,
+#top-bar div.top-bar > ul > li:active > a,
+#top-bar div.mobile-top-bar > ul > li:active > a{
 	background-color: transparent !important;
 }
 
@@ -331,6 +337,7 @@ body {
 }
 
 #top-bar li:hover ul,
+#top-bar li:active ul,
 #top-bar li.sfhover ul {
 	visibility: visible,
 		transform: translate(0, 0);
@@ -346,19 +353,25 @@ body {
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,
+#top-bar div.top-bar > ul > li:active > ul,
 #top-bar div.top-bar > ul > li.sfhover > ul,
 #top-bar div.mobile-top-bar > ul > li:hover > ul,
+#top-bar div.mobile-top-bar > ul > li:active > ul,
 #top-bar div.mobile-top-bar > ul > li.sfhover > ul {
 	transform: translate(-50%, 0);
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
-#top-bar div.mobile-top-bar > ul > li > ul > li:hover {
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover,
+#top-bar div.top-bar > ul > li > ul > li:active,
+#top-bar div.mobile-top-bar > ul > li > ul > li:active {
 	background: rgba(var(--white-monochrome), 0.15)
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover > a,
-#top-bar div.mobile-top-bar > ul > li > ul > li:hover > a {
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover > a,
+#top-bar div.top-bar > ul > li > ul > li:active > a,
+#top-bar div.mobile-top-bar > ul > li > ul > li:active > a {
 	text-decoration: none;
 }
 
@@ -535,7 +548,8 @@ body {
 		background-color: transparent !important;
 	}
 
-	#top-bar > div.mobile-top-bar > div.open-menu > p > a:hover {
+	#top-bar > div.mobile-top-bar > div.open-menu > p > a:hover,
+	#top-bar > div.mobile-top-bar > div.open-menu > p > a:active {
 		background-color: rgb(var(--dark-gray-monochrome));
 		text-decoration: none;
 	}
