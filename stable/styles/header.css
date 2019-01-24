@@ -509,6 +509,15 @@ body {
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
 		max-height: 3rem;
 	}
+	
+	#top-bar > div.mobile-top-bar > ul > li.sfhover::after {
+		content: "";
+		float: left;
+		width: 3rem;
+		height: 3rem;
+		position: absolute;
+		z-index: 5;
+	}
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
 		font-size: var(--base-font-size)
