@@ -1,0 +1,185 @@
+html
+{
+  color:rgb(var(--black-monochrome));
+  font-size:1em;
+  line-height:1.5;
+}
+
+body
+{
+  /* coloring */
+  background-color:rgba(var(--white-monochrome),1);
+  color:rgb(var(--black-monochrome));
+  
+  /* font behavior */
+  font-size:var(--base-font-size);
+  font-kerning: normal;
+  font-variant-numeric: oldstyle-nums;
+  -moz-font-feature-settings: "onum", "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "onum", "kern", "liga", "clig", "alt";
+  -webkit-font-feature-settings: "onum", "kern", "liga", "clig", "calt";
+  font-feature-settings: "onum", "kern", "liga", "clig", "calt";
+  text-rendering:auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* line behavior */
+  orphans:2;
+  -webkit-hyphens:auto;
+  -moz-hyphens:auto;
+  -ms-hyphens:auto;
+  hyphens:auto;
+  word-break:break-word;
+}
+
+/* HTML5 Media Items */
+
+audio,canvas,iframe,img,svg,video
+{
+  vertical-align:middle;
+}
+
+img,embed,video,object,iframe,table
+{
+  max-width:100%;
+}
+
+/* User Input Items */
+
+fieldset
+{
+  border:0;
+  margin:0;
+  padding:0;
+}
+
+textarea
+{
+  resize:vertical;
+  line-height:1.5;
+}
+
+/* Standard Structure Elements */
+
+p,span,div,li
+{
+  font-family:var(--body-font);
+}
+
+pre *
+{
+  font-family:var(--mono-font);
+  max-width:90vw;
+  white-space:pre-wrap;
+}
+
+sup
+{
+  vertical-align:top;
+  position:relative;
+  top:-.5em;
+}
+
+hr
+{
+  display:block;
+  height:0.063rem;
+  border:0;
+  border-top:0.063rem solid #ccc;
+  margin:1em 0;
+  padding:0;
+}
+
+/* Headers */
+h1,h2,h3,h4,h5,h6,h7{
+  font-family: var(--title-font);
+}
+
+h1
+{
+  font-weight:700;
+  color:rgb(var(--black-monochrome));
+  font-weight:600;
+  margin:.7em 0 .6em;
+  padding:0 0 .25em;
+}
+
+h2,h3,h4,h5,h6,h7
+{
+  letter-spacing:0.063rem;
+  margin:.5em 0 .4em;
+  padding:0;
+}
+
+ul
+{
+  list-style:square;
+}
+
+/* Anchor Links */
+
+a
+{
+  color:rgb(var(--bright-accent));;
+  text-decoration:none;
+  background:transparent;
+}
+
+a.newpage
+{
+  color:rgb(var(--newpage-color));
+  text-decoration:none;
+  background:transparent;
+}
+
+a:hover
+{
+  text-decoration:underline;
+  background-color:transparent;
+}
+
+a:visited
+{
+  color:rgb(var(--dark-accent));
+}
+
+/* Ruby Text */
+
+ruby
+{
+  display:inline-table;
+  text-align:center;
+  white-space:nowrap;
+  line-height:1;
+  height:1em;
+  vertical-align:text-bottom;
+  }
+  
+rt
+{
+  display:table-header-group;
+  font-size:.6em;
+  line-height:1.1;
+  text-align:center;
+  white-space:nowrap;
+}
+
+/* Chrome, Safari, Opera Scrollbar */
+
+::-webkit-scrollbar
+{
+  width:var(--scrollbar-width);
+  height:var(--scrollbar-width);
+  border:solid 0.063rem rgba(var(--black-monochrome),0.1);
+  border-round:0.031rem;
+}
+
+::-webkit-scrollbar-track
+{
+  background:rgba(var(--black-monochrome),0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background:rgba(var(--dark-accent),0.4);
+}
