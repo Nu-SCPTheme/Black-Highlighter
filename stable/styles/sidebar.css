@@ -335,9 +335,9 @@
 	}
 
 	#side-bar:target .close-menu {
-		width: calc(100% - 14rem - var(--scrollbar-width));
+		width: calc(100% - var(--sidebar-width-on-mobile) - var(--scrollbar-width));
 		height: 100%;
-		margin-left: calc(14rem + var(--scrollbar-width));
+		margin-left: calc(var(--sidebar-width-on-mobile) + var(--scrollbar-width));
 		padding-right: 0;
 		visibility: visible;
 		pointer-events: auto;
@@ -369,8 +369,8 @@
 	}
 
 	#skrollr-body:target #side-bar .close-menu {
-		width: calc(100% - 14rem - var(--scrollbar-width));
-		margin-left: calc(14rem + var(--scrollbar-width));
+		width: calc(100% - var(--sidebar-width-on-mobile) - var(--scrollbar-width));
+		margin-left: calc(var(--sidebar-width-on-mobile) + var(--scrollbar-width));
 		visibility: visible;
 		pointer-events: auto;
 		opacity: 1;
@@ -381,7 +381,7 @@
 	}
 
 	#skrollr-body:target #container {
-		transform: translate(14rem, 0);
+		transform: translate(var(--sidebar-width-on-mobile), 0);
 	}
 
 	#skrollr-body:target#side-bar::-webkit-scrollbar-track {
