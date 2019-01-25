@@ -279,9 +279,15 @@ body {
 	width: 0;
 	transition: width 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
+
 #top-bar div.top-bar a:before {
 	left: 0;
     top: 0;
+}
+
+#top-bar div.top-bar a:after {
+	right: 0;
+    bottom: 0;
 }
 
 #top-bar div.top-bar > ul > li > ul,
