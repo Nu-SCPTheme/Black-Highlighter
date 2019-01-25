@@ -1383,10 +1383,12 @@ body {
     }
 
     #header h1 {
-        font-size: 1.35rem;
+        font-size: calc(var(--base-font-size) * 1.35);
     }
 
-    #header h2 {}
+    #header h2 {
+		font-size: calc(var(--base-font-size) * 0.945);
+	}
 
     #header h2 span::before {
         display: inline-block;
