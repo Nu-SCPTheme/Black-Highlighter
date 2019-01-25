@@ -410,7 +410,8 @@ body {
     #header {
         background-image: url(var(--logo-image));
         --size: calc(8.75rem + var(--offset-from-page-top));
-        background-position: calc(var(--size) - 6.75rem) calc(-2rem + calc(var(--offset-from-page-top) / 2));
+        --y-offset: 1.3125rem;
+        background-position: calc(6.75rem - var(--size)) calc(((var(--size) * -1) + 7.5rem + var(--y-offset)) / 2)
         background-size: var(--size), 100% 7.5rem;
         background-repeat: no-repeat, repeat;
         width: 100vw;
