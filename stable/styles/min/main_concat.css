@@ -1186,9 +1186,7 @@ body {
 }
 
 #top-bar div.top-bar > ul > li:hover,
-#top-bar div.top-bar > ul > li:active,
-#top-bar div.mobile-top-bar > ul > li:hover,
-#top-bar div.mobile-top-bar > ul > li:active {
+#top-bar div.mobile-top-bar > ul > li:hover, {
     background-color: rgb(var(--dark-gray-monochrome));
 }
 
@@ -1278,7 +1276,6 @@ body {
 }
 
 #top-bar li:hover ul,
-#top-bar li:active ul,
 #top-bar li:focus-within ul,
 #top-bar li.sfhover ul {
     visibility: visible;
@@ -1297,25 +1294,20 @@ body {
 #top-bar div.top-bar > ul > li:hover > ul,
 #top-bar div.top-bar > ul > li:focus-within > ul,
 #top-bar div.top-bar > ul > li.sfhover > ul,
-#top-bar div.top-bar > ul > li:active > ul,
 #top-bar div.mobile-top-bar > ul > li:hover > ul,
-#top-bar div.mobile-top-bar > ul > li:active > ul,
 #top-bar div.mobile-top-bar > ul > li:focus-within > ul,
 #top-bar div.mobile-top-bar > ul > li.sfhover > ul {
     transform: translate(-50%, 0);
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
-#top-bar div.top-bar > ul > li > ul > li:active,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover #top-bar div.mobile-top-bar > ul > li > ul > li:active {
     background: rgba(var(--white-monochrome), 0.15)
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover > a,
-#top-bar div.top-bar > ul > li > ul > li:active > a,
 #top-bar div.top-bar > ul > li > ul > li:focus-within > a,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover > a,
-#top-bar div.mobile-top-bar > ul > li > ul > li:active > a,
 #top-bar div.mobile-top-bar > ul > li > ul > li:focus-within > a {
     text-decoration: none;
 }
