@@ -266,8 +266,6 @@ body {
 
 #top-bar div.top-bar > ul > li:hover > a::before, 
 #top-bar div.top-bar > ul > li:hover > a::after, 
-#top-bar div.top-bar > ul > li:focus-within > a::before, 
-#top-bar div.top-bar > ul > li:focus-within > a::after,
 #top-bar div.top-bar > ul > li.sfhover > a::before, 
 #top-bar div.top-bar > ul > li.sfhover > a::after  {
 	width: 100%;
@@ -358,7 +356,7 @@ body {
 }
 
 #top-bar li:hover ul,
-#top-bar li:focus-within ul,
+#top-bar li ul:focus-within,
 #top-bar li.sfhover ul {
     visibility: visible;
     transform: translate(0, 0);
@@ -374,10 +372,10 @@ body {
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,
-#top-bar div.top-bar > ul > li:focus-within > ul,
+#top-bar div.top-bar > ul > li > ul:focus-within,
 #top-bar div.top-bar > ul > li.sfhover > ul,
 #top-bar div.mobile-top-bar > ul > li:hover > ul,
-#top-bar div.mobile-top-bar > ul > li:focus-within > ul,
+#top-bar div.mobile-top-bar > ul > li > ul:focus-within,
 #top-bar div.mobile-top-bar > ul > li.sfhover > ul {
     transform: translate(-50%, 0);
 }
@@ -388,9 +386,9 @@ body {
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover > a,
-#top-bar div.top-bar > ul > li > ul > li:focus-within > a,
+#top-bar div.top-bar > ul > li > ul > li > a:focus-within,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover > a,
-#top-bar div.mobile-top-bar > ul > li > ul > li:focus-within > a {
+#top-bar div.mobile-top-bar > ul > li > ul > li > a:focus-within {
     text-decoration: none;
 }
 
