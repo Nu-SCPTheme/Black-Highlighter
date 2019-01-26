@@ -75,61 +75,88 @@ width:300px;
 .page-rate-widget-box
 {
     /* position: static;
-	margin-top: -3rem; */
+		margin-top: -3rem; */
     overflow: hidden;
     display: inline-flex;
     border-radius: 0;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    padding: 0 0.5rem;
-	margin-bottom: 0.75rem;
-    background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);
+    padding: 0 0.125rem;
+		margin-bottom: 0.75rem;
+    /*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
+    
+    background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome),0.9) 100%);
+    border: 1px solid rgb(var(--black-monochrome));
+    height: 2rem;
 }
 
-.page-rate-widget-box > span.rate-points,
-.page-rate-widget-box > span.rateup,
-.page-rate-widget-box > span.ratedown,
-.page-rate-widget-box > span.cancel {
-    padding: 0.25rem 0.15rem;
+.page-rate-widget-box .rate-points,
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel {
     display: block;
     border: none;
-    font-size: .95em;
+    margin: 0 0.125rem 0 0;
 }
 
-.page-rate-widget-box > span.rate-points,
-.page-rate-widget-box > span.rateup,
-.page-rate-widget-box > span.ratedown,
-.page-rate-widget-box > span.cancel,
-.page-rate-widget-box > span.rate-points > a,
-.page-rate-widget-box > span.rateup > a,
-.page-rate-widget-box > span.ratedown > a,
-.page-rate-widget-box > span.cancel > a {
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel,
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
+    padding: 0;
+    width: 2rem;
+    display: block;
+    line-height: 2rem;
+    text-align: center;
+    transition: background-color var(--sidebar-transition-timing);
+}
+
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a {
+    background: rgb(var(--dark-accent));
+    background: linear-gradient(to top, rgba(var(--bright-accent),0.5) 0%, rgba(var(--dark-accent),0.9) 100%);
+}
+
+.page-rate-widget-box .rate-points,
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel,
+.page-rate-widget-box .rate-points a,
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
 	color:rgb(var(--white-monochrome));
 	font-weight:700;
-	background: transparent !important;
 }
 
-.page-rate-widget-box .rateup a,.page-rate-widget-box .ratedown a
-{
-  margin:0 0.0625rem;
-  padding:0 0.250rem;
-}
-
-.page-rate-widget-box .rateup a:hover,.page-rate-widget-box .ratedown a:hover
-{
-  background-color:rgb(var(--bright-accent));
+.page-rate-widget-box .rateup a:hover,.page-rate-widget-box .ratedown a:hover, .page-rate-widget-box .cancel a:hover {
   text-decoration:none;
 }
 
-.page-rate-widget-box .cancel a
-{
-  background:transparent;
+.page-rate-widget-box .rateup a:hover {
+  background-color: rgba(0,200,0,0.8);
 }
 
-.page-rate-widget-box .cancel a:hover
-{
-  background-color:rgb(var(--bright-accent));
-  text-decoration:none;
+.page-rate-widget-box .ratedown a:hover {
+  background-color: rgba(200,0,0,0.8);
 }
+
+.page-rate-widget-box .cancel a:hover {
+  background-color: rgba(200,200,200,0.8);
+}
+
+.page-rate-widget-box .rate-points {
+	line-height: 2rem;
+	padding: 0 0.8rem;
+	text-transform: uppercase;
+	font-size: calc(var(--base-font-size) * 0.8);
+}
+
+.page-rate-widget-box .rate-points .number {
+	font-size: calc(var(--base-font-size) * 1.3);
+}
+
 
 .heritage-rating-module
 {
