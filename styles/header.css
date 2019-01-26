@@ -265,16 +265,17 @@ body {
 	position: relative;
 }
 
-#top-bar div.top-bar > ul > li > a:hover::before, 
-#top-bar div.top-bar > ul > li > a:hover::after, 
-#top-bar div.top-bar > ul > li > a:focus-within::before, 
-#top-bar div.top-bar > ul > li > a:focus-within::after,
+#top-bar div.top-bar > ul > li:hover > a::before, 
+#top-bar div.top-bar > ul > li:hover > a::after, 
+#top-bar div.top-bar > ul > li:focus-within > a::before, 
+#top-bar div.top-bar > ul > li:focus-within > a::after,
 #top-bar div.top-bar > ul > li.sfhover > a::before, 
 #top-bar div.top-bar > ul > li.sfhover > a::after  {
 	width: 100%;
 }
 
-#top-bar div.top-bar > ul > li > a:before, #top-bar div.top-bar > ul > li > a:after {
+#top-bar div.top-bar > ul > li > a:before, 
+#top-bar div.top-bar > ul > li > a:after {
 	height: calc(0.0625rem * 3);
 	position: absolute;
 	content: " ";
