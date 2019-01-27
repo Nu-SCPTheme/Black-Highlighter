@@ -53,13 +53,14 @@ body {
 }
 
 #header > h1 > a > span {
-    position: relative;
     display: inline-table;
-    height: 5.75rem;
     z-index: 9999;
-    left: -23rem;
-    top: -2rem;
     color: transparent;
+    width: 50vw;
+    height: 7.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .mobile-top-bar {
@@ -484,11 +485,6 @@ body {
 
     #header h2 span::before {
         display: inline-block;
-    }
-
-    #header > h1 > a > span {
-        top: -3.2rem;
-        color: transparent;
     }
 
     #login-status {
