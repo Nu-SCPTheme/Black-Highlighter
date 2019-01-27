@@ -1330,17 +1330,8 @@ body {
     /* Removing Scrollbar to deal with horizontal overflow and still allow sticky scrolling */
 
     :root {
-        -ms-overflow-style: none;
-        /* IE 10+ */
-        overflow: -moz-scrollbars-none;
-        /* Firefox */
-        scrollbar-width: slim;
+        scrollbar-width: thin;
         /* Also Firefox */
-    }
-
-    ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -1583,7 +1574,7 @@ body {
     top: -1rem;
     max-height: calc(100vh + 1rem);
     overflow: auto;
-    scrollbar-width: none;
+    scrollbar-width: thin;
     float: left;
     z-index: 9;
 }
