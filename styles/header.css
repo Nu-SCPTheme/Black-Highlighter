@@ -23,23 +23,23 @@ body {
                                     rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
                                     rgba(var(--black-monochrome), 1) 100%),
                     linear-gradient(to bottom,
-                                    rgba(var(--background-gradient-color), 1) calc((0 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.987) calc((0.8 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.951) calc((2.9 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.896) calc((6.4 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.825) calc((11 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.741) calc((16.6 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.648) calc((23.1 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.55) calc((30.4 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.45) calc((38.3 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.352) calc((46.7 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.259) calc((55.4 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.175) calc((64.4 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.104) calc((73.5 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.049) calc((82.5 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0.013) calc((91.4 / 100) * var(--background-gradient-distance)),
-                                    rgba(var(--background-gradient-color), 0) calc((100 / 100) * var(--background-gradient-distance)));
-    background-size: 100% 7.5rem, 100% 9.375rem;
+                                    rgba(var(--background-gradient-color), 1) calc(calc(0 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.987) calc(calc(0.8 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.951) calc(calc(2.9 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.896) calc(calc(6.4 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.825) calc(calc(11 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.741) calc(calc(16.6 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.648) calc(calc(23.1 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.55) calc(calc(30.4 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.45) calc(calc(38.3 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.352) calc(calc(46.7 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.259) calc(calc(55.4 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.175) calc(calc(64.4 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.104) calc(calc(73.5 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.049) calc(calc(82.5 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0.013) calc(calc(91.4 / 100) * var(--background-gradient-distance)),
+                                    rgba(var(--background-gradient-color), 0) calc(calc(100 / 100) * var(--background-gradient-distance)));
+    background-size: 100% 7.5rem, 100% 9.375rem, 100% var(--background-gradient-distance);
     /* 120px, 150px */
     background-repeat: no-repeat;
 }
