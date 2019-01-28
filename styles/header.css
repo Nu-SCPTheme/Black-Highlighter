@@ -220,16 +220,16 @@ body {
 }
 
 #top-bar {
-    width: 100%;
-    position: initial;
-    z-index: 50;
-    height: 1.625rem;
-    line-height: 1.250rem;
-    font-size: 90%;
-    display: inline-flex;
-    margin: calc(7.5rem + 0.125rem) 0 1.75rem 0;
-    padding: 0 0 0.25rem;
-    flex-wrap: nowrap;
+	width: 100%;
+	position: initial;
+	z-index: 50;
+	height: 1.625rem;
+	font-size: calc(var(--base-font-size) * 0.85);
+	font-weight: 600;
+	display: inline-flex;
+	margin: calc(7.5rem + 0.125rem) 0 1.75rem 0;
+	padding: 0 0 0.25rem;
+	flex-wrap: nowrap;
 }
 
 /* In-Progress Top-Bar Implimentation */
@@ -416,10 +416,11 @@ body {
 #top-bar div.top-bar > ul > li > ul > li > a,
 #top-bar div.mobile-top-bar > ul > li > ul > li > a {
     background: transparent;
-    color: rgb(var(--white-monochrome));
-    width: auto;
-    height: 100%;
-    font-size: 120%;
+	color: rgb(var(--white-monochrome));
+	width: auto;
+	height: 100%;
+    font-size: var(--base-font-size);
+    font-weight: normal;
 
     /* Text positioning */
     text-align: center;

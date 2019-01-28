@@ -380,6 +380,11 @@ rt {
     flex-direction: column;
 }
 
+/* Hiding hidden tags */
+#main-content .page-tags a[href^="/system:page-tags/tag/_"]{
+    display: none;
+}
+
 #breadcrumbs {
     font-weight: 85%;
     margin: -1em 0 1em;
