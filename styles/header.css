@@ -3,7 +3,9 @@
     position: relative;
     z-index: 10;
     height: 9.375rem;
-    background: url(https://nu-scptheme.github.io/Nu-SCP/images/logo.svg) 0.625rem 2.500rem no-repeat;
+    background-image: url(var(--logo-image));
+    background-size: 0.625rem 2.500rem;
+    background-repeat: no-repeat;
     background-position: left 0.75rem top 1.1875rem;
     background-clip: border-box;
     background-size: 5.375rem;
@@ -83,7 +85,7 @@ body {
 }
 
 #header h1 a::before {
-    content: "SCP Foundation";
+    content: var(--header-title);
     color: rgb(var(--white-monochrome));
     text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
 }
@@ -92,7 +94,6 @@ body {
 #header h2 {
     font-family: var(--header-font);
     font-weight: 900;
-    text-transform: uppercase;
     position: absolute;
 }
 
@@ -101,7 +102,6 @@ body {
     letter-spacing: -0.02em;
     display: block;
     line-height: 0;
-    content: "The SCP Foundation";
     max-height: 0;
     color: rgb(var(--white-monochrome));
     font-size: 135%;
@@ -128,7 +128,7 @@ body {
 }
 
 #header h2 span::before {
-    content: "Secure, Contain, Protect";
+    content: var(--header-subtitle);
     color: #fafafa;
     text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
 }
