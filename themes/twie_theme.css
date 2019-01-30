@@ -75,6 +75,23 @@ hr {
     text-shadow: .063rem .063rem .063rem rgb(var(--bright-accent));
 }
 
+#header h1 a::before,
+#header h2 span::before {
+    -webkit-animation: none;
+	-moz-animation: none;
+	animation: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#header h1 a:hover::before,
+#header h2 span:hover::before {
+	-webkit-animation: neon 1.5s ease-in-out infinite alternate;
+	-moz-animation: neon 1.5s ease-in-out infinite alternate;
+	animation: neon 1.5s ease-in-out infinite alternate;
+}
+
 #top-bar a:hover {
     -webkit-animation: neon 1.5s ease-in-out infinite alternate;
     -moz-animation: neon 1.5s ease-in-out infinite alternate;
