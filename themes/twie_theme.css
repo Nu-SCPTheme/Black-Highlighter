@@ -226,7 +226,23 @@ hr {
     color: rgb(var(--bright-accent));
 }
 
-.page-rate-widget-box>span.rate-points {
+.page-rate-widget-box {
+	background: 
+		linear-gradient(to bottom,
+			rgb(var(--white-monochrome)) 0%,
+			rgb(var(--white-monochrome)) 30%,
+			rgba(var(--dark-accent),0.25) 100%);
+	
+}
+
+.page-rate-widget-box>span.rate-points, 
+.page-rate-widget-box>span.rateup, 
+.page-rate-widget-box>span.ratedown, 
+.page-rate-widget-box>span.cancel, 
+.page-rate-widget-box>span.rate-points>a, 
+.page-rate-widget-box>span.rateup>a,
+.page-rate-widget-box>span.ratedown>a,
+.page-rate-widget-box>span.cancel>a {
     color: rgb(var(--dark-accent));   
 }
 
