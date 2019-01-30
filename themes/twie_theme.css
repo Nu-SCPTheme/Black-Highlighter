@@ -246,7 +246,15 @@ hr {
 .page-rate-widget-box>span.rateup>a,
 .page-rate-widget-box>span.ratedown>a,
 .page-rate-widget-box>span.cancel>a {
-    color: rgb(var(--dark-accent));   
+    color: rgb(var(--dark-accent));  
+	transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.page-rate-widget-box>span.rate-points:hover>a, 
+.page-rate-widget-box>span.rateup:hover>a,
+.page-rate-widget-box>span.ratedown:hover>a,
+.page-rate-widget-box>span.cancel:hover>a {
+	color: rgb(var(--white-accent));
 }
 
 .page-rate-widget-box>span.rate-points:hover,
@@ -258,6 +266,7 @@ hr {
 .page-rate-widget-box>span.cancel:hover, 
 .page-rate-widget-box>span.cancel:active {
     mix-blend-mode: unset;   
+	
 }
 
 @media only screen and (max-width: 768px) {
