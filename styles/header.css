@@ -3,7 +3,7 @@
     position: relative;
     z-index: 10;
     height: 9.375rem;
-    background-image: url(var(--logo-image));
+    background-image: var(--logo-image);
     background-size: 0.625rem 2.500rem;
     background-repeat: no-repeat;
     background-position: left 0.75rem top 1.1875rem;
@@ -451,7 +451,7 @@ body {
     /* Mobile CSS */
 
     #header {
-        background-image: url(var(--logo-image));
+        background-image: var(--logo-image);
         --size: calc(8.75rem + var(--offset-from-page-top));
         --y-offset: 1.3125rem;
         background-position: calc(6.75rem - var(--size)) calc(((var(--size) * -1) + 7.5rem + var(--y-offset)) / 2);
