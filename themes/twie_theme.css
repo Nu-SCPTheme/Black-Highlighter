@@ -80,9 +80,7 @@ hr {
 }
 
 #header h1 a::before,
-#header h2 span::before,
-#header h1 a,
-#header h2 span{
+#header h1 a {
     -webkit-animation: none;
 	-moz-animation: none;
 	animation: none;
@@ -91,8 +89,7 @@ hr {
     transition: all 0.5s;
 }
 
-#header h1 a:hover::before,
-#header h2 span:hover::before {
+#header h1 a:hover::before {
 	-webkit-animation: neon 1.5s ease-in-out infinite alternate;
 	-moz-animation: neon 1.5s ease-in-out infinite alternate;
 	animation: neon 1.5s ease-in-out infinite alternate;
