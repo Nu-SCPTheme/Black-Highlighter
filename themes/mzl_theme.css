@@ -25,6 +25,22 @@
 	scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
 }
 
+hr {
+    border-top: none;
+    background: 
+		linear-gradient(124deg,
+		rgba(240, 194, 215, 1),
+		rgba(215, 195, 218, 1),
+		rgba(181, 197, 223, 1),
+		rgba(184, 198, 223, 1),
+		rgba(167, 203, 223, 1),
+		rgba(196, 221, 189, 1),
+		rgba(218, 230, 172, 1),
+		rgba(230, 234, 171, 1),
+		rgba(255, 242, 167, 1));
+    filter: blur(0.04rem);
+}
+
 #container-wrap-wrap {
 	background-image:
 		linear-gradient(to bottom,
@@ -261,6 +277,8 @@ a {
 
 #page-title {
 	color: rgb(var(--light-gray-monochrome));
+	letter-spacing: 0.5em;
+	text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
