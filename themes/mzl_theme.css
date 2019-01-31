@@ -151,6 +151,14 @@ a {
 	opacity: 1;
 }
 
+#top-bar li:hover ul,
+#top-bar li:focus-within ul,
+#top-bar li.sfhover ul,
+#top-bar li ul {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
 #search-top-box-form input[type="submit"] {
 	background: rgb(var(--bright-accent)) !important;
 }
