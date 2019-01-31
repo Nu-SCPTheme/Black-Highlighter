@@ -132,6 +132,7 @@ a {
 	top: 0 !important;
 	left: 0 !important;
 	opacity: 0 !important;
+	z-index: 1;
 	background: linear-gradient(124deg,
 		rgba(240, 194, 215, 1),
 		rgba(215, 195, 218, 1),
@@ -148,11 +149,12 @@ a {
 	-z-animation: rainbow 5s ease infinite !important;
 	-o-animation: rainbow 5s ease infinite !important;
 	animation: rainbow 5s ease infinite !important;
+	pointer-events: none;
 }
 
-#top-bar > div.top-bar > ul > li > a:hover::before,
-#top-bar > div.top-bar > ul > li > ul > li. > a:hover::before,
-#side-bar > div > div > a:hover::before {
+#top-bar > div.top-bar > ul > li:hover > a::before,
+#top-bar > div.top-bar > ul > li > ul > li:hover > a::before,
+#side-bar > div > div:hover > a::before {
 	opacity: 1 !important;
 }
 
