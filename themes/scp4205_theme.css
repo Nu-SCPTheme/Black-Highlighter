@@ -74,7 +74,9 @@ a {
 
 #header h1 a:hover::before,
 #top-bar a:hover,
-#page-title:hover {
+#page-title:hover,
+#search-top-box-form input[type="submit"]:hover, 
+#search-top-box-form input[type="submit"]:focus {
     -webkit-animation: flicker 20s linear infinite;
     -moz-animation: flicker 20s linear infinite;
     animation: flicker 20s linear infinite;
@@ -82,6 +84,11 @@ a {
 
 #search-top-box-form input[type="submit"] {
     background: rgb(var(--bright-accent)) !important;
+}
+
+#search-top-box-form input[type="submit"]:hover, 
+#search-top-box-form input[type="submit"]:focus {
+	background: rgb(var(--dark-accent)) !important;
 }
 
 #side-bar div.menu-item a,
