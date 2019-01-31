@@ -327,11 +327,8 @@ a {
 }
 
 #page-content div.warning {
+	position: relative;
 	font-weight: 900;
-    background: url(http://kontainer.djkakt.us/local--files/component:nu-mzl-theme/bobble.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
     height: 15rem;
     display: flex;
     flex-direction: column;
@@ -370,6 +367,22 @@ a {
     width: 75%;
     display: block;
     margin: 0 auto;
+}
+
+#page-content div.warning > div.bobble {
+	position: relative;
+	background: url(http://kontainer.djkakt.us/local--files/component:nu-mzl-theme/bobble.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	width: 15rem;
+	height: 15rem;
+	animation: spin 10s linear infinite;
+	animation-play-state: paused;
+}
+
+#page-content div.warning:hover > div.bobble {
+	animation-play-state: running;
 }
 
 @media only screen and (max-width: 768px) {
@@ -438,4 +451,8 @@ a {
 	100% {
 		background-position: 0% 82%
 	}
+}
+
+@keyframes spin {
+  100% {transform: rotate(1turn); }
 }
