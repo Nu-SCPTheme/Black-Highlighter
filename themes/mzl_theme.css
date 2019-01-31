@@ -22,7 +22,29 @@
 	--background-gradient-color: 215, 215, 215;
 	--background-gradient-distance: 40rem;
 
-	scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
+	scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--gray-monochrome), 0.50);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(124deg,
+		rgba(240, 194, 215, 1),
+		rgba(215, 195, 218, 1),
+		rgba(181, 197, 223, 1),
+		rgba(184, 198, 223, 1),
+		rgba(167, 203, 223, 1),
+		rgba(196, 221, 189, 1),
+		rgba(218, 230, 172, 1),
+		rgba(230, 234, 171, 1),
+		rgba(255, 242, 167, 1));
+	background-size: 100% 100%;
+	-webkit-animation: rainbow 36s ease infinite;
+	-z-animation: rainbow 36s ease infinite;
+	-o-animation: rainbow 36s ease infinite;
+	animation: rainbow 36s ease infinite;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(var(--gray-monochrome), 0.50);
 }
 
 hr {
