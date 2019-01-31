@@ -220,11 +220,21 @@ a {
 }
 
 .page-rate-widget-box {
-	background:
-		linear-gradient(to bottom,
-		rgb(var(--bright-accent)) 0%,
-		rgb(var(--dark-accent)) 30%,
-		rgb(var(--dark-accent)) 100%) !important;
+	background: linear-gradient(124deg,
+		rgba(240, 194, 215, 1),
+		rgba(215, 195, 218, 1),
+		rgba(181, 197, 223, 1),
+		rgba(184, 198, 223, 1),
+		rgba(167, 203, 223, 1),
+		rgba(196, 221, 189, 1),
+		rgba(218, 230, 172, 1),
+		rgba(230, 234, 171, 1),
+		rgba(255, 242, 167, 1)) !important;
+	background-size: 50% 50%;
+	-webkit-animation: rainbow 18s ease infinite;
+	-z-animation: rainbow 18s ease infinite;
+	-o-animation: rainbow 18s ease infinite;
+	animation: rainbow 18s ease infinite;
 }
 
 .page-rate-widget-box > span.rate-points,
