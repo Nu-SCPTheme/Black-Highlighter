@@ -384,8 +384,17 @@ a {
     justify-content: center;
 }
 
-#page-content div.warning > span:nth-child(1),
-#page-content div.warning > span:nth-child(3) {
+#page-content div.warning > div.top,
+#page-content div.warning > div.bottom {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#page-content div.warning > div.top > span:nth-child(1),
+#page-content div.warning > div.top > span:nth-child(3),
+#page-content div.warning > div.bottom > span:nth-child(1),
+#page-content div.warning > div.bottom > span:nth-child(3){
 	position: relative;
     z-index: 5;
 	background:  /* Bright Rainbow Gradient */
@@ -405,11 +414,13 @@ a {
 	-webkit-text-fill-color: transparent;
 }
 
-#page-content div.warning > span:nth-child(1) {
+page-content div.warning > div.top > span:nth-child(1),
+page-content div.warning > div.bottom > span:nth-child(1) {
 	font-size: calc(var(--base-font-size) * 2.5);
 }
 
-#page-content div.warning > span:nth-child(3) {
+#page-content div.warning > div.top > span:nth-child(3),
+#page-content div.warning > div.bottom > span:nth-child(3) {
 	font-size: calc(var(--base-font-size) * 1.25);
     width: 75%;
     display: block;
