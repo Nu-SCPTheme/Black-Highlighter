@@ -1,48 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Chicle|Overlock:400,900');
 
 :root {
-    /* Typefaces */
-    --body-font: 'Overlock', monospace;
-    --header-font: 'Chicle', cursive;
-    --title-font: 'Chicle', cursive;
+	/* Typefaces */
+	--body-font: 'Overlock', monospace;
+	--header-font: 'Chicle', cursive;
+	--title-font: 'Chicle', cursive;
 
-    /* Standard Colors */
+	/* Standard Colors */
 
-    --white-monochrome: 245, 233, 239;
-    --pale-gray-monochrome: 220, 226, 243;
-    --light-gray-monochrome: 242, 243, 220;
-    --gray-monochrome: 185, 224, 173;
-    --dark-gray-monochrome: 160, 240, 205;
-    --black-monochrome: 33, 0, 35;
-    --bright-accent: 250, 140, 220;
-    --medium-accent: 186, 237, 185;
-    --dark-accent: 228, 123, 0;
-    --newpage-color: 221, 102, 17;
+	--white-monochrome: 245, 233, 239;
+	--pale-gray-monochrome: 220, 226, 243;
+	--light-gray-monochrome: 242, 243, 220;
+	--gray-monochrome: 185, 224, 173;
+	--dark-gray-monochrome: 160, 240, 205;
+	--black-monochrome: 33, 0, 35;
+	--bright-accent: 250, 140, 220;
+	--medium-accent: 186, 237, 185;
+	--dark-accent: 228, 123, 0;
+	--newpage-color: 221, 102, 17;
 
-    --background-gradient-color: 215, 215, 215;
-    --background-gradient-distance: 40rem;
+	--background-gradient-color: 215, 215, 215;
+	--background-gradient-distance: 40rem;
 
-    scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
+	scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
 }
 
 #container-wrap-wrap {
 	background-image:
-        linear-gradient(to bottom,
-			rgba(0, 0, 0, 0) 0rem,
-			rgba(0, 0, 0, 0) 7.5rem,
-			rgba(var(--black-monochrome), 1) 7.5rem,
-			rgba(var(--gray-monochrome), 1) 7.625rem,
-			rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-			rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-			rgba(var(--black-monochrome), 1) 100%),
-		
 		linear-gradient(to bottom,
-			rgba(0, 0, 0, 0) 0rem,
-			rgba(0, 0, 0, 0) 9.375rem,
-			rgba(var(--white-monochrome)) 9.375rem,
-			rgba(var(--pale-gray-monochrome)) 100%);
-    background-size: 100% 9.375rem, 100% 100%;
-    background-repeat: no-repeat;
+		rgba(0, 0, 0, 0) 0rem,
+		rgba(0, 0, 0, 0) 7.5rem,
+		rgba(var(--black-monochrome), 1) 7.5rem,
+		rgba(var(--gray-monochrome), 1) 7.625rem,
+		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--black-monochrome), 1) 100%),
+
+		linear-gradient(to bottom,
+		rgba(0, 0, 0, 0) 0rem,
+		rgba(0, 0, 0, 0) 9.375rem,
+		rgba(var(--white-monochrome)) 9.375rem,
+		rgba(var(--pale-gray-monochrome)) 100%);
+	background-size: 100% 9.375rem, 100% 100%;
+	background-repeat: no-repeat;
 }
 
 #skrollr-body {
@@ -51,7 +51,7 @@
 	-webkit-animation: rainbow 36s ease infinite;
 	-z-animation: rainbow 36s ease infinite;
 	-o-animation: rainbow 36s ease infinite;
-	  animation: rainbow 36s ease infinite;
+	animation: rainbow 36s ease infinite;
 }
 
 a {
@@ -67,21 +67,21 @@ a {
 
 
 #header h1 a::before {
-    content: "MAN ZOO LEAGUE";
-    letter-spacing: 0.1em;
-    color: rgb(var(--light-gray-monochrome));
+	content: "MAN ZOO LEAGUE";
+	letter-spacing: 0.1em;
+	color: rgb(var(--light-gray-monochrome));
 }
 
 #header h2 span::before {
-    content: "Well well well, how the turn tables";
-    color: rgb(var(--bright-accent));
-    font-weight: 900;
+	content: "Well well well, how the turn tables";
+	color: rgb(var(--bright-accent));
+	font-weight: 900;
 }
 
-#top-bar {
+#top-bar *{
 	font-size: calc(var(--base-font-size));
-    color: rgb(var(--white-monochrome));
-    text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+	color: rgb(var(--white-monochrome));
+	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 }
 
 #side-bar {
@@ -103,38 +103,74 @@ a {
 	animation: rainbow 180s ease infinite;
 }
 
-#side-bar div.menu-item a, #side-bar div.menu-item .text {
+#side-bar div.menu-item a,
+#side-bar div.menu-item .text {
 	font-size: calc(var(--base-font-size));
-    color: rgb(var(--white-monochrome));
-    text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+	color: rgb(var(--white-monochrome));
+	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 }
-	
+
 @media only screen and (max-width: 768px) {
 	#header {
 		background-image: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg);
-		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2),top center;
-		background-size: calc(8.75rem + var(--offset-from-page-top)),100% 7.5rem;
-		background-repeat: no-repeat,repeat;
+		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
+		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
+		background-repeat: no-repeat, repeat;
 	}
 }
 
 @-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+	0% {
+		background-position: 0% 82%
+	}
+
+	50% {
+		background-position: 100% 19%
+	}
+
+	100% {
+		background-position: 0% 82%
+	}
 }
+
 @-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+	0% {
+		background-position: 0% 82%
+	}
+
+	50% {
+		background-position: 100% 19%
+	}
+
+	100% {
+		background-position: 0% 82%
+	}
 }
+
 @-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+	0% {
+		background-position: 0% 82%
+	}
+
+	50% {
+		background-position: 100% 19%
+	}
+
+	100% {
+		background-position: 0% 82%
+	}
 }
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+
+@keyframes rainbow {
+	0% {
+		background-position: 0% 82%
+	}
+
+	50% {
+		background-position: 100% 19%
+	}
+
+	100% {
+		background-position: 0% 82%
+	}
 }
