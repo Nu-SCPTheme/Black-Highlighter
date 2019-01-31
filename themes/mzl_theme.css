@@ -402,19 +402,8 @@ a {
 }
 
 div.content-log {
-    display: inline-block ;
-    float: center;
+    display: inline-block;
     border: dashed 1px #444444 ;
-	border-image: linear-gradient(124deg,
-		rgba(240, 194, 215, 1),
-		rgba(215, 195, 218, 1),
-		rgba(181, 197, 223, 1),
-		rgba(184, 198, 223, 1),
-		rgba(167, 203, 223, 1),
-		rgba(196, 221, 189, 1),
-		rgba(218, 230, 172, 1),
-		rgba(230, 234, 171, 1),
-		rgba(255, 242, 167, 1));
     border-radius: 10px;
     background: linear-gradient(124deg,
 		rgba(240, 194, 215, 1),
@@ -441,8 +430,8 @@ div.content-log.inset {
     background: rgba(255,255,255,0.35) ;
 }
 
-div.content-log.bobble{
-    font-family: "Courier New", monospace;
+div.content-log.bobble *{
+    font-family: var(--mono-font), monospace;
     font-weight: bold;
 }
 
