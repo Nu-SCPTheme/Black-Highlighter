@@ -103,6 +103,10 @@ a {
 	color: rgb(var(--light-gray-monochrome));
 }
 
+#header h2 {
+	font-size: calc(var(--base-font-size) * 0.9);
+}
+
 #header h2 span::before {
 	content: "Well well well, how the turn tables";
 	color: rgb(var(--bright-accent));
@@ -309,6 +313,9 @@ a {
 		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
 		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
 		background-repeat: no-repeat, repeat;
+	}
+	#header h2 {
+		font-size: calc(var(--base-font-size) * 0.7);
 	}
 }
 
