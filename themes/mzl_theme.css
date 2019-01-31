@@ -403,8 +403,8 @@ a {
 
 div.content-log {
     display: inline-block;
-    border: dashed 1px #444444 ;
-    border-radius: 10px;
+    border: dashed 0.0625rem rgba(240, 194, 215, 1);
+    border-radius: 1rem;
     background: linear-gradient(124deg,
 		rgba(240, 194, 215, 1),
 		rgba(215, 195, 218, 1),
@@ -423,7 +423,8 @@ div.content-log {
 	animation: rainbow 30s ease infinite;
     margin: auto;
     width: auto;
-    padding: 10px;
+    padding: 1rem;
+	background-blend-mode: multiply;
 }
 
 div.content-log.inset {
