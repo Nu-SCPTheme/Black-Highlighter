@@ -337,6 +337,8 @@ a {
 
 #page-content div.warning > span:nth-child(1),
 #page-content div.warning > span:nth-child(3) {
+	position: relative;
+    z-index: 5;
 	background: linear-gradient(124deg,
 		rgba(240, 194, 215, 1),
 		rgba(215, 195, 218, 1),
@@ -355,7 +357,7 @@ a {
 	animation: rainbow 18s ease infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	filter: drop-shadow(1px 1px 1px rgb(var(--bright-accent)));
+	filter: drop-shadow(1px 1px 1px rgb(var(--dark-accent)));
 }
 
 #page-content div.warning > span:nth-child(1) {
