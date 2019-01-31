@@ -350,13 +350,15 @@ a {
 		rgba(218, 230, 172, 1),
 		rgba(230, 234, 171, 1),
 		rgba(255, 242, 167, 1));
-	background-size: 50% 50%;
+	background-size: 300% 300%;
+	background-repeat: repeat;
 	-webkit-animation: rainbow 18s ease infinite;
 	-z-animation: rainbow 18s ease infinite;
 	-o-animation: rainbow 18s ease infinite;
 	animation: rainbow 18s ease infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	text-shadow: 1px 1px 1px rgb(var(--black-monochrome));
 }
 
 #page-content div.warning > span:nth-child(1) {
