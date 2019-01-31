@@ -55,6 +55,13 @@ a {
     text-shadow: 0 0.2rem 1rem #7b7b7b
 }
 
+#header {
+	background: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-4205theme/4205_logo.svg) .625rem 2.50rem no-repeat;
+	background-position: left .75rem top 1.1875rem;
+	background-clip: border-box;
+	background-size: 5.375rem;
+}
+
 #header h2 span::before {
     color: rgb(var(--bright-accent));
 }
@@ -131,6 +138,15 @@ a {
 	filter: drop-shadow( -0.5rem 0.5rem 1rem rgb(var(--black-monochrome)) );
 	-webkit-filter: drop-shadow( -0.5rem 0.5rem 1rem rgb(var(--black-monochrome)) );
 	-moz-filter: drop-shadow( -0.5rem 0.5rem 1rem rgb(var(--black-monochrome)) );
+}
+
+@media only screen and (max-width: 768px) {
+	#header {
+		background-image: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-4205theme/4205_logo.svg);
+		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2),top center;
+		background-size: calc(8.75rem + var(--offset-from-page-top)),100% 7.5rem;
+		background-repeat: no-repeat,repeat;
+	}
 }
 
 @-webkit-keyframes flicker {
