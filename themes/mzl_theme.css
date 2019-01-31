@@ -22,7 +22,7 @@
 	--background-gradient-color: 215, 215, 215;
 	--background-gradient-distance: 40rem;
 
-	scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--gray-monochrome), 0.50);
+	scrollbar-color: rgba(var(--white-monochrome), 1) rgb(var(--bright-accent));
 }
 
 ::-webkit-scrollbar-thumb {
@@ -44,7 +44,7 @@
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: rgba(var(--gray-monochrome), 0.50);
+    background-color: rgb(var(--bright-accent));
 }
 
 hr {
@@ -323,7 +323,7 @@ a {
 	color: rgb(var(--bright-accent));
 	letter-spacing: 0.5em;
 	text-align: center !important;
-	box-shadow: 1px 1px 1px rgba(var(--gray-monochrome), 0.5);
+	text-shadow: 1px 1px 1px rgb(var(--black-monochrome));
 }
 
 @media only screen and (max-width: 768px) {
