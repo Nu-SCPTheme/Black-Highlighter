@@ -91,8 +91,17 @@ header h1 *,
 #top-bar ul li *, 
 #top-bar ul li *,
 #side-bar div.menu-item *{
-	background: linear-gradient(0deg, rgba(var(--bright-accent),0), rgba(var(--bright-accent),0));
-	transition: all 0.5s ease-in-out;
+	background: linear-gradient(124deg, 
+		rgba(240, 194, 215, 0), 
+		rgba(215, 195, 218, 0), 
+		rgba(181, 197, 223, 0), 
+		rgba(184, 198, 223, 0), 
+		rgba(167, 203, 223, 0), 
+		rgba(196, 221, 189, 0), 
+		rgba(218, 230, 172, 0), 
+		rgba(230, 234, 171, 0), 
+		rgba(255, 242, 167, 0));
+	transition: background 0.2s ease-in-out;
 }
 
 header h1 a:hover::before,
@@ -102,7 +111,16 @@ header h1 a:hover::before,
 #top-bar ul li.sfhover a:hover, 
 #top-bar ul li:hover a:hover,
 #side-bar div.menu-item a:hover {
-	background: linear-gradient(124deg, #f0c2d7, #d7c3da, #b5c5df, #b8c6df, #a7cbdf, #c4ddbd, #dae6ac, #e6eaab, #fff2a7);
+	background: linear-gradient(124deg, 
+		rgba(240, 194, 215, 1), 
+		rgba(215, 195, 218, 1), 
+		rgba(181, 197, 223, 1), 
+		rgba(184, 198, 223, 1), 
+		rgba(167, 203, 223, 1), 
+		rgba(196, 221, 189, 1), 
+		rgba(218, 230, 172, 1), 
+		rgba(230, 234, 171, 1), 
+		rgba(255, 242, 167, 1));
 	background-size: 100% 100%;
 	-webkit-animation: rainbow 5s ease infinite;
 	-z-animation: rainbow 5s ease infinite;
