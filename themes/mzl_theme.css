@@ -355,7 +355,6 @@ a {
 	animation: rainbow 18s ease infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	text-shadow: 1px 1px 1px rgb(var(--black-monochrome));
 }
 
 #page-content div.warning > span:nth-child(1) {
@@ -369,13 +368,21 @@ a {
     margin: 0 auto;
 }
 
+#page-content div.warning > span:nth-child(1)::before,
+#page-content div.warning > span:nth-child(3)::before {
+	content: attr(data-title);
+	text-shadow: 1px 1px 1px rgb(var(--black-monochrome));
+}
+
+
 #page-content div.warning > div.bobble {
-	position: relative;
+	position: absolute;
 	background: url(http://kontainer.djkakt.us/local--files/component:nu-mzl-theme/bobble.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-	width: 15rem;
+	top: 0;
+	width: 100%;
 	height: 15rem;
 	animation: spin 10s linear infinite;
 	animation-play-state: paused;
