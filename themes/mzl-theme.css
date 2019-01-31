@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Chicle|Overlock:400,900');
+
+:root {
+    /* Typefaces */
+    --body-font: 'Overlock', monospace;
+    --header-font: 'Chicle', cursive;
+    --title-font: 'Chicle', cursive;
+
+    /* Standard Colors */
+
+    --white-monochrome: 245, 233, 239;
+    --pale-gray-monochrome: 220, 226, 243;
+    --light-gray-monochrome: 242, 243, 220;
+    --gray-monochrome: 185, 224, 173;
+    --dark-gray-monochrome: 160, 240, 205;
+    --black-monochrome: 33, 0, 35;
+    --bright-accent: 250, 140, 220;
+    --medium-accent: 186, 237, 185;
+    --dark-accent: 228, 123, 0;
+    --newpage-color: 221, 102, 17;
+
+    --background-gradient-color: 215, 215, 215;
+    --background-gradient-distance: 40rem;
+
+    scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
+}
+
+#container-wrap-wrap {
+	background-image:
+        repeating-linear-gradient(180deg,
+        hsla(0, 0%, 100%, 0),
+        hsla(0, 0%, 100%, 0) 0.25vh,
+        hsla(0, 0%, 100%, 0) 0.35vh,
+        hsla(0, 0%, 100%, 0) 0.5vh),
+
+        linear-gradient(to bottom,
+        rgba(var(--black-monochrome), 1) 7.5rem,
+        rgba(var(--gray-monochrome), 1) 7.625rem,
+        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+        rgba(var(--black-monochrome), 1) 100%);
+    background-size: 100% 7.5rem, 100% 9.375rem;
+    background-repeat: no-repeat;
+	
+}
+
+#skrollr-body {
+	background: linear-gradient(124deg, #f0c2d7, #d7c3da, #b5c5df, #b8c6df, #a7cbdf, #c4ddbd, #dae6ac, #e6eaab, #fff2a7);
+	background-size: 300% 300%;
+	-webkit-animation: rainbow 18s ease infinite;
+	-z-animation: rainbow 18s ease infinite;
+	-o-animation: rainbow 18s ease infinite;
+	  animation: rainbow 18s ease infinite;
+}
+
+a {
+	font-weight: 900;
+}
+
+#container {
+	text-shadow: 0 0.2rem 1rem #7b7b7b
+}
+
+#header h1 a::before {
+	letter-spacing: 0.1em;
+}
+
+#header h2 span::before {
+	color: rgb(var(--bright-accent));
+}
+
+#side-bar {
+	background: linear-gradient(124deg, #f0c2d7, #d7c3da, #b5c5df, #b8c6df, #a7cbdf, #c4ddbd, #dae6ac, #e6eaab, #fff2a7);
+	background-size: 300% 300%;
+	-webkit-animation: rainbow 180s ease infinite;
+	-z-animation: rainbow 180s ease infinite;
+	-o-animation: rainbow 180s ease infinite;
+	animation: rainbow 180s ease infinite;
+}
+
+#side-bar .heading {
+	background: linear-gradient(124deg, #f0c2d7, #d7c3da, #b5c5df, #b8c6df, #a7cbdf, #c4ddbd, #dae6ac, #e6eaab, #fff2a7);
+	background-size: 300% 300%;
+	-webkit-animation: rainbow 180s ease infinite;
+	-z-animation: rainbow 180s ease infinite;
+	-o-animation: rainbow 180s ease infinite;
+	animation: rainbow 180s ease infinite;
+}
+
+#side-bar div.menu-item a, #side-bar div.menu-item .text {
+	font-weight: 900;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
