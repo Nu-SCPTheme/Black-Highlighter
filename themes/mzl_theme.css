@@ -84,14 +84,13 @@ a {
 	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 }
 
-header h1 a::before,
-#top-bar a,
-#page-title,
-#search-top-box-form input[type="submit"], 
-#search-top-box-form input[type="submit"],
-#top-bar ul li.sfhover a, 
-#top-bar ul li:hover a,
-#side-bar div.menu-item a {
+header h1 *,
+#top-bar *,
+#search-top-box-form *, 
+#search-top-box-form *,
+#top-bar ul li *, 
+#top-bar ul li *,
+#side-bar div.menu-item *{
 	background: linear-gradient(0deg, rgba(var(--bright-accent),0), rgba(var(--bright-accent),0));
 	transition: all 0.5s ease-in-out;
 }
