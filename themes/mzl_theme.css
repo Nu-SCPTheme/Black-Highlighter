@@ -18,6 +18,8 @@
 	--medium-accent: 186, 237, 185;
 	--dark-accent: 228, 123, 0;
 	--newpage-color: 221, 102, 17;
+	
+	--text-outline-color: var(--bright-accent);
 
 	--background-gradient-color: 215, 215, 215;
 	--background-gradient-distance: 40rem;
@@ -132,12 +134,31 @@ a {
 
 #top-bar * {
 	font-size: calc(var(--base-font-size));
-	color: rgb(var(--white-monochrome));
-	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));				
-	-webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));		
+	color: rgb(var(--light-gray-monochrome));
+	text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
+                -1px 1px 0 rgb(var(--text-outline-color)),
+                1px -1px 0 rgb(var(--text-outline-color)),
+                -1px -1px 0 rgb(var(--text-outline-color)),
+                0px 1px 0 rgb(var(--text-outline-color)),
+                0px -1px 0 rgb(var(--text-outline-color)),
+                -1px 0px 0 rgb(var(--text-outline-color)),
+                1px 0px 0 rgb(var(--text-outline-color)),
+                2px 2px 0 rgb(var(--text-outline-color)),
+                -2px 2px 0 rgb(var(--text-outline-color)),
+                2px -2px 0 rgb(var(--text-outline-color)),
+                -2px -2px 0 rgb(var(--text-outline-color)),
+                0px 2px 0 rgb(var(--text-outline-color)),
+                0px -2px 0 rgb(var(--text-outline-color)),
+                -2px 0px 0 rgb(var(--text-outline-color)),
+                2px 0px 0 rgb(var(--text-outline-color)),
+                1px 2px 0 rgb(var(--text-outline-color)),
+                -1px 2px 0 rgb(var(--text-outline-color)),
+                1px -2px 0 rgb(var(--text-outline-color)),
+                -1px -2px 0 rgb(var(--text-outline-color)),
+                2px 1px 0 rgb(var(--text-outline-color)),
+                -2px 1px 0 rgb(var(--text-outline-color)),
+                2px -1px 0 rgb(var(--text-outline-color)),
+                -2px -1px 0 rgb(var(--text-outline-color));			
 }
 
 #top-bar > div.top-bar > ul > li > a,
@@ -245,9 +266,7 @@ a {
 }
 
 #side-bar div.menu-item a,
-#side-bar div.menu-item .text {
-    --text-outline-color: var(--black-monochrome);
-    
+#side-bar div.menu-item .text {    
 	font-size: calc(var(--base-font-size));
 	color: rgb(var(--white-monochrome));
 	text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
