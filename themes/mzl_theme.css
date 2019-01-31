@@ -110,17 +110,13 @@ a {
 }
 
 #top-bar a,
-#search-top-box-form input[type="submit"],
-#top-bar ul li.sfhover a,
-#top-bar ul li:hover a,
+#top-bar ul li a,
 #side-bar div.menu-item a {
 	position: relative;
 	background: transparent !important;
 }
 
 #top-bar a::before,
-#search-top-box-form input[type="submit"]::before,
-#top-bar ul li a::before,
 #top-bar ul li a::before,
 #side-bar div.menu-item a::before {
 	position: absolute;
@@ -149,20 +145,10 @@ a {
 }
 
 #top-bar a:hover::before,
-#search-top-box-form input[type="submit"]:hover::before,
-#search-top-box-form input[type="submit"]:focus::before,
 #top-bar ul li a:hover::before,
-#top-bar ul li a:hover::before,
+#top-bar ul li a.sfhover::before,
 #side-bar div.menu-item a:hover::before {
 	opacity: 1;
-}
-
-#top-bar li:hover ul,
-#top-bar li:focus-within ul,
-#top-bar li.sfhover ul,
-#top-bar li ul {
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
 }
 
 #search-top-box-form input[type="submit"] {
