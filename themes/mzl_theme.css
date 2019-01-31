@@ -130,36 +130,31 @@ a {
 #top-bar > div.top-bar > ul > li > ul > li > a::before,
 #side-bar > div > div > a::before {
 	content: " ";
-	position: absolute !important;
-	width: 100% !important;
-	height: 100% !important;
-	top: 0 !important;
-	left: 0 !important;
-	opacity: 0 !important;
-	z-index: -1;
-	background: linear-gradient(124deg,
-		rgba(240, 194, 215, 1),
-		rgba(215, 195, 218, 1),
-		rgba(181, 197, 223, 1),
-		rgba(184, 198, 223, 1),
-		rgba(167, 203, 223, 1),
-		rgba(196, 221, 189, 1),
-		rgba(218, 230, 172, 1),
-		rgba(230, 234, 171, 1),
-		rgba(255, 242, 167, 1)) !important;
-	background-size: 300% 300%;
-	transition: opacity 0.2s ease-in-out !important;
-	-webkit-animation: rainbow 2s ease infinite !important;
-	-z-animation: rainbow 2s ease infinite !important;
-	-o-animation: rainbow 2s ease infinite !important;
-	animation: rainbow 2s ease infinite !important;
-	pointer-events: none;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    opacity: 0 !important;
+    z-index: -1;
+    background: linear-gradient(124deg, rgba(240, 194, 215, 1), rgba(215, 195, 218, 1), rgba(181, 197, 223, 1), rgba(184, 198, 223, 1), rgba(167, 203, 223, 1), rgba(196, 221, 189, 1), rgba(218, 230, 172, 1), rgba(230, 234, 171, 1), rgba(255, 242, 167, 1)) !important;
+    background-size: 1200% 1200% !important;
+    background-attachment: local !important;
+    background-clip: padding-box !important;
+    background-repeat: repeat !important;
+    background-position: center center !important;
+    transition: opacity 0.5s ease-in-out !important;
+    pointer-events: none;
 }
 
-#top-bar > div.top-bar > ul > li:hover > a::before,
-#top-bar > div.top-bar > ul > li > ul > li:hover > a::before,
-#side-bar > div > div:hover > a::before {
+#top-bar > div.top-bar > ul > li > a:hover::before,
+#top-bar > div.top-bar > ul > li > ul > li > a:hover::before,
+#side-bar > div > div > a:hover::before {
 	opacity: 1 !important;
+	-webkit-animation: rainbow 5s ease infinite !important;
+    -z-animation: rainbow 5s ease infinite !important;
+    -o-animation: rainbow 5s ease infinite !important;
+    animation: rainbow 5s linear infinite !important;
 }
 
 #top-bar li:hover ul,
