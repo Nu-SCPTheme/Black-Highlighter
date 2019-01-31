@@ -355,6 +355,7 @@ a {
 	animation: rainbow 18s ease infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	filter: drop-shadow(1px 1px 1px rgb(var(--bright-accent)));
 }
 
 #page-content div.warning > span:nth-child(1) {
@@ -366,12 +367,6 @@ a {
     width: 75%;
     display: block;
     margin: 0 auto;
-}
-
-#page-content div.warning > span:nth-child(1)::before,
-#page-content div.warning > span:nth-child(3)::before {
-	content: attr(data-title);
-	text-shadow: 1px 1px 1px rgb(var(--black-monochrome));
 }
 
 
