@@ -78,7 +78,14 @@ a {
     font-weight: 900;
 }
 
+#top-bar {
+	font-size: calc(var(--base-font-size));
+    color: rgb(var(--white-monochrome));
+    text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+}
+
 #side-bar {
+	font-variant: unset;
 	background: linear-gradient(124deg, #f0c2d7, #d7c3da, #b5c5df, #b8c6df, #a7cbdf, #c4ddbd, #dae6ac, #e6eaab, #fff2a7);
 	background-size: 300% 300%;
 	-webkit-animation: rainbow 180s ease infinite;
@@ -97,7 +104,9 @@ a {
 }
 
 #side-bar div.menu-item a, #side-bar div.menu-item .text {
-	font-weight: 900;
+	font-size: calc(var(--base-font-size));
+    color: rgb(var(--white-monochrome));
+    text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 }
 	
 @media only screen and (max-width: 768px) {
