@@ -47,7 +47,7 @@
 
 #skrollr-body {
 	background: linear-gradient(124deg, #f0c2d7, #d7c3da, #b5c5df, #b8c6df, #a7cbdf, #c4ddbd, #dae6ac, #e6eaab, #fff2a7);
-	background-size: 300% 7.5rem;
+	background-size: 100% 300%;
 	-webkit-animation: rainbow 36s ease infinite;
 	-z-animation: rainbow 36s ease infinite;
 	-o-animation: rainbow 36s ease infinite;
@@ -58,9 +58,12 @@ a {
 	font-weight: 900;
 }
 
-#container {
-	text-shadow: 0 0.2rem 1rem #7b7b7b
-}
+#header {
+	background: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg) .625rem 2.50rem no-repeat;
+	background-position: left .75rem top 1.1875rem;
+	background-clip: border-box;
+	background-size: 5.375rem;
+
 
 #header h1 a::before {
     content: "MAN ZOO LEAGUE";
@@ -93,6 +96,15 @@ a {
 
 #side-bar div.menu-item a, #side-bar div.menu-item .text {
 	font-weight: 900;
+}
+	
+@media only screen and (max-width: 768px) {
+	#header {
+		background-image: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg);
+		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2),top center;
+		background-size: calc(8.75rem + var(--offset-from-page-top)),100% 7.5rem;
+		background-repeat: no-repeat,repeat;
+	}
 }
 
 @-webkit-keyframes rainbow {
