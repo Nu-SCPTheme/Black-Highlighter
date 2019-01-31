@@ -84,6 +84,17 @@ a {
 	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 }
 
+header h1 a::before,
+#top-bar a,
+#page-title,
+#search-top-box-form input[type="submit"], 
+#search-top-box-form input[type="submit"],
+#top-bar ul li.sfhover a, 
+#top-bar ul li:hover a,
+#side-bar div.menu-item a {
+	transition: all 0.5s ease-in-out;
+}
+
 header h1 a:hover::before,
 #top-bar a:hover,
 #page-title:hover,
