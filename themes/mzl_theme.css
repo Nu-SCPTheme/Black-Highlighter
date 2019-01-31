@@ -253,14 +253,14 @@ a {
 .page-rate-widget-box > span.rateup > a,
 .page-rate-widget-box > span.ratedown > a,
 .page-rate-widget-box > span.cancel > a {
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--bright-accent));
 	mix-blend-mode: unset;
 	transition: all 0.2s ease-in-out;
 }
 
 .page-rate-widget-box > span.rate-points:hover,
 .page-rate-widget-box > span.rate-points:active {
-	color: rgb(var(--white-monochrome)) !important;
+	color: rgb(var(--bright-accent)) !important;
 	mix-blend-mode: unset !important;
 }
 
@@ -270,6 +270,7 @@ a {
 .page-rate-widget-box > span.ratedown:active,
 .page-rate-widget-box > span.cancel:hover,
 .page-rate-widget-box > span.cancel:active {
+	color: rgb(var(--bright-accent));
 	background: linear-gradient(124deg,
 		rgba(240, 194, 215, 1),
 		rgba(215, 195, 218, 1),
@@ -288,6 +289,7 @@ a {
 }
 
 #page-title {
+	color: rgb(var(--bright-accent));
 	color: rgb(var(--light-gray-monochrome));
 	letter-spacing: 0.5em;
 	text-align: center !important;
