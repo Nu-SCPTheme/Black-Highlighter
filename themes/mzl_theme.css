@@ -107,6 +107,12 @@ a {
 #top-bar ul li.sfhover a::before, 
 #top-bar ul li:hover a::before,
 #side-bar div.menu-item a::before {
+	position: absolute;
+	width: 100%; 
+	height: 100%;
+	top: 0; left: 0;
+	opacity: 0;    
+	z-index: -1;
 	opacity: 0;
 	pointer-events: none;
 	background: linear-gradient(124deg, 
