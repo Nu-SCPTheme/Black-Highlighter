@@ -246,9 +246,34 @@ a {
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item .text {
+    --text-outline-color: var(--black-monochrome);
+    
 	font-size: calc(var(--base-font-size));
 	color: rgb(var(--white-monochrome));
-	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));				
+	text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
+                -1px 1px 0 rgb(var(--text-outline-color)),
+                1px -1px 0 rgb(var(--text-outline-color)),
+                -1px -1px 0 rgb(var(--text-outline-color)),
+                0px 1px 0 rgb(var(--text-outline-color)),
+                0px -1px 0 rgb(var(--text-outline-color)),
+                -1px 0px 0 rgb(var(--text-outline-color)),
+                1px 0px 0 rgb(var(--text-outline-color)),
+                2px 2px 0 rgb(var(--text-outline-color)),
+                -2px 2px 0 rgb(var(--text-outline-color)),
+                2px -2px 0 rgb(var(--text-outline-color)),
+                -2px -2px 0 rgb(var(--text-outline-color)),
+                0px 2px 0 rgb(var(--text-outline-color)),
+                0px -2px 0 rgb(var(--text-outline-color)),
+                -2px 0px 0 rgb(var(--text-outline-color)),
+                2px 0px 0 rgb(var(--text-outline-color)),
+                1px 2px 0 rgb(var(--text-outline-color)),
+                -1px 2px 0 rgb(var(--text-outline-color)),
+                1px -2px 0 rgb(var(--text-outline-color)),
+                -1px -2px 0 rgb(var(--text-outline-color)),
+                2px 1px 0 rgb(var(--text-outline-color)),
+                -2px 1px 0 rgb(var(--text-outline-color)),
+                2px -1px 0 rgb(var(--text-outline-color)),
+                -2px -1px 0 rgb(var(--text-outline-color));				
 	-webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 	-moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 	-ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
@@ -346,11 +371,11 @@ a {
     z-index: 5;
 	background:  /* Bright Rainbow Gradient */
 	linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75));
+		rgba(216,151,154,1), 
+		rgba(255,240,148,1), 
+		rgba(198,223,158,1), 
+		rgba(145,191,222,1), 
+		rgba(246,186,212,1));
 	background-size: 300% 300%;
 	background-repeat: repeat;
 	-webkit-animation: rainbow 18s ease infinite;
@@ -359,7 +384,6 @@ a {
 	animation: rainbow 18s ease infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	filter: drop-shadow(1px 1px 1px rgb(var(--black-monochrome)));
 }
 
 #page-content div.warning > span:nth-child(1) {
