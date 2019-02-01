@@ -76,8 +76,8 @@ div.image-block img {
 
 /* RATING */
 
-/* Plain, No-Credit-Button Rating Module */
-div[style="text-align: right;"] > .page-rate-widget-box {
+/* Plain, no-credit-button rating module */
+.page-rate-widget-box {
 	/* position: static;
 		margin-top: -3rem; */
 	overflow: hidden;
@@ -91,6 +91,14 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 	background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome), 0.9) 100%);
 	border: 1px solid rgb(var(--black-monochrome));
 	height: 2rem;
+}
+
+/* Same rule as above, but specifically for the info module / credit button */
+.rate-box-with-credit-button .page-rate-widget-box {
+	border-radius: 0;
+	box-shadow: none;
+	background: none;
+	border: none;
 }
 
 .page-rate-widget-box .rate-points,
