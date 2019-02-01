@@ -22,6 +22,26 @@
     background-color: rgb(var(--bright-accent));
 }
 
+::-moz-selection {
+	background: linear-gradient(to top right,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+	text-shadow: none;
+}
+
+::selection {
+	background: linear-gradient(to top right,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+	text-shadow: none;
+}
+
 :root {
     /* Typefaces */
     --body-font: 'Overlock', monospace;
