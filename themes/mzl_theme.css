@@ -317,6 +317,8 @@ a {
     -o-animation: rainbow 18s ease infinite;
     animation: rainbow 18s ease infinite;
     box-shadow: 1px 1px 1px rgba(var(--gray-monochrome), 0.5);
+    border: dashed 0.0625rem rgb(var(--black-monochrome));
+    border-radius: 1rem;
 }
 
 .page-rate-widget-box > span.rate-points,
@@ -390,7 +392,6 @@ a {
 #page-content div.top,
 #page-content div.bottom {
     position: absolute;
-    top: 0;
     width: 100%;
 }
 
@@ -476,7 +477,7 @@ a {
     animation-play-state: paused;
 }
 
-#page-content div.warning:hover > div.bobble {
+#page-content div.warning:hover > div.bobble-bg {
     animation-play-state: running;
 }
 
