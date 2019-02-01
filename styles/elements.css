@@ -206,8 +206,8 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 /* These override the styles provided by the base Info Module so have been given a higher specificity with #page-content */
 
 .creditRate {
-	margin-right: none;
-	margin-bottom: none;
+	margin-right: 0 !important;
+	margin-bottom: 0 !important;
 }
 
 .rate-box-with-credit-button {
@@ -219,8 +219,8 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 	background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome), 0.9) 100%);
 	border: 1px solid rgb(var(--black-monochrome));
 	height: 2rem;
-	background-color: transparent;
-	border-radius: 0;
+	background-color: transparent !important;
+	border-radius: 0 !important;
 }
 
 .rate-box-with-credit-button > .creditButton:hover {
