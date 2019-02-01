@@ -391,10 +391,42 @@ a {
     width: 100%;
 }
 
+#page-content div.warning > div.top {
+    z-index: 4;
+}
+
+page-content div.warning > div.bottom {
+    z-index: 3;
+    text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
+                -1px 1px 0 rgb(var(--text-outline-color)),
+                1px -1px 0 rgb(var(--text-outline-color)),
+                -1px -1px 0 rgb(var(--text-outline-color)),
+                0px 1px 0 rgb(var(--text-outline-color)),
+                0px -1px 0 rgb(var(--text-outline-color)),
+                -1px 0px 0 rgb(var(--text-outline-color)),
+                1px 0px 0 rgb(var(--text-outline-color)),
+                2px 2px 0 rgb(var(--text-outline-color)),
+                -2px 2px 0 rgb(var(--text-outline-color)),
+                2px -2px 0 rgb(var(--text-outline-color)),
+                -2px -2px 0 rgb(var(--text-outline-color)),
+                0px 2px 0 rgb(var(--text-outline-color)),
+                0px -2px 0 rgb(var(--text-outline-color)),
+                -2px 0px 0 rgb(var(--text-outline-color)),
+                2px 0px 0 rgb(var(--text-outline-color)),
+                1px 2px 0 rgb(var(--text-outline-color)),
+                -1px 2px 0 rgb(var(--text-outline-color)),
+                1px -2px 0 rgb(var(--text-outline-color)),
+                -1px -2px 0 rgb(var(--text-outline-color)),
+                2px 1px 0 rgb(var(--text-outline-color)),
+                -2px 1px 0 rgb(var(--text-outline-color)),
+                2px -1px 0 rgb(var(--text-outline-color)),
+                -2px -1px 0 rgb(var(--text-outline-color));
+}
+
 #page-content div.warning > div.top > span:nth-child(1),
 #page-content div.warning > div.top > span:nth-child(3),
 #page-content div.warning > div.bottom > span:nth-child(1),
-#page-content div.warning > div.bottom > span:nth-child(3){
+#page-content div.warning > div.bottom > span:nth-child(3) {
 	position: relative;
     z-index: 5;
 	background:  /* Bright Rainbow Gradient */
