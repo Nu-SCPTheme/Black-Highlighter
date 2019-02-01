@@ -205,12 +205,12 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 /* Info module */
 /* These override the styles provided by the base Info Module so have been given a higher specificity with #page-content */
 
-.creditRate {
-	margin-right: 0 !important;
-	margin-bottom: 0 !important;
+#page-content .creditRate {
+	margin-right: 0;
+	margin-bottom: 0;
 }
 
-.rate-box-with-credit-button {
+#page-content .rate-box-with-credit-button {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
@@ -219,15 +219,15 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 	background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome), 0.9) 100%);
 	border: 1px solid rgb(var(--black-monochrome));
 	height: 2rem;
-	background-color: transparent !important;
-	border-radius: 0 !important;
+	background-color: transparent;
+	border-radius: 0;
 }
 
-.rate-box-with-credit-button > .creditButton:hover {
+#page-content .rate-box-with-credit-button > .creditButton:hover {
 	background: rgba(50, 50, 50, 0.8);	
 }
 
-.rate-box-with-credit-button > .creditButton > p {
+#page-content .rate-box-with-credit-button > .creditButton > p {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -236,7 +236,7 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 	height: 2rem;
 }
 
-.rate-box-with-credit-button > .creditButton > p > a {
+#page-content .rate-box-with-credit-button > .creditButton > p > a {
 	width: 2rem;
 	height: 2rem;
 	border-left: none;
@@ -244,7 +244,7 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 	display: flex;
 }
 
-.rate-box-with-credit-button > .creditButton > p > a::before {
+#page-content .rate-box-with-credit-button > .creditButton > p > a::before {
 	content: " ";
 	position: absolute;
 	width: 2rem;
@@ -264,7 +264,7 @@ div[style="text-align: right;"] > .page-rate-widget-box {
 	pointer-events: none;
 }
 
-.rate-box-with-credit-button > .page-rate-widget-box {
+#page-content .rate-box-with-credit-button > .page-rate-widget-box {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
