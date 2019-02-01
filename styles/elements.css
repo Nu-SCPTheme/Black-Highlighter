@@ -17,7 +17,7 @@
 .yui-navset .yui-nav a em {
 background-color: rgb(var(--light-grey-monochrome));
 box-shadow: 0em 0.0625em 0.125em rgba(0,0,0,0.7);
-border-color: #rgb(var(--gray-monochrome));
+border-color: rgb(var(--gray-monochrome));
 }
  
 .yui-navset .yui-nav .selected a,
@@ -72,7 +72,8 @@ width:300px;
 
 /* RATING */
 
-.page-rate-widget-box
+/* Plain, No-Credit-Button Rating Module */
+div[style="text-align: right;"] > .page-rate-widget-box
 {
     /* position: static;
 		margin-top: -3rem; */
@@ -81,12 +82,35 @@ width:300px;
     border-radius: 0;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     padding: 0 0.125rem;
-		margin-bottom: 0.75rem;
+	margin-bottom: 0.75rem;
     /*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
     
     background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome),0.9) 100%);
     border: 1px solid rgb(var(--black-monochrome));
     height: 2rem;
+}
+
+/* Credit-Button Rating Module */
+
+.rate-box-with-credit-button {
+	overflow: hidden;
+    display: inline-flex;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    padding: 0 0.125rem;
+	margin-bottom: 0.75rem;
+	background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome),0.9) 100%);
+	border: 1px solid rgb(var(--black-monochrome));
+    height: 2rem;
+}
+
+.rate-box-with-credit-button > .page-rate-widget-box {
+	overflow: hidden;
+	display: inline-flex;
+	border-radius: 0;
+	padding: 0 0.125rem;
+	margin-bottom: 0.75rem;
+	box-shadow: none;
 }
 
 .page-rate-widget-box .rate-points,
