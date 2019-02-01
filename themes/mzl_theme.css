@@ -1,48 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Chicle|Overlock:400,900');
 
 :root {
-	/* Typefaces */
-	--body-font: 'Overlock', monospace;
-	--header-font: 'Chicle', cursive;
-	--title-font: 'Chicle', cursive;
+    /* Typefaces */
+    --body-font: 'Overlock', monospace;
+    --header-font: 'Chicle', cursive;
+    --title-font: 'Chicle', cursive;
 
-	/* Standard Colors */
+    /* Standard Colors */
 
-	--white-monochrome: 245, 233, 239;
-	--pale-gray-monochrome: 220, 226, 243;
-	--light-gray-monochrome: 242, 243, 220;
-	--gray-monochrome: 185, 224, 173;
-	--dark-gray-monochrome: 160, 240, 205;
-	--black-monochrome: 33, 0, 35;
-	--bright-accent: 250, 140, 220;
-	--medium-accent: 186, 237, 185;
-	--dark-accent: 228, 123, 0;
-	--newpage-color: 221, 102, 17;
-	
-	--text-outline-color: var(--bright-accent);
+    --white-monochrome: 245, 233, 239;
+    --pale-gray-monochrome: 220, 226, 243;
+    --light-gray-monochrome: 242, 243, 220;
+    --gray-monochrome: 185, 224, 173;
+    --dark-gray-monochrome: 160, 240, 205;
+    --black-monochrome: 33, 0, 35;
+    --bright-accent: 250, 140, 220;
+    --medium-accent: 186, 237, 185;
+    --dark-accent: 228, 123, 0;
+    --newpage-color: 221, 102, 17;
 
-	--background-gradient-color: 215, 215, 215;
-	--background-gradient-distance: 40rem;
+    --text-outline-color: var(--bright-accent);
 
-	scrollbar-color: rgba(var(--white-monochrome), 1) rgb(var(--bright-accent));
+    --background-gradient-color: 215, 215, 215;
+    --background-gradient-distance: 40rem;
+
+    scrollbar-color: rgba(var(--white-monochrome), 1) rgb(var(--bright-accent));
 }
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(124deg,
-		rgba(240, 194, 215, 1),
-		rgba(215, 195, 218, 1),
-		rgba(181, 197, 223, 1),
-		rgba(184, 198, 223, 1),
-		rgba(167, 203, 223, 1),
-		rgba(196, 221, 189, 1),
-		rgba(218, 230, 172, 1),
-		rgba(230, 234, 171, 1),
-		rgba(255, 242, 167, 1));
-	background-size: 100% 100%;
-	-webkit-animation: rainbow 36s ease infinite;
-	-z-animation: rainbow 36s ease infinite;
-	-o-animation: rainbow 36s ease infinite;
-	animation: rainbow 36s ease infinite;
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
+    background-size: 100% 100%;
+    -webkit-animation: rainbow 36s ease infinite;
+    -z-animation: rainbow 36s ease infinite;
+    -o-animation: rainbow 36s ease infinite;
+    animation: rainbow 36s ease infinite;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -52,50 +52,50 @@
 hr {
     border-top: none;
     background:
-	 /* Bright Rainbow Gradient */
-	linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75));
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
     filter: blur(0.04rem);
 }
 
 #container-wrap-wrap {
-	background-image:
-		linear-gradient(to bottom,
-		rgba(0, 0, 0, 0) 0rem,
-		rgba(0, 0, 0, 0) 7.5rem,
-		rgba(var(--black-monochrome), 1) 7.5rem,
-		rgba(var(--gray-monochrome), 1) 7.625rem,
-		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-		rgba(var(--black-monochrome), 1) 100%),
+    background-image:
+        linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 7.5rem,
+        rgba(var(--black-monochrome), 1) 7.5rem,
+        rgba(var(--gray-monochrome), 1) 7.625rem,
+        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+        rgba(var(--black-monochrome), 1) 100%),
 
-		linear-gradient(to bottom,
-		rgba(0, 0, 0, 0) 0rem,
-		rgba(0, 0, 0, 0) 9.375rem,
-		rgba(var(--white-monochrome), 0.5) 9.375rem,
-		rgba(var(--pale-gray-monochrome), 0.5) 100%);
-	background-size: 100% 9.375rem, 100% 100%;
-	background-repeat: no-repeat;
+        linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 9.375rem,
+        rgba(var(--white-monochrome), 0.5) 9.375rem,
+        rgba(var(--pale-gray-monochrome), 0.5) 100%);
+    background-size: 100% 9.375rem, 100% 100%;
+    background-repeat: no-repeat;
 }
 
 #skrollr-body {
-	background: 
-		/* Bright Rainbow Gradient */
-		linear-gradient(to top right, 
-		rgba(216,151,154,1), 
-		rgba(255,240,148,1), 
-		rgba(198,223,158,1), 
-		rgba(145,191,222,1), 
-		rgba(246,186,212,1));
-	background-size: 100% 100%;
-	-webkit-animation: rainbow 36s ease infinite;
-	-z-animation: rainbow 36s ease infinite;
-	-o-animation: rainbow 36s ease infinite;
-	animation: rainbow 36s ease infinite;
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+    background-size: 100% 100%;
+    -webkit-animation: rainbow 36s ease infinite;
+    -z-animation: rainbow 36s ease infinite;
+    -o-animation: rainbow 36s ease infinite;
+    animation: rainbow 36s ease infinite;
 }
 
 div#container-wrap {
@@ -105,73 +105,73 @@ div#container-wrap {
 }
 
 a {
-	font-weight: 900;
+    font-weight: 900;
 }
 
 #header {
-	background: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg) .625rem 2.50rem no-repeat;
-	background-position: left .75rem top 1.1875rem;
-	background-clip: border-box;
-	background-size: 5.375rem;
+    background: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg) .625rem 2.50rem no-repeat;
+    background-position: left .75rem top 1.1875rem;
+    background-clip: border-box;
+    background-size: 5.375rem;
 }
 
 
 #header h1 a::before {
-	content: "MAN ZOO LEAGUE";
-	letter-spacing: 0.1em;
-	color: rgb(var(--light-gray-monochrome));
+    content: "MAN ZOO LEAGUE";
+    letter-spacing: 0.1em;
+    color: rgb(var(--light-gray-monochrome));
 }
 
 #header h2 {
-	font-size: calc(var(--base-font-size) * 0.9);
+    font-size: calc(var(--base-font-size) * 0.9);
 }
 
 #header h2 span::before {
-	content: "Well well well, how the turn tables";
-	color: rgb(var(--bright-accent));
-	font-weight: 900;
+    content: "Well well well, how the turn tables";
+    color: rgb(var(--bright-accent));
+    font-weight: 900;
 }
 
 #top-bar * {
-	font-size: calc(var(--base-font-size));
-	color: rgb(var(--light-gray-monochrome));
-	text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
-                -1px 1px 0 rgb(var(--text-outline-color)),
-                1px -1px 0 rgb(var(--text-outline-color)),
-                -1px -1px 0 rgb(var(--text-outline-color)),
-                0px 1px 0 rgb(var(--text-outline-color)),
-                0px -1px 0 rgb(var(--text-outline-color)),
-                -1px 0px 0 rgb(var(--text-outline-color)),
-                1px 0px 0 rgb(var(--text-outline-color)),
-                2px 2px 0 rgb(var(--text-outline-color)),
-                -2px 2px 0 rgb(var(--text-outline-color)),
-                2px -2px 0 rgb(var(--text-outline-color)),
-                -2px -2px 0 rgb(var(--text-outline-color)),
-                0px 2px 0 rgb(var(--text-outline-color)),
-                0px -2px 0 rgb(var(--text-outline-color)),
-                -2px 0px 0 rgb(var(--text-outline-color)),
-                2px 0px 0 rgb(var(--text-outline-color)),
-                1px 2px 0 rgb(var(--text-outline-color)),
-                -1px 2px 0 rgb(var(--text-outline-color)),
-                1px -2px 0 rgb(var(--text-outline-color)),
-                -1px -2px 0 rgb(var(--text-outline-color)),
-                2px 1px 0 rgb(var(--text-outline-color)),
-                -2px 1px 0 rgb(var(--text-outline-color)),
-                2px -1px 0 rgb(var(--text-outline-color)),
-                -2px -1px 0 rgb(var(--text-outline-color));			
+    font-size: calc(var(--base-font-size));
+    color: rgb(var(--light-gray-monochrome));
+    text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
+        -1px 1px 0 rgb(var(--text-outline-color)),
+        1px -1px 0 rgb(var(--text-outline-color)),
+        -1px -1px 0 rgb(var(--text-outline-color)),
+        0px 1px 0 rgb(var(--text-outline-color)),
+        0px -1px 0 rgb(var(--text-outline-color)),
+        -1px 0px 0 rgb(var(--text-outline-color)),
+        1px 0px 0 rgb(var(--text-outline-color)),
+        2px 2px 0 rgb(var(--text-outline-color)),
+        -2px 2px 0 rgb(var(--text-outline-color)),
+        2px -2px 0 rgb(var(--text-outline-color)),
+        -2px -2px 0 rgb(var(--text-outline-color)),
+        0px 2px 0 rgb(var(--text-outline-color)),
+        0px -2px 0 rgb(var(--text-outline-color)),
+        -2px 0px 0 rgb(var(--text-outline-color)),
+        2px 0px 0 rgb(var(--text-outline-color)),
+        1px 2px 0 rgb(var(--text-outline-color)),
+        -1px 2px 0 rgb(var(--text-outline-color)),
+        1px -2px 0 rgb(var(--text-outline-color)),
+        -1px -2px 0 rgb(var(--text-outline-color)),
+        2px 1px 0 rgb(var(--text-outline-color)),
+        -2px 1px 0 rgb(var(--text-outline-color)),
+        2px -1px 0 rgb(var(--text-outline-color)),
+        -2px -1px 0 rgb(var(--text-outline-color));
 }
 
 #top-bar > div.top-bar > ul > li > a,
 #top-bar > div.top-bar > ul > li > ul > li > a,
 #side-bar > div > div > a {
-	position: relative !important;
-	background: transparent !important;
+    position: relative !important;
+    background: transparent !important;
 }
 
 #top-bar > div.top-bar > ul > li > a::before,
 #top-bar > div.top-bar > ul > li > ul > li > a::before,
 #side-bar > div > div > a::before {
-	content: " ";
+    content: " ";
     position: absolute !important;
     width: 100% !important;
     height: 100% !important;
@@ -179,13 +179,14 @@ a {
     left: 0 !important;
     opacity: 0 !important;
     z-index: -1;
-    background:  /* Bright Rainbow Gradient */
-	linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75)) !important;
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75)) !important;
     background-size: 1200% 1200% !important;
     background-attachment: local !important;
     background-clip: padding-box !important;
@@ -198,8 +199,8 @@ a {
 #top-bar > div.top-bar > ul > li > a:hover::before,
 #top-bar > div.top-bar > ul > li > ul > li > a:hover::before,
 #side-bar > div > div > a:hover::before {
-	opacity: 1 !important;
-	-webkit-animation: rainbow 5s ease infinite !important;
+    opacity: 1 !important;
+    -webkit-animation: rainbow 5s ease infinite !important;
     -z-animation: rainbow 5s ease infinite !important;
     -o-animation: rainbow 5s ease infinite !important;
     animation: rainbow 5s linear infinite !important;
@@ -214,106 +215,110 @@ a {
 }
 
 #search-top-box-form input[type="submit"] {
-	background: rgb(var(--bright-accent)) !important;
+    background: rgb(var(--bright-accent)) !important;
 }
 
 #search-top-box-form input[type="submit"]:hover,
 #search-top-box-form input[type="submit"]:focus {
-	background:  /* Bright Rainbow Gradient */
-		linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75));
-	background-size: 100% 100%;
-	-webkit-animation: rainbow 15s ease infinite;
-	-z-animation: rainbow 15s ease infinite;
-	-o-animation: rainbow 15s ease infinite;
-	animation: rainbow 15s ease infinite;
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background-size: 100% 100%;
+    -webkit-animation: rainbow 15s ease infinite;
+    -z-animation: rainbow 15s ease infinite;
+    -o-animation: rainbow 15s ease infinite;
+    animation: rainbow 15s ease infinite;
 }
 
 #side-bar {
-	font-variant: unset;
-	background: /* Bright Rainbow Gradient */
-		linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75));
-	background-size: 300% 300%;
-	-webkit-animation: rainbow 180s ease infinite;
-	-z-animation: rainbow 180s ease infinite;
-	-o-animation: rainbow 180s ease infinite;
-	animation: rainbow 180s ease infinite;
+    font-variant: unset;
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background-size: 300% 300%;
+    -webkit-animation: rainbow 180s ease infinite;
+    -z-animation: rainbow 180s ease infinite;
+    -o-animation: rainbow 180s ease infinite;
+    animation: rainbow 180s ease infinite;
 }
 
 #side-bar .heading {
-	color: rgb(var(--bright-accent));
-	background:  /* Bright Rainbow Gradient */
-	linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75));
-	background-size: 300% 300%;
-	-webkit-animation: rainbow 180s ease infinite;
-	-z-animation: rainbow 180s ease infinite;
-	-o-animation: rainbow 180s ease infinite;
-	animation: rainbow 180s ease infinite;
+    color: rgb(var(--bright-accent));
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background-size: 300% 300%;
+    -webkit-animation: rainbow 180s ease infinite;
+    -z-animation: rainbow 180s ease infinite;
+    -o-animation: rainbow 180s ease infinite;
+    animation: rainbow 180s ease infinite;
 }
 
 #side-bar div.menu-item a,
-#side-bar div.menu-item .text {    
-	font-size: calc(var(--base-font-size));
-	color: rgb(var(--white-monochrome));
-	text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
-                -1px 1px 0 rgb(var(--text-outline-color)),
-                1px -1px 0 rgb(var(--text-outline-color)),
-                -1px -1px 0 rgb(var(--text-outline-color)),
-                0px 1px 0 rgb(var(--text-outline-color)),
-                0px -1px 0 rgb(var(--text-outline-color)),
-                -1px 0px 0 rgb(var(--text-outline-color)),
-                1px 0px 0 rgb(var(--text-outline-color)),
-                2px 2px 0 rgb(var(--text-outline-color)),
-                -2px 2px 0 rgb(var(--text-outline-color)),
-                2px -2px 0 rgb(var(--text-outline-color)),
-                -2px -2px 0 rgb(var(--text-outline-color)),
-                0px 2px 0 rgb(var(--text-outline-color)),
-                0px -2px 0 rgb(var(--text-outline-color)),
-                -2px 0px 0 rgb(var(--text-outline-color)),
-                2px 0px 0 rgb(var(--text-outline-color)),
-                1px 2px 0 rgb(var(--text-outline-color)),
-                -1px 2px 0 rgb(var(--text-outline-color)),
-                1px -2px 0 rgb(var(--text-outline-color)),
-                -1px -2px 0 rgb(var(--text-outline-color)),
-                2px 1px 0 rgb(var(--text-outline-color)),
-                -2px 1px 0 rgb(var(--text-outline-color)),
-                2px -1px 0 rgb(var(--text-outline-color)),
-                -2px -1px 0 rgb(var(--text-outline-color));				
-	-webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	font-weight: 900;
+#side-bar div.menu-item .text {
+    font-size: calc(var(--base-font-size));
+    color: rgb(var(--white-monochrome));
+    text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
+        -1px 1px 0 rgb(var(--text-outline-color)),
+        1px -1px 0 rgb(var(--text-outline-color)),
+        -1px -1px 0 rgb(var(--text-outline-color)),
+        0px 1px 0 rgb(var(--text-outline-color)),
+        0px -1px 0 rgb(var(--text-outline-color)),
+        -1px 0px 0 rgb(var(--text-outline-color)),
+        1px 0px 0 rgb(var(--text-outline-color)),
+        2px 2px 0 rgb(var(--text-outline-color)),
+        -2px 2px 0 rgb(var(--text-outline-color)),
+        2px -2px 0 rgb(var(--text-outline-color)),
+        -2px -2px 0 rgb(var(--text-outline-color)),
+        0px 2px 0 rgb(var(--text-outline-color)),
+        0px -2px 0 rgb(var(--text-outline-color)),
+        -2px 0px 0 rgb(var(--text-outline-color)),
+        2px 0px 0 rgb(var(--text-outline-color)),
+        1px 2px 0 rgb(var(--text-outline-color)),
+        -1px 2px 0 rgb(var(--text-outline-color)),
+        1px -2px 0 rgb(var(--text-outline-color)),
+        -1px -2px 0 rgb(var(--text-outline-color)),
+        2px 1px 0 rgb(var(--text-outline-color)),
+        -2px 1px 0 rgb(var(--text-outline-color)),
+        2px -1px 0 rgb(var(--text-outline-color)),
+        -2px -1px 0 rgb(var(--text-outline-color));
+    -webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    font-weight: 900;
 }
 
 .page-rate-widget-box {
-	background:  /* Bright Rainbow Gradient */
-		linear-gradient(to top right, 
-		rgba(216,151,154,0.75), 
-		rgba(255,240,148,0.75), 
-		rgba(198,223,158,0.75), 
-		rgba(145,191,222,0.75), 
-		rgba(246,186,212,0.75)) !important;
-	background-size: 50% 50%;
-	-webkit-animation: rainbow 18s ease infinite;
-	-z-animation: rainbow 18s ease infinite;
-	-o-animation: rainbow 18s ease infinite;
-	animation: rainbow 18s ease infinite;
-	box-shadow: 1px 1px 1px rgba(var(--gray-monochrome), 0.5);
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75)) !important;
+    background-size: 50% 50%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+    box-shadow: 1px 1px 1px rgba(var(--gray-monochrome), 0.5);
 }
 
 .page-rate-widget-box > span.rate-points,
@@ -324,15 +329,15 @@ a {
 .page-rate-widget-box > span.rateup > a,
 .page-rate-widget-box > span.ratedown > a,
 .page-rate-widget-box > span.cancel > a {
-	color: rgb(var(--bright-accent));
-	mix-blend-mode: unset;
-	transition: all 0.2s ease-in-out;
+    color: rgb(var(--bright-accent));
+    mix-blend-mode: unset;
+    transition: all 0.2s ease-in-out;
 }
 
 .page-rate-widget-box > span.rate-points:hover,
 .page-rate-widget-box > span.rate-points:active {
-	color: rgb(var(--bright-accent)) !important;
-	mix-blend-mode: unset !important;
+    color: rgb(var(--bright-accent)) !important;
+    mix-blend-mode: unset !important;
 }
 
 .page-rate-widget-box > span.rateup:hover,
@@ -341,140 +346,140 @@ a {
 .page-rate-widget-box > span.ratedown:active,
 .page-rate-widget-box > span.cancel:hover,
 .page-rate-widget-box > span.cancel:active {
-	color: rgb(var(--black-monochrome));
-	background: linear-gradient(124deg,
-		rgba(240, 194, 215, 1),
-		rgba(215, 195, 218, 1),
-		rgba(181, 197, 223, 1),
-		rgba(184, 198, 223, 1),
-		rgba(167, 203, 223, 1),
-		rgba(196, 221, 189, 1),
-		rgba(218, 230, 172, 1),
-		rgba(230, 234, 171, 1),
-		rgba(255, 242, 167, 1));
-	background-size: 50% 50%;
-	-webkit-animation: rainbow 18s ease infinite;
-	-z-animation: rainbow 18s ease infinite;
-	-o-animation: rainbow 18s ease infinite;
-	animation: rainbow 18s ease infinite;
-	mix-blend-mode: unset !important;
+    color: rgb(var(--black-monochrome));
+    background: linear-gradient(124deg,
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
+    background-size: 50% 50%;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+    mix-blend-mode: unset !important;
 }
 
 #page-title {
-	color: rgb(var(--bright-accent));
-	letter-spacing: 0.5em;
-	text-align: center !important;
-	text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));				
-	-webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-	-o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    color: rgb(var(--bright-accent));
+    letter-spacing: 0.5em;
+    text-align: center !important;
+    text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    -o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
 }
 
 #page-content {
-	font-size: calc(var(--base-font-size) * 1.1);
+    font-size: calc(var(--base-font-size) * 1.1);
 }
 
 #page-content div.warning {
-	position: relative;
-	font-weight: 900;
+    position: relative;
+    font-weight: 900;
     height: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#page-content div.warning > div.top,
-#page-content div.warning > div.bottom {
+#page-content div.top,
+#page-content div.bottom {
     position: absolute;
     top: 0;
     width: 100%;
 }
 
-#page-content div.warning > div.top {
+#page-content div.top {
     z-index: 4;
 }
 
-page-content div.warning > div.bottom {
+page-content div.bottom {
     z-index: 3;
     text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
-                -1px 1px 0 rgb(var(--text-outline-color)),
-                1px -1px 0 rgb(var(--text-outline-color)),
-                -1px -1px 0 rgb(var(--text-outline-color)),
-                0px 1px 0 rgb(var(--text-outline-color)),
-                0px -1px 0 rgb(var(--text-outline-color)),
-                -1px 0px 0 rgb(var(--text-outline-color)),
-                1px 0px 0 rgb(var(--text-outline-color)),
-                2px 2px 0 rgb(var(--text-outline-color)),
-                -2px 2px 0 rgb(var(--text-outline-color)),
-                2px -2px 0 rgb(var(--text-outline-color)),
-                -2px -2px 0 rgb(var(--text-outline-color)),
-                0px 2px 0 rgb(var(--text-outline-color)),
-                0px -2px 0 rgb(var(--text-outline-color)),
-                -2px 0px 0 rgb(var(--text-outline-color)),
-                2px 0px 0 rgb(var(--text-outline-color)),
-                1px 2px 0 rgb(var(--text-outline-color)),
-                -1px 2px 0 rgb(var(--text-outline-color)),
-                1px -2px 0 rgb(var(--text-outline-color)),
-                -1px -2px 0 rgb(var(--text-outline-color)),
-                2px 1px 0 rgb(var(--text-outline-color)),
-                -2px 1px 0 rgb(var(--text-outline-color)),
-                2px -1px 0 rgb(var(--text-outline-color)),
-                -2px -1px 0 rgb(var(--text-outline-color));
+        -1px 1px 0 rgb(var(--text-outline-color)),
+        1px -1px 0 rgb(var(--text-outline-color)),
+        -1px -1px 0 rgb(var(--text-outline-color)),
+        0px 1px 0 rgb(var(--text-outline-color)),
+        0px -1px 0 rgb(var(--text-outline-color)),
+        -1px 0px 0 rgb(var(--text-outline-color)),
+        1px 0px 0 rgb(var(--text-outline-color)),
+        2px 2px 0 rgb(var(--text-outline-color)),
+        -2px 2px 0 rgb(var(--text-outline-color)),
+        2px -2px 0 rgb(var(--text-outline-color)),
+        -2px -2px 0 rgb(var(--text-outline-color)),
+        0px 2px 0 rgb(var(--text-outline-color)),
+        0px -2px 0 rgb(var(--text-outline-color)),
+        -2px 0px 0 rgb(var(--text-outline-color)),
+        2px 0px 0 rgb(var(--text-outline-color)),
+        1px 2px 0 rgb(var(--text-outline-color)),
+        -1px 2px 0 rgb(var(--text-outline-color)),
+        1px -2px 0 rgb(var(--text-outline-color)),
+        -1px -2px 0 rgb(var(--text-outline-color)),
+        2px 1px 0 rgb(var(--text-outline-color)),
+        -2px 1px 0 rgb(var(--text-outline-color)),
+        2px -1px 0 rgb(var(--text-outline-color)),
+        -2px -1px 0 rgb(var(--text-outline-color));
 }
 
-#page-content div.warning > div.top > span:nth-child(1),
-#page-content div.warning > div.top > span:nth-child(3),
-#page-content div.warning > div.bottom > span:nth-child(1),
-#page-content div.warning > div.bottom > span:nth-child(3) {
-	position: relative;
+#page-content div.top > span:nth-child(1),
+#page-content div.top > span:nth-child(3),
+#page-content div.bottom > span:nth-child(1),
+#page-content div.bottom > span:nth-child(3) {
+    position: relative;
     z-index: 5;
-	background:  /* Bright Rainbow Gradient */
-	linear-gradient(to top right, 
-		rgba(216,151,154,1), 
-		rgba(255,240,148,1), 
-		rgba(198,223,158,1), 
-		rgba(145,191,222,1), 
-		rgba(246,186,212,1));
-	background-size: 300% 300%;
-	background-repeat: repeat;
-	-webkit-animation: rainbow 18s ease infinite;
-	-z-animation: rainbow 18s ease infinite;
-	-o-animation: rainbow 18s ease infinite;
-	animation: rainbow 18s ease infinite;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+    background-size: 300% 300%;
+    background-repeat: repeat;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-page-content div.warning > div.top > span:nth-child(1),
-page-content div.warning > div.bottom > span:nth-child(1) {
-	font-size: calc(var(--base-font-size) * 2.5);
+page-content div.top > span:nth-child(1),
+page-content div.bottom > span:nth-child(1) {
+    font-size: calc(var(--base-font-size) * 2.5);
 }
 
-#page-content div.warning > div.top > span:nth-child(3),
-#page-content div.warning > div.bottom > span:nth-child(3) {
-	font-size: calc(var(--base-font-size) * 1.25);
+#page-content div.top > span:nth-child(3),
+#page-content div.bottom > span:nth-child(3) {
+    font-size: calc(var(--base-font-size) * 1.25);
     width: 75%;
     display: block;
     margin: 0 auto;
 }
 
-
-#page-content div.warning > div.bobble {
-	position: absolute;
-	background: url(http://kontainer.djkakt.us/local--files/component:nu-mzl-theme/bobble.png);
+#page-content div.bobble {
+    position: absolute;
+    background: url(http://kontainer.djkakt.us/local--files/component:nu-mzl-theme/bobble.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-	top: 0;
-	width: 100%;
-	height: 15rem;
-	animation: spin 10s linear infinite;
-	animation-play-state: paused;
+    top: 0;
+    width: 100%;
+    height: 15rem;
+    animation: spin 10s linear infinite;
+    animation-play-state: paused;
 }
 
 #page-content div.warning:hover > div.bobble {
-	animation-play-state: running;
+    animation-play-state: running;
 }
 
 div.content-log {
@@ -482,110 +487,113 @@ div.content-log {
     border: dashed 0.0625rem rgb(var(--black-monochrome));
     border-radius: 1rem;
     background: linear-gradient(124deg,
-		rgba(240, 194, 215, 1),
-		rgba(215, 195, 218, 1),
-		rgba(181, 197, 223, 1),
-		rgba(184, 198, 223, 1),
-		rgba(167, 203, 223, 1),
-		rgba(196, 221, 189, 1),
-		rgba(218, 230, 172, 1),
-		rgba(230, 234, 171, 1),
-		rgba(255, 242, 167, 1));
-	background-size: 300% 300%;
-	background-repeat: repeat;
-	-webkit-animation: rainbow 30s ease infinite;
-	-z-animation: rainbow 30s ease infinite;
-	-o-animation: rainbow 30s ease infinite;
-	animation: rainbow 30s ease infinite;
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
+    background-size: 300% 300%;
+    background-repeat: repeat;
+    -webkit-animation: rainbow 30s ease infinite;
+    -z-animation: rainbow 30s ease infinite;
+    -o-animation: rainbow 30s ease infinite;
+    animation: rainbow 30s ease infinite;
     margin: auto;
     width: auto;
     padding: 1rem;
-	background-blend-mode: multiply;
+    background-blend-mode: multiply;
 }
 
 div.content-log.inset {
-    background: rgba(255,255,255,0.35) ;
+    background: rgba(255, 255, 255, 0.35);
 }
 
-div.content-log.bobble *{
+div.content-log.bobble * {
     font-family: var(--mono-font), monospace;
     font-weight: bold;
 }
 
 div.content-log.bobbleinset {
-    background: rgba(255,255,255,0.35) ;
+    background: rgba(255, 255, 255, 0.35);
     font-family: "Courier New", monospace;
     font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
-	#header {
-		background-image: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg);
-		background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
-		background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
-		background-repeat: no-repeat, repeat;
-	}
-	#header h2 {
-		font-size: calc(var(--base-font-size) * 0.7);
-	}
+    #header {
+        background-image: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg);
+        background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
+        background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
+        background-repeat: no-repeat, repeat;
+    }
+
+    #header h2 {
+        font-size: calc(var(--base-font-size) * 0.7);
+    }
 }
 
 @-webkit-keyframes rainbow {
-	0% {
-		background-position: 0% 82%
-	}
+    0% {
+        background-position: 0% 82%
+    }
 
-	50% {
-		background-position: 100% 19%
-	}
+    50% {
+        background-position: 100% 19%
+    }
 
-	100% {
-		background-position: 0% 82%
-	}
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 @-moz-keyframes rainbow {
-	0% {
-		background-position: 0% 82%
-	}
+    0% {
+        background-position: 0% 82%
+    }
 
-	50% {
-		background-position: 100% 19%
-	}
+    50% {
+        background-position: 100% 19%
+    }
 
-	100% {
-		background-position: 0% 82%
-	}
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 @-o-keyframes rainbow {
-	0% {
-		background-position: 0% 82%
-	}
+    0% {
+        background-position: 0% 82%
+    }
 
-	50% {
-		background-position: 100% 19%
-	}
+    50% {
+        background-position: 100% 19%
+    }
 
-	100% {
-		background-position: 0% 82%
-	}
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 @keyframes rainbow {
-	0% {
-		background-position: 0% 82%
-	}
+    0% {
+        background-position: 0% 82%
+    }
 
-	50% {
-		background-position: 100% 19%
-	}
+    50% {
+        background-position: 100% 19%
+    }
 
-	100% {
-		background-position: 0% 82%
-	}
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 @keyframes spin {
-  100% {transform: rotate(1turn); }
+    100% {
+        transform: rotate(1turn);
+    }
 }
