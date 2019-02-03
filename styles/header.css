@@ -42,7 +42,8 @@ body {
                                     rgba(var(--background-gradient-color), 0.013) calc(calc(91.4 / 100) * var(--background-gradient-distance)),
                                     rgba(var(--background-gradient-color), 0) calc(calc(100 / 100) * var(--background-gradient-distance)));
   background-image: var(--header-background), var(--topbar-background), var(--gradient-background);
-    background-size: 100% 7.5rem, 100% 9.375rem, 100% var(--background-gradient-distance);
+    --header-background-image-width: 100%;
+    background-size: var(--header-background-image-width) 7.5rem, 100% 9.375rem, 100% var(--background-gradient-distance);
     /* 120px, 150px */
     background-repeat: no-repeat;
 }
