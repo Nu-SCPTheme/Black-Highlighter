@@ -12,19 +12,19 @@
 }
 
 body {
-  background-image: linear-gradient(to top,
+    --header-background: linear-gradient(to top,
                                     rgba(99, 33, 37, 0.97) 0%,
                                     rgb(76, 25, 30) 70%,
-                                    rgb(56, 37, 37) 100%),
-                    linear-gradient(to bottom,
+                                    rgb(56, 37, 37) 100%);
+    --topbar-background: linear-gradient(to bottom,
                                     white 0%,
                                     white 7.5rem,
                                     rgba(var(--black-monochrome), 1) 7.5rem,
                                     rgba(var(--gray-monochrome), 1) 7.625rem,
                                     rgba(var(--gray-monochrome), 0.95) calc(100% - 0.125rem),
                                     rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
-                                    rgba(var(--black-monochrome), 1) 100%),
-                    linear-gradient(to bottom,
+                                    rgba(var(--black-monochrome), 1) 100%);
+    --gradient-background: linear-gradient(to bottom,
                                     rgba(var(--background-gradient-color), 1) calc(calc(0 / 100) * var(--background-gradient-distance)),
                                     rgba(var(--background-gradient-color), 0.987) calc(calc(0.8 / 100) * var(--background-gradient-distance)),
                                     rgba(var(--background-gradient-color), 0.951) calc(calc(2.9 / 100) * var(--background-gradient-distance)),
@@ -41,6 +41,7 @@ body {
                                     rgba(var(--background-gradient-color), 0.049) calc(calc(82.5 / 100) * var(--background-gradient-distance)),
                                     rgba(var(--background-gradient-color), 0.013) calc(calc(91.4 / 100) * var(--background-gradient-distance)),
                                     rgba(var(--background-gradient-color), 0) calc(calc(100 / 100) * var(--background-gradient-distance)));
+  background-image: var(--header-background), var(--topbar-background), var(--gradient-background);
     background-size: 100% 7.5rem, 100% 9.375rem, 100% var(--background-gradient-distance);
     /* 120px, 150px */
     background-repeat: no-repeat;
