@@ -76,6 +76,10 @@ div.image-block img {
 
 /* RATING */
 
+:root {
+	--rating-module-height: 1.3125rem;
+}
+
 /* Plain, no-credit-button rating module */
 .page-rate-widget-box {
 	/* position: static;
@@ -89,8 +93,8 @@ div.image-block img {
 	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
 
 	background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome), 0.9) 100%);
-	border: 1px solid rgb(var(--black-monochrome));
-	height: 2rem;
+	border: 0.0625rem solid rgb(var(--black-monochrome));
+	height: var(--rating-module-height);
 }
 
 /* Same rule as above, but specifically for the info module / credit button */
@@ -120,9 +124,9 @@ div.image-block img {
 .rate-box-with-credit-button > .creditButton,
 .rate-box-with-credit-button > .creditButton > p {
 	padding: 0;
-	width: 2rem;
+	width: calc(var(--rating-module-height) * 1.5);
 	display: block;
-	line-height: 2rem;
+	line-height: var(--rating-module-height);
 	text-align: center;
 	transition: background-color var(--sidebar-transition-timing);
 }
@@ -164,7 +168,7 @@ div.image-block img {
 }
 
 .page-rate-widget-box .rate-points {
-	line-height: 2rem;
+	line-height: var(--rating-module-height);
 	padding: 0 0.8rem;
 	text-transform: uppercase;
 	font-size: calc(var(--base-font-size) * 0.8);
@@ -228,8 +232,8 @@ div.image-block img {
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	padding: 0 0.125rem;
 	background: linear-gradient(to top, rgb(var(--gray-monochrome)) 0%, rgba(var(--gray-monochrome), 0.9) 100%);
-	border: 1px solid rgb(var(--black-monochrome));
-	height: 2rem;
+	border: 0.0625rem solid rgb(var(--black-monochrome));
+	height: var(--rating-module-height);
 	background-color: transparent;
 	border-radius: 0;
 }
@@ -243,13 +247,13 @@ div.image-block img {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	width: 2rem;
-	height: 2rem;
+	width: calc(var(--rating-module-height) * 1.5);
+	height: var(--rating-module-height);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a {
-	width: 2rem;
-	height: 2rem;
+	width: calc(var(--rating-module-height) * 1.5);
+	height: var(--rating-module-height);
 	border-left: none;
 	font-size: 1em;
 	display: flex;
@@ -258,8 +262,8 @@ div.image-block img {
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
 	content: " ";
 	position: absolute;
-	width: 2rem;
-	height: 2rem;
+	width: calc(var(--rating-module-height) * 1.5);
+	height: var(--rating-module-height);
 	top: 0;
 	left: 0;
 	background-color: rgb(var(--white-monochrome));
@@ -343,6 +347,9 @@ div.block-left {
 /* Mobile Elements */
 
 @media only screen and (max-width: 768px) {
+	:root {
+		--rating-module-height: 2rem;
+	}
 
 	div.block-right,
 	div.block-left {
