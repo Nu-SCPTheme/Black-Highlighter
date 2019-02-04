@@ -116,7 +116,7 @@
 	justify-content: flex-end;
 	/*color: transparent;*/
 	font-size: 0;
-	height: calc(2rem - var(--sidebar-internal-border-thickness));
+	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--black-monochrome),0.08);
 	flex-shrink: 2;
 }
@@ -170,6 +170,49 @@
 
 #side-bar div.menu-item img {
 	display: none;
+}
+
+/* Collapsibles in the sidebar */
+
+#side-bar div.menu-item .collapsible-block {
+	width: 100%;
+}
+
+#side-bar div.menu-item a.collapsible-block-link {
+	padding-right: 2rem;
+	position: relative;
+}
+
+/* create a dropdown triangle next to the collapsible */
+#side-bar div.menu-item a.collapsible-block-link::after {
+	content: "";
+	position: absolute;
+	height: 2rem;
+	width: 2rem;
+	top: 0;
+	right: 0;
+	background-image: url(http://scptestwiki.wdfiles.com/local--files/squeeze%3Anav%3Aside/arr_drop.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+#side-bar div.menu-item .collapsible-block-unfolded-link a.collapsible-block-link::after {
+	transform: rotate(180deg);
+}
+
+/* create a gap next to the collapsible contents */
+#side-bar div.menu-item .collapsible-block-content {
+	border-right: 2rem solid rgba(var(--black-monochrome), 0.08);
+	box-sizing: border-box;
+}
+
+/* hide the last border within the collapsible */
+#side-bar div.menu-item .collapsible-block-content .menu-item:last-of-type {
+	border-bottom: none;
+}
+
+#side-bar div.menu-item .collapsible-block-unfolded-link {
+	border-bottom: 0.125rem solid rgba(var(--black-monochrome), 0.08);
 }
 
 /* Staff Sidebar Elements */
