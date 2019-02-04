@@ -88,20 +88,30 @@
 	padding: 0.625rem;
 }
 
-#side-bar .heading {
-	color: rgb(var(--white-monochrome));
+#side-bar .heading,
+#side-bar .side-block > .collapsible-block:nth-child(1) .collapsible-block-folded {
 	box-shadow: inset 0 -0.0625rem 0 0 rgb(var(--red-monochrome));
-	letter-spacing: 0.2rem;
-	padding-right: 1rem;
-	margin-top: 0.500rem;
-	padding-bottom: 0.250rem;
+	margin-top: 0.5rem;
+	height: 1.5625rem;
 	font-size: calc(var(--base-font-size) * 1.25);
 	font-weight: 900;
 	text-align: right;
-	/*background: linear-gradient(10deg, rgba(var(--medium-accent), 0.45) 0%, rgba(var(--medium-accent), 0.55) 100%);*/
 	background: linear-gradient(10deg, rgba(var(--medium-accent), 0.45) 0%, rgba(var(--medium-accent), 0.55) 100%);
+}
+
+#side-bar .heading p,
+#side-bar .side-block > .collapsible-block:nth-child(1) .collapsible-block-link {
+	padding-right: 1rem;
+	letter-spacing: 0.2rem;
+	color: rgb(var(--white-monochrome));
+	height: 1.5625rem;
+	line-height: 1.5625rem;
+	text-transform: uppercase;
+	font-size: calc(var(--base-font-size) * 0.95);
 	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
-	font-variant: all-petite-caps;
+}
+
+#side-bar .heading p {
 	cursor: default;
 }
 
