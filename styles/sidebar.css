@@ -51,25 +51,30 @@
 	-webkit-filter: brightness(120%);
 }
 
-#side-bar > div:nth-child(3) {
+
+/* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
+#side-bar .side-block:nth-child(3) {
 	background-color: rgba(178, 248, 243, 0.25) !important;
 }
 
-#side-bar > div:nth-child(5) {
+#side-bar .side-block:nth-child(5) {
 	background-color: rgba(var(--dark-accent), 0.5) !important;
-	padding: 0.5rem 0;
 }
 
-#side-bar > div:nth-child(6) {
+#side-bar .side-block:nth-child(6) {
 	background-color: rgba(204, 104, 104, 0.15) !important;
-	padding: 1rem 0;
 }
 
-#side-bar > div:nth-child(7) {
+#side-bar .side-block:nth-child(7) {
 	background-color: rgba(163, 204, 199, 0.25) !important;
 }
 
-/* please make sure you note down what specific stuff like this does - Croque */
+/* Defer to a variable set in nav:side, if available */
+#side-bar .side-block {
+	background-color: var(--sidebar-background) !important;
+}
+
+/* WOED - WHAT DOES THIS DO?? PLZ COMMENT - Croque */
 #side-bar div.side-block:nth-child(7) > div:nth-child(1) > div:nth-child(1) img {
 	filter: none;
 	-webkit-filter: none;
@@ -229,6 +234,12 @@
 	font-size: var(--base-font-size);
 }
 
+/* for full-block collapsibles, give the open collapsible the same background as the side block */
+/* variable should be set in nav:side */
+#side-bar .side-block > .collapsible-block .collapsible-block .collapsible-block-unfolded-link {
+	background-color: var(--sidebar-background);
+}
+
 /* Staff Sidebar Elements */
 
 /*
@@ -361,6 +372,11 @@
 }
 
 #side-bar .close-menu {
+	display: none;
+}
+
+/* there's an empty menu item in the old sidebar design */
+#side-bar div.menu-item:empty {
 	display: none;
 }
 
