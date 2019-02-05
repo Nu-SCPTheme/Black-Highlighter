@@ -4,8 +4,13 @@
 	border: none;
 	display: flex;
 	flex-direction: column;
-	background: rgba(var(--white-monochrome),1);
-	box-shadow: inset -0.094em 0 0 rgb(var(--dark-accent)), 0 0.188em 0.375em rgba(0, 0, 0, 0.16), 0 0.188em 0.375em rgba(0, 0, 0, 0.23), 0 0 0.0625em 0 #888880 inset, 0 0 0.0625em 0 #888880, inset 0 -0.625em 0 0 var(--dark-accent);
+	background: rgba(var(--swatch-menubg-color),1);
+	box-shadow: inset -0.094em 0 0 rgb(var(--swatch-primary-darkest)), 
+		0 0.188em 0.375em rgba(var(--swatch-border-color), 0.16), 
+		0 0.188em 0.375em rgba(var(--swatch-border-color), 0.23), 
+		inset 0 0 0.0625em 0 rgb(var(--swatch-menubg-medium-color)) , 
+		0 0 0.0625em 0 rgb(var(--swatch-menubg-medium-color)), 
+		inset 0 -0.625em 0 0 rgb(var(--swatch-primary-darkest));
 	flex-basis: var(--sidebar-width-on-desktop);
 	min-width: var(--sidebar-width-on-desktop);
 	width: var(--sidebar-width-on-desktop);
@@ -13,6 +18,7 @@
 	padding: 0;
 	margin: 0 0 0 -1vw;
 	position: sticky;
+	position: -webkit-sticky;
 	top: -1rem;
 	max-height: calc(100vh + 1rem);
 	overflow: auto;
@@ -22,11 +28,11 @@
 }
 
 #side-bar::-webkit-scrollbar-thumb {
-	background: rgba(var(--gray-monochrome),0.2);
+	background: rgba(var(--swatch-menubg-medium-color,0.2);
 }
 
 #side-bar::-webkit-scrollbar-track {
-	background: rgba(var(--gray-monochrome),0.05);
+	background: rgba(var(--swatch-menubg-medium-color),0.05);
 }
 
 #side-bar::-webkit-scrollbar {
@@ -54,24 +60,24 @@
 
 /* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
 #side-bar .side-block:nth-child(3) {
-	background-color: rgba(178, 248, 243, 0.25) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 }
 
 #side-bar .side-block:nth-child(5) {
-	background-color: rgba(var(--dark-accent), 0.5) !important;
+	background-color: rgba(var(--swatch-primary-darkest), 0.5) !important;
 }
 
 #side-bar .side-block:nth-child(6) {
-	background-color: rgba(204, 104, 104, 0.15) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.15) !important;
 }
 
 #side-bar .side-block:nth-child(7) {
-	background-color: rgba(163, 204, 199, 0.25) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 }
 
 /* Defer to a variable set in nav:side, if available */
 #side-bar .side-block {
-	background-color: var(--sidebar-background) !important;
+	background-color: var(--swatch-menubg-color) !important;
 }
 
 /* WOED - WHAT DOES THIS DO?? PLZ COMMENT - Croque */
@@ -94,9 +100,9 @@
 
 #side-bar .heading,
 #side-bar .side-block > .collapsible-block:nth-child(1) .collapsible-block-folded {
-	box-shadow: inset 0 -0.0625rem 0 0 rgb(var(--red-monochrome));
+	box-shadow: var(--box-border-top);
 	min-height: 1.5625rem;
-	background: linear-gradient(10deg, rgba(var(--medium-accent), 0.45) 0%, rgba(var(--medium-accent), 0.55) 100%);
+	background: var(--gradient-sidemenu-header);
 }
 
 #side-bar .heading {
@@ -107,14 +113,14 @@
 #side-bar .side-block > .collapsible-block .collapsible-block-link {
 	padding-right: 1rem;
 	letter-spacing: 0.2rem;
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--swatch-menutxt-light-color));
 	height: 1.5625rem;
 	line-height: 1.5625rem;
 	text-transform: uppercase;
 	font-size: calc(var(--base-font-size) * 0.95);
 	font-weight: 900;
 	text-align: right;
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--black-monochrome));
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-border-color));
 	display: block;
 }
 
@@ -134,7 +140,7 @@
 	/*color: transparent;*/
 	font-size: 0;
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--black-monochrome),0.08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color),0.08);
 	flex-shrink: 2;
 }
 
@@ -146,10 +152,10 @@
 #side-bar div.menu-item .text {
 	padding: 0 0.6em;
 	margin: 0;
-	color: rgb(var(--black-monochrome));
+	color: rgb(var(--swatch-menutxt-dark-color));
 	font-size: var(--base-font-size);
 	letter-spacing: 0.04em;
-	background-color: rgba(var(--dark-accent), 0);
+	background-color: rgba(var(--swatch-menubg-hover-color), 0);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	display: block;
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
@@ -170,11 +176,11 @@
 }
 
 #side-bar div.menu-item > :not(:nth-child(2)):not(.collapsible-block) {
-	border-left: 0.125rem solid rgba(var(--black-monochrome), 0.08);
+	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
 }
 
 #side-bar div.menu-item a:hover {
-	background-color: rgba(var(--black-monochrome), 0.15);
+	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
 	text-decoration: none;
 }
 
@@ -197,7 +203,7 @@
 
 #side-bar .collapsible-block-link:hover {
 	text-decoration: none;
-	background-color: rgba(var(--white-monochrome), 0.15);
+	background-color: rgba(var(--swatch-menubg-color), 0.15);
 }
 
 /* create a dropdown triangle next to the collapsible */
@@ -225,7 +231,7 @@
 
 /* create a gap next to the collapsible contents */
 #side-bar div.menu-item .collapsible-block-content {
-	border-right: 2rem solid rgba(var(--black-monochrome), 0.08);
+	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
 	box-sizing: border-box;
 }
 
@@ -235,7 +241,7 @@
 }
 
 #side-bar div.menu-item .collapsible-block-unfolded-link {
-	border-bottom: 0.125rem solid rgba(var(--black-monochrome), 0.08);
+	border-bottom: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
@@ -336,15 +342,15 @@
 }
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
-	color: rgb(var(--white-monochrome));
-	background-color: rgba(var(--dark-accent), 0);
+	color: rgb(var(--swatch-menutxt-light-color));
+	background-color: rgba(var(--swatch-primary-darkest), 0);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	line-height: 1.85rem;
 }
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
-	background-color: rgba(var(--white-monochrome), 0.15);
+	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
 }
 
@@ -410,7 +416,7 @@
 		top: 0;
 		width: 0;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgba(var(--swatch-menubg-black-color), 0.2);
 	}
 
 	/* We've got two different mobile sidebars going on.
@@ -429,7 +435,7 @@
 		left: 0;
 		margin-left: calc(var(--scrollbar-width));
 		padding-right: calc(14rem + var(--scrollbar-width));
-		background: rgba(var(--black-monochrome), 0.3) 0.0625rem 0.0625rem repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		z-index: -1;
 		visibility: hidden;
 		opacity: 0;
@@ -440,7 +446,7 @@
 	#side-bar:target {
 		display: block;
 		left: 0;
-		box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
+		box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
 		z-index: 10;
 		margin: 0;
 		width: 17em;
@@ -463,7 +469,7 @@
 		z-index: -1;
 		top: 0;
 		left: 0;
-		background: rgba(var(--black-monochrome), 0.3) 1px 1px repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 1px 1px repeat;
 	}
 
 	/* NEW SIDEBAR */
@@ -475,7 +481,7 @@
 	#skrollr-body:target #side-bar {
 		display: block;
 		left: -14rem;
-		box-shadow: inset 0 0 0 -0.0625rem rgb(var(--white-monochrome));
+		box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
 		z-index: 10;
 		margin: 0;
 	}
@@ -502,6 +508,6 @@
 	}
 
 	#skrollr-body:target#side-bar::-webkit-scrollbar-track {
-		background: rgba(var(--white-monochrome), 0.2);
+		background: rgba(var(--swatch-menubg-color), 0.2);
 	}
 }
