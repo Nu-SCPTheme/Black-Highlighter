@@ -41,6 +41,44 @@
 	--medium-accent: 140, 20, 25; /* medium red */
 	--dark-accent: 100, 3, 15; /* dark red */
 	--newpage-color: 221, 102, 17; /* pale orange */
+	
+	/* Primary Theme Colors */
+	--swatch-background: var(--white-monochrome);
+	--swatch-primary: var(--bright-accent);
+	--swatch-primary-darker: var(--medium-accent);
+	--swatch-primary-darkest: var(--dark-accent);
+	--swatch-text: var(--black-monochrome);
+	--swatch-important-text: var(--bright-accent);
+	--swatch-menubg-color: var(--white-monochrome);
+	--swatch-menutxt-color: var(----black-monochrome);
+	--swatch-headerh1-color: var(--white-monochrome);
+	--swatch-headerh2-color: var(--white-monochrome);
+	
+	/* Header Gradients */
+	
+	--gradient-header: linear-gradient(to top,
+				rgba(99, 33, 37, 0.97) 0%,
+				rgb(76, 25, 30) 70%,
+				rgb(56, 37, 37) 100%);
+	--gradient-topmenu: linear-gradient(to bottom,
+				white 0%,
+				white 7.5rem,
+				rgba(var(--black-monochrome), 1) 7.5rem,
+				rgba(var(--gray-monochrome), 1) 7.625rem,
+				rgba(var(--gray-monochrome), 0.95) calc(100% - 0.125rem),
+				rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
+				rgba(var(--black-monochrome), 1) 100%);
+	--gradient-sidemenu-header: linear-gradient(10deg, 
+				rgba(var(--medium-accent), 0.45) 0%, 
+				rgba(var(--medium-accent), 0.55) 100%);
+	--gradient-topmenu-mobile: linear-gradient(to bottom,
+				white 0%,
+				white 7.5rem,
+				rgba(var(--black-monochrome), 1) 7.5rem,
+				rgba(var(--gray-monochrome), 1) 7.625rem,
+				rgba(var(--gray-monochrome), 0.95) calc(100% - 0.125rem),
+				rgba(var(--black-monochrome), 1) calc(100% - 0.125rem),
+				rgba(var(--black-monochrome), 1) 100%);
 
 	/* Spacing Measurements */
 	--offset-from-page-top: 1.2rem; /* space between the top of the page and the start of the header */
