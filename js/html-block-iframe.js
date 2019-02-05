@@ -33,6 +33,10 @@
     var resize_iframe_id = 'iframe_' + iframe_hash + random;
     //# var resize_url = url_array[0] + '//' + url_array[6] + '/common--javascript/resize-iframe.html';
     //               ^ http:               ^ www.wikidot.dev (original domain)
+    
+    // # If we stick with wdfiles, we'll get a crossorigin error.
+    url_array[2] = url_array[2].replace('wdfiles','wikidot');    
+    
     var resize_url = url_array[0] + '//' + url_array[2] + '/common--javascript/resize-iframe.html';
 
     var get_height = function() {
