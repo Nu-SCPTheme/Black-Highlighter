@@ -170,13 +170,7 @@
 	text-align: right;
 }
 
-/*#side-bar div.menu-item > a:last-child {
-	padding-right: calc(var(--base-font-size) * 0.75);
-	margin-right: 0.0625rem;
-} not sure what this is actually for - croque */
-
-#side-bar div.menu-item :not(:nth-child(2)) {
-	/*border-left: 0.125rem solid rgba(var(--white-monochrome), 0.08);*/
+#side-bar div.menu-item > :not(:nth-child(2)):not(.collapsible-block) {
 	border-left: 0.125rem solid rgba(var(--black-monochrome), 0.08);
 }
 
