@@ -4,12 +4,12 @@
 	border: none;
 	display: flex;
 	flex-direction: column;
-	background: rgba(var(--swatch-menubg-color),1);
-	box-shadow: inset -0.094em 0 0 rgb(var(--swatch-primary-darkest)), 
-		0 0.188em 0.375em rgba(var(--swatch-border-color), 0.16), 
-		0 0.188em 0.375em rgba(var(--swatch-border-color), 0.23), 
-		inset 0 0 0.0625em 0 rgb(var(--swatch-menubg-medium-color)) , 
-		0 0 0.0625em 0 rgb(var(--swatch-menubg-medium-color)), 
+	background: rgba(var(--swatch-menubg-color), 1);
+	box-shadow: inset -0.094em 0 0 rgb(var(--swatch-primary-darkest)),
+		0 0.188em 0.375em rgba(var(--swatch-border-color), 0.16),
+		0 0.188em 0.375em rgba(var(--swatch-border-color), 0.23),
+		inset 0 0 0.0625em 0 rgb(var(--swatch-menubg-medium-color)),
+		0 0 0.0625em 0 rgb(var(--swatch-menubg-medium-color)),
 		inset 0 -0.625em 0 0 rgb(var(--swatch-primary-darkest));
 	flex-basis: var(--sidebar-width-on-desktop);
 	min-width: var(--sidebar-width-on-desktop);
@@ -28,11 +28,11 @@
 }
 
 #side-bar::-webkit-scrollbar-thumb {
-	background: rgba(var(--swatch-menubg-medium-color,0.2);
+	background: rgba(var(--swatch-menubg-medium-color, 0.2);
 }
 
 #side-bar::-webkit-scrollbar-track {
-	background: rgba(var(--swatch-menubg-medium-color),0.05);
+	background: rgba(var(--swatch-menubg-medium-color), 0.05);
 }
 
 #side-bar::-webkit-scrollbar {
@@ -77,7 +77,7 @@
 
 /* Defer to a variable set in nav:side, if available */
 #side-bar .side-block {
-	background-color: var(--swatch-menubg-color) !important;
+	background-color: rgb(var(--swatch-menubg-color)) !important;
 }
 
 /* WOED - WHAT DOES THIS DO?? PLZ COMMENT - Croque */
@@ -140,7 +140,7 @@
 	/*color: transparent;*/
 	font-size: 0;
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color),0.08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 	flex-shrink: 2;
 }
 
@@ -225,7 +225,7 @@
 }
 
 #side-bar div.menu-item .collapsible-block-unfolded-link a.collapsible-block-link::after,
-#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after{
+#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
 	transform: rotate(180deg);
 }
 
@@ -251,7 +251,7 @@
 /* for full-block collapsibles, give the open collapsible the same background as the side block */
 /* variable should be set in nav:side */
 #side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
-	background: rgba(var(--medium-accent),0.5);
+	background: rgba(var(--medium-accent), 0.5);
 }
 
 /* Staff Sidebar Elements */
