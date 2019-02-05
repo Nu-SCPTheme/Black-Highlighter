@@ -6,26 +6,34 @@
  * 
  * Comments I've added to this file will begin with #.
  * All other comments will be retained.
+ * If a comment begins with "// #", it's a comment I've added.
+ * If a comment begins with "//#", it's a line of original code that I've commented out.
  */
 
 (function() {
     // running in private context, no namespace pollution :-)
 
     var delay = 250; // each 250 ms, content height will be checked
-    // # The translation module won't resize itself, so we won't be using this variable at all.
+    // # The translation module will never resize itself, so we won't be using this variable at all.
     var current_height = 0; // assume starting height is 0px
 
     // other arguments are passed in URL, for example:
     //  http://www.wdfiles.dev/local--html/start/5d5a0384a922dd96ac0db81d715a5bf348d43c57/www.wikidot.dev/?ukey=1b91d581807e1ba924db3d456f2b8f43b51a1ea0
     //  ^ keep the same protocol (http/https)    ^ iframe hash to pass when resizing      ^ original domain     ^ authorization key
-    // # Our location actually has the following structure:
+    // # Our URL actually has the following structure:
+    // # http://www.scptestwiki.wikidot.com/local--code/component%3Atranslations/1
+    // # We still have "hash", except its value will always be 1. 
+    
     var url_array = location.toString().split('/');
+    // # url_array is: "http:", "", original domain, "local--code", pagename, "1"
     var iframe_hash = url_array[5];
+    // # This effectively sets iframe_hash equal to 1.
     var random = Math.random();
     var resize_div_id = 'div_' + iframe_hash + random;
     var resize_iframe_id = 'iframe_' + iframe_hash + random;
-    var resize_url = url_array[0] + '//' + url_array[6] + '/common--javascript/resize-iframe.html';
+    //# var resize_url = url_array[0] + '//' + url_array[6] + '/common--javascript/resize-iframe.html';
     //               ^ http:               ^ www.wikidot.dev (original domain)
+    var resize_url = url_array[0] + '//' + url_array[2] + '/common--javascript/resize-iframe.html';
 
     var get_height = function() {
         if (document.body.scrollHeight) {
@@ -61,6 +69,7 @@
             resize(current_height);
         }
         setTimeout(tick, delay);
+        // # No need to check again, so no need to set a timeout.
     };
     
     var init = function() {
