@@ -64,14 +64,9 @@
 	background-color: rgb(var(--bright-accent));
 }
 
-.yui-navset .yui-nav .selected a,
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:hover {
-	width: 100%;
-	background-image: none;
 	background-color: rgb(var(--gray-monochrome));
-	/* selected tab background */
-	color: rgb(var(--white-monochrome));
 }
 
 .yui-navset .yui-nav .selected a,
@@ -79,6 +74,11 @@
 	border: none !important;
 	border-color: transparent;
 
+}
+.yui-navset .yui-nav .selected a {
+	color: rgb(var(--white-monochrome));
+	width: 100%;
+	background-image: none;
 }
 
 .yui-navset .yui-content {
