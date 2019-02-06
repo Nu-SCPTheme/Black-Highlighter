@@ -89,8 +89,13 @@
 	background-image: none;
 }
 
-.yui-navset .yui-nav .selected a:hover,
-.yui-navset .yui-nav .selected a:focus {
+.yui-navset .yui-nav .selected a:focus,
+.yui-navset .yui-nav .selected a:active {
+	background-color: rgb(var(--swatch-primary-darker));
+	color: rgb(var(--white-monochrome));
+}
+
+.yui-navset .yui-nav .selected a:hover {
 	background-color: rgb(var(--swatch-menubg-medium-color));
 	color: rgb(var(--white-monochrome));
 }
