@@ -409,6 +409,29 @@ div.block-left {
 	min-width: 30% !important;
 }
 
+/* Tables */
+
+table.wiki-content-table * {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-color),0.25)!important;
+}
+
+table.wiki-content-table, 
+table.wiki-content-table tbody {
+	border-collapse: unset;
+	border-spacing: 0;
+	margin: 0.5em auto;
+	display: table;
+	background-color: transparent;
+}
+
+table.wiki-content-table th {
+	background: rgb(var(--swatch-menubg-light-color));
+	color: rgb(var(--swatch-menutxt-light-color));
+}
+
 /* Mobile Elements */
 
 @media only screen and (max-width: 768px) {
