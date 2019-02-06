@@ -14,7 +14,10 @@
     // running in private context, no namespace pollution :-)
 
     var delay = 250; // each 250 ms, content height will be checked
-    // # The translation module will never resize itself, so we won't be using this variable at all.
+    // # The translation module will never resize itself.
+    // # However, it'll take a moment for the translations to load, so we'll need to check a few times.
+    // # We'll check every quarter-second for 10 seconds. If it takes any longer, assume nothing is coming.
+    var checkCount = 0; // # Stop checking when this gets to 40
     var current_height = 0; // assume starting height is 0px
 
     // other arguments are passed in URL, for example:
@@ -72,8 +75,13 @@
             current_height = new_height;
             resize(current_height);
         }
-        setTimeout(tick, delay);
-        // # No need to check again, so no need to set a timeout.
+        // # The translation module will never resize itself.
+        // # However, it'll take a moment for the translations to load, so we'll need to check a few times.
+        // # We'll check every quarter-second for 10 seconds. If it takes any longer, assume nothing is coming.
+        checkCount++;
+        if(checkCount < 40) {
+          setTimeout(tick, delay);
+        }
     };
     
     var init = function() {
