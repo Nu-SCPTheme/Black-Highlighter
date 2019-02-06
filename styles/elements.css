@@ -9,12 +9,13 @@
 	align-items: stretch;
 	flex-wrap: nowrap;
 	height: 2.5rem;
+	border-color: rgb(var(--swatch-primary-darker));
 }
 
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
 	background-image: none;
-	background-color: rgb(var(--light-gray-monochrome));
+	background-color: rgb(var(--swatch-menubg-light-color));
 	/* tab background */
 	border-color: transparent!important;
 	border: unset;
@@ -22,9 +23,14 @@
 	transition: all 0.125s ease-in-out;
 }
 
+.yui-navset .yui-nav a:hover, 
+.yui-navset .yui-nav a:focus {
+	background-color: rgb(var(--swatch-primary-darkest));
+}
+
 .yui-navset .yui-nav li, 
 .yui-navset .yui-navset-top .yui-nav li {
-	background-color: rgb(var(--light-grey-monochrome));
+	background-color: rgb(var(--swatch-menubg-light-color));
 	border-color: transparent;
 	padding: 0;
 	zoom: unset;
@@ -62,12 +68,12 @@
 .yui-navset .yui-navset-top .yui-nav .selected {
 	flex-grow: 2;
 	flex-basis: 14vw;
-	background-color: rgb(var(--bright-accent));
+	background-color: rgb(var(--swatch-primary-darker));
 }
 
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:hover {
-	background-color: rgb(var(--gray-monochrome));
+	background-color: rgb(var(--swatch-menubg-medium-color));
 }
 
 .yui-navset .yui-nav .selected a,
@@ -83,7 +89,7 @@
 }
 
 .yui-navset .yui-content {
-	background-color: rgb(var(--pale-gray-monochrome));
+	background-color: rgba(var(--swatch-menubg-light-color),0.5);
 	/* content background color */
 }
 
