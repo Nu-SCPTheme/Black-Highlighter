@@ -13,33 +13,61 @@
 
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
+	background-image: none;
 	background-color: rgb(var(--light-gray-monochrome));
 	/* tab background */
-	border-color: rgb(var(--gray-monochrome));
+	border-color: transparent!important;
+	border: unset;
 	color: rgb(var(--black-monochrome));
 	transition: all 0.125s ease-in-out;
 }
 
 .yui-navset .yui-nav li, 
 .yui-navset .yui-navset-top .yui-nav li {
-	box-shadow: 0em 0.0625em 0.125em rgba(0, 0, 0, 0.7);
 	background-color: rgb(var(--light-grey-monochrome));
-	border-color: rgb(var(--gray-monochrome));
-	align-items: center;
-	padding: 1px 0 0;
-	zoom: 1;
-	flex-shrink: 2;
+	border-color: transparent;
+	padding: 0;
+	zoom: unset;
 	display: flex;
+	position: relative;
+	overflow: hidden;
+	flex-basis: 7vw;
 }
+
+.yui-navset .yui-nav li a, 
+.yui-navset-top .yui-nav li a, 
+.yui-navset-bottom .yui-nav li a {
+	display: flex;
+	vertical-align: bottom;
+	zoom: 1;
+	width: 100%;
+	align-items: center;
+	justify-content: center;	
+}
+
+.yui-navset .yui-nav a em, 
+.yui-navset .yui-navset-top .yui-nav a em {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.yui-navset .yui-nav li em {
+	border: unset!important;
+}
+
+/* Selected Tab */
 
 .yui-navset .yui-nav .selected, 
 .yui-navset .yui-navset-top .yui-nav .selected {
 	flex-grow: 2;
+	background-color: rgb(var(--bright-accent));
 }
 
 .yui-navset .yui-nav .selected a,
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:hover {
+	width: 100%;
 	background-image: none;
 	background-color: rgb(var(--gray-monochrome));
 	/* selected tab background */
@@ -48,9 +76,9 @@
 
 .yui-navset .yui-nav .selected a,
 .yui-navset .yui-nav .selected a em {
+	border: none !important;
 	border-color: transparent;
-	box-shadow: 0em 0.0625em 0.125em rgba(var(--dark-accent), 0.5);
-	background-color: rgb(var(--bright-accent));
+
 }
 
 .yui-navset .yui-content {
