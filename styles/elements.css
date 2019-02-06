@@ -69,14 +69,14 @@
 /* Selected Tab */
 
 .yui-navset .yui-nav .selected, 
-.yui-navset .yui-navset-top .yui-nav .selected {
+.yui-navset .yui-navset-top .yui-nav .selected,
+.yui-navset .yui-nav .selected a:focus {
 	flex-grow: 2;
 	flex-basis: 14vw;
 	background-color: rgb(var(--swatch-primary-darker));
 	margin: 0;
 }
 
-.yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:hover {
 	background-color: rgb(var(--swatch-menubg-medium-color));
 	color: rgb(var(--white-monochrome));
