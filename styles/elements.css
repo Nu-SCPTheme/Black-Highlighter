@@ -38,6 +38,7 @@
 	border-color: transparent;
 	max-width: calc(100% - 0.125rem);
 	padding: 0;
+	margin: 0;
 	zoom: unset;
 	display: flex;
 	position: relative;
@@ -72,6 +73,8 @@
 
 .yui-navset .yui-nav .selected, 
 .yui-navset .yui-navset-top .yui-nav .selected {
+	padding: 0;
+	margin: 0;
 	flex-grow: 2;
 	background-color: rgb(var(--swatch-primary-darker));
 }
