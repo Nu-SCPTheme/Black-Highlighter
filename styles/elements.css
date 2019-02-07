@@ -36,6 +36,7 @@
 .yui-navset .yui-navset-top .yui-nav li {
 	background-color: rgb(var(--swatch-menubg-light-color));
 	border-color: transparent;
+	max-width: calc(100% - 0.125rem);
 	padding: 0;
 	zoom: unset;
 	display: flex;
@@ -72,9 +73,7 @@
 .yui-navset .yui-nav .selected, 
 .yui-navset .yui-navset-top .yui-nav .selected {
 	flex-grow: 2;
-	flex-basis: 14vw;
 	background-color: rgb(var(--swatch-primary-darker));
-	margin: 0 0 0 0;
 }
 
 .yui-navset .yui-nav .selected a,
