@@ -18,8 +18,6 @@
 	overflow: auto;
 	scrollbar-width: thin;
 	z-index: 9;
-	-ms-scroll-snap-type: y proximity;
-	scroll-snap-type: y proximity;
 }
 
 #side-bar::-webkit-scrollbar-thumb {
@@ -121,11 +119,6 @@
 
 #side-bar .heading p {
 	cursor: default;
-}
-
-#side-bar div.menu-item,
-#side-bar div.heading {
-	scroll-snap-align: start;
 }
 
 #side-bar div.menu-item {
