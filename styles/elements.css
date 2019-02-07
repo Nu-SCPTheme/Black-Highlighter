@@ -197,6 +197,7 @@ div.image-block img {
 	line-height: var(--rating-module-height);
 	text-align: center;
 	transition: background-color var(--sidebar-transition-timing);
+	text-transform: uppercase;
 }
 
 .page-rate-widget-box .rateup a,
@@ -215,6 +216,10 @@ div.image-block img {
 .page-rate-widget-box .cancel a {
 	color: rgb(var(--black-monochrome));
 	font-weight: 700;
+}
+
+.page-rate-widget-box .cancel {
+	font-size: 85%;
 }
 
 .page-rate-widget-box .rateup a:hover,
@@ -306,6 +311,7 @@ div.image-block img {
 		rgba(var(--gray-monochrome), 0.15) 100%);
 	border: 0.0625rem solid rgba(var(--black-monochrome),0.25);
 	height: var(--rating-module-height);
+	box-sizing: border-box;
 }
 
 #page-content .rate-box-with-credit-button > .creditButton:hover {
