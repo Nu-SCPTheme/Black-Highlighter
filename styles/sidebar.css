@@ -17,8 +17,9 @@
 	max-height: calc(100vh + 1rem);
 	overflow: auto;
 	scrollbar-width: thin;
-	float: left;
 	z-index: 9;
+	-ms-scroll-snap-type: y mandatory;
+	scroll-snap-type: y mandatory;
 }
 
 #side-bar::-webkit-scrollbar-thumb {
@@ -136,6 +137,7 @@
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 	flex-shrink: 2;
+	scroll-snap-align: start;
 }
 
 #side-bar div.collapsible-block {
