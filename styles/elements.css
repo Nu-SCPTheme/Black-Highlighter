@@ -8,6 +8,7 @@
 
 .yui-navset .yui-nav,
 .yui-navset .yui-navset-top .yui-nav {
+	zoom: unset;
 	display: flex;
 	flex-wrap: wrap;
 	border-color: rgb(var(--swatch-primary-darker));
@@ -17,6 +18,7 @@
 
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
+	zoom: unset;
 	background-image: none;
 	background-color: rgb(var(--swatch-menubg-light-color));
 	/* tab background */
@@ -28,6 +30,7 @@
 
 .yui-navset .yui-nav a:hover, 
 .yui-navset .yui-nav a:focus {
+	zoom: unset;
 	background-color: rgb(var(--swatch-primary-darkest));
 	color: rgb(var(--white-monochrome));
 }
@@ -52,7 +55,7 @@
 .yui-navset-bottom .yui-nav li a {
 	display: flex;
 	vertical-align: bottom;
-	zoom: 1;
+	zoom: unset;
 	width: 100%;
 	align-items: center;
 	justify-content: center;	
