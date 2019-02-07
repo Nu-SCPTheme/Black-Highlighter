@@ -455,4 +455,16 @@ table.wiki-content-table th {
 		min-width: 40% !important;
 		margin: 0 auto;
 	}
+	
+	.yui-navset .yui-nav a, 
+	.yui-navset .yui-navset-top .yui-nav a {
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		margin-top: 0.25rem;
+	}
+	
+	.yui-navset .yui-nav .selected a {
+		writing-mode: lr;
+		margin-top: 0;
+	}
 }
