@@ -460,11 +460,18 @@ table.wiki-content-table th {
 	.yui-navset .yui-navset-top .yui-nav a {
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
-		margin-top: 0.25rem;
 	}
 	
 	.yui-navset .yui-nav .selected a {
 		writing-mode: lr;
+	}
+	
+	.yui-navset .yui-nav a em, 
+	.yui-navset .yui-navset-top .yui-nav a em {
+		margin-top: 0.25rem;
+	}
+	
+	.yui-navset .yui-nav .selected a {
 		margin-top: 0;
 	}
 }
