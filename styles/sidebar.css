@@ -18,8 +18,8 @@
 	overflow: auto;
 	scrollbar-width: thin;
 	z-index: 9;
-	-ms-scroll-snap-type: y mandatory;
-	scroll-snap-type: y mandatory;
+	-ms-scroll-snap-type: y proximity;
+	scroll-snap-type: y proximity;
 }
 
 #side-bar::-webkit-scrollbar-thumb {
@@ -123,6 +123,10 @@
 	cursor: default;
 }
 
+#side-bar div.menu-item,
+#side-bar div.heading {
+	scroll-snap-align: start;
+}
 
 #side-bar div.menu-item {
 	margin: 0;
@@ -137,7 +141,6 @@
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 	flex-shrink: 2;
-	scroll-snap-align: start;
 }
 
 #side-bar div.collapsible-block {
