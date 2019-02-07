@@ -9,11 +9,10 @@
 .yui-navset .yui-nav,
 .yui-navset .yui-navset-top .yui-nav {
 	display: flex;
-	justify-content: flex-start;
-	align-items: stretch;
-	flex-wrap: nowrap;
-	height: 2.5rem;
+	flex-wrap: wrap;
 	border-color: rgb(var(--swatch-primary-darker));
+	width: calc(100% - 0.125rem);
+	margin: 0 auto;
 }
 
 .yui-navset .yui-nav a,
@@ -41,8 +40,9 @@
 	zoom: unset;
 	display: flex;
 	position: relative;
-	overflow: hidden;
 	flex-basis: 7vw;
+	flex-grow: 2;
+	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-primary-darker));
 }
 
 .yui-navset .yui-nav li a, 
@@ -454,24 +454,5 @@ table.wiki-content-table th {
 	div.block-left {
 		min-width: 40% !important;
 		margin: 0 auto;
-	}
-	
-	.yui-navset .yui-nav a, 
-	.yui-navset .yui-navset-top .yui-nav a {
-		writing-mode: vertical-rl;
-		text-orientation: mixed;
-	}
-	
-	.yui-navset .yui-nav .selected a {
-		writing-mode: lr;
-	}
-	
-	.yui-navset .yui-nav a em, 
-	.yui-navset .yui-navset-top .yui-nav a em {
-		margin-top: 0.25rem;
-	}
-	
-	.yui-navset .yui-nav .selected a {
-		margin-top: 0;
 	}
 }
