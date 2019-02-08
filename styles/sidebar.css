@@ -15,9 +15,13 @@
 	position: -webkit-sticky;
 	top: -1rem;
 	max-height: calc(100vh + 1rem);
-	overflow: auto;
+	overflow: hidden;
 	scrollbar-width: thin;
 	z-index: 9;
+}
+
+#side-bar:hover {
+	overflow: auto;
 }
 
 #side-bar::-webkit-scrollbar-thumb {
@@ -93,7 +97,6 @@
 
 #side-bar .heading,
 #side-bar .side-block > .collapsible-block:nth-child(1) .collapsible-block-folded {
-	box-shadow: var(--box-border-top);
 	min-height: 1.5625rem;
 	background: var(--gradient-sidemenu-header);
 }
