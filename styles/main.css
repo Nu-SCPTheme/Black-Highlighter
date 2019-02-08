@@ -36,17 +36,21 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 .code {
 	background-color: #f6f6f6;
-	padding: 1.5em;
+	padding: 1em;
 }
 
 .code * {
 	font-family: var(--mono-font);
 	max-width: 90vw;
-	white-space: pre;
 }
 
 .code p {
 	margin: 0;
+}
+
+.code pre {
+	margin: 0;
+	white-space: pre;
 }
 
 #container {
