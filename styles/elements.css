@@ -204,7 +204,7 @@ div.image-block img {
 	display: block;
 	line-height: var(--rating-module-height);
 	text-align: center;
-	transition: background-color var(--sidebar-transition-timing);
+	transition: background-color 0.1s ease-in-out;
 	text-transform: uppercase;
 }
 
@@ -212,6 +212,7 @@ div.image-block img {
 .page-rate-widget-box .ratedown a {
 	background-color: none;
 	background: unset;
+	background-color: rgba(var(--dark-accent),0.1);
 }
 
 .page-rate-widget-box .rate-points,
