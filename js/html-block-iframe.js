@@ -71,6 +71,8 @@
     // if height changed from last time, do resize
     var tick = function() {
         var new_height = get_height();
+        // # If the height is less than 20px, set it to 0, because it's basically empty
+        if(new_height < 20) new_height = 0;
         if (new_height != current_height) {
             current_height = new_height;
             resize(current_height);
