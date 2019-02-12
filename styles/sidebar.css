@@ -19,18 +19,27 @@
 	scrollbar-width: thin;
 	z-index: 9;
 	overscroll-behavior: none;
+	overflow: auto;
+	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0) rgba(var(--swatch-menubg-medium-color), 0);
 }
+
+/* Hover Scrollbar Behavior */
 
 #side-bar:hover {
-	overflow: auto;
+	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0.05) background: rgba(var(--swatch-menubg-medium-color), 0.4);
 }
 
+#side-bar::-webkit-scrollbar-track, 
 #side-bar::-webkit-scrollbar-thumb {
-	background: rgba(var(--swatch-menubg-medium-color), 0.4);
+	background: rgba(var(--swatch-menubg-medium-color), 0);
 }
 
-#side-bar::-webkit-scrollbar-track {
+#side-bar:hover::-webkit-scrollbar-track {
 	background: rgba(var(--swatch-menubg-medium-color), 0.05);
+}
+ 
+#side-bar:hover::-webkit-scrollbar-thumb {
+	background: rgba(var(--swatch-menubg-medium-color), 0.4);
 }
 
 #side-bar::-webkit-scrollbar {
