@@ -1,6 +1,6 @@
 html
 {
-  color:rgb(var(--black-monochrome));
+  color:rgb(var(--swatch-text-dark));
   font-size:1em;
   line-height:1.5;
 }
@@ -8,8 +8,8 @@ html
 body
 {
   /* coloring */
-  background-color:rgba(var(--white-monochrome),1);
-  color:rgb(var(--black-monochrome));
+  background-color:rgba(var(--swatch-background),1);
+  color:rgb(var(--swatch-text-dark));
   
   /* font behavior */
   font-size:var(--base-font-size);
@@ -120,7 +120,7 @@ ul
 
 a
 {
-  color:rgb(var(--bright-accent));;
+  color:rgb(var(--swatch-primary));;
   text-decoration:none;
   background:transparent;
 }
@@ -140,7 +140,7 @@ a:hover
 
 a:visited
 {
-  color:rgb(var(--dark-accent));
+  color:rgb(var(--swatch-primary-darkest));
 }
 
 /* Ruby Text */
@@ -170,13 +170,13 @@ rt
 {
   width:var(--scrollbar-width);
   height:var(--scrollbar-width);
-  border:solid 0.063rem rgba(var(--black-monochrome),0.1);
+  border:solid 0.063rem rgba(var(--swatch-menubg-black-color),0.1);
   border-round:0.031rem;
 }
 
 ::-webkit-scrollbar-track
 {
-  background:rgba(var(--black-monochrome),0.1);
+  background:rgba(var(--swatch-menubg-black-color),0.1);
 }
 
 ::-webkit-scrollbar-thumb

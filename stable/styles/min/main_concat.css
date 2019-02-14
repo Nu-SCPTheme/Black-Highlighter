@@ -191,7 +191,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 html
 {
-  color:rgb(var(--black-monochrome));
+  color:rgb(var(--swatch-text-dark));
   font-size:1em;
   line-height:1.5;
 }
@@ -199,8 +199,8 @@ html
 body
 {
   /* coloring */
-  background-color:rgba(var(--white-monochrome),1);
-  color:rgb(var(--black-monochrome));
+  background-color:rgba(var(--swatch-background),1);
+  color:rgb(var(--swatch-text-dark));
   
   /* font behavior */
   font-size:var(--base-font-size);
@@ -311,7 +311,7 @@ ul
 
 a
 {
-  color:rgb(var(--bright-accent));;
+  color:rgb(var(--swatch-primary));;
   text-decoration:none;
   background:transparent;
 }
@@ -331,7 +331,7 @@ a:hover
 
 a:visited
 {
-  color:rgb(var(--dark-accent));
+  color:rgb(var(--swatch-primary-darkest));
 }
 
 /* Ruby Text */
@@ -361,13 +361,13 @@ rt
 {
   width:var(--scrollbar-width);
   height:var(--scrollbar-width);
-  border:solid 0.063rem rgba(var(--black-monochrome),0.1);
+  border:solid 0.063rem rgba(var(--swatch-menubg-black-color),0.1);
   border-round:0.031rem;
 }
 
 ::-webkit-scrollbar-track
 {
-  background:rgba(var(--black-monochrome),0.1);
+  background:rgba(var(--swatch-menubg-black-color),0.1);
 }
 
 ::-webkit-scrollbar-thumb
@@ -1556,14 +1556,14 @@ body#translations {
 	/* tab background */
 	border-color: transparent!important;
 	border: unset;
-	color: rgb(var(--black-monochrome));
+	color: rgb(var(--swatch-text-dark));
 }
 
 .yui-navset .yui-nav a:hover, 
 .yui-navset .yui-nav a:focus {
 	zoom: unset;
 	background-color: rgb(var(--swatch-primary-darkest));
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--swatch-text-light));
 }
 
 .yui-navset .yui-nav li, 
@@ -1629,12 +1629,12 @@ body#translations {
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:active {
 	background-color: rgb(var(--swatch-primary-darker));
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--swatch-text-light));
 }
 
 .yui-navset .yui-nav .selected a:hover {
 	background-color: rgb(var(--swatch-menubg-medium-color));
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--swatch-text-light));
 }
 
 
@@ -1645,12 +1645,12 @@ body#translations {
 
 .yui-navset .yui-content,
 .yui-navset .yui-navset-top .yui-content {
-	border-color: rgb(var(--light-gray-monochrome));
+	border-color: rgb(var(--swatch-menubg-light-color));
 	/* content border */
 }
 
 .yui-navset-left .yui-content {
-	border-left-color: rgb(var(--light-gray-monochrome));
+	border-left-color: rgb(var(--swatch-menubg-light-color));
 	/* different border color */
 }
 
@@ -1660,7 +1660,7 @@ blockquote {
 	border-style: dashed;
 	border-color: #a7a7a7;
 	border-width: 0.063em;
-	background-color: rgb(var(--pale-gray-monochrome));
+	background-color: rgb(var(--swatch-menubg-light-color));
 	box-shadow: 0em 0.063em 0.125em rgba(0, 0, 0, 0.1);
 }
 
@@ -1689,16 +1689,16 @@ div.image-block img {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
-	box-shadow: 0.0625rem 0.0625rem 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color), 0.15);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
 	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
 
 	background: linear-gradient(to top, 
-		rgba(var(--gray-monochrome),0.25) 0%, 
-		rgba(var(--gray-monochrome), 0.15) 100%);
-	background-color: rgb(var(--white-monochrome));
-	border: 0.0625rem solid rgba(var(--black-monochrome),0.25);
+		rgba(var(--swatch-menubg-medium-color),0.25) 0%, 
+		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+	background-color: rgb(var(--swatch-background));
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color),0.25);
 	height: var(--rating-module-height);
 }
 
@@ -1741,7 +1741,7 @@ div.image-block img {
 .page-rate-widget-box .ratedown a {
 	background-color: none;
 	background: unset;
-	background-color: rgba(var(--dark-accent),0.1);
+	background-color: rgba(var(--swatch-primary-darkest),0.1);
 }
 
 .page-rate-widget-box .rate-points,
@@ -1752,7 +1752,7 @@ div.image-block img {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	color: rgb(var(--black-monochrome));
+	color: rgb(var(--swatch-text-dark));
 	font-weight: 700;
 	position: relative;
 }
@@ -1786,7 +1786,7 @@ div.image-block img {
 	font-size: calc(var(--base-font-size) * 0.8);
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
-	color: rgb(var(--black-monochrome)) !important;
+	color: rgb(var(--swatch-menutxt-dark-color)) !important;
 	display: flex;
 }
 
@@ -1811,7 +1811,6 @@ div.image-block img {
   	height: var(--rating-module-height);
   	top: 0;
   	left: 0;
-  	background-color: rgb(var(--white-monochrome));
   	-webkit-mask-size: calc(var(--rating-module-height) * 0.8);
   	mask-size: calc(var(--rating-module-height) * 0.8);
   	-webkit-mask-position: center;
@@ -1886,14 +1885,14 @@ div.image-block img {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
-	box-shadow: 0.0625rem 0.0625rem 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color), 0.15);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
 	background: linear-gradient(to top, 
-		rgba(var(--gray-monochrome),0.25) 0%, 
-		rgba(var(--gray-monochrome), 0.15) 100%);
-	background-color: rgb(var(--white-monochrome));
-	border: 0.0625rem solid rgba(var(--black-monochrome),0.25);
+		rgba(var(--swatch-menubg-medium-color),0.25) 0%, 
+		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+	background-color: rgb(var(--swatch-background));
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color),0.25);
 	height: var(--rating-module-height);
 }
 
@@ -1934,7 +1933,7 @@ div.image-block img {
 	mask-position: top 0.3em center;
 	mask-repeat: no-repeat;
 	-webkit-mask-repeat: no-repeat;
-	background-color: rgb(var(--black-monochrome));
+	background-color: rgb(var(--swatch-text-dark));
 	pointer-events: none;
 }
 
@@ -1985,17 +1984,17 @@ div.image-block img {
 }
 
 .scp-image-block .scp-image-caption {
-	background-color: silver;
-	border-top: solid 1px #000;
+	background-color: rgb(var(--swatch-menubg-medium-color));
+	border-top: solid 0.0625rem rgb(var(--swatch-menubg-black-color));
 	font-size: 80%;
 	font-weight: 700;
 	text-align: center;
-	padding: 2px 0;
+	padding: 0.125rem 0;
 }
 
 .scp-image-block .scp-image-caption > p {
 	margin: 0;
-	padding: 0 10px;
+	padding: 0 0.625rem;
 }
 
 div.block-right,
@@ -2043,4 +2042,3 @@ table.wiki-content-table th {
 		margin: 0 auto;
 	}
 }
-
