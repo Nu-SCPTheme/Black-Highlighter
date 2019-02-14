@@ -79,7 +79,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	/* Primary Menu Colors */
 	--swatch-menubg-color: var(--white-monochrome);
 	--swatch-menubg-light-color: var(--pale-gray-monochrome);
-	--swatch-menubg-medium-color: var(--gray-monochrome);
+	--swatch-menubg-medium-color: var(--light-gray-monochrome);
+	--swatch-menubg-medium-dark-color: var(--gray-monochrome);
 	--swatch-menubg-dark-color: var(--dark-gray-monochrome);
 	--swatch-menubg-black-color: var(--black-monochrome);
 	--swatch-menubg-hover-color: var(--black-monochrome);
@@ -2711,7 +2712,7 @@ table.wiki-content-table th {
 
 table.wiki-content-table th,
 table.wiki-content-table tr {
-	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-color),0.25)!important;
+	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color),0.25)!important;
 }
 
 .translation-box-stylesheet {
