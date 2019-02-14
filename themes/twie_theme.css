@@ -65,6 +65,7 @@ hr {
     background-position: left .75rem top 1.1875rem;
     background-clip: border-box;
     background-size: 5.375rem;
+	filter: drop-shadow(.063rem .063rem .063rem rgb(var(--white-monochrome)));
 }
 
 #header h1 a::before {
@@ -156,6 +157,11 @@ hr {
     box-shadow: inset 0 -.0625rem 0 0 rgb(var(--white-monochrome));
     background: linear-gradient(10deg, rgba(var(--bright-accent), 0.15) 0%, rgba(var(--bright-accent), 1) 100%);
     text-shadow: .063rem .063rem .063rem rgb(var(--bright-accent));
+}
+
+#side-bar .heading p, 
+#side-bar .side-block>.collapsible-block .collapsible-block-link {
+	text-shadow: .063rem .063rem .063rem rgb(var(--white-monochrome));
 }
 
 #container-wrap-wrap {
