@@ -53,10 +53,14 @@ cp temp.css stable/styles/nuscp.css
 echo "Compressing..."
 yui-compressor --type css -o temp.css temp.css
 
-# Correct compression errors [ "-(" -> "- (" ]
+# Correct compression errors
+# "-(" -> "- ("
 sed -i -e 's/-(/- (/g' temp.css
-mv temp.css stable/styles/nuscp.min.css
+# "Xrem+Yrem" -> "Xrem + Yrem"
+sed -i -E 's/(calc\([^\+]*?\S)(\+)(\S[^\+]*?\)[;|}])/\1 + \3/g' temp.css
 
+# Move the minified file to final destination
+mv temp.css stable/styles/nuscp.min.css
 echo "Created nuscp.min.css"
 
 echo "Done."
