@@ -57,7 +57,7 @@ yui-compressor --type css -o temp.css temp.css
 # "-(" -> "- ("
 sed -i -e 's/-(/- (/g' temp.css
 # "Xrem+Yrem" -> "Xrem + Yrem"
-sed -i -E 's/(calc\([^\+]*?\S)(\+)(\S[^\+]*?\)[;|}])/\1 + \3/g' temp.css
+sed -i -E 's/(calc\([^\+]*?\S)(\+)(\S[^\+]*?\)[;}])/\1 + \3/g' temp.css
 
 # Move the minified file to final destination
 mv temp.css stable/styles/nuscp.min.css
