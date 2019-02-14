@@ -2693,7 +2693,6 @@ table.wiki-content-table * {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-color),0.25)!important;
 }
 
 table.wiki-content-table, 
@@ -2706,8 +2705,13 @@ table.wiki-content-table tbody {
 }
 
 table.wiki-content-table th {
-	background: rgb(var(--swatch-menubg-light-color));
+	background: rgb(var(--swatch-menubg-medium-color));
 	color: rgb(var(--swatch-menutxt-light-color));
+}
+
+table.wiki-content-table th,
+table.wiki-content-table tr {
+	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-color),0.25)!important;
 }
 
 .translation-box-stylesheet {
