@@ -68,6 +68,8 @@ yui-compressor --type css -o temp.css temp.css
 # Correct compression errors
 # "-(" -> "- ("
 sed -i -e "s/-(/- (/g" temp.css
+# "or(" -> "or ("
+sed -i -e "s/or(/or (/g" temp.css
 # "Xrem+Yrem" -> "Xrem + Yrem"
 sed -i -E "s/(calc\([^\+]*?\S)(\+)(\S[^\+]*?\)[;}])/\1 + \3/g" temp.css
 
