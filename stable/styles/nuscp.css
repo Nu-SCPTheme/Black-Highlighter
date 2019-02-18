@@ -270,10 +270,10 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	background-color: transparent;
 	flex-basis: var(--body-width-on-desktop);
 	max-width: var(--body-width-on-desktop);
-	padding: 2em 1.5em 1em 1em;
+	padding: 2rem;
 	margin-bottom: 3rem;
 	flex-grow: 2;
-	margin-left: calc(50vw - (var(--body-width-on-desktop) / 2));
+	margin-left: calc(50vw - (var(--body-width-on-desktop) / 2) - 2rem);
 	margin-right: 1.5rem;
 	max-height: 100%;
 	display: flex;
@@ -1390,7 +1390,6 @@ table.wiki-content-table tr {
     z-index: 10;
     height: 9.375rem;
     background-image: var(--logo-image);
-    background-size: 0.625rem 2.500rem;
     background-repeat: no-repeat;
     background-position: left 0.75rem top 1.1875rem;
     background-clip: border-box;
@@ -1824,7 +1823,7 @@ div#container-wrap {
         --size: calc(8.75rem + var(--offset-from-page-top));
         --y-offset: 1.3125rem;
         background-position: calc(6.75rem - var(--size)) calc(((var(--size) * -1) + 7.5rem + var(--y-offset)) / 2);
-        background-size: var(--size), 100% 7.5rem;
+        background-size: var(--size), 100% 7.5rem; /* not sure what this 2nd size is doing here? - croque */
         background-repeat: no-repeat, repeat;
         width: 100vw;
         margin: 0;
@@ -1835,6 +1834,10 @@ div#container-wrap {
         position: sticky;
         top: -7.5rem;
     }
+    
+    background-size: auto 5.375rem;
+    background-repeat: no-repeat;
+    background-position: left 0.75rem top 1.1875rem;
 
     #header,
     .mobile-top-bar {
