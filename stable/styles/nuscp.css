@@ -73,6 +73,9 @@
 	--swatch-headerh2-color: var(--white-monochrome);
 	--swatch-topmenu-border-color: var(--black-monochrome);
 	--swatch-topmenu-bg-color: var(--gray-monochrome);
+	
+	--rating-module-button-color: var(--black-monochrome);
+	--rating-module-text-color: var(--swatch-menutxt-dark-color);
 
 	/* Header Gradients */
 
@@ -1075,11 +1078,18 @@ div.image-block img {
 .page-rate-widget-box .rateup,
 .page-rate-widget-box .ratedown,
 .page-rate-widget-box .cancel,
-.page-rate-widget-box .rate-points a,
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	color: rgb(var(--swatch-text-dark));
+	color: rgb(var(--rating-module-text-color));
+	font-weight: 700;
+	position: relative;
+}
+
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
+	color: rgb(var(--rating-module-button-color));
 	font-weight: 700;
 	position: relative;
 }
@@ -1113,7 +1123,7 @@ div.image-block img {
 	font-size: calc(var(--base-font-size) * 0.8);
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
-	color: rgb(var(--swatch-menutxt-dark-color)) !important;
+	color: rgb(var(--rating-module-text-color)) !important;
 	display: flex;
 }
 
@@ -1144,7 +1154,7 @@ div.image-block img {
   	mask-position: center;
   	mask-repeat: no-repeat;
   	-webkit-mask-repeat: no-repeat;
-  	background-color: rgb(var(--black-monochrome));
+  	background-color: rgb(var(--rating-module-button-color));
   	pointer-events: none;
   }
   
