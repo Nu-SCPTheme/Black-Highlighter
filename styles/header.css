@@ -242,12 +242,16 @@ header h1 {
 }
 
 #top-bar div.top-bar > ul > li:hover,
-#top-bar div.mobile-top-bar > ul > li:hover {
+#top-bar div.top-bar > ul > li:focus-within,
+#top-bar div.mobile-top-bar > ul > li:hover
+#top-bar div.mobile-top-bar > ul > li:focus-within {
     background-color: rgb(var(--swatch-menubg-dark-color));
 }
 
 #top-bar div.top-bar > ul > li:hover > a,
-#top-bar div.mobile-top-bar > ul > li:hover > a {
+#top-bar div.top-bar > ul > li:focus-within > a,
+#top-bar div.mobile-top-bar > ul > li:hover > a
+#top-bar div.mobile-top-bar > ul > li:focus-within > a {
     background-color: transparent !important;
 }
 
@@ -269,6 +273,8 @@ header h1 {
 
 #top-bar div.top-bar > ul > li:hover > a::before, 
 #top-bar div.top-bar > ul > li:hover > a::after, 
+#top-bar div.top-bar > ul > li:focus-within > a::before, 
+#top-bar div.top-bar > ul > li:focus-within > a::after, 
 #top-bar div.top-bar > ul > li.sfhover > a::before, 
 #top-bar div.top-bar > ul > li.sfhover > a::after  {
   width: 100%;
@@ -366,9 +372,11 @@ header h1 {
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,
+#top-bar div.top-bar > ul > li:focus-within > ul,
 #top-bar div.top-bar > ul > li > ul:focus-within,
 #top-bar div.top-bar > ul > li.sfhover > ul,
 #top-bar div.mobile-top-bar > ul > li:hover > ul,
+#top-bar div.mobile-top-bar > ul > li:focus-within > ul,
 #top-bar div.mobile-top-bar > ul > li > ul:focus-within,
 #top-bar div.mobile-top-bar > ul > li.sfhover > ul {
     transform: translate(-50%, 0);
