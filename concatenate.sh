@@ -45,6 +45,11 @@ echo "Concatenating CSS..."
 shopt -s extglob || error "Unable to extend pattern matching"
 cat styles/!(main|root|normalize|overwrite-main).css >> temp.css
 
+# Wrap the whole thing in @supports for IE
+echo "Supporting IE..."
+sed -i '1 s/^/@supports(--css: variables) {\n/' temp.css
+echo "}" >> temp.css
+
 # Move temp.css
 echo "Created nuscp.css"
 cp temp.css stable/styles/nuscp.css
