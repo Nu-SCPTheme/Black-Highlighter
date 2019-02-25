@@ -1964,7 +1964,70 @@ header h1 {
     #top-bar > div.mobile-top-bar > div.open-menu > p > a:hover {
         background-color: rgb(var(--swatch-menubg-dark-color));
         text-decoration: none;
+	}
+	
+	/* Sigma9 Specific Styling */
+
+    /* Brute Force Cleaning Up SCP Dropdown */
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+2),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+3),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+4),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+5),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+6),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+7),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+8),
+    #top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+9),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n+10) {
+        display: none;
+		visibility: hidden;
+		opacity: 0;		
     }
+
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li > a {
+		color: transparent;
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(1) > a::before,
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(11) > a::before,
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(21) > a::before,
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(31) > a::before,
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(41) > a::before,
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(51) > a::before {
+		color: rgb(var(--white-monochrome));
+		text-align: center;
+		position: absolute;
+		z-index: 10;
+		margin: 0 auto;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		pointer-events: none;
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(1) > a::before {
+		content:"Series I";
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(11) > a::before {
+		content:"Series II";
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(21) > a::before {
+		content:"Series III";
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(31) > a::before {
+		content:"Series IV";
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(41) > a::before {
+		content:"Series V";
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(51) > a::before {
+		content:"Heritage Collection";
+	}
 }
 /* sidebar css */
 
