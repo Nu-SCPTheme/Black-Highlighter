@@ -1,4 +1,5 @@
-/* CSS Theming for DJKaktus' The Way It Ends
+@supports(--css: variables) {
+    /* CSS Theming for DJKaktus' The Way It Ends
 http://www.scp-wiki.net/djkaktus-s-proposal-iii */
 
 :root {
@@ -331,4 +332,5 @@ hr {
             0 0 calc(3.125rem * 0.5) rgb(var(--bright-accent)),
             0 0 calc(4.688rem * 0.5) rgb(var(--bright-accent));
     }
+}
 }
