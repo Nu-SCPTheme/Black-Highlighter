@@ -1,4 +1,3 @@
-@supports(--css: variables) {
 /* Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800');
@@ -1628,12 +1627,16 @@ header h1 {
 }
 
 #top-bar div.top-bar > ul > li:hover,
-#top-bar div.mobile-top-bar > ul > li:hover {
+#top-bar div.top-bar > ul > li:focus-within,
+#top-bar div.mobile-top-bar > ul > li:hover
+#top-bar div.mobile-top-bar > ul > li:focus-within {
     background-color: rgb(var(--swatch-menubg-dark-color));
 }
 
 #top-bar div.top-bar > ul > li:hover > a,
-#top-bar div.mobile-top-bar > ul > li:hover > a {
+#top-bar div.top-bar > ul > li:focus-within > a,
+#top-bar div.mobile-top-bar > ul > li:hover > a
+#top-bar div.mobile-top-bar > ul > li:focus-within > a {
     background-color: transparent !important;
 }
 
@@ -1655,6 +1658,8 @@ header h1 {
 
 #top-bar div.top-bar > ul > li:hover > a::before, 
 #top-bar div.top-bar > ul > li:hover > a::after, 
+#top-bar div.top-bar > ul > li:focus-within > a::before, 
+#top-bar div.top-bar > ul > li:focus-within > a::after, 
 #top-bar div.top-bar > ul > li.sfhover > a::before, 
 #top-bar div.top-bar > ul > li.sfhover > a::after  {
   width: 100%;
@@ -1752,9 +1757,11 @@ header h1 {
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,
+#top-bar div.top-bar > ul > li:focus-within > ul,
 #top-bar div.top-bar > ul > li > ul:focus-within,
 #top-bar div.top-bar > ul > li.sfhover > ul,
 #top-bar div.mobile-top-bar > ul > li:hover > ul,
+#top-bar div.mobile-top-bar > ul > li:focus-within > ul,
 #top-bar div.mobile-top-bar > ul > li > ul:focus-within,
 #top-bar div.mobile-top-bar > ul > li.sfhover > ul {
     transform: translate(-50%, 0);
@@ -1913,7 +1920,6 @@ header h1 {
     #top-bar div.mobile-top-bar > ul > li > ul > li {
         max-height: 3rem;
 		width: calc((100% / 2) + 1px);
-		min-height: calc(100vh / 20);
     }
 
     #top-bar div.mobile-top-bar > ul > li > ul > li > a {
@@ -2715,5 +2721,4 @@ body#translations {
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
-}
 }
