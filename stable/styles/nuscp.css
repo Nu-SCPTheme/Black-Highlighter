@@ -2785,4 +2785,8 @@ body#translations {
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
+}
+/* Hiding hidden tags */
+#main-content .page-tags a[href^="/system:page-tags/tag/_"]{
+    display: none;
 }}
