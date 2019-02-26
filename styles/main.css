@@ -486,6 +486,10 @@ text-area,
 	height: auto !important;	
 }
 
+/* Hiding Hidden Tags */
+#main-content .page-tags a[href^="/system:page-tags/tag/_"] {
+	display:none
+}
 
 @media screen and -ms-high-contrast active,
 -ms-high-contrast none {
