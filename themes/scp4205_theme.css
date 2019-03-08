@@ -107,6 +107,15 @@ a {
 #side-bar img {
 	display: none;
 }
+	
+#side-bar .collapsible-block-unfolded {
+	background: unset;
+}
+	
+#side-bar div.menu-item a.collapsible-block-link, 
+#side-bar .side-block>.collapsible-block a.collapsible-block-link {
+	background: rgba(var(--medium-accent),0.5);	
+}
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item .text {
