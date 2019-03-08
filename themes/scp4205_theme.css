@@ -24,8 +24,6 @@
 
     --background-gradient-color: 215, 215, 215;
     --background-gradient-distance: 40rem;
-	
-    --barColour: rgb(var(--bright-accent));
 
     scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
 }
@@ -165,6 +163,11 @@ a {
     -webkit-animation: flicker 20s linear infinite;
     -moz-animation: flicker 20s linear infinite;
     animation: flicker 20s linear infinite;
+}
+	
+.info-container .collapsible-block-folded .collapsible-block-link, 
+.info-container .collapsible-block-link {
+	background-color: rgb(var(--bright-accent))!important;	
 }
 
 #page-content > p > iframe {
