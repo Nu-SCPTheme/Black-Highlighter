@@ -1,9 +1,3 @@
-<style>
-    img {
-        width: 25vw;
-    }
-</style>
-
 # Nu-SCP
 
     [2019 Wikidot Theme]
