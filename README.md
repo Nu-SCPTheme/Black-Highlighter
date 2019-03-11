@@ -12,4 +12,9 @@ See a preview overwriting old SCP theme here: http://scp-wiki.net/scp-4444
 See a preview without the old SCP theme here: http://scptestwiki.wikidot.com/component:theme
 
 Open Source Project proudly using BrowserStack
-![https://www.browserstack.com/](https://nu-scptheme.github.io/Nu-SCP/images/browserstack-logo-600x315.png)
+
+<div style="width:25vw;height:auto;>
+    <a href="https://www.browserstack.com/">
+        <img src="https://nu-scptheme.github.io/Nu-SCP/images/browserstack-logo-600x315.png" alt="BrowserStack">
+    </a>
+</div>
