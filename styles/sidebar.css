@@ -448,6 +448,12 @@
 		pointer-events: none;
 		transition: all var(--sidebar-transition-timing);
 	}
+	
+	#side-bar:target,
+	#skrollr-body:target #side-bar {
+		overflow-x: hidden;
+		left: 0;
+	}
 
 	#side-bar:target {
 		display: block;
@@ -465,7 +471,7 @@
 	#side-bar:target .close-menu {
 		width: calc(100% - 14rem - var(--scrollbar-width));
 		height: 100%;
-		margin-left: calc(14rem + 2 * var(--scrollbar-width) - 1px);
+		margin-left: calc(14rem + 2 * var(--scrollbar-width) - 0.0625rem);
 		padding-right: 0;
 		visibility: visible;
 		pointer-events: auto;
@@ -507,10 +513,6 @@
 
 	#container {
 		transition: transform var(--sidebar-transition-timing);
-	}
-
-	#skrollr-body:target #container {
-		transform: translate(14rem, 0);
 	}
 
 	#skrollr-body:target#side-bar::-webkit-scrollbar-track {
