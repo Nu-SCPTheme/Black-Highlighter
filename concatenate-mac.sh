@@ -47,7 +47,7 @@ cat styles/!(main|root|normalize|overwrite-main).css >> temp.css
 
 # Wrap the whole thing in @supports for IE
 echo "Supporting IE..."
-sed -i '1 s/^/@supports(--css: variables) {\n/' temp.css
+sed -i ".bak" '1 s/^/@supports(--css: variables) {\n/' temp.css
 echo "}" >> temp.css
 # Extract any imports rules to the top of the file
 grep '^@import' temp.css > temp
@@ -76,17 +76,17 @@ yuicompressor --type css -o temp.css temp.css
 
 # Correct compression errors
 # "-(" -> "- ("
-sed -i -e "s/-(/- (/g" temp.css
+sed -i ".bak" -e "s/-(/- (/g" temp.css
 # "or(" -> "or ("
-sed -i -e "s/or(/or (/g" temp.css
+sed -i ".bak" -e "s/or(/or (/g" temp.css
 # "Xrem+Yrem" -> "Xrem + Yrem"
-sed -i -e "s/\([)mh]\)\(\+\)\([(0-9v]\)/\1 + \3/g" temp.css
+sed -i ".bak" -e "s/\([)mh]\)\(\+\)\([(0-9v]\)/\1 + \3/g" temp.css
 
 # Reinsert extracted images
 echo "Reinserting extracted images..."
 count=0
 for i in "${IMAGES[@]}"; do
-	sed -i -E "s>!!MARKER$count>$i>g" temp.css
+	sed -i ".bak" -E "s>!!MARKER$count>$i>g" temp.css
 	count=$((count + 1))
 done
 
