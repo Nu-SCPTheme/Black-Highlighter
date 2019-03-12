@@ -1985,21 +1985,47 @@ header h1 {
 	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n + 7),
 	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n + 8),
 	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n + 9),
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n + 10) {
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(10n + 10),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(1),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(11),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(21),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(31),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(41),
+	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(51) {
 		display: none;
 		visibility: hidden;
 		opacity: 0;
+		pointer-events: none;
 	}
 
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(52),
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(53),
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(54),
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(55),
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(56),
-	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(57) {
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(1),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(11),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(21),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(31),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(41),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(51),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(52),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(53),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(54),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(55),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(56),
+	#top-bar > div.mobile-top-bar > ul:hover > li:nth-child(1) > ul > li:nth-child(57),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(1),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(11),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(21),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(31),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(41),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(51),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(52),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(53),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(54),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(55),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(56),
+	#top-bar > div.mobile-top-bar > ul:focus-within > li:nth-child(1) > ul > li:nth-child(57) {
 		display: inherit;
 		visibility: visible;
 		opacity: 1;
+		pointer-events: all;
 	}
 
 	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li > a {
@@ -2080,7 +2106,8 @@ header h1 {
 	#top-bar > div.mobile-top-bar > ul > li:nth-child(1) > ul > li:nth-child(57) > a::before {
 		content: "Unexplained Locations";
 	}
-}/* sidebar css */
+}
+/* sidebar css */
 
 #side-bar {
 	border: none;
@@ -2660,7 +2687,7 @@ textarea
 
 /* Standard Structure Elements */
 
-p,span,div,li
+body
 {
   font-family:var(--body-font);
 }
