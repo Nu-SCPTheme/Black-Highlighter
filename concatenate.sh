@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# For generator, concatenated, minified versions of nu-SCP for release.
+# For generating concatenating and minified versions of nu-SCP for release.
 #
 # Requires: yui-compressor, java
 #
@@ -94,9 +94,11 @@ echo 'Minifying source files ...'
 yuicompressor --type css -o "$out" "$out"
 
 # Correct compression errors
-subst -e 's/-(/- (/g' "$out"
-subst -e 's/or(/or (/g' "$out"
-subst -e 's/\([)mh]\)\(\+\)\([(0-9v]\)/\1 + \3/g' "$out"
+subst \
+	-e 's/-(/- (/g' \
+	-e 's/or(/or (/g' \
+	-e 's/\([)mh]\)\(\+\)\([(0-9v]\)/\1 + \3/g' \
+	"$out"
 
 echo 'Reinserting extracted images ...'
 idx=0
