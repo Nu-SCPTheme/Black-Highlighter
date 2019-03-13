@@ -1,97 +1,109 @@
-# concatenate.sh
-# 
-# For generating concatenated, minified, stable versions of nu-SCP.
+#!/usr/bin/bash
+
+# For generator, concatenated, minified versions of nu-SCP for release.
 #
 # Requires: yui-compressor, java
-# 
+#
 # 1. Takes all CSS files from /styles
 # 2. Concatenates them
-# 3. Saves this file to /stable/styles as nuscp.css
+# 3. Saves the file to /stable/styles as nuscp.css
 # 4. Minifies the file and saves it to /stable/styles as nuscp.min.css
 
+# Fail on errors, undefined variables, and broken pipes
+set -eu -o pipefail
 
-# Define an error-handling function
-# Parameters:
-# 	1. Description of error
+# Extended globbing
+shopt -s extglob
+
+# Helper functions
 error() {
-	echo $1 1>&2
-	echo "Aborting"
-	# Delete temp.css, if present
-	rm temp.css
-	exit
+	echo "Error: $1" >&2
+	exit 1
 }
 
-# First let's confirm that we're in /Nu-SCP
+# Tempfiles
+readonly out="$(mktemp /tmp/nuscp-XXXXXX)"
+readonly temp="$(mktemp /tmp/nuscp-XXXXXX)"
 
-echo "Validating directory..."
-if [ "${PWD##*/}" != "Nu-SCP" ]; then
-	error "Script must be executed from nuscp root directory"
+on_exit() {
+	rm -f "$out" "$temp"
+}
+
+trap on_exit EXIT
+
+if ! which yuicompressor 2>/dev/null; then
+	error 'No yuicompressor found'
 fi
 
-# Take main.css and copy to a temp file
-echo "Duplicating main.css..."
-cp styles/main.css temp.css
+# Multiplatform sed
+case "$(sed --help 2>&1)" in
+	*GNU*) use_gnu=true ;;
+	*) use_gnu=false ;;
+esac
 
-# Scrap the @import rules
-echo "Removing @imports..."
-sed -i "/^@import.*\.css.*$/d" temp.css || error "@import removal failed"
+subst() {
+	if "$use_gnu"; then
+		sed -i "$@"
+	else
+		sed -i '' "$@"
+	fi
+}
 
-# Append this file to root.css
-echo "Prepending root.css..."
-cat styles/root.css temp.css > temp && mv temp temp.css
+# Main execution
+echo 'Checking directory ...'
+if [[ ! -d "$PWD/.git" ]]; then
+	error 'Script must be executed from the nuscp root directory'
+fi
 
-# Then we concat all files *except* main.css,root.css
-echo "Concatenating CSS..."
-shopt -s extglob || error "Unable to extend pattern matching"
-cat styles/!(main|root|normalize|overwrite-main).css >> temp.css
+echo 'Duplicating main.css ...'
+cp styles/main.css "$out"
 
-# Wrap the whole thing in @supports for IE
-echo "Supporting IE..."
-sed -i '1 s/^/@supports(--css: variables) {\n/' temp.css
-echo "}" >> temp.css
-# Extract any imports rules to the top of the file
-grep '^@import' temp.css > temp
-grep -v '^@import' temp.css >> temp
-mv temp temp.css
+echo 'Removing @imports ...'
+subst '/^import.*\.css.*$/d' "$out"
 
-# Move temp.css
-echo "Created nuscp.css"
-cp temp.css stable/styles/nuscp.css
+echo 'Concatenating CSS ...'
+cat styles/root.css styles/!(main|root|normalize|overwrite-main).css > "$temp"
+mv "$temp" "$out"
+
+echo 'Add IE support ...'
+subst '1 s/^/@supports(--css: variables) {\n/' "$out"
+echo '}' >> "$out"
+
+echo 'Extract any import rules to the top of the file ...'
+grep '^@import' "$out" > "$temp"
+grep -v '^@import' "$out" >> "$temp"
+mv "$temp" "$out"
+
+echo 'Created nuscp.css'
+install -m644 "$out" stable/styles/nuscp.css
 
 # Extract inline images to array
 IFS='>'
-IMAGES=($(awk -F '>' '/data:image/ && match($0,/\".*\"/){val=val?val ">" substr($0,RSTART+1,RLENGTH-2):substr($0,RSTART+1,RLENGTH-2)} END{print val}' temp.css))
-echo "Found ${#IMAGES[@]} images to extract"
-echo "Extracting images..."
-count=0
-for i in "${IMAGES[@]}"; do
-	#echo "IMAGES[$count]=$i"
-	sed -i -e "s>$i>!!MARKER$count>g" temp.css || error "Bad sed"
-	count=$((count + 1))
+images=($(
+	awk -F '>' '/data:image/ && match($0,/\".*\"/){val=val?val ">" substr($0,RSTART+1,RLENGTH-2):substr($0,RSTART+1,RLENGTH-2)} END{print val}' "$out"
+))
+
+echo "Found ${images[@]} images to extract ..."
+idx=0
+for img in "${images[@]}"; do
+	subst -e "s>$img>!!MARKER$idx>g" "$out"
+	((idx++))
 done
 
-# Minify
-echo "Compressing..."
-yui-compressor --type css -o temp.css temp.css
+echo 'Minifying source files ...'
+yuicompressor --type css -o "$out" "$out"
 
 # Correct compression errors
-# "-(" -> "- ("
-sed -i -e "s/-(/- (/g" temp.css
-# "or(" -> "or ("
-sed -i -e "s/or(/or (/g" temp.css
-# "Xrem+Yrem" -> "Xrem + Yrem"
-sed -i -E "s/([\)mh])(\+)([\(0-9v])/\1 + \3/g" temp.css
+subst -e 's/-(/- (/g' "$out"
+subst -e 's/or(/or (/g' "$out"
+subst -e 's/\([)mh]\)\(\+\)\([(0-9v]\)/\1 + \3/g' "$out"
 
-# Reinsert extracted images
-echo "Reinserting extracted images..."
-count=0
-for i in "${IMAGES[@]}"; do
-	sed -i -E "s>!!MARKER$count>$i>g" temp.css
-	count=$((count + 1))
+echo 'Reinserting extracted images ...'
+idx=0
+for img in "${images[@]}"; do
+	subst -E "s>!!MARKER$idx>$img>g" "$out"
+	((idx++))
 done
 
-# Move the minified file to final destination
-mv temp.css stable/styles/nuscp.min.css
-echo "Created nuscp.min.css"
-
-echo "Done."
+install -m644 "$out" stable/styles/nuscp.min.css
+echo 'Done!'
