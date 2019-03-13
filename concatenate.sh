@@ -31,7 +31,7 @@ on_exit() {
 
 trap on_exit EXIT
 
-if ! which yuicompressor 2>/dev/null; then
+if ! command -v yuicompressor >/dev/null; then
 	error 'No yuicompressor found'
 fi
 
@@ -83,7 +83,7 @@ images=($(
 	awk -F '>' '/data:image/ && match($0,/\".*\"/){val=val?val ">" substr($0,RSTART+1,RLENGTH-2):substr($0,RSTART+1,RLENGTH-2)} END{print val}' "$out"
 ))
 
-echo "Found ${images[@]} images to extract ..."
+echo "Found ${#images[@]} images to extract ..."
 idx=0
 for img in "${images[@]}"; do
 	subst -e "s>$img>!!MARKER$idx>g" "$out"
