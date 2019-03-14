@@ -391,10 +391,6 @@ div.sexy-box div.image-container img {
 	word-break: break-all;
 }
 
-#edit-page-comments {
-	width: 100%;
-}
-
 .visuallyhidden {
 	border: 0;
 	clip: rect(0000);
@@ -468,6 +464,82 @@ text-area,
 #page-content div,
 #page-content div table {
 	max-width: 100%;
+}
+
+table.form {
+	margin: 0.5rem 0;
+}
+
+table.form tr {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: var(--body-width-on-desktop);
+}
+
+/* Edit Area Styling */
+
+form#edit-page-form {
+	background-color: rgba(var(--swatch-menubg-medium-color),0.25);
+	border-radius: 1rem;
+	padding: 0 0.5rem;
+}
+
+.wd-editor-toolbar-panel {
+	width: var(--body-width-on-desktop);
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	box-sizing: content-box;
+	padding: 0.5rem 0;
+}
+
+.change-textarea-size {
+	float: right;
+	text-align: right;
+	padding: 0.5rem;
+}
+
+.change-textarea-size a {
+	color: rgba(var(--swatch-menutxt-dark-color));
+	background-color: rgba(var(--swatch-menubg-medium-color));
+	border: 0.0625rem solid rgba(var(--swatch-border-color));;
+	padding: 0.15rem;
+	width: 1rem;
+	height: 1rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+}
+
+.edit-help-34 {
+	margin: 0.5rem 0;
+	text-transform: capitalize;
+}
+
+.edit-help-34 > a:nth-of-type(1)::after {
+	content: " |";
+}
+
+table.edit-page-bottomtable td {
+	padding: 0;
+}
+
+table.edit-page-bottomtable {
+	width: 100%;
+}
+
+div.buttons.alignleft > input {
+	flex-grow: 2;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+}
+div.buttons.alignleft {
+	text-align: left;
+	display: flex;
 }
 
 /* 1% Height Firefox Fixes */
