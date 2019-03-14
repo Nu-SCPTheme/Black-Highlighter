@@ -136,6 +136,32 @@ blockquote {
 	box-shadow: 0em 0.063em 0.125em rgba(0, 0, 0, 0.1);
 }
 
+/* Footnotes */
+
+.footnotes-footer {
+	width: 90%;
+	margin: 1em auto;
+	padding: 0.15em 1em;
+	background-color: rgba(var(--swatch-menubg-medium-color),0.25);
+	border-left: 0.5em solid rgba(var(--swatch-primary-darker));
+}
+
+.footnote-footer {
+	display: block;
+	position: relative;
+	width: 95%;
+	margin: 0 1.5rem;
+	text-indent: -0.35rem;
+}
+
+.footnote-footer > a {
+	position: relative;
+	display: inline-table;
+	height: 100%;
+	width: 1rem;
+	margin-left: -1rem;
+}
+
 /* IMAGE BLOCK */
 
 div.image-block {
