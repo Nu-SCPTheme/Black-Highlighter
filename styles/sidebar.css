@@ -400,6 +400,14 @@
 	display: none;
 }
 
+/* Pleasing Nico by making the two Random bottoms the same width */
+a[href*="/random:"] {
+	min-width: calc(var(--base-font-size) * 2.25);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 @media only screen and (max-width: 768px) {
 	#side-bar {
 		display: block;
