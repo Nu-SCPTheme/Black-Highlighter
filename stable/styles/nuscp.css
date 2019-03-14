@@ -1554,10 +1554,13 @@ header h1 {
 	text-align: center;
 }
 
-#search-top-box-form > input {
+#search-top-box-form > input,
+#search-top-box-form > input[type="submit"] {
 	min-height: calc(var(--base-font-size) * 1.5);
-	padding: 0;
+	padding: 0.25rem;
 	margin: 0;
+	box-sizing: border-box;
+	flex-grow: 1;
 }
 
 #search-top-box-input:hover,
