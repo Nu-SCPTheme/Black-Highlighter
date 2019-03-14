@@ -633,8 +633,10 @@ text-area,
 	max-width: 100%;
 }
 
+/* Edit Area Styling */
+
 table.form {
-	margin: 0.5rem 0;
+	margin: .5rem -0.25rem !important;
 }
 
 table.form tr {
@@ -644,8 +646,6 @@ table.form tr {
 	width: var(--body-width-on-desktop);
 }
 
-/* Edit Area Styling */
-
 form#edit-page-form {
 	background-color: rgba(var(--swatch-menubg-medium-color),0.25);
 	border-radius: 1rem;
@@ -653,7 +653,6 @@ form#edit-page-form {
 }
 
 .wd-editor-toolbar-panel {
-	width: var(--body-width-on-desktop);
 	display: flex;
 	height: 100%;
 	flex-direction: column;
