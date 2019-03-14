@@ -123,7 +123,7 @@ header h1 {
 }
 
 #search-top-box {
-	display: infline-flex;
+	display: inline-flex;
 	position: absolute;
 	top: 47%;
 	right: 3%;
@@ -138,6 +138,17 @@ header h1 {
 	background-color: rgb(var(--gray-monochrome)) !important;
 }
 
+#search-top-box input.empty {
+	color: rgba(var(--swatch-menutxt-dark-color));
+	text-align: center;
+}
+
+#search-top-box-form > input {
+	min-height: calc(var(--base-font-size) * 1.5);
+	padding: 0;
+	margin: 0;
+}
+
 #search-top-box-input:hover,
 #search-top-box-input:focus {
 	border: var(--border-styling);
@@ -149,13 +160,11 @@ header h1 {
 #search-top-box-form input[type="submit"] {
 	border: var(--border-styling);
 	border-radius: var(--border-radius-width);
-	font-size: var(--base-font-size);
+	font-size: calc(var(--base-font-size) * .85);
 	color: rgb(var(--swatch-text-light));
 	background: rgb(var(--swatch-primary-darkest)) !important;
 	box-shadow: none !important;
 	cursor: pointer;
-	padding: 0.188rem 0.313rem 0.125rem;
-	/* 3px 5px 2px */
 	margin-right: 0;
 }
 
@@ -164,7 +173,7 @@ header h1 {
 	border: var(--border-styling);
 	border-radius: var(--border-radius-width);
 	color: rgb(var(--swatch-text-light));
-	text-shadow: 0 0 0.063rem rgba(var(--swatch-menutxt-dark-color)), 0.75);
+	text-shadow: 0 0 0.063rem rgba(var(--swatch-menutxt-dark-color), 0.75);
 	background: rgb(var(--swatch-primary-darkest)) !important;
 	box-shadow: none !important;
 }
