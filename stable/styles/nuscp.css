@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800');
 @supports(--css: variables) {
+@charset "utf-8";
+
 /* Fonts */
 
 
@@ -172,8 +174,6 @@
 	--base-font-size: var(--font-calc);
 	--base-line-height: var(--line-calc);
 }
-@charset "utf-8";
-
 
 /*
 Styles in main.css will override styles in sidebar.css
@@ -2105,7 +2105,8 @@ form[id="search-top-box-form"] {
 /* Hover Scrollbar Behavior */
 
 #side-bar:hover {
-	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0.05) background: rgba(var(--swatch-menubg-medium-color), 0.4);
+	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0.05); 
+	background: rgba(var(--swatch-menubg-medium-color), 0.4);
 }
 
 #side-bar::-webkit-scrollbar-track, 
