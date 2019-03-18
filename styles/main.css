@@ -100,12 +100,12 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #main-content {
 	background-color: transparent;
-	flex-basis: var(--body-width-on-desktop);
-	max-width: var(--body-width-on-desktop);
+	flex-basis: var(--body-width-on-desktop, 44.25rem);
+	max-width: var(--body-width-on-desktop, 44.25rem);
 	padding: 2rem;
 	margin-bottom: 3rem;
 	flex-grow: 2;
-	margin-left: calc(50vw - (var(--body-width-on-desktop) / 2) - 2rem);
+	margin-left: calc(50vw - (var(--body-width-on-desktop, 44.25rem) / 2) - 2rem);
 	margin-right: 1.5rem;
 	max-height: 100%;
 	display: flex;
@@ -124,7 +124,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	color: #bbb;
 	margin-top: 15px;
 	padding: 3px 10px;
-	width: calc(98.7vw - var(--sidebar-width-on-desktop));
+	width: calc(98.7vw - var(--sidebar-width-on-desktop, calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 19)));
 	height: 1rem;
 	position: absolute;
 	bottom: -1rem;
@@ -280,7 +280,7 @@ div.sexy-box div.image-container img {
 }
 
 .thread-container .post .head {
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
+	background: rgba(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244))), rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170))));
 	box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
 	border-radius: 5px 5px 0 0;
 	padding: .5em 1em;
@@ -471,11 +471,11 @@ table.form tr {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: var(--body-width-on-desktop);
+	width: var(--body-width-on-desktop, 44.25rem);
 }
 
 form#edit-page-form {
-	background-color: rgba(var(--swatch-menubg-medium-color),0.25);
+	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25);
 	border-radius: 1rem;
 	padding: 0 0.5rem;
 }
@@ -497,9 +497,9 @@ form#edit-page-form {
 }
 
 .change-textarea-size a {
-	color: rgba(var(--swatch-menutxt-dark-color));
-	background-color: rgba(var(--swatch-menubg-medium-color));
-	border: 0.0625rem solid rgba(var(--swatch-border-color));
+	color: rgba(var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)));
+	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)));
+	border: 0.0625rem solid rgba(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
 	padding: 0.15rem;
 	width: 1rem;
 	height: 1rem;

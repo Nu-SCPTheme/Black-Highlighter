@@ -1,25 +1,27 @@
 /* most of this is copied from the sidebar */
 
 body#translations {
-	background: rgb(var(--swatch-menubg-color));
+	background: rgb(var(--swatch-menubg-color, var(--white-monochrome, 252, 252, 252)));
 }
 
 #translations .interwiki__title {
 	min-height: 1.5625rem;
-	background: var(--gradient-sidemenu-header);
+	background: var(--gradient-sidemenu-header, linear-gradient(10deg,
+		rgba(var(--medium-accent, 140, 20, 25), 0.45) 0%,
+		rgba(var(--medium-accent, 140, 20, 25), 0.55) 100%));
 }
 
 #translations .interwiki__title p {
 	padding-right: 1rem;
 	letter-spacing: 0.2rem;
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-menutxt-light-color, var(--white-monochrome, 252, 252, 252)));
 	height: 1.5625rem;
 	line-height: 1.5625rem;
 	text-transform: uppercase;
-	font-size: calc(var(--base-font-size) * 0.95);
+	font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 0.95);
 	font-weight: 900;
 	text-align: right;
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-border-color));
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
 	display: block;
 }
 
@@ -33,21 +35,21 @@ body#translations {
 	justify-content: flex-end;
 	/*color: transparent;*/
 	font-size: 0;
-	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
+	min-height: calc(2rem - var(--sidebar-internal-border-thickness, 0.125rem));
+	border-bottom: var(--sidebar-internal-border-thickness, 0.125rem) solid rgba(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)), 0.08);
 	flex-shrink: 2;
 }
 
 #translations .interwiki__entry a {
 	padding: 0 0.6em;
 	margin: 0;
-	color: rgb(var(--swatch-menutxt-dark-color));
-	font-size: var(--base-font-size);
+	color: rgb(var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)));
+	font-size: var(--base-font-size, var(--font-calc, 0.875rem));
 	letter-spacing: 0.04em;
-	background-color: rgba(var(--swatch-menubg-hover-color), 0);
+	background-color: rgba(var(--swatch-menubg-hover-color, var(--black-monochrome, 12, 12, 12)), 0);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	display: block;
-	height: calc(2rem - var(--sidebar-internal-border-thickness));
-	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
+	height: calc(2rem - var(--sidebar-internal-border-thickness, 0.125rem));
+	line-height: calc(2rem - var(--sidebar-internal-border-thickness, 0.125rem));
 	background-clip: padding-box;
 }

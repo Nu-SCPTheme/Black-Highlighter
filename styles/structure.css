@@ -1,17 +1,17 @@
 html {
-	color: rgb(var(--swatch-text-dark));
+	color: rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
 	font-size: 1em;
 	line-height: 1.5;
 }
 
 body {
 	/* coloring */
-	background-color: rgba(var(--swatch-background), 1);
-	color: rgb(var(--swatch-text-dark));
+	background-color: rgba(var(--swatch-background, var(--white-monochrome, 252, 252, 252)), 1);
+	color: rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
 
 	/* font behavior */
 	font-family: var(--body-font);
-	font-size: var(--base-font-size);
+	font-size: var(--base-font-size, var(--font-calc, 0.875rem));
 	font-kerning: normal;
 	font-variant-numeric: normal;
 	-moz-font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
@@ -110,7 +110,7 @@ h6 {
 }
 
 h1 {
-	color: rgb(var(--black-monochrome));
+	color: rgb(var(--black-monochrome, 12, 12, 12));
 	font-weight: 700;
 	margin: .7em 0 .6em;
 	padding: 0 0 .25em;
@@ -133,13 +133,13 @@ ul {
 /* Anchor Links */
 
 a {
-	color: rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-primary, var(--bright-accent, 180, 35, 35)));
 	text-decoration: none;
 	background: transparent;
 }
 
 a.newpage {
-	color: rgb(var(--newpage-color));
+	color: rgb(var(--newpage-color, 221, 102, 17));
 	text-decoration: none;
 	background: transparent;
 }
@@ -150,7 +150,7 @@ a:hover {
 }
 
 a:visited {
-	color: rgb(var(--swatch-primary-darkest));
+	color: rgb(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15)));
 }
 
 /* Ruby Text */
@@ -182,16 +182,16 @@ tt {
 /* Chrome, Safari, Opera Scrollbar */
 
 ::-webkit-scrollbar {
-	width: var(--scrollbar-width);
-	height: var(--scrollbar-width);
-	border: solid 0.063rem rgba(var(--swatch-menubg-black-color), 0.1);
+	width: var(--scrollbar-width, 0.5625rem);
+	height: var(--scrollbar-width, 0.5625rem);
+	border: solid 0.063rem rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.1);
 	border-radius: 0.031rem;
 }
 
 ::-webkit-scrollbar-track {
-	background: rgba(var(--swatch-menubg-black-color), 0.1);
+	background: rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgba(var(--swatch-menubg-medium-color), 0.4);
+	background: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.4);
 }

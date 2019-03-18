@@ -13,32 +13,32 @@
 	zoom: unset;
 	display: flex;
 	flex-wrap: wrap;
-	border-color: rgb(var(--swatch-primary-darker));
+	border-color: rgb(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 	width: calc(100% - 0.125rem);
 	margin: 0 auto;
 	border: 0;
-	box-shadow: 0 calc(0.0625rem * 5) 0 0 rgb(var(--swatch-primary-darker));
+	box-shadow: 0 calc(0.0625rem * 5) 0 0 rgb(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 }
 
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
 	zoom: unset;
 	background-image: none;
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)));
 	border: unset;
-	color: rgb(var(--swatch-text-dark));
+	color: rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
 }
 
 .yui-navset .yui-nav a:hover, 
 .yui-navset .yui-nav a:focus {
 	zoom: unset;
-	background-color: rgb(var(--swatch-primary-darkest));
-	color: rgb(var(--swatch-text-light));
+	background-color: rgb(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15)));
+	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
 }
 
 .yui-navset .yui-nav li, 
 .yui-navset .yui-navset-top .yui-nav li {
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)));
 	border-color: transparent;
 	max-width: 100%;
 	padding: 0;
@@ -48,7 +48,7 @@
 	position: relative;
 	flex-basis: 7vw;
 	flex-grow: 2;
-	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-primary-darker));
+	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 }
 
 .yui-navset .yui-nav li a, 
@@ -82,7 +82,7 @@
 	padding: 0;
 	margin: 0;
 	flex-grow: 2;
-	background-color: rgb(var(--swatch-primary-darker));
+	background-color: rgb(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 }
 
 .yui-navset .yui-nav .selected a,
@@ -93,36 +93,36 @@
 }
 .yui-navset .yui-nav .selected a {
 	/* Undoes a color set by wikidot's default layout */
-	color: rgb(var(--white-monochrome)) !important;
+	color: rgb(var(--white-monochrome, 252, 252, 252)) !important;
 	width: 100%;
 	background-image: none;
 }
 
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:active {
-	background-color: rgb(var(--swatch-primary-darker));
-	color: rgb(var(--swatch-text-light));
+	background-color: rgb(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
+	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
 }
 
 .yui-navset .yui-nav .selected a:hover {
-	background-color: rgb(var(--swatch-menubg-medium-color));
-	color: rgb(var(--swatch-text-light));
+	background-color: rgb(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)));
+	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
 }
 
 
 .yui-navset .yui-content {
-	background-color: rgba(var(--swatch-menubg-light-color),0.25);
+	background-color: rgba(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)),0.25);
 	/* content background color */
 }
 
 .yui-navset .yui-content,
 .yui-navset .yui-navset-top .yui-content {
-	border-color: rgb(var(--swatch-menubg-medium-color));
+	border-color: rgb(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)));
 	/* content border */
 }
 
 .yui-navset-left .yui-content {
-	border-left-color: rgb(var(--swatch-menubg-light-color));
+	border-left-color: rgb(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)));
 	/* different border color */
 }
 
@@ -132,7 +132,7 @@ blockquote {
 	border-style: dashed;
 	border-color: #a7a7a7;
 	border-width: 0.063em;
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)));
 	box-shadow: 0em 0.063em 0.125em rgba(0, 0, 0, 0.1);
 }
 
@@ -142,8 +142,8 @@ blockquote {
 	width: 90%;
 	margin: 1em auto;
 	padding: 0.15em 1em;
-	background-color: rgba(var(--swatch-menubg-medium-color),0.25);
-	border-left: 0.5em solid rgba(var(--swatch-primary-darker));
+	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25);
+	border-left: 0.5em solid rgba(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 }
 
 .footnote-footer {
@@ -186,16 +186,16 @@ div.image-block img {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
-	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color), 0.15);
+	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.15);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
 	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
 
 	background: linear-gradient(to top, 
-		rgba(var(--swatch-menubg-medium-color),0.25) 0%, 
-		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
-	background-color: rgb(var(--swatch-background));
-	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color),0.25);
+		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25) 0%, 
+		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.15) 100%);
+	background-color: rgb(var(--swatch-background, var(--white-monochrome, 252, 252, 252)));
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)),0.25);
 	height: var(--rating-module-height);
 }
 
@@ -226,7 +226,7 @@ div.image-block img {
 .rate-box-with-credit-button > .creditButton,
 .rate-box-with-credit-button > .creditButton > p {
 	padding: 0;
-	width: calc(var(--base-font-size) * 1.5);
+	width: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.5);
 	display: block;
 	line-height: var(--rating-module-height);
 	text-align: center;
@@ -238,7 +238,7 @@ div.image-block img {
 .page-rate-widget-box .ratedown a {
 	background-color: none;
 	background: unset;
-	background-color: rgba(var(--swatch-primary-darkest),0.1);
+	background-color: rgba(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15)),0.1);
 }
 
 .page-rate-widget-box .rate-points,
@@ -248,7 +248,7 @@ div.image-block img {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	color: rgb(var(--rating-module-text-color));
+	color: rgb(var(--rating-module-text-color, var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12))));
 	font-weight: 700;
 	position: relative;
 }
@@ -256,7 +256,7 @@ div.image-block img {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	color: rgb(var(--rating-module-button-color));
+	color: rgb(var(--rating-module-button-color, var(--black-monochrome, 12, 12, 12)));
 	font-weight: 700;
 	position: relative;
 }
@@ -285,17 +285,17 @@ div.image-block img {
 
 .page-rate-widget-box .rate-points {
 	line-height: var(--rating-module-height);
-	padding: 0 calc(var(--base-font-size) * 0.5);
+	padding: 0 calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 0.5);
 	text-transform: uppercase;
-	font-size: calc(var(--base-font-size) * 0.8);
+	font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 0.8);
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
-	color: rgb(var(--rating-module-text-color)) !important;
+	color: rgb(var(--rating-module-text-color, var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)))) !important;
 	display: flex;
 }
 
 .page-rate-widget-box .rate-points .number {
-	font-size: calc(var(--base-font-size) * 1.2);
+	font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.2);
 }
 
 
@@ -311,7 +311,7 @@ div.image-block img {
   .page-rate-widget-box .cancel a::before{
   	content: " ";
   	position: absolute;
-  	width: calc(var(--base-font-size) * 1.5);
+  	width: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.5);
   	height: var(--rating-module-height);
   	top: 0;
   	left: 0;
@@ -321,7 +321,7 @@ div.image-block img {
   	mask-position: center;
   	mask-repeat: no-repeat;
   	-webkit-mask-repeat: no-repeat;
-  	background-color: rgb(var(--rating-module-button-color));
+  	background-color: rgb(var(--rating-module-button-color, var(--black-monochrome, 12, 12, 12)));
   	pointer-events: none;
   }
   
@@ -389,14 +389,14 @@ div.image-block img {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
-	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color), 0.15);
+	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.15);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
 	background: linear-gradient(to top, 
-		rgba(var(--swatch-menubg-medium-color),0.25) 0%, 
-		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
-	background-color: rgb(var(--swatch-background));
-	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color),0.25);
+		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25) 0%, 
+		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.15) 100%);
+	background-color: rgb(var(--swatch-background, var(--white-monochrome, 252, 252, 252)));
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)),0.25);
 	height: var(--rating-module-height);
 }
 
@@ -425,11 +425,11 @@ div.image-block img {
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
 	content: " ";
 	position: absolute;
-	width: calc(var(--base-font-size) * 1.5);
+	width: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.5);
 	height: var(--rating-module-height);
 	top: 0;
 	left: 0;
-	background-color: rgb(var(--swatch-menubg-color));
+	background-color: rgb(var(--swatch-menubg-color, var(--white-monochrome, 252, 252, 252)));
 	-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 	mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 	-webkit-mask-size: calc(var(--rating-module-height) * 0.35);
@@ -488,8 +488,8 @@ div.image-block img {
 }
 
 .scp-image-block .scp-image-caption {
-	background-color: rgb(var(--swatch-menubg-light-color));
-	border-top: solid 0.0625rem rgb(var(--swatch-menubg-black-color));
+	background-color: rgb(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)));
+	border-top: solid 0.0625rem rgb(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)));
 	font-size: 80%;
 	font-weight: 700;
 	text-align: center;
@@ -524,14 +524,14 @@ table.wiki-content-table tbody {
 }
 
 table.wiki-content-table th {
-	background: rgb(var(--swatch-menubg-medium-color));
-	color: rgb(var(--swatch-menutxt-light-color));
+	background: rgb(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)));
+	color: rgb(var(--swatch-menutxt-light-color, var(--white-monochrome, 252, 252, 252)));
 }
 
 table.wiki-content-table th,
 table.wiki-content-table tr {
 	/* Override's border on wikidot's default layout */
-	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color),0.25) !important;
+	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color, var(--gray-monochrome, 66, 66, 72)),0.25) !important;
 }
 
 .translation-box-stylesheet {
