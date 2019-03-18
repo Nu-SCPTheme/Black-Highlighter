@@ -89,7 +89,8 @@
 	border: 0;
 	margin-top: 1rem;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
 	flex-shrink: 0;
 }
 
@@ -111,6 +112,7 @@
 
 #side-bar .heading {
 	margin-top: 0.5rem;
+	flex-basis: 100%;
 }
 
 #side-bar .heading p,
@@ -140,11 +142,11 @@
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: flex-end;
-	/*color: transparent;*/
 	font-size: 0;
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
-	flex-shrink: 2;
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color),0.08);
+	flex-shrink: 0;
+	flex-basis: 100%;
 }
 
 #side-bar div.collapsible-block {
