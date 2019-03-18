@@ -725,8 +725,8 @@ div.buttons.alignleft {
 	display:none
 }
 
-@media screen and -ms-high-contrast active,
--ms-high-contrast none {
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
 	.emph {
 		font-family: monospace;
 		font-style: normal;
@@ -2802,7 +2802,7 @@ tt {
 	width: var(--scrollbar-width);
 	height: var(--scrollbar-width);
 	border: solid 0.063rem rgba(var(--swatch-menubg-black-color), 0.1);
-	border-round: 0.031rem;
+	border-radius: 0.031rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -2863,4 +2863,5 @@ body#translations {
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
-}}
+}
+}

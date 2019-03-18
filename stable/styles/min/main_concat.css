@@ -363,7 +363,7 @@ rt
   width:var(--scrollbar-width);
   height:var(--scrollbar-width);
   border:solid 0.063rem rgba(var(--swatch-menubg-black-color),0.1);
-  border-round:0.031rem;
+  border-radius:0.031rem;
 }
 
 ::-webkit-scrollbar-track
@@ -857,8 +857,8 @@ text-area,
 }
 
 
-@media screen and -ms-high-contrast active,
--ms-high-contrast none {
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
 	.emph {
 		font-family: monospace;
 		font-style: normal;
