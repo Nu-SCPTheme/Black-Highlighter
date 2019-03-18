@@ -39,7 +39,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 .code * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
-	font-family: var(--mono-font;
+	font-family: var(--mono-font);
 	max-width: 90vw;
 }
 
@@ -76,7 +76,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 #page-title {
 	min-height: 2rem;
 	font-family: 'Poppins', sans-serif;
-	font-family: var(--title-font;
+	font-family: var(--title-font);
 	color: #000;
 	font-weight: 600;
 	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
@@ -103,9 +103,9 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 #main-content {
 	background-color: transparent;
 	flex-basis: 44.25rem;
-	flex-basis: var(--body-width-on-desktop;
+	flex-basis: var(--body-width-on-desktop);
 	max-width: 44.25rem;
-	max-width: var(--body-width-on-desktop;
+	max-width: var(--body-width-on-desktop);
 	padding: 2rem;
 	margin-bottom: 3rem;
 	flex-grow: 2;
@@ -225,7 +225,7 @@ div.sexy-box div.image-container img {
 
 .content-panel .panel-body > .news-title {
 	font-family: 'Poppins', sans-serif;
-	font-family: var(--title-font;
+	font-family: var(--title-font);
 	font-weight: 900;
 	text-transform: uppercase;
 	font-size: 90%;
@@ -288,69 +288,7 @@ div.sexy-box div.image-container img {
 
 .thread-container .post .head {
 	background: rgba(244, 244, 244), linear-gradient(to right, rgba(244, 244, 244), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(244, 244, 244), rgba(170, 170, 170));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(244, 244, 244), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(244, 244, 244), rgba(170, 170, 170));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(170, 170, 170));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(170, 170, 170));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(170, 170, 170));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(170, 170, 170));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(170, 170, 170));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(170, 170, 170));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(170, 170, 170));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
 	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--light-gray-monochrome));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--light-gray-monochrome));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--light-gray-monochrome));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--light-gray-monochrome));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--light-gray-monochrome));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(244, 244, 244), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--pale-gray-monochrome)), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(244, 244, 244), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--pale-gray-monochrome)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
-	background: rgba(var(--swatch-menubg-light-color))), linear-gradient(to right, rgba(var(--swatch-menubg-light-color))), rgba(var(--swatch-menubg-medium-color)));
 	box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
 	border-radius: 5px 5px 0 0;
 	padding: .5em 1em;
