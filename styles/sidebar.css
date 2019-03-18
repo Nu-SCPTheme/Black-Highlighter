@@ -153,13 +153,10 @@
 #side-bar .heading,
 #side-bar .side-block > .collapsible-block:nth-child(1) .collapsible-block-folded {
 	min-height: 1.5625rem;
-	background: var(--gradient-sidemenu-header, linear-gradient(10deg,
+	background: linear-gradient(10deg,
 		rgba(140, 20, 25, 0.45) 0%,
-		rgba(0.45 0%,
-		rgba(var(--medium-accent) 0%,
-		rgba(140, 20, 25, 0.55) 100%));
-		rgba(0.55 100%));
-		rgba(var(--medium-accent) 100%));
+		rgba(140, 20, 25, 0.55) 100%);
+	background: var(--gradient-sidemenu-header);
 }
 
 #side-bar .heading {
@@ -325,16 +322,13 @@
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
 	font-size: 0.875rem;
 	font-size: var(--base-font-size);
-	font-size: var(--font-calc;
-	font-size: var(--base-font-size);
 }
 
 /* for full-block collapsibles, give the open collapsible the same background as the side block */
 /* variable should be set in nav:side */
 #side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
 	background: rgba(140, 20, 25, 0.5);
-	background: rgba(0.5;
-	background: rgba(var(--medium-accent);
+	background: rgba(var(--medium-accent));
 }
 
 /* Staff Sidebar Elements */
@@ -437,12 +431,7 @@
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-menutxt-light-color));
-	color: rgb(var(--white-monochrome);
-	color: rgb(var(--swatch-menutxt-light-color));
 	background-color: rgba(100, 3, 15, 0);
-	background-color: rgba(var(--swatch-primary-darkest), 0);
-	background-color: rgba(0;
-	background-color: rgba(var(--dark-accent);
 	background-color: rgba(var(--swatch-primary-darkest), 0);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	line-height: 1.85rem;
@@ -451,9 +440,6 @@
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
 	background-color: rgba(252, 252, 252, 0.15);
-	background-color: rgba(var(--swatch-menubg-color), 0.15);
-	background-color: rgba(0.15;
-	background-color: rgba(var(--white-monochrome);
 	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
 }
@@ -516,21 +502,7 @@ a[href*="/most-recently-edited"] {
 
 #side-bar div.scpnet-interwiki-wrapper {
 	transform: translate(calc(((calc(0.875rem * 19) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((calc(var(--base-font-size * 19)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop) * 19)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((calc(var(--font-calc * 19)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop) * 19)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((calc(var(--base-font-size) * 19)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop)) * 19)) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((calc(0.875rem * 19) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((calc(var(--base-font-size * 19)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop) * 19)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((calc(var(--font-calc * 19)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop) * 19)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((calc(var(--base-font-size) * 19)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
-	transform: translate(calc(((var(--sidebar-width-on-desktop)) * 19)) - 217.594px) / 2) - (var(--scrollbar-width / 2)), 0);
+	transform: translate(calc((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 0);
 }
 
 @media only screen and (max-width: 768px) {
