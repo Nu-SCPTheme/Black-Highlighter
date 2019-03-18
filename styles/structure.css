@@ -10,7 +10,7 @@ body {
 	color: rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
 
 	/* font behavior */
-	font-family: var(--body-font);
+	font-family: var(--body-font, 'Lato', sans-serif);
 	font-size: var(--base-font-size, var(--font-calc, 0.875rem));
 	font-kerning: normal;
 	font-variant-numeric: normal;
@@ -57,7 +57,7 @@ select,
 button,
 meter,
 progress {
-	font-family: var(--body-font);
+	font-family: var(--body-font, 'Lato', sans-serif);
 }
 
 /* User Input Items */
@@ -79,7 +79,7 @@ textarea {
 /* Standard Structure Elements */
 
 pre * {
-	font-family: var(--mono-font);
+	font-family: var(--mono-font, "PT Mono", "Andale Mono", "Courier New", Courier, monospace);
 	max-width: 90vw;
 	white-space: pre-wrap;
 }
@@ -106,7 +106,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--title-font);
+	font-family: var(--title-font, 'Poppins', sans-serif);
 }
 
 h1 {

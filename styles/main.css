@@ -38,7 +38,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 .code * {
-	font-family: var(--mono-font);
+	font-family: var(--mono-font, "PT Mono", "Andale Mono", "Courier New", Courier, monospace);
 	max-width: 90vw;
 }
 
@@ -74,7 +74,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #page-title {
 	min-height: 2rem;
-	font-family: var(--title-font);
+	font-family: var(--title-font, 'Poppins', sans-serif);
 	color: #000;
 	font-weight: 600;
 	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
@@ -218,7 +218,7 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel .panel-body > .news-title {
-	font-family: var(--title-font);
+	font-family: var(--title-font, 'Poppins', sans-serif);
 	font-weight: 900;
 	text-transform: uppercase;
 	font-size: 90%;
@@ -644,7 +644,7 @@ div.buttons.alignleft {
 	}
 
 	#edit-page-title {
-		font-family: var(--title-font);
+		font-family: var(--title-font, 'Poppins', sans-serif);
 		max-width: 90%;
 	}
 
@@ -660,7 +660,7 @@ div.buttons.alignleft {
 	}
 
 	#page-content div.title {
-		font-family: var(--title-font);
+		font-family: var(--title-font, 'Poppins', sans-serif);
 		word-break: keep-all;
 	}
 
