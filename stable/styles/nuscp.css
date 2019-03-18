@@ -131,7 +131,7 @@
 	--offset-from-page-top: 1.2rem;
 	/* space between the top of the page and the start of the header */
 	--body-width-on-desktop: 44.25rem;
-	--sidebar-width-on-desktop: calc(var(--base-font-size)*19);
+	--sidebar-width-on-desktop: calc(var(--base-font-size) * 19);
 	--sidebar-width-on-mobile: 14rem;
 	--scrollbar-width: 0.5625rem;
 	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color));
@@ -449,14 +449,11 @@ div.sexy-box div.image-container img {
 }
 
 .thread-container .post .head {
-	background-color: #eee;
-	background: linear-gradient(to right, #eee, #eeecec);
+	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
 	box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
 	border-radius: 5px 5px 0 0;
 	padding: .5em 1em;
 }
-
-
 
 .ruby {
 	display: inline-table;
@@ -605,7 +602,7 @@ div#container-wrap {
 	background: none;
 }
 
-text-area,
+textarea,
 .yui-navset li {
 	line-height: normal;
 }
@@ -671,7 +668,7 @@ form#edit-page-form {
 .change-textarea-size a {
 	color: rgba(var(--swatch-menutxt-dark-color));
 	background-color: rgba(var(--swatch-menubg-medium-color));
-	border: 0.0625rem solid rgba(var(--swatch-border-color));;
+	border: 0.0625rem solid rgba(var(--swatch-border-color));
 	padding: 0.15rem;
 	width: 1rem;
 	height: 1rem;
@@ -1358,7 +1355,7 @@ div.image-block img {
 	height: var(--rating-module-height);
 	top: 0;
 	left: 0;
-	background-color: rgb(var(--white-monochrome));
+	background-color: rgb(var(--swatch-menubg-color));
 	-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 	mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 	-webkit-mask-size: calc(var(--rating-module-height) * 0.35);
@@ -1367,7 +1364,6 @@ div.image-block img {
 	mask-position: top 0.3em center;
 	mask-repeat: no-repeat;
 	-webkit-mask-repeat: no-repeat;
-	background-color: rgb(var(--swatch-text-dark));
 	pointer-events: none;
 }
 
@@ -1805,7 +1801,7 @@ form[id="search-top-box-form"] {
 	max-width: 61.25rem;
 	align-self: flex-start;
 	left: 50%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, -0.3rem);
 	-webkit-backdrop-filter: blur(0rem);
 	backdrop-filter: blur(0rem);
 
@@ -1857,11 +1853,6 @@ form[id="search-top-box-form"] {
     backdrop-filter: blur(0.25rem) !important;
     transition: -webkit-backdrop-filter 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0s;
 }*/
-
-#top-bar div.top-bar > ul > li > ul,
-#top-bar div.mobile-top-bar > ul > li > ul {
-	transform: translate(-50%, -0.3rem);
-}
 
 #top-bar div.top-bar > ul > li:hover > ul,
 #top-bar div.top-bar > ul > li:focus-within > ul,
@@ -1984,27 +1975,19 @@ form[id="search-top-box-form"] {
 	#top-bar .mobile-top-bar {
 		display: flex;
 		top: 0;
+		right: 0;
+		left: 0;
 		margin: 0;
 		padding: 0;
 		width: 100vw;
 		background: var(--gradient-topmenu-mobile);
+		position: static;
+		align-items: center;
+		z-index: 9999;
 	}
 
 	#top-bar .top-bar > ul {
 		overflow: hidden;
-	}
-
-	#top-bar .mobile-top-bar {
-		display: flex;
-		top: 0;
-		margin: 0;
-		padding: 0;
-		width: 100vw;
-		position: static;
-		right: 0;
-		left: 0;
-		align-items: center;
-		z-index: 9999;
 	}
 
 	#top-bar div.mobile-top-bar > ul {
@@ -2061,7 +2044,7 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
-		font-family: "Lato", san-serif;
+		font-family: var(--body-font);
 		font-size: 3em;
 		font-weight: 700;
 		text-decoration: none;
@@ -2093,7 +2076,6 @@ form[id="search-top-box-form"] {
 	position: -webkit-sticky;
 	top: -1rem;
 	max-height: calc(100vh + 1rem);
-	overflow: hidden;
 	scrollbar-width: thin;
 	z-index: 9;
 	overscroll-behavior: none;
@@ -2165,20 +2147,17 @@ form[id="search-top-box-form"] {
 /* Defer to a variable set in nav:side, if available */
 #side-bar .side-block {
 	background-color: rgb(var(--swatch-menubg-color)) !important;
+	border: 0;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
 }
 
 /* WOED - WHAT DOES THIS DO?? PLZ COMMENT - Croque */
 #side-bar div.side-block:nth-child(7) > div:nth-child(1) > div:nth-child(1) img {
 	filter: none;
 	-webkit-filter: none;
-}
-
-#side-bar .side-block {
-	border: 0;
-	margin-top: 1rem;
-	display: flex;
-	flex-direction: column;
-	flex-shrink: 0;
 }
 
 #side-bar .side-area {
@@ -2718,15 +2697,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
-h7 {
+h6 {
 	font-family: var(--title-font);
 }
 
 h1 {
-	font-weight: 700;
 	color: rgb(var(--black-monochrome));
-	font-weight: 600;
+	font-weight: 700;
 	margin: .7em 0 .6em;
 	padding: 0 0 .25em;
 }
@@ -2735,8 +2712,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-h7 {
+h6 {
 	letter-spacing: 0.063rem;
 	margin: .5em 0 .4em;
 	padding: 0;
@@ -2750,7 +2726,6 @@ ul {
 
 a {
 	color: rgb(var(--swatch-primary));
-	;
 	text-decoration: none;
 	background: transparent;
 }
