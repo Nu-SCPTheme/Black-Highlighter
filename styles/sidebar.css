@@ -21,6 +21,7 @@
 	overflow: hidden auto;
 	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0) rgba(var(--swatch-menubg-medium-color), 0);
 	float: left;
+	transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Hover Scrollbar Behavior */
@@ -85,7 +86,6 @@
 
 /* Defer to a variable set in nav:side, if available */
 #side-bar .side-block {
-	background-color: rgb(var(--swatch-menubg-color)) !important;
 	border: 0;
 	margin-top: 1rem;
 	display: flex;
@@ -263,7 +263,7 @@
 	background: rgba(var(--medium-accent), 0.5);
 }
 
-/* Sigma-9 Specific Series Styling */
+/* Sigma-9 Specific Sidebar Styling */
 #side-bar > div:nth-child(1) > div:nth-child(4),
 #side-bar > div:nth-child(1) > div:nth-child(5),
 #side-bar > div:nth-child(1) > div:nth-child(6),
@@ -308,6 +308,7 @@
 #side-bar > div:nth-child(1) > div:nth-child(8) > a {
 	color: rgba(var(--swatch-menutxt-dark-color));
 	font-size: 0;
+	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
 }
 
 #side-bar > div:nth-child(1) > div:nth-child(4)::before {
@@ -360,6 +361,57 @@
 
 #side-bar > div:nth-child(1) > div:nth-child(8) > a::before {
 	content: "I";
+}
+
+#side-bar::before {
+	content: " ";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-right: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+	top: 0;
+	left: -0.125rem;
+	pointer-events: none;
+}
+
+#side-bar * {
+	box-sizing: border-box;
+	border-collapse: collapse;
+}
+
+#side-bar .side-block {
+	justify-content: flex-end;
+}
+
+#side-bar > div:nth-child(1) > div:nth-child(1) {
+	flex-grow: 2;
+}
+
+#side-bar > div:nth-child(1) > div:nth-child(1),
+#side-bar > div:nth-child(1) > div:nth-child(2) {
+	align-self: flex-start;
+	flex-basis: auto;
+	border-top: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+}
+
+#side-bar > div:nth-child(1) > div:nth-child(10) {
+	flex-grow: 2;
+}
+
+#side-bar > div:nth-child(1) > div:nth-child(10),
+#side-bar > div:nth-child(1) > div:nth-child(11),
+#side-bar > div:nth-child(1) > div:nth-child(12) {
+	flex-basis: auto;
+	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+}
+
+#side-bar > div:nth-child(1) > div:nth-child(1) > a,
+#side-bar > div:nth-child(1) > div:nth-child(2) > a,
+#side-bar > div:nth-child(1) > div:nth-child(10) > a,
+#side-bar > div:nth-child(1) > div:nth-child(11) > a,
+#side-bar > div:nth-child(1) > div:nth-child(12) > a {
+	text-align: right;
 }
 
 /* Staff Sidebar Elements */
