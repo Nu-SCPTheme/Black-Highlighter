@@ -475,7 +475,7 @@ table.form tr {
 }
 
 form#edit-page-form {
-	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25);
+	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.25);
 	border-radius: 1rem;
 	padding: 0 0.5rem;
 }
@@ -531,6 +531,7 @@ div.buttons.alignleft > input {
 	padding: 0.25rem;
 	border-radius: 0.25rem;
 }
+
 div.buttons.alignleft {
 	text-align: left;
 	display: flex;
@@ -538,19 +539,18 @@ div.buttons.alignleft {
 
 /* 1% Height Firefox Fixes */
 
-.footnotes-footer, 
+.footnotes-footer,
 .page-options-bottom,
 .owindow .title,
 .math-equation,
 .bibitem,
-.thread-container .post  .long  .options
-{
-	height: auto !important;	
+.thread-container .post .long .options {
+	height: auto !important;
 }
 
 /* Hiding Hidden Tags */
 #main-content .page-tags a[href^="/system:page-tags/tag/_"] {
-	display:none
+	display: none
 }
 
 @media screen and (-ms-high-contrast: active),

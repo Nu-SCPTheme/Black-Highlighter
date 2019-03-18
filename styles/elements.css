@@ -5,7 +5,7 @@
 /* TABVIEW */
 
 .yui-navset * {
-	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1), color 80ms cubic-bezier(0.4, 0.0, 0.2, 1); 	
+	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1), color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .yui-navset .yui-nav,
@@ -29,14 +29,14 @@
 	color: rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
 }
 
-.yui-navset .yui-nav a:hover, 
+.yui-navset .yui-nav a:hover,
 .yui-navset .yui-nav a:focus {
 	zoom: unset;
 	background-color: rgb(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15)));
 	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
 }
 
-.yui-navset .yui-nav li, 
+.yui-navset .yui-nav li,
 .yui-navset .yui-navset-top .yui-nav li {
 	background-color: rgb(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)));
 	border-color: transparent;
@@ -51,18 +51,18 @@
 	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 }
 
-.yui-navset .yui-nav li a, 
-.yui-navset-top .yui-nav li a, 
+.yui-navset .yui-nav li a,
+.yui-navset-top .yui-nav li a,
 .yui-navset-bottom .yui-nav li a {
 	display: flex;
 	vertical-align: bottom;
 	zoom: unset;
 	width: 100%;
 	align-items: center;
-	justify-content: center;	
+	justify-content: center;
 }
 
-.yui-navset .yui-nav a em, 
+.yui-navset .yui-nav a em,
 .yui-navset .yui-navset-top .yui-nav a em {
 	padding: 0.35em 0.75em;
 	white-space: nowrap;
@@ -77,7 +77,7 @@
 
 /* Selected Tab */
 
-.yui-navset .yui-nav .selected, 
+.yui-navset .yui-nav .selected,
 .yui-navset .yui-navset-top .yui-nav .selected {
 	padding: 0;
 	margin: 0;
@@ -91,6 +91,7 @@
 	border-color: transparent;
 
 }
+
 .yui-navset .yui-nav .selected a {
 	/* Undoes a color set by wikidot's default layout */
 	color: rgb(var(--white-monochrome, 252, 252, 252)) !important;
@@ -111,7 +112,7 @@
 
 
 .yui-navset .yui-content {
-	background-color: rgba(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)),0.25);
+	background-color: rgba(var(--swatch-menubg-light-color, var(--pale-gray-monochrome, 244, 244, 244)), 0.25);
 	/* content background color */
 }
 
@@ -142,7 +143,7 @@ blockquote {
 	width: 90%;
 	margin: 1em auto;
 	padding: 0.15em 1em;
-	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25);
+	background-color: rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.25);
 	border-left: 0.5em solid rgba(var(--swatch-primary-darker, var(--medium-accent, 140, 20, 25)));
 }
 
@@ -191,11 +192,11 @@ div.image-block img {
 	margin-bottom: 0.75rem;
 	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
 
-	background: linear-gradient(to top, 
-		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25) 0%, 
+	background: linear-gradient(to top,
+		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.25) 0%,
 		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.15) 100%);
 	background-color: rgb(var(--swatch-background, var(--white-monochrome, 252, 252, 252)));
-	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)),0.25);
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.25);
 	height: var(--rating-module-height);
 }
 
@@ -238,7 +239,7 @@ div.image-block img {
 .page-rate-widget-box .ratedown a {
 	background-color: none;
 	background: unset;
-	background-color: rgba(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15)),0.1);
+	background-color: rgba(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15)), 0.1);
 }
 
 .page-rate-widget-box .rate-points,
@@ -300,45 +301,46 @@ div.image-block img {
 
 
 @supports (mask: none) or (-webkit-mask: none) {
-  .page-rate-widget-box .rateup a,
-  .page-rate-widget-box .ratedown a,
-  .page-rate-widget-box .cancel a {
-  	font-size: 0;
-  }
-  
-  .page-rate-widget-box .rateup a::before,
-  .page-rate-widget-box .ratedown a::before,
-  .page-rate-widget-box .cancel a::before{
-  	content: " ";
-  	position: absolute;
-  	width: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.5);
-  	height: var(--rating-module-height);
-  	top: 0;
-  	left: 0;
-  	-webkit-mask-size: calc(var(--rating-module-height) * 0.8);
-  	mask-size: calc(var(--rating-module-height) * 0.8);
-  	-webkit-mask-position: center;
-  	mask-position: center;
-  	mask-repeat: no-repeat;
-  	-webkit-mask-repeat: no-repeat;
-  	background-color: rgb(var(--rating-module-button-color, var(--black-monochrome, 12, 12, 12)));
-  	pointer-events: none;
-  }
-  
-  .page-rate-widget-box .rateup a::before {
-  	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  }
-  
-  .page-rate-widget-box .ratedown a::before {
-  	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  }
-  
-  .page-rate-widget-box .cancel a::before{
-  	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-  }
+
+	.page-rate-widget-box .rateup a,
+	.page-rate-widget-box .ratedown a,
+	.page-rate-widget-box .cancel a {
+		font-size: 0;
+	}
+
+	.page-rate-widget-box .rateup a::before,
+	.page-rate-widget-box .ratedown a::before,
+	.page-rate-widget-box .cancel a::before {
+		content: " ";
+		position: absolute;
+		width: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.5);
+		height: var(--rating-module-height);
+		top: 0;
+		left: 0;
+		-webkit-mask-size: calc(var(--rating-module-height) * 0.8);
+		mask-size: calc(var(--rating-module-height) * 0.8);
+		-webkit-mask-position: center;
+		mask-position: center;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		background-color: rgb(var(--rating-module-button-color, var(--black-monochrome, 12, 12, 12)));
+		pointer-events: none;
+	}
+
+	.page-rate-widget-box .rateup a::before {
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	}
+
+	.page-rate-widget-box .ratedown a::before {
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	}
+
+	.page-rate-widget-box .cancel a::before {
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	}
 }
 
 /* Heritage Rating Module */
@@ -392,16 +394,16 @@ div.image-block img {
 	box-shadow: 0.0625rem 0.0625rem 0px rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.15);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
-	background: linear-gradient(to top, 
-		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)),0.25) 0%, 
+	background: linear-gradient(to top,
+		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.25) 0%,
 		rgba(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)), 0.15) 100%);
 	background-color: rgb(var(--swatch-background, var(--white-monochrome, 252, 252, 252)));
-	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)),0.25);
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color, var(--black-monochrome, 12, 12, 12)), 0.25);
 	height: var(--rating-module-height);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton:hover {
-	background: rgba(50, 50, 50, 0.1);	
+	background: rgba(50, 50, 50, 0.1);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p {
@@ -514,7 +516,7 @@ table.wiki-content-table * {
 	box-sizing: border-box;
 }
 
-table.wiki-content-table, 
+table.wiki-content-table,
 table.wiki-content-table tbody {
 	border-collapse: unset;
 	border-spacing: 0;
@@ -531,7 +533,7 @@ table.wiki-content-table th {
 table.wiki-content-table th,
 table.wiki-content-table tr {
 	/* Override's border on wikidot's default layout */
-	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color, var(--gray-monochrome, 66, 66, 72)),0.25) !important;
+	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color, var(--gray-monochrome, 66, 66, 72)), 0.25) !important;
 }
 
 .translation-box-stylesheet {
