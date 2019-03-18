@@ -3,12 +3,14 @@
 	position: relative;
 	z-index: 10;
 	height: 9.375rem;
-	background-image: var(--logo-image, url("https://nu-scptheme.github.io/Nu-SCP/images/logo.svg"));
+	background-image: url("https://nu-scptheme.github.io/Nu-SCP/images/logo.svg");
+	background-image: var(--logo-image);
 	background-repeat: no-repeat;
 	background-position: left 0.75rem top 1.1875rem;
 	background-clip: border-box;
 	background-size: auto 5.375rem;
-	filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome, 12, 12, 12)));
+	filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
+	filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome)));
 }
 
 body {
@@ -45,17 +47,19 @@ body {
 		rgba(215, 215, 215, 0.049) calc(calc(82.5 / 100) * 40rem),
 		rgba(215, 215, 215, 0.013) calc(calc(91.4 / 100) * 40rem),
 		rgba(215, 215, 215, 0) calc(calc(100 / 100) * 40rem)));
-	background-size: var(--header-background-image-size, 100% 7.5rem), 100% 9.375rem, 100% var(--background-gradient-distance, 40rem);
+	background-size: 100% 7.5rem, 100% 9.375rem, 100% 40rem;
+	background-size: var(--header-background-image-size), 100% 9.375rem, 100% var(--background-gradient-distance);
 	/* 120px, 150px */
 	background-repeat: repeat-x;
 }
 
 div#container-wrap {
-	background-image: var(--diagonal-stripes, repeating-linear-gradient(45deg, 
+	background-image: repeating-linear-gradient(45deg, 
 		hsla(0, 0%, 100%, 0), 
 		hsla(0, 0%, 100%, 0) 0.25vh, 
 		rgba(88, 88, 88, 0.1) 0.35vh, 
-		rgba(88, 88, 88, 0.2) 0.5vh));
+		rgba(88, 88, 88, 0.2) 0.5vh);
+	background-image: var(--diagonal-stripes);
 	background-size: 100% 7.5rem;
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -90,7 +94,8 @@ div#container-wrap {
 }
 
 header h1 {
-	font-family: var(--header-font, 'Poppins', sans-serif);
+	font-family: 'Poppins', sans-serif;
+	font-family: var(--header-font);
 	text-transform: uppercase;
 	width: 100%;
 	height: 100%;
@@ -99,14 +104,18 @@ header h1 {
 }
 
 #header h1 a::before {
-	content: var(--header-title, "SCP FOUNDATION");
-	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
+	content: "SCP FOUNDATION";
+	content: var(--header-title);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-text-dark));
 }
 
 #header h1,
 #header h2 {
-	font-family: var(--header-font, 'Poppins', sans-serif);
+	font-family: 'Poppins', sans-serif;
+	font-family: var(--header-font);
 	font-weight: 700;
 	position: absolute;
 	-webkit-font-smoothing: antialiased;
@@ -115,19 +124,22 @@ header h1 {
 }
 
 #header h1 a {
-	font-family: var(--header-font, 'Poppins', sans-serif) !important;
+	font-family: 'Poppins', sans-serif !important;
+	font-family: var(--header-font) !important;
 	letter-spacing: -0.02em;
 	display: block;
 	line-height: 0;
 	max-height: 0;
-	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
 	font-size: 135%;
 	text-decoration: none;
 	text-shadow: none;
 	z-index: 9999;
 	padding: 1.875rem 0 0;
 	margin-left: 6.75rem;
-	margin-top: calc(0.3125rem + var(--offset-from-page-top, 1.2rem));
+	margin-top: calc(0.3125rem + 1.2rem);
+	margin-top: calc(0.3125rem + var(--offset-from-page-top));
 }
 
 #header h2 {
@@ -141,13 +153,16 @@ header h1 {
 	color: transparent;
 	text-shadow: none;
 	margin-left: 6.75rem;
-	margin-top: calc(3.8rem + var(--offset-from-page-top, 1.2rem));
+	margin-top: calc(3.8rem + 1.2rem);
+	margin-top: calc(3.8rem + var(--offset-from-page-top));
 }
 
 #header h2 span::before {
-	content: var(--header-subtitle, "SECURE, CONTAIN, PROTECT");
+	content: "SECURE, CONTAIN, PROTECT";
+	content: var(--header-subtitle);
 	color: #fafafa;
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-text-dark, var(--black-monochrome, 12, 12, 12)));
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(var(--swatch-text-dark));
 }
 
 #header-extra-div-1 {
@@ -168,20 +183,26 @@ form[id="search-top-box-form"] {
 }
 
 #search-top-box-input {
-	border: var(--border-styling, solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12))));
-	border-radius: var(--border-radius-width, 0.0625rem);
-	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
-	background-color: rgb(var(--gray-monochrome, 66, 66, 72)) !important;
+	border: solid 0.0625rem rgb(12, 12, 12);
+	border: var(--border-styling);
+	border-radius: 0.0625rem;
+	border-radius: var(--border-radius-width);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
+	background-color: rgb(66, 66, 72) !important;
+	background-color: rgb(var(--gray-monochrome)) !important;
 }
 
 #search-top-box input.empty {
-	color: rgba(var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)));
+	color: rgba(12, 12, 12);
+	color: rgba(var(--swatch-menutxt-dark-color));
 	text-align: center;
 }
 
 #search-top-box-form > input,
 #search-top-box-form > input[type="submit"] {
-	min-height: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.5);
+	min-height: calc(0.875rem * 1.5);
+	min-height: calc(var(--base-font-size) * 1.5);
 	padding: 0.25rem;
 	margin: 0;
 	box-sizing: border-box;
@@ -190,18 +211,27 @@ form[id="search-top-box-form"] {
 
 #search-top-box-input:hover,
 #search-top-box-input:focus {
-	border: var(--border-styling, solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12))));
-	border-radius: var(--border-radius-width, 0.0625rem);
-	color: rgb(var(--white-monochrome, 252, 252, 252));
-	background: rgb(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170))) !important;
+	border: solid 0.0625rem rgb(12, 12, 12);
+	border: var(--border-styling);
+	border-radius: 0.0625rem;
+	border-radius: var(--border-radius-width);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--white-monochrome));
+	background: rgb(170, 170, 170) !important;
+	background: rgb(var(--swatch-menubg-medium-color)) !important;
 }
 
 #search-top-box-form input[type="submit"] {
-	border: var(--border-styling, solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12))));
-	border-radius: var(--border-radius-width, 0.0625rem);
-	font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * .85);
-	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
-	background: rgb(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15))) !important;
+	border: solid 0.0625rem rgb(12, 12, 12);
+	border: var(--border-styling);
+	border-radius: 0.0625rem;
+	border-radius: var(--border-radius-width);
+	font-size: calc(0.875rem * .85);
+	font-size: calc(var(--base-font-size) * .85);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
+	background: rgb(100, 3, 15) !important;
+	background: rgb(var(--swatch-primary-darkest)) !important;
 	box-shadow: none !important;
 	cursor: pointer;
 	margin-right: 0;
@@ -209,16 +239,22 @@ form[id="search-top-box-form"] {
 
 #search-top-box-form input[type="submit"]:hover,
 #search-top-box-form input[type="submit"]:focus {
-	border: var(--border-styling, solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12))));
-	border-radius: var(--border-radius-width, 0.0625rem);
-	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
-	text-shadow: 0 0 0.063rem rgba(var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)), 0.75);
-	background: rgb(var(--swatch-primary-darkest, var(--dark-accent, 100, 3, 15))) !important;
+	border: solid 0.0625rem rgb(12, 12, 12);
+	border: var(--border-styling);
+	border-radius: 0.0625rem;
+	border-radius: var(--border-radius-width);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
+	text-shadow: 0 0 0.063rem rgba(12, 12, 12, 0.75);
+	text-shadow: 0 0 0.063rem rgba(var(--swatch-menutxt-dark-color), 0.75);
+	background: rgb(100, 3, 15) !important;
+	background: rgb(var(--swatch-primary-darkest)) !important;
 	box-shadow: none !important;
 }
 
 #login-status {
-	color: rgb(var(--swatch-menubg-medium-color, var(--light-gray-monochrome, 170, 170, 170)));
+	color: rgb(170, 170, 170);
+	color: rgb(var(--swatch-menubg-medium-color));
 	font-size: 90% !important;
 	z-index: 10000;
 	right: 3%;
@@ -227,17 +263,21 @@ form[id="search-top-box-form"] {
 
 #login-status a {
 	background-color: transparent;
-	color: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
 }
 
 #login-status ul a {
-	color: rgb(var(--black-monochrome, 12, 12, 12));
+	color: rgb(12, 12, 12);
+	color: rgb(var(--black-monochrome));
 	background-color: transparent;
 }
 
 #account-topbutton {
-	background: rgb(var(--swatch-text-light, var(--white-monochrome, 252, 252, 252)));
-	color: rgb(var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)));
+	background: rgb(252, 252, 252);
+	background: rgb(var(--swatch-text-light));
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-menutxt-dark-color));
 }
 
 #top-bar .mobile-top-bar {
@@ -254,7 +294,8 @@ form[id="search-top-box-form"] {
 	position: initial;
 	z-index: 50;
 	height: 1.625rem;
-	font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 0.85);
+	font-size: calc(0.875rem * 0.85);
+	font-size: calc(var(--base-font-size) * 0.85);
 	font-weight: 600;
 	display: inline-flex;
 	margin: calc(7.5rem + 0.125rem) 0 1.75rem 0;
@@ -292,7 +333,8 @@ form[id="search-top-box-form"] {
 #top-bar div.top-bar > ul > li:hover,
 #top-bar div.top-bar > ul > li:focus-within,
 #top-bar div.mobile-top-bar > ul > li:hover #top-bar div.mobile-top-bar > ul > li:focus-within {
-	background-color: rgb(var(--swatch-menubg-dark-color, var(--dark-gray-monochrome, 48, 48, 52)));
+	background-color: rgb(48, 48, 52);
+	background-color: rgb(var(--swatch-menubg-dark-color));
 }
 
 #top-bar div.top-bar > ul > li:hover > a,
@@ -310,7 +352,8 @@ form[id="search-top-box-form"] {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	color: rgb(var(--swatch-menutxt-light-color, var(--white-monochrome, 252, 252, 252))) !important;
+	color: rgb(252, 252, 252) !important;
+	color: rgb(var(--swatch-menutxt-light-color)) !important;
 	background-color: transparent !important;
 	white-space: pre;
 	border: none !important;
@@ -331,7 +374,8 @@ form[id="search-top-box-form"] {
 	height: calc(0.0625rem * 3);
 	position: absolute;
 	content: " ";
-	background-color: rgba(var(--swatch-primary, var(--bright-accent, 180, 35, 35)), 0.5);
+	background-color: rgba(180, 35, 35, 0.5);
+	background-color: rgba(var(--swatch-primary), 0.5);
 	width: 0;
 	transition: width 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
@@ -348,9 +392,12 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul,
 #top-bar div.mobile-top-bar > ul > li > ul {
-	border: var(--border-styling, solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12))));
-	background: rgba(var(--swatch-menubg-dark-color, var(--dark-gray-monochrome, 48, 48, 52)), 0.93);
-	box-shadow: 0 0.125rem 0.375rem rgba(var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12)) 0.5);
+	border: solid 0.0625rem rgb(12, 12, 12);
+	border: var(--border-styling);
+	background: rgba(48, 48, 52, 0.93);
+	background: rgba(var(--swatch-menubg-dark-color), 0.93);
+	box-shadow: 0 0.125rem 0.375rem rgba(12, 12, 12 0.5);
+	box-shadow: 0 0.125rem 0.375rem rgba(var(--swatch-menutxt-dark-color) 0.5);
 	border-top: none;
 	z-index: 20;
 	margin-top: 1.625rem;
@@ -370,7 +417,8 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li,
 #top-bar div.mobile-top-bar > ul > li > ul > li {
-	border: var(--border-styling, solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12))));
+	border: solid 0.0625rem rgb(12, 12, 12);
+	border: var(--border-styling);
 	position: relative;
 	margin: 0 -0.0625rem -0.0625rem 0;
 	box-sizing: border-box;
@@ -434,7 +482,8 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover {
-	background: rgba(var(--swatch-menubg-color, var(--white-monochrome, 252, 252, 252)), 0.15)
+	background: rgba(252, 252, 252, 0.15);
+	background: rgba(var(--swatch-menubg-color), 0.15);
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover > a,
@@ -447,10 +496,12 @@ form[id="search-top-box-form"] {
 #top-bar div.top-bar > ul > li > ul > li > a,
 #top-bar div.mobile-top-bar > ul > li > ul > li > a {
 	background: transparent;
-	color: rgb(var(--swatch-menutxt-light-color, var(--white-monochrome, 252, 252, 252)));
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-menutxt-light-color));
 	width: auto;
 	height: 100%;
-	font-size: var(--base-font-size, var(--font-calc, 0.875rem));
+	font-size: 0.875rem;
+	font-size: var(--base-font-size);
 	font-weight: normal;
 
 	/* Text positioning */
@@ -476,14 +527,17 @@ form[id="search-top-box-form"] {
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: rgb(var(--bright-accent, 180, 35, 35));
+		background: rgb(180, 35, 35);
+		background: rgb(var(--bright-accent));
 	}
 
 	/* Mobile CSS */
 
 	#header {
-		background-image: var(--logo-image, url("https://nu-scptheme.github.io/Nu-SCP/images/logo.svg"));
-		--size: calc(8.75rem + var(--offset-from-page-top, 1.2rem));
+		background-image: url("https://nu-scptheme.github.io/Nu-SCP/images/logo.svg");
+		background-image: var(--logo-image);
+		--size: calc(8.75rem + 1.2rem);
+		--size: calc(8.75rem + var(--offset-from-page-top));
 		--y-offset: 1.3125rem;
 		background-position: calc(6.75rem - var(--size)) calc(((var(--size) * -1) + 7.5rem + var(--y-offset)) / 2);
 		background-size: var(--size), 100% 7.5rem;
@@ -510,11 +564,13 @@ form[id="search-top-box-form"] {
 	}
 
 	#header h1 {
-		font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 1.35);
+		font-size: calc(0.875rem * 1.35);
+		font-size: calc(var(--base-font-size) * 1.35);
 	}
 
 	#header h2 {
-		font-size: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 0.945);
+		font-size: calc(0.875rem * 0.945);
+		font-size: calc(var(--base-font-size) * 0.945);
 	}
 
 	#header h2 span::before {
@@ -539,11 +595,17 @@ form[id="search-top-box-form"] {
 		padding: 0;
 		width: 100vw;
 		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
-		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 0,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) 0.125rem,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 3rem));
+			rgba(12, 12, 12, 1) 0,
+			rgba(66, 66, 72, 1) 0.125rem,
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),		
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(12, 12, 12, 1) 3rem));
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
+			rgba(var(--swatch-topmenu-border-color), 1) 0,
+			rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
+			rgba(var(--swatch-topmenu-border-color), 1) 3rem));
 		position: static;
 		align-items: center;
 		z-index: 9999;
@@ -585,7 +647,8 @@ form[id="search-top-box-form"] {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: var(--base-font-size, var(--font-calc, 0.875rem));
+		font-size: 0.875rem;
+		font-size: var(--base-font-size);
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu {
@@ -607,13 +670,15 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
-		font-family: var(--body-font, 'Lato', sans-serif);
+		font-family: 'Lato', sans-serif;
+		font-family: var(--body-font);
 		font-size: 3em;
 		font-weight: 700;
 		text-decoration: none;
 		/* width: 100%; */
 		text-align: center;
-		color: rgb(var(--swatch-menutxt-light-color, var(--white-monochrome, 252, 252, 252))) !important;
+		color: rgb(252, 252, 252) !important;
+		color: rgb(var(--swatch-menutxt-light-color)) !important;
 		flex: 2 0 100%;
 		display: flex !important;
 		align-items: center;
