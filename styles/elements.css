@@ -25,8 +25,6 @@
 	zoom: unset;
 	background-image: none;
 	background-color: rgb(var(--swatch-menubg-light-color));
-	/* tab background */
-	border-color: transparent!important;
 	border: unset;
 	color: rgb(var(--swatch-text-dark));
 }
@@ -73,7 +71,8 @@
 }
 
 .yui-navset .yui-nav li em {
-	border: unset!important;
+	/* Undoes border set by wikidot's default layout */
+	border: unset !important;
 }
 
 /* Selected Tab */
@@ -93,7 +92,8 @@
 
 }
 .yui-navset .yui-nav .selected a {
-	color: rgb(var(--white-monochrome))!important;
+	/* Undoes a color set by wikidot's default layout */
+	color: rgb(var(--white-monochrome)) !important;
 	width: 100%;
 	background-image: none;
 }
@@ -530,7 +530,8 @@ table.wiki-content-table th {
 
 table.wiki-content-table th,
 table.wiki-content-table tr {
-	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color),0.25)!important;
+	/* Override's border on wikidot's default layout */
+	border: 0.0625rem solid rgba(var(--swatch-menubg-medium-dark-color),0.25) !important;
 }
 
 .translation-box-stylesheet {
