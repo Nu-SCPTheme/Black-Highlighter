@@ -32,7 +32,9 @@
 	/* white */
 	--pale-gray-monochrome: 244, 244, 244;
 	/* v light gray for blockquotes and stuff */
-	--light-gray-monochrome: 170, 170, 170;
+	--light-pale-gray-monochrome: 244, 244, 244;
+	/* very light pale gray for misc. use */
+	--very-light-gray-monochrome: 215, 215, 215;
 	/* light accent gray for login status */
 	--gray-monochrome: 66, 66, 72;
 	/* gray */
@@ -49,106 +51,110 @@
 	--newpage-color: 221, 102, 17;
 	/* pale orange */
 
+	/* Background and Header Colors */
+	--background-gradient-color: var(--very-light-gray-monochrome, 215, 215, 215);
+	--header-gradient-color-bottom: 99, 33, 37;
+	--header-gradient-color-middle: 76, 25, 30;
+	--header-gradient-color-top: 56, 37, 37;
+
 	/* Primary Theme Colors */
-	--swatch-background: var(--white-monochrome);
-	--swatch-primary: var(--bright-accent);
-	--swatch-primary-darker: var(--medium-accent);
-	--swatch-primary-darkest: var(--dark-accent);
+	--swatch-background: var(--white-monochrome, 252, 252, 252);
+	--swatch-primary: var(--bright-accent, 180, 35, 35);
+	--swatch-primary-darker: var(--medium-accent, 140, 20, 25);
+	--swatch-primary-darkest: var(--dark-accent, 100, 3, 15);
 	/* Primary Text Colors */
-	--swatch-text-dark: var(--black-monochrome);
-	--swatch-text-light: var(--white-monochrome);
-	--swatch-important-text: var(--bright-accent);
+	--swatch-text-dark: var(--black-monochrome, 12, 12, 12);
+	--swatch-text-light: var(--white-monochrome, 252, 252, 252);
+	--swatch-important-text: var(--bright-accent, 180, 35, 35);
 	
 	/* Primary Menu Colors */
-	--swatch-menubg-color: var(--white-monochrome);
-	--swatch-menubg-light-color: var(--pale-gray-monochrome);
-	--swatch-menubg-medium-color: var(--light-gray-monochrome);
-	--swatch-menubg-medium-dark-color: var(--gray-monochrome);
-	--swatch-menubg-dark-color: var(--dark-gray-monochrome);
-	--swatch-menubg-black-color: var(--black-monochrome);
-	--swatch-menubg-hover-color: var(--black-monochrome);
-	--swatch-menutxt-dark-color: var(--black-monochrome);
-	--swatch-menutxt-light-color: var(--white-monochrome);
-	--swatch-border-color: var(--black-monochrome);
+	--swatch-menubg-color: var(--white-monochrome, 252, 252, 252);
+	--swatch-menubg-light-color: var(--pale-gray-monochrome, 244, 244, 244);
+	--swatch-menubg-medium-color: var(--light-gray-monochrome, 170, 170, 170);
+	--swatch-menubg-medium-dark-color: var(--gray-monochrome, 66, 66, 72);
+	--swatch-menubg-dark-color: var(--dark-gray-monochrome, 48, 48, 52);
+	--swatch-menubg-black-color: var(--black-monochrome, 12, 12, 12);
+	--swatch-menubg-hover-color: var(--black-monochrome, 12, 12, 12);
+	--swatch-menutxt-dark-color: var(--black-monochrome, 12, 12, 12);
+	--swatch-menutxt-light-color: var(--white-monochrome, 252, 252, 252);
+	--swatch-border-color: var(--black-monochrome, 12, 12, 12);
 	/* Primary Header Colors */
-	--swatch-headerh1-color: var(--white-monochrome);
-	--swatch-headerh2-color: var(--white-monochrome);
-	--swatch-topmenu-border-color: var(--black-monochrome);
-	--swatch-topmenu-bg-color: var(--gray-monochrome);
+	--swatch-headerh1-color: var(--white-monochrome, 252, 252, 252);
+	--swatch-headerh2-color: var(--white-monochrome, 252, 252, 252);
+	--swatch-topmenu-border-color: var(--black-monochrome, 12, 12, 12);
+	--swatch-topmenu-bg-color: var(--gray-monochrome, 66, 66, 72);
 	
-	--rating-module-button-color: var(--black-monochrome);
-	--rating-module-text-color: var(--swatch-menutxt-dark-color);
+	--rating-module-button-color: var(--black-monochrome, 12, 12, 12);
+	--rating-module-text-color: var(--swatch-menutxt-dark-color, var(--black-monochrome, 12, 12, 12));
 
 	/* Header Gradients */
 
 	--gradient-header: linear-gradient(to top,
-		rgba(99, 33, 37, 0.97) 0%,
-		rgb(76, 25, 30) 70%,
-		rgb(56, 37, 37) 100%);
+		rgba(var(--header-gradient-color-bottom, 99, 33, 37), 0.97) 0%,
+		rgba(var(--header-gradient-color-middle, 76, 25, 30)) 70%,
+		rgba(var(--header-gradient-color-top, 56, 37, 37)) 100%);
 	--gradient-topmenu: linear-gradient(to bottom,
-		white 0%,
-		white 7.5rem,
-		rgba(var(--swatch-topmenu-border-color), 1) 7.5rem,
-		rgba(var(--swatch-topmenu-bg-color), 1) 7.625rem,
-		rgba(var(--swatch-topmenu-bg-color), 0.95) calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color), 1) 100%);
+		rgba(255,255,255,0) 0%,
+		rgba(255,255,255,0) 7.5rem,
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 7.5rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) 7.625rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 0.95) calc(100% - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) calc(100% - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 100%);
 	--gradient-topmenu-mobile: linear-gradient(to bottom,
-		rgba(var(--swatch-topmenu-border-color), 1) 0,
-		rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color), 1) 3rem);
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 0,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) 0.125rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) calc(3rem - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) calc(3rem - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 3rem);
 	--diagonal-stripes: repeating-linear-gradient(45deg, 
 		hsla(0, 0%, 100%, 0), 
 		hsla(0, 0%, 100%, 0) 0.25vh, 
 		rgba(88, 88, 88, 0.1) 0.35vh, 
 		rgba(88, 88, 88, 0.2) 0.5vh);
 	--gradient-sidemenu-header: linear-gradient(10deg,
-		rgba(var(--medium-accent), 0.45) 0%,
-		rgba(var(--medium-accent), 0.55) 100%);
+		rgba(var(--medium-accent, 140, 20, 25), 0.45) 0%,
+		rgba(var(--medium-accent, 140, 20, 25), 0.55) 100%);
+	--background-gradient-distance: 40rem;
 	--gradient-background: linear-gradient(to bottom,
-		rgba(var(--background-gradient-color), 1) calc(calc(0 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.987) calc(calc(0.8 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.951) calc(calc(2.9 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.896) calc(calc(6.4 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.825) calc(calc(11 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.741) calc(calc(16.6 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.648) calc(calc(23.1 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.55) calc(calc(30.4 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.45) calc(calc(38.3 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.352) calc(calc(46.7 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.259) calc(calc(55.4 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.175) calc(calc(64.4 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.104) calc(calc(73.5 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.049) calc(calc(82.5 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.013) calc(calc(91.4 / 100) * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0) calc(calc(100 / 100) * var(--background-gradient-distance)));
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 1) calc(calc(0 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.987) calc(calc(0.8 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.951) calc(calc(2.9 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.896) calc(calc(6.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.825) calc(calc(11 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.741) calc(calc(16.6 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.648) calc(calc(23.1 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.55) calc(calc(30.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.45) calc(calc(38.3 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.352) calc(calc(46.7 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.259) calc(calc(55.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.175) calc(calc(64.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.104) calc(calc(73.5 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.049) calc(calc(82.5 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0.013) calc(calc(91.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(--background-gradient-color, var(--very-light-gray-monochrome, 215, 215, 215)), 0) calc(calc(100 / 100) * var(--background-gradient-distance, 40rem)));
     --header-background-image-size: 100% 7.5rem;
 
 	/* Spacing Measurements */
 	--offset-from-page-top: 1.2rem;
 	/* space between the top of the page and the start of the header */
 	--body-width-on-desktop: 44.25rem;
-	--sidebar-width-on-desktop: calc(var(--base-font-size) * 19);
+	--sidebar-width-on-desktop: calc(var(--base-font-size, var(--font-calc, 0.875rem)) * 19);
 	--sidebar-width-on-mobile: 14rem;
 	--scrollbar-width: 0.5625rem;
-	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color));
+	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
 	--border-radius-width: 0.0625rem;
 
 	/* Box-Shadow 1px Borders */
-	--box-border-bottom: 0 0.0625rem 0 0 rgb(var(--swatch-border-color));
-	--box-border-top: 0 -0.0625rem 0 0 rgb(var(--swatch-border-color));
-	--box-border-left: -0.0625rem 0 0 0 rgb(var(--swatch-border-color));
-	--box-border-right: 0.0625rem 0 0 0 rgb(var(--swatch-border-color));
-	--box-border-all: 0 0 0 0.0625rem rgb(var(--swatch-border-color));
+	--box-border-bottom: 0 0.0625rem 0 0 rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
+	--box-border-top: 0 -0.0625rem 0 0 rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
+	--box-border-left: -0.0625rem 0 0 0 rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
+	--box-border-right: 0.0625rem 0 0 0 rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
+	--box-border-all: 0 0 0 0.0625rem rgb(var(--swatch-border-color, var(--black-monochrome, 12, 12, 12)));
 
 	/* Sidebar */
 	--sidebar-transition-timing: 0.5s ease-in-out 0.1s;
 	--sidebar-internal-border-thickness: 0.125rem;
-
-	--background-gradient-color: 215, 215, 215;
-	--background-gradient-distance: 40rem;
 
 	/* Dynamic Font Sizing */
 	/* This set of vars will make the base font size vary with screen width */
@@ -170,6 +176,6 @@
 	--font-calc: calc((var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
 	--line-calc: calc(var(--min-lineheight) + var(--lineheight-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
 	/* final values */
-	--base-font-size: var(--font-calc);
-	--base-line-height: var(--line-calc);
+	--base-font-size: var(--font-calc, 0.875rem);
+	--base-line-height: var(--line-calc, 1.313rem);
 }
