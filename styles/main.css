@@ -280,14 +280,11 @@ div.sexy-box div.image-container img {
 }
 
 .thread-container .post .head {
-	background-color: #eee;
-	background: linear-gradient(to right, #eee, #eeecec);
+	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
 	box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
 	border-radius: 5px 5px 0 0;
 	padding: .5em 1em;
 }
-
-
 
 .ruby {
 	display: inline-table;
@@ -436,7 +433,7 @@ div#container-wrap {
 	background: none;
 }
 
-text-area,
+textarea,
 .yui-navset li {
 	line-height: normal;
 }
@@ -502,7 +499,7 @@ form#edit-page-form {
 .change-textarea-size a {
 	color: rgba(var(--swatch-menutxt-dark-color));
 	background-color: rgba(var(--swatch-menubg-medium-color));
-	border: 0.0625rem solid rgba(var(--swatch-border-color));;
+	border: 0.0625rem solid rgba(var(--swatch-border-color));
 	padding: 0.15rem;
 	width: 1rem;
 	height: 1rem;

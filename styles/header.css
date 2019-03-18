@@ -323,7 +323,7 @@ form[id="search-top-box-form"] {
 	max-width: 61.25rem;
 	align-self: flex-start;
 	left: 50%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, -0.3rem);
 	-webkit-backdrop-filter: blur(0rem);
 	backdrop-filter: blur(0rem);
 
@@ -375,11 +375,6 @@ form[id="search-top-box-form"] {
     backdrop-filter: blur(0.25rem) !important;
     transition: -webkit-backdrop-filter 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0s;
 }*/
-
-#top-bar div.top-bar > ul > li > ul,
-#top-bar div.mobile-top-bar > ul > li > ul {
-	transform: translate(-50%, -0.3rem);
-}
 
 #top-bar div.top-bar > ul > li:hover > ul,
 #top-bar div.top-bar > ul > li:focus-within > ul,
@@ -502,27 +497,19 @@ form[id="search-top-box-form"] {
 	#top-bar .mobile-top-bar {
 		display: flex;
 		top: 0;
+		right: 0;
+		left: 0;
 		margin: 0;
 		padding: 0;
 		width: 100vw;
 		background: var(--gradient-topmenu-mobile);
+		position: static;
+		align-items: center;
+		z-index: 9999;
 	}
 
 	#top-bar .top-bar > ul {
 		overflow: hidden;
-	}
-
-	#top-bar .mobile-top-bar {
-		display: flex;
-		top: 0;
-		margin: 0;
-		padding: 0;
-		width: 100vw;
-		position: static;
-		right: 0;
-		left: 0;
-		align-items: center;
-		z-index: 9999;
 	}
 
 	#top-bar div.mobile-top-bar > ul {
@@ -579,7 +566,7 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
-		font-family: "Lato", san-serif;
+		font-family: var(--body-font);
 		font-size: 3em;
 		font-weight: 700;
 		text-decoration: none;

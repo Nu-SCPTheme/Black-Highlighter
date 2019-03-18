@@ -15,7 +15,6 @@
 	position: -webkit-sticky;
 	top: -1rem;
 	max-height: calc(100vh + 1rem);
-	overflow: hidden;
 	scrollbar-width: thin;
 	z-index: 9;
 	overscroll-behavior: none;
@@ -87,20 +86,17 @@
 /* Defer to a variable set in nav:side, if available */
 #side-bar .side-block {
 	background-color: rgb(var(--swatch-menubg-color)) !important;
+	border: 0;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
 }
 
 /* WOED - WHAT DOES THIS DO?? PLZ COMMENT - Croque */
 #side-bar div.side-block:nth-child(7) > div:nth-child(1) > div:nth-child(1) img {
 	filter: none;
 	-webkit-filter: none;
-}
-
-#side-bar .side-block {
-	border: 0;
-	margin-top: 1rem;
-	display: flex;
-	flex-direction: column;
-	flex-shrink: 0;
 }
 
 #side-bar .side-area {
