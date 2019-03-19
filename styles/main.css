@@ -53,6 +53,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 #container {
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -66,7 +68,9 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	min-height: calc(100vh - 9.375rem);
 	height: 100% !important;
 	position: initial;
-	/* display: flex; */
+	/* display: -webkit-flex;
+	display: -ms-flex;
+	display: flex; */
 	flex-direction: row;
 	justify-content: center;
 	margin: 0 auto -4.1em auto;
@@ -113,6 +117,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	margin-left: calc(50vw - (var(--body-width-on-desktop / 2) - 2rem));
 	margin-right: 1.5rem;
 	max-height: 100%;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: column;
 }
@@ -476,6 +482,8 @@ table.form {
 }
 
 table.form tr {
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -491,6 +499,8 @@ form#edit-page-form {
 }
 
 .wd-editor-toolbar-panel {
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	height: 100%;
 	flex-direction: column;
@@ -547,6 +557,8 @@ div.buttons.alignleft > input {
 
 div.buttons.alignleft {
 	text-align: left;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 }
 

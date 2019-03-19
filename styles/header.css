@@ -318,6 +318,8 @@ form[id="search-top-box-form"] {
 	max-width: 61.25rem;
 	z-index: 20;
 	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	letter-spacing: 0.0625rem;
 	text-align: center;
@@ -415,6 +417,8 @@ form[id="search-top-box-form"] {
 	-webkit-backdrop-filter: blur(0rem);
 	backdrop-filter: blur(0rem);
 
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -591,6 +595,8 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar .mobile-top-bar {
+		display: -webkit-flex;
+		display: -ms-flex;
 		display: flex;
 		top: 0;
 		right: 0;
@@ -630,6 +636,8 @@ form[id="search-top-box-form"] {
 
 	#top-bar div.mobile-top-bar > ul > li > ul {
 		transform: translate(-50%, 0);
+		display: -webkit-flex;
+		display: -ms-flex;
 		display: flex;
 		margin-top: 2.938rem;
 		column-count: 3;
@@ -638,6 +646,8 @@ form[id="search-top-box-form"] {
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
 		max-height: calc(90vh / 15);
 		max-width: calc(98vw + 1px);
+		display: -webkit-flex;
+		display: -ms-flex;
 		display: flex;
 		width: calc(98vw + 1px);
 		flex-grow: 2;
@@ -648,6 +658,8 @@ form[id="search-top-box-form"] {
 		height: 100%;
 		width: 100%;
 		line-height: 1em;
+		display: -webkit-flex;
+		display: -ms-flex;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -658,6 +670,8 @@ form[id="search-top-box-form"] {
 	#top-bar > div.mobile-top-bar > div.open-menu {
 		width: 3rem;
 		height: 3rem;
+		display: -webkit-flex;
+		display: -ms-flex;
 		display: flex;
 	}
 
@@ -684,6 +698,8 @@ form[id="search-top-box-form"] {
 		color: rgb(252, 252, 252) !important;
 		color: rgb(var(--swatch-menutxt-light-color)) !important;
 		flex: 2 0 100%;
+		display: -webkit-flex !important;
+		display: -ms-flex !important;
 		display: flex !important;
 		align-items: center;
 		justify-content: center;
@@ -694,9 +710,6 @@ form[id="search-top-box-form"] {
 
 /* IE11 Only */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	#header {
-		background-position: left -14rem top 1.1875rem;	
-	}
 	#top-bar{
 		margin: 0;
 	}

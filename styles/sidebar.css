@@ -2,6 +2,8 @@
 
 #side-bar {
 	border: none;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: column;
 	background: rgba(252, 252, 252, 1);
@@ -106,6 +108,8 @@
 #side-bar .side-block {
 	border: 0;
 	margin-top: 1rem;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -113,6 +117,8 @@
 }
 
 .side-block div[style="text-align: center;"] {
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	width: 100%;
 	justify-content: space-evenly;
@@ -168,6 +174,8 @@
 #side-bar div.menu-item {
 	margin: 0;
 	text-align: right;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -430,6 +438,8 @@
 	border: 0;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
@@ -437,6 +447,8 @@
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
 	height: auto;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 	width: 100%;
 	justify-content: space-evenly;
@@ -468,6 +480,8 @@ a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
 	min-width: calc(0.875rem * 2.5);
 	min-width: calc(var(--base-font-size) * 2.5);
+	display: -webkit-flex !important;
+	display: -ms-flex !important;
 	display: flex !important;
 	/* !important explaination: 
 	overwriting other display since this is temporary */
