@@ -603,7 +603,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	width: 98vw;
 	min-height: -webkit-calc(100vh - 9.375rem);
 	min-height: calc(100vh - 9.375rem);
-	height: 100% !important;
+	flex-grow: 2;
+	height: auto !important;
 	position: initial;
 	/* display: -webkit-flex;
 	display: -moz-flex;
@@ -706,9 +707,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	width: -webkit-calc(98.7vw - var(--sidebar-width-on-desktop));
 	width: calc(98.7vw - var(--sidebar-width-on-desktop));
 	height: 1rem;
-	position: absolute;
-	bottom: -1rem;
-	right: 0;
+	position: relative;
+	align-self: flex-end;
 }
 
 #footer .options {
@@ -723,9 +723,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 #license-area {
 	padding: 0;
 	position: relative;
-	right: 0;
-	bottom: -2.35em;
-	height: 1rem;
+	align-self: flex-end;
+	width: 100%;
 }
 
 div.sexy-box {
