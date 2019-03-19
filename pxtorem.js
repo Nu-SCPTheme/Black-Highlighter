@@ -1,7 +1,7 @@
 var fs = require('fs');
 var postcss = require('postcss');
 var pxtorem = require('postcss-pxtorem');
-var css = fs.readFileSync('styles/structure.css', 'utf8');
+var css = fs.readFileSync('styles/overwrite-main.css', 'utf8');
 var options = {
     rootValue: 16,
     unitPrecision: 5,
@@ -13,7 +13,7 @@ var options = {
 };
 var processedCss = postcss(pxtorem(options)).process(css).css;
 
-fs.writeFile('styles/structure.css', processedCss, function (err) {
+fs.writeFile('styles/overwrite-main.css', processedCss, function (err) {
   if (err) {
     throw err;
   }
