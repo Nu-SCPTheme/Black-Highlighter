@@ -18,23 +18,21 @@ body {
 		linear-gradient(to top,
 			rgba(99, 33, 37, 0.97) 0%,
 			rgba(76, 25, 30) 70%,
-			rgba(56, 37, 37) 100%
-			),  
-			linear-gradient(to bottom,
+			rgba(56, 37, 37) 100%),  
+		linear-gradient(to bottom,
 			rgba(255, 255, 255,0) 0%,
 			rgba(255, 255, 255,0) 7.5rem,
 			rgba(12, 12, 12, 1) 7.5rem,
 			rgba(66, 66, 72, 1) 7.625rem,
 			rgba(66, 66, 72, 0.95) calc(100% - 0.125rem),
 			rgba(66, 66, 72, 1) calc(100% - 0.125rem),
-			rgba(12, 12, 12, 1) 100%
-			), 
+			rgba(12, 12, 12, 1) 100%), 
 		linear-gradient(to bottom,
 			rgba(215, 215, 215, 1) 0rem,
 			rgba(215, 215, 215, 0.987) 0.32rem,
 			rgba(215, 215, 215, 0.951) 1.16rem,
 			rgba(215, 215, 215, 0.896) 2.56rem,
-			rgba(215, 215, 215, 0.825) 4.4rem),
+			rgba(215, 215, 215, 0.825) 4.4rem,
 			rgba(215, 215, 215, 0.741) 6.64rem,
 			rgba(215, 215, 215, 0.648) 9.24rem,
 			rgba(215, 215, 215, 0.55) 12.16rem,
@@ -45,12 +43,11 @@ body {
 			rgba(215, 215, 215, 0.104) 29.4rem,
 			rgba(215, 215, 215, 0.049) 33rem,
 			rgba(215, 215, 215, 0.013) 36.56rem,
-			rgba(215, 215, 215, 0) 40rem
-			);
-		background-image: 
-			var(--gradient-header),
-			var(--gradient-topmenu), 
-			var(--gradient-background);
+			rgba(215, 215, 215, 0) 40rem);
+	background-image: 
+		var(--gradient-header),
+		var(--gradient-topmenu), 
+		var(--gradient-background);
 	background-size: 100% 7.5rem, 100% 9.375rem, 100% 40rem;
 	background-size: var(--header-background-image-size), 100% 9.375rem, 100% var(--background-gradient-distance);
 	/* 120px, 150px */
