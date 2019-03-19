@@ -299,9 +299,16 @@ form[id="search-top-box-form"] {
 	font-size: calc(var(--base-font-size) * 0.85);
 	font-weight: 600;
 	display: inline-flex;
-	margin: calc(7.5rem + 0.125rem) 0 1.75rem 0;
+	margin: 7.625rem 0 1.75rem 0;
 	padding: 0 0 0.25rem;
 	flex-wrap: nowrap;
+}
+
+/* IE11 Only */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#top-bar{
+		margin: 0;
+	}
 }
 
 /* In-Progress Top-Bar Implimentation */
@@ -449,17 +456,14 @@ form[id="search-top-box-form"] {
 	transform: translate(0, -0.3rem);
 }
 
-/*#top-bar li:hover ul,
+#top-bar li:hover ul,
 #top-bar li:focus ul,
 #top-bar li ul:focus-within,
 #top-bar li.sfhover ul {
     visibility: visible;
-    transform: translate(0, 0);
     opacity: 1;
-    -webkit-backdrop-filter: blur(0.25rem) !important;
-    backdrop-filter: blur(0.25rem) !important;
-    transition: -webkit-backdrop-filter 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0s;
-}*/
+    transition: opacity 0.2s ease-in-out, visibility 0s linear 0s;
+}
 
 #top-bar div.top-bar > ul > li:hover > ul,
 #top-bar div.top-bar > ul > li:focus-within > ul,
