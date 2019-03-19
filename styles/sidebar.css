@@ -43,7 +43,8 @@
 	z-index: 9;
 	-ms-scroll-chaining: none;
 	overscroll-behavior: contain;
-	overflow: hidden auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	scrollbar-color: rgba(170, 170, 170, 0) rgba(170, 170, 170, 0);
 	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0)
 		rgba(var(--swatch-menubg-medium-color), 0);
@@ -178,10 +179,7 @@
 }
 
 #side-bar .heading,
-#side-bar
-	.side-block
-	> .collapsible-block:nth-child(1)
-	.collapsible-block-folded {
+#side-bar .side-block > .collapsible-block:nth-child(1)	.collapsible-block-folded {
 	min-height: 1.5625rem;
 	background: -webkit-linear-gradient(
 		80deg,
