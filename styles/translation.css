@@ -7,6 +7,12 @@ body#translations {
 
 #translations .interwiki__title {
 	min-height: 1.5625rem;
+	background: -webkit-linear-gradient(80deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%);
+	background: -o-linear-gradient(80deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%);
 	background: linear-gradient(10deg,
 		rgba(140, 20, 25, 0.45) 0%,
 		rgba(140, 20, 25, 0.55) 100%);
@@ -31,21 +37,31 @@ body#translations {
 #translations .interwiki__entry {
 	margin: 0;
 	text-align: right;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: flex-end;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 	/*color: transparent;*/
 	font-size: 0;
 	min-height: calc(2rem - 0.125rem);
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
 	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
-	flex-shrink: 2;
+	-ms-flex-negative: 2;
+	    flex-shrink: 2;
 }
 
 #translations .interwiki__entry a {
@@ -58,6 +74,8 @@ body#translations {
 	letter-spacing: 0.04em;
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
+	-webkit-transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	display: block;
 	height: calc(2rem - 0.125rem);

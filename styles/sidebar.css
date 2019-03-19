@@ -2,20 +2,27 @@
 
 #side-bar {
 	border: none;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	background: rgba(252, 252, 252, 1);
 	background: rgba(var(--swatch-menubg-color), 1);
-	flex-basis: calc(0.875rem * 19);
-	flex-basis: var(--sidebar-width-on-desktop);
+	-ms-flex-preferred-size: calc(0.875rem * 19);
+	    flex-basis: calc(0.875rem * 19);
+	-ms-flex-preferred-size: var(--sidebar-width-on-desktop);
+	    flex-basis: var(--sidebar-width-on-desktop);
 	min-width: calc(0.875rem * 19);
 	min-width: var(--sidebar-width-on-desktop);
 	width: calc(0.875rem * 19);
 	width: var(--sidebar-width-on-desktop);
-	flex-shrink: 0;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
 	padding: 0;
 	margin: 0 0 0 -0.99vw;
 	/* removes weird thin white line from right side of side-bar */
@@ -25,11 +32,14 @@
 	max-height: calc(100vh + 1rem);
 	scrollbar-width: thin;
 	z-index: 9;
-	overscroll-behavior: contain;
+	-ms-scroll-chaining: none;
+	    overscroll-behavior: contain;
 	overflow: hidden auto;
 	scrollbar-color: rgba(170, 170, 170, 0) rgba(170, 170, 170, 0);
 	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0) rgba(var(--swatch-menubg-medium-color), 0);
 	float: left;
+	-webkit-transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -109,22 +119,31 @@
 #side-bar .side-block {
 	border: 0;
 	margin-top: 1rem;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	flex-shrink: 0;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
 }
 
 .side-block div[style="text-align: center;"] {
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
-	justify-content: space-evenly;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
 	padding: 0 0.6rem;
 }
 
@@ -141,6 +160,12 @@
 #side-bar .heading,
 #side-bar .side-block > .collapsible-block:nth-child(1) .collapsible-block-folded {
 	min-height: 1.5625rem;
+	background: -webkit-linear-gradient(80deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%);
+	background: -o-linear-gradient(80deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%);
 	background: linear-gradient(10deg,
 		rgba(140, 20, 25, 0.45) 0%,
 		rgba(140, 20, 25, 0.55) 100%);
@@ -149,7 +174,8 @@
 
 #side-bar .heading {
 	margin-top: 0.5rem;
-	flex-basis: 100%;
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
 }
 
 #side-bar .heading p,
@@ -177,22 +203,34 @@
 #side-bar div.menu-item {
 	margin: 0;
 	text-align: right;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: flex-end;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 	font-size: 0;
 	min-height: calc(2rem - 0.125rem);
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
 	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 
-	flex-shrink: 0;
-	flex-basis: 100%;
+	-ms-flex-negative: 0;
+
+	    flex-shrink: 0;
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
 }
 
 #side-bar div.menu-item > span {
@@ -201,7 +239,8 @@
 
 #side-bar div.collapsible-block {
 	text-align: right;
-	flex-basis: 100%;
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
 }
 
 #side-bar div.menu-item a,
@@ -215,6 +254,8 @@
 	letter-spacing: 0.04em;
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
+	-webkit-transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	display: block;
 	height: calc(2rem - 0.125rem);
@@ -233,7 +274,9 @@
 #side-bar div.menu-item > :nth-child(2) {
 	padding-left: calc(0.875rem * 0.75);
 	padding-left: calc(var(--base-font-size) * 0.75);
-	flex-grow: 2;
+	-webkit-box-flex: 2;
+	    -ms-flex-positive: 2;
+	        flex-grow: 2;
 	text-align: right;
 }
 
@@ -285,19 +328,23 @@
 }
 
 #side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
-	filter: invert(100%);
+	-webkit-filter: invert(100%);
+	        filter: invert(100%);
 }
 
 #side-bar div.menu-item .collapsible-block-unfolded-link a.collapsible-block-link::after,
 #side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
-	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	    -ms-transform: rotate(180deg);
+	        transform: rotate(180deg);
 }
 
 /* create a gap next to the collapsible contents */
 #side-bar div.menu-item .collapsible-block-content {
 	border-right: 2rem solid rgba(12, 12, 12, 0.08);
 	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 /* hide the last border within the collapsible */
@@ -409,8 +456,13 @@
 /* Search box specific styling */
 
 #___gcse_0 > div {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 	width: 100%;
 	height: 2rem;
 }
@@ -424,6 +476,8 @@
 	color: rgb(var(--swatch-menutxt-light-color));
 	background-color: rgba(100, 3, 15, 0);
 	background-color: rgba(var(--swatch-primary-darkest), 0);
+	-webkit-transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	line-height: 1.85rem;
 }
@@ -442,22 +496,30 @@
 	border: 0;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	flex-shrink: 0;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
 }
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
 	height: auto;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
-	justify-content: space-evenly;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
 }
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
@@ -486,21 +548,30 @@ a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
 	min-width: calc(0.875rem * 2.5);
 	min-width: calc(var(--base-font-size) * 2.5);
-	display: -webkit-flex !important;
 	display: -moz-flex !important;
 	display: -ms-flex !important;
+	display: -webkit-box !important;
+	display: -ms-flexbox !important;
 	display: flex !important;
 	/* !important explaination: 
 	overwriting other display since this is temporary */
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 /* Centering Translation Box in Sidebar */
 
 #side-bar div.scpnet-interwiki-wrapper {
-	transform: translate(calc(((calc(0.875rem * 19) - 217.594px) / 2) - (0.5625rem / 2)), 0);
-	transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 0);
+	-webkit-transform: translate(calc(((calc(0.875rem * 19) - 217.594px) / 2) - (0.5625rem / 2)), 0);
+	    -ms-transform: translate(calc(((calc(0.875rem * 19) - 217.594px) / 2) - (0.5625rem / 2)), 0);
+	        transform: translate(calc(((calc(0.875rem * 19) - 217.594px) / 2) - (0.5625rem / 2)), 0);
+	-webkit-transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 0);
+	    -ms-transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 0);
+	        transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 0);
 }
 
 @media only screen and (max-width: 768px) {
@@ -515,10 +586,6 @@ a[href*="/most-recently-edited"] {
 		z-index: 10;
 		-webkit-transition: left 0.5s ease-in-out 0.1s;
 		-webkit-transition: left var(--sidebar-transition-timing);
-		-moz-transition: left 0.5s ease-in-out 0.1s;
-		-moz-transition: left var(--sidebar-transition-timing);
-		-ms-transition: left 0.5s ease-in-out 0.1s;
-		-ms-transition: left var(--sidebar-transition-timing);
 		-o-transition: left 0.5s ease-in-out 0.1s;
 		-o-transition: left var(--sidebar-transition-timing);
 		transition: left 0.5s ease-in-out 0.1s;
@@ -559,7 +626,11 @@ a[href*="/most-recently-edited"] {
 		visibility: hidden;
 		opacity: 0;
 		pointer-events: none;
+		-webkit-transition: all 0.5s ease-in-out 0.1s;
+		-o-transition: all 0.5s ease-in-out 0.1s;
 		transition: all 0.5s ease-in-out 0.1s;
+		-webkit-transition: all var(--sidebar-transition-timing);
+		-o-transition: all var(--sidebar-transition-timing);
 		transition: all var(--sidebar-transition-timing);
 	}
 
@@ -572,8 +643,10 @@ a[href*="/most-recently-edited"] {
 	#side-bar:target {
 		display: block;
 		left: 0;
-		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
-		box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
+		-webkit-box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		        box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		-webkit-box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
+		        box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
 		z-index: 10;
 		margin: 0;
 		width: 17em;
@@ -611,8 +684,10 @@ a[href*="/most-recently-edited"] {
 	#skrollr-body:target #side-bar {
 		display: block;
 		left: 0;
-		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
-		box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
+		-webkit-box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		        box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		-webkit-box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
+		        box-shadow: inset 0 0 0 -0.0625rem rgb(var(--swatch-menutxt-light-color));
 		z-index: 10;
 		margin: 0;
 	}

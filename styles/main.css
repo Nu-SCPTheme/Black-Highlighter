@@ -53,11 +53,15 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 #container {
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -73,8 +77,13 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	display: -moz-flex;
 	display: -ms-flex;
 	display: flex; */
-	flex-direction: row;
-	justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin: 0 auto -4.1em auto;
 	padding: 0;
 }
@@ -108,22 +117,30 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #main-content {
 	background-color: transparent;
-	flex-basis: 44.25rem;
-	flex-basis: var(--body-width-on-desktop);
+	-ms-flex-preferred-size: 44.25rem;
+	    flex-basis: 44.25rem;
+	-ms-flex-preferred-size: var(--body-width-on-desktop);
+	    flex-basis: var(--body-width-on-desktop);
 	max-width: 44.25rem;
 	max-width: var(--body-width-on-desktop);
 	padding: 2rem;
 	margin-bottom: 3rem;
-	flex-grow: 2;
+	-webkit-box-flex: 2;
+	    -ms-flex-positive: 2;
+	        flex-grow: 2;
 	margin-left: calc(50vw - (44.25rem / 2) - 2rem);
 	margin-left: calc(50vw - (var(--body-width-on-desktop / 2) - 2rem));
 	margin-right: 1.5rem;
 	max-height: 100%;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 #breadcrumbs {
@@ -190,7 +207,8 @@ div.sexy-box div.image-container img {
 .content-panel {
 	border-radius: 10px;
 	background-color: rgba(66, 66, 66, 0.5);
-	box-shadow: 0 .188em .375em rgba(0, 0, 0, 0.16), 0 .188em .375em rgba(0, 0, 0, 0.23), 0 0 .063em 0 #888880 inset, 0 0 .063em 0 #888880;
+	-webkit-box-shadow: 0 .188em .375em rgba(0, 0, 0, 0.16), 0 .188em .375em rgba(0, 0, 0, 0.23), 0 0 .063em 0 #888880 inset, 0 0 .063em 0 #888880;
+	        box-shadow: 0 .188em .375em rgba(0, 0, 0, 0.16), 0 .188em .375em rgba(0, 0, 0, 0.23), 0 0 .063em 0 #888880 inset, 0 0 .063em 0 #888880;
 	margin: .625em 0 .938em;
 }
 
@@ -259,7 +277,8 @@ div.sexy-box div.image-container img {
 	border: solid 1px #ccc;
 	border-radius: 10px;
 	white-space: nowrap;
-	box-shadow: inset 1px 2px 6px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 1px 2px 6px rgba(0, 0, 0, 0.15);
+	        box-shadow: inset 1px 2px 6px rgba(0, 0, 0, 0.15);
 	margin: 20px 0 5px 5px;
 	padding: 0 20px;
 }
@@ -291,14 +310,22 @@ div.sexy-box div.image-container img {
 
 .forum-thread-box .description-block {
 	border-radius: 10px;
-	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 10px 5px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 10px 5px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 10px 5px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.1);
 	padding: .5em 1em;
 }
 
 .thread-container .post .head {
+	background: rgba(244, 244, 244), -webkit-gradient(linear, left top, right top, from(rgba(244, 244, 244)), to(rgba(170, 170, 170)));
+	background: rgba(244, 244, 244), -webkit-linear-gradient(left, rgba(244, 244, 244), rgba(170, 170, 170));
+	background: rgba(244, 244, 244), -o-linear-gradient(left, rgba(244, 244, 244), rgba(170, 170, 170));
 	background: rgba(244, 244, 244), linear-gradient(to right, rgba(244, 244, 244), rgba(170, 170, 170));
+	background: rgba(var(--swatch-menubg-light-color)), -webkit-gradient(linear, left top, right top, from(rgba(var(--swatch-menubg-light-color))), to(rgba(var(--swatch-menubg-medium-color))));
+	background: rgba(var(--swatch-menubg-light-color)), -webkit-linear-gradient(left, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
+	background: rgba(var(--swatch-menubg-light-color)), -o-linear-gradient(left, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
 	background: rgba(var(--swatch-menubg-light-color)), linear-gradient(to right, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color)));
-	box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
+	        box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.15);
 	border-radius: 5px 5px 0 0;
 	padding: .5em 1em;
 }
@@ -323,8 +350,6 @@ div.sexy-box div.image-container img {
 .keycap {
 	border: 1px solid;
 	border-bottom-width: 2px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	background-color: #f9f9f9;
 	font-family: inherit;
@@ -342,11 +367,7 @@ div.sexy-box div.image-container img {
 	background: #666;
 	color: #fff;
 	text-decoration: none;
-	-moz-border-radius-bottomright: 4px;
-	-webkit-border-bottom-right-radius: 4px;
 	border-bottom-right-radius: 4px;
-	-moz-border-radius-topright: 4px;
-	-webkit-border-top-right-radius: 4px;
 	border-top-right-radius: 4px;
 	margin: 0 0 0 5px;
 	padding: 3px 5px 3px 0;
@@ -374,11 +395,8 @@ div.sexy-box div.image-container img {
 	float: left;
 	width: 4px;
 	height: 4px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	background: #fff;
-	-moz-box-shadow: -1px -1px 2px #004977;
 	-webkit-box-shadow: -1px -1px 2px #333;
 	box-shadow: -1px -1px 2px #333;
 }
@@ -441,6 +459,12 @@ div.sexy-box div.image-container img {
 }
 
 ::-moz-selection,
+::-moz-selection {
+	background: #fcb3b3;
+	text-shadow: none;
+}
+
+::-moz-selection,
 ::selection {
 	background: #fcb3b3;
 	text-shadow: none;
@@ -469,6 +493,8 @@ textarea,
 .dblock {
 	color: #000;
 	background-color: #000;
+	-webkit-transition: 2s;
+	-o-transition: 2s;
 	transition: 2s;
 	text-decoration: none;
 }
@@ -485,12 +511,18 @@ table.form {
 }
 
 table.form tr {
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	width: 44.25rem;
 	width: var(--body-width-on-desktop);
 }
@@ -503,15 +535,22 @@ form#edit-page-form {
 }
 
 .wd-editor-toolbar-panel {
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	height: 100%;
-	flex-direction: column;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin: 0;
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	padding: 0.5rem 0;
 }
 
@@ -531,9 +570,15 @@ form#edit-page-form {
 	padding: 0.15rem;
 	width: 1rem;
 	height: 1rem;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	font-weight: 600;
 }
 
@@ -555,16 +600,19 @@ table.edit-page-bottomtable {
 }
 
 div.buttons.alignleft > input {
-	flex-grow: 2;
+	-webkit-box-flex: 2;
+	    -ms-flex-positive: 2;
+	        flex-grow: 2;
 	padding: 0.25rem;
 	border-radius: 0.25rem;
 }
 
 div.buttons.alignleft {
 	text-align: left;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -607,8 +655,6 @@ div.buttons.alignleft {
 	#main-content {
 		max-width: 90vw;
 		-webkit-transition: .5s ease-in-out .1s;
-		-moz-transition: .5s ease-in-out .1s;
-		-ms-transition: .5s ease-in-out .1s;
 		-o-transition: .5s ease-in-out .1s;
 		transition: .5s ease-in-out .1s;
 		margin-left: 5%;
