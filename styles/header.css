@@ -456,13 +456,15 @@ form[id="search-top-box-form"] {
 	transform: translate(0, -0.3rem);
 }
 
-#top-bar li:hover ul,
-#top-bar li:focus ul,
-#top-bar li ul:focus-within,
-#top-bar li.sfhover ul {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out, visibility 0s linear 0s;
+#top-bar div.top-bar > ul > li:hover > ul {
+	transform: translate(-50%, 0);
+	visibility: visible;
+	opacity: 1;
+	transition:
+		-webkit-backdrop-filter 0.2s ease-in-out,
+		backdrop-filter 0.2s ease-in-out,
+		opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+		visibility 0s linear 0s;
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,
