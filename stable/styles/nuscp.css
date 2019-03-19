@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800");
-@supports(--css: variables) {
 @charset "utf-8";
 
 /* Fonts */
@@ -534,7 +533,6 @@
 	--base-font-size: var(--font-calc, 0.875rem);
 	--base-line-height: var(--line-calc, 1.313rem);
 }
-/*# sourceMappingURL=dist/root.css.map */
 
 /*
 Styles in main.css will override styles in sidebar.css
@@ -1432,8 +1430,6 @@ div.buttons.alignleft {
 		page-break-after: avoid;
 	}
 }
-
-/*# sourceMappingURL=dist/main.css.map */
 /* ===ELEMENTS=== */
 
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
@@ -2190,7 +2186,6 @@ table.wiki-content-table tr {
 	}
 }
 
-/*# sourceMappingURL=dist/elements.css.map */
 #header {
 	width: 90vw;
 	position: relative;
@@ -3238,7 +3233,6 @@ form[id="search-top-box-form"] {
 	}
 }
 
-/*# sourceMappingURL=dist/header.css.map */
 /* sidebar css */
 
 #side-bar {
@@ -4115,9 +4109,7 @@ a[href*="/most-recently-edited"] {
 		background: rgba(252, 252, 252, 0.2);
 		background: rgba(var(--swatch-menubg-color), 0.2);
 	}
-}
-/*# sourceMappingURL=dist/sidebar.css.map */
-html {
+}html {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-dark));
 	font-size: 1em;
@@ -4336,7 +4328,6 @@ tt {
 	background: rgba(170, 170, 170, 0.4);
 	background: rgba(var(--swatch-menubg-medium-color), 0.4);
 }
-/*# sourceMappingURL=dist/structure.css.map */
 /* most of this is copied from the sidebar */
 
 body#translations {
@@ -4447,6 +4438,4 @@ body#translations {
 	line-height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
-}
-/*# sourceMappingURL=dist/translation.css.map */
 }
