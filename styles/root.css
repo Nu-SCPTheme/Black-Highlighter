@@ -171,7 +171,7 @@
 	--font-size-difference: calc(var(--unitless-max-font-size) - var(--unitless-min-font-size));
 	--lineheight-difference: calc(var(--max-lineheight) - var(--min-lineheight));
 	--viewport-range-difference: calc(var(--unitless-max-viewport) - var(--unitless-min-viewport));
-	--min-viewport-difference: calc(100vw - (var(--unitless-min-viewport) * 1px));
+	--min-viewport-difference: calc(100vw - (var(--unitless-min-viewport) * 0.0625rem));
 	/* responsive fluid type formula */
 	--font-calc: calc((var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
 	--line-calc: calc(var(--min-lineheight) + var(--lineheight-difference) * var(--min-viewport-difference) / var(--viewport-range-difference));
