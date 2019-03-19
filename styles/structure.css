@@ -13,15 +13,15 @@ body {
 	color: rgb(var(--swatch-text-dark));
 
 	/* font behavior */
-	font-family: 'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
 	font-family: var(--body-font);
 	font-size: 0.875rem;
 	font-size: var(--base-font-size);
 	-webkit-font-kerning: normal;
-	        font-kerning: normal;
+	font-kerning: normal;
 	font-variant-numeric: normal;
-	-ms-font-feature-settings: "lnum", "kern", "liga", "clig", "alt";
 	-webkit-font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
+	-moz-font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
 	font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
@@ -30,6 +30,7 @@ body {
 	/* line behavior */
 	orphans: 2;
 	-webkit-hyphens: manual;
+	-moz-hyphens: manual;
 	-ms-hyphens: manual;
 	hyphens: manual;
 	word-break: normal;
@@ -61,7 +62,7 @@ select,
 button,
 meter,
 progress {
-	font-family: 'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
 	font-family: var(--body-font);
 }
 
@@ -78,6 +79,7 @@ textarea {
 	line-height: 1.5;
 	padding: 0 1rem;
 	min-height: 3rem;
+	min-width: -webkit-calc(100% - 2rem);
 	min-width: calc(100% - 2rem);
 }
 
@@ -93,7 +95,7 @@ pre * {
 sup {
 	vertical-align: top;
 	position: relative;
-	top: -.5em;
+	top: -0.5em;
 }
 
 hr {
@@ -112,7 +114,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Poppins', sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-family: var(--title-font);
 }
 
@@ -120,8 +122,8 @@ h1 {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--black-monochrome));
 	font-weight: 700;
-	margin: .7em 0 .6em;
-	padding: 0 0 .25em;
+	margin: 0.7em 0 0.6em;
+	padding: 0 0 0.25em;
 }
 
 h2,
@@ -130,7 +132,7 @@ h4,
 h5,
 h6 {
 	letter-spacing: 0.063rem;
-	margin: .5em 0 .4em;
+	margin: 0.5em 0 0.4em;
 	padding: 0;
 }
 
@@ -177,7 +179,7 @@ ruby {
 
 rt {
 	display: table-header-group;
-	font-size: .6em;
+	font-size: 0.6em;
 	line-height: 1.1;
 	text-align: center;
 	white-space: nowrap;
@@ -188,8 +190,9 @@ rt {
 tt {
 	overflow-wrap: break-word;
 	-webkit-hyphens: auto;
-	    -ms-hyphens: auto;
-	        hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
 }
 
 /* Chrome, Safari, Opera Scrollbar */
@@ -201,6 +204,7 @@ tt {
 	height: var(--scrollbar-width);
 	border: solid 0.063rem rgba(12, 12, 12, 0.1);
 	border: solid 0.063rem rgba(var(--swatch-menubg-black-color), 0.1);
+	-webkit-border-radius: 0.031rem;
 	border-radius: 0.031rem;
 }
 
@@ -213,3 +217,4 @@ tt {
 	background: rgba(170, 170, 170, 0.4);
 	background: rgba(var(--swatch-menubg-medium-color), 0.4);
 }
+/*# sourceMappingURL=dist/structure.css.map */
