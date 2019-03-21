@@ -611,8 +611,6 @@ form[id="search-top-box-form"] {
 	-ms-transform: translate(-50%, -0.3rem);
 	-o-transform: translate(-50%, -0.3rem);
 	transform: translate(-50%, -0.3rem);
-	-webkit-backdrop-filter: blur(0rem);
-	backdrop-filter: blur(0rem);
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
@@ -681,22 +679,14 @@ form[id="search-top-box-form"] {
 	transform: translate(-50%, 0);
 	visibility: visible;
 	opacity: 1;
-	-webkit-transition: opacity 0.2s ease-in-out, visibility 0s linear 0s,
-		-webkit-backdrop-filter 0.2s ease-in-out,
-		-webkit-transform 0.2s ease-in-out;
-	transition: opacity 0.2s ease-in-out, visibility 0s linear 0s,
-		-webkit-backdrop-filter 0.2s ease-in-out,
-		-webkit-transform 0.2s ease-in-out;
-	-o-transition: backdrop-filter 0.2s ease-in-out,
-		opacity 0.2s ease-in-out, visibility 0s linear 0s,
+	-webkit-transition: opacity 0.2s ease-in-out, visibility 0s linear 0s;
+	transition: opacity 0.2s ease-in-out, visibility 0s linear 0s;
+	-o-transition: opacity 0.2s ease-in-out, visibility 0s linear 0s,
 		-o-transform 0.2s ease-in-out;
-	transition: backdrop-filter 0.2s ease-in-out,
-		opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
 		visibility 0s linear 0s;
-	transition: backdrop-filter 0.2s ease-in-out,
-		opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
 		visibility 0s linear 0s,
-		-webkit-backdrop-filter 0.2s ease-in-out,
 		-webkit-transform 0.2s ease-in-out,
 		-o-transform 0.2s ease-in-out;
 }
@@ -715,24 +705,16 @@ form[id="search-top-box-form"] {
 	transform: translate(-50%, 0);
 	visibility: visible;
 	opacity: 1;
-	-webkit-backdrop-filter: blur(0.25rem) !important;
-	backdrop-filter: blur(0.25rem) !important;
 	-webkit-transition: opacity 0.2s ease-in-out, visibility 0s linear 0s,
-		-webkit-backdrop-filter 0.2s ease-in-out,
 		-webkit-transform 0.2s ease-in-out;
 	transition: opacity 0.2s ease-in-out, visibility 0s linear 0s,
-		-webkit-backdrop-filter 0.2s ease-in-out,
 		-webkit-transform 0.2s ease-in-out;
-	-o-transition: backdrop-filter 0.2s ease-in-out,
-		opacity 0.2s ease-in-out, visibility 0s linear 0s,
+	-o-transition: opacity 0.2s ease-in-out, visibility 0s linear 0s,
 		-o-transform 0.2s ease-in-out;
-	transition: backdrop-filter 0.2s ease-in-out,
-		opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
 		visibility 0s linear 0s;
-	transition: backdrop-filter 0.2s ease-in-out,
-		opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
 		visibility 0s linear 0s,
-		-webkit-backdrop-filter 0.2s ease-in-out,
 		-webkit-transform 0.2s ease-in-out,
 		-o-transform 0.2s ease-in-out;
 }

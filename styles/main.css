@@ -556,6 +556,10 @@ table.form {
 	margin: 0.5rem -0.25rem !important;
 }
 
+table.form, table.form > tbody {
+	width: 100%;
+}
+
 table.form tr {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -574,8 +578,7 @@ table.form tr {
 	-moz-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	width: 44.25rem;
-	width: var(--body-width-on-desktop);
+	width: 100%;
 }
 
 form#edit-page-form {
@@ -681,6 +684,9 @@ div.buttons.alignleft {
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 /* 1% Height Firefox Fixes */
