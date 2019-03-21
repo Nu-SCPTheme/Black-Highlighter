@@ -7,13 +7,26 @@ body#translations {
 
 #translations .interwiki__title {
 	min-height: 1.5625rem;
-	background: linear-gradient(10deg,
+	background: -webkit-linear-gradient(
+		80deg,
 		rgba(140, 20, 25, 0.45) 0%,
-		rgba(140, 20, 25, 0.55) 100%);
+		rgba(140, 20, 25, 0.55) 100%
+	);
+	background: -o-linear-gradient(
+		80deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%
+	);
+	background: linear-gradient(
+		10deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%
+	);
 	background: var(--gradient-sidemenu-header);
 }
 
 #translations .interwiki__title p {
+	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
 	padding-right: 1rem;
 	letter-spacing: 0.2rem;
 	color: rgb(252, 252, 252);
@@ -21,27 +34,54 @@ body#translations {
 	height: 1.5625rem;
 	line-height: 1.5625rem;
 	text-transform: uppercase;
+	font-size: -webkit-calc(0.875rem * 0.95);
 	font-size: calc(0.875rem * 0.95);
 	font-weight: 900;
 	text-align: right;
 	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
+	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
 	display: block;
 }
 
 #translations .interwiki__entry {
 	margin: 0;
 	text-align: right;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-moz-box-orient: horizontal;
+	-moz-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-moz-box-pack: end;
+	-ms-flex-pack: end;
 	justify-content: flex-end;
 	/*color: transparent;*/
 	font-size: 0;
+	min-height: -webkit-calc(2rem - 0.125rem);
 	min-height: calc(2rem - 0.125rem);
+	min-height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid
+		rgba(var(--swatch-border-color), 0.08);
+	-webkit-flex-shrink: 2;
+	-ms-flex-negative: 2;
 	flex-shrink: 2;
 }
 
@@ -55,11 +95,17 @@ body#translations {
 	letter-spacing: 0.04em;
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
-	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-webkit-transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	display: block;
+	height: -webkit-calc(2rem - 0.125rem);
 	height: calc(2rem - 0.125rem);
+	height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
+	line-height: -webkit-calc(2rem - 0.125rem);
 	line-height: calc(2rem - 0.125rem);
+	line-height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
 }
