@@ -520,7 +520,40 @@ a {
 }
 
 #side-bar:hover {
-    background: rgba(0,0,0,0);
+    background-color: initial;
+    background:
+    /* Bright Rainbow Gradient */
+    -webkit-gradient(linear,
+    left bottom, right top,
+    from(rgba(216, 151, 154, 0.75)),
+    color-stop(rgba(255, 240, 148, 0.75)),
+    color-stop(rgba(198, 223, 158, 0.75)),
+    color-stop(rgba(145, 191, 222, 0.75)),
+    to(rgba(246, 186, 212, 0.75)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
 }
 
 #side-bar .heading {
