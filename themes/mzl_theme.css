@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Chicle|Overlock:400,900');
-
-@supports(--css: variables) {
     
 ::-webkit-scrollbar-thumb {
+    background: -webkit-linear-gradient(326deg,
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
     background: linear-gradient(124deg,
         rgba(240, 194, 215, 1),
         rgba(215, 195, 218, 1),
@@ -13,11 +21,10 @@
         rgba(218, 230, 172, 1),
         rgba(230, 234, 171, 1),
         rgba(255, 242, 167, 1));
-    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
     -webkit-animation: rainbow 36s ease infinite;
-    -z-animation: rainbow 36s ease infinite;
-    -o-animation: rainbow 36s ease infinite;
-    animation: rainbow 36s ease infinite;
+            animation: rainbow 36s ease infinite;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -46,21 +53,42 @@
      background-color: rgba(246, 186, 212, 1);
 }
 
+::-moz-selection {
+    color: rgb(var(--black-monochrome));
+    text-shadow: none;
+}
+
 ::selection {
     color: rgb(var(--black-monochrome));
     text-shadow: none;
+}
+
+:root *:nth-child(4n-3)::-moz-selection {
+     background-color: rgba(216, 151, 154, 1);
 }
 
 :root *:nth-child(4n-3)::selection {
      background-color: rgba(216, 151, 154, 1);
 }
 
+:root *:nth-child(4n-2)::-moz-selection {
+     background-color: rgba(198, 223, 158, 1);
+}
+
 :root *:nth-child(4n-2)::selection {
      background-color: rgba(198, 223, 158, 1);
 }
 
+:root *:nth-child(4n-1)::-moz-selection {
+     background-color: rgba(145, 191, 222, 1);
+}
+
 :root *:nth-child(4n-1)::selection {
      background-color: rgba(145, 191, 222, 1);
+}
+
+:root *:nth-child(4n)::-moz-selection {
+     background-color: rgba(246, 186, 212, 1);
 }
 
 :root *:nth-child(4n)::selection {
@@ -96,16 +124,104 @@ hr {
     border-top: none;
     background:
         /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 0.75)),
+        color-stop(rgba(255, 240, 148, 0.75)),
+        color-stop(rgba(198, 223, 158, 0.75)),
+        color-stop(rgba(145, 191, 222, 0.75)),
+        to(rgba(246, 186, 212, 0.75)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
         linear-gradient(to top right,
         rgba(216, 151, 154, 0.75),
         rgba(255, 240, 148, 0.75),
         rgba(198, 223, 158, 0.75),
         rgba(145, 191, 222, 0.75),
         rgba(246, 186, 212, 0.75));
-    filter: blur(0.04rem);
+    -webkit-filter: blur(0.04rem);
+            filter: blur(0.04rem);
 }
 
 #container-wrap-wrap {
+    background-image:
+        -webkit-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 7.5rem,
+        rgba(var(--black-monochrome), 1) 7.5rem,
+        rgba(var(--gray-monochrome), 1) 7.625rem,
+        rgba(var(--gray-monochrome), 1) -webkit-calc(100% - 0.125rem),
+        rgba(var(--gray-monochrome), 1) -webkit-calc(100% - 0.125rem),
+        rgba(var(--black-monochrome), 1) 100%),
+
+        -webkit-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 9.375rem,
+        rgba(var(--white-monochrome), 0.5) 9.375rem,
+        rgba(var(--pale-gray-monochrome), 0.5) 100%);
+    background-image:
+        -webkit-gradient(linear,
+        left top, left bottom,
+        color-stop(0rem, rgba(0, 0, 0, 0)),
+        color-stop(7.5rem, rgba(0, 0, 0, 0)),
+        color-stop(7.5rem, rgba(var(--black-monochrome), 1)),
+        color-stop(7.625rem, rgba(var(--gray-monochrome), 1)),
+        color-stop(rgba(var(--gray-monochrome), 1)),
+        color-stop(rgba(var(--gray-monochrome), 1)),
+        to(rgba(var(--black-monochrome), 1))),
+
+        -webkit-gradient(linear,
+        left top, left bottom,
+        color-stop(0rem, rgba(0, 0, 0, 0)),
+        color-stop(9.375rem, rgba(0, 0, 0, 0)),
+        color-stop(9.375rem, rgba(var(--white-monochrome), 0.5)),
+        to(rgba(var(--pale-gray-monochrome), 0.5)));
+    background-image:
+        -o-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 7.5rem,
+        rgba(var(--black-monochrome), 1) 7.5rem,
+        rgba(var(--gray-monochrome), 1) 7.625rem,
+        rgba(var(--gray-monochrome), 1) -webkit-calc(100% - 0.125rem),
+        rgba(var(--gray-monochrome), 1) -webkit-calc(100% - 0.125rem),
+        rgba(var(--black-monochrome), 1) 100%),
+
+        -o-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 9.375rem,
+        rgba(var(--white-monochrome), 0.5) 9.375rem,
+        rgba(var(--pale-gray-monochrome), 0.5) 100%);
+    background-image:
+        -o-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 7.5rem,
+        rgba(var(--black-monochrome), 1) 7.5rem,
+        rgba(var(--gray-monochrome), 1) 7.625rem,
+        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+        rgba(var(--black-monochrome), 1) 100%),
+
+        -o-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0rem,
+        rgba(0, 0, 0, 0) 9.375rem,
+        rgba(var(--white-monochrome), 0.5) 9.375rem,
+        rgba(var(--pale-gray-monochrome), 0.5) 100%);
     background-image:
         linear-gradient(to bottom,
         rgba(0, 0, 0, 0) 0rem,
@@ -121,11 +237,37 @@ hr {
         rgba(0, 0, 0, 0) 9.375rem,
         rgba(var(--white-monochrome), 0.5) 9.375rem,
         rgba(var(--pale-gray-monochrome), 0.5) 100%);
-    background-size: 100% 9.375rem, 100% 100%;
+    -webkit-background-size: 100% 9.375rem, 100% 100%;
+            background-size: 100% 9.375rem, 100% 100%;
     background-repeat: no-repeat;
 }
 
 #skrollr-body {
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 1)),
+        color-stop(rgba(255, 240, 148, 1)),
+        color-stop(rgba(198, 223, 158, 1)),
+        color-stop(rgba(145, 191, 222, 1)),
+        to(rgba(246, 186, 212, 1)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
     background:
         /* Bright Rainbow Gradient */
         linear-gradient(to top right,
@@ -134,16 +276,18 @@ hr {
         rgba(198, 223, 158, 1),
         rgba(145, 191, 222, 1),
         rgba(246, 186, 212, 1));
-    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
     -webkit-animation: rainbow 36s ease infinite;
-    -z-animation: rainbow 36s ease infinite;
-    -o-animation: rainbow 36s ease infinite;
-    animation: rainbow 36s ease infinite;
+            animation: rainbow 36s ease infinite;
 }
 
 div#container-wrap {
+    background-image: -webkit-repeating-linear-gradient(45deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0) 0.25vh, rgba(88, 88, 88, 0.1) 0.35vh, rgba(88, 88, 88, 0.2) 0.5vh);
+    background-image: -o-repeating-linear-gradient(45deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0) 0.25vh, rgba(88, 88, 88, 0.1) 0.35vh, rgba(88, 88, 88, 0.2) 0.5vh);
     background-image: repeating-linear-gradient(45deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0) 0.25vh, rgba(88, 88, 88, 0.1) 0.35vh, rgba(88, 88, 88, 0.2) 0.5vh);
-    background-size: 100% 7.5rem;
+    -webkit-background-size: 100% 7.5rem;
+            background-size: 100% 7.5rem;
     background-repeat: no-repeat;
 }
 
@@ -155,7 +299,8 @@ a {
     background: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg) .625rem 2.50rem no-repeat;
     background-position: left .75rem top 1.1875rem;
     background-clip: border-box;
-    background-size: 5.375rem;
+    -webkit-background-size: 5.375rem 5.375rem;
+            background-size: 5.375rem;
 }
 
 
@@ -166,6 +311,7 @@ a {
 }
 
 #header h2 {
+    font-size: -webkit-calc(var(--base-font-size) * 0.9);
     font-size: calc(var(--base-font-size) * 0.9);
 }
 
@@ -176,32 +322,34 @@ a {
 }
 
 #top-bar * {
+    --text-shadow: rgb(var(--text-outline-color));
+    font-size: -webkit-calc(var(--base-font-size));
     font-size: calc(var(--base-font-size));
     color: rgb(var(--light-gray-monochrome));
-    text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
-        -1px 1px 0 rgb(var(--text-outline-color)),
-        1px -1px 0 rgb(var(--text-outline-color)),
-        -1px -1px 0 rgb(var(--text-outline-color)),
-        0px 1px 0 rgb(var(--text-outline-color)),
-        0px -1px 0 rgb(var(--text-outline-color)),
-        -1px 0px 0 rgb(var(--text-outline-color)),
-        1px 0px 0 rgb(var(--text-outline-color)),
-        2px 2px 0 rgb(var(--text-outline-color)),
-        -2px 2px 0 rgb(var(--text-outline-color)),
-        2px -2px 0 rgb(var(--text-outline-color)),
-        -2px -2px 0 rgb(var(--text-outline-color)),
-        0px 2px 0 rgb(var(--text-outline-color)),
-        0px -2px 0 rgb(var(--text-outline-color)),
-        -2px 0px 0 rgb(var(--text-outline-color)),
-        2px 0px 0 rgb(var(--text-outline-color)),
-        1px 2px 0 rgb(var(--text-outline-color)),
-        -1px 2px 0 rgb(var(--text-outline-color)),
-        1px -2px 0 rgb(var(--text-outline-color)),
-        -1px -2px 0 rgb(var(--text-outline-color)),
-        2px 1px 0 rgb(var(--text-outline-color)),
-        -2px 1px 0 rgb(var(--text-outline-color)),
-        2px -1px 0 rgb(var(--text-outline-color)),
-        -2px -1px 0 rgb(var(--text-outline-color));
+    text-shadow: 1px 1px 0 var(--text-shadow),
+        -1px 1px 0 var(--text-shadow),
+        1px -1px 0 var(--text-shadow),
+        -1px -1px 0 var(--text-shadow),
+        0px 1px 0 var(--text-shadow),
+        0px -1px 0 var(--text-shadow),
+        -1px 0px 0 var(--text-shadow),
+        1px 0px 0 var(--text-shadow),
+        2px 2px 0 var(--text-shadow),
+        -2px 2px 0 var(--text-shadow),
+        2px -2px 0 var(--text-shadow),
+        -2px -2px 0 var(--text-shadow),
+        0px 2px 0 var(--text-shadow),
+        0px -2px 0 var(--text-shadow),
+        -2px 0px 0 var(--text-shadow),
+        2px 0px 0 var(--text-shadow),
+        1px 2px 0 var(--text-shadow),
+        -1px 2px 0 var(--text-shadow),
+        1px -2px 0 var(--text-shadow),
+        -1px -2px 0 var(--text-shadow),
+        2px 1px 0 var(--text-shadow),
+        -2px 1px 0 var(--text-shadow),
+        2px -1px 0 var(--text-shadow),
+        -2px -1px 0 var(--text-shadow);
 }
 
 #top-bar > div.top-bar > ul > li > a,
@@ -224,17 +372,45 @@ a {
     z-index: -1;
     background:
         /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 0.75)),
+        color-stop(rgba(255, 240, 148, 0.75)),
+        color-stop(rgba(198, 223, 158, 0.75)),
+        color-stop(rgba(145, 191, 222, 0.75)),
+        to(rgba(246, 186, 212, 0.75))) !important;
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75)) !important;
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75)) !important;
+    background:
+        /* Bright Rainbow Gradient */
         linear-gradient(to top right,
         rgba(216, 151, 154, 0.75),
         rgba(255, 240, 148, 0.75),
         rgba(198, 223, 158, 0.75),
         rgba(145, 191, 222, 0.75),
         rgba(246, 186, 212, 0.75)) !important;
-    background-size: 1200% 1200% !important;
+    -webkit-background-size: 1200% 1200% !important;
+            background-size: 1200% 1200% !important;
     background-attachment: local !important;
     background-clip: padding-box !important;
     background-repeat: repeat !important;
     background-position: center center !important;
+    -webkit-transition: opacity 0.5s ease-in-out !important;
+    -o-transition: opacity 0.5s ease-in-out !important;
     transition: opacity 0.5s ease-in-out !important;
     pointer-events: none;
 }
@@ -243,10 +419,8 @@ a {
 #top-bar > div.top-bar > ul > li > ul > li > a:hover::before,
 #side-bar > div > div > a:hover::before {
     opacity: 1 !important;
-    -webkit-animation: rainbow 5s ease infinite !important;
-    -z-animation: rainbow 5s ease infinite !important;
-    -o-animation: rainbow 5s ease infinite !important;
-    animation: rainbow 5s linear infinite !important;
+    -webkit-animation: rainbow 5s linear infinite !important;
+            animation: rainbow 5s linear infinite !important;
 }
 
 #top-bar li:hover ul,
@@ -265,16 +439,41 @@ a {
 #search-top-box-form input[type="submit"]:focus {
     background:
         /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 0.75)),
+        color-stop(rgba(255, 240, 148, 0.75)),
+        color-stop(rgba(198, 223, 158, 0.75)),
+        color-stop(rgba(145, 191, 222, 0.75)),
+        to(rgba(246, 186, 212, 0.75)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
         linear-gradient(to top right,
         rgba(216, 151, 154, 0.75),
         rgba(255, 240, 148, 0.75),
         rgba(198, 223, 158, 0.75),
         rgba(145, 191, 222, 0.75),
         rgba(246, 186, 212, 0.75));
-    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
     -webkit-animation: rainbow 15s ease infinite;
     -z-animation: rainbow 15s ease infinite;
-    -o-animation: rainbow 15s ease infinite;
     animation: rainbow 15s ease infinite;
 }
 
@@ -282,21 +481,29 @@ a {
     font-variant: unset;
     background:
         /* Bright Rainbow Gradient */
-        linear-gradient(to top right,
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 0.75)),
+        color-stop(rgba(255, 240, 148, 0.75)),
+        color-stop(rgba(198, 223, 158, 0.75)),
+        color-stop(rgba(145, 191, 222, 0.75)),
+        to(rgba(246, 186, 212, 0.75)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
         rgba(216, 151, 154, 0.75),
         rgba(255, 240, 148, 0.75),
         rgba(198, 223, 158, 0.75),
         rgba(145, 191, 222, 0.75),
         rgba(246, 186, 212, 0.75));
-    background-size: 300% 300%;
-    -webkit-animation: rainbow 180s ease infinite;
-    -z-animation: rainbow 180s ease infinite;
-    -o-animation: rainbow 180s ease infinite;
-    animation: rainbow 180s ease infinite;
-}
-
-#side-bar .heading {
-    color: rgb(var(--bright-accent));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
     background:
         /* Bright Rainbow Gradient */
         linear-gradient(to top right,
@@ -305,49 +512,119 @@ a {
         rgba(198, 223, 158, 0.75),
         rgba(145, 191, 222, 0.75),
         rgba(246, 186, 212, 0.75));
-    background-size: 300% 300%;
+    -webkit-background-size: 300% 300%;
+            background-size: 300% 300%;
     -webkit-animation: rainbow 180s ease infinite;
     -z-animation: rainbow 180s ease infinite;
-    -o-animation: rainbow 180s ease infinite;
+    animation: rainbow 180s ease infinite;
+}
+
+#side-bar:hover {
+    background: rgba(0,0,0,0);
+}
+
+#side-bar .heading {
+    color: rgb(var(--bright-accent));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 0.75)),
+        color-stop(rgba(255, 240, 148, 0.75)),
+        color-stop(rgba(198, 223, 158, 0.75)),
+        color-stop(rgba(145, 191, 222, 0.75)),
+        to(rgba(246, 186, 212, 0.75)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    background:
+        /* Bright Rainbow Gradient */
+        linear-gradient(to top right,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75));
+    -webkit-background-size: 300% 300%;
+            background-size: 300% 300%;
+    -webkit-animation: rainbow 180s ease infinite;
+    -z-animation: rainbow 180s ease infinite;
     animation: rainbow 180s ease infinite;
 }
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item .text {
+    --text-shadow: rgb(var(--text-outline-color));
+    font-size: -webkit-calc(var(--base-font-size));
     font-size: calc(var(--base-font-size));
     color: rgb(var(--white-monochrome));
-    text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
-        -1px 1px 0 rgb(var(--text-outline-color)),
-        1px -1px 0 rgb(var(--text-outline-color)),
-        -1px -1px 0 rgb(var(--text-outline-color)),
-        0px 1px 0 rgb(var(--text-outline-color)),
-        0px -1px 0 rgb(var(--text-outline-color)),
-        -1px 0px 0 rgb(var(--text-outline-color)),
-        1px 0px 0 rgb(var(--text-outline-color)),
-        2px 2px 0 rgb(var(--text-outline-color)),
-        -2px 2px 0 rgb(var(--text-outline-color)),
-        2px -2px 0 rgb(var(--text-outline-color)),
-        -2px -2px 0 rgb(var(--text-outline-color)),
-        0px 2px 0 rgb(var(--text-outline-color)),
-        0px -2px 0 rgb(var(--text-outline-color)),
-        -2px 0px 0 rgb(var(--text-outline-color)),
-        2px 0px 0 rgb(var(--text-outline-color)),
-        1px 2px 0 rgb(var(--text-outline-color)),
-        -1px 2px 0 rgb(var(--text-outline-color)),
-        1px -2px 0 rgb(var(--text-outline-color)),
-        -1px -2px 0 rgb(var(--text-outline-color)),
-        2px 1px 0 rgb(var(--text-outline-color)),
-        -2px 1px 0 rgb(var(--text-outline-color)),
-        2px -1px 0 rgb(var(--text-outline-color)),
-        -2px -1px 0 rgb(var(--text-outline-color));
-    -webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    text-shadow: 1px 1px 0 var(--text-shadow),
+        -1px 1px 0 var(--text-shadow),
+        1px -1px 0 var(--text-shadow),
+        -1px -1px 0 var(--text-shadow),
+        0px 1px 0 var(--text-shadow),
+        0px -1px 0 var(--text-shadow),
+        -1px 0px 0 var(--text-shadow),
+        1px 0px 0 var(--text-shadow),
+        2px 2px 0 var(--text-shadow),
+        -2px 2px 0 var(--text-shadow),
+        2px -2px 0 var(--text-shadow),
+        -2px -2px 0 var(--text-shadow),
+        0px 2px 0 var(--text-shadow),
+        0px -2px 0 var(--text-shadow),
+        -2px 0px 0 var(--text-shadow),
+        2px 0px 0 var(--text-shadow),
+        1px 2px 0 var(--text-shadow),
+        -1px 2px 0 var(--text-shadow),
+        1px -2px 0 var(--text-shadow),
+        -1px -2px 0 var(--text-shadow),
+        2px 1px 0 var(--text-shadow),
+        -2px 1px 0 var(--text-shadow),
+        2px -1px 0 var(--text-shadow),
+        -2px -1px 0 var(--text-shadow);
     font-weight: 900;
 }
 
 .page-rate-widget-box {
+    --box-shadow: rgba(var(--gray-monochrome), 0.5);
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 0.75)),
+        color-stop(rgba(255, 240, 148, 0.75)),
+        color-stop(rgba(198, 223, 158, 0.75)),
+        color-stop(rgba(145, 191, 222, 0.75)),
+        to(rgba(246, 186, 212, 0.75))) !important;
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75)) !important;
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 0.75),
+        rgba(255, 240, 148, 0.75),
+        rgba(198, 223, 158, 0.75),
+        rgba(145, 191, 222, 0.75),
+        rgba(246, 186, 212, 0.75)) !important;
     background:
         /* Bright Rainbow Gradient */
         linear-gradient(to top right,
@@ -356,14 +633,15 @@ a {
         rgba(198, 223, 158, 0.75),
         rgba(145, 191, 222, 0.75),
         rgba(246, 186, 212, 0.75)) !important;
-    background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+            background-size: 50% 50%;
     -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 18s ease infinite;
-    -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
-    box-shadow: 1px 1px 1px rgba(var(--gray-monochrome), 0.5);
+            animation: rainbow 18s ease infinite;
+    -webkit-box-shadow: 1px 1px 1px var(--box-shadow);
+            box-shadow: 1px 1px 1px var(--box-shadow);
     border: dashed 0.0625rem rgb(var(--black-monochrome));
-    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+            border-radius: 1rem;
 }
 
 .page-rate-widget-box > span.rate-points,
@@ -376,6 +654,8 @@ a {
 .page-rate-widget-box > span.cancel > a {
     color: rgb(var(--bright-accent));
     mix-blend-mode: unset;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -392,6 +672,26 @@ a {
 .page-rate-widget-box > span.cancel:hover,
 .page-rate-widget-box > span.cancel:active {
     color: rgb(var(--black-monochrome));
+    background: -webkit-linear-gradient(326deg,
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
+    background: -o-linear-gradient(326deg,
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
     background: linear-gradient(124deg,
         rgba(240, 194, 215, 1),
         rgba(215, 195, 218, 1),
@@ -402,26 +702,23 @@ a {
         rgba(218, 230, 172, 1),
         rgba(230, 234, 171, 1),
         rgba(255, 242, 167, 1));
-    background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+            background-size: 50% 50%;
     -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 18s ease infinite;
-    -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
+            animation: rainbow 18s ease infinite;
     mix-blend-mode: unset !important;
 }
 
 #page-title {
+    --text-shadow: rgb(var(--black-monochrome));
     color: rgb(var(--bright-accent));
     letter-spacing: 0.5em;
     text-align: center !important;
-    text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -webkit-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -moz-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -ms-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
-    -o-text-shadow: .063rem .063rem .063rem rgb(var(--black-monochrome));
+    text-shadow: .063rem .063rem .063rem var(--text-shadow);
 }
 
 #page-content {
+    font-size: -webkit-calc(var(--base-font-size) * 1.1);
     font-size: calc(var(--base-font-size) * 1.1);
 }
 
@@ -429,9 +726,19 @@ a {
     position: relative;
     font-weight: 900;
     height: 15rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #page-content div.top,
@@ -445,31 +752,32 @@ a {
 }
 
 #page-content div.bottom {
+    --text-shadow: rgb(var(--text-outline-color));
     z-index: 3;
-    text-shadow: 1px 1px 0 rgb(var(--text-outline-color)),
-        -1px 1px 0 rgb(var(--text-outline-color)),
-        1px -1px 0 rgb(var(--text-outline-color)),
-        -1px -1px 0 rgb(var(--text-outline-color)),
-        0px 1px 0 rgb(var(--text-outline-color)),
-        0px -1px 0 rgb(var(--text-outline-color)),
-        -1px 0px 0 rgb(var(--text-outline-color)),
-        1px 0px 0 rgb(var(--text-outline-color)),
-        2px 2px 0 rgb(var(--text-outline-color)),
-        -2px 2px 0 rgb(var(--text-outline-color)),
-        2px -2px 0 rgb(var(--text-outline-color)),
-        -2px -2px 0 rgb(var(--text-outline-color)),
-        0px 2px 0 rgb(var(--text-outline-color)),
-        0px -2px 0 rgb(var(--text-outline-color)),
-        -2px 0px 0 rgb(var(--text-outline-color)),
-        2px 0px 0 rgb(var(--text-outline-color)),
-        1px 2px 0 rgb(var(--text-outline-color)),
-        -1px 2px 0 rgb(var(--text-outline-color)),
-        1px -2px 0 rgb(var(--text-outline-color)),
-        -1px -2px 0 rgb(var(--text-outline-color)),
-        2px 1px 0 rgb(var(--text-outline-color)),
-        -2px 1px 0 rgb(var(--text-outline-color)),
-        2px -1px 0 rgb(var(--text-outline-color)),
-        -2px -1px 0 rgb(var(--text-outline-color));
+    text-shadow: 1px 1px 0 var(--text-shadow),
+        -1px 1px 0 var(--text-shadow),
+        1px -1px 0 var(--text-shadow),
+        -1px -1px 0 var(--text-shadow),
+        0px 1px 0 var(--text-shadow),
+        0px -1px 0 var(--text-shadow),
+        -1px 0px 0 var(--text-shadow),
+        1px 0px 0 var(--text-shadow),
+        2px 2px 0 var(--text-shadow),
+        -2px 2px 0 var(--text-shadow),
+        2px -2px 0 var(--text-shadow),
+        -2px -2px 0 var(--text-shadow),
+        0px 2px 0 var(--text-shadow),
+        0px -2px 0 var(--text-shadow),
+        -2px 0px 0 var(--text-shadow),
+        2px 0px 0 var(--text-shadow),
+        1px 2px 0 var(--text-shadow),
+        -1px 2px 0 var(--text-shadow),
+        1px -2px 0 var(--text-shadow),
+        -1px -2px 0 var(--text-shadow),
+        2px 1px 0 var(--text-shadow),
+        -2px 1px 0 var(--text-shadow),
+        2px -1px 0 var(--text-shadow),
+        -2px -1px 0 var(--text-shadow);
 }
 
 #page-content div.top > span:nth-child(1),
@@ -480,29 +788,55 @@ a {
     z-index: 5;
     background:
         /* Bright Rainbow Gradient */
+        -webkit-gradient(linear,
+        left bottom, right top,
+        from(rgba(216, 151, 154, 1)),
+        color-stop(rgba(255, 240, 148, 1)),
+        color-stop(rgba(198, 223, 158, 1)),
+        color-stop(rgba(145, 191, 222, 1)),
+        to(rgba(246, 186, 212, 1)));
+    background:
+        /* Bright Rainbow Gradient */
+        -webkit-linear-gradient(bottom left,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+    background:
+        /* Bright Rainbow Gradient */
+        -o-linear-gradient(bottom left,
+        rgba(216, 151, 154, 1),
+        rgba(255, 240, 148, 1),
+        rgba(198, 223, 158, 1),
+        rgba(145, 191, 222, 1),
+        rgba(246, 186, 212, 1));
+    background:
+        /* Bright Rainbow Gradient */
         linear-gradient(to top right,
         rgba(216, 151, 154, 1),
         rgba(255, 240, 148, 1),
         rgba(198, 223, 158, 1),
         rgba(145, 191, 222, 1),
         rgba(246, 186, 212, 1));
-    background-size: 300% 300%;
+    -webkit-background-size: 300% 300%;
+            background-size: 300% 300%;
     background-repeat: repeat;
     -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 18s ease infinite;
-    -o-animation: rainbow 18s ease infinite;
-    animation: rainbow 18s ease infinite;
+            animation: rainbow 18s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #page-content div.top > span:nth-child(1),
 #page-content div.bottom > span:nth-child(1) {
+    font-size: -webkit-calc(var(--base-font-size) * 2.5);
     font-size: calc(var(--base-font-size) * 2.5);
 }
 
 #page-content div.top > span:nth-child(3),
 #page-content div.bottom > span:nth-child(3) {
+    font-size: -webkit-calc(var(--base-font-size) * 1.25);
     font-size: calc(var(--base-font-size) * 1.25);
     width: 75%;
     display: block;
@@ -512,24 +846,49 @@ a {
 #page-content div.bobble-bg {
     position: absolute;
     background: url(http://kontainer.djkakt.us/local--files/component:nu-mzl-theme/bobble.png);
-    background-size: contain;
+    -webkit-background-size: contain;
+            background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     top: 0;
     width: 100%;
     height: 15rem;
-    animation: spin 10s linear infinite;
-    animation-play-state: paused;
+    -webkit-animation: spin 10s linear infinite;
+            animation: spin 10s linear infinite;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
 }
 
 #page-content div.warning:hover > div.bobble-bg {
-    animation-play-state: running;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
 }
 
 div.content-log {
     display: inline-block;
     border: dashed 0.0625rem rgb(var(--black-monochrome));
-    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+            border-radius: 1rem;
+    background: -webkit-linear-gradient(326deg,
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
+    background: -o-linear-gradient(326deg,
+        rgba(240, 194, 215, 1),
+        rgba(215, 195, 218, 1),
+        rgba(181, 197, 223, 1),
+        rgba(184, 198, 223, 1),
+        rgba(167, 203, 223, 1),
+        rgba(196, 221, 189, 1),
+        rgba(218, 230, 172, 1),
+        rgba(230, 234, 171, 1),
+        rgba(255, 242, 167, 1));
     background: linear-gradient(124deg,
         rgba(240, 194, 215, 1),
         rgba(215, 195, 218, 1),
@@ -540,12 +899,11 @@ div.content-log {
         rgba(218, 230, 172, 1),
         rgba(230, 234, 171, 1),
         rgba(255, 242, 167, 1));
-    background-size: 300% 300%;
+    -webkit-background-size: 300% 300%;
+            background-size: 300% 300%;
     background-repeat: repeat;
     -webkit-animation: rainbow 30s ease infinite;
-    -z-animation: rainbow 30s ease infinite;
-    -o-animation: rainbow 30s ease infinite;
-    animation: rainbow 30s ease infinite;
+            animation: rainbow 30s ease infinite;
     margin: auto;
     width: auto;
     padding: 1rem;
@@ -570,45 +928,20 @@ div.content-log.bobbleinset {
 @media only screen and (max-width: 768px) {
     #header {
         background-image: url(http://kaktuskontainer.wdfiles.com/local--files/component%3Anu-mzl-theme/mzl_logo.svg);
+        background-position: left -webkit-calc(5vw + 5.5rem - 10.4rem) top -webkit-calc(4% - var(--offset-from-page-top) / 2), top center;
         background-position: left calc(5vw + 5.5rem - 10.4rem) top calc(4% - var(--offset-from-page-top) / 2), top center;
-        background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
+        -webkit-background-size: -webkit-calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
+                background-size: calc(8.75rem + var(--offset-from-page-top)), 100% 7.5rem;
         background-repeat: no-repeat, repeat;
     }
 
     #header h2 {
+        font-size: -webkit-calc(var(--base-font-size) * 0.7);
         font-size: calc(var(--base-font-size) * 0.7);
     }
 }
 
 @-webkit-keyframes rainbow {
-    0% {
-        background-position: 0% 82%
-    }
-
-    50% {
-        background-position: 100% 19%
-    }
-
-    100% {
-        background-position: 0% 82%
-    }
-}
-
-@-moz-keyframes rainbow {
-    0% {
-        background-position: 0% 82%
-    }
-
-    50% {
-        background-position: 100% 19%
-    }
-
-    100% {
-        background-position: 0% 82%
-    }
-}
-
-@-o-keyframes rainbow {
     0% {
         background-position: 0% 82%
     }
@@ -636,9 +969,16 @@ div.content-log.bobbleinset {
     }
 }
 
-@keyframes spin {
+@-webkit-keyframes spin {
     100% {
-        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
     }
 }
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+    }
 }
