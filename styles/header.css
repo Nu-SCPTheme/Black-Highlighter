@@ -742,6 +742,7 @@ form[id="search-top-box-form"] {
 	font-size: 0.875rem;
 	font-size: var(--base-font-size);
 	font-weight: normal;
+	border: 0px solid rgba(0,0,0,0);
 
 	/* Text positioning */
 	text-align: center;
@@ -901,6 +902,17 @@ form[id="search-top-box-form"] {
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
 		column-count: 3;
+		width: 80vw;
+	}
+
+	#top-bar div.mobile-top-bar > ul > li:hover > ul, 
+	#top-bar div.mobile-top-bar > ul > li:focus-within > ul, 
+	#top-bar div.mobile-top-bar > ul > li > ul:focus-within, 
+	#top-bar div.mobile-top-bar > ul > li.sfhover > ul {
+		-webkit-transform: translate(-50%, 0);
+		-ms-transform: translate(-50%, 0);
+		-o-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
 	}
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
@@ -920,9 +932,9 @@ form[id="search-top-box-form"] {
 		-moz-box-flex: 2;
 		-ms-flex-positive: 2;
 		flex-grow: 2;
-		-webkit-flex-basis: -webkit-calc(98vw / 2);
-		-ms-flex-preferred-size: calc(98vw / 2);
-		flex-basis: calc(98vw / 2);
+		-webkit-flex-basis: -webkit-calc(80vw / 2);
+		-ms-flex-preferred-size: calc(80vw / 2);
+		flex-basis: calc(80vw / 2);
 	}
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
