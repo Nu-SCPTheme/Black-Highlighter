@@ -14,12 +14,14 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 /* Selection color */
 
 ::-moz-selection {
-	background: #fcb3b3;
+	background: rgba(180, 35, 35, 0.25);
+	background: rgba(var(--swatch-primary, 180, 35, 35),0.25);
 	text-shadow: none;
 }
 
 ::selection {
-	background: #fcb3b3;
+	background: rgba(180, 35, 35, 0.25);
+	background: rgba(var(--swatch-primary, 180, 35, 35),0.25);
 	text-shadow: none;
 }
 
@@ -33,7 +35,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 .code {
-	background-color: #f6f6f6;
+	background-color: rgb(244, 244, 244);
+	background-color: rgb(var(--swatch-menubg-light-color,  244, 244, 244));
 	padding: 1em;
 }
 
@@ -102,12 +105,14 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	min-height: 2rem;
 	font-family: "Poppins", sans-serif;
 	font-family: var(--title-font);
-	color: #000;
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-text-dark, 12, 12, 12));
 	font-weight: 600;
 	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
 	margin: 0 0 0.6em !important;
 	padding: 0 0 0.25em !important;
-	border-color: #bbb;
+	border-color: rgb(66, 66, 72);
+	border-color: rgb(var(--swatch-menubg-medium-dark-color, 66, 66, 72));
 	text-align: left !important;
 }
 
@@ -170,8 +175,10 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 #footer {
 	clear: both;
 	font-size: 77%;
-	background: #444;
-	color: #bbb;
+	background: rgb(100, 3, 15);
+	background: rgb(var(--swatch-primary-darkest, 100, 3, 15));
+	color: rgb(66, 66, 72);
+	color: rgb(var(--swatch-menubg-medium-color, 66, 66, 72));
 	margin-top: 0.9375rem;
 	padding: 0.1875rem 0.625rem;
 	width: -webkit-calc(100% - 1.25rem);
@@ -200,15 +207,18 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 div.sexy-box {
-	background: #eee;
-	border: 0.0625rem solid #ccc;
+	background: rgb(252, 252, 252);
+	background: rgb(var(--swatch-background, 252, 252, 252));
+	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
+	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.25);
 	overflow: hidden;
 	margin: 0.4375rem 0.25rem 0.75rem;
 	padding: 0 0.625rem 0.75rem;
 }
 
 div.sexy-box div.image-container img {
-	border: 0.0625rem solid #999;
+	border: 0.0625rem solid rgba(12, 12, 12, 0.5);
+	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.5);
 	margin: 0.3125rem;
 	padding: 0.125rem;
 }
@@ -224,20 +234,39 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel {
+	--box-shadow-1: rgba(var(--swatch-text-dark, 12, 12, 12), 0.16);
+	--box-shadow-2: rgba(var(--swatch-text-dark, 12, 12, 12), 0.23);
+	--box-shadow-3: rgb(var(--swatch-menubg-medium-color, 170, 170, 170));
 	-webkit-border-radius: 0.625rem;
 	border-radius: 0.625rem;
-	background-color: rgba(66, 66, 66, 0.5);
-	-webkit-box-shadow: 0 0.188em 0.375em rgba(0, 0, 0, 0.16),
-		0 0.188em 0.375em rgba(0, 0, 0, 0.23), 0 0 0.063em 0 #888880 inset,
-		0 0 0.063em 0 #888880;
-	box-shadow: 0 0.188em 0.375em rgba(0, 0, 0, 0.16),
-		0 0.188em 0.375em rgba(0, 0, 0, 0.23), 0 0 0.063em 0 #888880 inset,
-		0 0 0.063em 0 #888880;
+	background-color: rgba(66, 66, 72, 0.5);
+	background-color: rgba(var(--gray-monochrome, 66, 66, 72), 0.5);
+	-webkit-box-shadow:
+		0 0.188em 0.375em rgba(12, 12, 12, 0.16),
+		0 0.188em 0.375em rgba(12, 12, 12, 0.23), 
+		0 0 0.063em 0 rgb(170, 170, 170) inset,
+		0 0 0.063em 0 rgb(170, 170, 170);
+	box-shadow:
+		0 0.188em 0.375em rgba(12, 12, 12, 0.16),
+		0 0.188em 0.375em rgba(12, 12, 12, 0.23), 
+		0 0 0.063em 0 rgb(170, 170, 170) inset,
+		0 0 0.063em 0 rgb(170, 170, 170);
+	-webkit-box-shadow:
+		0 0.188em 0.375em var(--box-shadow-1),
+		0 0.188em 0.375em var(--box-shadow-2), 
+		0 0 0.063em 0 var(--box-shadow-3:) inset,
+		0 0 0.063em 0 var(--box-shadow-3:);
+	box-shadow:
+	0 0.188em 0.375em var(--box-shadow-1),
+	0 0.188em 0.375em var(--box-shadow-2), 
+	0 0 0.063em 0 var(--box-shadow-3:) inset,
+	0 0 0.063em 0 var(--box-shadow-3:);
 	margin: 0.625em 0 0.938em;
 }
 
 .content-panel.standalone {
-	background: #fcfdfb;
+	background: rgb(252, 252, 252);
+	background: rgb(var(--swatch-background, 252, 252, 252));
 }
 
 .content-panel.series {
@@ -262,7 +291,8 @@ div.sexy-box div.image-container img {
 .content-panel .panel-heading {
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
 	text-transform: uppercase;
-	color: #fff;
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-menutxt-light-color, 252, 252, 252));
 	font-size: 100%;
 	font-weight: 900;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.35);
@@ -326,7 +356,7 @@ div.sexy-box div.image-container img {
 
 #main-content .page-tags span {
 	display: inline-block;
-	max-width: 60%;
+	max-width: 100%;
 	padding: 0;
 }
 
@@ -341,6 +371,10 @@ div.sexy-box div.image-container img {
 }
 
 .forum-thread-box .description-block {
+	--box-shadow-1: rgba(var(--swatch-menubg-black-color), 0.15);
+	--box-shadow-2: rgba(var(--swatch-menubg-black-color), 0.8);
+	--box-shadow-3: rgba(var(--swatch-menubg-color), 0.25);
+	--box-shadow-4: rgba(var(--swatch-menubg-black-color), 0.1);
 	-webkit-border-radius: 0.625rem;
 	border-radius: 0.625rem;
 	-webkit-box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.15),
@@ -351,10 +385,19 @@ div.sexy-box div.image-container img {
 		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.8),
 		inset 0 0.625rem 0.3125rem rgba(255, 255, 255, 0.25),
 		inset 0 -0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
+		inset 0 0.0625rem 0 var(--box-shadow-2),
+		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
+		inset 0 -0.9375rem 1.875rem var(--box-shadow-4);
+	box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
+		inset 0 0.0625rem 0 var(--box-shadow-2),
+		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
+		inset 0 -0.9375rem 1.875rem var(--box-shadow-4);
 	padding: 0.5em 1em;
 }
 
 .thread-container .post .head {
+	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
 	background: rgba(244, 244, 244),
 		-webkit-gradient(linear, left top, right top, from(rgba(244, 244, 244)), to(rgba(170, 170, 170)));
 	background: rgba(244, 244, 244),
@@ -377,6 +420,8 @@ div.sexy-box div.image-container img {
 		);
 	-webkit-box-shadow: inset 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
+	box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
 	-webkit-border-radius: 0.3125rem 0.3125rem 0 0;
 	border-radius: 0.3125rem 0.3125rem 0 0;
 	padding: 0.5em 1em;
@@ -404,11 +449,21 @@ div.sexy-box div.image-container img {
 	border-bottom-width: 0.125rem;
 	-webkit-border-radius: 0.1875rem;
 	border-radius: 0.1875rem;
-	background-color: #f9f9f9;
+	background-color: rgb(252, 252, 252);
+	background-color: rgb(var(--swatch-background, 252, 252, 252));
 	font-family: inherit;
 	font-size: 0.85em;
 	white-space: nowrap;
-	border-color: #ddd #bbb #bbb #ddd;
+	border-color: 
+		rgb(244, 244, 244)
+		rgb(244, 244, 244)
+		rgb(244, 244, 244)
+		rgb(244, 244, 244);
+	border-color: 
+		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
+		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
+		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
+		rgb(var(--swatch-menubg-light-color,  244, 244, 244));
 	padding: 0.0625rem 0.1875rem;
 }
 
@@ -419,8 +474,10 @@ div.sexy-box div.image-container img {
 	line-height: 0.8125rem;
 	font-size: 11px;
 	font-size: 0.6875rem;
-	background: #666;
-	color: #fff;
+	background: rgb(48, 48, 52);
+	background: rgb(var(--swatch-menubg-dark-color, 48, 48, 52));
+	color: rgb(252, 252, 22));
+	color: rgb(var(--swatch-menutxt-light-color, 252, 252, 252));
 	text-decoration: none;
 	-webkit-border-bottom-right-radius: 0.25rem;
 	border-bottom-right-radius: 0.25rem;
@@ -438,13 +495,23 @@ div.sexy-box div.image-container img {
 	left: -0.625rem;
 	width: 0;
 	height: 0;
-	border-color: transparent #666 transparent transparent;
+	border-color: 
+		transparent 
+		rgb(48, 48, 52) 
+		transparent 
+		transparent;
+	border-color: 
+		transparent 
+		rgb(var(--swatch-menubg-dark-color,  48, 48, 52)) 
+		transparent 
+		transparent;
 	border-style: solid;
 	border-width: 0.5rem 0.5rem 0.5rem 0;
 	padding: 0 0.0625rem 0.1875rem;
 }
 
 .tags:after {
+	--box-shadow: rgb(var(--swatch-menubg-dark-color,  48, 48, 52));
 	content: "";
 	position: relative;
 	top: 0.28125rem;
@@ -454,14 +521,19 @@ div.sexy-box div.image-container img {
 	height: 0.25rem;
 	-webkit-border-radius: 0.125rem;
 	border-radius: 0.125rem;
-	background: #fff;
-	-webkit-box-shadow: -0.0625rem -0.0625rem 0.125rem #333;
-	box-shadow: -0.0625rem -0.0625rem 0.125rem #333;
+	background-color: rgb(252, 252, 252);
+	background-color: rgb(var(--swatch-background, 252, 252, 252));
+	-webkit-box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(48, 48, 52);
+	box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(48, 48, 52);
+	-webkit-box-shadow: -0.0625rem -0.0625rem 0.125rem var(--box-shadow);
+	box-shadow: -0.0625rem -0.0625rem 0.125rem var(--box-shadow);
 }
 
 .bblock:hover {
-	background-color: #000;
-	color: #060;
+	background-color: rgb(12, 12, 12);
+	background-color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
+	color: rgb(100, 3, 15);
+	color: rgb(var(--swatch-primary-darkest, 100, 3, 15));
 	text-decoration: none;
 }
 
@@ -527,7 +599,8 @@ textarea,
 
 .title.modal-header,
 .owindow {
-	background-color: #fff;
+	background-color: rgb(252, 252, 252);
+	background-color: rgb(var(--swatch-background, 252, 252, 252));
 }
 
 .signature,
@@ -537,8 +610,10 @@ textarea,
 
 .bblock,
 .dblock {
-	color: #000;
-	background-color: #000;
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-text-dark, 12, 12, 12));
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
 	-webkit-transition: 2s;
 	-o-transition: 2s;
 	transition: 2s;
@@ -852,7 +927,8 @@ div.buttons.alignleft {
 	:before,
 	:after {
 		background: transparent !important;
-		color: #000 !important;
+		color: rgb(12, 12, 12) !important;
+		color: rgb(var(--swatch-text-dark, 12, 12, 12)) !important;
 		-webkit-box-shadow: none !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
@@ -882,7 +958,8 @@ div.buttons.alignleft {
 
 	pre,
 	blockquote {
-		border: 0.0625rem solid #999;
+		border: 0.0625rem solid rgb(66, 66, 72);
+		border: 0.0625rem solid rgb(var(--swatch-menubg-medium-color, 66, 66, 72));
 		page-break-inside: avoid;
 	}
 
