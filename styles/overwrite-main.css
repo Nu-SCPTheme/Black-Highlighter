@@ -257,11 +257,6 @@ pre * {
 }
 
 #container {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
                     -webkit-box-orient: vertical;
                     -webkit-box-direction: normal;
                     -webkit-flex-direction: column;
@@ -272,6 +267,14 @@ pre * {
     margin: 0;
     padding: 0;
     width: 100%;
+}
+
+#container,#content-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
     height: 100%;
 }
 
@@ -279,13 +282,7 @@ pre * {
     margin: 2em auto 0;
     width: inherit;
     min-height: 81.25rem;
-    height: 100%;
     position: initial;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
 }
 
 h1,
@@ -343,14 +340,15 @@ ul {
 
 a {
     color: rgb(218, 13, 13);
+}
+
+a,a.newpage {
     text-decoration: none;
     background: transparent;
 }
 
 a.newpage {
     color: rgb(163, 204, 199);
-    text-decoration: none;
-    background: transparent;
 }
 
 a:hover {
@@ -370,11 +368,7 @@ text-area {
     width: 95%;
 }
 
-.title.modal-header {
-    background-color: #fff;
-}
-
-.owindow {
+.title.modal-header,.owindow {
     background-color: #fff;
 }
 
@@ -405,14 +399,13 @@ text-area {
 }
 
 .mobile-top-bar {
-    display: none;
     position: relative;
     left: 1em;
     bottom: 0;
     z-index: 9999;
 }
 
-.mobile-top-bar > div > p {
+.mobile-top-bar,.mobile-top-bar > div > p {
     display: none;
 }
 
@@ -492,24 +485,28 @@ margin-bottom: -0.7em;
 
 #search-top-box-input:hover,
 #search-top-box-input:focus {
-    border: solid 0.0625rem #000;
-    -webkit-border-radius: 0.0625rem;
-            border-radius: 0.0625rem;
-    color: #fff;
     background: #424242 !important;
 }
 
-#search-top-box-form input[type=submit] {
+#search-top-box-input:hover,
+#search-top-box-input:focus,#search-top-box-form input[type=submit] {
     border: solid 0.0625rem #000;
-    padding: 0.1875rem 0.3125rem 0.125rem;
     -webkit-border-radius: 0.0625rem;
             border-radius: 0.0625rem;
-    font-size: 90%;
     color: #fff;
+}
+
+#search-top-box-form input[type=submit] {
+    padding: 0.1875rem 0.3125rem 0.125rem;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+#search-top-box-form input[type=submit],#search-top-box-form input[type=submit]:hover,
+#search-top-box-form input[type=submit]:focus {
     background: #590505 !important;
                     -webkit-box-shadow: none !important;
                             box-shadow: none !important;
-    cursor: pointer;
 }
 
 #search-top-box-form input[type=submit]:hover,
@@ -519,9 +516,6 @@ margin-bottom: -0.7em;
             border-radius: 0.0625rem;
     color: #fff;
     text-shadow: 0 0 0.0625rem rgba(255, 255, 255, .25);
-    background: #590505 !important;
-                    -webkit-box-shadow: none !important;
-                            box-shadow: none !important;
 }
 
 #login-status {
@@ -686,11 +680,7 @@ margin-bottom: -0.7em;
 #top-bar ul li ul li,
 #top-bar ul li ul li.sfhover,
 #top-bar ul li ul li,
-#top-bar ul li ul li:hover {
-    border-width: 0;
-}
-
-#top-bar ul li ul li a {
+#top-bar ul li ul li:hover,#top-bar ul li ul li a {
     border-width: 0;
 }
 
@@ -906,7 +896,6 @@ margin-bottom: -0.7em;
 }
 
 #side-bar .side-block {
-    padding: 0.625rem;
     border: 0.0625rem solid #000000;
     -webkit-border-radius: 0.25vw;
             border-radius: 0.25vw;
@@ -916,7 +905,7 @@ margin-bottom: -0.7em;
     margin-bottom: 0.9375rem;
 }
 
-#side-bar .side-area {
+#side-bar .side-block,#side-bar .side-area {
     padding: 0.625rem;
 }
 
@@ -1053,11 +1042,7 @@ margin-bottom: -0.7em;
 }
 
 .yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
-    border-color: #444;
-}
-
-.yui-navset .yui-nav,
+.yui-navset .yui-navset-top .yui-nav,.yui-navset .yui-nav,
 .yui-navset .yui-navset-top .yui-nav {
     border-color: #444;
 }
@@ -1372,10 +1357,9 @@ div.sexy-box div.image-container img {
                        -moz-box-align: center;
                         -ms-flex-align: center;
                             align-items: center;
-    min-width: 100%;
 }
 
-.scp-image-caption {
+.scp-image-block,.scp-image-caption {
     min-width: 100%;
 }
 
@@ -1446,11 +1430,16 @@ div.block-left {
 .ruby,
 ruby {
     display: inline-table;
-    text-align: center;
-    white-space: nowrap;
     line-height: 1;
     height: 1em;
     vertical-align: text-bottom;
+}
+
+.ruby,
+ruby,.rt,
+rt {
+    text-align: center;
+    white-space: nowrap;
 }
 
 .rt,
@@ -1458,8 +1447,6 @@ rt {
     display: table-header-group;
     font-size: 0.6em;
     line-height: 1.1;
-    text-align: center;
-    white-space: nowrap;
 }
 
 /* Keycap */
@@ -1496,10 +1483,7 @@ rt {
 }
 
 .tags:before {
-    content: "";
     padding: 0 0.0625rem 0.1875rem 0.0625rem;
-    float: left;
-    position: relative;
     top: -0.1875rem;
     left: -0.625rem;
     width: 0;
@@ -1509,12 +1493,15 @@ rt {
     border-width: 0.5rem 0.5rem 0.5rem 0;
 }
 
-.tags:after {
+.tags:before,.tags:after {
     content: "";
+    float: left;
     position: relative;
+}
+
+.tags:after {
     top: 0.28125rem;
     left: -0.5rem;
-    float: left;
     width: 0.25rem;
     height: 0.25rem;
     -webkit-border-radius: 0.125rem;
@@ -1527,17 +1514,18 @@ rt {
 /* Display Black Block by Nanimono Demonai */
 .bblock {
     color: #000000;
-    background-color: #000000;
     -webkit-transition: 2s;
     -o-transition: 2s;
     transition: 2s;
+}
+
+.bblock,.bblock:hover {
+    background-color: #000000;
     text-decoration: none;
 }
 
 .bblock:hover {
-    background-color: #000000;
     color: #006600;
-    text-decoration: none;
 }
 
 .dblock {
@@ -1546,12 +1534,14 @@ rt {
     -webkit-transition: 2s;
     -o-transition: 2s;
     transition: 2s;
+}
+
+.dblock,.dblock:hover {
     text-decoration: none;
 }
 
 .dblock:hover {
     background-color: transparent;
-    text-decoration: none;
 }
 
 /*
@@ -1648,16 +1638,13 @@ rt {
 }
 
 /* Responsive Web Design */
+
 img,
 embed,
 video,
 object,
 iframe,
-table {
-    max-width: 100%;
-}
-
-#page-content div,
+table,#page-content div,
 #page-content div table {
     max-width: 100%;
 }
@@ -1829,10 +1816,8 @@ table {
         width: 80%;
         display: block;
         position: fixed;
-        top: 0;
         left: -25em;
         width: 17em;
-        height: 100%;
         background-color: rgb(184, 134, 134);
         overflow-y: auto;
         z-index: 10;
@@ -1842,12 +1827,16 @@ table {
         transition: left 0.5s ease-in-out 0.1s;
     }
 
+    #side-bar,#side-bar:after {
+        top: 0;
+        height: 100%;
+
+    }
+
     #side-bar:after {
         content: "";
         position: absolute;
-        top: 0;
         width: 0;
-        height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
 
     }

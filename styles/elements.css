@@ -234,10 +234,9 @@ blockquote {
 div.image-block {
 	float: right;
 	margin: 0 2em 1em 2em;
-	width: 18.75rem;
 }
 
-div.image-block img {
+div.image-block,div.image-block img {
 	width: 18.75rem;
 }
 
@@ -581,15 +580,15 @@ div.image-block img {
 	margin: 0;
 	padding: 0;
 	position: relative;
+}
+
+#page-content .rate-box-with-credit-button > .creditButton > p,#page-content .rate-box-with-credit-button > .creditButton > p > a {
 	width: -webkit-calc(var(--rating-module-height) * 1.5);
 	width: calc(var(--rating-module-height) * 1.5);
 	height: var(--rating-module-height);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a {
-	width: -webkit-calc(var(--rating-module-height) * 1.5);
-	width: calc(var(--rating-module-height) * 1.5);
-	height: var(--rating-module-height);
 	border-left: none;
 	font-size: 1em;
 	display: -webkit-box;

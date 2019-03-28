@@ -571,12 +571,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	max-width: 90vw;
 }
 
-.code p {
+.code p,.code pre {
 	margin: 0;
 }
 
 .code pre {
-	margin: 0;
 	white-space: pre;
 }
 
@@ -587,15 +586,18 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
 	-moz-box-orient: vertical;
-	-moz-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
 	margin: 0;
+}
+
+#container,#content-wrap {
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
 	padding: 0;
 }
 
@@ -611,10 +613,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	display: -ms-flex;
 	display: flex; */
 	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
 	-moz-box-orient: horizontal;
-	-moz-box-direction: normal;
 	-ms-flex-direction: row;
 	flex-direction: row;
 	-webkit-box-pack: center;
@@ -623,7 +623,6 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	-ms-flex-pack: center;
 	justify-content: center;
 	margin: 0 auto -4.1em auto;
-	padding: 0;
 }
 
 #page-title {
@@ -841,7 +840,6 @@ div.sexy-box div.image-container img {
 
 .content-panel .panel-footer {
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.5);
-	color: rgb(var(--swatch-menubg-medium-color));
 	font-size: 80%;
 	font-weight: 700;
 	text-align: right;
@@ -850,7 +848,7 @@ div.sexy-box div.image-container img {
 	padding: 0.0625rem 0.625rem;
 }
 
-.content-panel .panel-footer a {
+.content-panel .panel-footer,.content-panel .panel-footer a {
 	color: rgb(var(--swatch-menubg-medium-color));
 }
 
@@ -954,19 +952,20 @@ div.sexy-box div.image-container img {
 
 .ruby {
 	display: inline-table;
-	text-align: center;
-	white-space: nowrap;
 	line-height: 1;
 	height: 1em;
 	vertical-align: text-bottom;
+}
+
+.ruby,.rt {
+	text-align: center;
+	white-space: nowrap;
 }
 
 .rt {
 	display: table-header-group;
 	font-size: 0.6em;
 	line-height: 1.1;
-	text-align: center;
-	white-space: nowrap;
 }
 
 .keycap {
@@ -1013,9 +1012,6 @@ div.sexy-box div.image-container img {
 }
 
 .tags:before {
-	content: "";
-	float: left;
-	position: relative;
 	top: -0.1875rem;
 	left: -0.625rem;
 	width: 0;
@@ -1035,13 +1031,16 @@ div.sexy-box div.image-container img {
 	padding: 0 0.0625rem 0.1875rem;
 }
 
+.tags:before,.tags:after {
+	content: "";
+	float: left;
+	position: relative;
+}
+
 .tags:after {
 	--box-shadow: rgb(var(--swatch-menubg-dark-color,  48, 48, 52));
-	content: "";
-	position: relative;
 	top: 0.28125rem;
 	left: -0.5rem;
-	float: left;
 	width: 0.25rem;
 	height: 0.25rem;
 	-webkit-border-radius: 0.125rem;
@@ -1745,10 +1744,9 @@ blockquote {
 div.image-block {
 	float: right;
 	margin: 0 2em 1em 2em;
-	width: 18.75rem;
 }
 
-div.image-block img {
+div.image-block,div.image-block img {
 	width: 18.75rem;
 }
 
@@ -2092,15 +2090,15 @@ div.image-block img {
 	margin: 0;
 	padding: 0;
 	position: relative;
+}
+
+#page-content .rate-box-with-credit-button > .creditButton > p,#page-content .rate-box-with-credit-button > .creditButton > p > a {
 	width: -webkit-calc(var(--rating-module-height) * 1.5);
 	width: calc(var(--rating-module-height) * 1.5);
 	height: var(--rating-module-height);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a {
-	width: -webkit-calc(var(--rating-module-height) * 1.5);
-	width: calc(var(--rating-module-height) * 1.5);
-	height: var(--rating-module-height);
 	border-left: none;
 	font-size: 1em;
 	display: -webkit-box;
@@ -2559,11 +2557,7 @@ header h1 {
 	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
 }
 
-#header-extra-div-1 {
-	display: none;
-}
-
-#header-extra-div-2 {
+#header-extra-div-1,#header-extra-div-2 {
 	display: none;
 }
 
@@ -2622,37 +2616,39 @@ form[id="search-top-box-form"] {
 
 #search-top-box-input:hover,
 #search-top-box-input:focus {
-	border: 0.0625rem solid rgb(12, 12, 12);
-	border: var(--border-styling);
-	-webkit-border-radius: 0.0625rem;
-	border-radius: 0.0625rem;
-	-webkit-border-radius: var(--border-radius-width);
-	border-radius: var(--border-radius-width);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
 	background: rgb(170, 170, 170) !important;
 	background: rgb(var(--swatch-menubg-medium-color)) !important;
 }
 
-#search-top-box-form input[type="submit"] {
+#search-top-box-input:hover,
+#search-top-box-input:focus,#search-top-box-form input[type="submit"] {
 	border: 0.0625rem solid rgb(12, 12, 12);
 	border: var(--border-styling);
 	-webkit-border-radius: 0.0625rem;
 	border-radius: 0.0625rem;
 	-webkit-border-radius: var(--border-radius-width);
 	border-radius: var(--border-radius-width);
+}
+
+#search-top-box-form input[type="submit"] {
 	font-size: -webkit-calc(0.875rem * .85);
 	font-size: calc(0.875rem * .85);
 	font-size: -webkit-calc(var(--base-font-size) * .85);
 	font-size: calc(var(--base-font-size) * .85);
+	cursor: pointer;
+	margin-right: 0;
+}
+
+#search-top-box-form input[type="submit"],#search-top-box-form input[type="submit"]:hover,
+#search-top-box-form input[type="submit"]:focus {
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-light));
 	background: rgb(100, 3, 15) !important;
 	background: rgb(var(--swatch-primary-darkest)) !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
-	cursor: pointer;
-	margin-right: 0;
 }
 
 #search-top-box-form input[type="submit"]:hover,
@@ -2664,14 +2660,8 @@ form[id="search-top-box-form"] {
 	border-radius: 0.0625rem;
 	-webkit-border-radius: var(--border-radius-width);
 	border-radius: var(--border-radius-width);
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-light));
 	text-shadow: 0 0 0.063rem rgba(12, 12, 12, 0.75);
 	text-shadow: 0 0 0.063rem var(--swatch-menutxt-dark-color);
-	background: rgb(100, 3, 15) !important;
-	background: rgb(var(--swatch-primary-darkest)) !important;
-	-webkit-box-shadow: none !important;
-	box-shadow: none !important;
 }
 
 #login-status {
@@ -3199,11 +3189,6 @@ form[id="search-top-box-form"] {
 		max-height: calc((100vh - 12rem) / 15);
 		max-width: -webkit-calc(80vw + 0.0625rem);
 		max-width: calc(80vw + 0.0625rem);
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: flex;
 		width: -webkit-calc(80vw + 0.0625rem);
 		width: calc(80vw + 0.0625rem);
 		-webkit-box-flex: 2;
@@ -3216,15 +3201,18 @@ form[id="search-top-box-form"] {
 		flex-basis: calc(80vw / 2);
 	}
 
-	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
-		height: 100%;
-		width: 100%;
-		line-height: 1em;
+	#top-bar div.mobile-top-bar > ul > li > ul > li,#top-bar div.mobile-top-bar > ul > li > ul > li > a {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
+	}
+
+	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
+		height: 100%;
+		width: 100%;
+		line-height: 1em;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
 		-moz-box-align: center;
@@ -3260,11 +3248,7 @@ form[id="search-top-box-form"] {
 		-moz-box-align: stretch;
 		-ms-flex-align: stretch;
 		align-items: stretch;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		-moz-box-pack: center;
 		-ms-flex-pack: center;
-		justify-content: center;
 		-webkit-align-content: stretch;
 		-ms-flex-line-pack: stretch;
 		align-content: stretch;
@@ -3273,6 +3257,13 @@ form[id="search-top-box-form"] {
 		height: 100%;
 		padding: 0;
 		margin: 0;
+	}
+
+	#top-bar > div.mobile-top-bar > div.open-menu > p,#top-bar > div.mobile-top-bar > div.open-menu > p > a {
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
+		justify-content: center;
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
@@ -3300,11 +3291,7 @@ form[id="search-top-box-form"] {
 		-moz-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		-moz-box-pack: center;
 		-ms-flex-pack: center;
-		justify-content: center;
 		border: none !important;
 		background-color: transparent !important;
 	}
@@ -3449,11 +3436,6 @@ form[id="search-top-box-form"] {
 #side-bar .side-block {
 	border: 0;
 	margin-top: 1rem;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
@@ -3469,12 +3451,15 @@ form[id="search-top-box-form"] {
 	flex-shrink: 0;
 }
 
-.side-block div[style="text-align: center;"] {
+#side-bar .side-block,.side-block div[style="text-align: center;"] {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+}
+
+.side-block div[style="text-align: center;"] {
 	width: 100%;
 	-webkit-box-pack: space-evenly;
 	-webkit-justify-content: space-evenly;
@@ -3873,12 +3858,8 @@ form[id="search-top-box-form"] {
 	display: block;
 }
 
-#side-bar .close-menu {
-	display: none;
-}
-
 /* there's an empty menu item in the old sidebar design */
-#side-bar div.menu-item:empty {
+#side-bar .close-menu,#side-bar div.menu-item:empty {
 	display: none;
 }
 
@@ -4120,18 +4101,19 @@ a[href*="/most-recently-edited"] {
 		background: rgba(var(--swatch-menubg-color), 0.2);
 	}
 }html {
-	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-dark));
 	font-size: 1em;
 	line-height: 1.5;
+}
+
+html,body {
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-text-dark));
 }
 
 body {
 	/* coloring */
 	background-color: rgba(252, 252, 252, 1);
 	background-color: rgba(var(--swatch-background), 1);
-	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-dark));
 
 	/* font behavior */
 	font-family: "Lato", sans-serif;
@@ -4267,6 +4249,9 @@ ul {
 a {
 	color: rgb(180, 35, 35);
 	color: rgb(var(--swatch-primary));
+}
+
+a,a.newpage {
 	text-decoration: none;
 	background: transparent;
 }
@@ -4274,8 +4259,6 @@ a {
 a.newpage {
 	color: rgb(221, 102, 17);
 	color: rgb(var(--newpage-color));
-	text-decoration: none;
-	background: transparent;
 }
 
 a:hover {
@@ -4292,19 +4275,20 @@ a:visited {
 
 ruby {
 	display: inline-table;
-	text-align: center;
-	white-space: nowrap;
 	line-height: 1;
 	height: 1em;
 	vertical-align: text-bottom;
+}
+
+ruby,rt {
+	text-align: center;
+	white-space: nowrap;
 }
 
 rt {
 	display: table-header-group;
 	font-size: 0.6em;
 	line-height: 1.1;
-	text-align: center;
-	white-space: nowrap;
 }
 
 /* Teletype */

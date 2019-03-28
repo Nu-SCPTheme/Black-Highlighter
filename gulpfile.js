@@ -41,12 +41,12 @@ gulp.task('rmv', () =>
 
 
 gulp.task('merge', () => 
-	gulp.src('themes/fallbacks/*.css').pipe(
+	gulp.src('styles/*.css').pipe(
 		postcss([
 			mergerules()
 		])
 	).pipe(
-	gulp.dest('themes/fallbacks')
+	gulp.dest('styles')
 ));
 
 gulp.task('stylefmt', () => 

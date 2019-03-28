@@ -1,16 +1,17 @@
 html {
-	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-dark));
 	font-size: 1em;
 	line-height: 1.5;
+}
+
+html,body {
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-text-dark));
 }
 
 body {
 	/* coloring */
 	background-color: rgba(252, 252, 252, 1);
 	background-color: rgba(var(--swatch-background), 1);
-	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-dark));
 
 	/* font behavior */
 	font-family: "Lato", sans-serif;
@@ -146,6 +147,9 @@ ul {
 a {
 	color: rgb(180, 35, 35);
 	color: rgb(var(--swatch-primary));
+}
+
+a,a.newpage {
 	text-decoration: none;
 	background: transparent;
 }
@@ -153,8 +157,6 @@ a {
 a.newpage {
 	color: rgb(221, 102, 17);
 	color: rgb(var(--newpage-color));
-	text-decoration: none;
-	background: transparent;
 }
 
 a:hover {
@@ -171,19 +173,20 @@ a:visited {
 
 ruby {
 	display: inline-table;
-	text-align: center;
-	white-space: nowrap;
 	line-height: 1;
 	height: 1em;
 	vertical-align: text-bottom;
+}
+
+ruby,rt {
+	text-align: center;
+	white-space: nowrap;
 }
 
 rt {
 	display: table-header-group;
 	font-size: 0.6em;
 	line-height: 1.1;
-	text-align: center;
-	white-space: nowrap;
 }
 
 /* Teletype */

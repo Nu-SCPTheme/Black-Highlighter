@@ -281,11 +281,7 @@ header h1 {
 	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
 }
 
-#header-extra-div-1 {
-	display: none;
-}
-
-#header-extra-div-2 {
+#header-extra-div-1,#header-extra-div-2 {
 	display: none;
 }
 
@@ -344,37 +340,39 @@ form[id="search-top-box-form"] {
 
 #search-top-box-input:hover,
 #search-top-box-input:focus {
-	border: 0.0625rem solid rgb(12, 12, 12);
-	border: var(--border-styling);
-	-webkit-border-radius: 0.0625rem;
-	border-radius: 0.0625rem;
-	-webkit-border-radius: var(--border-radius-width);
-	border-radius: var(--border-radius-width);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
 	background: rgb(170, 170, 170) !important;
 	background: rgb(var(--swatch-menubg-medium-color)) !important;
 }
 
-#search-top-box-form input[type="submit"] {
+#search-top-box-input:hover,
+#search-top-box-input:focus,#search-top-box-form input[type="submit"] {
 	border: 0.0625rem solid rgb(12, 12, 12);
 	border: var(--border-styling);
 	-webkit-border-radius: 0.0625rem;
 	border-radius: 0.0625rem;
 	-webkit-border-radius: var(--border-radius-width);
 	border-radius: var(--border-radius-width);
+}
+
+#search-top-box-form input[type="submit"] {
 	font-size: -webkit-calc(0.875rem * .85);
 	font-size: calc(0.875rem * .85);
 	font-size: -webkit-calc(var(--base-font-size) * .85);
 	font-size: calc(var(--base-font-size) * .85);
+	cursor: pointer;
+	margin-right: 0;
+}
+
+#search-top-box-form input[type="submit"],#search-top-box-form input[type="submit"]:hover,
+#search-top-box-form input[type="submit"]:focus {
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-light));
 	background: rgb(100, 3, 15) !important;
 	background: rgb(var(--swatch-primary-darkest)) !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
-	cursor: pointer;
-	margin-right: 0;
 }
 
 #search-top-box-form input[type="submit"]:hover,
@@ -386,14 +384,8 @@ form[id="search-top-box-form"] {
 	border-radius: 0.0625rem;
 	-webkit-border-radius: var(--border-radius-width);
 	border-radius: var(--border-radius-width);
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-light));
 	text-shadow: 0 0 0.063rem rgba(12, 12, 12, 0.75);
 	text-shadow: 0 0 0.063rem var(--swatch-menutxt-dark-color);
-	background: rgb(100, 3, 15) !important;
-	background: rgb(var(--swatch-primary-darkest)) !important;
-	-webkit-box-shadow: none !important;
-	box-shadow: none !important;
 }
 
 #login-status {
@@ -921,11 +913,6 @@ form[id="search-top-box-form"] {
 		max-height: calc((100vh - 12rem) / 15);
 		max-width: -webkit-calc(80vw + 0.0625rem);
 		max-width: calc(80vw + 0.0625rem);
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: flex;
 		width: -webkit-calc(80vw + 0.0625rem);
 		width: calc(80vw + 0.0625rem);
 		-webkit-box-flex: 2;
@@ -938,15 +925,18 @@ form[id="search-top-box-form"] {
 		flex-basis: calc(80vw / 2);
 	}
 
-	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
-		height: 100%;
-		width: 100%;
-		line-height: 1em;
+	#top-bar div.mobile-top-bar > ul > li > ul > li,#top-bar div.mobile-top-bar > ul > li > ul > li > a {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
+	}
+
+	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
+		height: 100%;
+		width: 100%;
+		line-height: 1em;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
 		-moz-box-align: center;
@@ -982,11 +972,7 @@ form[id="search-top-box-form"] {
 		-moz-box-align: stretch;
 		-ms-flex-align: stretch;
 		align-items: stretch;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		-moz-box-pack: center;
 		-ms-flex-pack: center;
-		justify-content: center;
 		-webkit-align-content: stretch;
 		-ms-flex-line-pack: stretch;
 		align-content: stretch;
@@ -995,6 +981,13 @@ form[id="search-top-box-form"] {
 		height: 100%;
 		padding: 0;
 		margin: 0;
+	}
+
+	#top-bar > div.mobile-top-bar > div.open-menu > p,#top-bar > div.mobile-top-bar > div.open-menu > p > a {
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
+		justify-content: center;
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
@@ -1022,11 +1015,7 @@ form[id="search-top-box-form"] {
 		-moz-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		-moz-box-pack: center;
 		-ms-flex-pack: center;
-		justify-content: center;
 		border: none !important;
 		background-color: transparent !important;
 	}

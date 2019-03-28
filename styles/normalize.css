@@ -10,14 +10,15 @@
 h1,
 #page-title {
 	color: inherit;
-	padding: inherit;
 	margin: inherit;
+}
+h1,
+#page-title,h1 {
+	padding: inherit;
 	font-weight: inherit;
 }
 h1 {
 	margin-top: inherit;
-	padding: inherit;
-	font-weight: inherit;
 }
 h2,
 h3,
@@ -46,23 +47,19 @@ p {
 	line-height: inherit;
 }
 a {
-	color: inherit;
 	text-decoration: inherit;
 	background: inherit;
 }
-#side-bar a:visited {
-	color: inherit;
-}
-a:visited {
+a,#side-bar a:visited,a:visited,a.newpage {
 	color: inherit;
 }
 a.newpage {
-	color: inherit;
-	text-decoration: inherit;
 	background: inherit;
 }
-a:hover {
+a.newpage,a:hover {
 	text-decoration: inherit;
+}
+a:hover {
 	background-color: inherit;
 }
 .form-control {
@@ -71,11 +68,10 @@ a:hover {
 /* GLOBAL WIDTH */
 #header,
 #top-bar {
-	width: inherit;
 	max-width: inherit;
-	margin: inherit;
 }
-#top-bar {
+#header,
+#top-bar,#top-bar {
 	width: inherit;
 	margin: inherit;
 }
@@ -96,13 +92,14 @@ div#container-wrap {
 }
 sup {
 	vertical-align: inherit;
-	position: inherit;
 	top: inherit;
 }
 /* HEADER */
+sup,#header {
+	position: inherit;
+}
 #header {
 	height: inherit;
-	position: inherit;
 	z-index: inherit;
 	padding-bottom: inherit;
 	/* FOR MENU */
@@ -119,6 +116,9 @@ sup {
 	border: inherit;
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
+}
+#search-top-box-input,#search-top-box-input:hover,
+#search-top-box-input:focus {
 	color: inherit;
 	background-color: inherit;
 	-webkit-box-shadow: inherit;
@@ -127,10 +127,6 @@ sup {
 #search-top-box-input:hover,
 #search-top-box-input:focus {
 	border: inherit;
-	color: inherit;
-	background-color: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
 }
 #search-top-box-form input[type="submit"] {
 	border: inherit;
@@ -160,59 +156,41 @@ sup {
 	font-size: inherit;
 	z-index: inherit;
 }
-#login-status a {
-	background: inherit;
-	color: inherit;
-}
-#login-status ul a {
-	color: inherit;
-	background: inherit;
-}
-#account-topbutton {
+#login-status a,#login-status ul a,#account-topbutton {
 	background: inherit;
 	color: inherit;
 }
 .printuser img.small {
 	margin-right: inherit;
 }
-#header h1 {
+#header h1,#header h2 {
 	margin-left: inherit;
 	padding: inherit;
 	float: inherit;
 	max-height: inherit;
 }
 #header h2 {
-	margin-left: inherit;
-	padding: inherit;
 	clear: inherit;
-	float: inherit;
 	font-size: inherit;
-	max-height: inherit;
 }
 #header h1 a {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	line-height: inherit;
-	max-height: inherit;
-	color: inherit;
 	background: inherit;
 	font-family: inherit;
 	font-size: inherit;
 	text-decoration: inherit;
-	text-shadow: inherit;
 	letter-spacing: inherit;
 }
-#header h2 span {
+#header h1 a,#header h2 span {
 	display: inherit;
 	margin: inherit;
 	padding: inherit;
 	line-height: inherit;
 	max-height: inherit;
-	font-weight: inherit;
 	color: inherit;
 	text-shadow: inherit;
-	text-shadow: inherit;
+}
+#header h2 span {
+	font-weight: inherit;
 }
 /* TOP MENU */
 #top-bar {
@@ -279,16 +257,12 @@ sup {
 	text-decoration: inherit;
 }
 #top-bar ul li ul {
-	border-width: inherit;
 	width: inherit;
 }
-#top-bar ul li ul li,
+#top-bar ul li ul,#top-bar ul li ul li,
 #top-bar ul li ul li.sfhover,
 #top-bar ul li ul li,
-#top-bar ul li ul li:hover {
-	border-width: inherit;
-}
-#top-bar ul li ul li a {
+#top-bar ul li ul li:hover,#top-bar ul li ul li a {
 	border-width: inherit;
 }
 #top-bar ul li ul a,
@@ -308,13 +282,13 @@ sup {
 	position: inherit;
 	top: inherit;
 	left: inherit;
-	padding: inherit;
-	border: inherit;
 	display: inherit;
 }
-#side-bar .side-block {
+#side-bar,#side-bar .side-block {
 	padding: inherit;
 	border: inherit;
+}
+#side-bar .side-block {
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
 	-webkit-box-shadow: inherit;
@@ -334,10 +308,7 @@ sup {
 	font-size: inherit;
 	font-weight: inherit;
 }
-#side-bar p {
-	margin: inherit;
-}
-#side-bar div.menu-item {
+#side-bar p,#side-bar div.menu-item {
 	margin: inherit;
 }
 #side-bar div.menu-item img {
@@ -423,10 +394,7 @@ sup {
 	text-decoration: inherit;
 }
 .yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
-	border-color: inherit;
-}
-.yui-navset .yui-nav,
+.yui-navset .yui-navset-top .yui-nav,.yui-navset .yui-nav,
 .yui-navset .yui-navset-top .yui-nav {
 	border-color: inherit;
 }
@@ -457,15 +425,12 @@ sup {
 /* SOME NICE BOXES */
 div.sexy-box {
 	background: inherit;
-	border: inherit;
-	padding: inherit;
-	margin: inherit;
 	overflow: inherit;
 }
-div.sexy-box div.image-container img {
-	margin: inherit;
-	padding: inherit;
+div.sexy-box,div.sexy-box div.image-container img {
 	border: inherit;
+	padding: inherit;
+	margin: inherit;
 }
 /* Custom page content classes */
 #page-content {
@@ -495,11 +460,7 @@ div.sexy-box div.image-container img {
 .content-panel.centered {
 	text-align: inherit;
 }
-.content-panel.left-column {
-	float: inherit;
-	width: inherit;
-}
-.content-panel.right-column {
+.content-panel.left-column,.content-panel.right-column {
 	float: inherit;
 	width: inherit;
 }
@@ -609,16 +570,12 @@ div.sexy-box div.image-container img {
 	border: inherit;
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
-	margin-right: inherit;
-	margin-bottom: inherit;
 }
-.heritage-rating-module .page-rate-widget-box {
+.heritage-rating-module,.heritage-rating-module .page-rate-widget-box {
 	-webkit-box-shadow: inherit;
 	box-shadow: inherit;
-	margin-bottom: inherit;
 	margin-right: inherit;
+	margin-bottom: inherit;
 }
 .heritage-rating-module .heritage-emblem {
 	float: inherit;
@@ -656,12 +613,7 @@ div.sexy-box div.image-container img {
 	box-shadow: inherit;
 	width: inherit;
 }
-.scp-image-block.block-right {
-	float: inherit;
-	clear: inherit;
-	margin: inherit;
-}
-.scp-image-block.block-left {
+.scp-image-block.block-right,.scp-image-block.block-left {
 	float: inherit;
 	clear: inherit;
 	margin: inherit;
@@ -696,7 +648,7 @@ div.sexy-box div.image-container img {
 	font-size: inherit;
 }
 /* Forum Customizations */
-.forum-thread-box .description-block {
+.forum-thread-box .description-block,.thread-container .post .head {
 	padding: inherit;
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
@@ -704,13 +656,8 @@ div.sexy-box div.image-container img {
 	box-shadow: inherit;
 }
 .thread-container .post .head {
-	padding: inherit;
 	background-color: inherit;
 	background: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
 }
 /* Hide Forum Signatures */
 .signature {
@@ -719,22 +666,22 @@ div.sexy-box div.image-container img {
 /* Ruby by Nanimono Demonai */
 .ruby,
 ruby {
-	display: inherit;
-	text-align: inherit;
-	white-space: inherit;
-	line-height: inherit;
 	height: inherit;
 	vertical-align: inherit;
 }
-.rt,
+.ruby,
+ruby,.rt,
 rt {
 	display: inherit;
-	font-size: inherit;
-	line-height: inherit;
 	text-align: inherit;
 	white-space: inherit;
+	line-height: inherit;
 }
 /* Keycap */
+.rt,
+rt,.keycap {
+	font-size: inherit;
+}
 .keycap {
 	border: inherit;
 	border-color: inherit;
@@ -742,16 +689,16 @@ rt {
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
 	background-color: inherit;
-	padding: inherit;
 	font-family: inherit;
-	font-size: inherit;
 	white-space: inherit;
 }
 /* tag style */
+.keycap,.tags {
+	padding: inherit;
+}
 .tags {
 	display: inherit;
 	margin: inherit;
-	padding: inherit;
 	height: inherit;
 	line-height: inherit;
 	font-size: inherit;
@@ -764,26 +711,21 @@ rt {
 	border-top-right-radius: inherit;
 }
 .tags:before {
-	content: inherit;
 	padding: inherit;
-	float: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
 	border-color: inherit;
 	border-style: inherit;
 	border-width: inherit;
 }
-.tags:after {
+.tags:before,.tags:after {
 	content: inherit;
+	float: inherit;
 	position: inherit;
 	top: inherit;
 	left: inherit;
-	float: inherit;
 	width: inherit;
 	height: inherit;
+}
+.tags:after {
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
 	background: inherit;
@@ -792,25 +734,19 @@ rt {
 }
 /* Display Black Block by Nanimono Demonai */
 .bblock {
-	color: inherit;
-	background-color: inherit;
 	-webkit-transition: inherit;
 	-o-transition: inherit;
 	transition: inherit;
-	text-decoration: inherit;
 }
-.bblock:hover {
-	background-color: inherit;
+.bblock,.bblock:hover,.dblock {
 	color: inherit;
+	background-color: inherit;
 	text-decoration: inherit;
 }
 .dblock {
-	color: inherit;
-	background-color: inherit;
 	-webkit-transition: inherit;
 	-o-transition: inherit;
 	transition: inherit;
-	text-decoration: inherit;
 }
 .dblock:hover {
 	background-color: inherit;
@@ -879,10 +815,7 @@ rt {
 	border: inherit;
 	border-round: inherit;
 }
-::-webkit-scrollbar-track {
-	background: inherit;
-}
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-track,::-webkit-scrollbar-thumb {
 	background: inherit;
 }
 .page-source {
@@ -894,10 +827,7 @@ embed,
 video,
 object,
 iframe,
-table {
-	max-width: inherit;
-}
-#page-content div,
+table,#page-content div,
 #page-content div table {
 	max-width: inherit;
 }
@@ -911,10 +841,7 @@ table {
 		max-width: inherit;
 	}
 	.modal-body .table,
-	.modal-body .table ~ div {
-		float: inherit;
-	}
-	.owindow .button-bar {
+	.modal-body .table ~ div,.owindow .button-bar {
 		float: inherit;
 	}
 	.owindow div a.btn-primary {
@@ -951,14 +878,10 @@ table {
 		width: inherit;
 		position: inherit;
 	}
-	.top-bar {
+	.top-bar,.mobile-top-bar {
 		display: inherit;
 	}
-	.mobile-top-bar {
-		display: inherit;
-		padding: inherit;
-	}
-	.page-options-bottom a {
+	.mobile-top-bar,.page-options-bottom a {
 		padding: inherit;
 	}
 	#header h1 a {
@@ -1026,10 +949,7 @@ table {
 		width: inherit;
 		position: inherit;
 	}
-	.top-bar {
-		display: inherit;
-	}
-	.mobile-top-bar {
+	.top-bar,.mobile-top-bar {
 		display: inherit;
 	}
 	.page-options-bottom a {
@@ -1075,11 +995,10 @@ table {
 }
 /* Mini Tablet Media Query */
 @media (min-width: 581px) and (max-width: 767px) {
-	#search-top-box-input {
+	#search-top-box-input,#side-bar {
 		width: inherit;
 	}
 	#side-bar {
-		width: inherit;
 		position: inherit;
 	}
 	#main-content {
@@ -1089,19 +1008,13 @@ table {
 	.mobile-top-bar {
 		max-width: inherit;
 	}
-	.top-bar {
-		display: inherit;
-	}
-	.mobile-top-bar {
+	.top-bar,.mobile-top-bar {
 		display: inherit;
 	}
 	.page-options-bottom a {
 		padding: inherit;
 	}
-	#header h1 a {
-		font-size: inherit;
-	}
-	.license-area {
+	#header h1 a,.license-area {
 		font-size: inherit;
 	}
 	#header {
@@ -1133,10 +1046,7 @@ table {
 	.page-options-bottom a {
 		padding: inherit;
 	}
-	#header h1 a {
-		font-size: inherit;
-	}
-	.license-area {
+	#header h1 a,.license-area {
 		font-size: inherit;
 	}
 	#header {
@@ -1177,10 +1087,7 @@ table {
 		max-width: inherit;
 	}
 	.modal-body .table,
-	.modal-body .table ~ div {
-		float: inherit;
-	}
-	.owindow .button-bar {
+	.modal-body .table ~ div,.owindow .button-bar {
 		float: inherit;
 	}
 	.owindow div .btn-primary {
@@ -1223,6 +1130,8 @@ table {
 	#main-content {
 		max-width: inherit;
 		margin: inherit;
+	}
+	#main-content,#side-bar {
 		padding: inherit;
 		-webkit-transition: inherit;
 		-o-transition: inherit;
@@ -1230,26 +1139,19 @@ table {
 	}
 	#side-bar {
 		display: inherit;
+		left: inherit;
+		overflow-y: inherit;
+		z-index: inherit;
+	}
+	#side-bar,#side-bar:after {
 		position: inherit;
 		top: inherit;
-		left: inherit;
 		width: inherit;
 		height: inherit;
 		background-color: inherit;
-		overflow-y: inherit;
-		z-index: inherit;
-		padding: inherit;
-		-webkit-transition: inherit;
-		-o-transition: inherit;
-		transition: inherit;
 	}
 	#side-bar:after {
 		content: inherit;
-		position: inherit;
-		top: inherit;
-		width: inherit;
-		height: inherit;
-		background-color: inherit;
 	}
 	#side-bar:target {
 		display: inherit;

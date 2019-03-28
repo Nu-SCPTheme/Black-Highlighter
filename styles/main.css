@@ -46,12 +46,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	max-width: 90vw;
 }
 
-.code p {
+.code p,.code pre {
 	margin: 0;
 }
 
 .code pre {
-	margin: 0;
 	white-space: pre;
 }
 
@@ -62,15 +61,18 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
 	-moz-box-orient: vertical;
-	-moz-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
 	margin: 0;
+}
+
+#container,#content-wrap {
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
 	padding: 0;
 }
 
@@ -86,10 +88,8 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	display: -ms-flex;
 	display: flex; */
 	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
 	-moz-box-orient: horizontal;
-	-moz-box-direction: normal;
 	-ms-flex-direction: row;
 	flex-direction: row;
 	-webkit-box-pack: center;
@@ -98,7 +98,6 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	-ms-flex-pack: center;
 	justify-content: center;
 	margin: 0 auto -4.1em auto;
-	padding: 0;
 }
 
 #page-title {
@@ -316,7 +315,6 @@ div.sexy-box div.image-container img {
 
 .content-panel .panel-footer {
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.5);
-	color: rgb(var(--swatch-menubg-medium-color));
 	font-size: 80%;
 	font-weight: 700;
 	text-align: right;
@@ -325,7 +323,7 @@ div.sexy-box div.image-container img {
 	padding: 0.0625rem 0.625rem;
 }
 
-.content-panel .panel-footer a {
+.content-panel .panel-footer,.content-panel .panel-footer a {
 	color: rgb(var(--swatch-menubg-medium-color));
 }
 
@@ -429,19 +427,20 @@ div.sexy-box div.image-container img {
 
 .ruby {
 	display: inline-table;
-	text-align: center;
-	white-space: nowrap;
 	line-height: 1;
 	height: 1em;
 	vertical-align: text-bottom;
+}
+
+.ruby,.rt {
+	text-align: center;
+	white-space: nowrap;
 }
 
 .rt {
 	display: table-header-group;
 	font-size: 0.6em;
 	line-height: 1.1;
-	text-align: center;
-	white-space: nowrap;
 }
 
 .keycap {
@@ -488,9 +487,6 @@ div.sexy-box div.image-container img {
 }
 
 .tags:before {
-	content: "";
-	float: left;
-	position: relative;
 	top: -0.1875rem;
 	left: -0.625rem;
 	width: 0;
@@ -510,13 +506,16 @@ div.sexy-box div.image-container img {
 	padding: 0 0.0625rem 0.1875rem;
 }
 
+.tags:before,.tags:after {
+	content: "";
+	float: left;
+	position: relative;
+}
+
 .tags:after {
 	--box-shadow: rgb(var(--swatch-menubg-dark-color,  48, 48, 52));
-	content: "";
-	position: relative;
 	top: 0.28125rem;
 	left: -0.5rem;
-	float: left;
 	width: 0.25rem;
 	height: 0.25rem;
 	-webkit-border-radius: 0.125rem;

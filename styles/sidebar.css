@@ -129,11 +129,6 @@
 #side-bar .side-block {
 	border: 0;
 	margin-top: 1rem;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
@@ -149,12 +144,15 @@
 	flex-shrink: 0;
 }
 
-.side-block div[style="text-align: center;"] {
+#side-bar .side-block,.side-block div[style="text-align: center;"] {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+}
+
+.side-block div[style="text-align: center;"] {
 	width: 100%;
 	-webkit-box-pack: space-evenly;
 	-webkit-justify-content: space-evenly;
@@ -553,12 +551,8 @@
 	display: block;
 }
 
-#side-bar .close-menu {
-	display: none;
-}
-
 /* there's an empty menu item in the old sidebar design */
-#side-bar div.menu-item:empty {
+#side-bar .close-menu,#side-bar div.menu-item:empty {
 	display: none;
 }
 
