@@ -642,8 +642,8 @@ form[id="search-top-box-form"] {
 	/* Text positioning */
 	height: 3rem;
 	display: table;
-	width: -webkit-calc((100% / 4) + 0.0625rem);
-	width: calc((100% / 4) + 0.0625rem);
+	width: -webkit-calc(25% + 0.0625rem);
+	width: calc(25% + 0.0625rem);
 	word-break: normal;
 }
 
@@ -767,8 +767,7 @@ form[id="search-top-box-form"] {
 	#header {
 		background-image: url("https://nu-scptheme.github.io/Nu-SCP/images/logo.svg");
 		background-image: var(--logo-image);
-		--size: -webkit-calc(8.75rem + 1.2rem);
-		--size: calc(8.75rem + 1.2rem);
+		--size: 9.9rem;
 		--size: -webkit-calc(8.75rem + var(--offset-from-page-top));
 		--size: calc(8.75rem + var(--offset-from-page-top));
 		--y-offset: 1.3125rem;
@@ -834,6 +833,18 @@ form[id="search-top-box-form"] {
 		margin: 0;
 		padding: 0;
 		width: 100vw;
+		background: linear-gradient(to bottom,
+			rgba(12, 12, 12, 1) 0,
+			rgba(66, 66, 72, 1) 0.125rem,
+			rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),
+			rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),
+			rgba(12, 12, 12, 1) 3rem);
+		background: linear-gradient(to bottom,
+			rgba(12, 12, 12, 1) 0,
+			rgba(66, 66, 72, 1) 0.125rem,
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(12, 12, 12, 1) 3rem);
 		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
 			rgba(12, 12, 12, 1) 0,
 			rgba(66, 66, 72, 1) 0.125rem,
