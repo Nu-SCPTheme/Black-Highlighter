@@ -976,12 +976,18 @@ div.sexy-box div.image-container img {
 	letter-spacing: 0.05em;
 }
 
+#page-content > div.forum-thread-box > div.new-post {
+	display: flex;
+	justify-content: flex-start;
+}
+
 #page-content > div.forum-thread-box > div.options,
 .post-container > .post > div.long > div.options {
 	display: flex;
 	justify-content: flex-end;
 }
 
+#page-content > div.forum-thread-box > div.new-post > a,
 #page-content > div.forum-thread-box > div.options a,
 .post-container > .post > div.long > div.options a {
 	display: -webkit-box;
@@ -1015,6 +1021,8 @@ div.sexy-box div.image-container img {
 	transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1),color 300ms cubic-bezier(0.4,0.0,0.2,1)
 }
 
+#page-content > div.forum-thread-box > div.new-post > a:hover,
+#page-content > div.forum-thread-box > div.new-post > a:active,
 #page-content > div.forum-thread-box > div.options > a:hover,
 #page-content > div.forum-thread-box > div.options > a:active,
 .post-container > .post > div.long > div.options a:hover,
