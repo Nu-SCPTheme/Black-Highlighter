@@ -41,12 +41,12 @@ gulp.task('rmv', () =>
 
 
 gulp.task('merge', () => 
-	gulp.src('styles/*.css').pipe(
+	gulp.src('themes/dustjacket-theme.css').pipe(
 		postcss([
 			mergerules()
 		])
 	).pipe(
-	gulp.dest('styles')
+	gulp.dest('themes')
 ));
 
 gulp.task('stylefmt', () => 
