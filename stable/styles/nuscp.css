@@ -2557,7 +2557,6 @@ header h1 {
 #header h1,
 #header h2 {
 	font-family: 'Poppins', sans-serif;
-	font-family: var(--header-font);
 	font-weight: 700;
 	position: absolute;
 	-webkit-font-smoothing: antialiased;
@@ -2588,6 +2587,9 @@ header h1 {
 
 #header h2 {
 	font-size: 0.945rem;
+	font-family: 'Poppins', sans-serif !important;
+	font-family: var(--title-font);
+	font-weight: 700;
 }
 
 #header h2 span {
@@ -3365,7 +3367,7 @@ form[id="search-top-box-form"] {
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
 		column-count: 3;
-		width: 80vw;
+		width: 85vw !important;
 		max-height: calc(100vh - 12rem);
 	}
 
@@ -3397,7 +3399,8 @@ form[id="search-top-box-form"] {
 		text-align: center;
 	}
 
-	#top-bar div.mobile-top-bar > ul > li > ul > li,#top-bar div.mobile-top-bar > ul > li > ul > li > a {
+	#top-bar div.mobile-top-bar > ul > li > ul > li,
+	#top-bar div.mobile-top-bar > ul > li > ul > li > a {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
@@ -3409,6 +3412,7 @@ form[id="search-top-box-form"] {
 		height: 100%;
 		width: 100%;
 		line-height: 1em;
+		text-align: center;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
 		-moz-box-align: center;
