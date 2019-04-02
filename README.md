@@ -1,7 +1,7 @@
 # Nu-SCP
 
     [2019 Wikidot Theme]
-    Designed by djkaktus, Woedenaz & Croquembouche
+    Designed by Woedenaz, Croquembouche, & djkaktus
     Built by Woedenaz, Croquembouche & rounderhouse for some reason
     
     
