@@ -280,7 +280,7 @@
 }
 
 #side-bar div.menu-item a[href*="/scp-"] {
-	padding-right: 0.5em!important;
+	padding-right: 0.5em !important;
 
 }
 
@@ -526,7 +526,6 @@
 /* Sigma Overwrite Specific Styles */
 
 #side-bar > div[style="background-color: #e5e5ff;"] {
-	padding: 1rem 0;
 	border: 0;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
@@ -554,6 +553,7 @@
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+	padding: 1rem 0;
 	width: 100%;
 	-webkit-box-pack: space-evenly;
 	-webkit-justify-content: space-evenly;
@@ -564,19 +564,15 @@
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
 	width: 2rem;
+	height: auto;
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	border: none;
 	-webkit-border-radius: none;
 	border-radius: none;
 }
 
-#side-bar
-	> div[style="background-color: #e5e5ff;"]
-	> div.menu-item
-	> div
-	> a
-	> img {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a > img {
 	display: block;
 }
 
