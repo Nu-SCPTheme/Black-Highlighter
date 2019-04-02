@@ -42,9 +42,9 @@
 	/* dark accent gray for sidebar background */
 	--black-monochrome: 12, 12, 12;
 	/* black */
-	--bright-accent: 180, 35, 35;
+	--bright-accent: 133, 0, 5;
 	/* bright red */
-	--medium-accent: 140, 20, 25;
+	--medium-accent: 100, 46, 44;
 	/* medium red */
 	--dark-accent: 100, 3, 15;
 	/* dark red */
@@ -53,9 +53,9 @@
 
 	/* Background and Header Colors */
 	--background-gradient-color: var(--very-light-gray-monochrome, 215, 215, 215);
-	--header-gradient-color-bottom: 99, 33, 37;
-	--header-gradient-color-middle: 76, 25, 30;
-	--header-gradient-color-top: 56, 37, 37;
+	--header-gradient-color-bottom: var(--medium-accent);
+	--header-gradient-color-middle: var(--dark-accent);
+	--header-gradient-color-top: var(--black-monochrome);
 
 	/* Primary Theme Colors */
 	--swatch-background: var(--white-monochrome, 252, 252, 252);
@@ -91,58 +91,28 @@
 
 	--gradient-header: linear-gradient(
 		to top,
-		rgb(var(--header-gradient-color-bottom, 99, 33, 37)) 0%,
-		rgb(var(--header-gradient-color-middle, 76, 25, 30)) 70%,
-		rgb(var(--header-gradient-color-top, 56, 37, 37)) 100%
+		rgb(var(--header-gradient-color-bottom)) 0%,
+		rgb(var(--header-gradient-color-middle)) 70%,
+		rgb(var(--header-gradient-color-top)) 100%
 	);
 	--gradient-topmenu: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(255, 255, 255, 0) 7.5rem,
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			7.5rem,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			7.625rem,
-		rgba(
-				var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)),
-				0.95
-			) -webkit-calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) -webkit-calc(
-				100% - 0.125rem
-			),
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			100%
-	);
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),1)	7.5rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) 7.625rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 0.95) -webkit-calc(100% - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) -webkit-calc(100% - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 100%);
 	--gradient-topmenu: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(255, 255, 255, 0) 7.5rem,
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			7.5rem,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			7.625rem,
-		rgba(
-				var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)),
-				0.95
-			)
-			calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			calc(100% - 0.125rem),
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			100%
-	);
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),1) 7.5rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) 7.625rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 0.95) calc(100% - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) calc(100% - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 100%);
 	--gradient-topmenu-mobile: linear-gradient(
 		to bottom,
 		rgba(
