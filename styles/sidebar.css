@@ -279,6 +279,14 @@
 	display: none;
 }
 
+#side-bar div.menu-item .sub-text {
+	font-size: calc(var(--base-font-size) * 0.7);
+	display: inline-flex;
+	color: rgba(var(--swatch-primary),1);
+	margin-left: -1.5em;
+	padding-left: 0.5em;
+}
+
 #side-bar div.collapsible-block {
 	text-align: right;
 	-webkit-flex-basis: 100%;
@@ -310,7 +318,17 @@
 	line-height: -webkit-calc(1.5rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
-}
+	-webkit-box-flex: 2;
+	-webkit-flex-grow: 2;
+	-moz-box-flex: 2;
+	-ms-flex-positive: 2;
+	flex-grow: 2;
+	text-align: left;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-moz-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
 
 #side-bar div.menu-item .text {
 	cursor: default;
@@ -325,10 +343,17 @@
 	padding: 0 calc(var(--base-font-size) * 1.5);
 	-webkit-box-flex: 0;
 	-webkit-flex-grow: 0;
-	-moz-box-flex: 0;
-	-ms-flex-positive: 0;
-	flex-grow: 0;
+		-moz-box-flex: 0;
+		-ms-flex-positive: 0;
+			flex-grow: 0;
+	-webkit-flex-shrink: 2;
+		-ms-flex-negative: 2;
+			flex-shrink: 2;
 	text-align: left;
+}
+
+#side-bar div.menu-item>:last-child {
+	flex-grow: 2;
 }
 
 #side-bar div.menu-item > :not(:nth-child(2)):not(.collapsible-block) {
