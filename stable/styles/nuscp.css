@@ -3341,6 +3341,10 @@ form[id="search-top-box-form"] {
 		width: 100%;
 	}
 
+	#top-bar div.mobile-top-bar > ul > li {
+		position: inherit;
+	}
+
 	#top-bar div.mobile-top-bar > ul > li > a {
 		font-size: 125%;
 		background: none;
@@ -3351,6 +3355,7 @@ form[id="search-top-box-form"] {
 		-ms-transform: translate(-50%, 0);
 		-o-transform: translate(-50%, 0);
 		transform: translate(-50%, 0);
+		left: 50%;
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
@@ -3389,6 +3394,7 @@ form[id="search-top-box-form"] {
 		-webkit-flex-basis: -webkit-calc(80vw / 2);
 		-ms-flex-preferred-size: calc(80vw / 2);
 		flex-basis: calc(80vw / 2);
+		text-align: center;
 	}
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li,#top-bar div.mobile-top-bar > ul > li > ul > li > a {
