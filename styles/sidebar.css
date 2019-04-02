@@ -178,7 +178,7 @@
 
 #side-bar .heading,
 #side-bar .side-block > .collapsible-block:nth-child(1)	.collapsible-block-folded {
-	min-height: 1.5625rem;
+	min-height: 1.25rem;
 	background: -webkit-linear-gradient(
 		80deg,
 		rgba(140, 20, 25, 0.45) 0%,
@@ -207,19 +207,18 @@
 #side-bar .heading p,
 #side-bar .side-block > .collapsible-block .collapsible-block-link {
 	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
-	padding-right: 1rem;
 	letter-spacing: 0.2rem;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-menutxt-light-color));
-	height: 1.5625rem;
-	line-height: 1.5625rem;
+	height: 1.25rem;
+	line-height: 1.25rem;
 	text-transform: uppercase;
-	font-size: -webkit-calc(0.875rem * 0.95);
-	font-size: calc(0.875rem * 0.95);
-	font-size: -webkit-calc(var(--base-font-size) * 0.95);
-	font-size: calc(var(--base-font-size) * 0.95);
+	font-size: -webkit-calc(0.875rem * 0.9);
+	font-size: calc(0.875rem * 0.9);
+	font-size: -webkit-calc(var(--base-font-size) * 0.9);
+	font-size: calc(var(--base-font-size) * 0.9);
 	font-weight: 900;
-	text-align: right;
+	text-align: center;
 	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
 	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
 	display: block;
@@ -252,16 +251,16 @@
 	-moz-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	-webkit-box-pack: end;
-	-webkit-justify-content: flex-end;
-	-moz-box-pack: end;
-	-ms-flex-pack: end;
-	justify-content: flex-end;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-moz-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
 	font-size: 0;
-	min-height: -webkit-calc(2rem - 0.125rem);
-	min-height: calc(2rem - 0.125rem);
-	min-height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
-	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
+	min-height: -webkit-calc(1.5rem - 0.125rem);
+	min-height: calc(1.5rem - 0.125rem);
+	min-height: -webkit-calc(1.5rem - var(--sidebar-internal-border-thickness));
+	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
 	border-bottom: var(--sidebar-internal-border-thickness) solid
 		rgba(var(--swatch-border-color), 0.08);
@@ -302,14 +301,14 @@
 	-o-transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	display: block;
-	height: -webkit-calc(2rem - 0.125rem);
-	height: calc(2rem - 0.125rem);
-	height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
-	height: calc(2rem - var(--sidebar-internal-border-thickness));
-	line-height: -webkit-calc(2rem - 0.125rem);
-	line-height: calc(2rem - 0.125rem);
-	line-height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
-	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
+	height: -webkit-calc(1.5rem - 0.125rem);
+	height: calc(1.5rem - 0.125rem);
+	height: -webkit-calc(1.5rem - var(--sidebar-internal-border-thickness));
+	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	line-height: -webkit-calc(1.5rem - 0.125rem);
+	line-height: calc(1.5rem - 0.125rem);
+	line-height: -webkit-calc(1.5rem - var(--sidebar-internal-border-thickness));
+	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
 }
 
@@ -320,16 +319,16 @@
 /* SCP Series Specific */
 
 #side-bar div.menu-item > :nth-child(2) {
-	padding-left: -webkit-calc(0.875rem * 0.75);
-	padding-left: calc(0.875rem * 0.75);
-	padding-left: -webkit-calc(var(--base-font-size) * 0.75);
-	padding-left: calc(var(--base-font-size) * 0.75);
-	-webkit-box-flex: 2;
-	-webkit-flex-grow: 2;
-	-moz-box-flex: 2;
-	-ms-flex-positive: 2;
-	flex-grow: 2;
-	text-align: right;
+	padding: 0 -webkit-calc(0.875rem * 1.5);
+	padding: 0 calc(0.875rem * 1.5);
+	padding: 0 -webkit-calc(var(--base-font-size) * 1.5);
+	padding: 0 calc(var(--base-font-size) * 1.5);
+	-webkit-box-flex: 0;
+	-webkit-flex-grow: 0;
+	-moz-box-flex: 0;
+	-ms-flex-positive: 0;
+	flex-grow: 0;
+	text-align: left;
 }
 
 #side-bar div.menu-item > :not(:nth-child(2)):not(.collapsible-block) {
