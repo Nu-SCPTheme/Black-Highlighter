@@ -6,8 +6,8 @@
 # 
 # 1. Takes all CSS files from /styles
 # 2. Concatenates them
-# 3. Saves this file to /stable/styles as trench-coat.css
-# 4. Minifies the file and saves it to /stable/styles as trench-coat.min.css
+# 3. Saves this file to /stable/styles as black-highlighter.css
+# 4. Minifies the file and saves it to /stable/styles as black-highlighter.min.css
 
 
 # Define an error-handling function
@@ -21,11 +21,11 @@ error() {
 	exit
 }
 
-# First let's confirm that we're in /Trench-Coat
+# First let's confirm that we're in /Black-Highlighter
 
 echo "Validating directory..."
-if [ "${PWD##*/}" != "Trench-Coat" ]; then
-	error "Script must be executed from trench-coat root directory"
+if [ "${PWD##*/}" != "Black-Highlighter" ]; then
+	error "Script must be executed from black-highlighter root directory"
 fi
 
 # Take main.css and copy to a temp file
@@ -51,8 +51,8 @@ grep -v '^@import' temp.css >> temp
 mv temp temp.css
 
 # Move temp.css
-echo "Created trench-coat.css"
-cp temp.css stable/styles/trench-coat.css
+echo "Created black-highlighter.css"
+cp temp.css stable/styles/black-highlighter.css
 
 # Extract inline images to array
 IFS='>'
@@ -87,7 +87,7 @@ for i in "${IMAGES[@]}"; do
 done
 
 # Move the minified file to final destination
-mv temp.css stable/styles/trench-coat.min.css
-echo "Created trenchcoat.min.css"
+mv temp.css stable/styles/black-highlighter.min.css
+echo "Created black-highlighter.min.css"
 
 echo "Done."
