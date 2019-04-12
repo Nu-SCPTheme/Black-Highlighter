@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800");
+@supports(--css: variables) {
 @charset "utf-8";
 
 /* Fonts */
@@ -1562,8 +1563,7 @@ div.buttons.alignleft {
 	h3 {
 		page-break-after: avoid;
 	}
-}
-/* ===ELEMENTS=== */
+}/* ===ELEMENTS=== */
 
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
 
@@ -3525,19 +3525,17 @@ form[id="search-top-box-form"] {
 	flex-direction: column;
 	background: rgba(252, 252, 252, 1);
 	background: rgba(var(--swatch-menubg-color), 1);
-	-webkit-flex-basis: -webkit-calc(0.875rem * 18);
-	-ms-flex-preferred-size: calc(0.875rem * 18);
-	flex-basis: calc(0.875rem * 18);
+	-webkit-flex-basis: 15.75rem;
+	-ms-flex-preferred-size: 15.75rem;
+	flex-basis: 15.75rem;
 	-webkit-flex-basis: var(--sidebar-width-on-desktop);
 	-ms-flex-preferred-size: var(--sidebar-width-on-desktop);
 	flex-basis: var(--sidebar-width-on-desktop);
-	max-width: -webkit-calc(0.875rem * 18);
-	max-width: calc(0.875rem * 18);
+	max-width: 15.75rem;
 	max-width: var(--sidebar-width-on-desktop);
-	min-width: -webkit-calc(0.875rem * 18);
-	min-width: calc(0.875rem * 18);
+	min-width: 15.75rem;
 	min-width: var(--sidebar-width-on-desktop);
-	width: -webkit-calc(0.875rem * 18);
+	width: 15.75rem;
 	width: calc(0.875rem * 189);
 	width: var(--sidebar-width-on-desktop);
 	-webkit-flex-shrink: 0;
@@ -4703,4 +4701,5 @@ body#translations {
 	line-height: -webkit-calc(2rem - var(--sidebar-internal-border-thickness));
 	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	background-clip: padding-box;
+}
 }
