@@ -4217,10 +4217,8 @@ a[href*="/most-recently-edited"] {
 		display: block;
 		position: fixed;
 		top: 0;
-		left: -webkit-calc(-14rem - 0.5625rem);
-		left: calc(-14rem - 0.5625rem);
-		left: -webkit-calc(-14rem - var(--scrollbar-width));
-		left: calc(-14rem - var(--scrollbar-width));
+		left: -16.625rem;
+		left: calc(var(--sidebar-width-on-desktop) * -1)
 		height: 100%;
 		overflow-y: auto;
 		z-index: 10;
@@ -4256,14 +4254,12 @@ a[href*="/most-recently-edited"] {
 		height: 100%;
 		top: 0;
 		left: 0;
-		margin-left: -webkit-calc(0.5625rem);
-		margin-left: calc(0.5625rem);
-		margin-left: -webkit-calc(var(--scrollbar-width));
-		margin-left: calc(var(--scrollbar-width));
-		padding-right: -webkit-calc(14rem + 0.5625rem);
-		padding-right: calc(14rem + 0.5625rem);
-		padding-right: -webkit-calc(14rem + var(--scrollbar-width));
-		padding-right: calc(14rem + var(--scrollbar-width));
+		margin-left: 0.5625rem;
+		margin-left: var(--scrollbar-width);
+		padding-right: -webkit-calc(16.625rem+ 0.5625rem);
+		padding-right: calc(16.625rem + 0.5625rem);
+		padding-right: -webkit-calc(var(--sidebar-width-on-desktop) + var(--scrollbar-width));
+		padding-right: calc(var(--sidebar-width-on-desktop) + var(--scrollbar-width));
 		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem
 			repeat;
@@ -4303,15 +4299,15 @@ a[href*="/most-recently-edited"] {
 	}
 
 	#side-bar:target .close-menu {
-		width: -webkit-calc(100% - 14rem - 0.5625rem);
-		width: calc(100% - 14rem - 0.5625rem);
-		width: -webkit-calc(100% - 14rem - var(--scrollbar-width));
-		width: calc(100% - 14rem - var(--scrollbar-width));
+		width: -webkit-calc(100% - 16.625rem - 0.5625rem);
+		width: calc(100% - 16.625rem - 0.5625rem);
+		width: -webkit-calc(100% - 16.625rem - var(--scrollbar-width));
+		width: calc(100% - 16.625rem - var(--scrollbar-width));
 		height: 100%;
-		margin-left: -webkit-calc(14rem + 2 * 0.5625rem - 0.0625rem);
-		margin-left: calc(14rem + 2 * 0.5625rem - 0.0625rem);
-		margin-left: -webkit-calc(14rem + 2 * var(--scrollbar-width - 0.0625rem));
-		margin-left: calc(14rem + 2 * var(--scrollbar-width - 0.0625rem));
+		margin-left: -webkit-calc(16.625rem + 2 * 0.5625rem - 0.0625rem);
+		margin-left: calc(16.625rem + 2 * 0.5625rem - 0.0625rem);
+		margin-left: -webkit-calc(16.625rem + 2 * var(--scrollbar-width - 0.0625rem));
+		margin-left: calc(16.625rem + 2 * var(--scrollbar-width - 0.0625rem));
 		padding-right: 0;
 		visibility: visible;
 		pointer-events: auto;
@@ -4348,14 +4344,14 @@ a[href*="/most-recently-edited"] {
 	}
 
 	#skrollr-body:target #side-bar .close-menu {
-		width: -webkit-calc(100% - 14rem - 0.5625rem);
-		width: calc(100% - 14rem - 0.5625rem);
-		width: -webkit-calc(100% - 14rem - var(--scrollbar-width));
-		width: calc(100% - 14rem - var(--scrollbar-width));
-		margin-left: -webkit-calc(14rem + 2 * 0.5625rem - 1px);
-		margin-left: calc(14rem + 2 * 0.5625rem - 1px);
-		margin-left: -webkit-calc(14rem + 2 * var(--scrollbar-width - 1px));
-		margin-left: calc(14rem + 2 * var(--scrollbar-width - 1px));
+		width: -webkit-calc(100% - 16.625rem - 0.5625rem);
+		width: calc(100% - 16.625rem - 0.5625rem);
+		width: -webkit-calc(100% - 16.625rem - var(--scrollbar-width));
+		width: calc(100% - 16.625rem - var(--scrollbar-width));
+		margin-left: -webkit-calc(16.625rem + 2 * 0.5625rem - 1px);
+		margin-left: calc(16.625rem + 2 * 0.5625rem - 1px);
+		margin-left: -webkit-calc(16.625rem + 2 * var(--scrollbar-width - 1px));
+		margin-left: calc(16.625rem + 2 * var(--scrollbar-width - 1px));
 		visibility: visible;
 		pointer-events: auto;
 		opacity: 1;
