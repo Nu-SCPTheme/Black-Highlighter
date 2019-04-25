@@ -794,10 +794,8 @@ a[href*="/most-recently-edited"] {
 		width: -webkit-calc(100% - 16.625rem - var(--scrollbar-width));
 		width: calc(100% - 16.625rem - var(--scrollbar-width));
 		height: 100%;
-		margin-left: -webkit-calc(16.625rem + 2 * 0.5625rem - 0.0625rem);
-		margin-left: calc(16.625rem + 2 * 0.5625rem - 0.0625rem);
-		margin-left: -webkit-calc(16.625rem + 2 * var(--scrollbar-width - 0.0625rem));
-		margin-left: calc(16.625rem + 2 * var(--scrollbar-width - 0.0625rem));
+		margin-left: 16.625rem;
+		margin-left: var(--sidebar-width-on-desktop);
 		padding-right: 0;
 		visibility: visible;
 		pointer-events: auto;
