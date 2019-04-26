@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Chicle|Overlock:400,900');
-    
+ 
+@supports(--css: variables) {
 ::-webkit-scrollbar-thumb {
     background: -webkit-linear-gradient(326deg,
         rgba(240, 194, 215, 1),
@@ -1015,4 +1016,5 @@ div.content-log.bobbleinset {
         -webkit-transform: rotate(1turn);
                 transform: rotate(1turn);
     }
+}
 }
