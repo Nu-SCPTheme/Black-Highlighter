@@ -76,7 +76,7 @@ sed -i ".bak" -e "s/-(/- (/g" temp.css
 # "or(" -> "or ("
 sed -i ".bak" -e "s/or(/or (/g" temp.css
 # "Xrem+Yrem" -> "Xrem + Yrem"
-sed -i ".bak" -e "s/\([)mh]\)\(\+\)\([(0-9v]\)/\1 + \3/g" temp.css
+sed -i ".bak" -e "s/\([)mh%]\)\(\+\)\([(0-9v]\)/\1 + \3/g" temp.css
 
 # Reinsert extracted images
 echo "Reinserting extracted images..."
