@@ -1563,8 +1563,7 @@ div.buttons.alignleft {
 	h3 {
 		page-break-after: avoid;
 	}
-}
-/* ===ELEMENTS=== */
+}/* ===ELEMENTS=== */
 
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
 
@@ -3081,7 +3080,7 @@ form[id="search-top-box-form"] {
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a,
-#top-bar div.top-bar > ul > li > ul > li > ul > li {
+#top-bar div.top-bar > ul > li > ul > li > ul > li { /* ? */
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -3093,7 +3092,7 @@ form[id="search-top-box-form"] {
 	text-align: center;
 }
 
-#top-bar div.top-bar > ul > li > ul > li > ul > li {
+#top-bar div.top-bar > ul > li > ul > li > ul > li { /* ? */
     color: rgb(252, 252, 252);
     color: rgb(var(--white-monochrome));
     font-size: 1em;
@@ -3108,12 +3107,14 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover,
-#top-bar div.top-bar > ul > li > ul > li > ul > li:hover,
-#top-bar div.mobile-top-bar > ul > li > ul > li > ul > li:hover {
+#top-bar div.top-bar > ul > li > ul > li > ul > li:hover, /* ? */
+#top-bar div.mobile-top-bar > ul > li > ul > li > ul > li:hover { /* ? */
     background-color: transparent;
+    /* Adding a slight bg colour change before the :before obscures it */
+    background-color: rgba(var(--dark-accent),0.05))
 }
 
-#top-bar div.top-bar > ul > li > ul > li > ul > li > a {
+#top-bar div.top-bar > ul > li > ul > li > ul > li > a { /* ? */
     color: rgb(12, 12, 12);
     color: rgb(var(--swatch-menutxt-dark-color));
     font-size: 1em;
@@ -3137,14 +3138,14 @@ form[id="search-top-box-form"] {
     box-sizing: border-box;
 }
 
-#top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover,
-#top-bar div.mobile-top-bar > ul > li > ul > li > ul > li > a:hover {
+#top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover, /* ? */
+#top-bar div.mobile-top-bar > ul > li > ul > li > ul > li > a:hover { /* ? */
     background: transparent;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a::before,
-#top-bar div.top-bar > ul > li > ul > li > ul > li > a::before {
-    right: 150%;
+#top-bar div.top-bar > ul > li > ul > li > ul > li > a::before { /* ? */
+    right: calc(100% + 2rem);
     -webkit-transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
     -o-transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -3152,7 +3153,7 @@ form[id="search-top-box-form"] {
 }
  
 #top-bar div.top-bar > ul > li > ul > li > a::before,
-#top-bar div.top-bar > ul > li > ul > li > ul > li > a::before,
+#top-bar div.top-bar > ul > li > ul > li > ul > li > a::before, /* ? */
 #top-bar div.top-bar > ul > li > ul > li > a:hover::before {
     content: " ";
     width: 200%;
@@ -3170,10 +3171,10 @@ form[id="search-top-box-form"] {
 }
  
 #top-bar div.top-bar > ul > li > ul > li > a:hover::before {
-    right: -5rem;
+    right: -2rem;
 }
  
-#top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover::before {
+#top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover::before { /* ? */
     content: " ";
     width: 200%;
     height: 100%;
@@ -3195,10 +3196,12 @@ form[id="search-top-box-form"] {
     background: rgba(var(--swatch-menubg-color), 0);
 }
  
-#top-bar div.top-bar > ul > li > ul > li > ul > li:focus-within {
+#top-bar div.top-bar > ul > li > ul > li > ul > li:focus-within { /* ? */
     background: rgba(252, 252, 252, 0);
     background: rgba(var(--swatch-menubg-color), 0);
 }
+
+/* ? : Note from Croque: does ul>li>ul>li>ul>li even exist? */
 
 @media only screen and (max-width: 768px) {
 	/* Removing Scrollbar to deal with horizontal overflow and still allow sticky scrolling */
@@ -3386,7 +3389,7 @@ form[id="search-top-box-form"] {
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
 		max-height: -webkit-calc((100vh - 15rem) / 15);
-		max-height: calc((100vh - 12rem) / 15);
+		max-height: calc((100vh - 15rem) / 15);
 		max-width: -webkit-calc(80vw + 0.0625rem);
 		max-width: calc(80vw + 0.0625rem);
 		width: -webkit-calc(80vw + 0.0625rem);
