@@ -80,7 +80,7 @@ sed -i -e "s/-(/- (/g" temp.css
 # "or(" -> "or ("
 sed -i -e "s/or(/or (/g" temp.css
 # "Xrem+Yrem" -> "Xrem + Yrem"
-sed -i -E "s/([\)mh])(\+)([\(0-9v])/\1 + \3/g" temp.css
+sed -i -E "s/([\)mh%])(\+)([\(0-9v])/\1 + \3/g" temp.css
 
 # Reinsert extracted images
 echo "Reinserting extracted images..."
