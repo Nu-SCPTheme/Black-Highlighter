@@ -49,6 +49,7 @@ cat styles/!(main|root|normalize|overwrite-main).css >> temp.css
 echo "Supporting IE..."
 sed -i '1 s/^/@supports(--css: variables) {\n/' temp.css
 echo "}" >> temp.css
+
 # Extract any imports rules to the top of the file
 grep '^@import' temp.css > temp
 grep -v '^@import' temp.css >> temp

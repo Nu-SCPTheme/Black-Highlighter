@@ -621,6 +621,40 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	line-height: 1.6em;
 }
 
+/* Wikidot User Icons */
+
+span.printuser {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: baseline;
+	justify-content: center;
+}
+
+span > a[href*="user:info"]:first-of-type { 
+	margin-left: 0.750em;
+}
+
+span > a[href*="user:info"] {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	   -moz-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	   -moz-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: -webkit-min-content;
+	width: -moz-min-content;
+	width: min-content;
+}
+
 .printuser img.small {
 	margin-right: 0.0625rem;
 }
@@ -2319,6 +2353,8 @@ table.wiki-content-table tr {
 	display: none;
 }
 
+
+
 /* Mobile Elements */
 
 @media only screen and (max-width: 768px) {
@@ -3663,22 +3699,22 @@ form[id="search-top-box-form"] {
 }
 
 /* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
-#side-bar .side-block:nth-child(3) {
+#side-bar .side-block div[style*="#f0fff6"] {
 	background-color: rgba(140, 20, 25, 0.25) !important;
 	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 }
 
-#side-bar .side-block:nth-child(5) {
+#side-bar .side-block div[style*="#e7e5e8"] {
 	background-color: rgba(100, 3, 15, 0.3) !important;
 	background-color: rgba(var(--swatch-primary-darkest), 0.3) !important;
 }
 
-#side-bar .side-block:nth-child(6) {
+#side-bar .side-block div[style*="#fff0f0"] {
 	background-color: rgba(140, 20, 25, 0.15) !important;
 	background-color: rgba(var(--swatch-primary-darker), 0.15) !important;
 }
 
-#side-bar .side-block:nth-child(7) {
+#side-bar .side-block div[style*="#e5e5ff"] {
 	background-color: rgba(140, 20, 25, 0.25) !important;
 	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 }
