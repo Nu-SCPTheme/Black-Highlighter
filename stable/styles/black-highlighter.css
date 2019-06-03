@@ -2880,14 +2880,16 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li:hover,
 #top-bar div.top-bar > ul > li:focus-within,
-#top-bar div.mobile-top-bar > ul > li:hover #top-bar div.mobile-top-bar > ul > li:focus-within {
+#top-bar div.mobile-top-bar > ul > li:hover,
+#top-bar div.mobile-top-bar > ul > li:focus-within {
 	background-color: rgb(48, 48, 52);
 	background-color: rgb(var(--swatch-menubg-dark-color));
 }
 
 #top-bar div.top-bar > ul > li:hover > a,
 #top-bar div.top-bar > ul > li:focus-within > a,
-#top-bar div.mobile-top-bar > ul > li:hover > a #top-bar div.mobile-top-bar > ul > li:focus-within > a {
+#top-bar div.mobile-top-bar > ul > li:hover > a, 
+#top-bar div.mobile-top-bar > ul > li:focus-within > a {
 	background-color: transparent !important;
 }
 
@@ -3245,7 +3247,6 @@ form[id="search-top-box-form"] {
 
 /* Top-Menu without dropdowns support */
 
-#top-bar > ul,
 #top-bar > ul {
 	width: 90vw;
 	-webkit-box-orient: horizontal;
@@ -3273,7 +3274,6 @@ form[id="search-top-box-form"] {
 	text-align: center;
 }
 
-#top-bar > ul > li,
 #top-bar > ul > li {
 	-webkit-flex-shrink: 2;
 	-ms-flex-negative: 2;
@@ -3299,21 +3299,17 @@ form[id="search-top-box-form"] {
 }
 
 #top-bar > ul > li:hover,
-#top-bar > ul > li:focus-within,
-#top-bar div.mobile-top-bar > ul > li:hover #top-bar div.mobile-top-bar > ul > li:focus-within {
+#top-bar > ul > li:focus-within {
 	background-color: rgb(48, 48, 52);
 	background-color: rgb(var(--swatch-menubg-dark-color));
 }
 
 #top-bar > ul > li:hover > *,
-#top-bar > ul > li:focus-within > *,
-#top-bar div.mobile-top-bar > ul > li:hover > *,
- #top-bar div.mobile-top-bar > ul > li:focus-within > * {
+#top-bar > ul > li:focus-within > * {
 	background-color: transparent !important;
 }
 
-#top-bar > ul > li > *,
-#top-bar div.mobile-top-bar > ul > li > * {
+#top-bar > ul > li > *, {
 	padding: 0.3em;
 	width: 100%;
 	height: -webkit-calc(100% - 0.6em);
