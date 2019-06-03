@@ -6,6 +6,7 @@
 @import url(https://nu-scptheme.github.io/Black-Highlighter/styles/header.css);
 @import url(https://nu-scptheme.github.io/Black-Highlighter/styles/elements.css);
 @import url(https://nu-scptheme.github.io/Black-Highlighter/styles/translation.css);
+@supports(--css: variables) { 
 @charset "utf-8";
 
 /* Fonts */
@@ -656,9 +657,6 @@ span > a[href*="user:info"] {
 	   -moz-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	width: -webkit-min-content;
-	width: -moz-min-content;
-	width: min-content;
 	white-space: nowrap;
 }
 
@@ -3710,9 +3708,6 @@ span > a[href*="user:info"] {
 	   -moz-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	width: -webkit-min-content;
-	width: -moz-min-content;
-	width: min-content;
 	white-space: nowrap;
 }
 

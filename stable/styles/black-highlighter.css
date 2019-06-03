@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800");
-@supports(--css: variables) {
+@supports(--css: variables) { 
 @charset "utf-8";
 
 /* Fonts */
@@ -650,9 +650,6 @@ span > a[href*="user:info"] {
 	   -moz-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	width: -webkit-min-content;
-	width: -moz-min-content;
-	width: min-content;
 	white-space: nowrap;
 }
 
@@ -1600,7 +1597,8 @@ div.buttons.alignleft {
 	h3 {
 		page-break-after: avoid;
 	}
-}/* ===ELEMENTS=== */
+}
+/* ===ELEMENTS=== */
 
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
 
@@ -3553,7 +3551,7 @@ form[id="search-top-box-form"] {
 	}
 }
 
-/* sidebar css */
+@media only screen and (max-width:768px){#search-top-box-input{display:inherit;}}/* sidebar css */
 
 #side-bar {
 	border: none;
