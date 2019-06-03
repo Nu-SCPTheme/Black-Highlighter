@@ -1007,6 +1007,30 @@ form[id="search-top-box-form"] {
 	background-color: rgba(0,0,0,0);
 	text-decoration: none;
 	cursor: pointer;
+	padding: .3em;
+	width: 100%;
+	height: -webkit-calc(100% - .6em);
+	height: calc(100% - .6em);
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #fcfcfc !important;
+	color: rgb(var(--swatch-menutxt-light-color)) !important;
+	white-space: pre;
+	border: none !important;
+	position: relative;
 }
 
 /* ? : Note from Croque: does ul>li>ul>li>ul>li even exist? */
