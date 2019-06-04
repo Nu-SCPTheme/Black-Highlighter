@@ -43,7 +43,7 @@ cat styles/root.css temp.css > temp && mv temp temp.css
 # Then we concat all files *except* main.css,root.css
 echo "Concatenating CSS..."
 shopt -s extglob || error "Unable to extend pattern matching"
-cat styles/!(main|root|normalize|overwrite-main).css >> temp.css
+cat styles/!(main|root|header_ch|normalize|overwrite-main).css >> temp.css
 
 # Wrap the whole thing in @supports for IE
 echo "Supporting IE..."
