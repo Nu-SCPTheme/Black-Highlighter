@@ -1341,4 +1341,93 @@ form[id="search-top-box-form"] {
 	}
 }
 
-@media only screen and (max-width:768px){#search-top-box-input{display:inherit;}}
+@media only screen and (max-width:768px){
+
+/* 7happy7's Mobile Search */
+@media only screen and (max-width: 768px) {
+	#login-status {
+		font-size: 80%!important;
+		right: calc(3% + 21px);
+	}
+	#search-top-box-input, #navi-bar, #navi-bar-shadow {
+		display: inline-block;
+	}
+	#search-top-box {
+		height: 7.5rem;
+		top: 0;
+		right: 0;
+		transition: box-shadow 0.3s, background 0.3s;
+	}
+	#search-top-box:focus-within {
+		background: rgba(255,255,255,0.7);
+		padding: 0 0 0 1rem;
+		box-shadow: -1rem 0 1rem#fff;
+	}
+	#search-top-box:not(:focus-within):before {
+		content: "\f002";
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		color: #a0a0a0;
+		position: absolute;
+		top: calc(3.75rem - 0.5em);
+		right: 0;
+		width: 2rem;
+		text-align: center;
+		z-index: 999;
+		cursor: pointer;
+	}
+	#search-top-box form[id="search-top-box-form"] {
+		height: 100%;
+		visibility: hidden;
+	}
+	#search-top-box form[id="search-top-box-form"]:focus-within {
+		visibility: visible;
+	}
+	#search-top-box form[id="search-top-box-form"] input {
+		height: calc(var(--base-font-size) * 2);
+		top: 0;
+		transform: translateY(calc(100% + var(--base-font-size) * 2));
+		position: relative;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	#search-top-box form[id="search-top-box-form"] input[type="text"] {
+		visibility: visible;
+		transition: width 0.6s, right 0.6s;
+	}
+	#search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="text"] {
+		height: 7.5rem;
+		width: 2rem;
+		position: absolute;
+		color: transparent!important;
+		right: 0;
+		transform: translateY(0) ;
+		border-width: 0 0 0 1px!important;
+		cursor: pointer;
+	}
+	#search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="text"]:hover {
+		background-color: rgb(var(--gray-monochrome)) !important;
+	}
+	#search-top-box form[id="search-top-box-form"] input[type="submit"] {
+		background-size: 50%!important;
+		background-position: center!important;
+		background-repeat: no-repeat!important;
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22search%22%20class%3D%22svg-inline--fa%20fa-search%20fa-w-16%22%20role%3D%22img%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M505%20442.7L405.3%20343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3%2044-79.7%2044-128C416%2093.1%20322.9%200%20208%200S0%2093.1%200%20208s93.1%20208%20208%20208c48.3%200%2092.7-16.4%20128-44v16.3c0%206.4%202.5%2012.5%207%2017l99.7%2099.7c9.4%209.4%2024.6%209.4%2033.9%200l28.3-28.3c9.4-9.4%209.4-24.6.1-34zM208%20336c-70.7%200-128-57.2-128-128%200-70.7%2057.2-128%20128-128%2070.7%200%20128%2057.2%20128%20128%200%2070.7-57.2%20128-128%20128z%22%2F%3E%3C%2Fsvg%3E")!important;
+		color: transparent;
+		background-color: rgb(var(--swatch-primary-darkest)) !important;
+		width: calc(var(--base-font-size) * 1.5 + 0.5rem);
+		visibility: visible;
+		transition: width 0.6s, padding 0.6s, opacity 0.6s;
+	}
+	#search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="submit"] {
+		width: 0;
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+	}
+	}
+	
