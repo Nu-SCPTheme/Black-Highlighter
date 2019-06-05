@@ -102,7 +102,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #page-title {
 	min-height: 2rem;
-	font-family: "Poppins", sans-serif;
+	font-family: "Noto Sans SC", sans-serif;
 	font-family: var(--title-font);
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-dark, 12, 12, 12));
@@ -193,6 +193,85 @@ span > a[href*="user:info"] {
 	-moz-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
+}
+
+/* Article Bottom Buttons */
+
+div#page-info,
+div.page-watch-options {
+    padding: 0 1em;
+}
+ 
+div#page-options-bottom {
+    width: 90%;
+    margin: 0 auto 2.125rem auto;
+}
+ 
+div#page-options-bottom-2 {
+    width: 90%;
+    margin: -2.125rem auto 0 auto;
+}
+ 
+div#page-options-bottom,
+div#page-options-bottom-2 {
+    text-align: left;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+ 
+div#page-options-bottom,
+div#page-options-bottom-2,
+div#page-options-bottom > a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+ 
+div#page-options-bottom > a,
+div#page-options-bottom-2 > a {
+    -webkit-box-flex: 2;
+    -webkit-flex-grow: 2;
+    -moz-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    padding: .25rem;
+    -webkit-border-radius: .25rem;
+    border-radius: .25rem;
+    background-color: rgba(178, 210, 180, 0.25);
+    background-color: rgba(var(--swatch-menubg-light-color), 0.25);
+    border: 0.0625rem solid rgba(255, 219, 90, 1);
+    border: 0.0625rem solid rgba(var(--swatch-primary), 1);
+    font-weight: 700;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    -o-transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+ 
+div#page-options-bottom-2 > a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+ 
+div#page-options-bottom > a:hover,
+div#page-options-bottom > a:active,
+div#page-options-bottom-2 > a:hover,
+div#page-options-bottom-2 > a:active {
+    text-decoration: none;
+    background-color: rgba(30, 55, 30, 1);
+    background-color: rgba(var(--swatch-primary-darker), 1);
+    color: rgba(255, 219, 90, 1);
+    color: rgba(var(--swatch-menutxt-light-color), 1);
 }
 
 #breadcrumbs {
@@ -335,7 +414,7 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel .panel-body > .news-title {
-	font-family: "Poppins", sans-serif;
+	font-family: "Noto Sans SC", sans-serif;
 	font-family: var(--title-font);
 	font-weight: 900;
 	text-transform: uppercase;
@@ -983,7 +1062,7 @@ div.buttons.alignleft {
 	}
 
 	#edit-page-title {
-		font-family: "Poppins", sans-serif;
+		font-family: "Noto Sans SC", sans-serif;
 		font-family: var(--title-font);
 		max-width: 90%;
 	}
@@ -1000,7 +1079,7 @@ div.buttons.alignleft {
 	}
 
 	#page-content div.title {
-		font-family: "Poppins", sans-serif;
+		font-family: "Noto Sans SC", sans-serif;
 		font-family: var(--title-font);
 		word-break: keep-all;
 	}
