@@ -3833,10 +3833,10 @@ form[id="search-top-box-form"] {
 		transition: box-shadow 0.3s, background 0.3s, -webkit-box-shadow 0.3s;
 	}
 	#search-top-box:focus-within {
-		background: rgba(255,255,255,0.7);
+		background: rgba(var(--swatch-menubg-dark-color),0.7);
 		padding: 0 0 0 1rem;
-		-webkit-box-shadow: -1rem 0 1rem#fff;
-		        box-shadow: -1rem 0 1rem#fff;
+		-webkit-box-shadow: -1rem 0 1rem rgb(var(--swatch-menubg-dark-color));
+		        box-shadow: -1rem 0 1rem rgb(var(--swatch-menubg-dark-color));
 	}
 	#search-top-box:not(:focus-within):before {
 		content: "\f002";
