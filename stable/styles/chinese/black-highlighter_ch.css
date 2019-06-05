@@ -84,6 +84,10 @@
 	--swatch-headerh2-color: var(--white-monochrome, 252, 252, 252);
 	--swatch-topmenu-border-color: var(--black-monochrome, 12, 12, 12);
 	--swatch-topmenu-bg-color: var(--gray-monochrome, 66, 66, 72);
+	/* Link Colors */
+	--link-color: var(--swatch-primary, 180, 35, 35);
+	--visited-link-color: 255, 52, 76;
+	--hover-link-color: 255, 52, 76;
 
 	--rating-module-button-color: var(--black-monochrome, 12, 12, 12);
 	--rating-module-text-color: var(--swatch-menutxt-dark-color, 12, 12, 12);
@@ -2354,7 +2358,7 @@ table.wiki-content-table tr {
 #who-rated-page-area > div {
     display: grid;
     grid-gap: 0.25em;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(4, 1fr auto);
     grid-auto-flow: row;
     justify-items: end;}
 
@@ -2378,7 +2382,7 @@ table.wiki-content-table tr {
 	}
 
 	#who-rated-page-area > div {
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(2, 1fr auto);
 	}
 }
 
@@ -4732,7 +4736,7 @@ ul {
 
 a {
 	color: rgb(180, 35, 35);
-	color: rgb(var(--swatch-primary));
+	color: rgb(var(--link-color));
 }
 
 a,a.newpage {
@@ -4748,11 +4752,13 @@ a.newpage {
 a:hover {
 	text-decoration: underline;
 	background-color: transparent;
+	color: rgb(255, 52, 76));
+	color: rgb(var(--hover-link-color));
 }
 
 a:visited {
-	color: rgb(100, 3, 15);
-	color: rgb(var(--swatch-menubg-medium-color));
+	color: rgb(255, 52, 76));
+	color: rgb(var(--visited-link-color));
 }
 
 /* Ruby Text */
