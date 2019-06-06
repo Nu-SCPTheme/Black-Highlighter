@@ -28,28 +28,18 @@
 	--mono-font: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 
 	/* Standard Colors */
-	--white-monochrome: 252, 252, 252;
-	/* white */
-	--pale-gray-monochrome: 244, 244, 244;
-	/* v light gray for blockquotes and stuff */
-	--light-pale-gray-monochrome: 244, 244, 244;
-	/* very light pale gray for misc. use */
-	--very-light-gray-monochrome: 215, 215, 215;
-	/* light accent gray for login status */
-	--gray-monochrome: 66, 66, 72;
-	/* gray */
-	--dark-gray-monochrome: 48, 48, 52;
-	/* dark accent gray for sidebar background */
-	--black-monochrome: 12, 12, 12;
-	/* black */
-	--bright-accent: 133, 0, 5;
-	/* bright red */
-	--medium-accent: 100, 46, 44;
-	/* medium red */
-	--dark-accent: 100, 3, 15;
-	/* dark red */
-	--newpage-color: 221, 102, 17;
-	/* pale orange */
+	--white-monochrome: 252, 252, 252; /* white */
+	--pale-gray-monochrome: 244, 244, 244; /* v light gray for blockquotes and stuff */
+	--light-pale-gray-monochrome: 244, 244, 244; /* very light pale gray for misc. use */
+	--very-light-gray-monochrome: 215, 215, 215; /* light accent gray for login status */
+	--gray-monochrome: 66, 66, 72; /* gray */
+	--dark-gray-monochrome: 48, 48, 52; /* dark accent gray for sidebar background */
+	--black-monochrome: 12, 12, 12; /* black */
+	--pale-accent: 180, 35, 35; /* light red, for visited links */
+	--bright-accent: 133, 0, 5; /* bright red */
+	--medium-accent: 100, 46, 44; /* medium red - the "default" accent color */
+	--dark-accent: 100, 3, 15; /* dark red */
+	--alt-accent: 221, 102, 17; /* pale orange, for newpage links */
 
 	/* Background and Header Colors */
 	--background-gradient-color: var(--very-light-gray-monochrome, 215, 215, 215);
@@ -83,10 +73,12 @@
 	--swatch-headerh2-color: var(--white-monochrome, 252, 252, 252);
 	--swatch-topmenu-border-color: var(--black-monochrome, 12, 12, 12);
 	--swatch-topmenu-bg-color: var(--gray-monochrome, 66, 66, 72);
+	
 	/* Link Colors */
 	--link-color: var(--swatch-primary, 180, 35, 35);
-	--visited-link-color: 255, 52, 76;
-	--hover-link-color: 255, 52, 76;
+	--visited-link-color: var(--pale-accent); /* was 255, 52, 76 */
+	--hover-link-color: var(--bright-accent);
+	--newpage-color: var(--alt-accent);
 
 	--rating-module-button-color: var(--black-monochrome, 12, 12, 12);
 	--rating-module-text-color: var(--swatch-menutxt-dark-color, 12, 12, 12);
