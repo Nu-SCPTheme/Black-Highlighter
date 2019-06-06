@@ -2,7 +2,7 @@
 # 
 # For generating concatenated, minified, stable versions of nu-SCP.
 #
-# Requires: yui-compressor, java
+# Requires: yui-compressor
 # 
 # 1. Takes all CSS files from /styles
 # 2. Concatenates them
@@ -29,42 +29,53 @@ if [ "${PWD##*/}" != "Black-Highlighter" ]; then
 fi
 
 # Take main.css and copy to a temp file
+# The temp file, temp.css, is where we'll be conducting concatenation, so we don't corrupt the existing minified script if something fails
 echo "Duplicating main.css..."
 cp styles/main.css temp.css
 
 # Scrap the @import rules
+# main.css has imports that import the other stylesheets. We'll be lumping everything into one stylesheet, so obviously we won't need those
 echo "Removing @imports..."
 sed -i "/^@import.*\.css.*$/d" temp.css || error "@import removal failed"
 
 # Append this file to root.css
+# root.css has all the css variables and *absolutely must* be at the top of the final file
 echo "Prepending root.css..."
 cat styles/root.css temp.css > temp && mv temp temp.css
 
 # Then we concat all files *except* main.css,root.css
+# The remaining files in /styles all need to be concatenated. This script isn't fussy about their order
 echo "Concatenating CSS..."
 shopt -s extglob || error "Unable to extend pattern matching"
 cat styles/!(main|root|normalize|overwrite-main).css >> temp.css
 
 # Wrap the whole thing in @supports for IE
+# If the user's browser doesn't support variables, then turn off BHL
+# I think conc-mac.sh has removed this bit because the variables all have default values, so this may be obsolete.
 echo "Supporting IE..."
 sed -i '1 s/^/@supports(--css: variables) {\n/' temp.css
 echo "}" >> temp.css
 
 # Extract any imports rules to the top of the file
+# css imports won't work unless they're literally the very first thing in the file
 grep '^@import' temp.css > temp
 grep -v '^@import' temp.css >> temp
 mv temp temp.css
 
 # Move temp.css
+# Concatenated file is complete, so copy it across to /stable
 echo "Created black-highlighter.css"
 cp temp.css stable/styles/black-highlighter.css
 
 # Extract inline images to array
+# yui-compressor doesn't like inline images.
+# The awk command here is black magic that I don't understand, but it creates an array of image data
 IFS='>'
 IMAGES=($(awk -F '>' '/data:image/ && match($0,/\".*\"/){val=val?val ">" substr($0,RSTART+1,RLENGTH-2):substr($0,RSTART+1,RLENGTH-2)} END{print val}' temp.css))
 echo "Found ${#IMAGES[@]} images to extract"
 echo "Extracting images..."
 count=0
+# Replace each extracted image with a marker, which we'll substitute later on after minification
 for i in "${IMAGES[@]}"; do
 	#echo "IMAGES[$count]=$i"
 	sed -i -e "s>$i>!!MARKER$count>g" temp.css || error "Bad sed"
