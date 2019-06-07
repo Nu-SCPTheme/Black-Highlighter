@@ -2400,13 +2400,9 @@ div.block-left {
 table.wiki-content-table * {
 	margin: 0;
 	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
-table.wiki-content-table,
-table.wiki-content-table tbody {
+table.wiki-content-table {
 	border-collapse: unset;
 	border-spacing: 0;
 	margin: 0.5em auto;
@@ -3908,6 +3904,10 @@ form[id="search-top-box-form"] {
 		margin: 0;
 		padding: 0;
 		opacity: 0;
+	}
+
+	#header h1 a {
+		z-index: inherit;
 	}
 }/* sidebar css */
 

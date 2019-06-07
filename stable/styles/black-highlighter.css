@@ -43,14 +43,16 @@
 	/* dark accent gray for sidebar background */
 	--black-monochrome: 12, 12, 12;
 	/* black */
+	--pale-accent: 230, 40, 60;
+	/* light red, for visited links */
 	--bright-accent: 133, 0, 5;
 	/* bright red */
 	--medium-accent: 100, 46, 44;
-	/* medium red */
+	/* medium red - the "default" accent color */
 	--dark-accent: 100, 3, 15;
 	/* dark red */
-	--newpage-color: 221, 102, 17;
-	/* pale orange */
+	--alt-accent: 221, 102, 17; 
+	/* pale orange, for newpage links */
 
 	/* Background and Header Colors */
 	--background-gradient-color: var(--very-light-gray-monochrome, 215, 215, 215);
@@ -84,10 +86,12 @@
 	--swatch-headerh2-color: var(--white-monochrome, 252, 252, 252);
 	--swatch-topmenu-border-color: var(--black-monochrome, 12, 12, 12);
 	--swatch-topmenu-bg-color: var(--gray-monochrome, 66, 66, 72);
+	
 	/* Link Colors */
 	--link-color: var(--swatch-primary, 180, 35, 35);
-	--visited-link-color: 255, 52, 76;
-	--hover-link-color: 255, 52, 76;
+	--visited-link-color: var(--pale-accent); /* was 255, 52, 76 */
+	--hover-link-color: var(--bright-accent);
+	--newpage-color: var(--alt-accent);
 
 	--rating-module-button-color: var(--black-monochrome, 12, 12, 12);
 	--rating-module-text-color: var(--swatch-menutxt-dark-color, 12, 12, 12);
@@ -421,7 +425,7 @@
 
 	/* Spacing Measurements */
 	--offset-from-page-top: 1.2rem;
-	/* space between the top of the page and the start of the header */
+	/* space between the top of the page and the start of the header text */
 	--body-width-on-desktop: 44.25rem;
 	--sidebar-width-on-desktop: -webkit-calc(
 		var(--base-font-size, var(--font-calc, 0.875rem)) * 19
@@ -632,25 +636,6 @@ span.printuser {
 	flex-wrap: nowrap;
 	align-items: baseline;
 	justify-content: center;
-}
-
-span > a[href*="user:info"] {
-	display: -webkit-inline-box;
-	display: -webkit-inline-flex;
-	display: -moz-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	   -moz-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	   -moz-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	white-space: nowrap;
 }
 
 .printuser img.small {
@@ -2400,13 +2385,9 @@ div.block-left {
 table.wiki-content-table * {
 	margin: 0;
 	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
-table.wiki-content-table,
-table.wiki-content-table tbody {
+table.wiki-content-table {
 	border-collapse: unset;
 	border-spacing: 0;
 	margin: 0.5em auto;
@@ -3835,8 +3816,8 @@ form[id="search-top-box-form"] {
 	#search-top-box:focus-within {
 		background: rgba(var(--swatch-menubg-dark-color),0.7);
 		padding: 0 0 0 1rem;
-		-webkit-box-shadow: -1rem 0 1rem rgb(var(--swatch-menubg-dark-color));
-		        box-shadow: -1rem 0 1rem rgb(var(--swatch-menubg-dark-color));
+		-webkit-box-shadow: -1rem 0 1rem rgba(var(--swatch-menubg-dark-color),0.7);
+		        box-shadow: -1rem 0 1rem rgba(var(--swatch-menubg-dark-color),0.7);
 	}
 	#search-top-box:not(:focus-within):before {
 		content: "\f002";
@@ -3913,7 +3894,12 @@ form[id="search-top-box-form"] {
 		padding: 0;
 		opacity: 0;
 	}
-}/* sidebar css */
+
+	#header h1 a {
+		z-index: inherit;
+	}
+}
+/* sidebar css */
 
 #side-bar {
 	border: none;
