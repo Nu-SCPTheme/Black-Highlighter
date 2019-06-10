@@ -1840,10 +1840,8 @@ div.buttons.alignleft {
 }
 
 .yui-navset .yui-nav .selected a:hover {
-	background-color: rgb(170, 170, 170);
-	background-color: rgb(var(--swatch-menubg-medium-color));
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-light));
+	/* Indicate that the currently selected tab is not clickable */
+	cursor: default;
 }
 
 
