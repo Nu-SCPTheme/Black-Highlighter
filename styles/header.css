@@ -10,14 +10,16 @@
 	background-clip: border-box;
 	-webkit-background-size: auto 5.375rem;
 	background-size: auto 5.375rem;
+	-webkit-filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
+	filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
+	-webkit-filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome)));
+	filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome)));
 }
 
-@supports (-webkit-appearance:none) {
+@supports (-moz-appearance:meterbar) and (display:flex) {
 	#header {
-		-webkit-filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
-		filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
-		-webkit-filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome)));
-		filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome)));
+		-webkit-filter: initial;
+		filter: initial;
 	}
 }
 
