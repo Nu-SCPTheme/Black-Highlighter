@@ -3141,6 +3141,7 @@ form[id="search-top-box-form"] {
 #top-bar > div.top-bar > ul > li:last-of-type > ul,
 #top-bar > div.mobile-top-bar > ul > li:last-of-type > ul {
     right: 0;
+    left: auto;
 }
 
 #top-bar li ul {
@@ -4283,8 +4284,11 @@ form[id="search-top-box-form"] {
 }
 
 #side-bar div.menu-item a[href*="/scp-"] {
-	padding-right: 0.5em !important;
-
+	padding-right: .5em !important;
+	width: 100%;
+	flex-grow: 2;
+	flex-shrink: 1;
+	text-align: center;
 }
 
 #side-bar div.menu-item .sub-text {
@@ -4366,6 +4370,14 @@ form[id="search-top-box-form"] {
 		-ms-flex-negative: 2;
 			flex-shrink: 2;
 	text-align: left;
+}
+
+#side-bar div.menu-item a[href*="scp-series"] {
+	padding-right: .5em !important;
+	width: 100%;
+	flex-grow: 2;
+	flex-shrink: 1;
+	text-align: center;
 }
 
 #side-bar div.menu-item>:last-child {
