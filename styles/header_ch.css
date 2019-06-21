@@ -793,7 +793,6 @@ form[id="search-top-box-form"] {
     display: -ms-flexbox;
     display: flex;
     margin: 0;
-    padding: 0;
 	position: relative;
 	text-align: center;
 }
@@ -1256,8 +1255,9 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
-		max-height: -webkit-calc((100vh - 15rem) / 15);
-		max-height: calc((100vh - 15rem) / 15);
+		max-height: -webkit-calc((100vh - 15rem) / 10);
+		max-height: calc((100vh - 15rem) / 10);
+		height: 3rem;
 		max-width: -webkit-calc(80vw + 0.0625rem);
 		max-width: calc(80vw + 0.0625rem);
 		width: -webkit-calc(80vw + 0.0625rem);
@@ -1366,8 +1366,9 @@ form[id="search-top-box-form"] {
 		-ms-flex-align: center;
 		align-items: center;
 		-ms-flex-pack: center;
-		border: none;
-		background-color: transparent;
+		/* Overriding Wikidot's Default Styling */
+		border: none !important;
+		background-color: transparent !important;
 	}
 }
 
