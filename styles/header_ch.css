@@ -722,6 +722,34 @@ form[id="search-top-box-form"] {
 	background: rgba(var(--swatch-menubg-color), 0.15);
 }
 
+#top-bar div.top-bar > ul > li > ul > li:hover::before, 
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover::before,
+#top-bar div.top-bar > ul > li > ul > li:hover::after, 
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover::after {
+  content: " ";  
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -10%;
+  width: 70%;
+  height: 100%;
+  z-index: 5;
+}
+
+#top-bar div.top-bar > ul > li > ul > li:hover::before, 
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover::before {
+  top: -100%;
+  -webkit-clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#top-bar div.top-bar > ul > li > ul > li:hover::after, 
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover::after {
+  bottom: -100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+}
+
 #top-bar div.top-bar > ul > li > ul > li:hover > a,
 #top-bar div.top-bar > ul > li > ul > li > a:focus-within,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover > a,
