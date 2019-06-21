@@ -81,7 +81,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	min-height: -webkit-calc(100vh - 9.375rem);
 	min-height: calc(100vh - 9.375rem);
 	flex-grow: 2;
-	height: auto !important;
+	height: auto;
 	position: initial;
 	/* display: -webkit-flex;
 	display: -moz-flex;
@@ -108,11 +108,11 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 	color: rgb(var(--swatch-text-dark, 12, 12, 12));
 	font-weight: 600;
 	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
-	margin: 0 0 0.6em !important;
-	padding: 0 0 0.25em !important;
+	margin: 0 0 0.6em;
+	padding: 0 0 0.25em;
 	border-color: rgb(66, 66, 72);
 	border-color: rgb(var(--swatch-menubg-medium-dark-color, 66, 66, 72));
-	text-align: left !important;
+	text-align: left;
 }
 
 .form-control {
@@ -155,7 +155,7 @@ span > a[href*="user:info"] {
 
 .printuser img.small {
 	margin-right: 0.0625rem;
-	min-width: auto !important; /* Fixes issue where avatar gets stretched in specific situations */
+	min-width: auto; /* Fixes issue where avatar gets stretched in specific situations */
 }
 
 #main-content {
@@ -796,7 +796,7 @@ textarea,
 
 .signature,
 .hidden {
-	display: none !important;
+	display: none;
 }
 
 .bblock,
@@ -819,7 +819,7 @@ textarea,
 /* Edit Area Styling */
 
 table.form {
-	margin: 0.5rem -0.25rem !important;
+	margin: 0.5rem -0.25rem;
 }
 
 table.form, table.form > tbody {
@@ -964,7 +964,7 @@ div.buttons.alignleft {
 .math-equation,
 .bibitem,
 .thread-container .post .long .options {
-	height: auto !important;
+	height: auto;
 }
 
 /* Hiding Hidden Tags */
@@ -1120,12 +1120,12 @@ div.buttons.alignleft {
 	*,
 	:before,
 	:after {
-		background: transparent !important;
-		color: rgb(12, 12, 12) !important;
-		color: rgb(var(--swatch-text-dark, 12, 12, 12)) !important;
-		-webkit-box-shadow: none !important;
-		box-shadow: none !important;
-		text-shadow: none !important;
+		background: transparent;
+		color: rgb(12, 12, 12);
+		color: rgb(var(--swatch-text-dark, 12, 12, 12));
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		text-shadow: none;
 	}
 
 	a,
@@ -1147,7 +1147,7 @@ div.buttons.alignleft {
 	}
 
 	pre {
-		white-space: pre-wrap !important;
+		white-space: pre-wrap;
 	}
 
 	pre,

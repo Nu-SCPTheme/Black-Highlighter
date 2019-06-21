@@ -179,7 +179,7 @@
 /* Chinese Specific Styling */
 
 .side-block div[style="text-align: center;"] img{
-	margin:0 !important;
+	margin:0;
 }
 
 #side-bar div[style*="#f0f0f0"]{
@@ -338,7 +338,7 @@
 }
 
 #side-bar div.menu-item a[href*="/scp-"] {
-	padding-right: .5em !important;
+	padding-right: .5em;
 	width: 100%;
 	flex-grow: 2;
 	flex-shrink: 1;
@@ -350,8 +350,8 @@
 	display: inline-flex;
 	color: rgba(var(--swatch-primary),1);
 	text-align: left;
-	padding-left: 1em !important;
-	padding-right: 3em !important;
+	padding-left: 1em;
+	padding-right: 3em;
 }
 
 #side-bar div.menu-item img[src*="scp-wiki-cn.wikidot"] + a[href*="scp-series"] {
@@ -446,7 +446,7 @@
 }
 
 #side-bar div.menu-item a[href*="scp-series"] {
-	padding-right: .5em !important;
+	padding-right: .5em;
 	width: 100%;
 	flex-grow: 2;
 	flex-shrink: 1;
@@ -662,7 +662,7 @@
 	width: 2rem;
 	height: auto;
 	margin: 0;
-	padding: 0 !important;
+	padding: 0;
 	border: none;
 	-webkit-border-radius: none;
 	border-radius: none;
@@ -686,13 +686,11 @@ a[href*="/most-recently-edited"] {
 	min-width: calc(0.875rem * 2.5);
 	min-width: -webkit-calc(var(--base-font-size) * 2.5);
 	min-width: calc(var(--base-font-size) * 2.5);
-	display: -webkit-box !important;
-	display: -webkit-flex !important;
-	display: -moz-box !important;
-	display: -ms-flexbox !important;
-	display: flex !important;
-	/* !important explaination: 
-	overwriting other display since this is temporary */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	-moz-box-align: center;
