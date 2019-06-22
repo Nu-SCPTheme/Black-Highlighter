@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800");
-@supports(--css: variables) { 
+@supports(--css: variables) {
 @charset "utf-8";
 
 /* Fonts */
@@ -859,6 +859,8 @@ div.sexy-box div.image-container img {
 .content-panel.standalone {
 	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-background, 252, 252, 252));
+	padding: 1em 2em 2em 2em !important;
+	box-sizing: border-box;
 }
 
 .content-panel.series {
