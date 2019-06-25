@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700,900|ZCOOL+QingKe+HuangYou&display=swap');
-@supports(--css: variables) {
+@supports(--css: variables) { 
 @charset "utf-8";
 
 /* Fonts */
@@ -1680,7 +1680,8 @@ div.buttons.alignleft {
 	h3 {
 		page-break-after: avoid;
 	}
-}/* ===ELEMENTS=== */
+}
+/* ===ELEMENTS=== */
 
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
 
@@ -3723,6 +3724,11 @@ form[id="search-top-box-form"] {
 		-ms-transform: translate(-50%, 0);
 		-o-transform: translate(-50%, 0);
 		transform: translate(-50%, 0);
+	}
+	
+	#top-bar > div.mobile-top-bar > ul > li:last-of-type > ul {
+		right: 0;
+		left: 50%;
 	}
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
