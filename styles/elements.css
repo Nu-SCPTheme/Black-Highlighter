@@ -240,20 +240,28 @@ div.image-block,div.image-block img {
 /* RATING */
 
 :root {
-	--rating-module-height: 1.3125rem;
+	--rating-module-height: 1.5rem;
 }
+/*
 
-/* Plain, no-credit-button rating module */
 .page-rate-widget-box {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
-	/* position: static;
-		margin-top: -3rem; */
 	overflow: hidden;
 	display: -webkit-inline-box;
 	display: -webkit-inline-flex;
 	display: -moz-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	   -moz-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	   -moz-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	-webkit-box-shadow: 0.0625rem 0.0625rem 0 rgba(12, 12, 12, 0.15);
@@ -262,7 +270,6 @@ div.image-block,div.image-block img {
 	box-shadow: 0.0625rem 0.0625rem 0 var(--box-shadow);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
-	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
 
 	background: -webkit-gradient(linear,
 		left bottom, left top,
@@ -300,7 +307,11 @@ div.image-block,div.image-block img {
 	height: var(--rating-module-height);
 }
 
-/* Same rule as above, but specifically for the info module / credit button */
+.page-rate-widget-box, 
+.page-rate-widget-box * {
+	box-sizing: border-box;
+}
+
 .rate-box-with-credit-button .page-rate-widget-box {
 	-webkit-border-radius: 0;
 	border-radius: 0;
@@ -325,7 +336,6 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a,
-/* Credit Button Rating Module Specific */
 .rate-box-with-credit-button > .creditButton,
 .rate-box-with-credit-button > .creditButton > p {
 	padding: 0;
@@ -406,7 +416,6 @@ div.image-block,div.image-block img {
 	font-size: calc(0.875rem * 0.8);
 	font-size: -webkit-calc(var(--base-font-size) * 0.8);
 	font-size: calc(var(--base-font-size) * 0.8);
-	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
 	color: rgb(12, 12, 12) !important;
 	color: rgb(var(--rating-module-text-color)) !important;
@@ -471,6 +480,229 @@ div.image-block,div.image-block img {
 		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 	}
 }
+*/
+
+/* Testing New Rating */
+
+/* RATING */
+
+:root {
+	--rating-module-height: 1.5rem;
+}
+
+/* Plain, no-credit-button rating module */
+.page-rate-widget-box {
+	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
+	overflow: hidden;
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: 0.0625rem 0.0625rem 0 rgba(12, 12, 12, 0.15);
+	box-shadow: 0.0625rem 0.0625rem 0 rgba(12, 12, 12, 0.15);
+	-webkit-box-shadow: 0.0625rem 0.0625rem 0 var(--box-shadow);
+	box-shadow: 0.0625rem 0.0625rem 0 var(--box-shadow);
+	padding: 0 0.125rem;
+	margin-bottom: 0.75rem;
+	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
+
+	background: -webkit-gradient(linear,
+		left bottom, left top,
+		from(rgba(170, 170, 170, 0.25)),
+		to(rgba(170, 170, 170, 0.15)));
+
+	background: -webkit-linear-gradient(bottom,
+		rgba(170, 170, 170, 0.25) 0%,
+		rgba(170, 170, 170, 0.15) 100%);
+
+	background: -o-linear-gradient(bottom,
+		rgba(170, 170, 170, 0.25) 0%,
+		rgba(170, 170, 170, 0.15) 100%);
+
+	background: linear-gradient(to top,
+		rgba(170, 170, 170, 0.25) 0%,
+		rgba(170, 170, 170, 0.15) 100%);
+	background: -webkit-gradient(linear,
+		left bottom, left top,
+		from(rgba(var(--swatch-menubg-medium-color), 0.25)),
+		to(rgba(var(--swatch-menubg-medium-color), 0.15)));
+	background: -webkit-linear-gradient(bottom,
+		rgba(var(--swatch-menubg-medium-color), 0.25) 0%,
+		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+	background: -o-linear-gradient(bottom,
+		rgba(var(--swatch-menubg-medium-color), 0.25) 0%,
+		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+	background: linear-gradient(to top,
+		rgba(var(--swatch-menubg-medium-color), 0.25) 0%,
+		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+	background-color: rgb(252, 252, 252);
+	background-color: rgb(var(--swatch-background));
+	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
+	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color), 0.25);
+	height: var(--rating-module-height);
+	align-items: center;
+	justify-content: center;
+}
+
+/* Same rule as above, but specifically for the info module / credit button */
+.rate-box-with-credit-button .page-rate-widget-box {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: none;
+	border: none;
+}
+
+.page-rate-widget-box .rate-points,
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel {
+	display: block;
+	border: none;
+	margin: 0;
+}
+
+.page-rate-widget-box .rate-points,
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel,
+/* Credit Button Rating Module Specific */
+.rate-box-with-credit-button > .creditButton,
+.rate-box-with-credit-button > .creditButton > p {
+	text-transform: uppercase;
+	font-size: -webkit-calc(0.875rem * 0.8);
+	font-size: calc(0.875rem * 0.8);
+	font-size: -webkit-calc(var(--base-font-size) * 0.8);
+	font-size: calc(var(--base-font-size) * 0.8);
+	/* !important is needed here to override styles loaded when Rate is clicked */
+	background-color: transparent !important;
+	color: rgb(12, 12, 12) !important;
+	color: rgb(var(--rating-module-text-color)) !important;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 2;
+}
+
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a,
+.page-rate-widget-box .rate-points .number {
+	font-size: -webkit-calc(0.875rem * 1.2);
+	font-size: calc(0.875rem * 1.2);
+	font-size: -webkit-calc(var(--base-font-size) * 1.2);
+	font-size: calc(var(--base-font-size) * 1.2);
+	min-width: var(--rating-module-height);
+}
+
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
+	color: transparent;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a {
+	background-color: none;
+	background-color: rgba(100, 3, 15, 0.1);
+	background-color: rgba(var(--swatch-primary-darkest), 0.1);
+}
+
+.page-rate-widget-box .rate-points,
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel,
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
+	font-weight: 700;
+	position: relative;
+	background: transparent;
+}
+
+.page-rate-widget-box .rateup a:hover,
+.page-rate-widget-box .ratedown a:hover,
+.page-rate-widget-box .cancel a:hover {
+	text-decoration: none;
+	color: transparent;
+}
+
+.page-rate-widget-box .rateup a:hover {
+	background-color: rgba(0, 200, 0, 0.8);
+}
+
+.page-rate-widget-box .ratedown a:hover {
+	background-color: rgba(200, 0, 0, 0.8);
+}
+
+.page-rate-widget-box .cancel a:hover {
+	background-color: rgba(200, 200, 200, 0.8);
+}
+
+/* Rating Icons */
+
+.page-rate-widget-box .rateup a::before,
+.page-rate-widget-box .ratedown a::before,
+.page-rate-widget-box .cancel a::before,
+.page-rate-widget-box .rateup a::after,
+.page-rate-widget-box .ratedown a::after,
+.page-rate-widget-box .cancel a::after {
+	content: " ";
+	position: absolute;
+	background-color: rgb(12, 12, 12);
+	background-color: rgb(var(--rating-module-button-color));
+	pointer-events: none;
+	color: transparent;
+}
+
+.page-rate-widget-box .rateup a::before {
+	left: 0.6875rem;
+	color: transparent;
+	width: 0.125rem;
+	height: 1rem;
+}
+
+.page-rate-widget-box .rateup a::after {
+	color: transparent;
+	width: 1rem;
+	height: 0.125rem;
+	left: 0.25rem;
+}
+
+.page-rate-widget-box .ratedown a::before {
+	color: transparent;
+	width: 1rem;
+	height: 0.125rem;
+	left: 0.25rem;
+}
+
+.page-rate-widget-box .cancel a::after,
+.page-rate-widget-box .cancel a::before {
+	width: 0.125rem;
+	height: 1rem;
+	left: 0.6875rem;
+}
+
+.page-rate-widget-box .cancel a::after {
+	transform: rotate(-45deg);
+}
+
+.page-rate-widget-box .cancel a::before {
+	transform: rotate(45deg);
+}
+
 
 /* Heritage Rating Module */
 
