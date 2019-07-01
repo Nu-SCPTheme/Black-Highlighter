@@ -615,7 +615,6 @@ div.image-block,div.image-block img {
 
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a {
-	background-color: none;
 	background-color: rgba(100, 3, 15, 0.1);
 	background-color: rgba(var(--swatch-primary-darkest), 0.1);
 }
@@ -663,30 +662,30 @@ div.image-block,div.image-block img {
 }
 
 .page-rate-widget-box .rateup a:hover {
-	background-color: rgba(0, 200, 0, 0.8);
+	background-color: rgba(var(--rating-module-button-plus-color), 0.8);
 }
 
 .page-rate-widget-box .ratedown a:hover {
-	background-color: rgba(200, 0, 0, 0.8);
+	background-color: rgba(var(--rating-module-button-negative-color), 0.8);
 }
 
 .page-rate-widget-box .cancel a:hover {
-	background-color: rgba(200, 200, 200, 0.8);
+	background-color: rgba(var(--rating-module-button-cancel-color), 0.8);
 }
 
 .page-rate-widget-box .rateup a:hover::before,
 .page-rate-widget-box .rateup a:hover::after {
-	background-color: rgba(var(--rating-module-text-color));
+	background-color: rgba(var(--rating-module-text-hover-color));
 }
 
 .page-rate-widget-box .ratedown a:hover::before,
 .page-rate-widget-box .ratedown a:hover::after {
-	background-color: rgba(var(--rating-module-text-color));
+	background-color: rgba(var(--rating-module-text-hover-color));
 }
 
 .page-rate-widget-box .cancel a:hover::before,
 .page-rate-widget-box .cancel a:hover::after {
-	background-color: rgba(var(--rating-module-text-color));
+	background-color: rgba(var(--rating-module-text-hover-color));
 }
 
 /* Canceling PageRate CSS */
