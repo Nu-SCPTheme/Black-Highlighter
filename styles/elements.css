@@ -632,6 +632,29 @@ div.image-block,div.image-block img {
 	background: transparent;
 }
 
+.page-rate-widget-box .cancel a,
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a::before,
+.page-rate-widget-box .rateup a::before,
+.page-rate-widget-box .ratedown a::before,
+.page-rate-widget-box .cancel a::after,
+.page-rate-widget-box .rateup a::after,
+.page-rate-widget-box .ratedown a::after {
+	-webkit-transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-moz-transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
 .page-rate-widget-box .rateup a:hover,
 .page-rate-widget-box .ratedown a:hover,
 .page-rate-widget-box .cancel a:hover {
@@ -649,6 +672,21 @@ div.image-block,div.image-block img {
 
 .page-rate-widget-box .cancel a:hover {
 	background-color: rgba(200, 200, 200, 0.8);
+}
+
+.page-rate-widget-box .rateup a:hover::before,
+.page-rate-widget-box .rateup a:hover::after {
+	color: rgba(rgb(--swatch-menutxt-light-color));
+}
+
+.page-rate-widget-box .ratedown a:hover::before,
+.page-rate-widget-box .ratedown a:hover::after {
+	color: rgba(rgb(--swatch-menutxt-light-color));
+}
+
+.page-rate-widget-box .cancel a:hover::before,
+.page-rate-widget-box .cancel a:hover::after {
+	color: rgba(rgb(--swatch-menutxt-light-color));
 }
 
 /* Canceling PageRate CSS */
