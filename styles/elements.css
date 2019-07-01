@@ -466,31 +466,31 @@ div.image-block,div.image-block img {
 }
 
 .page-rate-widget-box .rateup a::before {
-	left: 0.625rem;
+	left: 0.65625rem;
 	color: transparent;
-	width: 0.25rem;
-	height: 1rem;
+	width: 0.1875rem;
+	height: 0.750rem;
 }
 
 .page-rate-widget-box .rateup a::after {
 	color: transparent;
-	width: 1rem;
-	height: 0.25rem;
-	left: 0.25rem;
+	width: 0.750rem;
+	height: 0.1875rem;
+	left: 0.375rem;
 }
 
 .page-rate-widget-box .ratedown a::before {
 	color: transparent;
-	width: 1rem;
-	height: 0.25rem;
-	left: 0.25rem;
+	width: 0.750rem;
+	height: 0.1875rem;
+	left: 0.375rem;
 }
 
 .page-rate-widget-box .cancel a::after,
 .page-rate-widget-box .cancel a::before {
-	width: 0.25rem;
-	height: 1.15625rem;
-	left: 0.6875rem;
+	width: 0.1875rem;
+	height: 0.875rem;
+	left: 0.65625rem;
 }
 
 .page-rate-widget-box .cancel a::after {
@@ -500,7 +500,6 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .cancel a::before {
 	transform: rotate(45deg);
 }
-
 
 /* Heritage Rating Module */
 
@@ -606,7 +605,7 @@ div.image-block,div.image-block img {
 }
 
 #page-content .rate-box-with-credit-button > .creditButton:hover {
-	background: rgba(50, 50, 50, 0.1);
+	background: rgba(var(--rating-module-button-credit-color), 0.9);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p {
@@ -657,6 +656,11 @@ div.image-block,div.image-block img {
 	height: 0.25rem;
 	border-radius: 50%;
 	margin-bottom: 1.03125rem;
+}
+
+#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::before,
+#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::after {
+	background-color: rgba(var(--rating-module-text-hover-color));
 }
 
 /* Article Images */
