@@ -467,47 +467,25 @@ div.image-block,div.image-block img {
 
 .page-rate-widget-box .rateup a::before {
 	color: transparent;
-	width: 0.1875rem;
+	width: 0.25rem;
 	height: 0.750rem;
 }
 
 .page-rate-widget-box .rateup a::after {
 	color: transparent;
 	width: 0.750rem;
-	height: 0.1875rem;
+	height: 0.25rem;
 }
 
 .page-rate-widget-box .ratedown a::before {
 	color: transparent;
 	width: 0.750rem;
-	height: 0.1875rem;
+	height: 0.25rem;
 }
-
-/* Fixing Chrome not doing half pixels */
-
-@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
-	.selector:not(*:root), 
-	.page-rate-widget-box .rateup a::before,
-	.page-rate-widget-box .ratedown a::before,
-	.page-rate-widget-box .cancel a::before,
-	.page-rate-widget-box .rateup a::after,
-	.page-rate-widget-box .ratedown a::after,
-	.page-rate-widget-box .cancel a::after {
-		transform: translateY(-0.5px);
-	}
-}
-
-@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
-	.selector:not(*:root),
-	.page-rate-widget-box .rateup a::before {
-		transform: translateX(0.5px);
-	}
-}
-  
 
 .page-rate-widget-box .cancel a::after,
 .page-rate-widget-box .cancel a::before {
-	width: 0.1875rem;
+	width: 0.25rem;
 	height: 0.875rem;
 }
 
