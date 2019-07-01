@@ -93,8 +93,14 @@
 	--hover-link-color: var(--bright-accent);
 	--newpage-color: var(--alt-accent);
 
+	/* Rating Module Colors */
 	--rating-module-button-color: var(--black-monochrome, 12, 12, 12);
+	--rating-module-button-plus-color: 0, 200, 0;
+	--rating-module-button-negative-color: 200, 0, 0;
+	--rating-module-button-cancel-color: 200, 200, 200;
+	--rating-module-button-credit-color: 200, 200, 200;
 	--rating-module-text-color: var(--swatch-menutxt-dark-color, 12, 12, 12);
+	--rating-module-text-hover-color: var(--swatch-menutxt-light-color, 252, 252, 252);
 
 	/* Header Gradients */
 
@@ -1904,17 +1910,17 @@ div.image-block,div.image-block img {
 	width: 18.75rem;
 }
 
+/* Testing New Rating */
+
 /* RATING */
 
 :root {
-	--rating-module-height: 1.3125rem;
+	--rating-module-height: 1.5rem;
 }
 
 /* Plain, no-credit-button rating module */
 .page-rate-widget-box {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
-	/* position: static;
-		margin-top: -3rem; */
 	overflow: hidden;
 	display: -webkit-inline-box;
 	display: -webkit-inline-flex;
@@ -1965,6 +1971,8 @@ div.image-block,div.image-block img {
 	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
 	border: 0.0625rem solid rgba(var(--swatch-menubg-black-color), 0.25);
 	height: var(--rating-module-height);
+	align-items: center;
+	justify-content: center;
 }
 
 /* Same rule as above, but specifically for the info module / credit button */
@@ -1983,91 +1991,16 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .cancel {
 	display: block;
 	border: none;
-	margin: 0 0.125rem 0 0;
-}
-
-.page-rate-widget-box .rateup,
-.page-rate-widget-box .ratedown,
-.page-rate-widget-box .cancel,
-.page-rate-widget-box .rateup a,
-.page-rate-widget-box .ratedown a,
-.page-rate-widget-box .cancel a,
-/* Credit Button Rating Module Specific */
-.rate-box-with-credit-button > .creditButton,
-.rate-box-with-credit-button > .creditButton > p {
-	padding: 0;
-	width: -webkit-calc(0.875rem * 1.5);
-	width: calc(0.875rem * 1.5);
-	width: -webkit-calc(var(--base-font-size) * 1.5);
-	width: calc(var(--base-font-size) * 1.5);
-	display: block;
-	line-height: var(--rating-module-height);
-	text-align: center;
-	-webkit-transition: background-color 0.1s ease-in-out;
-	-o-transition: background-color 0.1s ease-in-out;
-	transition: background-color 0.1s ease-in-out;
-	text-transform: uppercase;
-}
-
-.page-rate-widget-box .rateup a,
-.page-rate-widget-box .ratedown a {
-	background-color: none;
-	background: unset;
-	background-color: rgba(100, 3, 15, 0.1);
-	background-color: rgba(var(--swatch-primary-darkest), 0.1);
+	margin: 0;
 }
 
 .page-rate-widget-box .rate-points,
 .page-rate-widget-box .rateup,
 .page-rate-widget-box .ratedown,
 .page-rate-widget-box .cancel,
-.page-rate-widget-box .rateup a,
-.page-rate-widget-box .ratedown a,
-.page-rate-widget-box .cancel a {
-	color: rgb(12, 12, 12);
-	color: rgb(var(--rating-module-text-color));
-	font-weight: 700;
-	position: relative;
-	background: transparent;
-}
-
-.page-rate-widget-box .rateup a,
-.page-rate-widget-box .ratedown a,
-.page-rate-widget-box .cancel a {
-	color: rgb(12, 12, 12);
-	color: rgb(var(--rating-module-button-color));
-	font-weight: 700;
-	position: relative;
-}
-
-.page-rate-widget-box .cancel {
-	font-size: 85%;
-}
-
-.page-rate-widget-box .rateup a:hover,
-.page-rate-widget-box .ratedown a:hover,
-.page-rate-widget-box .cancel a:hover {
-	text-decoration: none;
-}
-
-.page-rate-widget-box .rateup a:hover {
-	background-color: rgba(0, 200, 0, 0.8);
-}
-
-.page-rate-widget-box .ratedown a:hover {
-	background-color: rgba(200, 0, 0, 0.8);
-}
-
-.page-rate-widget-box .cancel a:hover {
-	background-color: rgba(200, 200, 200, 0.8);
-}
-
-.page-rate-widget-box .rate-points {
-	line-height: var(--rating-module-height);
-	padding: 0 -webkit-calc(0.875rem * 0.5);
-	padding: 0 calc(0.875rem * 0.5);
-	padding: 0 -webkit-calc(var(--base-font-size) * 0.5);
-	padding: 0 calc(var(--base-font-size) * 0.5);
+/* Credit Button Rating Module Specific */
+.rate-box-with-credit-button > .creditButton,
+.rate-box-with-credit-button > .creditButton > p {
 	text-transform: uppercase;
 	font-size: -webkit-calc(0.875rem * 0.8);
 	font-size: calc(0.875rem * 0.8);
@@ -2082,61 +2015,181 @@ div.image-block,div.image-block img {
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 2;
 }
 
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a,
 .page-rate-widget-box .rate-points .number {
 	font-size: -webkit-calc(0.875rem * 1.2);
 	font-size: calc(0.875rem * 1.2);
 	font-size: -webkit-calc(var(--base-font-size) * 1.2);
 	font-size: calc(var(--base-font-size) * 1.2);
+	min-width: var(--rating-module-height);
 }
 
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
+	color: transparent;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-@supports ((-webkit-mask: none) or (mask: none)) {
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a {
+	background-color: rgba(100, 3, 15, 0.1);
+	background-color: rgba(var(--swatch-primary-darkest), 0.1);
+}
 
-	.page-rate-widget-box .rateup a,
-	.page-rate-widget-box .ratedown a,
-	.page-rate-widget-box .cancel a {
-		font-size: 0;
-	}
+.page-rate-widget-box .rate-points,
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown,
+.page-rate-widget-box .cancel,
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a {
+	font-weight: 700;
+	position: relative;
+	background: transparent;
+}
 
+.page-rate-widget-box .cancel a,
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a,
+.page-rate-widget-box .cancel a::before,
+.page-rate-widget-box .rateup a::before,
+.page-rate-widget-box .ratedown a::before,
+.page-rate-widget-box .cancel a::after,
+.page-rate-widget-box .rateup a::after,
+.page-rate-widget-box .ratedown a::after {
+	-webkit-transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-o-transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	-moz-transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: 
+		background-color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.page-rate-widget-box .rateup a:hover,
+.page-rate-widget-box .ratedown a:hover,
+.page-rate-widget-box .cancel a:hover {
+	text-decoration: none;
+	color: transparent;
+}
+
+.page-rate-widget-box .rateup a:hover {
+	background-color: rgba(var(--rating-module-button-plus-color), 0.8);
+}
+
+.page-rate-widget-box .ratedown a:hover {
+	background-color: rgba(var(--rating-module-button-negative-color), 0.8);
+}
+
+.page-rate-widget-box .cancel a:hover {
+	background-color: rgba(var(--rating-module-button-cancel-color), 0.8);
+}
+
+.page-rate-widget-box .rateup a:hover::before,
+.page-rate-widget-box .rateup a:hover::after {
+	background-color: rgba(var(--rating-module-text-hover-color));
+}
+
+.page-rate-widget-box .ratedown a:hover::before,
+.page-rate-widget-box .ratedown a:hover::after {
+	background-color: rgba(var(--rating-module-text-hover-color));
+}
+
+.page-rate-widget-box .cancel a:hover::before,
+.page-rate-widget-box .cancel a:hover::after {
+	background-color: rgba(var(--rating-module-text-hover-color));
+}
+
+/* Canceling PageRate CSS */
+
+.page-rate-widget-box a {
+	padding: 0;
+}
+
+/* Rating Icons */
+
+.page-rate-widget-box .rateup a::before,
+.page-rate-widget-box .ratedown a::before,
+.page-rate-widget-box .cancel a::before,
+.page-rate-widget-box .rateup a::after,
+.page-rate-widget-box .ratedown a::after,
+.page-rate-widget-box .cancel a::after {
+	content: " ";
+	position: absolute;
+	background-color: rgb(12, 12, 12);
+	background-color: rgb(var(--rating-module-button-color));
+	pointer-events: none;
+	color: transparent;
+}
+
+.page-rate-widget-box .rateup a::before {
+	color: transparent;
+	width: 0.1875rem;
+	height: 0.750rem;
+}
+
+.page-rate-widget-box .rateup a::after {
+	color: transparent;
+	width: 0.750rem;
+	height: 0.1875rem;
+}
+
+.page-rate-widget-box .ratedown a::before {
+	color: transparent;
+	width: 0.750rem;
+	height: 0.1875rem;
+}
+
+/* Fixing Chrome not doing half pixels */
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+	.selector:not(*:root), 
 	.page-rate-widget-box .rateup a::before,
 	.page-rate-widget-box .ratedown a::before,
-	.page-rate-widget-box .cancel a::before {
-		content: " ";
-		position: absolute;
-		width: -webkit-calc(0.875rem * 1.5);
-		width: calc(0.875rem * 1.5);
-		width: -webkit-calc(var(--base-font-size) * 1.5);
-		width: calc(var(--base-font-size) * 1.5);
-		height: var(--rating-module-height);
-		top: 0;
-		left: 0;
-		-webkit-mask-size: -webkit-calc(var(--rating-module-height) * 0.8);
-		mask-size: calc(var(--rating-module-height) * 0.8);
-		-webkit-mask-position: center;
-		mask-position: center;
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		background-color: rgb(12, 12, 12);
-		background-color: rgb(var(--rating-module-button-color));
-		pointer-events: none;
+	.page-rate-widget-box .cancel a::before,
+	.page-rate-widget-box .rateup a::after,
+	.page-rate-widget-box .ratedown a::after,
+	.page-rate-widget-box .cancel a::after {
+		transform: translateY(-0.5px);
 	}
+}
 
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+	.selector:not(*:root),
 	.page-rate-widget-box .rateup a::before {
-		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		transform: translateX(0.5px);
 	}
+}
+  
 
-	.page-rate-widget-box .ratedown a::before {
-		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-	}
+.page-rate-widget-box .cancel a::after,
+.page-rate-widget-box .cancel a::before {
+	width: 0.1875rem;
+	height: 0.875rem;
+}
 
-	.page-rate-widget-box .cancel a::before {
-		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-	}
+.page-rate-widget-box .cancel a::after {
+	transform: rotate(-45deg);
+}
+
+.page-rate-widget-box .cancel a::before {
+	transform: rotate(45deg);
 }
 
 /* Heritage Rating Module */
@@ -2194,6 +2247,8 @@ div.image-block,div.image-block img {
 	display: -moz-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	-webkit-box-shadow: 0.0625rem 0.0625rem 0 rgba(12, 12, 12, 0.15);
@@ -2202,16 +2257,21 @@ div.image-block,div.image-block img {
 	box-shadow: 0.0625rem 0.0625rem 0 var(--box-shadow);
 	padding: 0 0.125rem;
 	margin-bottom: 0.75rem;
+	/*background: linear-gradient(to top, rgb(99, 33, 37) 0%, rgb(76, 25, 30) 70%, rgb(56, 37, 37) 100%);*/
+
 	background: -webkit-gradient(linear,
 		left bottom, left top,
 		from(rgba(170, 170, 170, 0.25)),
 		to(rgba(170, 170, 170, 0.15)));
+
 	background: -webkit-linear-gradient(bottom,
 		rgba(170, 170, 170, 0.25) 0%,
 		rgba(170, 170, 170, 0.15) 100%);
+
 	background: -o-linear-gradient(bottom,
 		rgba(170, 170, 170, 0.25) 0%,
 		rgba(170, 170, 170, 0.15) 100%);
+
 	background: linear-gradient(to top,
 		rgba(170, 170, 170, 0.25) 0%,
 		rgba(170, 170, 170, 0.15) 100%);
@@ -2236,7 +2296,7 @@ div.image-block,div.image-block img {
 }
 
 #page-content .rate-box-with-credit-button > .creditButton:hover {
-	background: rgba(50, 50, 50, 0.1);
+	background: rgba(var(--rating-module-button-credit-color), 0.9);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p {
@@ -2246,9 +2306,9 @@ div.image-block,div.image-block img {
 	position: relative;
 }
 
-#page-content .rate-box-with-credit-button > .creditButton > p,#page-content .rate-box-with-credit-button > .creditButton > p > a {
-	width: -webkit-calc(var(--rating-module-height) * 1.5);
-	width: calc(var(--rating-module-height) * 1.5);
+#page-content .rate-box-with-credit-button > .creditButton > p,
+#page-content .rate-box-with-credit-button > .creditButton > p > a {
+	width: var(--rating-module-height);
 	height: var(--rating-module-height);
 }
 
@@ -2260,44 +2320,39 @@ div.image-block,div.image-block img {
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-left: 0;
+	position: relative;
+}
+
+#page-content .rate-box-with-credit-button > .creditButton > p > a::before,
+#page-content .rate-box-with-credit-button > .creditButton > p > a::after{
+	pointer-events: none;
+	content: " ";
+	position: absolute;
+	background-color: rgb(12, 12, 12);
+	background-color: rgb(var(--rating-module-button-color));
+	pointer-events: none;
+	color: transparent;
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
-	content: " ";
-	position: absolute;
-	width: -webkit-calc(0.875rem * 1.5);
-	width: calc(0.875rem * 1.5);
-	width: -webkit-calc(var(--base-font-size) * 1.5);
-	width: calc(var(--base-font-size) * 1.5);
-	height: var(--rating-module-height);
-	top: 0;
-	left: 0;
-	background-color: rgb(252, 252, 252);
-	background-color: rgb(var(--swatch-menubg-black-color));
-	-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-	mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-	-webkit-mask-size: -webkit-calc(var(--rating-module-height) * 0.35);
-	mask-size: calc(var(--rating-module-height) * 0.35);
-	-webkit-mask-position: top 0.3em center;
-	mask-position: top 0.3em center;
-	-webkit-mask-repeat: no-repeat;
-	mask-repeat: no-repeat;
-	pointer-events: none;
+	width: 0.25rem;
+	height: 0.46875rem;
+	transform: translateY(0.13125rem);
 }
 
-#page-content .rate-box-with-credit-button > .page-rate-widget-box {
-	overflow: hidden;
-	display: -webkit-inline-box;
-	display: -webkit-inline-flex;
-	display: -moz-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	padding: 0 0.125rem;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+#page-content .rate-box-with-credit-button > .creditButton > p > a::after {
+	width: 0.25rem;
+	height: 0.25rem;
+	border-radius: 50%;
+	transform: translateY(-0.3125rem);
+}
+
+#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::before,
+#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::after {
+	background-color: rgba(var(--rating-module-text-hover-color));
 }
 
 /* Article Images */
@@ -3861,7 +3916,7 @@ form[id="search-top-box-form"] {
 		-ms-flex-pack: center;
 		/* Overriding Wikidot's Default Styling */
 		border: none !important;
-		background-color: transparent  !important;
+		background-color: transparent !important;
 	}
 }
 
