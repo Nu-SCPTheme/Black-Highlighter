@@ -2020,8 +2020,14 @@ div.image-block,div.image-block img {
 	flex-grow: 2;
 }
 
+/* A poor attempt at centering the rating text */
+
 .page-rate-widget-box .rate-points {
-	margin-bottom: -1px !important;
+	margin-bottom: -0.0625rem !important;
+}
+
+.page-rate-widget-box .rate-points > .number {
+    margin-bottom: 0.0625rem !important;
 }
 
 .page-rate-widget-box .rateup a,
