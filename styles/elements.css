@@ -629,9 +629,10 @@ div.image-block,div.image-block img {
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: center;
 	margin-left: 0;
+	position: relative;
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before,
@@ -648,14 +649,14 @@ div.image-block,div.image-block img {
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
 	width: 0.25rem;
 	height: 0.625rem;
-	margin-bottom: 0.28125rem;
+	bottom: 0.28125rem;
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
 	width: 0.25rem;
 	height: 0.25rem;
 	border-radius: 50%;
-	margin-bottom: 1.03125rem;
+	bottom: 1.03125rem;
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:hover::before,
