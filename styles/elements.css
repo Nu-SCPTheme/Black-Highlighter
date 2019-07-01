@@ -483,24 +483,10 @@ div.image-block,div.image-block img {
 	height: 0.1875rem;
 }
 
-.page-rate-widget-box .cancel a::after,
-.page-rate-widget-box .cancel a::before {
-	width: 0.1875rem;
-	height: 0.875rem;
-}
-
-.page-rate-widget-box .cancel a::after {
-	transform: rotate(-45deg);
-}
-
-.page-rate-widget-box .cancel a::before {
-	transform: rotate(45deg);
-}
-
 /* Fixing Chrome not doing half pixels */
 
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  and (min-resolution:.001dpcm) {
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+	.selector:not(*:root), .chrome {
 	.page-rate-widget-box .rateup a::before,
 	.page-rate-widget-box .ratedown a::before,
 	.page-rate-widget-box .cancel a::before,
@@ -514,6 +500,20 @@ div.image-block,div.image-block img {
 		transform: translateX(-0.5px);
 	}
   }
+
+.page-rate-widget-box .cancel a::after,
+.page-rate-widget-box .cancel a::before {
+	width: 0.1875rem;
+	height: 0.875rem;
+}
+
+.page-rate-widget-box .cancel a::after {
+	transform: rotate(-45deg);
+}
+
+.page-rate-widget-box .cancel a::before {
+	transform: rotate(45deg);
+}
 
 /* Heritage Rating Module */
 
