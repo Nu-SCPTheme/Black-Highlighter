@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800");
-@supports(--css: variables) {
+@supports(--css: variables) { 
 @charset "utf-8";
 
 /* Fonts */
@@ -98,7 +98,7 @@
 	--rating-module-button-plus-color: 0, 200, 0;
 	--rating-module-button-negative-color: 200, 0, 0;
 	--rating-module-button-cancel-color: 200, 200, 200;
-	--rating-module-button-credit-color: 200, 200, 200;
+	--rating-module-button-credit-color: 50, 50, 50;
 	--rating-module-text-color: var(--swatch-menutxt-dark-color, 12, 12, 12);
 	--rating-module-text-hover-color: var(--swatch-menutxt-light-color, 252, 252, 252);
 
@@ -4449,6 +4449,10 @@ form[id="search-top-box-form"] {
 	flex-grow: 2;
 	flex-shrink: 1;
 	text-align: center;
+}
+
+#side-bar div.menu-item a[href*="scp-series"]::before {
+	width: 200%;
 }
 
 #side-bar div.menu-item>:last-child {
