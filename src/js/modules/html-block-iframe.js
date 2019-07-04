@@ -27,20 +27,20 @@
     // # http://scptestwiki.wikidot.com/local--code/component%3Atranslations/1
     // # We still have "hash", except its value will always be 1. 
     
-    var url_array = location.toString().split('/');
+    var url_array = location.toString().split("/");
     // # url_array is: "http:", "", original domain, "local--code", pagename, "1"
     var iframe_hash = url_array[5];
     // # This effectively sets iframe_hash equal to 1.
     var random = Math.random();
-    var resize_div_id = 'div_' + iframe_hash + random;
-    var resize_iframe_id = 'iframe_' + iframe_hash + random;
+    var resize_div_id = "div_" + iframe_hash + random;
+    var resize_iframe_id = "iframe_" + iframe_hash + random;
     //# var resize_url = url_array[0] + '//' + url_array[6] + '/common--javascript/resize-iframe.html';
     //               ^ http:               ^ www.wikidot.dev (original domain)
     
     // # If we stick with wdfiles, we'll get a crossorigin error.
-    url_array[2] = url_array[2].replace('wdfiles','wikidot');    
+    url_array[2] = url_array[2].replace("wdfiles","wikidot");    
     
-    var resize_url = url_array[0] + '//' + url_array[2] + '/common--javascript/resize-iframe.html';
+    var resize_url = url_array[0] + "//" + url_array[2] + "/common--javascript/resize-iframe.html";
 
     var get_height = function() {
         if (document.body.scrollHeight) {
@@ -58,7 +58,7 @@
         var old_iframe = document.getElementById(resize_iframe_id);
         if (old_iframe) {
             div.removeChild(old_iframe);
-            delete old_iframe;
+            old_iframe = null;
         }
 
         var iframe = document.createElement("iframe");
@@ -89,8 +89,8 @@
     var init = function() {
         var div = document.createElement("div");
         div.id = resize_div_id;
-        div.setAttribute('style', 'display: none');
-        div.style.display = 'none'; // this way it works even in IE
+        div.setAttribute("style", "display: none");
+        div.style.display = "none"; // this way it works even in IE
         document.body.appendChild(div);
         tick();
     };

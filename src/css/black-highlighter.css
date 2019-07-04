@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@supports(--css: variables) { 
+
 @import url(/root.css);
 @import url(/normalize.css);
 @import url(/structure.css);
@@ -8,3 +10,5 @@
 @import url(/header.css);
 @import url(/elements.css);
 @import url(/translation.css);
+
+}
