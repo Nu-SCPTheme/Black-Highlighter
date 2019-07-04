@@ -23,7 +23,6 @@ const build = gulp.series(
   gulp.parallel(
     copy.assets,
     css.build,
-    img.resize,
     gulp.series(js.lint, js.build)
   )
 );

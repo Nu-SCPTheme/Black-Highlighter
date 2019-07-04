@@ -42,7 +42,9 @@ function copyAssets(done) {
 
       if (!fs.existsSync(distFile)) {
         fs.copyFile(srcFile, distFile, err => {
-          if (err) throw err;
+          if (err) {
+            console.log(err);
+          }
         });
       }
     });

@@ -22,10 +22,10 @@ function scriptsLint() {
 function scriptsBuild() {
   return (
     gulp
-      .src(
-        ["./src/js/main.js"],
-        { allowEmpty: true }
-          )
+      .src([
+        "./src/js/**/*.js",
+        "./src/js/*.js"
+      ])
       .pipe(webpackstream(webpackconfig, webpack))
       // folder only, filename is specified in webpack
       .pipe(gulp.dest("./dist/js/"))
