@@ -18,11 +18,8 @@ body {
 	font-family: var(--body-font);
 	font-size: 0.875rem;
 	font-size: var(--base-font-size);
-	-webkit-font-kerning: normal;
 	font-kerning: normal;
 	font-variant-numeric: normal;
-	-webkit-font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
-	-moz-font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
 	font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
@@ -30,9 +27,6 @@ body {
 
 	/* line behavior */
 	orphans: 2;
-	-webkit-hyphens: manual;
-	-moz-hyphens: manual;
-	-ms-hyphens: manual;
 	hyphens: manual;
 	word-break: normal;
 }
@@ -80,7 +74,6 @@ fieldset {
 	line-height: 1.5;
 	padding: 0 1rem;
 	min-height: 3rem;
-	width: -webkit-calc(100% - 2rem);
 	width: calc(100% - 2rem);
 }
 
@@ -195,9 +188,6 @@ rt {
 
 tt {
 	overflow-wrap: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
 	hyphens: auto;
 }
 
@@ -210,7 +200,6 @@ tt {
 	height: var(--scrollbar-width);
 	border: solid 0.063rem rgba(12, 12, 12, 0.1);
 	border: solid 0.063rem rgba(var(--swatch-menubg-black-color), 0.1);
-	-webkit-border-radius: 0.031rem;
 	border-radius: 0.031rem;
 }
 

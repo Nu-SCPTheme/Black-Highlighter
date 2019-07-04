@@ -1,4 +1,4 @@
-@import url(https://nu-scptheme.github.io/Black-Highlighter/styles/root.css);
+@import url(https://nu-scptheme.github.io/Black-Highlighter/styles/root_ch.css);
 @import url(https://nu-scptheme.github.io/Black-Highlighter/styles/normalize.css);
 @import url(https://nu-scptheme.github.io/Black-Highlighter/styles/structure.css);
 @import url(https://nu-scptheme.github.io/Black-Highlighter/styles/sidebar.css);
@@ -102,7 +102,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 
 #page-title {
 	min-height: 2rem;
-	font-family: "Poppins", sans-serif;
+	font-family: "Noto Sans SC", sans-serif;
 	font-family: var(--title-font);
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-dark, 12, 12, 12));
@@ -132,6 +132,25 @@ span.printuser {
 	flex-wrap: nowrap;
 	align-items: baseline;
 	justify-content: center;
+}
+
+span > a[href*="user:info"] {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	   -moz-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	   -moz-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	white-space: nowrap;
 }
 
 .printuser img.small {
@@ -174,11 +193,6 @@ span.printuser {
 	-moz-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-}
-
-#breadcrumbs {
-	font-weight: 85%;
-	margin: -1em 0 1em;
 }
 
 /* Article Bottom Buttons */
@@ -258,6 +272,11 @@ div#page-options-bottom-2 > a:active {
     background-color: rgba(var(--swatch-primary-darker), 1);
     color: rgba(255, 219, 90, 1);
     color: rgba(var(--swatch-menutxt-light-color), 1);
+}
+
+#breadcrumbs {
+	font-weight: 85%;
+	margin: -1em 0 1em;
 }
 
 #footer {
@@ -397,7 +416,7 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel .panel-body > .news-title {
-	font-family: "Poppins", sans-serif;
+	font-family: "Noto Sans SC", sans-serif;
 	font-family: var(--title-font);
 	font-weight: 900;
 	text-transform: uppercase;
@@ -515,10 +534,7 @@ div.sexy-box div.image-container img {
 		-o-linear-gradient(left, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color))),
 		rgba(var(--swatch-menubg-light-color));
 	background:
-		linear-gradient(
-			to right,
-			rgba(var(--swatch-menubg-light-color)),
-			rgba(var(--swatch-menubg-medium-color))			
+		linear-gradient(to right,rgba(var(--swatch-menubg-light-color)),rgba(var(--swatch-menubg-medium-color))			
 		),
 		rgba(var(--swatch-menubg-light-color));
 	background-blend-mode: screen;
@@ -830,6 +846,7 @@ table.form tr {
 	width: 100%;
 }
 
+
 form#edit-page-form {
 	background-color: rgba(170, 170, 170, 0.25);
 	background-color: rgba(var(--swatch-menubg-medium-color), 0.25);
@@ -959,8 +976,7 @@ div.buttons.alignleft {
 		font-family: monospace;
 		font-style: normal;
 		font-weight: 400;
-		background-image: url(http://www.kaktuskontainer.wikidot.com/local--files/component%3Atheme/dot.png),
-			none;
+		background-image: url(http://www.kaktuskontainer.wikidot.com/local--files/component%3Atheme/dot.png),none;
 		background-repeat: repeat-x;
 		background-color: transparent;
 		background-clip: padding-box, content-box;
@@ -1045,7 +1061,7 @@ div.buttons.alignleft {
 	}
 
 	#edit-page-title {
-		font-family: "Poppins", sans-serif;
+		font-family: "Noto Sans SC", sans-serif;
 		font-family: var(--title-font);
 		max-width: 90%;
 	}
@@ -1062,7 +1078,7 @@ div.buttons.alignleft {
 	}
 
 	#page-content div.title {
-		font-family: "Poppins", sans-serif;
+		font-family: "Noto Sans SC", sans-serif;
 		font-family: var(--title-font);
 		word-break: keep-all;
 	}

@@ -1,62 +1,37 @@
-const gulp = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
-const postcss = require('gulp-postcss');
-const cssvariables = require('postcss-css-variables');
-const unprefix = require("postcss-unprefix");
-const mergerules = require("postcss-merge-rules");
-const stylefmt = require('gulp-stylefmt');
-const stylelint = require("stylelint");
+// Load plugins
+const gulp = require("gulp");
+const sync = require("gulp-npm-script-sync");
 
-gulp.task('default', () =>
-	gulp.src('themes/fallbacks/*.css')
-		.pipe(sourcemaps.init())
-			.pipe(autoprefixer({
-                browsers: ['last 50 versions'],
-                cascade: true
-            }))
-		.pipe(gulp.dest('themes/fallbacks'))
+// import tasks
+const img = require("./gulp-tasks/images.js");
+const js = require("./gulp-tasks/scripts.js");
+const server = require("./gulp-tasks/browsersync.js");
+const css = require("./gulp-tasks/styles.js");
+const clean = require("./gulp-tasks/clean.js");
+const copy = require("./gulp-tasks/copy.js");
+
+// Watch files
+function watchFiles() {
+  gulp.watch("./src/assets/css/**/*", css.build);
+  gulp.watch("./src/assets/img/**/*", gulp.parallel(img.resize, copy.assets));
+}
+
+// define tasks
+const watch = gulp.parallel(watchFiles, server.init);
+const build = gulp.series(
+  clean.dist,
+  gulp.parallel(
+    copy.assets,
+    css.build,
+    img.resize,
+    gulp.series(js.lint, js.build)
+  )
 );
 
+// expose tasks to CLI
+exports.images = img.optimise;
+exports.watch = watch;
+exports.build = build;
+exports.default = build;
 
-gulp.task('css', () => 
-	gulp.src('themes/dustjacket-theme.css').pipe(
-		postcss([
-			cssvariables({
-				preserve: true
-			})
-		])
-	).pipe(
-	gulp.dest('themes/fallbacks')
-));
-
-gulp.task('rmv', () => 
-	gulp.src('themes/*.css').pipe(
-		postcss([
-			unprefix()
-		])
-	).pipe(
-	gulp.dest('themes/fallbacks')
-));
-
-
-gulp.task('merge', () => 
-	gulp.src('themes/dustjacket-theme.css').pipe(
-		postcss([
-			mergerules()
-		])
-	).pipe(
-	gulp.dest('themes')
-));
-
-gulp.task('stylefmt', () => 
-	gulp.src('styles/*.css').pipe(
-		stylefmt())
-    .pipe(gulp.dest('styles')
-));
-
-gulp.task('stylefmt-themes', () => 
-	gulp.src('themes/*.css').pipe(
-		stylefmt())
-    .pipe(gulp.dest('themes')
-));
+sync(gulp);

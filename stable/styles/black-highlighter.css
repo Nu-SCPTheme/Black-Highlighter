@@ -130,43 +130,19 @@
 		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)), 1) 100%);
 	--gradient-topmenu-mobile: linear-gradient(
 		to bottom,
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			0,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			0.125rem,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) -webkit-calc(
-				3rem - 0.125rem
-			),
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) -webkit-calc(
-				3rem - 0.125rem
-			),
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			3rem
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),1)0,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)0.125rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) -webkit-calc(3rem - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1) -webkit-calc(3rem - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),1)3rem
 	);
 	--gradient-topmenu-mobile: linear-gradient(
 		to bottom,
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			0,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			0.125rem,
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)
-			calc(3rem - 0.125rem),
-		rgba(
-				var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),
-				1
-			)
-			3rem
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),1)0,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)0.125rem,
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)calc(3rem - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color, var(--gray-monochrome, 66, 66, 72)), 1)calc(3rem - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color, var(--black-monochrome, 12, 12, 12)),1)3rem
 	);
 	--diagonal-stripes: repeating-linear-gradient(
 		45deg,
@@ -183,249 +159,41 @@
 	--background-gradient-distance: 40rem;
 	--gradient-background: linear-gradient(
 		to bottom,
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				1
-			) -webkit-calc(-webkit-calc(0 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.987
-			) -webkit-calc(-webkit-calc(0.8 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.951
-			) -webkit-calc(-webkit-calc(2.9 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.896
-			) -webkit-calc(-webkit-calc(6.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.825
-			) -webkit-calc(-webkit-calc(11 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.741
-			) -webkit-calc(-webkit-calc(16.6 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.648
-			) -webkit-calc(-webkit-calc(23.1 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.55
-			) -webkit-calc(-webkit-calc(30.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.45
-			) -webkit-calc(-webkit-calc(38.3 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.352
-			) -webkit-calc(-webkit-calc(46.7 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.259
-			) -webkit-calc(-webkit-calc(55.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.175
-			) -webkit-calc(-webkit-calc(64.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.104
-			) -webkit-calc(-webkit-calc(73.5 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.049
-			) -webkit-calc(-webkit-calc(82.5 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.013
-			) -webkit-calc(-webkit-calc(91.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0
-			) -webkit-calc(-webkit-calc(100 / 100) * var(--background-gradient-distance, 40rem))
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),1) -webkit-calc(-webkit-calc(0 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.987) -webkit-calc(-webkit-calc(0.8 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.951) -webkit-calc(-webkit-calc(2.9 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.896) -webkit-calc(-webkit-calc(6.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.825) -webkit-calc(-webkit-calc(11 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.741) -webkit-calc(-webkit-calc(16.6 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.648) -webkit-calc(-webkit-calc(23.1 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.55) -webkit-calc(-webkit-calc(30.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.45) -webkit-calc(-webkit-calc(38.3 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.352) -webkit-calc(-webkit-calc(46.7 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.259) -webkit-calc(-webkit-calc(55.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.175) -webkit-calc(-webkit-calc(64.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.104) -webkit-calc(-webkit-calc(73.5 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.049) -webkit-calc(-webkit-calc(82.5 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.013) -webkit-calc(-webkit-calc(91.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0) -webkit-calc(-webkit-calc(100 / 100) * var(--background-gradient-distance, 40rem))
 	);
 	--gradient-background: linear-gradient(
 		to bottom,
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				1
-			)
-			calc((0 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.987
-			)
-			calc((0.8 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.951
-			)
-			calc((2.9 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.896
-			)
-			calc((6.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.825
-			)
-			calc((11 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.741
-			)
-			calc((16.6 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.648
-			)
-			calc((23.1 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.55
-			)
-			calc((30.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.45
-			)
-			calc((38.3 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.352
-			)
-			calc((46.7 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.259
-			)
-			calc((55.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.175
-			)
-			calc((64.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.104
-			)
-			calc((73.5 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.049
-			)
-			calc((82.5 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0.013
-			)
-			calc((91.4 / 100) * var(--background-gradient-distance, 40rem)),
-		rgba(
-				var(
-					--background-gradient-color,
-					var(--very-light-gray-monochrome, 215, 215, 215)
-				),
-				0
-			)
-			calc((100 / 100) * var(--background-gradient-distance, 40rem))
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),1)calc((0 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.987)calc((0.8 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.951)calc((2.9 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.896)calc((6.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.825)calc((11 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.741)calc((16.6 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.648)calc((23.1 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.55)calc((30.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.45)calc((38.3 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.352)calc((46.7 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.259)calc((55.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.175)calc((64.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.104)calc((73.5 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.049)calc((82.5 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0.013)calc((91.4 / 100) * var(--background-gradient-distance, 40rem)),
+		rgba(var(	--background-gradient-color,	var(--very-light-gray-monochrome, 215, 215, 215)),0)calc((100 / 100) * var(--background-gradient-distance, 40rem))
 	);
 	--header-background-image-size: 100% 7.5rem;
 
@@ -496,20 +264,16 @@
 	);
 	/* responsive fluid type formula */
 	--font-calc: -webkit-calc(
-		(var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) *
-			var(--min-viewport-difference) / var(--viewport-range-difference)
+		(var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) *var(--min-viewport-difference) / var(--viewport-range-difference)
 	);
 	--font-calc: calc(
-		(var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) *
-			var(--min-viewport-difference) / var(--viewport-range-difference)
+		(var(--unitless-min-font-size) * 1rem) + var(--font-size-difference) *var(--min-viewport-difference) / var(--viewport-range-difference)
 	);
 	--line-calc: -webkit-calc(
-		var(--min-lineheight) + var(--lineheight-difference) *
-			var(--min-viewport-difference) / var(--viewport-range-difference)
+		var(--min-lineheight) + var(--lineheight-difference) *var(--min-viewport-difference) / var(--viewport-range-difference)
 	);
 	--line-calc: calc(
-		var(--min-lineheight) + var(--lineheight-difference) *
-			var(--min-viewport-difference) / var(--viewport-range-difference)
+		var(--min-lineheight) + var(--lineheight-difference) *var(--min-viewport-difference) / var(--viewport-range-difference)
 	);
 	/* final values */
 	--base-font-size: 0.875rem;
@@ -1025,10 +789,7 @@ div.sexy-box div.image-container img {
 		-o-linear-gradient(left, rgba(var(--swatch-menubg-light-color)), rgba(var(--swatch-menubg-medium-color))),
 		rgba(var(--swatch-menubg-light-color));
 	background:
-		linear-gradient(
-			to right,
-			rgba(var(--swatch-menubg-light-color)),
-			rgba(var(--swatch-menubg-medium-color))			
+		linear-gradient(to right,rgba(var(--swatch-menubg-light-color)),rgba(var(--swatch-menubg-medium-color))			
 		),
 		rgba(var(--swatch-menubg-light-color));
 	background-blend-mode: screen;
@@ -1469,8 +1230,7 @@ div.buttons.alignleft {
 		font-family: monospace;
 		font-style: normal;
 		font-weight: 400;
-		background-image: url(http://www.kaktuskontainer.wikidot.com/local--files/component%3Atheme/dot.png),
-			none;
+		background-image: url(http://www.kaktuskontainer.wikidot.com/local--files/component%3Atheme/dot.png),none;
 		background-repeat: repeat-x;
 		background-color: transparent;
 		background-clip: padding-box, content-box;
@@ -2101,52 +1861,26 @@ div.image-block,div.image-block img {
 	@media (min-width: 0px) {
 		.page-rate-widget-box .rateup a,
 		.page-rate-widget-box .ratedown a,
-		.page-rate-widget-box .cancel a {
-			font-size: 0;
+		.page-rate-widget-box .cancel a {font-size: 0;
 		}
 
 		.page-rate-widget-box .rateup a::before,
 		.page-rate-widget-box .ratedown a::before,
-		.page-rate-widget-box .cancel a::before {
-			content: " ";
-			position: absolute;
-			width: -webkit-calc(0.875rem * 1.5);
-			width: calc(0.875rem * 1.5);
-			width: -webkit-calc(var(--base-font-size) * 1.5);
-			width: calc(var(--base-font-size) * 1.5);
-			height: var(--rating-module-height);
-			top: 0;
-			left: 0;
-			-webkit-mask-size: -webkit-calc(var(--rating-module-height) * 0.8);
-			mask-size: calc(var(--rating-module-height) * 0.8);
-			-webkit-mask-position: center;
-			mask-position: center;
-			-webkit-mask-repeat: no-repeat;
-			mask-repeat: no-repeat;
-			background-color: rgb(12, 12, 12);
-			background-color: rgb(var(--rating-module-button-color));
-			pointer-events: none;
+		.page-rate-widget-box .cancel a::before {content: " ";position: absolute;width: -webkit-calc(0.875rem * 1.5);width: calc(0.875rem * 1.5);width: -webkit-calc(var(--base-font-size) * 1.5);width: calc(var(--base-font-size) * 1.5);height: var(--rating-module-height);top: 0;left: 0;-webkit-mask-size: -webkit-calc(var(--rating-module-height) * 0.8);mask-size: calc(var(--rating-module-height) * 0.8);-webkit-mask-position: center;mask-position: center;-webkit-mask-repeat: no-repeat;mask-repeat: no-repeat;background-color: rgb(12, 12, 12);background-color: rgb(var(--rating-module-button-color));pointer-events: none;
 		}
 
-		.page-rate-widget-box .rateup a::before {
-			-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-			mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		.page-rate-widget-box .rateup a::before {-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 		}
 
-		.page-rate-widget-box .ratedown a::before {
-			-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-			mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		.page-rate-widget-box .ratedown a::before {-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 13H5v-2h14v2z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 		}
 
-		.page-rate-widget-box .cancel a::before {
-			-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-			mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+		.page-rate-widget-box .cancel a::before {-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 		}
 
 		.page-rate-widget-box .rateup a:hover::before,
 		.page-rate-widget-box .ratedown a:hover::before,
-		.page-rate-widget-box .cancel a:hover::before {
-			background-color: rgb(var(--rating-module-text-hover-color))
+		.page-rate-widget-box .cancel a:hover::before {background-color: rgb(var(--rating-module-text-hover-color))
 		}
 	}
 }
@@ -2277,31 +2011,10 @@ div.image-block,div.image-block img {
 
 @media screen { 
 	@media (min-width: 0px) {
-		#page-content .rate-box-with-credit-button > .creditButton > p > a::before {
-			content: " ";
-			position: absolute;
-			width: -webkit-calc(0.875rem * 1.5);
-			width: calc(0.875rem * 1.5);
-			width: -webkit-calc(var(--base-font-size) * 1.5);
-			width: calc(var(--base-font-size) * 1.5);
-			height: var(--rating-module-height);
-			top: 0;
-			left: 0;
-			background-color: rgb(252, 252, 252);
-			background-color: rgb(var(--swatch-menubg-black-color));
-			-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-			mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-			-webkit-mask-size: -webkit-calc(var(--rating-module-height) * 0.35);
-			mask-size: calc(var(--rating-module-height) * 0.35);
-			-webkit-mask-position: top 0.3em center;
-			mask-position: top 0.3em center;
-			-webkit-mask-repeat: no-repeat;
-			mask-repeat: no-repeat;
-			pointer-events: none;
+		#page-content .rate-box-with-credit-button > .creditButton > p > a::before {content: " ";position: absolute;width: -webkit-calc(0.875rem * 1.5);width: calc(0.875rem * 1.5);width: -webkit-calc(var(--base-font-size) * 1.5);width: calc(var(--base-font-size) * 1.5);height: var(--rating-module-height);top: 0;left: 0;background-color: rgb(252, 252, 252);background-color: rgb(var(--swatch-menubg-black-color));-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");-webkit-mask-size: -webkit-calc(var(--rating-module-height) * 0.35);mask-size: calc(var(--rating-module-height) * 0.35);-webkit-mask-position: top 0.3em center;mask-position: top 0.3em center;-webkit-mask-repeat: no-repeat;mask-repeat: no-repeat;pointer-events: none;
 		}
 
-		#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::before {
-			background-color: rgb(var(--rating-module-button-credit-color))
+		#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::before {background-color: rgb(var(--rating-module-button-credit-color))
 		}
 	}
 }
@@ -3661,42 +3374,12 @@ form[id="search-top-box-form"] {
 		margin: 0;
 		padding: 0;
 		width: 100vw;
-		background: linear-gradient(to bottom,
-			rgba(12, 12, 12, 1) 0,
-			rgba(66, 66, 72, 1) 0.125rem,
-			rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),
-			rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),
-			rgba(12, 12, 12, 1) 3rem);
-		background: linear-gradient(to bottom,
-			rgba(12, 12, 12, 1) 0,
-			rgba(66, 66, 72, 1) 0.125rem,
-			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
-			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
-			rgba(12, 12, 12, 1) 3rem);
-		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
-			rgba(12, 12, 12, 1) 0,
-			rgba(66, 66, 72, 1) 0.125rem,
-			rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),
-			rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),
-			rgba(12, 12, 12, 1) 3rem));
-		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
-			rgba(12, 12, 12, 1) 0,
-			rgba(66, 66, 72, 1) 0.125rem,
-			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
-			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
-			rgba(12, 12, 12, 1) 3rem));
-		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
-			rgba(var(--swatch-topmenu-border-color), 1) 0,
-			rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-			rgba(var(--swatch-topmenu-bg-color), 1) -webkit-calc(3rem - 0.125rem),
-			rgba(var(--swatch-topmenu-bg-color), 1) -webkit-calc(3rem - 0.125rem),
-			rgba(var(--swatch-topmenu-border-color), 1) 3rem));
-		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
-			rgba(var(--swatch-topmenu-border-color), 1) 0,
-			rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-			rgba(var(--swatch-topmenu-border-color), 1) 3rem));
+		background: linear-gradient(to bottom,rgba(12, 12, 12, 1) 0,rgba(66, 66, 72, 1) 0.125rem,rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),rgba(12, 12, 12, 1) 3rem);
+		background: linear-gradient(to bottom,rgba(12, 12, 12, 1) 0,rgba(66, 66, 72, 1) 0.125rem,rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(12, 12, 12, 1) 3rem);
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,rgba(12, 12, 12, 1) 0,rgba(66, 66, 72, 1) 0.125rem,rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),rgba(66, 66, 72, 1) -webkit-calc(3rem - 0.125rem),rgba(12, 12, 12, 1) 3rem));
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,rgba(12, 12, 12, 1) 0,rgba(66, 66, 72, 1) 0.125rem,rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(12, 12, 12, 1) 3rem));
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,rgba(var(--swatch-topmenu-border-color), 1) 0,rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,rgba(var(--swatch-topmenu-bg-color), 1) -webkit-calc(3rem - 0.125rem),rgba(var(--swatch-topmenu-bg-color), 1) -webkit-calc(3rem - 0.125rem),rgba(var(--swatch-topmenu-border-color), 1) 3rem));
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,rgba(var(--swatch-topmenu-border-color), 1) 0,rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),rgba(var(--swatch-topmenu-border-color), 1) 3rem));
 		position: static;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
@@ -4416,8 +4099,7 @@ form[id="search-top-box-form"] {
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
 	   -moz-box-flex: 1;
-		-ms-flex-positive: 1;
-			flex-grow: 1;
+		-ms-flex-positive: 1;flex-grow: 1;
 	width: 100%;
 }
 
@@ -4435,11 +4117,9 @@ form[id="search-top-box-form"] {
 	-webkit-box-flex: 0;
 	-webkit-flex-grow: 0;
 		-moz-box-flex: 0;
-		-ms-flex-positive: 0;
-			flex-grow: 0;
+		-ms-flex-positive: 0;flex-grow: 0;
 	-webkit-flex-shrink: 0;
-		-ms-flex-negative: 0;
-			flex-shrink: 0;
+		-ms-flex-negative: 0;flex-shrink: 0;
 	text-align: left;
 }
 
@@ -4709,8 +4389,7 @@ a[href*="/most-recently-edited"] {
 
 #side-bar div.scpnet-interwiki-wrapper {
 	-webkit-transform: translate(
-		-webkit-calc(((-webkit-calc(0.875rem * 19) - 217.594px) / 2) -
-					(0.5625rem / 2)),
+		-webkit-calc(((-webkit-calc(0.875rem * 19) - 217.594px) / 2) -	(0.5625rem / 2)),
 		0
 	);
 	-ms-transform: translate(
@@ -4726,34 +4405,21 @@ a[href*="/most-recently-edited"] {
 		0
 	);
 	-webkit-transform: translate(
-		-webkit-calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -
-						(var(--scrollbar-width) / 2))),
+		-webkit-calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -		(var(--scrollbar-width) / 2))),
 		0
 	);
 	-ms-transform: translate(
-		calc(
-			(
-				(((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -
-					(var(--scrollbar-width) / 2)
-			)
+		calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -	(var(--scrollbar-width) / 2))
 		),
 		0
 	);
 	-o-transform: translate(
-		calc(
-			(
-				(((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -
-					(var(--scrollbar-width) / 2)
-			)
+		calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -	(var(--scrollbar-width) / 2))
 		),
 		0
 	);
 	transform: translate(
-		calc(
-			(
-				(((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -
-					(var(--scrollbar-width) / 2)
-			)
+		calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -	(var(--scrollbar-width) / 2))
 		),
 		0
 	);
@@ -4808,8 +4474,7 @@ a[href*="/most-recently-edited"] {
 		padding-right: -webkit-calc(var(--sidebar-width-on-desktop) + var(--scrollbar-width));
 		padding-right: calc(var(--sidebar-width-on-desktop) + var(--scrollbar-width));
 		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
-		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem
-			repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625remrepeat;
 		z-index: -1;
 		visibility: hidden;
 		opacity: 0;
