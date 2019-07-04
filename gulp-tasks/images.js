@@ -9,7 +9,7 @@ const gulp = require("gulp");
 // specify transforms
 const transforms = [
   {
-    src: "./src/assets/img/blogposts/*",
+    src: "./src/img/blogposts/*",
     dist: "./dist/img/blogposts/_1024x576/",
     options: {
       width: 1024,
@@ -18,7 +18,7 @@ const transforms = [
     }
   },
   {
-    src: "./src/assets/img/blogposts/*",
+    src: "./src/img/blogposts/*",
     dist: "./dist/img/blogposts/_600x600/",
     options: {
       width: 600,
@@ -27,7 +27,7 @@ const transforms = [
     }
   },
   {
-    src: "./src/assets/img/projects/*",
+    src: "./src/img/projects/*",
     dist: "./dist/img/projects/_800x600/",
     options: {
       width: 800,
@@ -67,7 +67,7 @@ function resizeImages(done) {
 // optimize images in place
 function optimiseImages() {
   return gulp
-    .src("./src/assets/img/**/*", { base: "./src/assets/img" })
+    .src("./src/img/*", { base: "./src/img" })
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
@@ -78,7 +78,7 @@ function optimiseImages() {
         })
       ])
     )
-    .pipe(gulp.dest("./src/assets/img/"));
+    .pipe(gulp.dest("./src/img/"));
 }
 
 // exports (Common JS)

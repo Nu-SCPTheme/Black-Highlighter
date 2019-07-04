@@ -10,7 +10,7 @@ function init(done) {
     files: [
       "./dist/css/main.min.css",
       "./dist/js/main.bundle.js",
-      "./dist/**/*.{html, xml}"
+      "./dist/*.{html, xml}"
     ],
     port: 3000,
     open: false

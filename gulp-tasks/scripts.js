@@ -11,13 +11,11 @@ function scriptsLint() {
   return gulp
     .src(
         [
-        "./src/assets/js/modules/**/*",
+        "./src/js/modules/*",
         "./gulpfile.js"
-        ],
-        { allowEmpty: true })
+        ])
     .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(eslint.format());
 }
 
 // Transpile, concatenate and minify scripts
@@ -25,7 +23,7 @@ function scriptsBuild() {
   return (
     gulp
       .src(
-        ["./src/assets/js/main.js"],
+        ["./src/js/main.js"],
         { allowEmpty: true }
           )
       .pipe(webpackstream(webpackconfig, webpack))

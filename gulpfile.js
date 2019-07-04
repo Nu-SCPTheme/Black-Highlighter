@@ -12,8 +12,8 @@ const copy = require("./gulp-tasks/copy.js");
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./src/assets/css/**/*", css.build);
-  gulp.watch("./src/assets/img/**/*", gulp.parallel(img.resize, copy.assets));
+  gulp.watch("./src/css/*", css.build);
+  gulp.watch("./src/img/*", gulp.parallel(img.resize, copy.assets));
 }
 
 // define tasks

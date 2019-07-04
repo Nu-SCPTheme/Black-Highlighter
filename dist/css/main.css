@@ -87,6 +87,7 @@ Consider having a stylesheet whose sole function is to @import sub stylesheets (
 }
 
 /* no idea what this does - croque */
+
 .info-container .collapsible-block-link,
 .info-container:hover .collapsible-block-link {
 	line-height: 1.6em;
@@ -134,29 +135,29 @@ div#page-info,
 div.page-watch-options {
     padding: 0 1em;
 }
- 
+
 div#page-options-bottom {
     width: 90%;
     margin: 0 auto 2.125rem auto;
 }
- 
+
 div#page-options-bottom-2 {
     width: 90%;
     margin: -2.125rem auto 0 auto;
 }
- 
+
 div#page-options-bottom,
 div#page-options-bottom-2 {
     text-align: left;
     flex-wrap: wrap;
 }
- 
+
 div#page-options-bottom,
 div#page-options-bottom-2,
 div#page-options-bottom > a {
     display: flex;
 }
- 
+
 div#page-options-bottom > a,
 div#page-options-bottom-2 > a {
     flex-grow: 2;
@@ -170,11 +171,11 @@ div#page-options-bottom-2 > a {
     justify-content: center;
     transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
- 
+
 div#page-options-bottom-2 > a {
     display: flex;
 }
- 
+
 div#page-options-bottom > a:hover,
 div#page-options-bottom > a:active,
 div#page-options-bottom-2 > a:hover,
@@ -749,6 +750,7 @@ div.buttons.alignleft {
 }
 
 /* Hiding Hidden Tags */
+
 #main-content .page-tags a[href^="/system:page-tags/tag/_"] {
 	display: none;
 }

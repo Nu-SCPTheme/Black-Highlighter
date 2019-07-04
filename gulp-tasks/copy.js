@@ -6,7 +6,7 @@ const path = require("path");
 // config
 const assetsDirs = [
   {
-    src: "./src/assets/img/",
+    src: "./src/img/",
     dist: "./dist/img/"
   }
 ];
@@ -28,7 +28,7 @@ function copyAssets(done) {
     let distDir = sanitizePath(dir.dist);
 
     // glob all files
-    let files = glob.sync(`${sourceDir}/**/*`, { nodir: true });
+    let files = glob.sync(`${sourceDir}/*`, { nodir: true });
 
     // copy each file to dist dir
     files.forEach(function(file) {

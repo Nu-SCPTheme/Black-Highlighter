@@ -1,0 +1,678 @@
+/* sidebar css */
+
+#side-bar {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	background: rgba(252, 252, 252, 1);
+	background: rgba(var(--swatch-menubg-color), 1);
+	flex-basis: 15.75rem;
+	flex-basis: var(--sidebar-width-on-desktop);
+	max-width: 15.75rem;
+	max-width: var(--sidebar-width-on-desktop);
+	min-width: 15.75rem;
+	min-width: var(--sidebar-width-on-desktop);
+	width: 15.75rem;
+	width: calc(0.875rem * 189);
+	width: var(--sidebar-width-on-desktop);
+	flex-shrink: 0;
+	padding: 0;
+	margin: 0 0 0 -0.99vw;
+	/* removes weird thin white line from right side of side-bar */
+	position: sticky;
+	top: -1rem;
+	max-height: calc(100vh + 1rem);
+	scrollbar-width: thin;
+	z-index: 9;
+	overscroll-behavior: contain;
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-color: rgba(170, 170, 170, 0) rgba(170, 170, 170, 0);
+	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0)
+		rgba(var(--swatch-menubg-medium-color), 0);
+	float: left;
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Scrollbar Behavior */
+
+#side-bar:hover {
+	scrollbar-color: rgba(170, 170, 170, 0.05);
+	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0.05);
+	background: rgba(244, 244, 244, 1);
+	background: rgba(var(--swatch-menubg-light-color), 1);
+}
+
+#side-bar::-webkit-scrollbar-track,
+#side-bar::-webkit-scrollbar-thumb {
+	background: rgba(170, 170, 170, 0);
+	background: rgba(var(--swatch-menubg-medium-color), 0);
+}
+
+#side-bar:hover::-webkit-scrollbar-track {
+	background: rgba(170, 170, 170, 0.05);
+	background: rgba(var(--swatch-menubg-medium-color), 0.05);
+}
+
+#side-bar:hover::-webkit-scrollbar-thumb {
+	background: rgba(170, 170, 170, 0.4);
+	background: rgba(var(--swatch-menubg-medium-color), 0.4);
+}
+
+#side-bar::-webkit-scrollbar {
+	border: none;
+}
+
+/* Sidebar Hover Effect */
+
+#side-bar div.menu-item a {
+    position: relative;
+    z-index: 2;
+    height: inherit;
+    overflow: hidden;
+}
+
+#side-bar div.menu-item a:hover {
+    background-color: transparent;
+}
+
+#side-bar div.menu-item a::before {
+    transform: translateX(calc(-100% - 4rem));
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+#side-bar div.menu-item a::before,
+#side-bar div.menu-item a:hover::before {
+    content: " ";
+    width: 125%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(var(--bright-accent),0.25);
+    opacity: 1;
+	z-index: -1;
+	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
+}
+
+#side-bar div.menu-item a:hover::before {
+    transform: translateX(-2rem);
+}
+
+/* DARK SIDEBAR
+#side-bar {
+	background: rgba(48, 48, 52,0.15);
+	background: rgba(var(--dark-gray-monochrome,0.15);
+}
+
+#side-bar::-webkit-scrollbar-thumb {
+	background: rgba(12, 12, 12,0.95);
+	background: rgba(var(--black-monochrome,0.95);
+}
+
+#side-bar::-webkit-scrollbar-track {
+	background: rgba(252, 252, 252,0.1);
+	background: rgba(var(--white-monochrome,0.1);
+} */
+
+#side-bar img {
+	filter: brightness(120%);
+}
+
+/* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
+
+#side-bar div[style*="#f0fff6"] {
+	background-color: rgba(140, 20, 25, 0.25) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
+}
+
+#side-bar div[style*="#e7e5e8"] {
+	background-color: rgba(100, 3, 15, 0.3) !important;
+	background-color: rgba(var(--swatch-primary-darkest), 0.3) !important;
+}
+
+#side-bar div[style*="#fff0f0"] {
+	background-color: rgba(140, 20, 25, 0.15) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.15) !important;
+}
+
+#side-bar div[style*="#e5e5ff"] {
+	background-color: rgba(140, 20, 25, 0.25) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
+}
+
+/* Chinese Specific Styling */
+
+.side-block div[style="text-align: center;"] img{
+	margin:0;
+}
+
+#side-bar div[style*="#f0f0f0"]{
+	background-color:transparent !important;
+}
+
+.side-block[style*="#f0f0f0"] div[style="text-align: center;"]{
+	align-items:center;
+}
+
+/* Defer to a variable set in nav:side, if available */
+
+#side-bar .side-block {
+	border: 0;
+	margin-top: 1rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-shrink: 0;
+}
+
+#side-bar .side-block,.side-block div[style="text-align: center;"] {
+	display: flex;
+}
+
+.side-block div[style="text-align: center;"] {
+	width: 100%;
+	justify-content: space-evenly;
+	padding: 0 0.6rem;
+}
+
+#side-bar .side-area {
+	padding: 0.625rem;
+}
+
+#side-bar .heading,
+#side-bar .side-block > .collapsible-block:nth-child(1)	.collapsible-block-folded {
+	min-height: 1.25rem;
+	background: linear-gradient(
+		10deg,
+		rgba(140, 20, 25, 0.45) 0%,
+		rgba(140, 20, 25, 0.55) 100%
+	);
+	background: var(--gradient-sidemenu-header);
+}
+
+#side-bar .heading {
+	margin-top: 0.5rem;
+	flex-basis: 100%;
+}
+
+#side-bar .heading p,
+#side-bar .side-block > .collapsible-block .collapsible-block-link {
+	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
+	letter-spacing: 0.2rem;
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-menutxt-light-color));
+	height: 1.25rem;
+	line-height: 1.25rem;
+	text-transform: uppercase;
+	font-size: calc(0.875rem * 0.9);
+	font-size: calc(var(--base-font-size) * 0.9);
+	font-weight: 900;
+	text-align: center;
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
+	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
+	display: block;
+}
+
+#side-bar .heading p {
+	cursor: default;
+}
+
+#side-bar div.menu-item {
+	margin: 0;
+	text-align: right;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 0;
+	min-height: calc(1.5rem - 0.125rem);
+	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid
+		rgba(var(--swatch-border-color), 0.08);
+
+	flex-shrink: 0;
+	flex-basis: 100%;
+}
+
+#side-bar div.menu-item > span {
+	display: none;
+}
+
+#side-bar div.menu-item a[href*="/scp-"] {
+	padding-right: .5em;
+	width: 100%;
+	flex-grow: 2;
+	flex-shrink: 1;
+	text-align: center;
+}
+
+#side-bar div.menu-item .sub-text {
+	font-size: calc(var(--base-font-size) * 0.7);
+	display: inline-flex;
+	color: rgba(var(--swatch-primary),1);
+	text-align: left;
+	padding-left: 1em;
+	padding-right: 3em;
+}
+
+#side-bar div.menu-item img[src*="scp-wiki-cn.wikidot"] + a[href*="scp-series"] {
+	text-align: left;
+	align-items: flex-start;
+	flex-grow: 0;
+	width: auto;
+	min-width: 45%;
+}
+
+#side-bar div.collapsible-block {
+	text-align: right;
+	flex-basis: 100%;
+}
+
+#side-bar div.menu-item span:first-of-type {
+	padding: 0 0 0 calc(var(--base-font-size) * 1.6);
+}
+
+#side-bar div.menu-item .collapsible-block {
+	padding: 0 0 0 calc(var(--base-font-size) * 1);
+}
+
+#side-bar div.menu-item a,
+#side-bar div.menu-item .text {
+	padding: 0 0.6em;
+	margin: 0;
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-menutxt-dark-color));
+	font-size: 0.875rem;
+	font-size: var(--base-font-size);
+	letter-spacing: 0.04em;
+	background-color: rgba(12, 12, 12, 0);
+	background-color: rgba(var(--swatch-menubg-hover-color), 0);
+	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	display: block;
+	height: calc(1.5rem - 0.125rem);
+	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	line-height: calc(1.5rem - 0.125rem);
+	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	background-clip: padding-box;
+	flex-grow: 2;
+	text-align: left;
+	justify-content: flex-start;
+}
+
+#side-bar div.menu-item > a:last-of-type {flex-grow: 1;
+	width: 100%;
+}
+
+#side-bar div.menu-item .text {
+	cursor: default;
+}
+
+/* SCP Series Specific */
+
+#side-bar div.menu-item > a:first-of-type {
+	padding: 0 calc(0.875rem * 1.5);
+	padding: 0 calc(var(--base-font-size) * 1.5);flex-grow: 0;flex-shrink: 0;
+	text-align: left;
+}
+
+#side-bar div.menu-item a[href*="scp-series"] {
+	padding-right: .5em;
+	width: 100%;
+	flex-grow: 2;
+	flex-shrink: 1;
+	text-align: center;
+}
+
+#side-bar div.menu-item a[href*="scp-series"]::before {
+	width: 200%;
+}
+
+#side-bar div.menu-item>:last-child {
+	flex-grow: 2;
+}
+
+#side-bar div.menu-item > :not(:nth-child(2)):not(.collapsible-block) {
+	border-left: 0.125rem solid rgba(12, 12, 12, 0.08);
+	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+}
+
+#side-bar div.menu-item a:hover {
+	background-color: rgba(12, 12, 12, 0.15);
+	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
+	text-decoration: none;
+}
+
+#side-bar div.menu-item img {
+	display: none;
+}
+
+/* Collapsibles in the sidebar */
+
+#side-bar div.menu-item .collapsible-block {
+	width: 100%;
+}
+
+#side-bar div.menu-item a.collapsible-block-link,
+#side-bar .side-block > .collapsible-block a.collapsible-block-link {
+	padding-right: 2rem;
+	position: relative;
+}
+
+#side-bar .collapsible-block-link:hover {
+	text-decoration: none;
+	background-color: rgba(180, 35, 35);
+	background-color: rgba(var(--swatch-primary));
+}
+
+/* create a dropdown triangle next to the collapsible */
+
+#side-bar div.menu-item a.collapsible-block-link::after,
+#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 2rem;
+	top: 0;
+	right: 0;
+	background-image: url(http://scptestwiki.wdfiles.com/local--files/squeeze%3Anav%3Aside/arr_drop.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
+	filter: invert(100%);
+}
+
+#side-bar
+	div.menu-item
+	.collapsible-block-unfolded-link
+	a.collapsible-block-link::after,
+#side-bar
+	.side-block
+	> .collapsible-block
+	.collapsible-block-unfolded-link
+	a.collapsible-block-link::after {
+	transform: rotate(180deg);
+}
+
+/* create a gap next to the collapsible contents */
+
+#side-bar div.menu-item .collapsible-block-content {
+	border-right: 2rem solid rgba(12, 12, 12, 0.08);
+	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
+	box-sizing: border-box;
+}
+
+/* hide the last border within the collapsible */
+
+#side-bar div.menu-item .collapsible-block-content .menu-item:last-of-type {
+	border-bottom: none;
+}
+
+#side-bar div.menu-item .collapsible-block-unfolded-link {
+	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
+	border-bottom: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+}
+
+#side-bar .collapsible-block-unfolded-link .collapsible-block-link {
+	font-size: 0.875rem;
+	font-size: var(--base-font-size);
+}
+
+/* for full-block collapsibles, give the open collapsible the same background as the side block */
+
+/* variable should be set in nav:side */
+
+#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
+	background: rgba(140, 20, 25, 0.5);
+	background: rgba(var(--medium-accent));
+}
+
+#side-bar ul {
+	list-style-type: none;
+	padding: 0 0.25rem;
+}
+
+#side-bar p {
+	margin: 0;
+}
+
+/* Search box specific styling */
+
+#___gcse_0 > div {
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
+	height: 2rem;
+}
+
+#___gcse_0 > div > form {
+	margin: 0;
+}
+
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-menutxt-light-color));
+	background-color: rgba(100, 3, 15, 0);
+	background-color: rgba(var(--swatch-primary-darkest), 0);
+	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	line-height: 1.85rem;
+}
+
+#___gcse_0
+	> div
+	> form
+	> table
+	> tbody
+	> tr
+	> td.gsc-search-button
+	> button:hover,
+#___gcse_0
+	> div
+	> form
+	> table
+	> tbody
+	> tr
+	> td.gsc-search-button
+	> button:focus {
+	background-color: rgba(252, 252, 252, 0.15);
+	background-color: rgba(var(--swatch-menubg-color), 0.15);
+	text-decoration: none;
+}
+
+/* Sigma Overwrite Specific Styles */
+
+#side-bar > div[style="background-color: #e5e5ff;"] {
+	border: 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+}
+
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
+	height: auto;
+	display: flex;
+	padding: 1rem;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
+	width: 2rem;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: none;
+	display: flex;
+	justify-content: center;
+}
+
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a > img {
+	display: block;
+}
+
+/* there's an empty menu item in the old sidebar design */
+
+#side-bar .close-menu,#side-bar div.menu-item:empty {
+	display: none;
+}
+
+/* Pleasing Nico by making the two Random buttons the same width */
+
+a[href*="/random:random-tale"],
+a[href*="/most-recently-edited"] {
+	min-width: calc(0.875rem * 2.5);
+	min-width: calc(var(--base-font-size) * 2.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Centering Translation Box in Sidebar */
+
+#side-bar div.scpnet-interwiki-wrapper {
+	transform: translate(
+		calc(((calc(0.875rem * 19) - 217.594px) / 2) - (0.5625rem / 2)),
+		0
+	);
+	transform: translate(
+		calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) -	(var(--scrollbar-width) / 2))
+		),
+		0
+	);
+}
+
+@media only screen and (max-width: 768px) {
+	#side-bar {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: -16.625rem;
+		left: calc(var(--sidebar-width-on-desktop) * -1);
+		height: 100%;
+		overflow-y: auto;
+		z-index: 10;
+		transition: left 0.5s ease-in-out 0.1s;
+		transition: left var(--sidebar-transition-timing);
+	}
+
+	#side-bar:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 0;
+		height: 100%;
+		background-color: rgba(12, 12, 12, 0.2);
+		background-color: rgba(var(--swatch-menubg-black-color), 0.2);
+	}
+
+	/* We've got two different mobile sidebars going on.
+    The first is "#side-bar:target". This is Wikidot's default.
+    The second is "#skrollr-body:target #side-bar". This gives us a higher level of control over what happens when the sidebar is opened.
+    Both need to be supported, in case certain wikis are unwilling to change the URL in nav:top. */
+
+	/* DEFAULT SIDEBAR */
+
+	#side-bar .close-menu {
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		margin-left: 0.5625rem;
+		margin-left: var(--scrollbar-width);
+		padding-right: calc(16.625rem + 0.5625rem);
+		padding-right: calc(var(--sidebar-width-on-desktop) + var(--scrollbar-width));
+		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625remrepeat;
+		z-index: -1;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.5s ease-in-out 0.1s;
+		transition: all var(--sidebar-transition-timing);
+	}
+
+	#side-bar:target,
+	#skrollr-body:target #side-bar {
+		overflow-x: hidden;
+		left: 0;
+	}
+
+	#side-bar:target {
+		--box-shadow: rgb(var(--swatch-menutxt-light-color, 252, 252, 252));
+		display: block;
+		left: 0;
+		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		box-shadow: inset 0 0 0 -0.0625rem var(--box-shadow);
+		z-index: 10;
+		margin: 0;
+		width: 17em;
+	}
+
+	#side-bar:target + #main-content {
+		left: 0;
+	}
+
+	#side-bar:target .close-menu {
+		width: calc(100% - 16.625rem - 0.5625rem);
+		width: calc(100% - 16.625rem - var(--scrollbar-width));
+		height: 100%;
+		margin-left: 16.625rem;
+		margin-left: var(--sidebar-width-on-desktop);
+		padding-right: 0;
+		visibility: visible;
+		pointer-events: auto;
+		opacity: 1;
+		display: block;
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		background: rgba(12, 12, 12, 0.3) 1px 1px repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 1px 1px repeat;
+	}
+
+	/* NEW SIDEBAR */
+
+	#skrollr-body:target {
+		overflow-x: hidden;
+	}
+
+	#skrollr-body:target #side-bar {
+		--box-shadow: rgb(var(--swatch-menutxt-light-color, 252, 252, 252));
+		display: block;
+		left: 0;
+		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		box-shadow: inset 0 0 0 -0.0625rem var(--box-shadow);
+		z-index: 10;
+		margin: 0;
+	}
+
+	#skrollr-body:target #side-bar + #main-content {
+		left: 0;
+	}
+
+	#skrollr-body:target #side-bar .close-menu {
+		width: calc(100% - 16.625rem - 0.5625rem);
+		width: calc(100% - 16.625rem - var(--scrollbar-width));
+		margin-left: calc(16.625rem + 2 * 0.5625rem - 1px);
+		margin-left: calc(16.625rem + 2 * var(--scrollbar-width - 1px));
+		visibility: visible;
+		pointer-events: auto;
+		opacity: 1;
+		left: calc(0.5625rem * -1);
+		left: calc(var(--scrollbar-width * -1));
+	}
+
+	#skrollr-body:target#side-bar::-webkit-scrollbar-track {
+		background: rgba(252, 252, 252, 0.2);
+		background: rgba(var(--swatch-menubg-color), 0.2);
+	}
+}
