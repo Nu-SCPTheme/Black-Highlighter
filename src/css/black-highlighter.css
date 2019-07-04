@@ -1,14 +1,13 @@
 @charset "utf-8";
 
-@supports(--css: variables) { 
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800");
 
-@import url(/root.css);
-@import url(/normalize.css);
-@import url(/structure.css);
-@import url(/main.css);
-@import url(/sidebar.css);
-@import url(/header.css);
-@import url(/elements.css);
-@import url(/translation.css);
-
-}
+/* Style Imports */
+@import "./root.css";
+@import "./structure.css";
+@import "./main.css";
+@import "./sidebar.css";
+@import "./header.css";
+@import "./elements.css";
+@import "./translation.css";

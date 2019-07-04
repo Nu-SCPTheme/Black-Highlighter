@@ -8,8 +8,8 @@ function init(done) {
       baseDir: "./dist/"
     },
     files: [
-      "./dist/css/main.min.css",
-      "./dist/js/main.bundle.js",
+      "./dist/css/black-highlighter.min.css",
+      "./dist/js/black-highlighter.bundle.js",
       "./dist/*.{html, xml}"
     ],
     port: 3000,
