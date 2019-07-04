@@ -377,7 +377,6 @@ form[id="search-top-box-form"] {
 	height: calc(100% - 0.6em);
 	display: inline-flex;
 	justify-content: center;
-	align-items: center;
 	text-decoration: none;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-menutxt-light-color));
@@ -555,7 +554,7 @@ form[id="search-top-box-form"] {
 	padding: 0 1em;
 
 	/* Text positioning */
- align-items: center;
+ 	align-items: center;
     justify-content: center;
 	overflow: hidden;
 	white-space: nowrap;
@@ -856,9 +855,24 @@ form[id="search-top-box-form"] {
 		margin: 0;
 		padding: 0;
 		width: 100vw;
-		background: linear-gradient(to bottom,rgba(12, 12, 12, 1) 0,rgba(66, 66, 72, 1) 0.125rem,rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(12, 12, 12, 1) 3rem);
-		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,rgba(12, 12, 12, 1) 0,rgba(66, 66, 72, 1) 0.125rem,rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(66, 66, 72, 1) calc(3rem - 0.125rem),rgba(12, 12, 12, 1) 3rem));
-		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,rgba(var(--swatch-topmenu-border-color), 1) 0,rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),rgba(var(--swatch-topmenu-border-color), 1) 3rem));
+		background: linear-gradient(to bottom,
+			rgba(12, 12, 12, 1) 0,
+			rgba(66, 66, 72, 1) 0.125rem,
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(12, 12, 12, 1) 3rem);
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
+			rgba(12, 12, 12, 1) 0,
+			rgba(66, 66, 72, 1) 0.125rem,
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(66, 66, 72, 1) calc(3rem - 0.125rem),
+			rgba(12, 12, 12, 1) 3rem));
+		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
+			rgba(var(--swatch-topmenu-border-color), 1) 0,
+			rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
+			rgba(var(--swatch-topmenu-border-color), 1) 3rem));
 		position: static;
 		align-items: center;
 		z-index: 9999;
