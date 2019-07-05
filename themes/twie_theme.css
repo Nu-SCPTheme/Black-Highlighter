@@ -1,4 +1,4 @@
-@supports(--css: variables) {
+@supports( --css: variables) {
 	/* CSS Theming for DJKaktus' The Way It Ends
 http://www.scp-wiki.net/djkaktus-s-proposal-iii */
 
@@ -43,21 +43,9 @@ http://www.scp-wiki.net/djkaktus-s-proposal-iii */
 
 	hr {
 		border-top: none;
-		background:
-			-webkit-linear-gradient(80deg,
-			rgba(var(--bright-accent), 0.15) 0%,
-			rgba(var(--bright-accent), 1) 50%,
-			rgba(var(--bright-accent), 0.15) 100%);
-		background:
-			-o-linear-gradient(80deg,
-			rgba(var(--bright-accent), 0.15) 0%,
-			rgba(var(--bright-accent), 1) 50%,
-			rgba(var(--bright-accent), 0.15) 100%);
-		background:
-			linear-gradient(10deg,
-			rgba(var(--bright-accent), 0.15) 0%,
-			rgba(var(--bright-accent), 1) 50%,
-			rgba(var(--bright-accent), 0.15) 100%);
+		background:-webkit-linear-gradient(80deg,rgba(var(--bright-accent), 0.15) 0%,rgba(var(--bright-accent), 1) 50%,rgba(var(--bright-accent), 0.15) 100%);
+		background:-o-linear-gradient(80deg,rgba(var(--bright-accent), 0.15) 0%,rgba(var(--bright-accent), 1) 50%,rgba(var(--bright-accent), 0.15) 100%);
+		background:linear-gradient(10deg,rgba(var(--bright-accent), 0.15) 0%,rgba(var(--bright-accent), 1) 50%,rgba(var(--bright-accent), 0.15) 100%);
 		-webkit-filter: blur(0.04rem);
 		filter: blur(0.04rem);
 	}
@@ -191,81 +179,18 @@ http://www.scp-wiki.net/djkaktus-s-proposal-iii */
 	}
 
 	#container-wrap-wrap {
-		background-image:
-			-webkit-gradient(linear,
-			left top, left bottom,
-			from(rgb(var(--white-monochrome))),
-			color-stop(30%, rgb(var(--white-monochrome))),
-			to(rgb(var(--pale-gray-monochrome)))),
-
-			-webkit-gradient(linear,
-			left top, left bottom,
-			color-stop(7.5rem, rgb(var(--dark-accent))),
-			color-stop(7.625rem, rgb(var(--white-monochrome))),
-			color-stop(rgb(var(--white-monochrome))),
-			color-stop(rgb(var(--white-monochrome))),
-			to(rgb(var(--dark-accent)))),
-
-			-webkit-gradient(linear,
-			left top, left bottom,
-			color-stop(0, rgba(var(--white-monochrome), 0)),
-			color-stop(10rem, rgba(var(--white-monochrome), 0.5)),
-			color-stop(25rem, rgba(var(--white-monochrome), 1)),
-			to(rgba(var(--white-monochrome), 1)));
-		background-image:
-			-webkit-linear-gradient(top,
-			rgb(var(--white-monochrome)) 0%,
-			rgb(var(--white-monochrome)) 30%,
-			rgb(var(--pale-gray-monochrome)) 100%),
-
-			-webkit-linear-gradient(top,
-			rgb(var(--dark-accent)) 7.5rem,
-			rgb(var(--white-monochrome)) 7.625rem,
-			rgb(var(--white-monochrome)) calc(100% - 0.125rem),
-			rgb(var(--white-monochrome)) calc(100% - 0.125rem),
-			rgb(var(--dark-accent)) 100%),
-
-			-webkit-linear-gradient(top,
-			rgba(var(--white-monochrome), 0) 0,
-			rgba(var(--white-monochrome), 0.5) 10rem,
-			rgba(var(--white-monochrome), 1) 25rem,
-			rgba(var(--white-monochrome), 1) 100%);
-		background-image:
-			-o-linear-gradient(top,
-			rgb(var(--white-monochrome)) 0%,
-			rgb(var(--white-monochrome)) 30%,
-			rgb(var(--pale-gray-monochrome)) 100%),
-
-			-o-linear-gradient(top,
-			rgb(var(--dark-accent)) 7.5rem,
-			rgb(var(--white-monochrome)) 7.625rem,
-			rgb(var(--white-monochrome)) calc(100% - 0.125rem),
-			rgb(var(--white-monochrome)) calc(100% - 0.125rem),
-			rgb(var(--dark-accent)) 100%),
-
-			-o-linear-gradient(top,
-			rgba(var(--white-monochrome), 0) 0,
-			rgba(var(--white-monochrome), 0.5) 10rem,
-			rgba(var(--white-monochrome), 1) 25rem,
-			rgba(var(--white-monochrome), 1) 100%);
-		background-image:
-			linear-gradient(to bottom,
-			rgb(var(--white-monochrome)) 0%,
-			rgb(var(--white-monochrome)) 30%,
-			rgb(var(--pale-gray-monochrome)) 100%),
-
-			linear-gradient(to bottom,
-			rgb(var(--dark-accent)) 7.5rem,
-			rgb(var(--white-monochrome)) 7.625rem,
-			rgb(var(--white-monochrome)) calc(100% - 0.125rem),
-			rgb(var(--white-monochrome)) calc(100% - 0.125rem),
-			rgb(var(--dark-accent)) 100%),
-
-			linear-gradient(to bottom,
-			rgba(var(--white-monochrome), 0) 0,
-			rgba(var(--white-monochrome), 0.5) 10rem,
-			rgba(var(--white-monochrome), 1) 25rem,
-			rgba(var(--white-monochrome), 1) 100%);
+		background-image:-webkit-gradient(linear,left top, left bottom,from(rgb(var(--white-monochrome))),color-stop(30%, rgb(var(--white-monochrome))),to(rgb(var(--pale-gray-monochrome)))),
+-webkit-gradient(linear,left top, left bottom,color-stop(7.5rem, rgb(var(--dark-accent))),color-stop(7.625rem, rgb(var(--white-monochrome))),color-stop(rgb(var(--white-monochrome))),color-stop(rgb(var(--white-monochrome))),to(rgb(var(--dark-accent)))),
+-webkit-gradient(linear,left top, left bottom,color-stop(0, rgba(var(--white-monochrome), 0)),color-stop(10rem, rgba(var(--white-monochrome), 0.5)),color-stop(25rem, rgba(var(--white-monochrome), 1)),to(rgba(var(--white-monochrome), 1)));
+		background-image:-webkit-linear-gradient(top,rgb(var(--white-monochrome)) 0%,rgb(var(--white-monochrome)) 30%,rgb(var(--pale-gray-monochrome)) 100%),
+-webkit-linear-gradient(top,rgb(var(--dark-accent)) 7.5rem,rgb(var(--white-monochrome)) 7.625rem,rgb(var(--white-monochrome)) calc(100% - 0.125rem),rgb(var(--white-monochrome)) calc(100% - 0.125rem),rgb(var(--dark-accent)) 100%),
+-webkit-linear-gradient(top,rgba(var(--white-monochrome), 0) 0,rgba(var(--white-monochrome), 0.5) 10rem,rgba(var(--white-monochrome), 1) 25rem,rgba(var(--white-monochrome), 1) 100%);
+		background-image:-o-linear-gradient(top,rgb(var(--white-monochrome)) 0%,rgb(var(--white-monochrome)) 30%,rgb(var(--pale-gray-monochrome)) 100%),
+-o-linear-gradient(top,rgb(var(--dark-accent)) 7.5rem,rgb(var(--white-monochrome)) 7.625rem,rgb(var(--white-monochrome)) calc(100% - 0.125rem),rgb(var(--white-monochrome)) calc(100% - 0.125rem),rgb(var(--dark-accent)) 100%),
+-o-linear-gradient(top,rgba(var(--white-monochrome), 0) 0,rgba(var(--white-monochrome), 0.5) 10rem,rgba(var(--white-monochrome), 1) 25rem,rgba(var(--white-monochrome), 1) 100%);
+		background-image:linear-gradient(to bottom,rgb(var(--white-monochrome)) 0%,rgb(var(--white-monochrome)) 30%,rgb(var(--pale-gray-monochrome)) 100%),
+linear-gradient(to bottom,rgb(var(--dark-accent)) 7.5rem,rgb(var(--white-monochrome)) 7.625rem,rgb(var(--white-monochrome)) calc(100% - 0.125rem),rgb(var(--white-monochrome)) calc(100% - 0.125rem),rgb(var(--dark-accent)) 100%),
+linear-gradient(to bottom,rgba(var(--white-monochrome), 0) 0,rgba(var(--white-monochrome), 0.5) 10rem,rgba(var(--white-monochrome), 1) 25rem,rgba(var(--white-monochrome), 1) 100%);
 		background-size: 100% 7.5rem, 100% 9.375rem, 100% 100%;
 		background-repeat: no-repeat;
 		background-blend-mode: darken;
@@ -319,27 +244,10 @@ http://www.scp-wiki.net/djkaktus-s-proposal-iii */
 	}
 
 	.page-rate-widget-box {
-		background:
-			-webkit-gradient(linear,
-			left top, left bottom,
-			from(rgb(var(--white-monochrome))),
-			color-stop(30%, rgb(var(--white-monochrome))),
-			to(rgba(var(--dark-accent), 0.25)));
-		background:
-			-webkit-linear-gradient(top,
-			rgb(var(--white-monochrome)) 0%,
-			rgb(var(--white-monochrome)) 30%,
-			rgba(var(--dark-accent), 0.25) 100%);
-		background:
-			-o-linear-gradient(top,
-			rgb(var(--white-monochrome)) 0%,
-			rgb(var(--white-monochrome)) 30%,
-			rgba(var(--dark-accent), 0.25) 100%);
-		background:
-			linear-gradient(to bottom,
-			rgb(var(--white-monochrome)) 0%,
-			rgb(var(--white-monochrome)) 30%,
-			rgba(var(--dark-accent), 0.25) 100%);
+		background:-webkit-gradient(linear,left top, left bottom,from(rgb(var(--white-monochrome))),color-stop(30%, rgb(var(--white-monochrome))),to(rgba(var(--dark-accent), 0.25)));
+		background:-webkit-linear-gradient(top,rgb(var(--white-monochrome)) 0%,rgb(var(--white-monochrome)) 30%,rgba(var(--dark-accent), 0.25) 100%);
+		background:-o-linear-gradient(top,rgb(var(--white-monochrome)) 0%,rgb(var(--white-monochrome)) 30%,rgba(var(--dark-accent), 0.25) 100%);
+		background:linear-gradient(to bottom,rgb(var(--white-monochrome)) 0%,rgb(var(--white-monochrome)) 30%,rgba(var(--dark-accent), 0.25) 100%);
 
 	}
 
@@ -377,105 +285,36 @@ http://www.scp-wiki.net/djkaktus-s-proposal-iii */
 	}
 
 	@media only screen and (max-width: 768px) {
-		#top-bar .mobile-top-bar {
-			background:
-				-webkit-gradient(linear,
-				left top, left bottom,
-				color-stop(0, rgba(var(--dark-accent), 1)),
-				color-stop(.125rem, rgba(var(--white-monochrome), 1)),
-				color-stop(rgba(var(--white-monochrome), 1)),
-				color-stop(rgba(var(--white-monochrome), 1)),
-				color-stop(3rem, rgba(var(--dark-accent), 1)));
-			background:
-				-webkit-linear-gradient(top,
-				rgba(var(--dark-accent), 1) 0,
-				rgba(var(--white-monochrome), 1) .125rem,
-				rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),
-				rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),
-				rgba(var(--dark-accent), 1) 3rem);
-			background:
-				-o-linear-gradient(top,
-				rgba(var(--dark-accent), 1) 0,
-				rgba(var(--white-monochrome), 1) .125rem,
-				rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),
-				rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),
-				rgba(var(--dark-accent), 1) 3rem);
-			background:
-				linear-gradient(to bottom,
-				rgba(var(--dark-accent), 1) 0,
-				rgba(var(--white-monochrome), 1) .125rem,
-				rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),
-				rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),
-				rgba(var(--dark-accent), 1) 3rem);
+		#top-bar .mobile-top-bar {background:-webkit-gradient(linear,left top, left bottom,color-stop(0, rgba(var(--dark-accent), 1)),color-stop(.125rem, rgba(var(--white-monochrome), 1)),color-stop(rgba(var(--white-monochrome), 1)),color-stop(rgba(var(--white-monochrome), 1)),color-stop(3rem, rgba(var(--dark-accent), 1)));background:-webkit-linear-gradient(top,rgba(var(--dark-accent), 1) 0,rgba(var(--white-monochrome), 1) .125rem,rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),rgba(var(--dark-accent), 1) 3rem);background:-o-linear-gradient(top,rgba(var(--dark-accent), 1) 0,rgba(var(--white-monochrome), 1) .125rem,rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),rgba(var(--dark-accent), 1) 3rem);background:linear-gradient(to bottom,rgba(var(--dark-accent), 1) 0,rgba(var(--white-monochrome), 1) .125rem,rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),rgba(var(--white-monochrome), 1) calc(3rem - 0.125rem),rgba(var(--dark-accent), 1) 3rem);
 		}
 
-		#top-bar > div.mobile-top-bar > div.open-menu > p > a {
-			color: rgb(var(--bright-accent)) !important;
+		#top-bar > div.mobile-top-bar > div.open-menu > p > a {color: rgb(var(--bright-accent)) !important;
 		}
 
-		#side-bar {
-			background: rgba(5, 0, 0, 1)
+		#side-bar {background: rgba(5, 0, 0, 1)
 		}
 
-		#side-bar .close-menu {
-			background: rgba(var(--white-monochrome), .3) .0625rem .0625rem repeat;
+		#side-bar .close-menu {background: rgba(var(--white-monochrome), .3) .0625rem .0625rem repeat;
 		}
 
-		#side-bar:target .close-menu {
-			background: rgba(var(--white-monochrome), .3) 1px 1px repeat
+		#side-bar:target .close-menu {background: rgba(var(--white-monochrome), .3) 1px 1px repeat
 		}
 	}
 
 	/* Animations */
 	@keyframes neon {
-		from {
-			text-shadow:
-				0 0 0.3125rem rgb(var(--white-monochrome)),
-				0 0 0.625rem rgb(var(--white-monochrome)),
-				0 0 0.9375rem rgb(var(--white-monochrome)),
-				0 0 1.25rem rgb(var(--bright-accent)),
-				0 0 2.1875rem rgb(var(--bright-accent)),
-				0 0 2.5rem rgb(var(--bright-accent)),
-				0 0 3.125rem rgb(var(--bright-accent)),
-				0 0 4.6875rem rgb(var(--bright-accent));
+		from {text-shadow:0 0 0.3125rem rgb(var(--white-monochrome)),0 0 0.625rem rgb(var(--white-monochrome)),0 0 0.9375rem rgb(var(--white-monochrome)),0 0 1.25rem rgb(var(--bright-accent)),0 0 2.1875rem rgb(var(--bright-accent)),0 0 2.5rem rgb(var(--bright-accent)),0 0 3.125rem rgb(var(--bright-accent)),0 0 4.6875rem rgb(var(--bright-accent));
 		}
 
-		to {
-			text-shadow:
-				0 0 0.1565rem rgb(var(--white-monochrome)),
-				0 0 0.3125rem rgb(var(--white-monochrome)),
-				0 0 0.469rem rgb(var(--white-monochrome)),
-				0 0 0.625rem rgb(var(--bright-accent)),
-				0 0 1.094rem rgb(var(--bright-accent)),
-				0 0 1.25rem rgb(var(--bright-accent)),
-				0 0 1.5625rem rgb(var(--bright-accent)),
-				0 0 2.344rem rgb(var(--bright-accent));
+		to {text-shadow:0 0 0.1565rem rgb(var(--white-monochrome)),0 0 0.3125rem rgb(var(--white-monochrome)),0 0 0.469rem rgb(var(--white-monochrome)),0 0 0.625rem rgb(var(--bright-accent)),0 0 1.094rem rgb(var(--bright-accent)),0 0 1.25rem rgb(var(--bright-accent)),0 0 1.5625rem rgb(var(--bright-accent)),0 0 2.344rem rgb(var(--bright-accent));
 		}
 	}
 
 	@-webkit-keyframes neon {
-		from {
-			text-shadow:
-				0 0 0.3125rem rgb(var(--white-monochrome)),
-				0 0 0.625rem rgb(var(--white-monochrome)),
-				0 0 0.9375rem rgb(var(--white-monochrome)),
-				0 0 1.25rem rgb(var(--bright-accent)),
-				0 0 2.1875rem rgb(var(--bright-accent)),
-				0 0 2.5rem rgb(var(--bright-accent)),
-				0 0 3.125rem rgb(var(--bright-accent)),
-				0 0 4.6875rem rgb(var(--bright-accent));
+		from {text-shadow:0 0 0.3125rem rgb(var(--white-monochrome)),0 0 0.625rem rgb(var(--white-monochrome)),0 0 0.9375rem rgb(var(--white-monochrome)),0 0 1.25rem rgb(var(--bright-accent)),0 0 2.1875rem rgb(var(--bright-accent)),0 0 2.5rem rgb(var(--bright-accent)),0 0 3.125rem rgb(var(--bright-accent)),0 0 4.6875rem rgb(var(--bright-accent));
 		}
 
-		to {
-			text-shadow:
-				0 0 0.1565rem rgb(var(--white-monochrome)),
-				0 0 0.3125rem rgb(var(--white-monochrome)),
-				0 0 0.469rem rgb(var(--white-monochrome)),
-				0 0 0.625rem rgb(var(--bright-accent)),
-				0 0 1.094rem rgb(var(--bright-accent)),
-				0 0 1.25rem rgb(var(--bright-accent)),
-				0 0 1.5625rem rgb(var(--bright-accent)),
-				0 0 2.344rem rgb(var(--bright-accent));
+		to {text-shadow:0 0 0.1565rem rgb(var(--white-monochrome)),0 0 0.3125rem rgb(var(--white-monochrome)),0 0 0.469rem rgb(var(--white-monochrome)),0 0 0.625rem rgb(var(--bright-accent)),0 0 1.094rem rgb(var(--bright-accent)),0 0 1.25rem rgb(var(--bright-accent)),0 0 1.5625rem rgb(var(--bright-accent)),0 0 2.344rem rgb(var(--bright-accent));
 		}
 	}
 }
