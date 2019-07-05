@@ -2281,6 +2281,7 @@ div#container-wrap {
 	font-family: 'Poppins', sans-serif;
 	font-family: var(--title-font);
 	font-weight: 700;
+	pointer-events: none;
 }
 
 #header h2 span {
@@ -3186,7 +3187,7 @@ form[id="search-top-box-form"] {
 		-moz-osx-font-smoothing: grayscale;
 		color: rgb(var(--swatch-menubg-medium-color));
 		position: absolute;
-		top: calc((var(--header-height-on-mobile) / 2) + 0.5em);
+		top: calc((var(--header-height-on-mobile) / 2) - 0.5em);
 		right: 0;
 		width: 2rem;
 		text-align: center;
