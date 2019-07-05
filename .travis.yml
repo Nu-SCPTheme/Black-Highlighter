@@ -21,6 +21,16 @@ before_script:
 script:
   - npm run gulp
 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: _
+  target_branch: test-release
+  keep_history: true
+  verbose: true
+  on:
+    branch: master
+
 notifications:
   - email:
     recipients:
