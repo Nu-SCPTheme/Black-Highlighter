@@ -1,6 +1,6 @@
 # Black-Highlighter
 [![Travis CI Build Status](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter.svg?branch=master)](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter)
-[![BrowserStack](images/browserstack-logo-600x315.png)](https://www.browserstack.com/)
+[![BrowserStack](img/browserstack-logo-600x315.png)](https://www.browserstack.com/)
 
     [2019 Wikidot Theme]
     Designed by Woedenaz, Croquembouche, & djkaktus
@@ -9,9 +9,9 @@
 
 A WiP new theme for the SCP Wiki utilizing more current CSS styling standards.
 
-See a preview overwriting old SCP theme here: http://scp-wiki.net/scp-4444
+See a preview overwriting old SCP theme (Sigma9) here: http://scp-wiki.net/scp-4444
 
-See a preview without the old SCP theme here: http://scptestwiki.wikidot.com/component:theme
+See a preview without the old SCP theme (Sigma9) here: http://scptestwiki.wikidot.com/
 
 ### Build
 
