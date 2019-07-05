@@ -5,7 +5,7 @@ const gulp = require("gulp");
 const postcss = require("gulp-postcss");
 const atImport = require("postcss-import");
 const rename = require("gulp-rename");
-const map = require('map-stream');
+const map = require("map-stream");
 
 // CSS task
 function stylesConcat() {

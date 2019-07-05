@@ -1,6 +1,6 @@
-const advancedPreset = require("cssnano-preset-advanced");
+const defaultPreset = require("cssnano-preset-default");
 
-module.exports = advancedPreset({
+module.exports = defaultPreset({
     discardComments: {
         removeAll: true,
     },
