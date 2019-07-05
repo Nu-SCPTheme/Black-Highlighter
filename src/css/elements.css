@@ -192,11 +192,7 @@ blockquote,
 .hovertip {
 	width: 15% !important;
 	opacity: 0;
-	transform: translateX(-5rem);
-	transition: 
-		left 0ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		top 0ms cubic-bezier(0.4, 0.0, 0.2, 1);
-	animation-name: slide-in;
+	animation-name: fade-in;
 	animation-duration: 600ms; 
 	animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); 
 	animation-delay: 300ms;
@@ -205,16 +201,11 @@ blockquote,
 	animation-fill-mode: forwards;
 }
 
-@keyframes slide-in {
+@keyframes fade-in {
 	0% {
-		transform: translateX(-5rem);
 		opacity: 0;
 	}
-	50% {
-		transform: translateX(0)
-	}
 	100% {
-		transform: translateX(0);
 		opacity: 1;
 	}
 }

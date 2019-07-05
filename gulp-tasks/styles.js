@@ -42,7 +42,7 @@ function normalizeFile() {
       var fileContents = file.contents.toString();
       fileContents = fileContents.replace(
         "@charset \"utf-8\";",
-        "@charset \"utf-8\";@supports(--css:variables){",
+        "@charset \"utf-8\";@supports(--css:variables){"
       );
       fileContents = fileContents + "}";
       file.contents = Buffer.from(fileContents);
