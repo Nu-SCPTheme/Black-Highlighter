@@ -13,13 +13,13 @@ function optimiseImages() {
         imagemin.optipng({ optimizationLevel: 5 }),
         imagemin.svgo({
           plugins: [{ removeViewBox: false }, { collapseGroups: true }]
-        })
-      ])
+        }),
+      ]),
     )
     .pipe(gulp.dest("./src/img/"));
 }
 
 // exports (Common JS)
 module.exports = {
-  optimise: optimiseImages
+  optimise: optimiseImages,
 };

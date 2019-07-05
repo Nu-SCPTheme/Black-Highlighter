@@ -7,8 +7,8 @@ const path = require("path");
 const assetsDirs = [
   {
     src: "./src/img/",
-    dist: "./dist/img/"
-  }
+    dist: "./dist/img/",
+  },
 ];
 
 // make sure paths do not end with slash
@@ -23,21 +23,17 @@ function sanitizePath(filepath) {
 // copy assets
 function copyAssets(done) {
   assetsDirs.forEach(dir => {
-    // src and dist
-    let sourceDir = sanitizePath(dir.src);
-    let distDir = sanitizePath(dir.dist);
-
     // glob all files
-    let files = glob.sync(`${sourceDir}/*`, { nodir: true });
+    let files = glob.sync(`${dir.src}/*`, { nodir: true });
 
     // copy each file to dist dir
-    files.forEach(function(file) {
+    files.forEach(file => {
       let srcFile = file;
-      let distFile = srcFile.replace(sourceDir, distDir);
-      let distDirname = path.dirname(distFile);
+      let distFile = srcFile.replace(dir.src, dir.dist);
+      let dir.distname = path.dirname(distFile);
 
-      if (!fs.existsSync(distDirname)) {
-        fs.mkdirSync(distDirname, { recursive: true });
+      if (!fs.existsSync(dir.distname)) {
+        fs.mkdirSync(dir.distname, { recursive: true });
       }
 
       if (!fs.existsSync(distFile)) {
@@ -49,10 +45,11 @@ function copyAssets(done) {
       }
     });
   });
+
   done();
 }
 
 // exports
 module.exports = {
-  assets: copyAssets
+  assets: copyAssets,
 };

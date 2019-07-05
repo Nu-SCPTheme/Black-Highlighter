@@ -18,8 +18,9 @@ function stylesConcat() {
 function stylesBuild() {
   var plugins = [
     autoprefixer,
-    cssnano
+    cssnano,
   ];
+
   return gulp
     .src("./dist/css/black-highlighter.css")
     .pipe(rename("./black-highlighter.min.css"))
@@ -30,15 +31,19 @@ function stylesBuild() {
 function normalizeFile() {
   var plugins = [
     autoprefixer,
-    cssnano
+    cssnano,
   ];
+
   return gulp
     .src("./src/css/normalize.css")
     .pipe(rename("./normalize.min.css"))
     .pipe(postcss(plugins))
-    .pipe(map(function(file, cb) {
+    .pipe(map((file, cb) => {
       var fileContents = file.contents.toString();
-      fileContents = fileContents.replace("@charset \"utf-8\";", "@charset \"utf-8\";@supports(--css:variables){");
+      fileContents = fileContents.replace(
+        "@charset \"utf-8\";",
+        "@charset \"utf-8\";@supports(--css:variables){",
+      );
       fileContents = fileContents + "}";
       file.contents = Buffer.from(fileContents);
       cb(null,file);
@@ -50,9 +55,9 @@ function addSupports() {
   return gulp
     .src([
       "./dist/css/black-highlighter.css",
-      "./dist/css/min/black-highlighter.min.css"], 
-      {base: "./dist/css/"})
-    .pipe(map(function(file, cb) {
+      "./dist/css/min/black-highlighter.min.css",
+    ], {base: "./dist/css/"})
+    .pipe(map((file, cb) => {
       var fileContents = file.contents.toString();
       fileContents = fileContents.replace("@charset \"utf-8\";", "@charset \"utf-8\";@import url(\"https://fonts.googleapis.com/css?family=Lato:400,900|PT+Mono|Poppins:600,800&display=swap&subset=latin-ext\");@supports(--css:variables){");
       fileContents = fileContents + "}";
@@ -74,5 +79,5 @@ module.exports = {
   build: stylesBuild,
   normalize: normalizeFile,
   supports: addSupports,
-  legacy: moveLegacy
+  legacy: moveLegacy,
 };

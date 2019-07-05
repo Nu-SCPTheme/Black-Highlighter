@@ -5,16 +5,17 @@ const browsersync = require("browser-sync").create();
 function init(done) {
   browsersync.init({
     server: {
-      baseDir: "./dist/"
+      baseDir: "./dist/",
     },
     files: [
       "./dist/css/min/black-highlighter.min.css",
       "./dist/js/black-highlighter.bundle.js",
-      "./scp-test-page/**/*.{html, xml}"
+      "./scp-test-page/**/*.{html, xml}",
     ],
     port: 3000,
-    open: false
+    open: false,
   });
+
   done();
 }
 
@@ -27,5 +28,5 @@ function reload(done) {
 // exports
 module.exports = {
   init: init,
-  reload: reload
+  reload: reload,
 };
