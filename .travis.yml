@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - 10
+  - 11
+
+os:
+  - linux
+  - osx
+  - windows
+
+matrix:
+  allow_failures:
+    - os: windows
+  fast_finish: true
+
+cache: npm
+
+before_script:
+  - npm install
+
+script:
+  - npm run gulp
+
+notifications:
+  - email:
+    recipients:
+      - ammon.i.smith@gmail.com
+      #- woedenaz@gmail.com
+      #- rossjrw@gmail.com
+    on_success: change
+    on_failure: always
