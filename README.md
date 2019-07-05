@@ -1,4 +1,5 @@
 # Black-Highlighter
+[![Travis CI Build Status](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter.svg?branch=master)](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter)
 [![BrowserStack](images/browserstack-logo-600x315.png)](https://www.browserstack.com/)
 
     [2019 Wikidot Theme]
