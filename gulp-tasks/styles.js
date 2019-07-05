@@ -67,17 +67,10 @@ function addSupports() {
   .pipe(gulp.dest("./dist/css/"));
 }
 
-function moveLegacy() {
-  return gulp
-    .src("dist/css/min/*.css")
-    .pipe(gulp.dest("./stable/styles/"));
-}
-
 // exports
 module.exports = {
   concat: stylesConcat,
   build: stylesBuild,
   normalize: normalizeFile,
   supports: addSupports,
-  legacy: moveLegacy,
 };
