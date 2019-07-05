@@ -113,9 +113,9 @@
 	--gradient-topmenu: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0) 0%,
-		rgba(255, 255, 255, 0) 7.5rem,
-		rgba(var(--swatch-topmenu-border-color),1) 7.5rem,
-		rgba(var(--swatch-topmenu-bg-color), 1) 7.625rem,
+		rgba(255, 255, 255, 0) var(--header-height-on-desktop),
+		rgba(var(--swatch-topmenu-border-color),1) var(--header-height-on-desktop),
+		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--header-height-on-desktop) + 0.125rem),
 		rgba(var(--swatch-topmenu-bg-color), 0.95) calc(100% - 0.125rem),
 		rgba(var(--swatch-topmenu-bg-color), 1) calc(100% - 0.125rem),
 		rgba(var(--swatch-topmenu-border-color), 1) 100%);
@@ -123,9 +123,9 @@
 		to bottom,
 		rgba(var(--swatch-topmenu-border-color),1) 0,
 		rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color),1) 3rem);
+		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+		rgba(var(--swatch-topmenu-border-color),1) var(--topbar-height-on-mobile));
 	--diagonal-stripes: repeating-linear-gradient(
 		45deg,
 		hsla(0, 0%, 100%, 0),
@@ -156,11 +156,15 @@
 		rgba(var(--background-gradient-color),0.049) calc(0.825 * var(--background-gradient-distance)),
 		rgba(var(--background-gradient-color),0.013) calc(0.914 * var(--background-gradient-distance)),
 		rgba(var(--background-gradient-color),0) var(--background-gradient-distance));
-	--header-background-image-size: 100% 7.5rem;
 
 	/* Spacing Measurements */
-	--offset-from-page-top: 1.2rem;
-	/* space between the top of the page and the start of the header text */
+
+	/* header measurements */
+	--header-height-on-desktop: 7.5rem;
+	--header-height-on-mobile: 15rem;
+	--topbar-height-on-desktop: 1.875rem;
+	--topbar-height-on-mobile: 3rem;
+
 	--body-width-on-desktop: 44.25rem;
 	--sidebar-width-on-desktop: calc(var(--base-font-size) * 19);
 	--sidebar-width-on-mobile: 14rem;
@@ -182,6 +186,8 @@
 	/* final values */
 	--base-font-size: 0.875rem;
 	--base-line-height: 1.313rem;
+	--final-header-height-on-desktop: calc(var(--header-height-on-desktop) + var(--topbar-height-on-desktop));
+	--final-header-height-on-mobile: calc(var(--header-height-on-mobile) + var(--topbar-height-on-mobile));
 }
 
 html {
@@ -459,7 +465,7 @@ tt {
     display: grid;
     flex-direction: column;
     width: 98vw;
-    min-height: calc(100vh - 9.375rem);
+    min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
     flex-grow: 2;
     height: auto;
     position: initial;
@@ -2113,13 +2119,13 @@ a[href*="/most-recently-edited"] {
 	position: relative;
 	grid-area: header;
 	z-index: 10;
-	height: 9.375rem;
+	height: var(--final-header-height-on-desktop);
 	background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 	background-image: var(--logo-image);
 	background-repeat: no-repeat;
 	background-position: left 0.75rem top 1.1875rem;
 	background-clip: border-box;
-	background-size: auto 5.375rem;
+	background-size: auto calc(var(--header-height-on-desktop) - 2.125rem);
 	filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
 	filter: drop-shadow(.063rem .063rem .063rem rgb(var(--black-monochrome)));
 }
@@ -2165,8 +2171,14 @@ body {
 		var(--gradient-header),
 		var(--gradient-topmenu),
 		var(--gradient-background);
-	background-size: 100% 7.5rem, 100% 9.375rem, 100% 40rem;
-	background-size: var(--header-background-image-size), 100% 9.375rem, 100% var(--background-gradient-distance);
+	background-size: 
+		100% 7.5rem, 
+		100% 9.375rem, 
+		100% 40rem;
+	background-size: 
+		100% var(--header-height-on-desktop), 
+		100% var(--final-header-height-on-desktop), 
+		100% var(--background-gradient-distance);
 	/* 120px, 150px */
 	background-repeat: repeat-x;
 }
@@ -2183,7 +2195,7 @@ div#container-wrap {
 		rgba(88, 88, 88, 0.1) 0.35vh,
 		rgba(88, 88, 88, 0.2) 0.5vh);
 	background-image: var(--diagonal-stripes);
-	background-size: 100% 7.5rem;
+	background-size: 100% var(--header-height-on-desktop);
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
@@ -2194,18 +2206,6 @@ div#container-wrap {
 	/* 980px */
 	font-weight: 600;
 	margin: 0 auto;
-}
-
-#header > h1 > a > span {
-	display: inline-table;
-	z-index: 9999;
-	color: transparent;
-	width: 50vw;
-	max-width: 32rem;
-	height: 7.5rem;
-	position: absolute;
-	left: 0;
-	top: 0;
 }
 
 .mobile-top-bar {
@@ -2220,7 +2220,7 @@ div#container-wrap {
 	font-family: 'Poppins', sans-serif;
 	font-family: var(--header-font);
 	height: 100%;
-	max-height: 7.75rem;
+	max-height: var(--header-height-on-desktop);
 	position: absolute;
 }
 
@@ -2259,9 +2259,21 @@ div#container-wrap {
 	text-shadow: none;
 	z-index: 9999;
 	padding: 1.875rem 0 0;
-	margin-left: 6.75rem;
+	margin-left: calc(var(--header-height-on-desktop) - 0.75rem);
 	margin-top: calc(0.3125rem + 1.2rem);
-	margin-top: calc(0.3125rem + var(--offset-from-page-top));
+	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 1em);
+}
+
+#header > h1 > a > span {
+	display: inline-table;
+	z-index: 9999;
+	color: transparent;
+	width: 50vw;
+	max-width: 32rem;
+	height: var(--header-height-on-desktop);
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 #header h2 {
@@ -2277,9 +2289,9 @@ div#container-wrap {
 	font-weight: 400;
 	color: transparent;
 	text-shadow: none;
-	margin-left: 6.75rem;
+	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
 	margin-top: calc(3.8rem + 1.2rem);
-	margin-top: calc(3.8rem + var(--offset-from-page-top));
+	margin-top: calc(((var(--header-height-on-desktop) / 2) + 1.25em));
 }
 
 #header h2 span::before {
@@ -2419,13 +2431,13 @@ form[id="search-top-box-form"] {
 	width: 100%;
 	position: initial;
 	z-index: 50;
-	height: 1.625rem;
+	height: var(--topbar-height-on-desktop);
 	font-size: calc(0.875rem * 0.85);
 	font-size: calc(var(--base-font-size) * 0.85);
 	font-weight: 600;
 	display: inline-flex;
-	margin: 7.625rem 0 1.75rem 0;
-	padding: 0 0 0.25rem;
+	margin: calc(var(--header-height-on-desktop) + 0.125rem) 0 1.75rem 0;
+	padding: 0;
 	flex-wrap: nowrap;
 }
 
@@ -2910,20 +2922,32 @@ form[id="search-top-box-form"] {
 
 	/* Mobile CSS */
 
+	body {
+		background-size: 
+		100% var(--header-height-on-mobile), 
+		100% var(--final-header-height-on-mobile), 
+		100% var(--background-gradient-distance);
+	}
+
+	div#container-wrap {
+		background-size: 100% var(--header-height-on-mobile);
+	}
+
 	#header {
+		height: var(--header-height-on-mobile);
 		background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 		background-image: var(--logo-image);
-		--size: 9.9rem;
-		--size: calc(8.75rem + var(--offset-from-page-top));
-		--y-offset: 1.3125rem;
-		background-position: calc(6.75rem - var(--size)) calc(((var(--size) * -1) + 7.5rem + var(--y-offset)) / 2);
-		background-size: var(--size), 100% 7.5rem;
-		/* not sure what this 2nd size is doing here? - croque */
+		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
+		--y-offset: 1.5rem;
+		background-position: 
+			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
+			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
+		background-size: var(--size), 100% var(--header-height-on-mobile);
 		background-repeat: no-repeat, repeat;
 		width: 100vw;
 		margin: 0;
 		position: sticky;
-		top: -7.5rem;
+		top: calc(var(--header-height-on-mobile) * -1);
 	}
 
 	#header,
@@ -2931,6 +2955,29 @@ form[id="search-top-box-form"] {
 		max-width: 100%;
 		left: 0;
 	}
+
+	/* Start Thing */
+
+	#header h1 {
+		max-height: var(--header-height-on-mobile);
+	}
+	
+	#header h1 a {
+		margin-left: calc(var(--header-height-on-mobile) - 0.5rem);
+		margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1em);
+	}
+	
+	#header > h1 > a > span {
+		height: var(--header-height-on-mobile);
+	}
+	
+	#header h2 span {
+		margin-left: calc(var(--header-height-on-mobile) - 0.5rem);
+		margin-top: calc(((var(--header-height-on-mobile) / 2) + 2em));
+	}
+
+	/* End Thing */
+	
 
 	#top-bar > div.top-bar {
 		display: none;
@@ -2955,8 +3002,8 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar {
-		margin: 7.5rem 0 1.75rem 0;
-		height: 3rem;
+		margin: calc(var(--header-height-on-mobile)) 0 1.75rem 0;
+		height: var(--topbar-height-on-mobile);
 	}
 
 	#top-bar .mobile-top-bar {
@@ -2982,9 +3029,9 @@ form[id="search-top-box-form"] {
 		background: var(--gradient-topmenu-mobile, linear-gradient(to bottom,
 			rgba(var(--swatch-topmenu-border-color), 1) 0,
 			rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-			rgba(var(--swatch-topmenu-bg-color), 1) calc(3rem - 0.125rem),
-			rgba(var(--swatch-topmenu-border-color), 1) 3rem));
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+			rgba(var(--swatch-topmenu-border-color), 1) var(--topbar-height-on-mobile)));
 		position: static;
 		align-items: center;
 		z-index: 9999;
@@ -3013,7 +3060,7 @@ form[id="search-top-box-form"] {
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		margin-top: 2.938rem;
+		margin-top: calc(var(--topbar-height-on-mobile) - 0.0625rem);
 		column-count: 3;
 		width: 85vw;
 		max-height: calc(100vh - 8rem);
@@ -3036,7 +3083,7 @@ form[id="search-top-box-form"] {
 
 	#top-bar div.mobile-top-bar > ul > li > ul > li {
 		max-height: calc((100vh - 15rem) / 10);
-		height: 3rem;
+		height: var(--topbar-height-on-mobile);
 		max-width: calc(80vw + 0.0625rem);
 		width: calc(80vw + 0.0625rem);
 		flex-grow: 2;
@@ -3061,8 +3108,8 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu {
-		width: 3rem;
-		height: 3rem;
+		width: var(--topbar-height-on-mobile);
+		height: var(--topbar-height-on-mobile);
 		display: flex;
 	}
 
@@ -3088,7 +3135,6 @@ form[id="search-top-box-form"] {
 		font-size: 3em;
 		font-weight: 700;
 		text-decoration: none;
-		/* width: 100%; */
 		text-align: center;
 		color: rgb(252, 252, 252);
 		color: rgb(var(--swatch-menutxt-light-color));
@@ -3121,7 +3167,7 @@ form[id="search-top-box-form"] {
 		display: inline-block;
 	}
 	#search-top-box {
-		height: 7.5rem;
+		height: var(--header-height-on-mobile);
 		top: 0;
 		right: 0;
 		transition: box-shadow 0.3s, background-color 0.3s;
@@ -3140,7 +3186,7 @@ form[id="search-top-box-form"] {
 		-moz-osx-font-smoothing: grayscale;
 		color: rgb(var(--swatch-menubg-medium-color));
 		position: absolute;
-		top: 3.8rem;
+		top: calc((var(--header-height-on-mobile) / 2) + 0.5em);
 		right: 0;
 		width: 2rem;
 		text-align: center;
@@ -3167,13 +3213,13 @@ form[id="search-top-box-form"] {
 		transition: width 0.6s, right 0.6s;
 	}
 	#search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="text"] {
-		height: 7.5rem;
+		height: var(--header-height-on-mobile);
 		width: 2rem;
 		position: absolute;
 		color: transparent;
 		right: 0;
 		transform: translateY(0) ;
-		border-width: 0 0 0 1px;
+		border-width: 0 0 0 0.0625rem;
 		cursor: pointer;
 	}
 	#search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="text"]:hover {
