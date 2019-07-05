@@ -64,11 +64,12 @@
 	margin: 0 auto;
 	grid-area: content-wrap;
 	grid-template-areas: 
-	"side-bar content";
+	"side-bar . content";
 	grid-template-columns: 
-		var(--sidebar-width-on-desktop) 
-		1fr 
-		calc((100vw - (var(--body-width-on-desktop) + var(--sidebar-width-on-desktop)))/2);
+		calc(var(--sidebar-width-on-desktop) - 0.99vw) 
+		calc(((99.9vw - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop) - 0.99vw) * 3) / 2) 
+		1fr
+		calc((100vw - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop) - 0.99vw))) / 2);
 }
 
 #action-area-top {

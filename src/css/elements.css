@@ -186,6 +186,39 @@ blockquote,
 	margin-left: -1rem;
 }
 
+/* Hover Blocks */
+
+
+.hovertip {
+	position: absolute !important;
+	width: 15% !important;
+	right:  14.5% !important;
+	left: initial !important;
+	opacity: 0;
+	transform: translateX(-5rem);
+	animation-name: slide-in;
+	animation-duration: 600ms; 
+	animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1) ; 
+	animation-delay: 300ms;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+	0% {
+		transform: translateX(-5rem);
+		opacity: 0;
+	}
+	50% {
+		transform: translateX(0)
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
 /* IMAGE BLOCK */
 
 div.image-block {
