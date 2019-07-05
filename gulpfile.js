@@ -13,7 +13,7 @@ const copy = require("./gulp-tasks/copy.js");
 // Watch files
 function watchFiles() {
   gulp.watch("./src/css/*", 
-    gulp.series(css.concat, css.build, css.normalize, css.supports)
+    gulp.series(css.concat, css.build, css.normalize, css.supports, css.legacy)
     );
   gulp.watch("./src/img/*", gulp.parallel(img.resize, copy.assets));
 }
@@ -24,7 +24,7 @@ const build = gulp.series(
   clean.dist,
   gulp.parallel(
     copy.assets,
-    gulp.series(css.concat, css.build, css.normalize, css.supports),
+    gulp.series(css.concat, css.build, css.normalize, css.supports, css.legacy),
     gulp.series(js.lint, js.build)
   )
 );
