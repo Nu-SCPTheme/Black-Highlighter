@@ -2,7 +2,7 @@
 
 ::selection {
 	background: rgba(180, 35, 35, 0.25);
-	background: rgba(var(--swatch-primary, 180, 35, 35),0.25);
+	background: rgba(var(--swatch-primary, 180, 35, 35), 0.25);
 	text-shadow: none;
 }
 
@@ -63,11 +63,11 @@
     position: initial;
 	margin: 0 auto;
 	grid-area: content-wrap;
-	grid-template-areas: 
+	grid-template-areas:
 	"side-bar . content";
-	grid-template-columns: 
-		calc(var(--sidebar-width-on-desktop) - 0.99vw) 
-		calc(((99.9vw - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop) - 0.99vw) * 3) / 2) 
+	grid-template-columns:
+		calc(var(--sidebar-width-on-desktop) - 0.99vw)
+		calc(((99.9vw - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop) - 0.99vw) * 3) / 2)
 		1fr
 		calc((100vw - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop) - 0.99vw))) / 2);
 	margin: 0 auto;
@@ -131,7 +131,7 @@ span.printuser {
 	max-height: 100%;
 	grid-area: content;
     display: grid;
-	grid-template-areas: 
+	grid-template-areas:
 		"action-area-top"
 		"page-title"
 		"page-content"
@@ -163,29 +163,29 @@ div.page-watch-options {
 #page-options-container {
 	grid-area: page-options;
 }
- 
+
 div#page-options-bottom {
     width: 90%;
     margin: 0 auto 2.125rem auto;
 }
- 
+
 div#page-options-bottom-2 {
     width: 90%;
     margin: -2.125rem auto 0 auto;
 }
- 
+
 div#page-options-bottom,
 div#page-options-bottom-2 {
     text-align: left;
     flex-wrap: wrap;
 }
- 
+
 div#page-options-bottom,
 div#page-options-bottom-2,
 div#page-options-bottom > a {
     display: flex;
 }
- 
+
 div#page-options-bottom > a,
 div#page-options-bottom-2 > a {
     flex-grow: 2;
@@ -199,11 +199,11 @@ div#page-options-bottom-2 > a {
     justify-content: center;
     transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
- 
+
 div#page-options-bottom-2 > a {
     display: flex;
 }
- 
+
 div#page-options-bottom > a:hover,
 div#page-options-bottom > a:active,
 div#page-options-bottom-2 > a:hover,
@@ -262,7 +262,7 @@ div#page-options-bottom-2 > a:active {
 #footer .options * {
     white-space: normal;
 }
- 
+
 #footer .options * {
     white-space: nowrap;
 }
@@ -312,12 +312,12 @@ div.sexy-box div.image-container img {
 	background-color: rgba(var(--gray-monochrome, 66, 66, 72), 0.5);
 	box-shadow:
 		0 0.188em 0.375em rgba(12, 12, 12, 0.16),
-		0 0.188em 0.375em rgba(12, 12, 12, 0.23), 
+		0 0.188em 0.375em rgba(12, 12, 12, 0.23),
 		0 0 0.063em 0 rgb(170, 170, 170) inset,
 		0 0 0.063em 0 rgb(170, 170, 170);
 	box-shadow:
 	0 0.188em 0.375em var(--box-shadow-1),
-	0 0.188em 0.375em var(--box-shadow-2), 
+	0 0.188em 0.375em var(--box-shadow-2),
 	0 0 0.063em 0 var(--box-shadow-3) inset,
 	0 0 0.063em 0 var(--box-shadow-3);
 	margin: 0.625em 0 0.938em;
@@ -460,7 +460,7 @@ div.sexy-box div.image-container img {
 		linear-gradient(
 			to right,
 			rgba(var(--swatch-menubg-light-color)),
-			rgba(var(--swatch-menubg-medium-color))			
+			rgba(var(--swatch-menubg-medium-color))
 		),
 		rgba(var(--swatch-menubg-light-color));
 	background-blend-mode: screen;
@@ -551,12 +551,12 @@ div.sexy-box div.image-container img {
 	font-family: inherit;
 	font-size: 0.85em;
 	white-space: nowrap;
-	border-color: 
+	border-color:
 		rgb(244, 244, 244)
 		rgb(244, 244, 244)
 		rgb(244, 244, 244)
 		rgb(244, 244, 244);
-	border-color: 
+	border-color:
 		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
 		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
 		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
@@ -587,15 +587,15 @@ div.sexy-box div.image-container img {
 	left: -0.625rem;
 	width: 0;
 	height: 0;
-	border-color: 
-		transparent 
-		rgb(48, 48, 52) 
-		transparent 
+	border-color:
+		transparent
+		rgb(48, 48, 52)
+		transparent
 		transparent;
-	border-color: 
-		transparent 
-		rgb(var(--swatch-menubg-dark-color,  48, 48, 52)) 
-		transparent 
+	border-color:
+		transparent
+		rgb(var(--swatch-menubg-dark-color,  48, 48, 52))
+		transparent
 		transparent;
 	border-style: solid;
 	border-width: 0.5rem 0.5rem 0.5rem 0;
@@ -928,7 +928,7 @@ div.buttons.alignleft {
 
 	#content-wrap {
 		margin: 2.875em auto 0;
-		grid-template-areas: 
+		grid-template-areas:
 			"content content content";
 	}
 

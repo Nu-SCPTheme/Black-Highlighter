@@ -66,17 +66,17 @@
     height: inherit;
     overflow: hidden;
 }
- 
+
 #side-bar div.menu-item a:hover {
     background-color: transparent;
 }
- 
+
 #side-bar div.menu-item a::before {
     transform: translateX(calc(-100% - 4rem));
     transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 }
- 
+
 #side-bar div.menu-item a::before,
 #side-bar div.menu-item a:hover::before {
     content: " ";
@@ -89,7 +89,7 @@
 	z-index: -1;
 	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
 }
- 
+
 #side-bar div.menu-item a:hover::before {
     transform: translateX(-2rem);
 }
