@@ -19,40 +19,53 @@ const assetsDirs = [
   },
 ];
 
-// copy assets
-function copyAssets(done) {
-  assetsDirs.forEach(dir => {
-    // glob all files
-    let files = glob.sync(`${dir.src}/*`, { nodir: true });
+function copyAssets(dir) {
+  // glob all files
+  let entries = glob.sync(`${dir.src}/*`);
 
-    // copy each file to dist dir
-    files.forEach(file => {
-      let srcFile = file;
-      let distFile = srcFile.replace(dir.src, dir.dist);
-      let distDir = path.dirname(distFile);
+  // copy each file to dist dir
+  entries.forEach(entry => {
+    // copy directories recursively
+    let stats = fs.lstatSync(entry);
+    if (stats.isDirectory()) {
+      let newDir = {
+        src: entry,
+        dist: `${dir.dist}/${path.basename(entry)}`,
+      };
 
-      if (!fs.existsSync(dir.distname)) {
-        fs.mkdirSync(distDir, { recursive: true });
+      copyAssets(newDir);
+      return;
+    }
+
+    // copy files
+    let srcFile = entry;
+    let distFile = srcFile.replace(dir.src, dir.dist);
+    let distDir = path.dirname(distFile);
+
+    if (!fs.existsSync(dir.distname)) {
+      fs.mkdirSync(distDir, { recursive: true });
+    }
+
+    if (!fs.existsSync(distFile)) {
+      stats = fs.lstatSync(srcFile);
+
+      // copy symlinks as symlinks
+      if (stats.isSymbolicLink()) {
+        let path = fs.readlinkSync(srcFile);
+        fs.symlinkSync(path, distFile);
+      } else {
+        fs.copyFileSync(srcFile, distFile);
       }
-
-      if (!fs.existsSync(distFile)) {
-        let stats = fs.lstatSync(srcFile);
-
-        // copy symlinks as symlinks
-        if (stats.isSymbolicLink()) {
-          let path = fs.readlinkSync(srcFile);
-          fs.symlinkSync(path, distFile);
-        } else {
-          fs.copyFileSync(srcFile, distFile);
-        }
-      }
-    });
+    }
   });
+}
 
+function copyAllAssets(done) {
+  assetsDirs.forEach(copyAssets);
   done();
 }
 
 // exports
 module.exports = {
-  assets: copyAssets,
+  assets: copyAllAssets,
 };
