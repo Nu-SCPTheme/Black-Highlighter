@@ -8,9 +8,9 @@ function init(done) {
       baseDir: "./dist/"
     },
     files: [
-      "./dist/css/black-highlighter.min.css",
+      "./dist/css/min/black-highlighter.min.css",
       "./dist/js/black-highlighter.bundle.js",
-      "./dist/*.{html, xml}"
+      "./scp-test-page/**/*.{html, xml}"
     ],
     port: 3000,
     open: false
