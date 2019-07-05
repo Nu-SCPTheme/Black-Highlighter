@@ -9,6 +9,10 @@ const assetsDirs = [
     src: "./src/img/",
     dist: "./dist/img/",
   },
+  {
+    src: "./src/misc/",
+    dist: "./dist/spherical/",
+  },
 ];
 
 // make sure paths do not end with slash
