@@ -10,6 +10,10 @@ const assetsDirs = [
     dist: "./dist/img/",
   },
   {
+    src: "./src/legacy/",
+    dist: "./dist/stable/styles/",
+  },
+  {
     src: "./src/misc/",
     dist: "./dist/spherical/",
   },
@@ -32,11 +36,15 @@ function copyAssets(done) {
       }
 
       if (!fs.existsSync(distFile)) {
-        fs.copyFile(srcFile, distFile, err => {
-          if (err) {
-            console.log(err);
-          }
-        });
+        let stats = fs.lstatSync(srcFile);
+
+        // copy symlinks as symlinks
+        if (stats.isSymbolicLink()) {
+          let path = fs.readlinkSync(srcFile);
+          fs.symlinkSync(path, distFile);
+        } else {
+          fs.copyFileSync(srcFile, distFile);
+        }
       }
     });
   });
