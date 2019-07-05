@@ -1,4 +1,4 @@
-const advancedPreset = require('cssnano-preset-advanced');
+const advancedPreset = require("cssnano-preset-advanced");
 
 module.exports = advancedPreset({
     discardComments: {
