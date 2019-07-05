@@ -30,10 +30,10 @@ function copyAssets(done) {
     files.forEach(file => {
       let srcFile = file;
       let distFile = srcFile.replace(dir.src, dir.dist);
-      let dir.distname = path.dirname(distFile);
+      let distDir = path.dirname(distFile);
 
       if (!fs.existsSync(dir.distname)) {
-        fs.mkdirSync(dir.distname, { recursive: true });
+        fs.mkdirSync(distDir, { recursive: true });
       }
 
       if (!fs.existsSync(distFile)) {
