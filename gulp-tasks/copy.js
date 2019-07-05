@@ -15,15 +15,6 @@ const assetsDirs = [
   },
 ];
 
-// make sure paths do not end with slash
-function sanitizePath(filepath) {
-  let sanitizedFilepath = filepath;
-  if (filepath.slice(-1) === "/") {
-    sanitizedFilepath = filepath.slice(0, -1);
-  }
-  return sanitizedFilepath;
-}
-
 // copy assets
 function copyAssets(done) {
   assetsDirs.forEach(dir => {
