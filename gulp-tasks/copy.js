@@ -42,7 +42,7 @@ function copyAssets(dir) {
     let distFile = srcFile.replace(dir.src, dir.dist);
     let distDir = path.dirname(distFile);
 
-    if (!fs.existsSync(dir.distname)) {
+    if (!fs.existsSync(distDir)) {
       fs.mkdirSync(distDir, { recursive: true });
     }
 
