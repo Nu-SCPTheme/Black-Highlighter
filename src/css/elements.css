@@ -190,15 +190,15 @@ blockquote,
 
 
 .hovertip {
-	position: absolute !important;
 	width: 15% !important;
-	right:  14.5% !important;
-	left: initial !important;
 	opacity: 0;
 	transform: translateX(-5rem);
+	transition: 
+		left 0ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		top 0ms cubic-bezier(0.4, 0.0, 0.2, 1);
 	animation-name: slide-in;
 	animation-duration: 600ms; 
-	animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1) ; 
+	animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); 
 	animation-delay: 300ms;
 	animation-direction: alternate;
 	animation-iteration-count: 1;
@@ -217,6 +217,12 @@ blockquote,
 		transform: translateX(0);
 		opacity: 1;
 	}
+}
+
+.hovertip[style="display:none;"] {
+	transition: 
+		left 100ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		top 100ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* IMAGE BLOCK */
