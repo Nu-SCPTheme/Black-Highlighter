@@ -1,0 +1,46 @@
+language: node_js
+node_js:
+  - 10 # active LTS
+  - 12 # current
+
+os:
+  - linux
+  - osx
+  - windows
+
+matrix:
+  allow_failures:
+    - os: windows
+  fast_finish: true
+
+cache: npm
+
+env:
+  matrix:
+    secure: tXAHI7uT3ERHaM7nB6KzI1t5utzLHF1Zv168peY9SAqhWLCvm5fKuIjU0LI5nIkT3/DVgMwwvsA/XPvxEFBeq6A/LCUc/cTSFhYe3d2AlsxlaFnoc/8GckXFd3TNURDlqEIUu+9OuEkRZ4jll8nsXbIcS9gXKDQqqsdehJkQdNv6D/yTqhCN9zuBOPg0pXfDNUUYN/Oq56J4LrrN++w2IaNNZQf+Sw6DD4KV9Sm0V1nXgedjvYSIGh9RhBVEnivo30fhJtf0+/D0LP2sN04ke+HeAZGCFMAY/iHUGHrJJQILByO/CPGIcXrGO6oIKw+ePoGI21et2KBJM/rv72zFkMrecCa7gVUqoomyYplixmQNqGft3ZGi6BoKIU2FEREYa7S5oLiYtqospd1J4PzuZCBOrjmCcP2y4ZLNtw/CSTYWX3BR4h6Ca4hYnpj7f/lG7LHjF4dyGVgoBnBy73fRvzLIeUYJ1TyzxGYtuxZ/Lx6Ky3tBLs2lcnS8vbQso5eJfzsjDiu4CzIZwVGuv2MxeHsPXtL/Mwk2va3eXL9ZxU3ohBNwdYTbVf9vwIgnmS3jMA8WqYP+8tm+sCqIHMHq3pOsQNJ49Hv92TqI3w7D/yJzyuq71OqtfITU6N6ZTcAS3XVLteedBDyDPBPldW9bkMtPwf/QyXO/4A3YrF5OBBI=
+
+script:
+  - npm run gulp
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  target_branch: release
+  local_dir: dist
+  keep_history: true
+  deployment_file: true
+  verbose: true
+  on:
+    os: linux
+    node_js: 12
+    branch: master
+
+notifications:
+  - email:
+    recipients:
+      - ammon.i.smith@gmail.com
+      - gophilm@gmail.com
+      - rossjrw@gmail.com
+    on_success: change
+    on_failure: always

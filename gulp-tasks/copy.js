@@ -7,52 +7,65 @@ const path = require("path");
 const assetsDirs = [
   {
     src: "./src/img/",
-    dist: "./dist/img/"
-  }
+    dist: "./dist/img/",
+  },
+  {
+    src: "./src/legacy/",
+    dist: "./dist/stable/styles/",
+  },
+  {
+    src: "./src/misc/",
+    dist: "./dist/spherical/",
+  },
 ];
 
-// make sure paths do not end with slash
-function sanitizePath(filepath) {
-  let sanitizedFilepath = filepath;
-  if (filepath.slice(-1) === "/") {
-    sanitizedFilepath = filepath.slice(0, -1);
-  }
-  return sanitizedFilepath;
+function copyAssets(dir) {
+  // glob all files
+  let entries = glob.sync(`${dir.src}/*`);
+
+  // copy each file to dist dir
+  entries.forEach(entry => {
+    // copy directories recursively
+    let stats = fs.lstatSync(entry);
+    if (stats.isDirectory()) {
+      let newDir = {
+        src: entry,
+        dist: `${dir.dist}/${path.basename(entry)}`,
+      };
+
+      copyAssets(newDir);
+      return;
+    }
+
+    // copy files
+    let srcFile = entry;
+    let distFile = srcFile.replace(dir.src, dir.dist);
+    let distDir = path.dirname(distFile);
+
+    if (!fs.existsSync(distDir)) {
+      fs.mkdirSync(distDir, { recursive: true });
+    }
+
+    if (!fs.existsSync(distFile)) {
+      stats = fs.lstatSync(srcFile);
+
+      // copy symlinks as symlinks
+      if (stats.isSymbolicLink()) {
+        let path = fs.readlinkSync(srcFile);
+        fs.symlinkSync(path, distFile);
+      } else {
+        fs.copyFileSync(srcFile, distFile);
+      }
+    }
+  });
 }
 
-// copy assets
-function copyAssets(done) {
-  assetsDirs.forEach(dir => {
-    // src and dist
-    let sourceDir = sanitizePath(dir.src);
-    let distDir = sanitizePath(dir.dist);
-
-    // glob all files
-    let files = glob.sync(`${sourceDir}/*`, { nodir: true });
-
-    // copy each file to dist dir
-    files.forEach(function(file) {
-      let srcFile = file;
-      let distFile = srcFile.replace(sourceDir, distDir);
-      let distDirname = path.dirname(distFile);
-
-      if (!fs.existsSync(distDirname)) {
-        fs.mkdirSync(distDirname, { recursive: true });
-      }
-
-      if (!fs.existsSync(distFile)) {
-        fs.copyFile(srcFile, distFile, err => {
-          if (err) {
-            console.log(err);
-          }
-        });
-      }
-    });
-  });
+function copyAllAssets(done) {
+  assetsDirs.forEach(copyAssets);
   done();
 }
 
 // exports
 module.exports = {
-  assets: copyAssets
+  assets: copyAllAssets,
 };
