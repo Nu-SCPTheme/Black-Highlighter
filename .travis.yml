@@ -29,10 +29,12 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   target_branch: test-release
+  local_dir: dist
   keep_history: true
   verbose: true
   on:
-    branch: master
+    branch: ci
+    #branch: master
 
 notifications:
   - email:
