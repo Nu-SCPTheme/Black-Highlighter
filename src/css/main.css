@@ -66,10 +66,10 @@
 	grid-template-areas:
 	"side-bar . content";
 	grid-template-columns:
-		calc(var(--sidebar-width-on-desktop) - 0.99vw)
-		calc(((99.9vw - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop) - 0.99vw) * 3) / 2)
+		calc(var(--sidebar-width-on-desktop))
+		calc((((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop)) * 3) / 2)
 		1fr
-		calc((100vw - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop) - 0.99vw))) / 2);
+		calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2);
 	margin: 0 auto;
 }
 
