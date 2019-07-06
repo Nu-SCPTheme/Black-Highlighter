@@ -13,22 +13,16 @@ function optimiseImages() {
         imagemin.optipng({ optimizationLevel: 5 }),
         imagemin.svgo({plugins: [
           { removeDoctype: false },
-          { removeViewBox: false }, 
+          { removeViewBox: false },
           { removeXMLProcInst: false },
           { collapseGroups: true },
           { convertPathData: true },
           { removeUselessStrokeAndFill: true },
-          { cleanupNumericValues: {
-            floatPrecision: 2
-            }
-          },
+          { cleanupNumericValues: { floatPrecision: 2 } },
           { mergePaths: true },
           { sortAttrs: true },
           { convertShapeToPath: true },
-          { js2svg: {
-            pretty: true
-            }
-          },
+          { js2svg: { pretty: true } },
         ]})
       ])
     )
