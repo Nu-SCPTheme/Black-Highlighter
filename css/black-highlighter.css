@@ -464,7 +464,7 @@ tt {
 #content-wrap {
     display: grid;
     flex-direction: column;
-    width: 98vw;
+    width: calc(100vw - (100vw - 100%));
     min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
     flex-grow: 2;
     height: auto;
@@ -1439,13 +1439,13 @@ div.buttons.alignleft {
 	border: none;
 	display: flex;
 	flex-direction: column;
-	height: calc(100vh);
+	height: 100vh;
 	width: 15.75rem;
 	width: calc(0.875rem * 189);
 	width: var(--sidebar-width-on-desktop);
 	flex-shrink: 0;
 	padding: 0 0 0 0;
-	margin: 0 0 0 -0.99vw;
+	margin: 0;
 	/* removes weird thin white line from right side of side-bar */
 	position: sticky;
 	top: 0;
@@ -1507,6 +1507,7 @@ div.buttons.alignleft {
 
 #side-bar::-webkit-scrollbar {
 	border: none;
+	width: 0.5rem;
 }
 
 /* Sidebar Hover Effect */
