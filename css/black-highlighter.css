@@ -535,7 +535,8 @@ span.printuser {
     padding-right: 0;
 	background-color: transparent;
     flex-basis: var(--body-width-on-desktop);
-    max-width: var(--body-width-on-desktop);
+	max-width: var(--body-width-on-desktop);
+	width: 100%;
     padding: 2rem 1rem;
 	max-height: 100%;
 	grid-area: content;
@@ -2497,6 +2498,7 @@ form[id="search-top-box-form"] {
 #top-bar div.top-bar > ul > li > a,
 #top-bar div.mobile-top-bar > ul > li > a {
 	padding: 0.3em;
+	margin-top: -0.15em;
 	width: 100%;
 	height: calc(100% - 0.6em);
 	display: inline-flex;
