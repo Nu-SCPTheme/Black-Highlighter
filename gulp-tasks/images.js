@@ -5,18 +5,34 @@ const gulp = require("gulp");
 // optimize images in place
 function optimiseImages() {
   return gulp
-    .src("./src/img/*", { base: "./src/img" })
+    .src("./src/img/*")
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.jpegtran({ progressive: true }),
         imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: false }, { collapseGroups: true }]
-        }),
-      ]),
+        imagemin.svgo({plugins: [
+          { removeDoctype: false },
+          { removeViewBox: false }, 
+          { removeXMLProcInst: false },
+          { collapseGroups: true },
+          { convertPathData: true },
+          { removeUselessStrokeAndFill: true },
+          { cleanupNumericValues: {
+            floatPrecision: 2
+            }
+          },
+          { mergePaths: true },
+          { sortAttrs: true },
+          { convertShapeToPath: true },
+          { js2svg: {
+            pretty: true
+            }
+          },
+        ]})
+      ])
     )
-    .pipe(gulp.dest("./src/img/"));
+    .pipe(gulp.dest("./dist/img/"));
 }
 
 // exports (Common JS)

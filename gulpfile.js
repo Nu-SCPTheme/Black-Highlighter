@@ -16,7 +16,7 @@ function watchFiles() {
     "./src/css/*",
     gulp.series(css.concat, css.build, css.normalize, css.supports)
   );
-  gulp.watch("./src/img/*", gulp.parallel(img.resize, copy.assets));
+  gulp.watch("./src/img/*", gulp.parallel(img.optimise, copy.assets));
 }
 
 // define tasks
@@ -25,6 +25,7 @@ const build = gulp.series(
   clean.dist,
   gulp.parallel(
     copy.assets,
+    img.optimise,
     gulp.series(css.concat, css.build, css.normalize, css.supports),
     gulp.series(js.lint, js.build)
   )
