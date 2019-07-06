@@ -4,9 +4,7 @@
 	border: none;
 	display: flex;
 	flex-direction: column;
-	background: rgba(252, 252, 252, 1);
-	background: rgba(var(--swatch-menubg-color), 1);
-	height: calc(100vh + 1rem);
+	height: calc(100vh);
 	width: 15.75rem;
 	width: calc(0.875rem * 189);
 	width: var(--sidebar-width-on-desktop);
@@ -27,6 +25,26 @@
 	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	grid-area: side-bar;
 	justify-self: start;
+	background:
+		/* Shadow covers */
+		linear-gradient(
+			rgba(var(--swatch-menubg-color),1) 30%, 
+			rgba(var(--swatch-menubg-color),0)),
+		linear-gradient(
+			rgba(var(--swatch-menubg-color),0), 
+			rgba(var(--swatch-menubg-color),1) 70%) 0 100%,
+		
+		/* Shadows */
+		radial-gradient(farthest-side at 50% 0, 
+			rgba(var(--swatch-primary-darkest),0.5), 
+			rgba(var(--black-monochrome),0)),
+		radial-gradient(farthest-side at 50% 100%, 
+			rgba(var(--swatch-primary-darkest),0.5), 
+			rgba(var(--black-monochrome),0)) 0 100%;
+	background-color: rgba(var(--swatch-menubg-color),1);
+	background-repeat: no-repeat;
+	background-attachment: local, local, scroll, scroll;
+	background-size: 100% 3rem, 100% 3rem, 100% 1.5rem, 100% 1.5rem;
 }
 
 /* Hover Scrollbar Behavior */
@@ -34,8 +52,6 @@
 #side-bar:hover {
 	scrollbar-color: rgba(170, 170, 170, 0.05);
 	scrollbar-color: rgba(var(--swatch-menubg-medium-color), 0.05);
-	background: rgba(244, 244, 244, 1);
-	background: rgba(var(--swatch-menubg-light-color), 1);
 }
 
 #side-bar::-webkit-scrollbar-track,
@@ -155,6 +171,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	flex-shrink: 0;
+	background: rgb(0,0,0,0);
 }
 
 #side-bar .side-block,.side-block div[style="text-align: center;"] {
