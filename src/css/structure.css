@@ -6,6 +6,7 @@ html {
 html,body {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-dark));
+	font-variant-ligatures: none;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 	font-size: var(--base-font-size);
 	font-kerning: normal;
 	font-variant-numeric: normal;
-	font-feature-settings: "lnum", "kern", "liga", "clig", "calt";
+	font-feature-settings: "lnum", "kern", "clig", "calt";
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
