@@ -59,7 +59,7 @@ function addSupports() {
     ], {base: "./dist/css/"})
     .pipe(map((file, cb) => {
       var fileContents = file.contents.toString();
-      fileContents = fileContents.replace("@charset \"utf-8\";", "@charset \"utf-8\";@import url(\"Lato:400,400i,700,700i,900,900i&display=swap&subset=latin-ext|Space+Mono:400,400i,700,700i&display=swap&subset=latin-ext|Poppins:600,800&display=swap&subset=latin-ext\");@supports(--css:variables){");
+      fileContents = fileContents.replace("@charset \"utf-8\";", "@charset \"utf-8\";@import url(\"https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&display=swap&subset=latin-ext|Space+Mono:400,400i,700,700i&display=swap&subset=latin-ext|Poppins:600,800&display=swap&subset=latin-ext\");@supports(--css:variables){");
       fileContents = fileContents + "}";
       file.contents = Buffer.from(fileContents);
       cb(null,file);
