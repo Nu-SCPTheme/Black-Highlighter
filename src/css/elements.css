@@ -555,6 +555,7 @@ div.image-block,div.image-block img {
 	float: right;
 	clear: right;
 	margin: 0 0 1em 2em;
+
 }
 
 .scp-image-block.block-left {
@@ -671,5 +672,14 @@ table.wiki-content-table tr {
 
 	#who-rated-page-area > div {
 		grid-template-columns: repeat(2, 1fr auto);
+	}
+
+	.hovertip {
+		width: 90%;		
+	}
+
+	.scp-image-block.block-right,
+	.scp-image-block.block-left {
+		max-width: 40vw !important;
 	}
 }
