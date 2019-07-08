@@ -608,9 +608,9 @@ div#page-options-bottom-2 > a {
     padding: .25rem;
     border-radius: .25rem;
     background-color: rgba(100, 3, 15,1);
-    background-color: rgba(var(--swatch-menubg-dark-color),1);
+    background-color: rgba(var(--swatch-primary-darkest),1);
     border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-primary-darkest),1);
+	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color),1);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
     font-weight: 900;
@@ -628,11 +628,11 @@ div#page-options-bottom > a:hover,
 div#page-options-bottom > a:active,
 div#page-options-bottom-2 > a:hover,
 div#page-options-bottom-2 > a:active {
-    text-decoration: none;
-    background-color: rgba(100, 3, 15,1);
-    background-color: rgba(var(--swatch-primary-darkest),1);
+	text-decoration: none;
+	background-color: rgba(100, 3, 15,1);
+    background-color: rgba(var(--swatch-menubg-dark-color),1);
     border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color),1);
+	border: 0.125rem solid rgba(var(--swatch-primary-darkest),1);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
 }
@@ -1375,6 +1375,10 @@ div.buttons.alignleft {
 
 	#recent-posts-category,
 	.owindow div .btn-primary ~ div {
+		width: 100%;
+	}
+
+	#page-options-bottom {
 		width: 100%;
 	}
 }
