@@ -290,6 +290,8 @@
 }
 
 #side-bar div.menu-item a,
+#side-bar div.menu-item a:active,
+#side-bar div.menu-item a:visted,
 #side-bar div.menu-item .text {
 	padding: 0 0.6em;
 	margin: 0;
@@ -310,6 +312,12 @@
 	flex-grow: 2;
 	text-align: left;
 	justify-content: flex-start;
+}
+
+#side-bar div.menu-item a:visited,
+#side-bar div.menu-item a:active {
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-menutxt-dark-color));
 }
 
 #side-bar div.menu-item > a:last-of-type {
