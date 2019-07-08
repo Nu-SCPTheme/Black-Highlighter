@@ -1962,13 +1962,7 @@ flex-grow: 1;
 	width: 100%;
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 0.125rem;
-	background-color: rgb(var(--white-monochrome));
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	border-left: none !important;
-}
-
-#side-bar:hover > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
-	background-color: rgba(var(--swatch-menubg-light-color), 1);
 }
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
@@ -1980,7 +1974,6 @@ flex-grow: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(var(--swatch-primary-darker), 0.25);
 }
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:hover::before {
