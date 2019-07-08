@@ -320,6 +320,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-weight: 900;
 	letter-spacing: 0.063rem;
 	margin: 0.5em 0 0.4em;
 	padding: 0;
@@ -606,13 +607,17 @@ div#page-options-bottom-2 > a {
     flex-grow: 2;
     padding: .25rem;
     border-radius: .25rem;
-    background-color: rgba(178, 210, 180, 0.25);
-    background-color: rgba(var(--swatch-menubg-light-color), 0.25);
-    border: 0.0625rem solid rgba(255, 219, 90, 1);
-    border: 0.0625rem solid rgba(var(--swatch-primary), 1);
-    font-weight: 700;
+    background-color: rgba(100, 3, 15,1);
+    background-color: rgba(var(--swatch-menubg-dark-color),1);
+    border: 0.125rem solid rgba(48, 48, 52, 0);
+	border: 0.125rem solid rgba(var(--swatch-primary-darkest),1);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--white-monochrome));
+    font-weight: 900;
     justify-content: center;
-    transition: background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: 
+		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), 
+		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 div#page-options-bottom-2 > a {
@@ -624,10 +629,12 @@ div#page-options-bottom > a:active,
 div#page-options-bottom-2 > a:hover,
 div#page-options-bottom-2 > a:active {
     text-decoration: none;
-    background-color: rgba(30, 55, 30, 1);
-    background-color: rgba(var(--swatch-primary-darker), 1);
-    color: rgba(255, 219, 90, 1);
-    color: rgba(var(--swatch-menutxt-light-color), 1);
+    background-color: rgba(100, 3, 15,1);
+    background-color: rgba(var(--swatch-primary-darkest),1);
+    border: 0.125rem solid rgba(48, 48, 52, 0);
+	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color),1);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--white-monochrome));
 }
 
 #footer {
@@ -1253,10 +1260,8 @@ div.buttons.alignleft {
 
 	#main-content {
 		max-width: 90vw;
-		margin-left: 5%;
-		margin-right: 5%;
-		margin-top: 2.1em;
 		padding: 0;
+		margin: 2.1em auto 0;
 	}
 
 	.mobile-top-bar > div > p {
@@ -1349,17 +1354,17 @@ div.buttons.alignleft {
 
 	#footer {
 		width: auto;
-		bottom: 1rem;
+		height: 2rem;
 		align-self: auto;
 	}
 
 	#license-area {
-		font-size: 1em;
-		bottom: -1.5em;
-		width: 90%;
+		bottom: -0.5em;
 		margin: 0 auto;
+		width: 90%;
+		height: 3rem;
+		font-size: 1em;
 		line-height: 1;
-		height: 2rem;
 	}
 
 	#search-top-box-input,
@@ -3832,6 +3837,7 @@ div.image-block,div.image-block img {
 	float: right;
 	clear: right;
 	margin: 0 0 1em 2em;
+
 }
 
 .scp-image-block.block-left {
@@ -3947,6 +3953,15 @@ table.wiki-content-table tr {
 
 	#who-rated-page-area > div {
 		grid-template-columns: repeat(2, 1fr auto);
+	}
+
+	.hovertip {
+		width: 90%;		
+	}
+
+	.scp-image-block.block-right,
+	.scp-image-block.block-left {
+		max-width: 40vw !important;
 	}
 }
 
