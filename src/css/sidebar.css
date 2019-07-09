@@ -112,22 +112,6 @@
     transform: translateX(-2rem);
 }
 
-/* DARK SIDEBAR
-#side-bar {
-	background: rgba(48, 48, 52,0.15);
-	background: rgba(var(--dark-gray-monochrome,0.15);
-}
-
-#side-bar::-webkit-scrollbar-thumb {
-	background: rgba(12, 12, 12,0.95);
-	background: rgba(var(--black-monochrome,0.95);
-}
-
-#side-bar::-webkit-scrollbar-track {
-	background: rgba(252, 252, 252,0.1);
-	background: rgba(var(--white-monochrome,0.1);
-} */
-
 #side-bar img {
 	filter: brightness(120%);
 }
@@ -154,16 +138,17 @@
 }
 
 /* Chinese Specific Styling */
-
-.side-block div[style="text-align: center;"] img{
-	margin:0;
-}
-
+ 
 #side-bar div[style*="#f0f0f0"]{
-	background-color:transparent !important;
+    background-color:transparent !important;
 }
-.side-block[style*="#f0f0f0"] div[style="text-align: center;"]{
-	align-items:center;
+ 
+#side-bar div[style*="#f0f0f0"] div[style="text-align: center;"]{
+    align-items:center;
+}
+ 
+#side-bar div[style*="#f0f0f0"] div[style="text-align: center;"] img{
+    margin:0 !important;
 }
 
 /* Defer to a variable set in nav:side, if available */
@@ -294,7 +279,7 @@
 	padding: 0 0.6em;
 	margin: 0;
 	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--sidebar-links-text));
 	font-size: 0.875rem;
 	font-size: var(--base-font-size);
 	letter-spacing: 0.04em;
@@ -315,7 +300,7 @@
 #side-bar div.menu-item a:visited,
 #side-bar div.menu-item a:active {
 	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--sidebar-links-text));
 }
 
 #side-bar div.menu-item > a:last-of-type {
