@@ -164,6 +164,7 @@
 	--header-height-on-mobile: 7.5rem;
 	--topbar-height-on-desktop: 1.875rem;
 	--topbar-height-on-mobile: 3rem;
+	--header-background-image-size: 100% var(--header-height-on-desktop);
 
 	--body-width-on-desktop: 44.25rem;
 	--sidebar-width-on-desktop: calc(var(--base-font-size) * 19);
@@ -2201,7 +2202,7 @@ body {
 		100% 9.375rem, 
 		100% 40rem;
 	background-size: 
-		100% var(--header-height-on-desktop), 
+		var(--header-background-image-size), 
 		100% var(--final-header-height-on-desktop), 
 		100% var(--background-gradient-distance);
 	/* 120px, 150px */
