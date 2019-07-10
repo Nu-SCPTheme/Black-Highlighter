@@ -22,7 +22,6 @@ body {
 	font-kerning: auto;
 	font-variant-numeric: normal;
 	font-feature-settings: "lnum", "kern", "clig", "calt";
-	text-rendering: auto;
 
 	/* line behavior */
 	orphans: 2;
@@ -217,4 +216,11 @@ tt {
 ::-webkit-scrollbar-thumb {
 	background: rgba(170, 170, 170, 0.4);
 	background: rgba(var(--swatch-menubg-medium-color), 0.4);
+}
+
+/* Setting mobile body font size to 14px/0.875rem) */
+@media only screen and (max-width: 320px) {
+	body {
+		font-size: calc(var(--base-font-size) * (14/15));
+	}
 }
