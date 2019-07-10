@@ -168,8 +168,8 @@
 	--header-background-image-size: 100% var(--header-height-on-desktop);
 
 	--body-width-on-desktop: 44.25rem;
-	--sidebar-width-on-desktop: calc((var(--base-font-size) * 0.875) * 19);
-	--sidebar-width-on-mobile: calc((var(--base-font-size) * 0.875) * 16);
+	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15)) * 19);
+	--sidebar-width-on-mobile: calc((var(--base-font-size) * (14/15)) * 16);
 	--scrollbar-width: 1rem;
 	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color));
 	--border-radius-width: 0.0625rem;
@@ -186,7 +186,7 @@
 	--sidebar-internal-border-thickness: 0.125rem;
 
 	/* final values */
-	--base-font-size: 1rem;
+	--base-font-size: 0.9375rem;
 	--base-line-height: 1.313rem;
 	--final-header-height-on-desktop: calc(var(--header-height-on-desktop) + var(--topbar-height-on-desktop));
 	--final-header-height-on-mobile: calc(var(--header-height-on-mobile) + var(--topbar-height-on-mobile));
@@ -1654,7 +1654,7 @@ div.buttons.alignleft {
 	line-height: 1.25rem;
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
-	font-size: calc((var(--base-font-size) * 0.875) * 0.9);
+	font-size: calc((var(--base-font-size) * (14/15)) * 0.9);
 	font-weight: 900;
 	text-align: center;
 	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
@@ -1698,7 +1698,7 @@ div.buttons.alignleft {
 }
 
 #side-bar div.menu-item .sub-text {
-	font-size: calc((var(--base-font-size) * 0.875) * 0.7);
+	font-size: calc((var(--base-font-size) * (14/15)) * 0.7);
 	display: inline-flex;
 	color: rgba(var(--swatch-primary),1);
 	text-align: left;
@@ -1720,11 +1720,11 @@ div.buttons.alignleft {
 }
 
 #side-bar div.menu-item span:first-of-type {
-	padding: 0 0 0 calc((var(--base-font-size) * 0.875) * 1.6);
+	padding: 0 0 0 calc((var(--base-font-size) * (14/15)) * 1.6);
 }
 
 #side-bar div.menu-item .collapsible-block {
-	padding: 0 0 0 calc((var(--base-font-size) * 0.875) * 1);
+	padding: 0 0 0 calc((var(--base-font-size) * (14/15)) * 1);
 }
 
 #side-bar div.menu-item a,
@@ -1734,7 +1734,7 @@ div.buttons.alignleft {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--sidebar-links-text));
 	font-size: 0.875rem;
-	font-size: calc(var(--base-font-size) * .875);
+	font-size: calc(var(--base-font-size) * (14/15));
 	letter-spacing: 0.04em;
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
@@ -1769,7 +1769,7 @@ flex-grow: 1;
 
 #side-bar div.menu-item > a:first-of-type {
 	padding: 0 0.875rem;
-	padding: 0 calc(var(--base-font-size) * .875);
+	padding: 0 calc(var(--base-font-size) * (14/15));
 	flex-grow: 0;
 	flex-shrink: 0;
 	text-align: left;
@@ -1876,7 +1876,7 @@ flex-grow: 1;
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
 	font-size: 0.875rem;
-	font-size: calc(var(--base-font-size) * .875);
+	font-size: calc(var(--base-font-size) * (14/15));
 }
 
 /* for full-block collapsibles, give the open collapsible the same background as the side block */
@@ -1992,7 +1992,7 @@ flex-grow: 1;
 a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
 	min-width: calc(0.875rem * 2.5);
-	min-width: calc((var(--base-font-size) * 0.875) * 2.5);
+	min-width: calc((var(--base-font-size) * (14/15)) * 2.5);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2037,7 +2037,7 @@ a[href*="/most-recently-edited"] {
 	}
 
 	#side-bar div.menu-item > a:first-of-type {
-		padding: 0 calc((var(--base-font-size) * 0.875) * 0.5);
+		padding: 0 calc((var(--base-font-size) * (14/15)) * 0.5);
 	}
 
 	#side-bar .heading p, 
@@ -2334,7 +2334,7 @@ form[id="search-top-box-form"] {
 
 #search-top-box-input {
 	min-width: calc(0.875rem * 11.4);
-	min-width: calc((var(--base-font-size) * 0.875) * 11.4);
+	min-width: calc((var(--base-font-size) * (14/15)) * 11.4);
 	border: 0.0625rem solid rgb(12, 12, 12);
 	border: var(--border-styling);
 	border-radius: 0.0625rem;
@@ -2354,7 +2354,7 @@ form[id="search-top-box-form"] {
 #search-top-box-form > input,
 #search-top-box-form > input[type="submit"] {
 	min-height: calc(0.875rem * 1.85);
-	min-height: calc((var(--base-font-size) * 0.875) * 1.85);
+	min-height: calc((var(--base-font-size) * (14/15)) * 1.85);
 	padding: 0.25rem;
 	margin: 0;
 	box-sizing: border-box;
@@ -2379,7 +2379,7 @@ form[id="search-top-box-form"] {
 
 #search-top-box-form input[type="submit"] {
 	font-size: calc(0.875rem * .85);
-	font-size: calc((var(--base-font-size) * 0.875) * .85);
+	font-size: calc((var(--base-font-size) * (14/15)) * .85);
 	cursor: pointer;
 	margin-right: 0;
 }
@@ -2447,7 +2447,7 @@ form[id="search-top-box-form"] {
 	z-index: 50;
 	height: var(--topbar-height-on-desktop);
 	font-size: calc(0.875rem * 0.85);
-	font-size: calc((var(--base-font-size) * 0.875) * 0.85);
+	font-size: calc((var(--base-font-size) * (14/15)) * 0.85);
 	font-weight: 600;
 	display: inline-flex;
 	margin: var(--header-height-on-desktop) 0 1.75rem 0;
@@ -2695,7 +2695,7 @@ form[id="search-top-box-form"] {
 	width: 100%;
 	height: 100%;
 	font-size: 0.875rem;
-	font-size: calc((var(--base-font-size) * 0.875) * 0.875);
+	font-size: calc((var(--base-font-size) * (14/15)) * 0.875);
 	font-weight: normal;
 	border: 0px solid rgba(0,0,0,0);
 	padding: 0 1em;
@@ -3008,12 +3008,12 @@ form[id="search-top-box-form"] {
 
 	#header h1 {
 		font-size: calc(0.875rem * 1.35);
-		font-size: calc((var(--base-font-size) * 0.875) * 1.35);
+		font-size: calc((var(--base-font-size) * (14/15)) * 1.35);
 	}
 
 	#header h2 {
 		font-size: calc(0.875rem * 0.945);
-		font-size: calc((var(--base-font-size) * 0.875) * 0.945);
+		font-size: calc((var(--base-font-size) * (14/15)) * 0.945);
 	}
 
 	#header h2 span::before {
@@ -3121,7 +3121,7 @@ form[id="search-top-box-form"] {
 		align-items: center;
 		justify-content: center;
 		font-size: 0.875rem;
-		font-size: calc(var(--base-font-size) * .875);
+		font-size: calc(var(--base-font-size) * (14/15));
 		white-space: inherit;
 	}
 
@@ -3229,9 +3229,9 @@ form[id="search-top-box-form"] {
 		visibility: visible;
 	}
 	#search-top-box form[id="search-top-box-form"] input {
-		height: calc((var(--base-font-size) * 0.875) * 2);
+		height: calc((var(--base-font-size) * (14/15)) * 2);
 		top: 0;
-		transform: translateY(calc(100% + (var(--base-font-size) * 0.875) * 2));
+		transform: translateY(calc(100% + (var(--base-font-size) * (14/15)) * 2));
 		position: relative;
 		appearance: none;
 	}
@@ -3259,7 +3259,7 @@ form[id="search-top-box-form"] {
 		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22search%22%20class%3D%22svg-inline--fa%20fa-search%20fa-w-16%22%20role%3D%22img%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M505%20442.7L405.3%20343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3%2044-79.7%2044-128C416%2093.1%20322.9%200%20208%200S0%2093.1%200%20208s93.1%20208%20208%20208c48.3%200%2092.7-16.4%20128-44v16.3c0%206.4%202.5%2012.5%207%2017l99.7%2099.7c9.4%209.4%2024.6%209.4%2033.9%200l28.3-28.3c9.4-9.4%209.4-24.6.1-34zM208%20336c-70.7%200-128-57.2-128-128%200-70.7%2057.2-128%20128-128%2070.7%200%20128%2057.2%20128%20128%200%2070.7-57.2%20128-128%20128z%22%2F%3E%3C%2Fsvg%3E");
 		color: transparent;
 		background-color: rgb(var(--swatch-primary-darkest));
-		width: calc((var(--base-font-size) * 0.875) * 1.5 + 0.5rem);
+		width: calc((var(--base-font-size) * (14/15)) * 1.5 + 0.5rem);
 		visibility: visible;
 		transition: width 0.6s, padding 0.6s, opacity 0.6s;
 	}
@@ -3565,7 +3565,7 @@ div.image-block,div.image-block img {
 .rate-box-with-credit-button > .creditButton > p {
 	padding: 0;
 	width: calc(0.875rem * 1.5);
-	width: calc((var(--base-font-size) * 0.875) * 1.5);
+	width: calc((var(--base-font-size) * (14/15)) * 1.5);
 	display: block;
 	line-height: var(--rating-module-height);
 	text-align: center;
@@ -3629,10 +3629,10 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .rate-points {
 	line-height: var(--rating-module-height);
 	padding: 0 calc(0.875rem * 0.5);
-	padding: 0 calc((var(--base-font-size) * 0.875) * 0.5);
+	padding: 0 calc((var(--base-font-size) * (14/15)) * 0.5);
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.8);
-	font-size: calc((var(--base-font-size) * 0.875) * 0.8);
+	font-size: calc((var(--base-font-size) * (14/15)) * 0.8);
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
 	color: rgb(12, 12, 12) !important;
@@ -3642,7 +3642,7 @@ div.image-block,div.image-block img {
 
 .page-rate-widget-box .rate-points .number {
 	font-size: calc(0.875rem * 1.2);
-	font-size: calc((var(--base-font-size) * 0.875) * 1.2);
+	font-size: calc((var(--base-font-size) * (14/15)) * 1.2);
 }
 
 @media screen {
@@ -3659,7 +3659,7 @@ div.image-block,div.image-block img {
 			content: " ";
 			position: absolute;
 			width: calc(0.875rem * 1.5);
-			width: calc((var(--base-font-size) * 0.875) * 1.5);
+			width: calc((var(--base-font-size) * (14/15)) * 1.5);
 			height: var(--rating-module-height);
 			top: 0;
 			left: 0;
@@ -3787,7 +3787,7 @@ div.image-block,div.image-block img {
 			content: " ";
 			position: absolute;
 			width: calc(0.875rem * 1.5);
-			width: calc((var(--base-font-size) * 0.875) * 1.5);
+			width: calc((var(--base-font-size) * (14/15)) * 1.5);
 			height: var(--rating-module-height);
 			top: 0;
 			left: 0;
@@ -4024,7 +4024,7 @@ body#translations {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-menutxt-dark-color));
 	font-size: 0.875rem;
-	font-size: calc(var(--base-font-size) * .875);
+	font-size: calc(var(--base-font-size) * (14/15));
 	letter-spacing: 0.04em;
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
