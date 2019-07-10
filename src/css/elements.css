@@ -288,7 +288,7 @@ div.image-block,div.image-block img {
 .rate-box-with-credit-button > .creditButton > p {
 	padding: 0;
 	width: calc(0.875rem * 1.5);
-	width: calc(var(--base-font-size) * 1.5);
+	width: calc((var(--base-font-size) * 0.875) * 1.5);
 	display: block;
 	line-height: var(--rating-module-height);
 	text-align: center;
@@ -352,10 +352,10 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .rate-points {
 	line-height: var(--rating-module-height);
 	padding: 0 calc(0.875rem * 0.5);
-	padding: 0 calc(var(--base-font-size) * 0.5);
+	padding: 0 calc((var(--base-font-size) * 0.875) * 0.5);
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.8);
-	font-size: calc(var(--base-font-size) * 0.8);
+	font-size: calc((var(--base-font-size) * 0.875) * 0.8);
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
 	color: rgb(12, 12, 12) !important;
@@ -365,7 +365,7 @@ div.image-block,div.image-block img {
 
 .page-rate-widget-box .rate-points .number {
 	font-size: calc(0.875rem * 1.2);
-	font-size: calc(var(--base-font-size) * 1.2);
+	font-size: calc((var(--base-font-size) * 0.875) * 1.2);
 }
 
 @media screen {
@@ -382,7 +382,7 @@ div.image-block,div.image-block img {
 			content: " ";
 			position: absolute;
 			width: calc(0.875rem * 1.5);
-			width: calc(var(--base-font-size) * 1.5);
+			width: calc((var(--base-font-size) * 0.875) * 1.5);
 			height: var(--rating-module-height);
 			top: 0;
 			left: 0;
@@ -509,7 +509,7 @@ div.image-block,div.image-block img {
 			content: " ";
 			position: absolute;
 			width: calc(0.875rem * 1.5);
-			width: calc(var(--base-font-size) * 1.5);
+			width: calc((var(--base-font-size) * 0.875) * 1.5);
 			height: var(--rating-module-height);
 			top: 0;
 			left: 0;

@@ -163,8 +163,8 @@
 	--header-background-image-size: 100% var(--header-height-on-desktop);
 
 	--body-width-on-desktop: 44.25rem;
-	--sidebar-width-on-desktop: calc(var(--base-font-size) * 19);
-	--sidebar-width-on-mobile: calc(var(--base-font-size) * 16);
+	--sidebar-width-on-desktop: calc((var(--base-font-size) * 0.875) * 19);
+	--sidebar-width-on-mobile: calc((var(--base-font-size) * 0.875) * 16);
 	--scrollbar-width: 1rem;
 	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color));
 	--border-radius-width: 0.0625rem;
@@ -181,7 +181,7 @@
 	--sidebar-internal-border-thickness: 0.125rem;
 
 	/* final values */
-	--base-font-size: 0.875rem;
+	--base-font-size: 1rem;
 	--base-line-height: 1.313rem;
 	--final-header-height-on-desktop: calc(var(--header-height-on-desktop) + var(--topbar-height-on-desktop));
 	--final-header-height-on-mobile: calc(var(--header-height-on-mobile) + var(--topbar-height-on-mobile));

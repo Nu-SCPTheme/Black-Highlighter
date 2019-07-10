@@ -201,7 +201,7 @@
 	line-height: 1.25rem;
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
-	font-size: calc(var(--base-font-size) * 0.9);
+	font-size: calc((var(--base-font-size) * 0.875) * 0.9);
 	font-weight: 900;
 	text-align: center;
 	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
@@ -245,7 +245,7 @@
 }
 
 #side-bar div.menu-item .sub-text {
-	font-size: calc(var(--base-font-size) * 0.7);
+	font-size: calc((var(--base-font-size) * 0.875) * 0.7);
 	display: inline-flex;
 	color: rgba(var(--swatch-primary),1);
 	text-align: left;
@@ -267,11 +267,11 @@
 }
 
 #side-bar div.menu-item span:first-of-type {
-	padding: 0 0 0 calc(var(--base-font-size) * 1.6);
+	padding: 0 0 0 calc((var(--base-font-size) * 0.875) * 1.6);
 }
 
 #side-bar div.menu-item .collapsible-block {
-	padding: 0 0 0 calc(var(--base-font-size) * 1);
+	padding: 0 0 0 calc((var(--base-font-size) * 0.875) * 1);
 }
 
 #side-bar div.menu-item a,
@@ -281,7 +281,7 @@
 	color: rgb(12, 12, 12);
 	color: rgb(var(--sidebar-links-text));
 	font-size: 0.875rem;
-	font-size: var(--base-font-size);
+	font-size: calc(var(--base-font-size) * .875);
 	letter-spacing: 0.04em;
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
@@ -316,7 +316,7 @@ flex-grow: 1;
 
 #side-bar div.menu-item > a:first-of-type {
 	padding: 0 0.875rem;
-	padding: 0 var(--base-font-size);
+	padding: 0 calc(var(--base-font-size) * .875);
 	flex-grow: 0;
 	flex-shrink: 0;
 	text-align: left;
@@ -420,7 +420,7 @@ flex-grow: 1;
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
 	font-size: 0.875rem;
-	font-size: var(--base-font-size);
+	font-size: calc(var(--base-font-size) * .875);
 }
 
 /* for full-block collapsibles, give the open collapsible the same background as the side block */
@@ -532,7 +532,7 @@ flex-grow: 1;
 a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
 	min-width: calc(0.875rem * 2.5);
-	min-width: calc(var(--base-font-size) * 2.5);
+	min-width: calc((var(--base-font-size) * 0.875) * 2.5);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -577,7 +577,7 @@ a[href*="/most-recently-edited"] {
 	}
 
 	#side-bar div.menu-item > a:first-of-type {
-		padding: 0 calc(var(--base-font-size) * 0.5);
+		padding: 0 calc((var(--base-font-size) * 0.875) * 0.5);
 	}
 
 	#side-bar .heading p, 
