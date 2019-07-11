@@ -253,7 +253,7 @@ progress {
 	font-family: var(--body-font);
 }
 
-td > input {
+table:not(.form) td > input {
 	width: 100%;
 }
 
@@ -1156,13 +1156,6 @@ table.form, table.form > tbody {
 	width: 100%;
 }
 
-table.form tr {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	width: 100%;
-}
-
 form#edit-page-form {
 	background-color: rgba(170, 170, 170, 0.25);
 	background-color: rgba(var(--swatch-menubg-medium-color), 0.25);
@@ -1333,10 +1326,18 @@ div.buttons.alignleft {
 		width: 15em;
 	}
 
+	table.form tr {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+	}
+
 	#edit-page-title {
 		font-family: "Poppins", sans-serif;
 		font-family: var(--title-font);
 		max-width: 90%;
+		width: 100%;
 	}
 
 	.content-panel.left-column,
