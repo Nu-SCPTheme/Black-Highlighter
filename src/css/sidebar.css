@@ -28,18 +28,18 @@
 	background:
 		/* Shadow covers */
 		linear-gradient(
-			rgba(var(--swatch-menubg-color),1) 30%, 
+			rgba(var(--swatch-menubg-color),1) 30%,
 			rgba(var(--swatch-menubg-color),0)),
 		linear-gradient(
-			rgba(var(--swatch-menubg-color),0), 
+			rgba(var(--swatch-menubg-color),0),
 			rgba(var(--swatch-menubg-color),1) 70%) 0 100%,
-		
+
 		/* Shadows */
-		radial-gradient(farthest-side at 50% 0, 
-			rgba(var(--swatch-primary-darkest),0.5), 
+		radial-gradient(farthest-side at 50% 0,
+			rgba(var(--swatch-primary-darkest),0.5),
 			rgba(var(--black-monochrome),0)),
-		radial-gradient(farthest-side at 50% 100%, 
-			rgba(var(--swatch-primary-darkest),0.5), 
+		radial-gradient(farthest-side at 50% 100%,
+			rgba(var(--swatch-primary-darkest),0.5),
 			rgba(var(--black-monochrome),0)) 0 100%;
 	background-color: rgba(var(--swatch-menubg-color),1);
 	background-repeat: no-repeat;
@@ -138,15 +138,15 @@
 }
 
 /* Chinese Specific Styling */
- 
+
 #side-bar div[style*="#f0f0f0"]{
     background-color:transparent !important;
 }
- 
+
 #side-bar div[style*="#f0f0f0"] div[style="text-align: center;"]{
     align-items:center;
 }
- 
+
 #side-bar div[style*="#f0f0f0"] div[style="text-align: center;"] img{
     margin:0 !important;
 }
@@ -502,7 +502,7 @@ flex-grow: 1;
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 0.125rem;
 	border-left: none !important;
-} 
+}
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
 	height: auto;
@@ -541,7 +541,7 @@ a[href*="/most-recently-edited"] {
 /* Centering Translation Box in Sidebar */
 
 #side-bar div.scpnet-interwiki-wrapper {
-	transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 
+	transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))),
 		0
 	);
 }
@@ -580,14 +580,14 @@ a[href*="/most-recently-edited"] {
 		padding: 0 calc((var(--base-font-size) * (14/15)) * 0.5);
 	}
 
-	#side-bar .heading p, 
+	#side-bar .heading p,
 	#side-bar .side-block > .collapsible-block .collapsible-block-link {
 		letter-spacing: 0.1rem;
 	}
 
 	#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
 		grid-template-columns: repeat(3, 1fr);
-	}	
+	}
 
 	/* Translation Block */
 

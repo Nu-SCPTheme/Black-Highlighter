@@ -55,13 +55,13 @@ body {
 		var(--gradient-header),
 		var(--gradient-topmenu),
 		var(--gradient-background);
-	background-size: 
-		100% 7.5rem, 
-		100% 9.375rem, 
+	background-size:
+		100% 7.5rem,
+		100% 9.375rem,
 		100% 40rem;
-	background-size: 
-		var(--header-background-image-size), 
-		100% var(--final-header-height-on-desktop), 
+	background-size:
+		var(--header-background-image-size),
+		100% var(--final-header-height-on-desktop),
 		100% var(--background-gradient-distance);
 	/* 120px, 150px */
 	background-repeat: repeat-x;
@@ -819,9 +819,9 @@ form[id="search-top-box-form"] {
 	/* Mobile CSS */
 
 	body {
-		background-size: 
-		100% var(--header-height-on-mobile), 
-		100% var(--final-header-height-on-mobile), 
+		background-size:
+		100% var(--header-height-on-mobile),
+		100% var(--final-header-height-on-mobile),
 		100% var(--background-gradient-distance);
 	}
 
@@ -835,8 +835,8 @@ form[id="search-top-box-form"] {
 		background-image: var(--logo-image);
 		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
 		--y-offset: 1.5rem;
-		background-position: 
-			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
+		background-position:
+			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size))
 			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
 		background-repeat: no-repeat, repeat;
@@ -857,23 +857,23 @@ form[id="search-top-box-form"] {
 	#header h1 {
 		max-height: var(--header-height-on-mobile);
 	}
-	
+
 	#header h1 a {
 		margin-left: calc(var(--header-height-on-mobile) - 0.5rem);
 		margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1em);
 	}
-	
+
 	#header > h1 > a > span {
 		height: var(--header-height-on-mobile);
 	}
-	
+
 	#header h2 span {
 		margin-left: calc(var(--header-height-on-mobile) - 0.5rem);
 		margin-top: calc(((var(--header-height-on-mobile) / 2) + 2em));
 	}
 
 	/* End Thing */
-	
+
 
 	#top-bar > div.top-bar {
 		display: none;
