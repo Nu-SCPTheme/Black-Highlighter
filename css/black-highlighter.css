@@ -626,8 +626,8 @@ div#page-options-bottom-2 > a {
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
     justify-content: center;
-	transition: 
-		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1), 
+	transition:
+		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
@@ -1481,18 +1481,18 @@ div.buttons.alignleft {
 	background:
 		/* Shadow covers */
 		linear-gradient(
-			rgba(var(--swatch-menubg-color),1) 30%, 
+			rgba(var(--swatch-menubg-color),1) 30%,
 			rgba(var(--swatch-menubg-color),0)),
 		linear-gradient(
-			rgba(var(--swatch-menubg-color),0), 
+			rgba(var(--swatch-menubg-color),0),
 			rgba(var(--swatch-menubg-color),1) 70%) 0 100%,
-		
+
 		/* Shadows */
-		radial-gradient(farthest-side at 50% 0, 
-			rgba(var(--swatch-primary-darkest),0.5), 
+		radial-gradient(farthest-side at 50% 0,
+			rgba(var(--swatch-primary-darkest),0.5),
 			rgba(var(--black-monochrome),0)),
-		radial-gradient(farthest-side at 50% 100%, 
-			rgba(var(--swatch-primary-darkest),0.5), 
+		radial-gradient(farthest-side at 50% 100%,
+			rgba(var(--swatch-primary-darkest),0.5),
 			rgba(var(--black-monochrome),0)) 0 100%;
 	background-color: rgba(var(--swatch-menubg-color),1);
 	background-repeat: no-repeat;
@@ -2003,7 +2003,7 @@ a[href*="/most-recently-edited"] {
 /* Centering Translation Box in Sidebar */
 
 #side-bar div.scpnet-interwiki-wrapper {
-	transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))), 
+	transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))),
 		0
 	);
 }
@@ -2042,14 +2042,14 @@ a[href*="/most-recently-edited"] {
 		padding: 0 calc((var(--base-font-size) * (14/15)) * 0.5);
 	}
 
-	#side-bar .heading p, 
+	#side-bar .heading p,
 	#side-bar .side-block > .collapsible-block .collapsible-block-link {
 		letter-spacing: 0.1rem;
 	}
 
 	#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
 		grid-template-columns: repeat(3, 1fr);
-	}	
+	}
 
 	/* Translation Block */
 
@@ -2184,13 +2184,13 @@ body {
 		var(--gradient-header),
 		var(--gradient-topmenu),
 		var(--gradient-background);
-	background-size: 
-		100% 7.5rem, 
-		100% 9.375rem, 
+	background-size:
+		100% 7.5rem,
+		100% 9.375rem,
 		100% 40rem;
-	background-size: 
-		var(--header-background-image-size), 
-		100% var(--final-header-height-on-desktop), 
+	background-size:
+		var(--header-background-image-size),
+		100% var(--final-header-height-on-desktop),
 		100% var(--background-gradient-distance);
 	/* 120px, 150px */
 	background-repeat: repeat-x;
@@ -2948,9 +2948,9 @@ form[id="search-top-box-form"] {
 	/* Mobile CSS */
 
 	body {
-		background-size: 
-		100% var(--header-height-on-mobile), 
-		100% var(--final-header-height-on-mobile), 
+		background-size:
+		100% var(--header-height-on-mobile),
+		100% var(--final-header-height-on-mobile),
 		100% var(--background-gradient-distance);
 	}
 
@@ -2964,8 +2964,8 @@ form[id="search-top-box-form"] {
 		background-image: var(--logo-image);
 		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
 		--y-offset: 1.5rem;
-		background-position: 
-			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
+		background-position:
+			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size))
 			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
 		background-repeat: no-repeat, repeat;
@@ -2986,23 +2986,23 @@ form[id="search-top-box-form"] {
 	#header h1 {
 		max-height: var(--header-height-on-mobile);
 	}
-	
+
 	#header h1 a {
 		margin-left: calc(var(--header-height-on-mobile) - 0.5rem);
 		margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1em);
 	}
-	
+
 	#header > h1 > a > span {
 		height: var(--header-height-on-mobile);
 	}
-	
+
 	#header h2 span {
 		margin-left: calc(var(--header-height-on-mobile) - 0.5rem);
 		margin-top: calc(((var(--header-height-on-mobile) / 2) + 2em));
 	}
 
 	/* End Thing */
-	
+
 
 	#top-bar > div.top-bar {
 		display: none;
@@ -3953,7 +3953,7 @@ table.wiki-content-table tr {
 	}
 
 	.hovertip {
-		width: 90% !important;		
+		width: 90% !important;
 	}
 
 	.scp-image-block.block-right,
