@@ -562,6 +562,7 @@ span.printuser {
 	grid-template-areas:
 		"action-area-top"
 		"page-title"
+		"breadcrumbs"
 		"page-content"
 		"page-tags"
 		"page-info-break"
@@ -573,6 +574,7 @@ span.printuser {
 }
 
 #breadcrumbs {
+	grid-area: breadcrumbs;
 	font-weight: 85%;
 	margin: -1em 0 1em;
 }
@@ -3156,8 +3158,8 @@ form[id="search-top-box-form"] {
 		font-weight: 700;
 		text-decoration: none;
 		text-align: center;
-		color: rgb(252, 252, 252);
-		color: rgb(var(--swatch-menutxt-light-color));
+		color: rgb(252, 252, 252) !important;
+		color: rgb(var(--swatch-menutxt-light-color)) !important;
 		flex: 2 0 100%;
 		display: flex;
 		align-items: center;
