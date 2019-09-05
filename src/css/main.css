@@ -136,6 +136,7 @@ span.printuser {
 	grid-template-areas:
 		"action-area-top"
 		"page-title"
+		"breadcrumbs"
 		"page-content"
 		"page-tags"
 		"page-info-break"
@@ -147,6 +148,7 @@ span.printuser {
 }
 
 #breadcrumbs {
+	grid-area: breadcrumbs;
 	font-weight: 85%;
 	margin: -1em 0 1em;
 }
