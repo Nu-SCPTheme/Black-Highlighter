@@ -14,6 +14,10 @@ const assetsDirs = [
     dist: "./dist/stable/styles/",
   },
   {
+    src: "./src/root/",
+    dist: "./dist/",
+  },
+  {
     src: "./src/misc/",
     dist: "./dist/spherical/",
   },
