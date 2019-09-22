@@ -23,18 +23,28 @@ script:
   - npm run gulp
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  target_branch: gh-pages
-  local_dir: dist
-  keep_history: true
-  deployment_file: true
-  verbose: true
-  on:
-    os: linux
-    node_js: 12
-    branch: master
+  - provider: s3
+    skip_cleanup: true
+    access_key_id: $AWS_KEY_ID
+    secret_access_key: $AWS_ACCESS_KEY
+    local_dir: dist
+    bucket: black-highlighter-dist
+    on:
+      os: linux
+      node_js: 12
+      branch: travis
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    target_branch: gh-pages
+    local_dir: dist
+    keep_history: true
+    deployment_file: true
+    verbose: true
+    on:
+      os: linux
+      node_js: 12
+      branch: master
 
 notifications:
   - email:
