@@ -3999,33 +3999,35 @@ table.wiki-content-table tr {
     display:none !important; 
 }
 
-#html-body:target #page-content > *:not([style*="text-align:"]),
-#html-body:target #page-content > *:not(.page-rate-widget-box) > *:not(.page-rate-widget-box) {
- display:none !important; 
+#html-body:target #page-content > *:not([style*="text-align:"]):not(.creditRate),
+#html-body:target #page-content > *:not(.page-rate-widget-box):not(.creditRate) > *:not(.page-rate-widget-box):not(.creditRate) {
+	display:none !important; 
 }
 
 #html-body:target {
-    color: rgba(0,0,0,0);
+	color:rgba(0,0,0,0)
 }
 
 #html-body:target,
 #html-body:target div#container-wrap {
- background:none!important
+	background:none!important
 }
 
-#page-content > div:nth-child(5)
-
-#html-body:target,
-#html-body:target div#container-wrap {
-    background: none !important;
+#html-body:target div#container-wrap,
+#html-body:target #page-content ,
+#html-body:target {
+	background:none!important
 }
 
-#html-body:target #page-content { 
-    min-height:0px;
+#html-body:target #page-content {
+	min-height:0
 }
 
-#html-body:target .page-rate-widget-box { 
-    position: fixed; top: 2px; right:0px; 
+#html-body:target div[style*="text-align:"] .page-rate-widget-box,
+#html-body:target div.creditRate {
+	position:fixed;
+	top:2px;
+	right:0
 }
 
 #html-body:target #container {
