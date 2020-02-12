@@ -1998,9 +1998,10 @@
     /* Centering Translation Box in Sidebar */
 
     #side-bar div.scpnet-interwiki-wrapper {
-        transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 217.594px) / 2) - (var(--scrollbar-width) / 2))),
+        transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 240px) / 2) - (var(--scrollbar-width) / 2))),
             0
         );
+        border: 0;
     }
 
     @media only screen and (max-width: 768px) {
