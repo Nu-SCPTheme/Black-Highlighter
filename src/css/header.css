@@ -478,17 +478,17 @@ form[id="search-top-box-form"] {
 
 	/* Text positioning */
 	height: 2rem;
-    display: flex;
+	display: flex;
 	width: auto;
- align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 	word-break: normal;
 }
 
 #top-bar > div.top-bar > ul > li:last-of-type > ul,
 #top-bar > div.mobile-top-bar > ul > li:last-of-type > ul {
-    right: 0;
-    left: auto;
+	right: 0;
+	left: auto;
 }
 
 #top-bar li ul {
@@ -575,109 +575,109 @@ form[id="search-top-box-form"] {
 
 	/* Text positioning */
  	align-items: center;
-    justify-content: center;
+	justify-content: center;
 	overflow: hidden;
 	white-space: nowrap;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a,
 #top-bar div.top-bar > ul > li > ul > li > ul > li {
-    display: flex;
-    margin: 0;
+	display: flex;
+	margin: 0;
 	padding: 0 1em;
 	position: relative;
 	text-align: center;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li {
-    color: rgb(252, 252, 252);
-    color: rgb(var(--white-monochrome));
-    font-size: 1em;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    cursor: pointer;
+	color: rgb(252, 252, 252);
+	color: rgb(var(--white-monochrome));
+	font-size: 1em;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	cursor: pointer;
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
 #top-bar div.mobile-top-bar > ul > li > ul > li:hover,
 #top-bar div.top-bar > ul > li > ul > li > ul > li:hover,
 #top-bar div.mobile-top-bar > ul > li > ul > li > ul > li:hover {
-    background-color: transparent;
-    /* Adding a slight bg colour change before the :before obscures it */
-    background-color: rgba(var(--dark-accent),0.05)
+	background-color: transparent;
+	/* Adding a slight bg colour change before the :before obscures it */
+	background-color: rgba(var(--dark-accent),0.05)
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a {
-    color: rgb(12, 12, 12);
-    color: rgb(var(--swatch-menutxt-dark-color));
-    font-size: 1em;
-    z-index: 10;
-    display: flex;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    padding: 1em;
-    margin: 0;
-    border: none;
-    white-space: nowrap;
-    background: transparent;
-    overflow: hidden;
-    box-sizing: border-box;
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-menutxt-dark-color));
+	font-size: 1em;
+	z-index: 10;
+	display: flex;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 1em;
+	margin: 0;
+	border: none;
+	white-space: nowrap;
+	background: transparent;
+	overflow: hidden;
+	box-sizing: border-box;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover,
 #top-bar div.mobile-top-bar > ul > li > ul > li > ul > li > a:hover {
-    background: transparent;
+	background: transparent;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a::before,
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a::before {
-    transform: translateX(calc(-100% - 4rem));
-    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateX(calc(-100% - 4rem));
+	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a::before,
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a::before,
 #top-bar div.top-bar > ul > li > ul > li > a:hover::before {
-    content: " ";
-    width: 125%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-color: rgb(var(--dark-accent),0.25);
-    opacity: 1;
+	content: " ";
+	width: 125%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-color: rgb(var(--dark-accent),0.25);
+	opacity: 1;
 	z-index: -1;
 	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
 }
 
 #top-bar div.top-bar > ul > li > ul > li > a:hover::before {
-    transform: translateX(0);
+	transform: translateX(0);
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover::before {
-    content: " ";
-    width: calc(100% + 4rem);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-color: rgb(100, 3, 15);
-    background-color: rgb(var(--dark-accent));
-    opacity: 1;
+	content: " ";
+	width: calc(100% + 4rem);
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-color: rgb(100, 3, 15);
+	background-color: rgb(var(--dark-accent));
+	opacity: 1;
 	z-index: -1;
 	clip-path: polygon(0.00% 0.00%, 94.94% 0px, 90% 100%, 0px 100%);
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li:hover {
-    background: rgba(252, 252, 252, 0);
-    background: rgba(var(--swatch-menubg-color), 0);
+	background: rgba(252, 252, 252, 0);
+	background: rgba(var(--swatch-menubg-color), 0);
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li:focus-within {
-    background: rgba(252, 252, 252, 0);
-    background: rgba(var(--swatch-menubg-color), 0);
+	background: rgba(252, 252, 252, 0);
+	background: rgba(var(--swatch-menubg-color), 0);
 }
 
 /* Top-Menu without dropdowns support */

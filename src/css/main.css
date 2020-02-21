@@ -56,13 +56,13 @@
 }
 
 #content-wrap {
-    display: grid;
-    flex-direction: column;
-    width: calc(100vw - (100vw - 100%));
-    min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
-    flex-grow: 2;
-    height: auto;
-    position: initial;
+	display: grid;
+	flex-direction: column;
+	width: calc(100vw - (100vw - 100%));
+	min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
+	flex-grow: 2;
+	height: auto;
+	position: initial;
 	margin: 0 auto;
 	grid-area: content-wrap;
 	grid-template-areas:
@@ -124,15 +124,15 @@ span.printuser {
 }
 
 #main-content {
-    padding-left: 0;
-    padding-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 	background-color: transparent;
-    flex-basis: var(--body-width-on-desktop);
+	flex-basis: var(--body-width-on-desktop);
 	max-width: var(--body-width-on-desktop);
 	width: calc(100% - 3rem);
-    padding: 2rem 1rem;
+	padding: 2rem 1rem;
 	grid-area: content;
-    display: grid;
+	display: grid;
 	grid-template-areas:
 		"action-area-top"
 		"page-title"
@@ -161,7 +161,7 @@ span.printuser {
 
 div#page-info,
 div.page-watch-options {
-    padding: 0 1em;
+	padding: 0 1em;
 }
 
 #page-options-container {
@@ -169,46 +169,46 @@ div.page-watch-options {
 }
 
 div#page-options-bottom {
-    width: 90%;
-    margin: 0 auto 2.125rem auto;
+	width: 90%;
+	margin: 0 auto 2.125rem auto;
 }
 
 div#page-options-bottom-2 {
-    width: 90%;
-    margin: -2.125rem auto 0 auto;
+	width: 90%;
+	margin: -2.125rem auto 0 auto;
 }
 
 div#page-options-bottom,
 div#page-options-bottom-2 {
-    text-align: left;
-    flex-wrap: wrap;
+	text-align: left;
+	flex-wrap: wrap;
 }
 
 div#page-options-bottom,
 div#page-options-bottom-2,
 div#page-options-bottom > a {
-    display: flex;
+	display: flex;
 }
 
 div#page-options-bottom > a,
 div#page-options-bottom-2 > a {
-    flex-grow: 2;
-    padding: .25rem;
-    border-radius: .25rem;
-    background-color: rgba(100, 3, 15,1);
-    background-color: rgba(var(--swatch-primary-darkest),1);
-    border: 0.125rem solid rgba(48, 48, 52, 0);
+	flex-grow: 2;
+	padding: .25rem;
+	border-radius: .25rem;
+	background-color: rgba(100, 3, 15,1);
+	background-color: rgba(var(--swatch-primary-darkest),1);
+	border: 0.125rem solid rgba(48, 48, 52, 0);
 	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color),1);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
-    justify-content: center;
+	justify-content: center;
 	transition:
 		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 div#page-options-bottom-2 > a {
-    display: flex;
+	display: flex;
 }
 
 div#page-options-bottom > a:hover,
@@ -217,8 +217,8 @@ div#page-options-bottom-2 > a:hover,
 div#page-options-bottom-2 > a:active {
 	text-decoration: none;
 	background-color: rgba(100, 3, 15,1);
-    background-color: rgba(var(--swatch-menubg-dark-color),1);
-    border: 0.125rem solid rgba(48, 48, 52, 0);
+	background-color: rgba(var(--swatch-menubg-dark-color),1);
+	border: 0.125rem solid rgba(48, 48, 52, 0);
 	border: 0.125rem solid rgba(var(--swatch-primary-darkest),1);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
@@ -234,11 +234,11 @@ div#page-options-bottom-2 > a:active {
 	align-items: center;
 	justify-content: flex-end;
 	flex-direction: row;
-    white-space: nowrap;
+	white-space: nowrap;
 	box-sizing: border-box;
 	align-self: auto;
 	margin: 0;
-    line-height: 1;
+	line-height: 1;
 	left: 0;
 	clear: both;
 	font-size: 77%;
@@ -250,8 +250,8 @@ div#page-options-bottom-2 > a:active {
 }
 
 #footer > a {
-    margin-right: auto;
-    padding-right: 0.5em;
+	margin-right: auto;
+	padding-right: 0.5em;
 }
 
 #footer .options {
@@ -259,8 +259,8 @@ div#page-options-bottom-2 > a:active {
 	width: auto;
 	visibility: visible;
 	padding-right: 0.25em;
-    margin-right: 0.25em;
-    border-right: 0.125rem solid rgba(var(--swatch-primary));
+	margin-right: 0.25em;
+	border-right: 0.125rem solid rgba(var(--swatch-primary));
 	display: block;
 	float: right;
 	font-size: 100%;
@@ -269,11 +269,11 @@ div#page-options-bottom-2 > a:active {
 
 #footer .options,
 #footer .options * {
-    white-space: normal;
+	white-space: normal;
 }
 
 #footer .options * {
-    white-space: nowrap;
+	white-space: nowrap;
 }
 
 #license-area {
