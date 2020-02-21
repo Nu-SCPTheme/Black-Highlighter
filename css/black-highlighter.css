@@ -3428,7 +3428,7 @@ form[id="search-top-box-form"] {
 	/* different border color */
 }
 
-/* BLOCKQUOTE */
+/* Blockquote */
 
 blockquote,
 .blockquote {
@@ -3443,6 +3443,11 @@ blockquote,
 	box-shadow: 0em 0.063em 0.125em var(--box-shadow);
 	margin: 0.5em 40px;
 	padding: 0 1em;
+}
+
+.curved {
+	border-radius: 10px;
+	margin: 0 10px;
 }
 
 /* Footnotes */
@@ -3979,6 +3984,10 @@ table.wiki-content-table tr {
 
 	blockquote,
 	.blockquote {
+		margin: 0;
+	}
+
+	.curved {
 		margin: 0;
 	}
 }
