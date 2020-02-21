@@ -3433,6 +3433,7 @@ form[id="search-top-box-form"] {
 blockquote,
 .blockquote {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.1);
+	display: block;
 	border-style: dashed;
 	border-color: rgba(var(--swatch-border-color),0.25);
 	border-width: 0.063em;
@@ -3440,6 +3441,7 @@ blockquote,
 	background-color: rgb(var(--swatch-menubg-light-color));
 	box-shadow: 0em 0.063em 0.125em rgba(0, 0, 0, 0.1);
 	box-shadow: 0em 0.063em 0.125em var(--box-shadow);
+	margin: 0.5em 40px;
 	padding: 0 1em;
 }
 
@@ -3973,6 +3975,10 @@ table.wiki-content-table tr {
 
 	.scp-image-block img[style*="width:"] {
 		width: 100% !important;
+	}
+
+	.blockquote {
+		margin: 0;
 	}
 }
 
