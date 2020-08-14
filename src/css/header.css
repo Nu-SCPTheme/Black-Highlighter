@@ -491,6 +491,15 @@ form[id="search-top-box-form"] {
 	left: auto;
 }
 
+
+#top-bar div.top-bar > ul > li > ul > li:hover > ul,
+#top-bar div.mobile-top-bar > ul > li > ul > li:hover > ul,
+#top-bar div.top-bar > ul > li > ul > li:focus-within > ul,
+#top-bar div.mobile-top-bar > ul > li > ul > li:focus-within > ul {
+	pointer-events: all;
+	opacity: 1;
+}
+
 #top-bar li ul {
 	opacity: 0;
 	visibility: hidden;
@@ -500,6 +509,26 @@ form[id="search-top-box-form"] {
 
 #top-bar:not(:hover) > ul > li > ul {
 	transform: translate(0, -0.3rem);
+}
+
+#top-bar div.top-bar > ul > li > ul > li > ul {
+	pointer-events: none;
+	width: auto;
+	height: auto;
+	position: absolute;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	color: rgb(252, 252, 252);
+	color: rgb(var(--white-monochrome));
+	flex-wrap: nowrap;
+	box-sizing: content-box;
+	margin: 0;
+	opacity: 0;
+	background-color: rgb(178, 210, 180);
+	background-color: rgba(var(--swatch-menubg-dark-color),0.93);
+	transition: opacity 80ms cubic-bezier(0.4, 0.light0, 0.2, 1), background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,
@@ -516,6 +545,16 @@ form[id="search-top-box-form"] {
 #top-bar div.top-bar > ul > li > ul:focus-within {
 	opacity: 1;
 	visibility: visible;
+}
+
+#top-bar div.top-bar > ul > li > ul > li,
+#top-bar div.mobile-top-bar > ul > li > ul > li {
+	width: 100%;
+	border-collapse: collapse;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
@@ -582,16 +621,20 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li > a,
 #top-bar div.top-bar > ul > li > ul > li > ul > li {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	margin: 0;
-	padding: 0 1em;
+	padding: 0;
 	position: relative;
-	text-align: center;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li {
 	color: rgb(252, 252, 252);
 	color: rgb(var(--white-monochrome));
+	background: rgba(var(--swatch-menubg-color), 0.15);
 	font-size: 1em;
 	z-index: 10;
 	top: 0;
@@ -611,7 +654,7 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a {
 	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--swatch-menutxt-light-color));
 	font-size: 1em;
 	z-index: 10;
 	display: flex;
@@ -634,8 +677,11 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li > a::before,
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a::before {
-	transform: translateX(calc(-100% - 4rem));
-	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	right: 150%;
+	-webkit-transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	-moz-transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 }
 
@@ -643,31 +689,39 @@ form[id="search-top-box-form"] {
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a::before,
 #top-bar div.top-bar > ul > li > ul > li > a:hover::before {
 	content: " ";
-	width: 125%;
+	width: 200%;
 	height: 100%;
 	position: absolute;
 	top: 0;
-	background-color: rgb(var(--dark-accent),0.25);
+	background-color: rgb(var(--bright-accent));
 	opacity: 1;
 	z-index: -1;
-	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
+	-webkit-transform: skew(50deg, 0);
+	   -moz-transform: skew(50deg, 0);
+	    -ms-transform: skew(50deg, 0);
+	     -o-transform: skew(50deg, 0);
+	        transform: skew(50deg, 0);
 }
-
 #top-bar div.top-bar > ul > li > ul > li > a:hover::before {
-	transform: translateX(0);
+	right: -5rem;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li > a:hover::before {
 	content: " ";
-	width: calc(100% + 4rem);
+	width: 200%;
 	height: 100%;
 	position: absolute;
 	top: 0;
-	background-color: rgb(100, 3, 15);
-	background-color: rgb(var(--dark-accent));
+	right: -5rem;
+	background-color: rgb(255, 219, 90);
+	background-color: rgb(var(--bright-accent));
 	opacity: 1;
 	z-index: -1;
-	clip-path: polygon(0.00% 0.00%, 94.94% 0px, 90% 100%, 0px 100%);
+	-webkit-transform: skew(50deg, 0);
+	   -moz-transform: skew(50deg, 0);
+	    -ms-transform: skew(50deg, 0);
+	     -o-transform: skew(50deg, 0);
+	        transform: skew(50deg, 0);
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li:hover {
