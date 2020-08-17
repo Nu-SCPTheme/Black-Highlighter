@@ -1602,6 +1602,12 @@ div.buttons.alignleft {
 	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 }
 
+/*Forcing default sidebar coloring on any INT branches that still use Background Color*/
+
+#side-bar .side-block[style*="background-color"] {
+    background-color: rgba(var(--dark-accent),0.15) !important;
+}
+
 /* Chinese Specific Styling */
 
 #side-bar div[style*="#f0f0f0"]{
