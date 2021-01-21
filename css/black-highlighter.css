@@ -582,6 +582,12 @@ span.printuser {
 	margin: -1em 0 1em;
 }
 
+.psuedocrumbs {
+	grid-area: breadcrumbs;
+	font-weight: 85%;
+	margin: -1em 0 1em;
+}
+
 /* Article Bottom Buttons */
 
 #page-info-break {
@@ -3557,7 +3563,7 @@ div.blockquote {
 /* Hover Blocks */
 
 .hovertip {
-	width: 15% !important;
+	width: 25% !important;
 	opacity: 0;
 	animation-name: fade-in;
 	animation-duration: 600ms;
@@ -4076,6 +4082,7 @@ table.wiki-content-table tr {
 #html-body:target .page-title,
 #html-body:target #page-title,
 #html-body:target #breadcrumbs,
+#html-body:target .pseudocrumbs,
 #html-body:target #page-options-container,
 #html-body:target .page-header,
 #html-body:target .page-info-break,
