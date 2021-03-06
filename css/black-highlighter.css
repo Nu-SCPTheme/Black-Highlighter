@@ -190,6 +190,8 @@
 	/* final values */
 	--base-font-size: 0.9375rem;
 	--base-line-height: 1.313rem;
+	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
+	--header-h2-font-size: var(--base-font-size);
 	--final-header-height-on-desktop: calc(var(--header-height-on-desktop) + var(--topbar-height-on-desktop));
 	--final-header-height-on-mobile: calc(var(--header-height-on-mobile) + var(--topbar-height-on-mobile));
 }
@@ -2303,7 +2305,7 @@ div#container-wrap {
 	line-height: 0;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
-	font-size: 135%;
+	font-size: var(--header-h1-font-size);
 	text-decoration: none;
 	text-shadow: none;
 	z-index: 9999;
@@ -2325,7 +2327,7 @@ div#container-wrap {
 }
 
 #header h2 {
-	font-size: 0.945rem;
+	font-size: var(--header-h2-font-size);
 	font-family: 'Poppins', sans-serif;
 	font-family: var(--title-font);
 	font-weight: 700;
@@ -2339,8 +2341,8 @@ div#container-wrap {
 	color: transparent;
 	text-shadow: none;
 	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
-	margin-top: calc(3.8rem + 1.2rem);
-	margin-top: calc(((var(--header-height-on-desktop) / 2) + 1.25em));
+	margin-top: calc(((var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) - var(--header-h2-font-size) + 0.25rem));
+	line-height: 1;
 }
 
 #header h2 span::before {
@@ -3022,6 +3024,8 @@ form[id="search-top-box-form"] {
 		/* Firefox */
 		overflow: -moz-scrollbars-none;
 		scrollbar-width: none;
+		--header-h1-font-size: calc(1.15rem + (2.405 - 1.15) * ((100vw - 18.75rem) / (48 - 18.75)));
+		--header-h2-font-size: calc(0.5rem + (0.945 - 0.5) * ((100vw - 18.75rem) / (48 - 18.75)));
 	}
 
 	::-webkit-scrollbar {
@@ -3078,23 +3082,16 @@ form[id="search-top-box-form"] {
 
 	#header h1 a {
 		margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1.345rem);
-		font-size: calc(1.15rem + (2.405 - 1.15) * ((100vw - 18.75rem) / (48 - 18.75)));
 	}
 
 	#header > h1 > a > span {
 		height: var(--header-height-on-mobile);
 	}
-	
-	#header h2 {
-		font-size: calc(0.875rem * 0.945);
-		font-size: calc((var(--base-font-size) * (14/15)) * 0.945);
-	}
 
 	#header h2 span {
-		margin-top: calc(((var(--header-height-on-mobile) / 2) + 1.417rem));
-		font-size: calc(0.5rem + (0.945 - 0.5) * ((100vw - 18.75rem) / (48 - 18.75)));
+		margin-top: calc(((var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2)  + 0.5rem));
 		line-height: 1;
-	}	
+	}
 
 	/* End Thing */
 
