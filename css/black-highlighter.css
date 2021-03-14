@@ -3518,6 +3518,13 @@ div.blockquote {
 	padding: 0 1em;
 }
 
+@supports (display: flow-root) {
+	blockquote,
+	div.blockquote {	
+		display: flow-root;
+	}
+}
+
 .curved {
 	border-radius: 10px;
 	margin: 0 10px;
