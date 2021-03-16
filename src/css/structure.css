@@ -95,6 +95,30 @@ fieldset {
 	width: calc(100% - 2rem);
 }
 
+textarea,
+input.text,
+input.checkbox,
+div.note,
+#lock-info {
+	font-family: var(--body-font);
+	border: 0.0625rem solid rgba(var(--swatch-border-color),0.25);
+	background-color: rgb(var(--swatch-background));
+	color: rgb(var(--swatch-text-general));
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6) rgba(var(--swatch-tertiary-color), 0.1);
+}
+
+textarea::-webkit-scrollbar-track,
+input.text::-webkit-scrollbar-track {
+	background: rgba(170, 170, 170, 0.05);
+	background: rgba(var(--swatch-tertiary-color), 0.1);
+}
+
+textarea::-webkit-scrollbar-thumb,
+input.text::-webkit-scrollbar-thumb {
+	background: rgba(170, 170, 170, 0.6);
+	background: rgba(var(--swatch-tertiary-color), 0.6);
+}
+
 /* Standard Structure Elements */
 
 pre * {
