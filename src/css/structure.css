@@ -7,6 +7,21 @@ html,body {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6) rgba(var(--swatch-tertiary-color), 0.1);
+}
+
+/* Webkit Scrollbar */
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+	background: rgba(170, 170, 170, 0.05);
+	background: rgba(var(--swatch-tertiary-color), 0.1);
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+	background: rgba(170, 170, 170, 0.6);
+	background: rgba(var(--swatch-tertiary-color), 0.6);
 }
 
 body {
