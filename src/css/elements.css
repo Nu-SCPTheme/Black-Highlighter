@@ -16,7 +16,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	border-color: rgb(140, 20, 25);
-	border-color: rgb(var(--tab-border-color));
+	border-color: var(--tab-border-color);
 	width: calc(100% - 0.125rem);
 	margin: 0 auto;
 	border: 0;
@@ -46,7 +46,7 @@
 
 .yui-navset .yui-nav li,
 .yui-navset .yui-navset-top .yui-nav li {
-	--box-shadow: rgb(var(--tab-border-color));
+	--box-shadow: var(--tab-border-color);
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
 	border-color: transparent;
