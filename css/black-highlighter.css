@@ -213,6 +213,21 @@ html,body {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6) rgba(var(--swatch-tertiary-color), 0.1);
+}
+
+/* Webkit Scrollbar */
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+	background: rgba(170, 170, 170, 0.05);
+	background: rgba(var(--swatch-tertiary-color), 0.1);
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+	background: rgba(170, 170, 170, 0.6);
+	background: rgba(var(--swatch-tertiary-color), 0.6);
 }
 
 body {
@@ -459,6 +474,9 @@ tt {
 	font-family: var(--mono-font);
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color,  244, 244, 244));
+	border-style: dashed;
+	border-color: rgba(var(--swatch-border-color),0.25);
+	border-width: 0.0625rem;
 	padding: 1em;
 }
 
