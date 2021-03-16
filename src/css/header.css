@@ -546,13 +546,17 @@ form[id="search-top-box-form"] {
 }
 
 #top-bar div.top-bar > ul > li > ul > li,
-#top-bar div.mobile-top-bar > ul > li > ul > li {
+#top-bar div.mobile-top-bar > ul > li > ul > li,
+#top-bar div.top-bar > ul > li > ul > li > ul > li,
+#top-bar div.mobile-top-bar > ul > li > ul > li > ul > li {
 	width: 100%;
 	border-collapse: collapse;
 	display: flex;
 	position: relative;
 	align-items: center;
 	justify-content: center;
+	margin: 0;
+	padding: 0;
 }
 
 #top-bar div.top-bar > ul > li > ul > li:hover,
@@ -610,20 +614,12 @@ form[id="search-top-box-form"] {
 	border: 0px solid rgba(0,0,0,0);
 	padding: 0 1em;
 
-	/* Text positioning */
+	/* Text Positioning */
 	display: flex;
  	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 	white-space: nowrap;
-}
-
-#top-bar div.top-bar > ul > li > ul > li,
-#top-bar div.top-bar > ul > li > ul > li > ul > li {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	position: relative;
 }
 
 #top-bar div.top-bar > ul > li > ul > li > ul > li {
