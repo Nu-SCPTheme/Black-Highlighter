@@ -10,12 +10,13 @@
 
 .yui-navset .yui-nav,
 .yui-navset .yui-navset-top .yui-nav {
-	--box-shadow: rgb(var(--swatch-primary-darker));
+	--tab-border-color: rgb(var(--swatch-primary-darker));
+	--box-shadow: var(--tab-border-color);
 	zoom: unset;
 	display: flex;
 	flex-wrap: wrap;
 	border-color: rgb(140, 20, 25);
-	border-color: rgb(var(--swatch-primary-darker));
+	border-color: rgb(var(--tab-border-color));
 	width: calc(100% - 0.125rem);
 	margin: 0 auto;
 	border: 0;
@@ -31,7 +32,7 @@
 	background-color: rgb(var(--swatch-secondary-color));
 	border: unset;
 	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-dark));
+	color: rgb(var(--swatch-text-general));
 }
 
 .yui-navset .yui-nav a:hover,
@@ -45,7 +46,7 @@
 
 .yui-navset .yui-nav li,
 .yui-navset .yui-navset-top .yui-nav li {
-	--box-shadow: rgb(var(--swatch-primary-darker));
+	--box-shadow: rgb(var(--tab-border-color));
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
 	border-color: transparent;
@@ -205,8 +206,8 @@ div.blockquote {
 .hovertip {
 	width: 25% !important;
 	opacity: 0;
-	color: rgb(var(--swatch-text-secondary-color));
-	background-color: rgb(var(--swatch-menubg-color)) !important; /* bg-color is added via js so !important is required */ 
+	color: rgb(var(--swatch-text-tertiary-color));
+	background-color: rgb(var(--swatch-text-tertiary-color)) !important; /* bg-color is added via js so !important is required */ 
     border: 0.0625rem solid rgb(var(--swatch-border-color)) !important; /* border is added via js so !important is required */
 	animation-name: fade-in;
 	animation-duration: 600ms;
