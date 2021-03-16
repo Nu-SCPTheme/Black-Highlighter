@@ -3,58 +3,58 @@
 @supports(--css: variables) {
 
 :root {
-    /* Typefaces */
-    --body-font: 'IBM Plex Mono', monospace;
-    --header-font: 'IBM Plex Mono', sans-serif;
-    --title-font: 'IBM Plex Mono', monospace;
-    --mono-font: "IBM Plex Mono", monospace;
+	/* Typefaces */
+	--body-font: 'IBM Plex Mono', monospace;
+	--header-font: 'IBM Plex Mono', sans-serif;
+	--title-font: 'IBM Plex Mono', monospace;
+	--mono-font: "IBM Plex Mono", monospace;
 
-    /* Standard Colors */
+	/* Standard Colors */
 
-    --white-monochrome: 238, 238, 216;
-    --pale-gray-monochrome: 233, 231, 204;
-    --light-gray-monochrome: 147, 147, 147;
-    --gray-monochrome: 127, 127, 127;
-    --dark-gray-monochrome: 101, 101, 101;
-    --black-monochrome: 25, 20, 16;
-    --bright-accent: 145, 179, 153;
-    --medium-accent: 145, 179, 153;
-    --dark-accent: 105, 133, 111;
-    --newpage-color: 221, 102, 17;
+	--white-monochrome: 238, 238, 216;
+	--pale-gray-monochrome: 233, 231, 204;
+	--light-gray-monochrome: 147, 147, 147;
+	--gray-monochrome: 127, 127, 127;
+	--dark-gray-monochrome: 101, 101, 101;
+	--black-monochrome: 25, 20, 16;
+	--bright-accent: 145, 179, 153;
+	--medium-accent: 145, 179, 153;
+	--dark-accent: 105, 133, 111;
+	--newpage-color: 221, 102, 17;
 
-    --background-gradient-color: 215, 215, 215;
-    --background-gradient-distance: 40rem;
+	--background-gradient-color: 215, 215, 215;
+	--background-gradient-distance: 40rem;
 
-    scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
+	scrollbar-color: rgba(var(--white-monochrome), 1) rgba(var(--bright-accent), 0.50);
 }
 
 #container-wrap-wrap {
 
-    background-image:
-        repeating-linear-gradient(180deg,
-        hsla(0, 0%, 100%, 0),
-        hsla(0, 0%, 100%, 0) 0.25vh,
-        rgba(88, 88, 88, 0.1) 0.35vh,
-        rgba(88, 88, 88, 0.2) 0.5vh),
+	background-image:
+		repeating-linear-gradient(180deg,
+		hsla(0, 0%, 100%, 0),
+		hsla(0, 0%, 100%, 0) 0.25vh,
+		rgba(88, 88, 88, 0.1) 0.35vh,
+		rgba(88, 88, 88, 0.2) 0.5vh),
 
-        linear-gradient(to bottom,
-        rgba(var(--black-monochrome), 1) 7.5rem,
-        rgba(var(--gray-monochrome), 1) 7.625rem,
-        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-        rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
-        rgba(var(--black-monochrome), 1) 100%);
-    background-size: 100% 7.5rem, 100% 9.375rem;
-    background-repeat: no-repeat;
+		linear-gradient(to bottom,
+		rgba(var(--black-monochrome), 1) 7.5rem,
+		rgba(var(--gray-monochrome), 1) 7.625rem,
+		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--gray-monochrome), 1) calc(100% - 0.125rem),
+		rgba(var(--black-monochrome), 1) 100%);
+	background-size: 100% 7.5rem, 100% 9.375rem;
+	background-repeat: no-repeat;
 }
 
 #skrollr-body {}
 
 a {
-    font-weight: 900;
+	font-weight: 900;
 }
 
 #container {
-    text-shadow: 0 0.2rem 1rem #7b7b7b
+	text-shadow: 0 0.2rem 1rem #7b7b7b
 }
 
 #header {
@@ -66,13 +66,13 @@ a {
 }
 
 #header h2 span::before {
-    color: rgb(var(--bright-accent));
+	color: rgb(var(--bright-accent));
 }
 
 #header h1 *,
 #top-bar *,
 #page-title * {
-    transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 #header h1 a:hover::before,
@@ -80,21 +80,21 @@ a {
 #page-title:hover,
 #search-top-box-form input[type="submit"]:hover, 
 #search-top-box-form input[type="submit"]:focus {
-    -webkit-animation: flicker 20s linear infinite;
-    -moz-animation: flicker 20s linear infinite;
-    animation: flicker 20s linear infinite;
+	-webkit-animation: flicker 20s linear infinite;
+	-moz-animation: flicker 20s linear infinite;
+	animation: flicker 20s linear infinite;
 }
 
 #top-bar li:hover ul,
 #top-bar li:focus-within ul,
 #top-bar li.sfhover ul,
 #top-bar li ul {
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+	backdrop-filter: none !important;
 }
 
 #search-top-box-form input[type="submit"] {
-    background: rgb(var(--bright-accent)) !important;
+	background: rgb(var(--bright-accent)) !important;
 }
 
 #search-top-box-form input[type="submit"]:hover, 
@@ -117,21 +117,21 @@ a {
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item .text {
-    font-weight: 900;
+	font-weight: 900;
 }
 
 #side-bar div.menu-item a:hover {
-    -webkit-animation: flicker 20s linear infinite;
-    -moz-animation: flicker 20s linear infinite;
-    animation: flicker 20s linear infinite;
+	-webkit-animation: flicker 20s linear infinite;
+	-moz-animation: flicker 20s linear infinite;
+	animation: flicker 20s linear infinite;
 }
 
 .page-rate-widget-box {
-    background:
-        linear-gradient(to bottom,
-        rgb(var(--bright-accent)) 0%,
-        rgb(var(--dark-accent)) 30%,
-        rgb(var(--dark-accent)) 100%) !important;
+	background:
+		linear-gradient(to bottom,
+		rgb(var(--bright-accent)) 0%,
+		rgb(var(--dark-accent)) 30%,
+		rgb(var(--dark-accent)) 100%) !important;
 }
 
 .page-rate-widget-box > span.rate-points,
@@ -142,15 +142,15 @@ a {
 .page-rate-widget-box > span.rateup > a,
 .page-rate-widget-box > span.ratedown > a,
 .page-rate-widget-box > span.cancel > a {
-    color: rgb(var(--white-monochrome));
-    mix-blend-mode: unset;
-    transition: all 0.2s ease-in-out;
+	color: rgb(var(--white-monochrome));
+	mix-blend-mode: unset;
+	transition: all 0.2s ease-in-out;
 }
 
 .page-rate-widget-box > span.rate-points:hover,
 .page-rate-widget-box > span.rate-points:active {
-    color: rgb(var(--white-monochrome)) !important;
-    mix-blend-mode: unset !important;
+	color: rgb(var(--white-monochrome)) !important;
+	mix-blend-mode: unset !important;
 }
 
 .page-rate-widget-box > span.rateup:hover,
@@ -159,10 +159,10 @@ a {
 .page-rate-widget-box > span.ratedown:active,
 .page-rate-widget-box > span.cancel:hover,
 .page-rate-widget-box > span.cancel:active {
-    color: rgb(var(--black-monochrome));
-    -webkit-animation: flicker 20s linear infinite;
-    -moz-animation: flicker 20s linear infinite;
-    animation: flicker 20s linear infinite;
+	color: rgb(var(--black-monochrome));
+	-webkit-animation: flicker 20s linear infinite;
+	-moz-animation: flicker 20s linear infinite;
+	animation: flicker 20s linear infinite;
 }
 	
 .info-container .collapsible-block-folded, 
@@ -190,92 +190,92 @@ iframe.scpnet-interwiki-frame {
 }
 
 @-webkit-keyframes flicker {
-    0% {
-        opacity: .2;
-    }
+	0% {
+		opacity: .2;
+	}
 
-    5% {
-        opacity: .9;
-    }
+	5% {
+		opacity: .9;
+	}
 
-    6% {
-        opacity: 1;
-    }
+	6% {
+		opacity: 1;
+	}
 
-    11% {
-        opacity: .4;
-    }
+	11% {
+		opacity: .4;
+	}
 
-    11.25% {
-        opacity: .6;
-    }
+	11.25% {
+		opacity: .6;
+	}
 
-    11.5% {
-        opacity: .4;
-    }
+	11.5% {
+		opacity: .4;
+	}
 
-    18% {
-        opacity: 1;
-    }
+	18% {
+		opacity: 1;
+	}
 
-    18.5% {
-        opacity: .9;
-    }
+	18.5% {
+		opacity: .9;
+	}
 
-    22% {
-        opacity: 1;
-    }
+	22% {
+		opacity: 1;
+	}
 
-    38.5% {
-        opacity: 1;
-    }
+	38.5% {
+		opacity: 1;
+	}
 
-    39% {
-        opacity: .8;
-    }
+	39% {
+		opacity: .8;
+	}
 
-    42% {
-        opacity: 1;
-    }
+	42% {
+		opacity: 1;
+	}
 
-    60% {
-        opacity: 1;
-    }
+	60% {
+		opacity: 1;
+	}
 
-    60.5% {
-        opacity: 0;
-    }
+	60.5% {
+		opacity: 0;
+	}
 
-    62% {
-        opacity: 0;
-    }
+	62% {
+		opacity: 0;
+	}
 
-    63% {
-        opacity: .2;
-    }
+	63% {
+		opacity: .2;
+	}
 
-    63.25% {
-        opacity: 0;
-    }
+	63.25% {
+		opacity: 0;
+	}
 
-    65% {
-        opacity: 1;
-    }
+	65% {
+		opacity: 1;
+	}
 
-    73% {
-        opacity: 1;
-    }
+	73% {
+		opacity: 1;
+	}
 
-    75% {
-        opacity: .8;
-    }
+	75% {
+		opacity: .8;
+	}
 
-    79% {
-        opacity: 1;
-    }
+	79% {
+		opacity: 1;
+	}
 
-    100% {
-        opacity: 1;
-    }
+	100% {
+		opacity: 1;
+	}
 }
 }
