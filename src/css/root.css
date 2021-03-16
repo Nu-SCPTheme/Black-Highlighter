@@ -76,23 +76,31 @@
 	--swatch-menubg-hover-color: var(--black-monochrome);
 	--swatch-menutxt-dark-color: var(--black-monochrome);
 	--swatch-menutxt-light-color: var(--white-monochrome);
-	--swatch-menutxt-general-color: var(--swatch-menutxt-dark-color);
+	--swatch-menutxt-general-color: var(--swatch-menutxt-dark-color);	
 	--swatch-border-color: var(--black-monochrome);
+
+	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
+	--swatch-secondary-color: var(--swatch-menubg-light-color);
+	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
+	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
+	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
+	--swatch-text-tertiary-color: var(--swatch-menutxt-dark-color);
+	
 	/* Primary Header Colors */
-	--swatch-headerh1-color: var(--white-monochrome);
-	--swatch-headerh2-color: var(--white-monochrome);
-	--swatch-topmenu-border-color: var(--black-monochrome);
-	--swatch-topmenu-bg-color: var(--gray-monochrome);
+	--swatch-headerh1-color: var(--swatch-text-light);
+	--swatch-headerh2-color: var(--swatch-text-light);
+	--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
+	--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
 
 	/* Link Colors */
 	--link-color: var(--pale-accent);
 	--visited-link-color: var(--swatch-primary);
 	--hover-link-color: var(--swatch-primary);
 	--newpage-color: var(--alt-accent);
-	--sidebar-links-text: var(--swatch-menutxt-dark-color);
+	--sidebar-links-text: var(--swatch-menutxt-general-color);
 
 	/* Rating Module Colors */
-	--rating-module-button-color: var(--black-monochrome);
+	--rating-module-button-color: var(--swatch-menutxt-dark-color);
 	--rating-module-button-plus-color: 0, 200, 0;
 	--rating-module-button-negative-color: 200, 0, 0;
 	--rating-module-button-cancel-color: 200, 200, 200;
@@ -132,8 +140,8 @@
 		rgba(88, 88, 88, 0.2) 0.5vh
 	);
 	--gradient-sidemenu-header: linear-gradient(10deg,
-		rgba(var(--medium-accent), 0.45) 0%,
-		rgba(var(--medium-accent), 0.55) 100%
+		rgba(var(--swatch-primary-darker), 0.45) 0%,
+		rgba(var(--swatch-primary-darker), 0.55) 100%
 	);
 	--background-gradient-distance: 40rem;
 	--gradient-background: linear-gradient(

@@ -28,7 +28,7 @@
 	zoom: unset;
 	background-image: none;
 	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-secondary-color));
 	border: unset;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-dark));
@@ -47,7 +47,7 @@
 .yui-navset .yui-navset-top .yui-nav li {
 	--box-shadow: rgb(var(--swatch-primary-darker));
 	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-secondary-color));
 	border-color: transparent;
 	max-width: 100%;
 	padding: 0;
@@ -105,7 +105,7 @@
 .yui-navset .yui-nav .selected a {
 	/* Undoes a color set by wikidot's default layout */
 	color: rgb(252, 252, 252) !important;
-	color: rgb(var(--white-monochrome)) !important;
+	color: rgb(var(--swatch-text-secondary-color)) !important;
 	width: 100%;
 	background-image: none;
 }
@@ -126,20 +126,20 @@
 
 .yui-navset .yui-content {
 	background-color: rgba(244, 244, 244, 0.25);
-	background-color: rgba(var(--swatch-menubg-light-color), 0.25);
+	background-color: rgba(var(--swatch-secondary-color), 0.25);
 	/* content background color */
 }
 
 .yui-navset .yui-content,
 .yui-navset .yui-navset-top .yui-content {
 	border-color: rgb(170, 170, 170);
-	border-color: rgb(var(--swatch-menubg-medium-color));
+	border-color: rgb(var(--swatch-tertiary-color));
 	/* content border */
 }
 
 .yui-navset-left .yui-content {
 	border-left-color: rgb(244, 244, 244);
-	border-left-color: rgb(var(--swatch-menubg-light-color));
+	border-left-color: rgb(var(--swatch-secondary-color));
 	/* different border color */
 }
 
@@ -153,7 +153,7 @@ div.blockquote {
 	border-color: rgba(var(--swatch-border-color),0.25);
 	border-width: 0.0625rem;
 	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-secondary-color));
 	box-shadow: 0em 0.0625rem 0.125em rgba(0, 0, 0, 0.1);
 	box-shadow: 0em 0.0625rem 0.125em var(--box-shadow);
 	margin: 0.5em 40px;
@@ -179,7 +179,7 @@ div.blockquote {
 	margin: 1em auto;
 	padding: 0.15em 1em;
 	background-color: rgba(170, 170, 170, 0.25);
-	background-color: rgba(var(--swatch-menubg-medium-color), 0.25);
+	background-color: rgba(var(--swatch-tertiary-color), 0.25);
 	border-left: 0.5em solid rgba(140, 20, 25);
 	border-left: 0.5em solid rgba(var(--swatch-primary-darker));
 }
@@ -205,7 +205,7 @@ div.blockquote {
 .hovertip {
 	width: 25% !important;
 	opacity: 0;
-	color: rgb(var(--swatch-menutxt-general-color));
+	color: rgb(var(--swatch-text-secondary-color));
 	background-color: rgb(var(--swatch-menubg-color)) !important; /* bg-color is added via js so !important is required */ 
     border: 0.0625rem solid rgb(var(--swatch-border-color)) !important; /* border is added via js so !important is required */
 	animation-name: fade-in;
@@ -267,8 +267,8 @@ div.image-block,div.image-block img {
 		rgba(170, 170, 170, 0.25) 0%,
 		rgba(170, 170, 170, 0.15) 100%);
 	background: linear-gradient(to top,
-		rgba(var(--swatch-menubg-medium-color), 0.25) 0%,
-		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+		rgba(var(--swatch-tertiary-color), 0.25) 0%,
+		rgba(var(--swatch-tertiary-color), 0.15) 100%);
 	background-color: rgb(252, 252, 252);
 	background-color: rgb(var(--swatch-background));
 	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
@@ -487,8 +487,8 @@ div.image-block,div.image-block img {
 		rgba(170, 170, 170, 0.25) 0%,
 		rgba(170, 170, 170, 0.15) 100%);
 	background: linear-gradient(to top,
-		rgba(var(--swatch-menubg-medium-color), 0.25) 0%,
-		rgba(var(--swatch-menubg-medium-color), 0.15) 100%);
+		rgba(var(--swatch-tertiary-color), 0.25) 0%,
+		rgba(var(--swatch-tertiary-color), 0.15) 100%);
 	background-color: rgb(252, 252, 252);
 	background-color: rgb(var(--swatch-background));
 	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
@@ -600,7 +600,7 @@ div.image-block,div.image-block img {
 
 .scp-image-block .scp-image-caption {
 	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-menubg-light-color));
+	background-color: rgb(var(--swatch-secondary-color));
 	border-top: solid 0.0625rem rgb(12, 12, 12);
 	border-top: solid 0.0625rem rgb(var(--swatch-menubg-black-color));
 	font-size: 80%;
@@ -638,9 +638,9 @@ table.wiki-content-table {
 
 table.wiki-content-table th {
 	background: rgb(170, 170, 170);
-	background: rgb(var(--swatch-menubg-medium-color));
+	background: rgb(var(--swatch-tertiary-color));
 	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-text-secondary-color));
 }
 
 table.wiki-content-table th,

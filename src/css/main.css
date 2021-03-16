@@ -19,7 +19,7 @@
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-menubg-light-color,  244, 244, 244));
+	background-color: rgb(var(--swatch-secondary-color,  244, 244, 244));
 	padding: 1em;
 }
 
@@ -203,11 +203,11 @@ div#page-options-bottom-2 > a {
 	padding: .25rem;
 	border-radius: .25rem;
 	background-color: rgba(100, 3, 15,1);
-	background-color: rgba(var(--swatch-primary-darkest),1);
+	background-color: rgba(var(--swatch-primary-darkest, 100, 3, 15),1);
 	border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color),1);
+	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color, 48, 48, 52),1);
 	color: rgb(252, 252, 252);
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	justify-content: center;
 	transition:
 		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
@@ -224,11 +224,11 @@ div#page-options-bottom-2 > a:hover,
 div#page-options-bottom-2 > a:active {
 	text-decoration: none;
 	background-color: rgba(100, 3, 15,1);
-	background-color: rgba(var(--swatch-menubg-dark-color),1);
+	background-color: rgba(var(--swatch-menubg-dark-color,100, 3, 15),1);
 	border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-primary-darkest),1);
+	border: 0.125rem solid rgba(var(--swatch-primary-darkest, 48, 48, 52),1);
 	color: rgb(252, 252, 252);
-	color: rgb(var(--white-monochrome));
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 }
 
 #footer {
@@ -252,7 +252,7 @@ div#page-options-bottom-2 > a:active {
 	background: rgb(100, 3, 15);
 	background: rgb(var(--swatch-primary-darkest, 100, 3, 15));
 	color: rgb(66, 66, 72);
-	color: rgb(var(--swatch-menubg-medium-color, 66, 66, 72));
+	color: rgb(var(--swatch-tertiary-color, 66, 66, 72));
 	grid-area: footer;
 }
 
@@ -322,7 +322,7 @@ div.sexy-box div.image-container img {
 .content-panel {
 	--box-shadow-1: rgba(var(--swatch-text-dark, 12, 12, 12), 0.16);
 	--box-shadow-2: rgba(var(--swatch-text-dark, 12, 12, 12), 0.23);
-	--box-shadow-3: rgb(var(--swatch-menubg-medium-color, 170, 170, 170));
+	--box-shadow-3: rgb(var(--swatch-tertiary-color, 170, 170, 170));
 	border-radius: 0.625rem;
 	background-color: rgba(66, 66, 72, 0.5);
 	background-color: rgba(var(--gray-monochrome, 66, 66, 72), 0.5);
@@ -369,7 +369,7 @@ div.sexy-box div.image-container img {
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
 	text-transform: uppercase;
 	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-menutxt-light-color, 252, 252, 252));
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	font-size: 100%;
 	font-weight: 900;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.35);
@@ -379,7 +379,7 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel .panel-body {
-	background: rgb(var(--swatch-menubg-medium-color));
+	background: rgb(var(--swatch-tertiary-color));
 	padding: 0.313em 0.625em;
 }
 
@@ -403,13 +403,13 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel .panel-footer,.content-panel .panel-footer a {
-	color: rgb(var(--swatch-menubg-medium-color));
+	color: rgb(var(--swatch-tertiary-color));
 }
 
 .content-panel .content-toc {
 	--box-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.15);
 	float: right;
-	background-color: rgb(var(--swatch-menubg-medium-color));
+	background-color: rgb(var(--swatch-tertiary-color));
 	border: solid 0.0625rem rgb(var(--swatch-menubg-medium-dark-color));
 	border-radius: 0.625rem;
 	white-space: nowrap;
@@ -420,7 +420,7 @@ div.sexy-box div.image-container img {
 }
 
 .alternate:nth-child(even) {
-	background-color: rgba(var(--white-monochrome), 0.9);
+	background-color: rgba(var(--swatch-menubg-color), 0.9);
 }
 
 #main-content .page-tags {
@@ -477,10 +477,10 @@ div.sexy-box div.image-container img {
 	background:
 		linear-gradient(
 			to right,
-			rgba(var(--swatch-menubg-light-color)),
-			rgba(var(--swatch-menubg-medium-color))
+			rgba(var(--swatch-secondary-color)),
+			rgba(var(--swatch-tertiary-color))
 		),
-		rgba(var(--swatch-menubg-light-color));
+		rgba(var(--swatch-secondary-color));
 	background-blend-mode: screen;
 	box-shadow: inset 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
@@ -520,7 +520,7 @@ div.sexy-box div.image-container img {
 	padding: .25rem;
 	border-radius: .25rem;
 	background-color: rgba(178,210,180,0.25);
-	background-color: rgba(var(--swatch-menubg-light-color),0.25);
+	background-color: rgba(var(--swatch-secondary-color),0.25);
 	border: .0625rem solid rgba(140,20,25,1);
 	border: .0625rem solid rgba(var(--swatch-primary-darker),1);
 	margin: 0.1rem;
@@ -576,10 +576,10 @@ div.sexy-box div.image-container img {
 		rgb(244, 244, 244)
 		rgb(244, 244, 244);
 	border-color:
-		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
-		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
-		rgb(var(--swatch-menubg-light-color,  244, 244, 244))
-		rgb(var(--swatch-menubg-light-color,  244, 244, 244));
+		rgb(var(--swatch-secondary-color,  244, 244, 244))
+		rgb(var(--swatch-secondary-color,  244, 244, 244))
+		rgb(var(--swatch-secondary-color,  244, 244, 244))
+		rgb(var(--swatch-secondary-color,  244, 244, 244));
 	padding: 0.0625rem 0.1875rem;
 }
 
@@ -593,7 +593,7 @@ div.sexy-box div.image-container img {
 	background: rgb(48, 48, 52);
 	background: rgb(var(--swatch-menubg-dark-color, 48, 48, 52));
 	color: rgb(252, 252, 22);
-	color: rgb(var(--swatch-menutxt-light-color, 252, 252, 252));
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	border-bottom-right-radius: 0.25rem;
 	border-top-right-radius: 0.25rem;
@@ -751,7 +751,7 @@ table.form, table.form > tbody {
 
 form#edit-page-form {
 	background-color: rgba(170, 170, 170, 0.25);
-	background-color: rgba(var(--swatch-menubg-medium-color), 0.25);
+	background-color: rgba(var(--swatch-tertiary-color), 0.25);
 	border-radius: 1rem;
 	padding: 0 0.5rem;
 }
@@ -774,9 +774,9 @@ form#edit-page-form {
 
 .change-textarea-size a {
 	color: rgba(12, 12, 12);
-	color: rgba(var(--swatch-menutxt-dark-color));
+	color: rgba(var(--swatch-text-tertiary-color));
 	background-color: rgba(170, 170, 170);
-	background-color: rgba(var(--swatch-menubg-medium-color));
+	background-color: rgba(var(--swatch-tertiary-color));
 	border: 0.0625rem solid rgba(12, 12, 12);
 	border: 0.0625rem solid rgba(var(--swatch-border-color));
 	padding: 0.15rem;
@@ -1017,7 +1017,7 @@ div.buttons.alignleft {
 	blockquote,
 	.blockquote {
 		border: 0.0625rem solid rgb(66, 66, 72);
-		border: 0.0625rem solid rgb(var(--swatch-menubg-medium-color, 66, 66, 72));
+		border: 0.0625rem solid rgb(var(--swatch-tertiary-color, 66, 66, 72));
 		page-break-inside: avoid;
 	}
 
