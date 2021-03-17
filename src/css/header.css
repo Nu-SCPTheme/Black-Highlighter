@@ -10,14 +10,6 @@
 	background-position: left 0.75rem top 1.1875rem;
 	background-clip: border-box;
 	background-size: auto calc(var(--header-height-on-desktop) - 2.125rem);
-	filter: drop-shadow(.063rem .063rem .063rem rgb(12, 12, 12));
-	filter: drop-shadow(.063rem .063rem .063rem rgb(var(--swatch-menubg-black-color)));
-}
-
-@supports (-moz-appearance:meterbar) and (display:flex) {
-	#header {
-		filter: initial;
-	}
 }
 
 body {
@@ -456,9 +448,17 @@ form[id="search-top-box-form"] {
 	min-width: 100%;
 	align-self: flex-start;
 	display: flex;
- box-sizing: border-box;
+	box-sizing: border-box;
 	flex-direction: column;
 	flex-wrap: nowrap;
+}
+
+@supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+	#top-bar div.top-bar > ul > li > ul,
+	#top-bar div.mobile-top-bar > ul > li > ul {
+		-webkit-backdrop-filter: blur(0.125rem);
+		backdrop-filter: blur(0.125rem);
+	}
 }
 
 #top-bar div.top-bar > ul > li > ul > li,
