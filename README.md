@@ -15,11 +15,11 @@ See a preview without the Sigma-9 here: https://scptestwiki.wikidot.com/
 
 ### Build
 
-On a UNIX-like environment with bash, you can build Black Highlighter from its source files using the following:
+On a UNIX-like environment with GNU Makefile, you can build Black Highlighter from its source files using the following:
 
 ```
 npm install
-./build.sh
+make
 ```
 
 This will perform the combinations, minifications, etc. all automatically. All affected files will appear in `/dist`.
