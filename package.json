@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
   },
+  "type": "module",
   "browserslist": [
     "< 100%"
   ],
@@ -37,6 +38,7 @@
     "webpack-stream": "^6.1.1"
   },
   "scripts": {
-    "build": "make"
+    "build": "make",
+    "optimize": "node build/optimize.js"
   }
 }
