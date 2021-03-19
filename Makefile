@@ -10,8 +10,8 @@ BUILD_SOURCES := $(wildcard build/**/*)
 
 CSS_SOURCES   := $(wildcard src/css/*.css)
 CSS_OUTPUTS   := \
-	dist/css/min/black-highlighter.css \
-	dist/css/min/normalize.css
+	dist/css/min/black-highlighter.min.css \
+	dist/css/min/normalize.min.css
 
 IMAGE_SOURCES := $(wildcard src/img/*)
 IMAGE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_SOURCES))
@@ -54,7 +54,7 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $
 		> $@_
 	mv $@_ $@
 
-dist/css/min/black-highlighter.css: dist/css/black-highlighter.css node_modules
+dist/css/min/black-highlighter.min.css: dist/css/black-highlighter.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
 
 dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize-wrap-begin.css src/css/normalize-wrap-close.css
@@ -64,7 +64,7 @@ dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize
 		src/css/normalize-wrap-close.css \
 		> $@
 
-dist/css/min/normalize.css: dist/css/normalize.css node_modules
+dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
 
 # Legacy CN style CSS
