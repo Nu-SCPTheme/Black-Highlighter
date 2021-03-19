@@ -50,7 +50,7 @@ dist/css/min/black-highlighter.css: dist/css/black-highlighter.css node_modules
 dist/css/normalize.css: src/css/normalize.css
 	cp $< $@
 
-dist/css/min/normalize.css: node_modules dist/css/normalize.css
+dist/css/min/normalize.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
 	: TODO -- add supports
 
