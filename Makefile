@@ -27,9 +27,8 @@ FILES_OUTPUTS := \
 	dist/index.html \
 	dist/error.html
 
-LEGACY_CSS_SOURCES := $(wildcard src/legacy/**/*)
+LEGACY_CSS_SOURCES :=
 LEGACY_CSS_OUTPUTS := \
-	$(patsubst src/legacy/%,dist/stable/styles/%,$(LEGACY_CSS_SOURCES)) \
 	dist/stable/styles/black-highlighter.min.css \
 	dist/stable/styles/normalize.min.css
 
