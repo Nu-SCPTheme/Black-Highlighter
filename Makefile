@@ -6,7 +6,9 @@ MAKEFLAGS += --no-builtin-rules
 .PHONY: clean
 
 # Fields
-BUILD_SOURCES := $(wildcard build/**/*)
+BUILD_SOURCES := \
+	cssnano.config.js \
+	$(wildcard build/**/*)
 
 CSS_SOURCES   := $(wildcard src/css/*.css)
 CSS_OUTPUTS   := \
