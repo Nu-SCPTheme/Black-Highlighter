@@ -41,12 +41,14 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES)
 
 dist/css/min/black-highlighter.css: dist/css/black-highlighter.css
 	npm run postcss -- --config build/css-minify -o $@ $<
+	: TODO -- add supports
 
 dist/css/normalize.css: src/css/normalize.css
 	cp $< $@
 
 dist/css/min/normalize.css: dist/css/normalize.css
 	npm run postcss -- --config build/css-minify -o $@ $<
+	: TODO -- add supports
 
 # Image optimization
 dist/img/%.gif: src/img/%.gif
