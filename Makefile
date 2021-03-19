@@ -2,8 +2,7 @@ MAKEFLAGS += --no-builtin-rules
 .SUFFIXES:
 
 .PHONY: default
-.PHONY: images css
-.PHONY: css-merge css-build css-normalize css-supports
+.PHONY: images css files legacy
 .PHONY: clean
 
 # Fields
