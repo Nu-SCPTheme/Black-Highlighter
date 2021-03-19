@@ -8,7 +8,9 @@ MAKEFLAGS += --no-builtin-rules
 
 # Fields
 CSS_SOURCES   := $(wildcard src/css/*.css)
-CSS_OUTPUT    := _TODO
+CSS_OUTPUTS   := \
+	dist/css/min/black-highlighter.css \
+	TODO
 
 IMAGE_SOURCES := $(wildcard src/img/*)
 IMAGE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_SOURCES))
@@ -25,13 +27,20 @@ FILES_OUTPUTS := \
 # Top-level rules
 default: images css files
 
-css: dist/css $(CSS_OUTPUT)
+css: dist/css/min $(CSS_OUTPUTS)
 images: dist/img $(IMAGE_OUTPUTS)
 files: dist/spherical $(FILES_OUTPUTS)
 
 # Directory creation
 dist/%:
 	mkdir -p $@
+
+# CSS rules
+dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES)
+	npm run postcss -- --config build/css-merge -o $@ $<
+
+dist/css/min/black-highlighter.css: dist/css/black-highlighter.css
+	npm run postcss -- --config build/css-minify -o $@ $<
 
 # Image optimization
 dist/img/%.gif: src/img/%.gif
