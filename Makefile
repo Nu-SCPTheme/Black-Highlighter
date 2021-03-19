@@ -32,7 +32,7 @@ default: images css files legacy
 
 css: dist/css/min/ $(CSS_OUTPUTS)
 images: dist/img/ $(IMAGE_OUTPUTS)
-files: dist/spherical/ $(FILES_OUTPUTS)
+files: $(FILES_OUTPUTS)
 legacy: $(LEGACY_CSS_OUTPUTS)
 
 # Directory creation
@@ -83,10 +83,10 @@ dist/img/%.svg: src/img/%.svg node_modules
 
 # Static files
 dist/spherical/domicile.html: src/misc/domicile.html
-	cp $< $@
+	install -D -m644 $< $@
 
 dist/%.html: src/root/%.html
-	cp $< $@
+	install -D -m644 $< $@
 
 # Utility rules
 clean:
