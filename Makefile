@@ -42,10 +42,15 @@ node_modules:
 # CSS rules
 dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES) node_modules
 	npm run postcss -- --config build/css-merge -o $@ $<
+	cat \
+		src/css/black-highlighter-wrap-begin.css \
+		$@ \
+		src/css/black-highlighter-wrap-close.css \
+			> dist/css/_black-highlighter.css
+	mv dist/css/_black-highlighter.css $@
 
 dist/css/min/black-highlighter.css: dist/css/black-highlighter.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
-	: TODO -- add supports
 
 dist/css/normalize.css: src/css/normalize.css
 	cp $< $@
