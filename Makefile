@@ -27,37 +27,41 @@ FILES_OUTPUTS := \
 # Top-level rules
 default: images css files
 
-css: dist/css/min $(CSS_OUTPUTS)
-images: dist/img $(IMAGE_OUTPUTS)
-files: dist/spherical $(FILES_OUTPUTS)
+css: dist/css/min/ $(CSS_OUTPUTS)
+images: dist/img/ $(IMAGE_OUTPUTS)
+files: dist/spherical/ $(FILES_OUTPUTS)
 
 # Directory creation
-dist/%:
+dist/%/:
 	mkdir -p $@
 
+# npm rules
+node_modules:
+	npm install
+
 # CSS rules
-dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES)
+dist/css/black-highlighter.css: node_modules src/css/black-highlighter.css $(CSS_SOURCES)
 	npm run postcss -- --config build/css-merge -o $@ $<
 
-dist/css/min/black-highlighter.css: dist/css/black-highlighter.css
+dist/css/min/black-highlighter.css: node_modules dist/css/black-highlighter.css
 	npm run postcss -- --config build/css-minify -o $@ $<
 	: TODO -- add supports
 
 dist/css/normalize.css: src/css/normalize.css
 	cp $< $@
 
-dist/css/min/normalize.css: dist/css/normalize.css
+dist/css/min/normalize.css: node_modules dist/css/normalize.css
 	npm run postcss -- --config build/css-minify -o $@ $<
 	: TODO -- add supports
 
 # Image optimization
-dist/img/%.gif: src/img/%.gif
+dist/img/%.gif: node_modules src/img/%.gif
 	npm run optimize -- gif $< $@
 
-dist/img/%.png: src/img/%.png
+dist/img/%.png: node_modules src/img/%.png
 	npm run optimize -- png $< $@
 
-dist/img/%.svg: src/img/%.svg
+dist/img/%.svg: node_modules src/img/%.svg
 	npm run optimize -- svg $< $@
 
 # Static files
