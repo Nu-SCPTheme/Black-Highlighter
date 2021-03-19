@@ -7,8 +7,8 @@ MAKEFLAGS += --no-builtin-rules
 
 # Fields
 BUILD_SOURCES := \
-	cssnano.config.js \
-	$(wildcard build/**/*)
+	$(wildcard build/**/*) \
+	cssnano.config.js
 
 CSS_SOURCES   := $(wildcard src/css/*.css)
 CSS_OUTPUTS   := \
@@ -28,7 +28,10 @@ FILES_OUTPUTS := \
 	dist/error.html
 
 LEGACY_CSS_SOURCES := $(wildcard src/legacy/**/*)
-LEGACY_CSS_OUTPUTS := $(patsubst src/legacy/%,dist/stable/styles/%,$(LEGACY_CSS_SOURCES))
+LEGACY_CSS_OUTPUTS := \
+	$(patsubst src/legacy/%,dist/stable/styles/%,$(LEGACY_CSS_SOURCES)) \
+	dist/stable/styles/black-highlighter.min.css \
+	dist/stable/styles/normalize.min.css
 
 # Top-level rules
 default: images css files legacy
@@ -68,6 +71,13 @@ dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize
 
 dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
+
+# Legacy symlinks for stable/styles CSS
+dist/stable/styles/black-highlighter.min.css:
+	cd $(@D); ln -s ../../css/min/$(@F)
+
+dist/stable/styles/normalize.min.css:
+	cd $(@D); ln -s ../../css/min/$(@F)
 
 # Legacy CN style CSS
 # TODO: replace
