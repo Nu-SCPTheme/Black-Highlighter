@@ -46,18 +46,21 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES) nod
 		src/css/black-highlighter-wrap-begin.css \
 		$@ \
 		src/css/black-highlighter-wrap-close.css \
-			> dist/css/_black-highlighter.css
-	mv dist/css/_black-highlighter.css $@
+		> $@_
+	mv $@_ $@
 
 dist/css/min/black-highlighter.css: dist/css/black-highlighter.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
 
 dist/css/normalize.css: src/css/normalize.css
-	cp $< $@
+	cat \
+		src/css/normalize-wrap-begin.css \
+		$< \
+		src/css/normalize-wrap-close.css \
+		> $@
 
 dist/css/min/normalize.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
-	: TODO -- add supports
 
 # Image optimization
 dist/img/%.gif: src/img/%.gif node_modules
