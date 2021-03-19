@@ -29,17 +29,16 @@ function main() {
     case 'svg':
       minifier = svgo({
         plugins: [
-          { removeDoctype: false },
-          { removeViewBox: false },
-          { removeXMLProcInst: false },
-          { collapseGroups: true },
-          { convertPathData: true },
-          { removeUselessStrokeAndFill: true },
-          { cleanupNumericValues: { floatPrecision: 2 } },
-          { mergePaths: true },
-          { sortAttrs: true },
-          { convertShapeToPath: true },
-          { js2svg: { pretty: true } },
+          { name: 'removeDoctype', active: false },
+          { name: 'removeViewBox', active: false },
+          { name: 'removeXMLProcInst', active: false },
+          { name: 'collapseGroups' },
+          { name: 'convertPathData' },
+          { name: 'removeUselessStrokeAndFill' },
+          { name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
+          { name: 'mergePaths' },
+          { name: 'sortAttrs' },
+          { name: 'convertShapeToPath' },
         ],
       });
       break;
