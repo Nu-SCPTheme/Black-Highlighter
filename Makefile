@@ -4,6 +4,7 @@ MAKEFLAGS += --no-builtin-rules
 .PHONY: default
 .PHONY: images css
 .PHONY: css-merge css-build css-normalize css-supports
+.PHONY: clean
 
 # Fields
 CSS_SOURCES   := $(wildcard src/css/*.css)
@@ -48,3 +49,7 @@ dist/spherical/domicile.html: src/misc/domicile.html
 
 dist/%.html: src/root/%.html
 	cp $< $@
+
+# Utility rules
+clean:
+	rm -rf dist
