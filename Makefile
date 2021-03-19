@@ -7,6 +7,8 @@ MAKEFLAGS += --no-builtin-rules
 .PHONY: clean
 
 # Fields
+BUILD_SOURCES := $(wildcard build/**/*)
+
 CSS_SOURCES   := $(wildcard src/css/*.css)
 CSS_OUTPUTS   := \
 	dist/css/min/black-highlighter.css \
@@ -44,7 +46,7 @@ node_modules:
 	npm install
 
 # CSS rules
-dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES) node_modules
+dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $(CSS_SOURCES) node_modules
 	npm run postcss -- --config build/css-merge -o $@ $<
 	cat \
 		src/css/black-highlighter-wrap-begin.css \
@@ -56,7 +58,7 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES) nod
 dist/css/min/black-highlighter.css: dist/css/black-highlighter.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
 
-dist/css/normalize.css: src/css/normalize.css src/css/normalize-wrap-begin.css src/css/normalize-wrap-close.css
+dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize-wrap-begin.css src/css/normalize-wrap-close.css
 	cat \
 		src/css/normalize-wrap-begin.css \
 		$< \
