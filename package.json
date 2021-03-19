@@ -1,6 +1,6 @@
 {
   "name": "black-highlighter",
-  "description": "Modern Theme to SCP-Wiki",
+  "description": "Modern base theme for the SCP Wiki (build process)",
   "version": "1.0.0",
   "authors": "Woedenaz, Croquembouche",
   "license": "CC-BY-SA-3.0",
@@ -8,35 +8,21 @@
     "type": "git",
     "url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
   },
-  "browserslist": [
-    "< 100%"
-  ],
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "acorn": "^8.0.4",
-    "autoprefixer": "^10.2.1",
-    "babel-loader": "^8.2.2",
-    "browser-sync": "^2.26.13",
-    "cssnano": "latest",
-    "cssnano-preset-default": "latest",
-    "del": "^6.0.0",
-    "glob": "^7.1.6",
-    "gulp": "latest",
-    "gulp-eslint": "latest",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-newer": "latest",
-    "gulp-npm-script-sync": "latest",
-    "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "map-stream": "latest",
-    "moment": "^2.29.1",
-    "postcss": "^8.2.4",
-    "postcss-import": "^14.0.0",
-    "sharp": "^0.27.0",
-    "webpack": "^5.14.0",
-    "webpack-stream": "^6.1.1"
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^4.1.10",
+    "imagemin": "^7.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0"
   },
   "scripts": {
-    "build": "node node_modules/gulp/bin/gulp.js"
+    "build": "make",
+    "postcss": "node node_modules/postcss-cli/bin/postcss",
+    "styles": "node build/styles.js",
+    "optimize": "node build/optimize.js"
   }
 }
