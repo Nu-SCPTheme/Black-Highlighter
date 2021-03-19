@@ -24,12 +24,16 @@ FILES_OUTPUTS := \
 	dist/index.html \
 	dist/error.html
 
+LEGACY_CSS_SOURCES := $(wildcard src/legacy/**/*)
+LEGACY_CSS_OUTPUTS := $(patsubst src/legacy/%,dist/stable/styles/%,$(LEGACY_CSS_SOURCES))
+
 # Top-level rules
-default: images css files
+default: images css files legacy
 
 css: dist/css/min/ $(CSS_OUTPUTS)
 images: dist/img/ $(IMAGE_OUTPUTS)
 files: dist/spherical/ $(FILES_OUTPUTS)
+legacy: dist/stable/styles
 
 # Directory creation
 dist/%/:
@@ -61,6 +65,12 @@ dist/css/normalize.css: src/css/normalize.css
 
 dist/css/min/normalize.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
+
+# Legacy CN style CSS
+# TODO: replace
+dist/stable/styles: src/legacy/chinese $(LEGACY_CSS_SOURCES)
+	mkdir -p $(@D)
+	cp -a $< $@
 
 # Image optimization
 dist/img/%.gif: src/img/%.gif node_modules
