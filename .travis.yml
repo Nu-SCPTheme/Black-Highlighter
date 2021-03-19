@@ -21,7 +21,8 @@ env:
     secure: '4dBxdj1Jq8WbXegNfgITJtNrRg30XJBfx7+SZgnEMOlOmEQLOVgzYx6oZyjJM+MF1J1gF2u0v+yxOtfpjr9AmB54DGyOFf4YA82FHog4r3qz0KetrOjsLgIBtY2q5caLeG39oQY0KSNfauR6NpRiZRbI3VKYT0AJS/SlCi92anZbfhnaG4WZH60656hvdHbwJq+4UW6tjWt1sCE+5Wc1ILF34M7jLjq//Drpy65WqAfklpYHxDbOO9FkU0U4urKa9c4fcShHMwC/IAFLje9PQ4oZQ6v7b3MJ+RaFoK6TRoRQRZh/jVRjsDgTZmX0auz/P72OfjA64ZKulYyi52WpA9P0o7cuKcmAkjPE++eiW8P0KqZK5Vf+K3MeGlqVA0LcIz9rj3Zh/xbuFe1StliqQymBgSK15/FZMlNWZw+l2ykqfpFKM+CSMDvysm6nakMgODBCkUKtrjK1loAtKTMDszzBZqEbNybY/vdRWNPmBbsKX7sA5ggQyBeIDlv42gvgs2XHh4qH7DXh/qxWjAa2pUFdebcgvluGeP1Z8hIOgxHpWQbe129jo9NmUevGEWAK+rygiWqFtjCFwGnUi63mP3fktz3h0CYJKfId74d5hdvHW9MpSmHkgarkw51+sMGeh/cIMzzQHgkkQBFWTDUDwnvw3d1K/VeiOGvX1fzg2k4='
 
 script:
-  - npm run build
+  - npm install
+  - make
 
 deploy:
   - provider: s3
