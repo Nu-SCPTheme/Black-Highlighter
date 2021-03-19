@@ -10,7 +10,7 @@ MAKEFLAGS += --no-builtin-rules
 CSS_SOURCES   := $(wildcard src/css/*.css)
 CSS_OUTPUTS   := \
 	dist/css/min/black-highlighter.css \
-	TODO
+	dist/css/min/normalize.css
 
 IMAGE_SOURCES := $(wildcard src/img/*)
 IMAGE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_SOURCES))
@@ -40,6 +40,12 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(CSS_SOURCES)
 	npm run postcss -- --config build/css-merge -o $@ $<
 
 dist/css/min/black-highlighter.css: dist/css/black-highlighter.css
+	npm run postcss -- --config build/css-minify -o $@ $<
+
+dist/css/normalize.css: src/css/normalize.css
+	cp $< $@
+
+dist/css/min/normalize.css: dist/css/normalize.css
 	npm run postcss -- --config build/css-minify -o $@ $<
 
 # Image optimization
