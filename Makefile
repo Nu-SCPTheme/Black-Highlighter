@@ -41,7 +41,7 @@ dist/%/:
 	mkdir -p $@
 
 # npm rules
-node_modules: package.json package-lock.json
+node_modules:
 	npm install
 
 # CSS rules
