@@ -33,7 +33,7 @@ default: images css files legacy
 css: dist/css/min/ $(CSS_OUTPUTS)
 images: dist/img/ $(IMAGE_OUTPUTS)
 files: dist/spherical/ $(FILES_OUTPUTS)
-legacy: dist/stable/styles
+legacy: $(LEGACY_CSS_OUTPUTS)
 
 # Directory creation
 dist/%/:
@@ -68,9 +68,8 @@ dist/css/min/normalize.css: dist/css/normalize.css node_modules
 
 # Legacy CN style CSS
 # TODO: replace
-dist/stable/styles: src/legacy $(LEGACY_CSS_SOURCES)
-	mkdir -p $(@D)
-	cp -a $< $@
+dist/stable/styles/%: src/legacy/%
+	install -D -m644 $< $@
 
 # Image optimization
 dist/img/%.gif: src/img/%.gif node_modules
