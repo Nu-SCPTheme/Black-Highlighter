@@ -68,7 +68,7 @@ dist/css/min/normalize.css: dist/css/normalize.css node_modules
 
 # Legacy CN style CSS
 # TODO: replace
-dist/stable/styles: src/legacy/chinese $(LEGACY_CSS_SOURCES)
+dist/stable/styles: src/legacy $(LEGACY_CSS_SOURCES)
 	mkdir -p $(@D)
 	cp -a $< $@
 
