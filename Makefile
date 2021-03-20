@@ -29,6 +29,7 @@ FILES_OUTPUTS := \
 
 # Dynamic patching and building for any INT directories present
 INT_BRANCHES  := $(patsubst src/css/int/%,%,$(wildcard src/css/int/*))
+INT_SOURCES   := $(wildcard src/css/int/**/*)
 
 define INT_BRANCHES_template =
 INT_SOURCES_$(1) := $(wildcard src/css/int/$(1)/*.patch)
@@ -64,7 +65,7 @@ legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 
 # Has to be a separate invocation due to the order that directives
 # like foreach are evaluated in.
-css-int:
+css-int: $(INT_SOURCES)
 	make $(foreach lang,$(INT_BRANCHES),$(INT_OUTPUTS_$(lang)))
 
 # Directory creation
