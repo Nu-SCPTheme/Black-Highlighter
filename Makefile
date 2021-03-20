@@ -78,11 +78,6 @@ dist/stable/styles/black-highlighter.min.css:
 dist/stable/styles/normalize.min.css:
 	cd $(@D); ln -s ../../css/min/$(@F)
 
-# Legacy CN style CSS
-# TODO: replace
-dist/stable/styles/%: src/legacy/%
-	install -D -m644 $< $@
-
 # Image optimization
 dist/img/%.gif: src/img/%.gif node_modules
 	npm run optimize -- gif $< $@
