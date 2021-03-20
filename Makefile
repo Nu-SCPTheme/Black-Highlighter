@@ -55,7 +55,7 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $
 		src/css/black-highlighter-wrap-begin.css \
 		$@ \
 		src/css/black-highlighter-wrap-close.css \
-		> $@_
+			> $@_
 	mv $@_ $@
 
 dist/css/min/black-highlighter.min.css: dist/css/black-highlighter.css node_modules
@@ -66,7 +66,7 @@ dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize
 		src/css/normalize-wrap-begin.css \
 		$< \
 		src/css/normalize-wrap-close.css \
-		> $@
+			> $@
 
 dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
