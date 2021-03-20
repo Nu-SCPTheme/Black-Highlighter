@@ -107,10 +107,10 @@ dist/stable/styles/DEPRECATED: src/misc/legacy-deprecation-notice.txt
 	install -D -m444 $< $@
 
 dist/stable/styles/black-highlighter.min.css:
-	cd $(@D); ln -s ../../css/min/$(@F)
+	cd $(@D); ln -sf ../../css/min/$(@F)
 
 dist/stable/styles/normalize.min.css:
-	cd $(@D); ln -s ../../css/min/$(@F)
+	cd $(@D); ln -sf ../../css/min/$(@F)
 
 # Image optimization
 dist/img/%.gif: src/img/%.gif node_modules
