@@ -66,8 +66,9 @@ dist/%/:
 	mkdir -p $@
 
 # npm rules
-node_modules:
+node_modules: package.json package-lock.json
 	npm install
+	touch node_modules
 
 # CSS rules
 dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $(CSS_SOURCES) node_modules
