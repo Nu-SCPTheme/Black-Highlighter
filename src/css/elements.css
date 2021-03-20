@@ -556,10 +556,10 @@ div.image-block,div.image-block img {
 /* Article Images */
 
 .scp-image-block {
-	--box-shadow: rgba(var(--swatch-menubg-black-color, 12, 12, 12));
-	border: solid 0.0625rem rgb(var(--swatch-primary-darkest));
-	box-shadow: 0 0.0625rem 0.375rem rgba(0, 0, 0, 0.25);
-	box-shadow: 0 0.0625rem 0.375rem var(--box-shadow);
+	--box-shadow: rgba(var(--swatch-menubg-black-color),0.1);
+	border: .0625rem outset rgba(var(--swatch-primary-darkest),0.25);
+	box-shadow: .125rem .125rem 0.25rem rgba(12, 12, 12, 0.1);
+	box-shadow: .125rem .125rem 0.25rem var(--box-shadow);
 	width: 18.75rem;
 	display: flex;
 	flex-flow: column nowrap;
@@ -601,8 +601,8 @@ div.image-block,div.image-block img {
 .scp-image-block .scp-image-caption {
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
-	border-top: solid 0.0625rem rgb(12, 12, 12);
-	border-top: solid 0.0625rem rgb(var(--swatch-menubg-black-color));
+	border-top: .0625rem outset rgba(12, 12, 12, 0.25);
+	border-top: .0625rem outset rgba(var(--swatch-primary-darkest),0.25);
 	font-size: 80%;
 	font-weight: 700;
 	letter-spacing: 0.016em;
