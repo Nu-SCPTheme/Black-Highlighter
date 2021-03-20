@@ -27,6 +27,27 @@ FILES_OUTPUTS := \
 	dist/index.html \
 	dist/error.html
 
+# Dynamic patching and building for any INT directories present
+INT_BRANCHES  := $(patsubst src/css/int/%,%,$(wildcard src/css/int/*))
+
+define INT_BRANCHES_template =
+INT_SOURCES_$(1) := $(wildcard src/css/int/$(1)/*.patch)
+INT_OUTPUTS_$(1) := \
+	dist/css/int/$(1)/black-highlighter.css \
+	dist/css/int/$(1)/normalize.css \
+	dist/css/int/$(1)/min/black-highlighter.min.css \
+	dist/css/int/$(1)/min/normalize.min.css
+
+dist/css/int/$(1)/black-highlighter.css dist/css/int/$(1)/normalize.css: $(INT_SOURCES_$(1))
+	build/int-patch-and-merge.sh $(1)
+
+dist/css/int/$(1)/min/black-highlighter.min.css: dist/css/int/$(1)/black-highlighter.css
+	npm run postcss -- --config build/css-minify -o $$@ $$<
+
+dist/css/int/$(1)/min/normalize.min.css: dist/css/int/$(1)/normalize.css
+	npm run postcss -- --config build/css-minify -o $$@ $$<
+endef
+
 LEGACY_CSS_SOURCES :=
 LEGACY_CSS_OUTPUTS := \
 	dist/stable/styles/black-highlighter.min.css \
@@ -35,7 +56,7 @@ LEGACY_CSS_OUTPUTS := \
 # Top-level rules
 default: images css files legacy
 
-css: dist/css/min/ $(CSS_OUTPUTS)
+css: dist/css/min/ $(CSS_OUTPUTS) $(foreach lang,$(INT_BRANCHES),$(INT_OUTPUTS_$(lang)))
 images: dist/img/ $(IMAGE_OUTPUTS)
 files: $(FILES_OUTPUTS)
 legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
@@ -70,6 +91,9 @@ dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize
 
 dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
+
+# INT branch CSS rule
+$(foreach lang,$(INT_BRANCHES),$(eval $(call INT_BRANCHES_template,$(lang))))
 
 # Legacy symlinks for stable/styles CSS
 dist/stable/styles/black-highlighter.min.css:
