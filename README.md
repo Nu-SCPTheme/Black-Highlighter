@@ -1,6 +1,5 @@
 # Black-Highlighter
 
-[![BrowserStack](src/img/browserstack-logo-600x315.png)](https://www.browserstack.com/)
 [![Travis CI Build Status](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter.svg?branch=master)](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter)
 
     [2019-2021 Wikidot Theme]
@@ -30,3 +29,5 @@ The `Makefile` was constructed to be rigorous with requisites and outputs, it sh
 However (for obvious reasons) `make` cannot determine if `node_modules` has all the required dependencies, it merely checks if the `node_modules/` directory exists. You will need to re-run `npm install` if you modify npm's local state.
 
 Additionally, you can run `make -B` to force re-building all targets, or `make clean` to dispose of the `/dist` directory.
+
+Note: due to some issues with make's dynamic rule ordering, it may be necessary to `make -B css-int` to force rebuild of INT variants.
