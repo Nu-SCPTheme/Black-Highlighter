@@ -2,7 +2,7 @@ MAKEFLAGS += --no-builtin-rules
 .SUFFIXES:
 
 .PHONY: default
-.PHONY: images css files legacy
+.PHONY: images css css-int files legacy
 .PHONY: clean
 
 # Fields
@@ -55,12 +55,17 @@ LEGACY_CSS_OUTPUTS := \
 	dist/stable/styles/normalize.min.css
 
 # Top-level rules
-default: images css files legacy
+default: images css css-int files legacy
 
-css: dist/css/min/ $(CSS_OUTPUTS) $(foreach lang,$(INT_BRANCHES),$(INT_OUTPUTS_$(lang)))
+css: dist/css/min/ $(CSS_OUTPUTS)
 images: dist/img/ $(IMAGE_OUTPUTS)
 files: $(FILES_OUTPUTS)
 legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
+
+css-int:
+	# Has to be a separate invocation due to the order that directives
+	# like foreach are evaluated in.
+	make $(foreach lang,$(INT_BRANCHES),$(INT_OUTPUTS_$(lang)))
 
 # Directory creation
 dist/%/:
