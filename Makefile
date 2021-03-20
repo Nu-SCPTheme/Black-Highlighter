@@ -62,9 +62,9 @@ images: dist/img/ $(IMAGE_OUTPUTS)
 files: $(FILES_OUTPUTS)
 legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 
+# Has to be a separate invocation due to the order that directives
+# like foreach are evaluated in.
 css-int:
-	# Has to be a separate invocation due to the order that directives
-	# like foreach are evaluated in.
 	make $(foreach lang,$(INT_BRANCHES),$(INT_OUTPUTS_$(lang)))
 
 # Directory creation
