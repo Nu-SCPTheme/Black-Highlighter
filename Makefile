@@ -50,6 +50,7 @@ endef
 
 LEGACY_CSS_SOURCES :=
 LEGACY_CSS_OUTPUTS := \
+	dist/stable/styles/DEPRECATED \
 	dist/stable/styles/black-highlighter.min.css \
 	dist/stable/styles/normalize.min.css
 
@@ -97,6 +98,9 @@ dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
 $(foreach lang,$(INT_BRANCHES),$(eval $(call INT_BRANCHES_template,$(lang))))
 
 # Legacy symlinks for stable/styles CSS
+dist/stable/styles/DEPRECATED: src/misc/legacy-deprecation-notice.txt
+	install -D -m444 $< $@
+
 dist/stable/styles/black-highlighter.min.css:
 	cd $(@D); ln -s ../../css/min/$(@F)
 
