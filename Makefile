@@ -38,7 +38,7 @@ default: images css files legacy
 css: dist/css/min/ $(CSS_OUTPUTS)
 images: dist/img/ $(IMAGE_OUTPUTS)
 files: $(FILES_OUTPUTS)
-legacy: $(LEGACY_CSS_OUTPUTS)
+legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 
 # Directory creation
 dist/%/:
