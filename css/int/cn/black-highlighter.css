@@ -1,32 +1,23 @@
 @charset "utf-8";
 
-@import url("https://use.typekit.net/rit0pba.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:600,800|Space+Mono:400,400i,700,700i&display=swap&subset=latin-ext");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;700&display=swap');
 
 @supports(display: grid) {
 
 /* All Vars Used */
 
 :root {
-	/* S-CSS-P Integration */
-	/* If you're making a new CSS theme, please include the following three variables at minimum. */
-	--theme-base: "black-highlighter";
-	/* must be either "black-highlighter" or "sigma9" */
-	--theme-id: "black-highlighter";
-	/* set this to the URL of your theme's page - eg for "component:ar-theme", set it to "ar-theme" */
-	--theme-name: "nu-SCP Theme";
-	/* set this to your theme's full name */
+	--theme-base: "黑色标记笔";
+	--theme-id: "黑色标记笔";
+	--theme-name: "黑色标记笔";
 
-	/* Header */
-	--logo-image: url("https://nu-scptheme.github.io/Black-Highlighter/img/logo.svg");
-	--header-title: "SCP Foundation";
-	--header-subtitle: "SECURE, CONTAIN, PROTECT";
+	--logo-image: url("https://cdn.jsdelivr.net/gh/scp-cn-tech/black-highlighter@gh-pages/img/logo.svg");
+	--header-title: "SCP基金会";
 
-	/* Typefaces */
-	--body-font: proxima-nova, sans-serif;
-	--header-font: "Poppins", sans-serif;
-	--title-font: "Poppins", sans-serif;
-	--mono-font: "Space Mono", "Andale Mono", "Courier New", Courier, monospace;
+	--body-font: "Noto Sans SC", sans-serif;
+	--header-font: "Noto Sans SC", sans-serif;
+	--title-font: "Noto Sans SC", sans-serif;
+	--mono-font: "Space Mono", "Noto Serif SC", "Courier New", Courier, monospace;
 
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
