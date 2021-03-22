@@ -526,7 +526,9 @@ form[id="search-top-box-form"] {
 	opacity: 0;
 	background-color: rgb(178, 210, 180);
 	background-color: rgba(var(--swatch-menubg-dark-color),0.93);
-	transition: opacity 80ms cubic-bezier(0.4, 0.light0, 0.2, 1), background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	transition: 
+		opacity 80ms cubic-bezier(0.4, 0.0, 0.2, 1), 
+		background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #top-bar div.top-bar > ul > li:hover > ul,

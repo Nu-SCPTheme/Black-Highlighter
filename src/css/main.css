@@ -151,15 +151,10 @@ span.printuser {
 	margin: 0 auto;
 }
 
-#breadcrumbs {
-	grid-area: breadcrumbs;
-	font-weight: 85%;
-	margin: -1em 0 1em;
-}
-
+#breadcrumbs,
 .pseudocrumbs {
 	grid-area: breadcrumbs;
-	font-weight: 85%;
+	font-size: 85%;
 	margin: -1em 0 1em;
 }
 
@@ -665,8 +660,8 @@ div.sexy-box div.image-container img {
 }
 
 .visuallyhidden {
-	border: 0;
-	clip: rect(0000);
+	clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+	clip-path: rect(0, 0, 0, 0);
 	height: 0.0625rem;
 	overflow: hidden;
 	position: absolute;
@@ -678,7 +673,7 @@ div.sexy-box div.image-container img {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-	clip: auto;
+	clip-path: none;
 	height: auto;
 	overflow: visible;
 	position: static;
@@ -886,20 +881,9 @@ div.buttons.alignleft {
 	display: none;
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.emph {
-		font-family: monospace;
-		font-style: normal;
-		font-weight: 400;
-		background-image: url(http://www.kaktuskontainer.wikidot.com/local--files/component%3Atheme/dot.png),
-			none;
-		background-repeat: repeat-x;
-		background-color: transparent;
-		background-clip: padding-box, content-box;
-		background-size: 1em 1.3em auto;
-		padding: 0.5em 0 0;
-		font-feature-settings: "calt" 0;
-	}
+.emph {
+    text-emphasis-style: dot;
+    -webkit-text-emphasis-style: dot;
 }
 
 @media only screen and (max-width: 768px) {
