@@ -28,8 +28,15 @@ FILES_OUTPUTS := \
 	dist/error.html
 
 # Dynamic patching and building for any INT directories present
-INT_BRANCHES  := $(patsubst src/css/int/%,%,$(wildcard src/css/int/*))
-INT_SOURCES   := $(wildcard src/css/int/**/*)
+INT_BRANCHES  := \
+	cn \
+	test
+
+INT_DIRS      := $(patsubst src/css/int/%,%,$(wildcard src/css/int/*))
+
+ifneq ($(INT_BRANCHES), $(INT_DIRS))
+	$(error Declared list of branches doesn't match directory!)
+endif
 
 define INT_BRANCHES_template =
 INT_SOURCES_$(1) := $(wildcard src/css/int/$(1)/*.patch)
