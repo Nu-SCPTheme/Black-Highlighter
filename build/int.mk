@@ -20,3 +20,5 @@ ifneq ($(INT_BRANCHES), $(INT_DIRS))
 endif
 
 # See build/int-template.mk for the template and why this code has to be duplicated
+include build/int-cn.mk
+include build/int-test.mk
