@@ -1,6 +1,7 @@
 # TEST - Sample / Test of INT capabilities
 INT_SOURCES_TEST := $(wildcard src/css/int/test/*.patch)
 INT_OUTPUTS_TEST := \
+	dist/css/int/test/ \
 	dist/css/int/test/black-highlighter.css \
 	dist/css/int/test/normalize.css \
 	dist/css/int/test/min/black-highlighter.min.css \

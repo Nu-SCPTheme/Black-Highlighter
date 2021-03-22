@@ -1,6 +1,7 @@
 # CN - Chinese Branch
 INT_SOURCES_CN := $(wildcard src/css/int/cn/*.patch)
 INT_OUTPUTS_CN := \
+	dist/css/int/cn/ \
 	dist/css/int/cn/black-highlighter.css \
 	dist/css/int/cn/normalize.css \
 	dist/css/int/cn/min/black-highlighter.min.css \
