@@ -8,6 +8,7 @@ MAKEFLAGS += --no-builtin-rules
 # Default rule
 default: images css css-int files legacy
 
+# Sub-makefiles included
 include build/meta.mk
 include build/css.mk
 include build/images.mk
