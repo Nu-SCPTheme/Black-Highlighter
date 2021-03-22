@@ -5,72 +5,12 @@ MAKEFLAGS += --no-builtin-rules
 .PHONY: images css css-int files legacy
 .PHONY: clean
 
-# Fields
-BUILD_SOURCES := \
-	$(wildcard build/**/*) \
-	cssnano.config.js
-
-CSS_SOURCES   := $(wildcard src/css/*.css)
-CSS_OUTPUTS   := \
-	dist/css/min/black-highlighter.min.css \
-	dist/css/min/normalize.min.css
-
-IMAGE_SOURCES := $(wildcard src/img/*)
-IMAGE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_SOURCES))
-
-FILES_SOURCES := \
-	src/misc/domicile.html \
-	src/root/index.html \
-	src/root/error.html
-FILES_OUTPUTS := \
-	dist/spherical/domicile.html \
-	dist/index.html \
-	dist/error.html
-
-# Dynamic patching and building for any INT directories present
-INT_BRANCHES  := \
-	cn \
-	test
-
-INT_SOURCES   := \
-	$(INT_SOURCES_CN) \
-	$(INT_SOURCES_TEST)
-
-INT_OUTPUTS   := \
-	$(INT_OUTPUTS_CN) \
-	$(INT_OUTPUTS_TEST)
-
-INT_DIRS      := $(patsubst src/css/int/%,%,$(wildcard src/css/int/*))
-
-ifneq ($(INT_BRANCHES), $(INT_DIRS))
-	$(error Declared list of branches doesn't match directory!)
-endif
-
-# Template for creating rules for new branches
-
-define INT_BRANCHES_template =
-INT_SOURCES_$(1) := $(wildcard src/css/int/$(1)/*.patch)
-INT_OUTPUTS_$(1) := \
-	dist/css/int/$(1)/black-highlighter.css \
-	dist/css/int/$(1)/normalize.css \
-	dist/css/int/$(1)/min/black-highlighter.min.css \
-	dist/css/int/$(1)/min/normalize.min.css
-
-dist/css/int/$(1)/black-highlighter.css dist/css/int/$(1)/normalize.css: $(INT_SOURCES_$(1))
-	build/int-patch-and-merge.sh $(1)
-
-dist/css/int/$(1)/min/black-highlighter.min.css: dist/css/int/$(1)/black-highlighter.css
-	npm run postcss -- --config build/css-minify -o $$@ $$<
-
-dist/css/int/$(1)/min/normalize.min.css: dist/css/int/$(1)/normalize.css
-	npm run postcss -- --config build/css-minify -o $$@ $$<
-endef
-
-LEGACY_CSS_SOURCES :=
-LEGACY_CSS_OUTPUTS := \
-	dist/stable/styles/DEPRECATED \
-	dist/stable/styles/black-highlighter.min.css \
-	dist/stable/styles/normalize.min.css
+include build/meta.mk
+include build/css.mk
+include build/images.mk
+include build/files.mk
+include build/int.mk
+include build/legacy.mk
 
 # Top-level rules
 default: images css css-int files legacy
