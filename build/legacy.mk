@@ -1,5 +1,6 @@
 # Variables
-LEGACY_CSS_SOURCES :=
+LEGACY_CSS_SOURCES := \
+	src/misc/legacy-deprecation-notice.txt
 LEGACY_CSS_OUTPUTS := \
 	dist/stable/styles/DEPRECATED \
 	dist/stable/styles/black-highlighter.min.css \
