@@ -32,11 +32,21 @@ INT_BRANCHES  := \
 	cn \
 	test
 
+INT_SOURCES   := \
+	$(INT_SOURCES_CN) \
+	$(INT_SOURCES_TEST)
+
+INT_OUTPUTS   := \
+	$(INT_OUTPUTS_CN) \
+	$(INT_OUTPUTS_TEST)
+
 INT_DIRS      := $(patsubst src/css/int/%,%,$(wildcard src/css/int/*))
 
 ifneq ($(INT_BRANCHES), $(INT_DIRS))
 	$(error Declared list of branches doesn't match directory!)
 endif
+
+# Template for creating rules for new branches
 
 define INT_BRANCHES_template =
 INT_SOURCES_$(1) := $(wildcard src/css/int/$(1)/*.patch)
@@ -65,15 +75,10 @@ LEGACY_CSS_OUTPUTS := \
 # Top-level rules
 default: images css css-int files legacy
 
-css: dist/css/min/ $(CSS_OUTPUTS)
+css: dist/css/min/ $(CSS_OUTPUTS) $(INT_OUTPUTS)
 images: dist/img/ $(IMAGE_OUTPUTS)
 files: $(FILES_OUTPUTS)
 legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
-
-# Has to be a separate invocation due to the order that directives
-# like foreach are evaluated in.
-css-int: $(INT_SOURCES)
-	make $(foreach lang,$(INT_BRANCHES),$(INT_OUTPUTS_$(lang)))
 
 # Directory creation
 dist/%/:
@@ -107,8 +112,46 @@ dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize
 dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
 
-# INT branch CSS rule
-$(foreach lang,$(INT_BRANCHES),$(eval $(call INT_BRANCHES_template,$(lang))))
+# INT rules
+# Copied from above
+#
+# This does not actually use Makefile's template system since
+# you can't have something be both a prerequisite and
+# dynamically generated unfortunately.
+
+# CN - Chinese Branch
+INT_SOURCES_CN := $(wildcard src/css/int/cn/*.patch)
+INT_OUTPUTS_CN := \
+	dist/css/int/cn/black-highlighter.css \
+	dist/css/int/cn/normalize.css \
+	dist/css/int/cn/min/black-highlighter.min.css \
+	dist/css/int/cn/min/normalize.min.css
+
+dist/css/int/cn/black-highlighter.css dist/css/int/cn/normalize.css: $(INT_SOURCES_CN)
+	build/int-patch-and-merge.sh cn
+
+dist/css/int/cn/min/black-highlighter.min.css: dist/css/int/cn/black-highlighter.css
+	npm run postcss -- --config build/css-minify -o $@ $<
+
+dist/css/int/cn/min/normalize.min.css: dist/css/int/cn/normalize.css
+	npm run postcss -- --config build/css-minify -o $@ $<
+
+# TEST - Sample / Test of INT capabilities
+INT_SOURCES_TEST := $(wildcard src/css/int/test/*.patch)
+INT_OUTPUTS_TEST := \
+	dist/css/int/test/black-highlighter.css \
+	dist/css/int/test/normalize.css \
+	dist/css/int/test/min/black-highlighter.min.css \
+	dist/css/int/test/min/normalize.min.css
+
+dist/css/int/test/black-highlighter.css dist/css/int/test/normalize.css: $(INT_SOURCES_TEST)
+	build/int-patch-and-merge.sh cn
+
+dist/css/int/test/min/black-highlighter.min.css: dist/css/int/text/black-highlighter.css
+	npm run postcss -- --config build/css-minify -o $@ $<
+
+dist/css/int/test/min/normalize.min.css: dist/css/int/test/normalize.css
+	npm run postcss -- --config build/css-minify -o $@ $<
 
 # Legacy symlinks for stable/styles CSS
 dist/stable/styles/DEPRECATED: src/misc/legacy-deprecation-notice.txt
