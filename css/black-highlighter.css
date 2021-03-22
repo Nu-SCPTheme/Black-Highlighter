@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @import url("https://use.typekit.net/rit0pba.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:600,800|Space+Mono:400,400i,700,700i&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Poppins:600,800|Space+Mono:400,400i,700,700i&display=fallback&subset=latin-ext");
 
 @supports(display: grid) {
 
@@ -23,10 +23,10 @@
 	--header-subtitle: "SECURE, CONTAIN, PROTECT";
 
 	/* Typefaces */
-	--body-font: proxima-nova, sans-serif;
-	--header-font: "Poppins", sans-serif;
-	--title-font: "Poppins", sans-serif;
-	--mono-font: "Space Mono", "Andale Mono", "Courier New", Courier, monospace;
+	--body-font: proxima-nova,Verdana,Geneva,sans-serif;
+	--header-font: "Poppins",Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+	--title-font: "Poppins",Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+	--mono-font: "Space Mono",Consolas,monaco,monospace;
 
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
@@ -2271,7 +2271,7 @@ iframe.scpnet-interwiki-frame {
 	background-repeat: no-repeat;
 	background-position: left 0.75rem top 1.1875rem;
 	background-clip: border-box;
-	background-size: auto calc(var(--header-height-on-desktop) - 2.125rem);
+	background-size: calc(var(--header-height-on-desktop) - 1.75rem);
 }
 
 body {

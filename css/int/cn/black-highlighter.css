@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;700&display=fallback');
 
 @supports(display: grid) {
 
@@ -11,13 +11,16 @@
 	--theme-id: "黑色标记笔";
 	--theme-name: "黑色标记笔";
 
+	/* Header */
 	--logo-image: url("https://cdn.jsdelivr.net/gh/scp-cn-tech/black-highlighter@gh-pages/img/logo.svg");
 	--header-title: "SCP基金会";
+	--header-subtitle: "控制，收容，保护";
 
-	--body-font: "Noto Sans SC", sans-serif;
-	--header-font: "Noto Sans SC", sans-serif;
-	--title-font: "Noto Sans SC", sans-serif;
-	--mono-font: "Space Mono", "Noto Serif SC", "Courier New", Courier, monospace;
+	/* Typefaces */
+	--body-font: "Noto Sans SC", Verdana, "Microsoft YaHei", "微软雅黑", Geneva, sans-serif, STXihei, "华文细黑";
+	--header-font: "Noto Sans SC", Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, "Microsoft YaHei", "微软雅黑", Arial, sans-serif,  STXihei,  "华文细黑";
+	--title-font: "Noto Sans SC", Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, "Microsoft YaHei", "微软雅黑", Arial, sans-serif,  STXihei,  "华文细黑";
+	--mono-font: "Space Mono", "Noto Serif SC", "Microsoft YaHei",  "微软雅黑", "Courier New", Courier,  monospace, STXihei, "华文细黑";
 
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
@@ -2262,7 +2265,7 @@ iframe.scpnet-interwiki-frame {
 	background-repeat: no-repeat;
 	background-position: left 0.75rem top 1.1875rem;
 	background-clip: border-box;
-	background-size: auto calc(var(--header-height-on-desktop) - 2.125rem);
+	background-size: calc(var(--header-height-on-desktop) - 1.75rem);
 }
 
 body {
