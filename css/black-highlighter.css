@@ -567,7 +567,8 @@ tt {
 	grid-area: action-area-btm;
 }
 
-#page-title {
+#page-title, 
+.meta-title {
 	min-height: 2rem;
 	font-family: "Poppins", sans-serif;
 	font-family: var(--title-font);
@@ -577,9 +578,12 @@ tt {
 	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
 	margin: 0 0 0.6em;
 	padding: 0 0 0.25em;
-	border-color: rgb(66, 66, 72);
-	border-color: rgb(var(--swatch-menubg-medium-dark-color, 66, 66, 72));
+	border: 0.0625rem solid rgb(66, 66, 72);
+	border: 0.0625rem solid rgb(var(--swatch-menubg-medium-dark-color, 66, 66, 72));
 	text-align: left;
+}
+
+#page-title {
 	grid-area: page-title;
 }
 
