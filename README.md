@@ -30,4 +30,13 @@ However (for obvious reasons) `make` cannot determine if `node_modules` has all 
 
 Additionally, you can run `make -B` to force re-building all targets, or `make clean` to dispose of the `/dist` directory.
 
-Note: due to some issues with make's dynamic rule ordering, it may be necessary to `make -B css-int` to force rebuild of INT variants.
+### Adding a new branch variant
+
+If you wish to add a new INT branch variant, there are a few things that you must do:
+
+* Create a directory in `src/css/int/` corresponding to the branch name.
+* Add this name to `INT_BRANCHES` in `build/int.mk`.
+* Create a `build/int-xxx.mk` file (where `xxx` is the branch name) with contents copied from the template provided. Compare with the existing INT files to ensure it is correct.
+* Add `$(INT_SOURCES_XXX)` and `$(INT_OUTPUTS_XXX)` to `INT_SOURCES` and `INT_OUTPUTS`, respectively.
+* Add your patch files, as appropriate.
+* Test the build process, and ensure the output matches what you expect.
