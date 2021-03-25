@@ -333,6 +333,12 @@ sup {
 	vertical-align: top;
 }
 
+@supports (font-variant-numeric: diagonal-fractions) and (not (font-variant: super)) {
+	sup {
+		font-variant-numeric: diagonal-fractions;
+	}
+}
+
 hr {
 	display: block;
 	height: 0.063rem;
