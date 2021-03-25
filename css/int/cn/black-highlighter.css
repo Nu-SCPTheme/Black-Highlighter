@@ -332,17 +332,12 @@ pre * {
 }
 
 sup {
-	font-variant: super;
+	font-feature-settings: frac;
+	font-variant-numeric: diagonal-fractions;
 	position: relative;
 	font-weight: bold;
 	font-size: 1em;
 	vertical-align: top;
-}
-
-@supports (font-variant-numeric: diagonal-fractions) and (not (font-variant: super)) {
-	sup {
-		font-variant-numeric: diagonal-fractions;
-	}
 }
 
 hr {
