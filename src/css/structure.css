@@ -128,14 +128,37 @@ pre * {
 	white-space: pre;
 	font-feature-settings: "calt" 0;
 }
-
-sup {
-	font-feature-settings: frac;
-	font-variant-numeric: diagonal-fractions;
-	position: relative;
-	font-weight: bold;
-	font-size: 1em;
-	vertical-align: top;
+/* Support font-variant-position (firefox) */
+@supports ( font-variant-position: sub ) {
+	sub {
+		vertical-align: baseline;
+		font-size: var(--base-font-size);
+		line-height: inherit;
+		font-variant-position: sub;
+	}
+}
+@supports ( font-variant-position: super ) {
+	sup {
+		vertical-align: baseline;
+		font-size: var(--base-font-size);
+		line-height: inherit;
+		font-variant-position: super;
+	}
+}
+/* Does not supprt font-variant-position (everything else) */
+@supports not ( font-variant-position: sub ) {
+	sub {
+		vertical-align: sub;
+		font-size: calc(var(--base-font-size) * 0.75);
+		line-height: inherit;
+	}
+}
+@supports not ( font-variant-position: super ) {
+	sup {
+		vertical-align: super;
+		font-size: calc(var(--base-font-size) * 0.75);
+		line-height: inherit;
+	}
 }
 
 hr {
