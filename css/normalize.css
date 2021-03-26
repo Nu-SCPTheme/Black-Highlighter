@@ -337,7 +337,6 @@ sup,#header {
 	font-size: inherit;
 	color: inherit;
 }
-
 #side-bar .collapsible-block-folded {
 	background: inherit;
 }
@@ -361,6 +360,21 @@ sup,#header {
 #side-bar ul {
 	list-style-type: inherit;
 	padding: inherit;
+}
+/* interwiki frame */
+div.scpnet-interwiki-wrapper {
+    width: inherit;
+    margin-left: inherit;
+}
+iframe.scpnet-interwiki-frame {
+    height: inherit;
+    width: inherit;
+    border: inherit;
+}
+@media (min-width: 768px) {
+    iframe.scpnet-interwiki-frame, div.scpnet-interwiki-wrapper {
+        width: inherit;
+    }
 }
 /* CONTENT */
 #main-content {
