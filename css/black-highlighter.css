@@ -341,6 +341,7 @@ pre * {
 
 @supports ( font-variant-position: sub ) {
 	sub {
+		font-feature-settings: "subs" 1;
 		vertical-align: baseline;
 		font-size: var(--base-font-size);
 		line-height: inherit;
@@ -350,6 +351,7 @@ pre * {
 
 @supports ( font-variant-position: super ) {
 	sup {
+		font-feature-settings: "sups" 1;
 		vertical-align: baseline;
 		font-size: var(--base-font-size);
 		line-height: inherit;
