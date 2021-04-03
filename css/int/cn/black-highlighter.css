@@ -331,42 +331,16 @@ pre * {
 	font-feature-settings: "calt" 0;
 }
 
-/* Support font-variant-position (firefox) */
-
-@supports ( font-variant-position: sub ) {
-	sub {
-		font-feature-settings: "subs" 1;
-		vertical-align: baseline;
-		font-size: var(--base-font-size);
-		line-height: inherit;
-	}
+sub {
+	vertical-align: sub;
+	font-size: calc(var(--base-font-size) * 0.75);
+	line-height: inherit;
 }
 
-@supports ( font-variant-position: super ) {
-	sup {
-		font-feature-settings: "sups" 1;
-		vertical-align: baseline;
-		font-size: var(--base-font-size);
-		line-height: inherit;
-	}
-}
-
-/* Does not supprt font-variant-position (everything else) */
-
-@supports not ( font-variant-position: sub ) {
-	sub {
-		vertical-align: sub;
-		font-size: calc(var(--base-font-size) * 0.75);
-		line-height: inherit;
-	}
-}
-
-@supports not ( font-variant-position: super ) {
-	sup {
-		vertical-align: super;
-		font-size: calc(var(--base-font-size) * 0.75);
-		line-height: inherit;
-	}
+sup {
+	vertical-align: super;
+	font-size: calc(var(--base-font-size) * 0.75);
+	line-height: inherit;
 }
 
 /* footnote reference specific styling */
