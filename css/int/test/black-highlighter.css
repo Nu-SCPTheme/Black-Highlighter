@@ -361,14 +361,18 @@ input.text::-webkit-scrollbar-thumb {
 pre * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	max-width: 90vw;
+	white-space: pre;
+	font-feature-settings: "calt" 0;
+}
+
+pre,
+pre * {
 	font-variation-settings: 
 		"wght" var(--mono-wght), 
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
 		"MONO" var(--MONO);
-	max-width: 90vw;
-	white-space: pre;
-	font-feature-settings: "calt" 0;
 }
 
 sub {
