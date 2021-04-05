@@ -1,7 +1,8 @@
 @charset "utf-8";
 
-@import url("https://use.typekit.net/rit0pba.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:600,800|Space+Mono:400,400i,700,700i&display=fallback&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;800|&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..800,0..1,0..1,1&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap&subset=latin-ext");
 
 @supports(display: grid) {
 
@@ -11,10 +12,19 @@
 	--test: "LOCALIZATION TEST! Don't use this!";
 
 	/* Typefaces */
-	--body-font: proxima-nova,Verdana,Geneva,sans-serif;
-	--header-font: "Poppins",Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
-	--title-font: "Poppins",Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
-	--mono-font: "Space Mono",Consolas,monaco,monospace;
+	--body-font: Raleway,Verdana,Geneva,sans-serif;
+	--header-font: Poppins,Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+	--title-font: Poppins,Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+	--mono-font: Recursive,Consolas,monaco,monospace;
+
+	/* Variable Body Font Settings */
+	--wght: 400;
+	--ital: 0;
+	/* Variable Mono Font Settings */
+	--slnt: 0;
+	--CASL: 0;
+	--CRSV: 0;
+	--MONO: 1;
 
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
@@ -240,6 +250,14 @@ body {
 	word-break: normal;
 }
 
+body strong, body b, body .bold {
+	--wght: 800;
+}
+
+body i, body em, body .italic {
+	--ital: 1;
+}
+
 /* HTML5 Media Items */
 
 audio,
@@ -319,6 +337,7 @@ input.text::-webkit-scrollbar-thumb {
 pre * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	font-variation-settings: 'wght' var(--wght), 'CASL' var(--CASL), 'CRSV' var(--CRSV), 'MONO' var(--MONO);
 	max-width: 90vw;
 	white-space: pre;
 	font-feature-settings: "calt" 0;
@@ -362,7 +381,7 @@ h4,
 h5,
 h6 {
 	font-family: "Poppins", sans-serif;
-	font-family: var(--title-font);
+	font-family: var(--body-font);
 }
 
 h1 {
@@ -497,8 +516,14 @@ tt {
 .code {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	font-variation-settings: 
+		'wght' var(--wght), 
+		'slnt' var(--slnt), 
+		'CASL' var(--CASL), 
+		'CRSV' var(--CRSV), 
+		'MONO' var(--MONO);
 	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-secondary-color,  244, 244, 244));
+	background-color: rgb(var(--swatch-secondary-color, 244, 244, 244));
 	border-style: dashed;
 	border-color: rgba(var(--swatch-border-color),0.25);
 	border-width: 0.0625rem;
@@ -518,6 +543,31 @@ tt {
 
 .code pre {
 	white-space: pre;
+}
+
+pre {
+	font-family: var(--mono-font);
+	white-space: pre;
+}
+
+pre strong,
+pre b,
+pre .bold,
+.code strong,
+.code b,
+.code .bold {
+	--wght: 600;
+	font-weight: bold;
+}
+
+pre i,
+pre em,
+pre .italic,
+.code i,
+.code em,
+.code .italic {
+	--slnt: -15;
+	font-style: italic;
 }
 
 #container {
@@ -568,12 +618,12 @@ tt {
 
 #page-title, 
 .meta-title {
+	--wght: 700;
 	min-height: 2rem;
-	font-family: "Poppins", sans-serif;
-	font-family: var(--title-font);
+	font-family: var(--body-font);
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
-	font-weight: 600;
+	font-weight: 700;
 	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
 	margin: 0 0 0.6em;
 	padding: 0 0 0.25em;
@@ -848,12 +898,13 @@ div.sexy-box div.image-container img {
 }
 
 .content-panel .panel-heading {
+	--wght: 800;
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
 	text-transform: uppercase;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	font-size: 100%;
-	font-weight: 900;
+	font-weight: 800;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.35);
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 	padding: 0.313em 0.625em;
@@ -875,6 +926,7 @@ div.sexy-box div.image-container img {
 
 .content-panel .panel-footer {
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.5);
+	--wght: 700;
 	font-size: 80%;
 	font-weight: 700;
 	letter-spacing: 0.016em;
@@ -923,6 +975,7 @@ div.sexy-box div.image-container img {
 }
 
 .footer-wikiwalk-nav {
+	--wght: 700;
 	font-weight: 700;
 	letter-spacing: 0.016em;
 	font-size: 75%;
@@ -975,6 +1028,7 @@ div.sexy-box div.image-container img {
 }
 
 .thread-container .post .long .head .title {
+	--wght: 700;
 	font-weight: bold;
 	font-size: 1.2em;
 	font-family: var(--title-font);
@@ -995,6 +1049,7 @@ div.sexy-box div.image-container img {
 #page-content > div.forum-thread-box > div.new-post > a,
 #page-content > div.forum-thread-box > div.options a,
 .post-container > .post > div.long > div.options a {
+	--wght: 700;
 	display: flex;
 	color: #64030f;
 	color: rgb(var(--swatch-primary-darkest));
@@ -1058,10 +1113,10 @@ div.sexy-box div.image-container img {
 		rgb(244, 244, 244)
 		rgb(244, 244, 244);
 	border-color:
-		rgb(var(--swatch-secondary-color,  244, 244, 244))
-		rgb(var(--swatch-secondary-color,  244, 244, 244))
-		rgb(var(--swatch-secondary-color,  244, 244, 244))
-		rgb(var(--swatch-secondary-color,  244, 244, 244));
+		rgb(var(--swatch-secondary-color, 244, 244, 244))
+		rgb(var(--swatch-secondary-color, 244, 244, 244))
+		rgb(var(--swatch-secondary-color, 244, 244, 244))
+		rgb(var(--swatch-secondary-color, 244, 244, 244));
 	padding: 0.0625rem 0.1875rem;
 }
 
@@ -1095,7 +1150,7 @@ div.sexy-box div.image-container img {
 		transparent;
 	border-color:
 		transparent
-		rgb(var(--swatch-menubg-dark-color,  48, 48, 52))
+		rgb(var(--swatch-menubg-dark-color, 48, 48, 52))
 		transparent
 		transparent;
 	border-style: solid;
@@ -1110,7 +1165,7 @@ div.sexy-box div.image-container img {
 }
 
 .tags:after {
-	--box-shadow: rgb(var(--swatch-menubg-dark-color,  48, 48, 52));
+	--box-shadow: rgb(var(--swatch-menubg-dark-color, 48, 48, 52));
 	top: 0.28125rem;
 	left: -0.5rem;
 	width: 0.25rem;
@@ -1257,6 +1312,7 @@ form#edit-page-form {
 }
 
 .change-textarea-size a {
+	--wght: 600;
 	color: rgba(12, 12, 12);
 	color: rgba(var(--swatch-text-tertiary-color));
 	background-color: rgba(170, 170, 170);
@@ -1771,6 +1827,7 @@ div.buttons.alignleft {
 #side-bar .heading p,
 #side-bar .side-block > .collapsible-block .collapsible-block-link {
 	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
+	--wght: 700;
 	letter-spacing: 0.2rem;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
@@ -2327,9 +2384,9 @@ div#container-wrap {
 
 #header,
 #top-bar {
+	--wght: 500;
 	max-width: 61.25rem;
 	/* 980px */
-	font-weight: 600;
 	margin: 0 auto;
 }
 
@@ -2554,6 +2611,7 @@ form[id="search-top-box-form"] {
 }
 
 #top-bar {
+	--wght: 600;
 	width: 100%;
 	position: initial;
 	z-index: 50;
@@ -2853,6 +2911,7 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li > a,
 #top-bar div.mobile-top-bar > ul > li > ul > li > a {
+	--wght: 300;
 	position: relative;
 	overflow: hidden;
 	background: transparent;
@@ -2862,7 +2921,7 @@ form[id="search-top-box-form"] {
 	height: 100%;
 	font-size: 0.875rem;
 	font-size: calc((var(--base-font-size) * (14/15)) * 0.875);
-	font-weight: normal;
+	font-weight: 300;
 	border: 0px solid rgba(0,0,0,0);
 	padding: 0 1em;
 
@@ -3294,6 +3353,7 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
+		--wght: 700;
 		font-family: 'Lato', sans-serif;
 		font-family: var(--body-font);
 		font-size: 3em;
@@ -3754,6 +3814,7 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
+	--wght: 700;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--rating-module-text-color));
 	font-weight: 700;
@@ -3764,6 +3825,7 @@ div.image-block,div.image-block img {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
+	--wght: 700;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--rating-module-button-color));
 	font-weight: 700;
@@ -4026,6 +4088,7 @@ div.image-block,div.image-block img {
 }
 
 .scp-image-block .scp-image-caption {
+	--wght: 700;
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
 	border-top: .0625rem outset rgba(12, 12, 12, 0.25);
@@ -4096,6 +4159,7 @@ table.wiki-content-table tr {
 }
 
 #who-rated-page-area > div > span[style*="color"] {
+	--wght: 900;
 	font-weight: 900;
 	text-align: left;
 }
