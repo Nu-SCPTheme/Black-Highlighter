@@ -209,7 +209,11 @@
 * {
     font-variation-settings: 
 		"wght" var(--wght), 
-		"ital" var(--ital);
+		"ital" var(--ital),
+		"slnt" var(--slnt), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 }
 
 html {
@@ -258,12 +262,23 @@ body {
 	word-break: normal;
 }
 
-body strong, body b, body .bold {
+body strong, 
+body strong *,
+body b, 
+body b *, 
+body .bold,
+body .bold * {
 	--wght: 800;
 }
 
-body i, body em, body .italic {
+body i, 
+body i *,
+body em, 
+body em *,
+body .italic,
+body .italic * {
 	--ital: 1;
+	--slnt: -15;
 }
 
 /* HTML5 Media Items */
@@ -576,32 +591,6 @@ tt * {
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
 		"MONO" var(--MONO);
-}
-
-tt strong,
-tt b,
-tt .strong,
-pre strong,
-pre b,
-pre .bold,
-.code strong,
-.code b,
-.code .bold {
-	--wght: 600;
-	font-weight: bold;
-}
-
-tt i,
-tt em,
-tt .italic,
-pre i,
-pre em,
-pre .italic,
-.code i,
-.code em,
-.code .italic {
-	--slnt: -15;
-	font-style: italic;
 }
 
 #container {
