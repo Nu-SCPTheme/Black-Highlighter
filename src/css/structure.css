@@ -44,6 +44,14 @@ body {
 	word-break: normal;
 }
 
+body strong, body b, body .bold {
+	--wght: 800;
+}
+  
+body i, body em, body .italic {
+	--ital: 1;
+}
+
 /* HTML5 Media Items */
 
 audio,
@@ -123,6 +131,7 @@ input.text::-webkit-scrollbar-thumb {
 pre * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	font-variation-settings: 'wght' var(--wght), 'CASL' var(--CASL), 'CRSV' var(--CRSV), 'MONO' var(--MONO);
 	max-width: 90vw;
 	white-space: pre;
 	font-feature-settings: "calt" 0;
@@ -161,7 +170,7 @@ h4,
 h5,
 h6 {
 	font-family: "Poppins", sans-serif;
-	font-family: var(--title-font);
+	font-family: var(--body-font);
 }
 
 h1 {

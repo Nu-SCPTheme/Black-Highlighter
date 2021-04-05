@@ -78,9 +78,9 @@ div#container-wrap {
 
 #header,
 #top-bar {
+	--wght: 500;
 	max-width: 61.25rem;
 	/* 980px */
-	font-weight: 600;
 	margin: 0 auto;
 }
 
@@ -305,6 +305,7 @@ form[id="search-top-box-form"] {
 }
 
 #top-bar {
+	--wght: 600;
 	width: 100%;
 	position: initial;
 	z-index: 50;
@@ -605,6 +606,7 @@ form[id="search-top-box-form"] {
 
 #top-bar div.top-bar > ul > li > ul > li > a,
 #top-bar div.mobile-top-bar > ul > li > ul > li > a {
+	--wght: 300;
 	position: relative;
 	overflow: hidden;
 	background: transparent;
@@ -614,7 +616,7 @@ form[id="search-top-box-form"] {
 	height: 100%;
 	font-size: 0.875rem;
 	font-size: calc((var(--base-font-size) * (14/15)) * 0.875);
-	font-weight: normal;
+	font-weight: 300;
 	border: 0px solid rgba(0,0,0,0);
 	padding: 0 1em;
 
@@ -1045,6 +1047,7 @@ form[id="search-top-box-form"] {
 	}
 
 	#top-bar > div.mobile-top-bar > div.open-menu > p > a {
+		--wght: 700;
 		font-family: 'Lato', sans-serif;
 		font-family: var(--body-font);
 		font-size: 3em;
