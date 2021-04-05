@@ -564,14 +564,18 @@ pre {
 .code * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	max-width: 90vw;
+	font-feature-settings: "calt" 0;
+}
+
+.code,
+.code * {
 	font-variation-settings: 
 		"wght" var(--mono-wght), 
 		"slnt" var(--slnt), 
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
 		"MONO" var(--MONO);
-	max-width: 90vw;
-	font-feature-settings: "calt" 0;
 }
 
 .code p,.code pre {
