@@ -523,6 +523,11 @@ tt {
 	padding: 0.2em 0;
 }
 
+pre {
+	white-space: pre;
+	font-family: var(--mono-font);
+}
+
 .code {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
@@ -552,12 +557,11 @@ tt {
 }
 
 .code pre {
-	white-space: pre;
+	white-space: pre-wrap;
 }
 
-pre, tt {
-	font-family: var(--mono-font);
-	white-space: pre;
+tt {
+	white-space: pre-wrap;
 }
 
 pre *, tt * {
