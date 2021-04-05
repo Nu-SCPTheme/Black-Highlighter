@@ -567,12 +567,12 @@ tt {
 	white-space: pre;
 }
 
-pre {
+pre, tt {
 	font-family: var(--mono-font);
 	white-space: pre;
 }
 
-pre * {
+pre *, tt * {
 	font-variation-settings: 
 		"wght" var(--wght), 
 		"slnt" var(--slnt), 
@@ -581,6 +581,9 @@ pre * {
 		"MONO" var(--MONO);
 }
 
+tt strong,
+tt b,
+tt .strong,
 pre strong,
 pre b,
 pre .bold,
@@ -591,6 +594,9 @@ pre .bold,
 	font-weight: bold;
 }
 
+tt i,
+tt em,
+tt .italic,
 pre i,
 pre em,
 pre .italic,
