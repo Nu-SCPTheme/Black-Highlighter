@@ -18,12 +18,6 @@
 .code {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	font-variation-settings: 
-		'wght' var(--wght), 
-		'slnt' var(--slnt), 
-		'CASL' var(--CASL), 
-		'CRSV' var(--CRSV), 
-		'MONO' var(--MONO);
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color, 244, 244, 244));
 	border-style: dashed;
@@ -35,6 +29,12 @@
 .code * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	font-variation-settings: 
+		"wght" var(--wght), 
+		"slnt" var(--slnt), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 	max-width: 90vw;
 	font-feature-settings: "calt" 0;
 }
@@ -50,6 +50,15 @@
 pre {
 	font-family: var(--mono-font);
 	white-space: pre;
+}
+
+pre * {
+	font-variation-settings: 
+		"wght" var(--wght), 
+		"slnt" var(--slnt), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 }
 
 pre strong,
