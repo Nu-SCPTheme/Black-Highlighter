@@ -471,22 +471,17 @@ pre * {
 
 sub, sup {
 	font-size: 0.75em;
-	line-height: inherit;
+	position: relative;
 }
 
 sub {
 	vertical-align: sub;
+	bottom: -0.25em;
 }
 
 sup {
 	vertical-align: super;	
-}
-
-/* footnote reference specific styling */
-
-.footnoteref {
-    font-variant-numeric: ordinal;
-    font-feature-settings: "ordn" 1;
+	top: -0.25em;
 }
 
 hr {
