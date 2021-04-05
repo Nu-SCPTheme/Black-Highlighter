@@ -33,6 +33,7 @@
 	--wght: 400;
 	--ital: 0;
 	/* Variable Mono Font Settings */
+	--mono-wght: calc(var(--wght) - 50);
 	--slnt: 0;
 	--CASL: 0;
 	--CRSV: 0;
@@ -356,7 +357,7 @@ pre * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	font-variation-settings: 
-		"wght" var(--wght), 
+		"wght" var(--mono-wght), 
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
 		"MONO" var(--MONO);
@@ -555,7 +556,7 @@ pre {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	font-variation-settings: 
-		"wght" var(--wght), 
+		"wght" var(--mono-wght), 
 		"slnt" var(--slnt), 
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
@@ -581,7 +582,7 @@ pre *,
 tt, 
 tt * {
 	font-variation-settings: 
-		"wght" var(--wght), 
+		"wght" var(--mono-wght), 
 		"slnt" var(--slnt), 
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
