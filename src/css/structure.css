@@ -247,15 +247,15 @@ pre * {
 		"CRSV" var(--CRSV), 
 		"MONO" var(--MONO);
 }
-sub {
-	vertical-align: sub;
-	font-size: calc(var(--base-font-size) * 0.75);
+sub, sup {
+	font-size: 0.75em;
 	line-height: inherit;
 }
+sub {
+	vertical-align: sub;
+}
 sup {
-	vertical-align: super;
-	font-size: calc(var(--base-font-size) * 0.75);
-	line-height: inherit;
+	vertical-align: super;	
 }
 /* footnote reference specific styling */
 .footnoteref {
