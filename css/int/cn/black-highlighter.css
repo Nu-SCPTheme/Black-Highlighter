@@ -209,6 +209,12 @@
 	--final-header-height-on-mobile: calc(var(--header-height-on-mobile) + var(--topbar-height-on-mobile));
 }
 
+* {
+    font-variation-settings: 
+		"wght" var(--wght), 
+		"ital" var(--ital);
+}
+
 html {
 	font-size: 1em;
 	line-height: 1.5;
@@ -342,7 +348,11 @@ input.text::-webkit-scrollbar-thumb {
 pre * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	font-variation-settings: 'wght' var(--wght), 'CASL' var(--CASL), 'CRSV' var(--CRSV), 'MONO' var(--MONO);
+	font-variation-settings: 
+		"wght" var(--wght), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 	max-width: 90vw;
 	white-space: pre;
 	font-feature-settings: "calt" 0;
@@ -521,12 +531,6 @@ tt {
 .code {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	font-variation-settings: 
-		'wght' var(--wght), 
-		'slnt' var(--slnt), 
-		'CASL' var(--CASL), 
-		'CRSV' var(--CRSV), 
-		'MONO' var(--MONO);
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color, 244, 244, 244));
 	border-style: dashed;
@@ -538,6 +542,12 @@ tt {
 .code * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	font-variation-settings: 
+		"wght" var(--wght), 
+		"slnt" var(--slnt), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 	max-width: 90vw;
 	font-feature-settings: "calt" 0;
 }
@@ -553,6 +563,15 @@ tt {
 pre {
 	font-family: var(--mono-font);
 	white-space: pre;
+}
+
+pre * {
+	font-variation-settings: 
+		"wght" var(--wght), 
+		"slnt" var(--slnt), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 }
 
 pre strong,
