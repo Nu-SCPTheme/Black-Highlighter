@@ -2403,33 +2403,18 @@ div#container-wrap {
 	z-index: 9999;
 }
 
-#header h1 {
-	font-family: 'Poppins', sans-serif;
-	font-family: var(--header-font);
-	height: 100%;
-	max-height: var(--header-height-on-desktop);
-	position: absolute;
-}
-
-#header h1 a::before {
-	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12, ));
-	content: "SCP Foundation";
-	content: var(--header-title);
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-headerh1-color));
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
-	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
-}
-
 #header h1,
 #header h2 {
-	font-family: 'Poppins', sans-serif;
-	font-family: var(--header-font);
-	font-weight: 700;
 	position: absolute;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+#header h1 {
+	height: 100%;
+	max-height: var(--header-height-on-desktop);
+	position: absolute;
 }
 
 #header h1 a {
@@ -2450,7 +2435,17 @@ div#container-wrap {
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 1em);
 }
 
-#header > h1 > a > span {
+#header h1 a::before {
+	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12, ));
+	content: "SCP Foundation";
+	content: var(--header-title);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-headerh1-color));
+	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
+	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
+}
+
+#header h1 a > span {
 	display: inline-table;
 	z-index: 9999;
 	color: transparent;
@@ -2462,17 +2457,16 @@ div#container-wrap {
 }
 
 #header h2 {
-	font-size: var(--header-h2-font-size);
-	font-family: 'Poppins', sans-serif;
-	font-family: var(--title-font);
-	font-weight: 700;
 	pointer-events: none;
 }
 
 #header h2 span {
+	--wght: 600;
 	display: block;
-	line-height: 0;
-	font-weight: 400;
+	font-size: var(--header-h2-font-size);
+	font-family: 'Poppins', sans-serif;
+	font-family: var(--title-font);
+	font-weight: 600;
 	color: transparent;
 	text-shadow: none;
 	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
@@ -2490,7 +2484,8 @@ div#container-wrap {
 	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
 }
 
-#header-extra-div-1,#header-extra-div-2 {
+#header-extra-div-1,
+#header-extra-div-2 {
 	display: none;
 }
 
