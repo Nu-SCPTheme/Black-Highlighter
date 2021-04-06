@@ -179,16 +179,17 @@ div.blockquote {
 .footnotes-footer {
 	display: block;
 	position: relative;
+	box-sizing: border-box;
 	width: 95%;
 	margin: 0.5rem 1.5rem;
-	padding: 0.15em 1em;
+	padding: .15em 1em 1em 2em;
 	background-color: rgba(170, 170, 170, 0.25);
 	background-color: rgba(var(--swatch-tertiary-color), 0.25);
 	border-left: 0.5em solid rgba(140, 20, 25);
 	border-left: 0.5em solid rgba(var(--swatch-primary-darker));
 }
 
-.footnote-footer .title {
+.footnotes-footer .title {
 	--wght: 800;
 	font-weight: 800;
 }
