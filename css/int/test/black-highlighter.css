@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap&subset=latin-ext");
-@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap&subset=latin-ext");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap&subset=latin-ext");
-@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap&subset=greek");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 
 @supports(display: grid) {
 
@@ -19,15 +19,24 @@
 	--mono-font: Recursive,Consolas,monaco,monospace;
 
 	/* Variable Body Font Settings */
-	--wght: 400;
-	--ital: 0;
+	/* SETTING  |  ========================== DESCRIPTION 			| 	FONT: 	RANGE 	 */
+	--wght: 400;/* ========================== Body Font Weight 		| 	Body: 100 - 900  */
+	--ital: 0;	/* ========================== Body Font Italic 		| 	Body:   0 - 1    */
 	/* Variable Mono Font Settings */
-	--mono-wght: calc(var(--wght) - 50);
-	--slnt: 0;
-	--CASL: 0;
-	--CRSV: 0;
-	--MONO: 1;
-
+	--mono-wght: 350; /*===================== Mono Font Weight 		| 	Mono: 300 - 1000 */
+	--slnt: 0;	/* ========================== Mono Font Italic 		| 	Mono: -15 - 0    */
+	--CASL: 0;	/* ========================== Mono Font Casual Amnt | 	Mono:   0 - 1    */
+	--CRSV: 0;	/* ========================== Mono Font Cursive Amnt|	Mono:   0 - 1    */
+	--MONO: 1;	/* ========================== Mono Font Mono Amnt	| 	Mono:   0 - 1    */
+	/* Font Feature Settings */
+	/* See here for detailed explainations: https://sparanoid.com/lab/opentype-features/ */
+	--lnum: 1;	/* ========================== Lining Numerals		|	Any: 	0 OR 1	 */
+	--pnum: 1;	/* ========================== Proportional Numerals	|	Any: 	0 OR 1	 */
+	--kern: 1;	/* ========================== Kerning				|	Any: 	0 OR 1	 */
+	--liga: 1;	/* ========================== Standard Ligature		|	Any: 	0 OR 1	 */
+	--clig: 1;	/* ========================== Contextual Ligature	|	Any: 	0 OR 1	 */
+	--dlig: 0;	/* ========================== Discretionary Ligature|	Any: 	0 OR 1	 */
+	--calt: 1;	/* ========================== Contextual Alternate	|	Any: 	0 OR 1	 */
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
 	/* white */
@@ -214,6 +223,17 @@
 		"CASL" var(--CASL), 
 		"CRSV" var(--CRSV), 
 		"MONO" var(--MONO);
+	font-kerning: auto;
+	font-variant-ligatures: common-ligatures contextual;
+	font-variant-numeric: lining-nums proportional-nums;
+	font-feature-settings: 
+		"lnum" var(--lnum),
+		"pnum" var(--pnum), 
+		"kern" var(--kern), 
+		"liga" var(--liga),
+		"clig" var(--clig), 
+		"dlig" var(--dlig),
+		"calt" var(--calt);
 }
 
 html {
@@ -251,10 +271,7 @@ body {
 	font-family: "Lato", sans-serif;
 	font-family: var(--body-font);
 	font-size: 0.875rem;
-	font-size: var(--base-font-size);
-	font-kerning: auto;
-	font-variant-numeric: normal;
-	font-feature-settings: "lnum", "kern", "clig", "calt";
+	font-size: var(--base-font-size);	
 
 	/* line behavior */
 	orphans: 2;
@@ -453,11 +470,11 @@ input.text::-webkit-scrollbar-thumb {
 /* Standard Structure Elements */
 
 pre * {
+	--calt: 0;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	max-width: 90vw;
 	white-space: pre;
-	font-feature-settings: "calt" 0;
 }
 
 pre,
@@ -502,6 +519,8 @@ h3,
 h4,
 h5,
 h6 {
+	--dlig: 1;
+	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 	font-family: "Poppins", sans-serif;
 	font-family: var(--title-font);
 }
@@ -581,11 +600,11 @@ rt {
 /* Teletype */
 
 tt {
+	--calt: 0;
 	overflow-wrap: break-word;
 	hyphens: auto;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	font-feature-settings: "calt" 0;
 }
 
 /* Chrome, Safari, Opera Scrollbar */
@@ -652,10 +671,10 @@ pre {
 }
 
 .code * {
+	--calt: 0;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	max-width: 90vw;
-	font-feature-settings: "calt" 0;
 }
 
 .code,
@@ -741,6 +760,8 @@ tt * {
 #page-title, 
 .meta-title {
 	--wght: 700;
+	--dlig: 1;
+	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 	min-height: 2rem;
 	font-family: var(--title-font);
 	color: rgb(12, 12, 12);
