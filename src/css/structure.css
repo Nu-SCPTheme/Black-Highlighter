@@ -240,15 +240,13 @@ input.text::-webkit-scrollbar-thumb {
 
 /* Standard Structure Elements */
 
+pre,
 pre * {
 	--calt: 0;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	max-width: 90vw;
 	white-space: pre;
-}
-pre,
-pre * {
 	font-variation-settings: 
 		"wght" var(--mono-wght), 
 		"CASL" var(--CASL), 
@@ -369,8 +367,17 @@ tt {
 	--calt: 0;
 	overflow-wrap: break-word;
 	hyphens: auto;
+}
+
+tt,
+tt * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	font-variation-settings: 
+		"wght" var(--mono-wght), 
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 }
 
 /* Chrome, Safari, Opera Scrollbar */
