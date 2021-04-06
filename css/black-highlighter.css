@@ -3790,8 +3790,10 @@ div.blockquote {
 /* Footnotes */
 
 .footnotes-footer {
-	width: 90%;
-	margin: 1em auto;
+	display: block;
+	position: relative;
+	width: 95%;
+	margin: 0.5rem 1.5rem;
 	padding: 0.15em 1em;
 	background-color: rgba(170, 170, 170, 0.25);
 	background-color: rgba(var(--swatch-tertiary-color), 0.25);
@@ -3799,11 +3801,9 @@ div.blockquote {
 	border-left: 0.5em solid rgba(var(--swatch-primary-darker));
 }
 
-.footnote-footer {
-	display: block;
-	position: relative;
-	width: 95%;
-	margin: 0.5rem 1.5rem;
+.footnote-footer .title {
+	--wght: 800;
+	font-weight: 800;
 }
 
 .footnote-footer > a:nth-of-type(1) {
