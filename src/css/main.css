@@ -32,10 +32,10 @@ pre {
 }
 
 .code * {
+	--calt: 0;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	max-width: 90vw;
-	font-feature-settings: "calt" 0;
 }
 
 .code,
@@ -121,6 +121,8 @@ tt * {
 #page-title, 
 .meta-title {
 	--wght: 700;
+	--dlig: 1;
+	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 	min-height: 2rem;
 	font-family: var(--title-font);
 	color: rgb(12, 12, 12);

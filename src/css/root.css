@@ -22,15 +22,24 @@
 	--mono-font: Recursive,Consolas,monaco,monospace;
 
 	/* Variable Body Font Settings */
-	--wght: 400;
-	--ital: 0;
+	/* SETTING  |  ========================== DESCRIPTION 			| 	FONT: 	RANGE 	 */
+	--wght: 400;/* ========================== Body Font Weight 		| 	Body: 100 - 900  */
+	--ital: 0;	/* ========================== Body Font Italic 		| 	Body:   0 - 1    */
 	/* Variable Mono Font Settings */
-	--mono-wght: calc(var(--wght) - 50);
-	--slnt: 0;
-	--CASL: 0;
-	--CRSV: 0;
-	--MONO: 1;
-
+	--mono-wght: 350; /*===================== Mono Font Weight 		| 	Mono: 300 - 1000 */
+	--slnt: 0;	/* ========================== Mono Font Italic 		| 	Mono: -15 - 0    */
+	--CASL: 0;	/* ========================== Mono Font Casual Amnt | 	Mono:   0 - 1    */
+	--CRSV: 0;	/* ========================== Mono Font Cursive Amnt|	Mono:   0 - 1    */
+	--MONO: 1;	/* ========================== Mono Font Mono Amnt	| 	Mono:   0 - 1    */
+	/* Font Feature Settings */
+	/* See here for detailed explainations: https://sparanoid.com/lab/opentype-features/ */
+	--lnum: 1;	/* ========================== Lining Numerals		|	Any: 	0 OR 1	 */
+	--pnum: 1;	/* ========================== Proportional Numerals	|	Any: 	0 OR 1	 */
+	--kern: 1;	/* ========================== Kerning				|	Any: 	0 OR 1	 */
+	--liga: 1;	/* ========================== Standard Ligature		|	Any: 	0 OR 1	 */
+	--clig: 1;	/* ========================== Contextual Ligature	|	Any: 	0 OR 1	 */
+	--dlig: 0;	/* ========================== Discretionary Ligature|	Any: 	0 OR 1	 */
+	--calt: 1;	/* ========================== Contextual Alternate	|	Any: 	0 OR 1	 */
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
 	/* white */
