@@ -1607,7 +1607,8 @@ div.buttons.alignleft {
 	}
 
 	blockquote,
-	.blockquote {
+	.blockquote,
+	[class*="blockquote"] {
 		margin: 0.75em 0;
 	}
 
@@ -1749,7 +1750,8 @@ div.buttons.alignleft {
 
 	pre,
 	blockquote,
-	.blockquote {
+	.blockquote,
+	[class*="blockquote"] {
 		border: 0.0625rem solid rgb(66, 66, 72);
 		border: 0.0625rem solid rgb(var(--swatch-tertiary-color, 66, 66, 72));
 		page-break-inside: avoid;
@@ -3782,7 +3784,8 @@ form[id="search-top-box-form"] {
 /* Blockquote */
 
 blockquote,
-div.blockquote {
+.blockquote,
+[class*="blockquote"] {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.1);
 	display: block;
 	border-style: dashed;
@@ -3799,7 +3802,8 @@ div.blockquote {
 
 @supports (display: flow-root) {
 	blockquote,
-	div.blockquote {	
+	.blockquote,
+	[class*="blockquote"] {	
 		display: flow-root;
 	}
 }
@@ -4357,7 +4361,8 @@ table.wiki-content-table tr {
 	}
 
 	blockquote,
-	div.blockquote {
+	.blockquote,
+	[class*="blockquote"] {
 		margin-left: 0;
 		margin-right: 0;
 	}
