@@ -147,7 +147,8 @@
 /* Blockquote */
 
 blockquote,
-div.blockquote {
+.blockquote,
+[class*="blockquote"] {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.1);
 	display: block;
 	border-style: dashed;
@@ -164,7 +165,8 @@ div.blockquote {
 
 @supports (display: flow-root) {
 	blockquote,
-	div.blockquote {	
+	.blockquote,
+	[class*="blockquote"] {	
 		display: flow-root;
 	}
 }
@@ -721,7 +723,8 @@ table.wiki-content-table tr {
 	}
 
 	blockquote,
-	div.blockquote {
+	.blockquote,
+	[class*="blockquote"] {
 		margin-left: 0;
 		margin-right: 0;
 	}
