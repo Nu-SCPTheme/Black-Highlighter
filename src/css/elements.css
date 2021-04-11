@@ -148,6 +148,7 @@
 
 blockquote,
 .blockquote,
+div.blockquote,
 [class*="blockquote"] {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.1);
 	display: block;
@@ -166,6 +167,7 @@ blockquote,
 @supports (display: flow-root) {
 	blockquote,
 	.blockquote,
+	div.blockquote,
 	[class*="blockquote"] {	
 		display: flow-root;
 	}
