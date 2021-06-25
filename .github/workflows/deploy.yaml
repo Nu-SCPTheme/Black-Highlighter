@@ -1,0 +1,29 @@
+name: 'Deploy 🚀'
+on:
+  [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Dependencies
+        run: npm install
+
+      - name: Build
+        run: make
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          branch: gh-pages
+          folder: dist
