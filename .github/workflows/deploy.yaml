@@ -1,6 +1,15 @@
 name: 'Build'
 on:
-  [push]
+  push:
+    paths:
+      - 'build/*'
+      - 'legacy/*'
+      - 'package-lock.json'
+      - 'src/*'
+      - 'themes/*'
+      - '.github/workflows/deploy.yaml'
+  schedule:
+    - cron: '0 0 * * *'  # Run daily
 
 jobs:
   build-and-deploy:
