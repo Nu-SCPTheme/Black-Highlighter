@@ -9,7 +9,7 @@ on:
       - 'themes/*'
       - '.github/workflows/deploy.yaml'
   schedule:
-    - cron: '0 0 * * *'  # Run daily
+    - cron: '0 0 */7 * *'  # Run weekly
 
 jobs:
   build-and-deploy:
