@@ -8,6 +8,9 @@ FILES_OUTPUTS := \
 	dist/index.html \
 	dist/error.html
 
+# Dummy rules
+package-lock.json:
+
 # Static files
 dist/spherical/domicile.html: src/misc/domicile.html
 	install -D -m644 $< $@
