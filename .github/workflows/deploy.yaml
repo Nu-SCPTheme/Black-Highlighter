@@ -2,11 +2,11 @@ name: 'Build'
 on:
   push:
     paths:
-      - 'build/*'
+      - 'build/**/'
       - 'legacy/*'
       - 'package-lock.json'
-      - 'src/*'
-      - 'themes/*'
+      - 'src/**/*'
+      - 'themes/**/*'
       - '.github/workflows/deploy.yaml'
 
 jobs:
