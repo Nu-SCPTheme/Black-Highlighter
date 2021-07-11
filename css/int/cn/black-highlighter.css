@@ -694,11 +694,11 @@ tt * {
 
 .code,
 .code * {
-	font-variation-settings: 
-		"wght" var(--mono-wght), 
-		"slnt" var(--slnt), 
-		"CASL" var(--CASL), 
-		"CRSV" var(--CRSV), 
+	font-variation-settings:
+		"wght" var(--mono-wght),
+		"slnt" var(--slnt),
+		"CASL" var(--CASL),
+		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
 }
 
@@ -716,13 +716,13 @@ tt {
 
 pre,
 pre *,
-tt, 
+tt,
 tt * {
-	font-variation-settings: 
-		"wght" var(--mono-wght), 
-		"slnt" var(--slnt), 
-		"CASL" var(--CASL), 
-		"CRSV" var(--CRSV), 
+	font-variation-settings:
+		"wght" var(--mono-wght),
+		"slnt" var(--slnt),
+		"CASL" var(--CASL),
+		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
 }
 
@@ -772,7 +772,7 @@ tt * {
 	grid-area: action-area-btm;
 }
 
-#page-title, 
+#page-title,
 .meta-title {
 	--wght: 700;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
@@ -1518,10 +1518,10 @@ div.buttons input {
 	display: flex;
 }
 
-div.buttons input, 
-input.button, 
-button, 
-file, 
+div.buttons input,
+input.button,
+button,
+file,
 a.button,
 .owindow .button-bar a {
 	flex-grow: 2;
@@ -1539,9 +1539,9 @@ a.button,
 		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-div.buttons input:hover, 
-input.button:hover, 
-button:hover, 
+div.buttons input:hover,
+input.button:hover,
+button:hover,
 file:hover,
 a.button:hover,
 .owindow .button-bar a:hover {
@@ -1761,6 +1761,11 @@ div.buttons.alignleft {
 		border: 0.0625rem solid rgb(66, 66, 72);
 		border: 0.0625rem solid rgb(var(--swatch-tertiary-color, 66, 66, 72));
 		page-break-inside: avoid;
+	}
+
+	/* See https://scp-wiki.wikidot.com/component:preview */
+	div.preview {
+		display: none;
 	}
 
 	thead {
@@ -4343,6 +4348,13 @@ table.wiki-content-table tr {
 
 .translation-box-stylesheet {
 	display: none;
+}
+
+/* Nested Collapsible Block Fix */
+
+div.colmod-block > ul,
+div.colmod-block > ul > li {
+     line-height: 1.5;
 }
 
 /* Rating List Columns */
