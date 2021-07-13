@@ -3,6 +3,7 @@ $(function() {
 	let styleSheets = [];
 	let bhlSheets = "bhl";
 
+	//Test Relative URLs
 	fetch("../src/css/black-highlighter.css").then(function(resp) {
 		console.log("Status: " + resp.status);
 		if (resp.status == 200) {
@@ -20,8 +21,8 @@ $(function() {
 	
 
 	let scpwikiurl = getUrlParameter("url");
-	console.log("> Contents:", scpwikiurl);	
 
+	//Polyfill for DOMParser
 	(function (DOMParser) {
 		"use strict";
 
@@ -54,6 +55,7 @@ $(function() {
 		};
 	}(DOMParser));
 
+	//Function to inject stylesheets
 	function changeStyleSheet(cssFile, cssId) {
 		let cssIdSelect = "#" + cssId;
 		if ($(cssIdSelect) && cssFile.length == 1) {
@@ -65,11 +67,11 @@ $(function() {
 				link.rel = "stylesheet";
 				link.id = cssId;
 				document.getElementsByTagName("head")[0].appendChild(link);
-				console.log("styleSheets are injected");
 			}
 		}
 	};
 
+	//Function to pull ?url= parameter
 	function getUrlParameter(sParam) {
 		var sPageURL = window.location.search.substring(1),
 			sURLVariables = sPageURL.split("&"),
@@ -86,6 +88,7 @@ $(function() {
 		return false;
 	};
 
+	//Use whateverorigin.org to pull source of page & Apply to local page
 	let getNewElems = async () => {
 		$.ajaxSetup({
 			scriptCharset: "utf-8", //or "ISO-8859-1"
@@ -113,6 +116,7 @@ $(function() {
 		);
 	};
 
+	//Reapply remotely pulled scripts & links to page to make sure they are run
 	let refreshScripts = async () => {
 		try {
 			let scripts = document.querySelectorAll("head > head > script");
@@ -123,7 +127,6 @@ $(function() {
 			let bTime = 2000;
 			$(links).each(function(idx,el){
 				setTimeout( function(){
-					//console.log("elem: " + el);
 					let link = document.createElement("link");
 					let lHref = links[idx].getAttribute("href");
 					let lRel = links[idx].getAttribute("rel");
@@ -143,7 +146,6 @@ $(function() {
 			});			
 			$(scripts).each(function(idx,el){
 				setTimeout( function(){
-					//console.log("elem: " + el);
 					let script = document.createElement("script");
 					let pSrc = scripts[idx].getAttribute("src");
 					let pTyp = scripts[idx].getAttribute("type");
@@ -164,7 +166,6 @@ $(function() {
 			});
 			$(bScripts).each(function(idx,el){
 				setTimeout( function(){
-					//console.log("elem: " + el);
 					let script = document.createElement("script");
 					let bSrc = bScripts[idx].getAttribute("src");
 					let bTyp = bScripts[idx].getAttribute("type");
@@ -183,7 +184,6 @@ $(function() {
 				}, bTime)
 				bTime += 500;		
 			});
-			console.log("Scripts are injected");
 		} catch(e) {
 			console.log(e);
 		}
