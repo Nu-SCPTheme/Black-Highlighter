@@ -18,9 +18,6 @@ $(function() {
 			];
 		}
 	});
-	
-
-	let scpwikiurl = getUrlParameter("url");
 
 	//Polyfill for DOMParser
 	(function (DOMParser) {
@@ -89,6 +86,7 @@ $(function() {
 	};
 
 	//Use whateverorigin.org to pull source of page & Apply to local page
+	let scpwikiurl = getUrlParameter("url");
 	let getNewElems = async () => {
 		$.ajaxSetup({
 			scriptCharset: "utf-8", //or "ISO-8859-1"
