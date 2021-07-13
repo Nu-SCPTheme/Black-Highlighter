@@ -7,7 +7,7 @@ A tool to test BHL on any SCP-Wiki page. Also includes the option to inject CSS 
 ### HOW TO USE
 
 In order to load a specific SCP-Wiki page, just add `?url=page-goes-here` to the end of the url.
-For example: `/scp-test-page/scp-test-page.html?url=scp-5001` would load SCP-5001.
+For example: `/scp-test-page/scp-test-page.html?url=scp-4792` would load SCP-4792.
 
 Click the button on top to reveal the CSS injector. Just paste any CSS you wish to test into the text box and hit Apply. Any new applied CSS will replace old applied CSS.
 
