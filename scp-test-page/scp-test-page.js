@@ -3,10 +3,21 @@ $(function() {
 	let styleSheets = [];
 	let bhlSheets = "bhl";
 
-	styleSheets = [
-		"../src/css/normalize.css",
-		"../src/css/black-highlighter.css"
-	];
+	fetch("../src/css/black-highlighter.css").then(function(resp) {
+		console.log("Status: " + resp.status);
+		if (resp.status == 200) {
+			styleSheets = [
+				"../src/css/normalize.css",
+				"../src/css/black-highlighter.css"
+			];
+		} else {
+			styleSheets = [
+				"../css/normalize.css",
+				"../css/black-highlighter.css"
+			];
+		}
+	});
+	
 
 	let scpwikiurl = getUrlParameter("url");
 	console.log("> Contents:", scpwikiurl);	
