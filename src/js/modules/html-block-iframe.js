@@ -1,6 +1,6 @@
 /* nu-SCP iframe resizer - Croquembouche
  * 
- * This is a copy of http://scp-wiki.wdfiles.com/common--javascript/html-block-iframe.js
+ * This is a copy of https://scp-wiki.wdfiles.com/common--javascript/html-block-iframe.js
  * That JS file is designed for use with [[html]] blocks.
  * Our new translation module is using [[iframe]], not [[html]], so a slightly different version is needed.
  * 

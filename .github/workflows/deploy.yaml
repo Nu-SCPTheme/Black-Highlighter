@@ -2,14 +2,12 @@ name: 'Build'
 on:
   push:
     paths:
-      - 'build/*'
+      - 'build/**/'
       - 'legacy/*'
       - 'package-lock.json'
-      - 'src/*'
-      - 'themes/*'
+      - 'src/**/*'
+      - 'themes/**/*'
       - '.github/workflows/deploy.yaml'
-  schedule:
-    - cron: '0 0 */7 * *'  # Run weekly
 
 jobs:
   build-and-deploy:
@@ -22,10 +20,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Dependencies
-        run: npm install
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build
         run: make

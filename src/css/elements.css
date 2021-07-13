@@ -680,7 +680,16 @@ table.wiki-content-table tr {
 	display: none;
 }
 
+/* Nested Collapsible Block Fix */
+
+div.colmod-block > ul,
+div.colmod-block > ul > li {
+     line-height: 1.5;
+}
+
 /* ===RATING LIST COLUMNS=== */
+
+/* Rating List Columns */
 
 #who-rated-page-area > div {
 	display: grid;
