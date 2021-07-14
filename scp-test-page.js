@@ -96,7 +96,7 @@ $(function() {
 		return false;
 	};
 
-	//Use whateverorigin.org to pull source of page & Apply to local page
+	//Use codetabs.com to pull source of page & Apply to local page
 	let scpwikiurl = getUrlParameter("url");
 	let getNewElems = async () => {	
 		$.ajax({
