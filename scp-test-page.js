@@ -4,8 +4,8 @@ $(function() {
 
 	// The build process replaces these with absolute links for the non-local version
 	let styleSheets = [
-		"/css/normalize.css",
-		"/css/black-highlighter.css"
+		"/Black-Highlighter/css/normalize.css",
+		"/Black-Highlighter/css/black-highlighter.css"
 	];
 
 	//Polyfill for DOMParser
