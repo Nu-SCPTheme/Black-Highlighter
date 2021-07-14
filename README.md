@@ -1,4 +1,4 @@
-# Black-Highlighter
+# Black Highlighter
 
 [![Travis CI Build Status](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter.svg?branch=master)](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter)
 
