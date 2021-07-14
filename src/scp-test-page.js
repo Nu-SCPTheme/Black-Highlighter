@@ -82,7 +82,7 @@ $(function() {
 			contentType: "application/json; charset=utf-8"
 		});
 
-		$.getJSON("https://whateverorigin.herokuapp.com/get?url=" +
+		$.getJSON("https://whatever-origin.herokuapp.com/get?url=" +
 			encodeURIComponent(`https://scp-wiki.wikidot.com/${scpwikiurl}`) + "&callback=?",
 			function (data) {
 				let href = "href=\"https://scp-wiki.wikidot.com/";
