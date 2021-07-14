@@ -1,23 +1,12 @@
 /* jshint esversion: 8 */
 $(function() {
-	let styleSheets = [];
 	let bhlSheets = "bhl";
 
-	//Test Relative URLs
-	fetch("../src/css/black-highlighter.css").then(function(resp) {
-		console.log("Status: " + resp.status);
-		if (resp.status == 200) {
-			styleSheets = [
-				"../src/css/normalize.css",
-				"../src/css/black-highlighter.css"
-			];
-		} else {
-			styleSheets = [
-				"../css/normalize.css",
-				"../css/black-highlighter.css"
-			];
-		}
-	});
+	// The build process replaces these with absolute links for the non-local version
+	let styleSheets = [
+		"/css/normalize.css",
+		"/css/black-highlighter.css"
+	];
 
 	//Polyfill for DOMParser
 	(function (DOMParser) {
