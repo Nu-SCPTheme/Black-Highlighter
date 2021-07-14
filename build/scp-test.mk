@@ -13,5 +13,5 @@ dist/scp-test-page.html: src/scp-test-page.html
 
 dist/scp-test-page.js: src/scp-test-page.js
 	install -D -m644 $< $@
-	sed -i 's|\.\./src/css|/Black-Highlighter/css|' $@
+	sed -i 's|\./css|/Black-Highlighter/css|' $@
 
