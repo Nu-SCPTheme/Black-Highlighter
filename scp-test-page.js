@@ -98,10 +98,11 @@ $(function() {
 				let src = "src=\"https://scp-wiki.wikidot.com/";
 				let dp = new DOMParser();
 				let doc = dp.parseFromString(data
-					.replace(/(href="\/)/g, `${href}?${randomString(5)}`)
-					.replace(/(src="\/)/g, `${src}?${randomString(5)}`)
+					.replace(/(href="\/)/g, href)
+					.replace(/(src="\/)/g, src)
 					.replace(/(http:\/\/)/g, "https://"), 
-					"text/html");			
+					"text/html");
+				console.log(`doc> ${doc.documentElement.innerHTML}`)		
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 				let newHead = doc.getElementsByTagName("head")[0];
 				let newBody = doc.getElementsByTagName("body")[0];
