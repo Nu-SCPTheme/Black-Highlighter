@@ -53,7 +53,7 @@ $(function() {
 	}(DOMParser));
 
 	//Function to inject stylesheets
-	function changeStyleSheet(cssFile, cssId) {
+	let changeStyleSheet = (cssFile, cssId) => {
 		let cssIdSelect = "#" + cssId;
 		if ($(cssIdSelect) && cssFile.length == 1) {
 			$(cssIdSelect).href = cssFile;
@@ -69,7 +69,7 @@ $(function() {
 	};
 
 	//Function to pull ?url= parameter
-	function getUrlParameter(sParam) {
+	let getUrlParameter = (sParam) => {
 		var sPageURL = window.location.search.substring(1),
 			sURLVariables = sPageURL.split("&"),
 			sParameterName,
