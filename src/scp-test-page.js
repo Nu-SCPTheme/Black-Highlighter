@@ -74,7 +74,7 @@ $(function() {
 		return false;
 	};
 
-	//Use whateverorigin.org to pull source of page & Apply to local page
+	//Use WhateverOrigin.org to pull source of page & Apply to local page
 	let scpwikiurl = getUrlParameter("url");
 	let getNewElems = async () => {
 		$.ajaxSetup({
@@ -82,7 +82,7 @@ $(function() {
 			contentType: "application/json; charset=utf-8"
 		});
 
-		$.getJSON("https://whateverorigin.org/get?url=" +
+		$.getJSON("https://whateverorigin.herokuapp.com/get?url=" +
 			encodeURIComponent(`https://scp-wiki.wikidot.com/${scpwikiurl}`) + "&callback=?",
 			function (data) {
 				let href = "href=\"https://scp-wiki.wikidot.com/";
