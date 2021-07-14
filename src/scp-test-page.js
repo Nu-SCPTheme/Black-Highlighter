@@ -104,11 +104,15 @@ $(function() {
 				let newBody = doc.getElementsByTagName("body")[0];
 				let bhlMinDetect = String(newHeadContents).indexOf("black-highlighter.min.css");
 				let bhlDetect = String(newHeadContents).indexOf("black-highlighter.css");
+				let iframesReplace = document.getElementsByTagName("iframe");
 				document.getElementsByTagName("head")[0].appendChild(newHead).after("\n");
 				document.getElementsByTagName("body")[0].appendChild(newBody);					
 				if (bhlDetect == -1 && bhlMinDetect == -1 ) {
 					changeStyleSheet(styleSheets,bhlSheets);				
-				}				
+				}		
+				$(iframesReplace).each(function(idx,el){
+					el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`
+				});
 			}
 		});
 	};
