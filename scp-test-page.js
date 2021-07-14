@@ -93,23 +93,23 @@ $(function() {
 			contentType: "application/json; charset=utf-8"
 		});
 
-		$.getJSON("http://whateverorigin.org/get?url=" +
+		$.getJSON("https://whateverorigin.org/get?url=" +
 			encodeURIComponent(`https://scp-wiki.wikidot.com/${scpwikiurl}`) + "&callback=?",
-			function (data) {			
+			function (data) {
 				let href = "href=\"https://scp-wiki.wikidot.com/";
 				let src = "src=\"https://scp-wiki.wikidot.com/";
 				let dp = new DOMParser();
-				let doc = dp.parseFromString(data.contents.replace(/(href="\/)/g, href).replace(/(src="\/)/g, src).replace(/(http:\/\/scp-wiki)/g, "https://"), "text/html");			
+				let doc = dp.parseFromString(data.contents.replace(/(href="\/)/g, href).replace(/(src="\/)/g, src).replace(/(http:\/\/scp-wiki)/g, "https://"), "text/html");
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 				let newHead = doc.getElementsByTagName("head")[0];
 				let newBody = doc.getElementsByTagName("body")[0];
 				let bhlMinDetect = String(newHeadContents).indexOf("black-highlighter.min.css");
 				let bhlDetect = String(newHeadContents).indexOf("black-highlighter.css");
 				document.getElementsByTagName("head")[0].appendChild(newHead).after("\n");
-				document.getElementsByTagName("body")[0].appendChild(newBody);					
+				document.getElementsByTagName("body")[0].appendChild(newBody);
 				if (bhlDetect == -1 && bhlMinDetect == -1 ) {
-					changeStyleSheet(styleSheets,bhlSheets);				
-				}				
+					changeStyleSheet(styleSheets,bhlSheets);
+				}
 			}
 		);
 	};
@@ -130,18 +130,18 @@ $(function() {
 					let lRel = links[idx].getAttribute("rel");
 					let lTyp = links[idx].getAttribute("type");
 					if (lTyp) {
-						link.type = lTyp;	
+						link.type = lTyp;
 					}
 					if (lHref) {
 						link.href = lHref;
 					}
 					if (lRel) {
-						link.rel = lRel;					
+						link.rel = lRel;
 					}
 					document.getElementsByTagName("head")[0].appendChild(link);
 				}, lTime)
 				lTime += 500;
-			});			
+			});
 			$(scripts).each(function(idx,el){
 				setTimeout( function(){
 					let script = document.createElement("script");
@@ -157,10 +157,10 @@ $(function() {
 						if (pTxt) {
 							script.innerHTML = pTxt;
 							document.getElementsByTagName("head")[0].appendChild(script);
-						}			
-					}	
+						}
+					}
 				}, sTime)
-				sTime += 500;		
+				sTime += 500;
 			});
 			$(bScripts).each(function(idx,el){
 				setTimeout( function(){
@@ -177,15 +177,15 @@ $(function() {
 						if (bTxt) {
 							script.innerHTML = bTxt;
 							document.getElementsByTagName("body")[0].appendChild(script);
-						}			
-					}	
+						}
+					}
 				}, bTime)
-				bTime += 500;		
+				bTime += 500;
 			});
 		} catch(e) {
 			console.log(e);
 		}
-	};	
+	};
 
 	getNewElems();
 	setTimeout(function(){ refreshScripts() }, 1000);
