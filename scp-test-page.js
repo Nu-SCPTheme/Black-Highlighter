@@ -95,7 +95,12 @@ $(function() {
 				let href = "href=\"https://scp-wiki.wikidot.com/";
 				let src = "src=\"https://scp-wiki.wikidot.com/";
 				let dp = new DOMParser();
-				let doc = dp.parseFromString(data.replace(/(href="\/)/g, href).replace(/(src="\/)/g, src).replace(/(http:\/\/scp-wiki)/g, "https://scp-wiki"), "text/html");			
+				let doc = dp.parseFromString(data
+					.replace(/(href="\/)/g, href)
+					.replace(/(src="\/)/g, src)
+					.replace(/(http:\/\/scp-wiki)/g, "https://scp-wiki")
+					.replace(/(url\(http:\/\/)/g, "url(https://"), 
+					"text/html");			
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 				let newHead = doc.getElementsByTagName("head")[0];
 				let newBody = doc.getElementsByTagName("body")[0];
