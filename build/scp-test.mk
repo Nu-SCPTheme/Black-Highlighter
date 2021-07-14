@@ -1,6 +1,6 @@
 SCP_TEST_SOURCES := \
-	scp-test-page/scp-test-page.html \
-	scp-test-page/scp-test-page.js
+	src/scp-test-page.html \
+	src/scp-test-page.js
 
 SCP_TEST_OUTPUTS := \
 	dist/scp-test-page.html \
