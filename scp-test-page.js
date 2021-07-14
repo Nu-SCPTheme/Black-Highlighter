@@ -97,8 +97,7 @@ $(function() {
 				let doc = dp.parseFromString(data
 					.replace(/(href="\/)/g, href)
 					.replace(/(src="\/)/g, src)
-					.replace(/(http:\/\/scp-wiki)/g, "https://scp-wiki")
-					.replace(/(url\(http:\/\/)/g, "url(https://"), 
+					.replace(/(http:\/\/)/g, "https://"), 
 					"text/html");			
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 				let newHead = doc.getElementsByTagName("head")[0];
