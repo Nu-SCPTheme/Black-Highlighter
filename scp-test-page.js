@@ -13,8 +13,8 @@ $(function() {
 			];
 		} else {
 			styleSheets = [
-				"./Black-Highlighter/css/normalize.css",
-				"./Black-Highlighter/css/black-highlighter.css"
+				"/Black-Highlighter/css/normalize.css",
+				"/Black-Highlighter/css/black-highlighter.css"
 			];
 		}
 	});
