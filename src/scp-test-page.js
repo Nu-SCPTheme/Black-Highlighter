@@ -5,7 +5,6 @@ $(function() {
 
 	//Test Relative URLs
 	fetch("../src/css/black-highlighter.css").then(function(resp) {
-		console.log("Status: " + resp.status);
 		if (resp.status == 200) {
 			styleSheets = [
 				"../src/css/normalize.css",
