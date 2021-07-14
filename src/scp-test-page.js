@@ -1,12 +1,23 @@
 /* jshint esversion: 8 */
 $(function() {
+	let styleSheets = [];
 	let bhlSheets = "bhl";
 
-	// The build process replaces these with absolute links for the non-local version
-	let styleSheets = [
-		"./css/normalize.css",
-		"./css/black-highlighter.css"
-	];
+	//Test Relative URLs
+	fetch("../src/css/black-highlighter.css").then(function(resp) {
+		console.log("Status: " + resp.status);
+		if (resp.status == 200) {
+			styleSheets = [
+				"../src/css/normalize.css",
+				"../src/css/black-highlighter.css"
+			];
+		} else {
+			styleSheets = [
+				"../css/normalize.css",
+				"../css/black-highlighter.css"
+			];
+		}
+	});
 
 	//Polyfill for DOMParser
 	(function (DOMParser) {
@@ -74,33 +85,29 @@ $(function() {
 		return false;
 	};
 
-	//Use WhateverOrigin.org to pull source of page & Apply to local page
+	//Use whateverorigin.org to pull source of page & Apply to local page
 	let scpwikiurl = getUrlParameter("url");
-	let getNewElems = async () => {
-		$.ajaxSetup({
-			scriptCharset: "utf-8", //or "ISO-8859-1"
-			contentType: "application/json; charset=utf-8"
-		});
-
-		$.getJSON("https://whatever-origin.herokuapp.com/get?url=" +
-			encodeURIComponent(`https://scp-wiki.wikidot.com/${scpwikiurl}`) + "&callback=?",
-			function (data) {
+	let getNewElems = async () => {	
+		$.ajax({
+			url:`https://api.codetabs.com/v1/proxy/?quest=https://scp-wiki.wikidot.com/${scpwikiurl}`,
+			type:'GET',
+			success: function(data){							
 				let href = "href=\"https://scp-wiki.wikidot.com/";
 				let src = "src=\"https://scp-wiki.wikidot.com/";
 				let dp = new DOMParser();
-				let doc = dp.parseFromString(data.contents.replace(/(href="\/)/g, href).replace(/(src="\/)/g, src).replace(/(http:\/\/scp-wiki)/g, "https://"), "text/html");
+				let doc = dp.parseFromString(data.replace(/(href="\/)/g, href).replace(/(src="\/)/g, src).replace(/(http:\/\/scp-wiki)/g, "https://scp-wiki"), "text/html");			
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 				let newHead = doc.getElementsByTagName("head")[0];
 				let newBody = doc.getElementsByTagName("body")[0];
 				let bhlMinDetect = String(newHeadContents).indexOf("black-highlighter.min.css");
 				let bhlDetect = String(newHeadContents).indexOf("black-highlighter.css");
 				document.getElementsByTagName("head")[0].appendChild(newHead).after("\n");
-				document.getElementsByTagName("body")[0].appendChild(newBody);
+				document.getElementsByTagName("body")[0].appendChild(newBody);					
 				if (bhlDetect == -1 && bhlMinDetect == -1 ) {
-					changeStyleSheet(styleSheets,bhlSheets);
-				}
+					changeStyleSheet(styleSheets,bhlSheets);				
+				}				
 			}
-		);
+		});
 	};
 
 	//Reapply remotely pulled scripts & links to page to make sure they are run
@@ -119,18 +126,18 @@ $(function() {
 					let lRel = links[idx].getAttribute("rel");
 					let lTyp = links[idx].getAttribute("type");
 					if (lTyp) {
-						link.type = lTyp;
+						link.type = lTyp;	
 					}
 					if (lHref) {
 						link.href = lHref;
 					}
 					if (lRel) {
-						link.rel = lRel;
+						link.rel = lRel;					
 					}
 					document.getElementsByTagName("head")[0].appendChild(link);
 				}, lTime)
 				lTime += 500;
-			});
+			});			
 			$(scripts).each(function(idx,el){
 				setTimeout( function(){
 					let script = document.createElement("script");
@@ -146,10 +153,10 @@ $(function() {
 						if (pTxt) {
 							script.innerHTML = pTxt;
 							document.getElementsByTagName("head")[0].appendChild(script);
-						}
-					}
+						}			
+					}	
 				}, sTime)
-				sTime += 500;
+				sTime += 500;		
 			});
 			$(bScripts).each(function(idx,el){
 				setTimeout( function(){
@@ -166,15 +173,15 @@ $(function() {
 						if (bTxt) {
 							script.innerHTML = bTxt;
 							document.getElementsByTagName("body")[0].appendChild(script);
-						}
-					}
+						}			
+					}	
 				}, bTime)
-				bTime += 500;
+				bTime += 500;		
 			});
 		} catch(e) {
 			console.log(e);
 		}
-	};
+	};	
 
 	getNewElems();
 	setTimeout(function(){ refreshScripts() }, 1000);
