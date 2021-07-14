@@ -51,6 +51,18 @@ $(function() {
 		};
 	}(DOMParser));
 
+	//Create Random String for forced Cache Refresh
+	let randomString = (length) => {
+		let result = '';
+		let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		let charactersLength = characters.length;
+		for ( let i = 0; i < length; i++ ) {
+			result += characters.charAt(Math.floor(Math.random() * 
+	 		charactersLength));
+	   }
+	   return result;
+	}
+
 	//Function to inject stylesheets
 	let changeStyleSheet = (cssFile, cssId) => {
 		let cssIdSelect = "#" + cssId;
@@ -88,15 +100,15 @@ $(function() {
 	let scpwikiurl = getUrlParameter("url");
 	let getNewElems = async () => {	
 		$.ajax({
-			url:`https://api.codetabs.com/v1/proxy/?quest=https://scp-wiki.wikidot.com/${scpwikiurl}`,
+			url:`https://api.codetabs.com/v1/proxy/?quest=https://scp-wiki.wikidot.com/${scpwikiurl}?${randomString(5)}`,
 			type:'GET',
 			success: function(data){							
 				let href = "href=\"https://scp-wiki.wikidot.com/";
 				let src = "src=\"https://scp-wiki.wikidot.com/";
 				let dp = new DOMParser();
 				let doc = dp.parseFromString(data
-					.replace(/(href="\/)/g, href)
-					.replace(/(src="\/)/g, src)
+					.replace(/(href="\/)/g, `${href}?${randomString(5)}`)
+					.replace(/(src="\/)/g, `${src}?${randomString(5)}`)
 					.replace(/(http:\/\/)/g, "https://"), 
 					"text/html");			
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
@@ -136,7 +148,7 @@ $(function() {
 						link.type = lTyp;	
 					}
 					if (lHref) {
-						link.href = lHref;
+						link.href = `${lHref}?${randomString(5)}`;
 					}
 					if (lRel) {
 						link.rel = lRel;					
@@ -154,7 +166,7 @@ $(function() {
 					if (pTyp) {
 						script.type = pTyp;
 						if (pSrc) {
-							script.src = pSrc;
+							script.src = `${pSrc}?${randomString(5)}`;
 							document.getElementsByTagName("head")[0].appendChild(script);
 						}
 						if (pTxt) {
@@ -174,7 +186,7 @@ $(function() {
 					if (bTyp) {
 						script.type = bTyp;
 						if (bSrc) {
-							script.src = bSrc;
+							script.src = `${bSrc}?${randomString(5)}`;
 							document.getElementsByTagName("body")[0].appendChild(script);
 						}
 						if (bTxt) {
