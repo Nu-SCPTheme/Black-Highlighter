@@ -3,20 +3,11 @@ $(function() {
 	let styleSheets = [];
 	let bhlSheets = "bhl";
 
-	//Test Relative URLs
-	fetch("../src/css/black-highlighter.css").then(function(resp) {
-		if (resp.status == 200) {
-			styleSheets = [
-				"../src/css/normalize.css",
-				"../src/css/black-highlighter.css"
-			];
-		} else {
-			styleSheets = [
-				"/Black-Highlighter/css/normalize.css",
-				"/Black-Highlighter/css/black-highlighter.css"
-			];
-		}
-	});
+	/* BHL Stylesheets */
+	styleSheets = [
+		"/Black-Highlighter/css/normalize.css",
+		"/Black-Highlighter/css/black-highlighter.css"
+	];
 
 	//Polyfill for DOMParser
 	(function (DOMParser) {
