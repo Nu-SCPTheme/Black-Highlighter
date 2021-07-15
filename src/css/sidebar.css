@@ -1,4 +1,18 @@
-/* sidebar css */
+/* SIDEBAR
+   ============================= */
+
+/* Primary Header Coding. Includes Login Box, Search Box, and Top Bar Dropdown Menus */
+
+/* ===DIRECTORY===
+	1. =MAIN BLOCK
+	2. =SUB-BLOCK
+	3. =HEADING & COLLAPSIBLES
+	4. =MENU ITEMS
+	5. =COMMON THEME COMPATABILITY
+	6. =MOBILE SIDEBAR
+  =============== */
+
+/* ===MAIN BLOCK=== */
 
 #side-bar {
 	border: none;
@@ -6,12 +20,11 @@
 	flex-direction: column;
 	height: 100vh;
 	width: 15.75rem;
-	width: calc(0.875rem * 189);
+	width: calc((0.9375rem * (14/15)) * 19);
 	width: var(--sidebar-width-on-desktop);
 	flex-shrink: 0;
-	padding: 0 0 0 0;
+	padding: 0;
 	margin: 0;
-	/* removes weird thin white line from right side of side-bar */
 	position: sticky;
 	top: 0;
 	scrollbar-width: thin;
@@ -20,32 +33,29 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	scrollbar-color: rgba(170, 170, 170, 0) rgba(170, 170, 170, 0);
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0)
-		rgba(var(--swatch-tertiary-color), 0);
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0) rgba(var(--swatch-tertiary-color), 0);
 	grid-area: side-bar;
 	justify-self: start;
 	background-image:
 		/* Shadow covers */
-		linear-gradient(
-			rgba(var(--swatch-menubg-color),1) 30%,
-			rgba(var(--swatch-menubg-color),0)),
-		linear-gradient(
-			rgba(var(--swatch-menubg-color),0),
-			rgba(var(--swatch-menubg-color),1) 70%) 0 100%,
+		linear-gradient(rgba(var(--swatch-menubg-color), 1) 30%,
+			rgba(var(--swatch-menubg-color), 0)),
+		linear-gradient(rgba(var(--swatch-menubg-color), 0),
+			rgba(var(--swatch-menubg-color), 1) 70%) 0 100%,
 
 		/* Shadows */
 		radial-gradient(farthest-side at 50% 0,
-			rgba(var(--swatch-primary-darkest),0.5),
-			rgba(var(--swatch-menubg-black-color),0)),
+			rgba(var(--swatch-primary-darkest), 0.5),
+			rgba(var(--swatch-menubg-black-color), 0)),
 		radial-gradient(farthest-side at 50% 100%,
-			rgba(var(--swatch-primary-darkest),0.5),
-			rgba(var(--swatch-menubg-black-color),0)) 0 100%;
-	background-color: rgba(var(--swatch-menubg-color),1);
+			rgba(var(--swatch-primary-darkest), 0.5),
+			rgba(var(--swatch-menubg-black-color), 0)) 0 100%;
+	background-color: rgba(var(--swatch-menubg-color), 1);
 	background-repeat: no-repeat;
 	background-attachment: local, local, scroll, fixed;
-	background-size: 100% 3rem,100% 3rem,100% 1.5rem,var(--sidebar-width-on-desktop) 1.5rem;
+	background-size: 100% 3rem, 100% 3rem, 100% 1.5rem, var(--sidebar-width-on-desktop) 1.5rem;
 	background-position: top center, bottom center, top center, bottom -0.25rem left;
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hover Scrollbar Behavior */
@@ -76,46 +86,6 @@
 	width: 0.5rem;
 }
 
-/* Sidebar Hover Effect */
-
-#side-bar div.menu-item a {
-	position: relative;
-	z-index: 2;
-	height: inherit;
-	overflow: hidden;
-}
-
-#side-bar div.menu-item a:hover {
-	background-color: transparent;
-}
-
-#side-bar div.menu-item a::before {
-	transform: translateX(calc(-100% - 4rem));
-	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-	pointer-events: none;
-}
-
-#side-bar div.menu-item a::before,
-#side-bar div.menu-item a:hover::before {
-	content: " ";
-	width: 125%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	background-color: rgb(var(--bright-accent),0.25);
-	opacity: 1;
-	z-index: -1;
-	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
-}
-
-#side-bar div.menu-item a:hover::before {
-	transform: translateX(-2rem);
-}
-
-#side-bar img {
-	filter: brightness(120%);
-}
-
 /* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
 #side-bar div[style*="#f0fff6"] {
 	background-color: rgba(140, 20, 25, 0.25) !important;
@@ -141,55 +111,54 @@
 
 /*Forcing default sidebar coloring on any INT branches that still use Background Color*/
 #side-bar .side-block[style*="background-color"] {
-	background-color: rgba(var(--dark-accent),0.15) !important;
+	background-color: rgba(var(--dark-accent), 0.15) !important;
 }
 
 /* Chinese Specific Styling */
 
-#side-bar div[style*="#f0f0f0"]{
-	background-color:transparent !important;
+#side-bar div[style*="#f0f0f0"] {
+	background-color: transparent !important;
 }
 
-#side-bar div[style*="#f0f0f0"] div[style="text-align: center;"]{
-	align-items:center;
+#side-bar div[style*="#f0f0f0"] div[style*="center"] {
+	align-items: center;
 }
 
-#side-bar div[style*="#f0f0f0"] div[style="text-align: center;"] img{
-	margin:0 !important;
+#side-bar div[style*="#f0f0f0"] div[style*="center"] img {
+	margin: 0 !important;
 }
 
-/* Defer to a variable set in nav:side, if available */
+/* ===SUB-BLOCK=== */
+#side-bar .side-block,
+#side-bar div[style*="center"],
+#side-bar div[style*="center"]>div {
+	display: grid;
+}
+
+#side-bar div[style*="center"],
+#side-bar div[style*="center"]>div {
+	width: 100%;
+	justify-content: space-evenly;
+	grid-auto-flow: column;
+}
+
 #side-bar .side-block {
 	border: 0;
 	margin-top: 1rem;
-	flex-direction: row;
-	flex-wrap: wrap;
-	flex-shrink: 0;
-	background: rgb(0,0,0,0);
-}
-
-#side-bar .side-block,.side-block div[style="text-align: center;"] {
-	display: flex;
-}
-
-.side-block div[style="text-align: center;"] {
-	width: 100%;
-	justify-content: space-evenly;
-	padding: 0 0.6rem;
+	background: rgb(0, 0, 0, 0);
 }
 
 #side-bar .side-area {
 	padding: 0.625rem;
 }
 
+/* ===HEADING & COLLAPSIBLES=== */
 #side-bar .heading,
-#side-bar .side-block > .collapsible-block:nth-child(1)	.collapsible-block-folded {
+#side-bar .collapsible-block .collapsible-block-folded {
 	min-height: 1.25rem;
-	background: linear-gradient(
-		10deg,
-		rgba(140, 20, 25, 0.45) 0%,
-		rgba(140, 20, 25, 0.55) 100%
-	);
+	background: linear-gradient(10deg,
+			rgba(140, 20, 25, 0.45) 0%,
+			rgba(140, 20, 25, 0.55) 100%);
 	background: var(--gradient-sidemenu-header);
 }
 
@@ -199,103 +168,194 @@
 }
 
 #side-bar .heading p,
-#side-bar .side-block > .collapsible-block .collapsible-block-link {
+#side-bar .collapsible-block .collapsible-block-link {
 	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
 	--wght: 700;
+	display: flex;
 	letter-spacing: 0.2rem;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
 	height: 1.25rem;
+	margin: 0;
 	line-height: 1.25rem;
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
 	font-size: calc((var(--base-font-size) * (14/15)) * 0.9);
 	font-weight: 700;
 	letter-spacing: 0.016em;
-	text-align: center;
+	justify-content: center;
+	align-items: center;
 	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
 	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
-	display: block;
 }
 
 #side-bar .heading p {
 	cursor: default;
 }
 
-#side-bar div.menu-item {
-	margin: 0;
-	text-align: right;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: flex-start;
-	font-size: 0;
-	min-height: calc(1.5rem - 0.125rem);
-	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
-	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid
-		rgba(var(--swatch-border-color), 0.08);
+/* Collapsibles in the sidebar */
 
-	flex-shrink: 0;
+#side-bar div.collapsible-block {
+	width: 100%;
 	flex-basis: 100%;
 }
 
-#side-bar div.menu-item > span {
+#side-bar div.collapsible-block a.collapsible-block-link,
+#side-bar .side-block>.collapsible-block a.collapsible-block-link {
+	padding-right: 2rem;
+	position: relative;
+}
+
+#side-bar a.collapsible-block-link:hover {
+	text-decoration: none;
+	background-color: rgba(180, 35, 35);
+	background-color: rgba(var(--swatch-primary));
+}
+
+/* create a dropdown triangle next to the collapsible */
+#side-bar div.menu-item a.collapsible-block-link::after,
+#side-bar .side-block>.collapsible-block a.collapsible-block-link::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 2rem;
+	top: 0;
+	right: 0;
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+#side-bar .side-block>.collapsible-block a.collapsible-block-link::after {
+	filter: invert(100%);
+}
+
+#side-bar .collapsible-block-unfolded-link a.collapsible-block-link::after,
+#side-bar .side-block>.collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
+	transform: rotate(180deg);
+}
+
+/* create a gap next to the collapsible contents */
+#side-bar .collapsible-block-content {
+	border-right: 2rem solid rgba(12, 12, 12, 0.08);
+	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
+	box-sizing: border-box;
+}
+
+/* hide the last border within the collapsible */
+#side-bar .collapsible-block-content .menu-item:last-of-type {
+	border-bottom: none;
+}
+
+#side-bar .collapsible-block-unfolded-link {
+	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
+	border-bottom: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+}
+
+#side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover {
+	color: rgb(var(--swatch-menutxt-light-color));
+}
+
+/* for full-block collapsibles, give the open collapsible the same background as the side block */
+/* variable should be set in nav:side */
+#side-bar .side-block>.collapsible-block .collapsible-block-unfolded-link {
+	background: rgba(140, 20, 25, 0.5);
+	background: rgba(var(--medium-accent));
+}
+
+/* ===MENU ITEMS=== */
+#side-bar div.menu-item,
+#side-bar div.menu-item>p {
+	display: flex;
+	flex-shrink: 0;
+	flex-basis: 100%;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	border-bottom: .125rem solid hsla(0, 0%, 5%, .08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), .08);
+	min-height: 1.375rem;
+	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	font-size: 0;
+}
+
+#side-bar div.menu-item p::before,
+#side-bar div.menu-item p::after {
 	display: none;
 }
 
-#side-bar div.menu-item a[href*="/scp-"] {
-	padding-right: .5em;
-	width: 100%;
-	flex-grow: 2;
-	flex-shrink: 1;
-	text-align: center;
-}
-
-#side-bar div.menu-item .sub-text {
-	font-size: calc((var(--base-font-size) * (14/15)) * 0.7);
-	display: inline-flex;
-	color: rgba(var(--swatch-primary),1);
-	text-align: left;
-	padding-left: 1em;
-	padding-right: 3em;
-}
-
-#side-bar div.collapsible-block {
-	text-align: right;
-	flex-basis: 100%;
+#side-bar div.menu-item>span,
+#side-bar div.menu-item>p>span {
+	display: none;
 }
 
 #side-bar div.menu-item span:first-of-type {
 	padding: 0 0 0 calc((var(--base-font-size) * (14/15)) * 1.6);
 }
 
-#side-bar div.menu-item .collapsible-block {
-	padding: 0 0 0 calc((var(--base-font-size) * (14/15)) * 1);
+/* Sub-Text Styling for select Int Branches */
+#side-bar div.menu-item .sub-text {
+	font-size: calc((var(--base-font-size) * (14/15)) * 0.7);
+	display: inline-flex;
+	color: rgba(var(--swatch-primary), 1);
+	text-align: left;
+	padding-left: 1em;
+	padding-right: 3em;
+	min-width: 35%;
+}
+
+#side-bar div.menu-item a {
+	position: relative;
+	z-index: 2;
+	height: inherit;
+	overflow: hidden;
+}
+
+#side-bar div.menu-item a:hover {
+	background-color: transparent;
 }
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item .text {
-	padding: 0 0.6em;
-	margin: 0;
-	color: rgb(12, 12, 12);
-	color: rgb(var(--sidebar-links-text));
-	font-size: 0.875rem;
-	font-size: calc(var(--base-font-size) * (14/15));
-	letter-spacing: 0.04em;
-	background-color: rgba(12, 12, 12, 0);
-	background-color: rgba(var(--swatch-menubg-hover-color), 0);
-	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	display: block;
-	height: calc(1.5rem - 0.125rem);
-	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
-	line-height: calc(1.5rem - 0.125rem);
-	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
-	background-clip: padding-box;
+	display: flex;
 	flex-grow: 2;
-	text-align: left;
 	justify-content: flex-start;
+	transition: background-color 80ms cubic-bezier(.4, 0, .2, 1);
+	margin: 0;
+	background-clip: padding-box;
+	background-color: hsla(0, 0%, 5%, 0);
+	background-color: rgba(var(--swatch-menubg-hover-color), 0);
+	padding: 0 .6em;
+	height: 1.375rem;
+	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	color: rgb(var(--sidebar-links-text));
+	font-size: .875rem;
+	font-size: calc(var(--base-font-size)*.93333);
+	line-height: 1.375rem;
+	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	letter-spacing: .04em;
+}
+
+/* Menu Item Hover Color Bar */
+#side-bar div.menu-item a::before {
+	content: " ";
+	width: 125%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-color: rgb(var(--bright-accent), 0.25);
+	opacity: 1;
+	z-index: -1;
+	transform: translateX(calc(-100% - 4rem));
+	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
+}
+
+#side-bar div.menu-item a:hover::before {
+	transform: translateX(-1rem);
 }
 
 #side-bar div.menu-item a:visited,
@@ -304,42 +364,20 @@
 	color: rgb(var(--sidebar-links-text));
 }
 
-#side-bar div.menu-item > a:last-of-type {
-flex-grow: 1;
-	width: 100%;
+#side-bar div.menu-item a:only-child {
+	flex-grow: 1;
 }
 
-#side-bar div.menu-item .text {
-	cursor: default;
-}
-
-/* SCP Series Specific */
-
-#side-bar div.menu-item > a:first-of-type {
+#side-bar div.menu-item a:first-of-type {
 	padding: 0 0.875rem;
 	padding: 0 calc(var(--base-font-size) * (14/15));
-	flex-grow: 0;
+	flex-grow: 1;
 	flex-shrink: 0;
-	text-align: left;
+	justify-content: flex-start;
 }
 
-#side-bar div.menu-item a[href*="scp-series"] {
-	padding-right: .5em;
-	width: 100%;
-	flex-grow: 2;
-	flex-shrink: 1;
-	text-align: center;
-}
-
-#side-bar div.menu-item a[href*="scp-series"]::before {
-	width: 200%;
-}
-
-#side-bar div.menu-item>:last-child {
-	flex-grow: 2;
-}
-
-#side-bar div.menu-item > :not(:nth-child(2)):not(.collapsible-block) {
+#side-bar div.menu-item>div:not(:nth-child(2)):not(.collapsible-block),
+#side-bar div.menu-item>span:not(:nth-child(2)):not(.collapsible-block) {
 	border-left: 0.125rem solid rgba(12, 12, 12, 0.08);
 	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
 }
@@ -350,85 +388,30 @@ flex-grow: 1;
 	text-decoration: none;
 }
 
-#side-bar div.menu-item img {
+#side-bar div.menu-item .text {
+	cursor: default;
+}
+
+#side-bar div.menu-item> :last-child {
+	flex-grow: 2;
+}
+
+/* SCP Series Specific */
+
+#side-bar div.menu-item a[href*="scp-series"] {
+	padding: 0 .5em;
+	width: auto;
+	justify-content: center;
+	white-space: nowrap;
+}
+
+#side-bar div.menu-item a[href*="scp-series"]::before {
+	width: 250%;
+}
+
+#side-bar div.menu-item img,
+#side-bar div.menu-item br {
 	display: none;
-}
-
-/* Collapsibles in the sidebar */
-
-#side-bar div.menu-item .collapsible-block {
-	width: 100%;
-}
-
-#side-bar div.menu-item a.collapsible-block-link,
-#side-bar .side-block > .collapsible-block a.collapsible-block-link {
-	padding-right: 2rem;
-	position: relative;
-}
-
-#side-bar .collapsible-block-link:hover {
-	text-decoration: none;
-	background-color: rgba(180, 35, 35);
-	background-color: rgba(var(--swatch-primary));
-}
-
-/* create a dropdown triangle next to the collapsible */
-#side-bar div.menu-item a.collapsible-block-link::after,
-#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
-	content: "";
-	position: absolute;
-	height: 100%;
-	width: 2rem;
-	top: 0;
-	right: 0;
-	background-image: url(http://scptestwiki.wdfiles.com/local--files/squeeze%3Anav%3Aside/arr_drop.svg);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-}
-
-#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
-	filter: invert(100%);
-}
-
-#side-bar
-	div.menu-item
-	.collapsible-block-unfolded-link
-	a.collapsible-block-link::after,
-#side-bar
-	.side-block
-	> .collapsible-block
-	.collapsible-block-unfolded-link
-	a.collapsible-block-link::after {
-	transform: rotate(180deg);
-}
-
-/* create a gap next to the collapsible contents */
-#side-bar div.menu-item .collapsible-block-content {
-	border-right: 2rem solid rgba(12, 12, 12, 0.08);
-	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
-	box-sizing: border-box;
-}
-
-/* hide the last border within the collapsible */
-#side-bar div.menu-item .collapsible-block-content .menu-item:last-of-type {
-	border-bottom: none;
-}
-
-#side-bar div.menu-item .collapsible-block-unfolded-link {
-	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-bottom: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
-}
-
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link {
-	font-size: 0.875rem;
-	font-size: calc(var(--base-font-size) * (14/15));
-}
-
-/* for full-block collapsibles, give the open collapsible the same background as the side block */
-/* variable should be set in nav:side */
-#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
-	background: rgba(140, 20, 25, 0.5);
-	background: rgba(var(--medium-accent));
 }
 
 #side-bar ul {
@@ -436,56 +419,9 @@ flex-grow: 1;
 	padding: 0 0.25rem;
 }
 
-#side-bar p {
-	margin: 0;
-}
-
-/* Search box specific styling */
-
-#___gcse_0 > div {
-	display: inline-flex;
-	flex-direction: row;
-	width: 100%;
-	height: 2rem;
-}
-
-#___gcse_0 > div > form {
-	margin: 0;
-}
-
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-secondary-color));
-	background-color: rgba(100, 3, 15, 0);
-	background-color: rgba(var(--swatch-primary-darkest), 0);
-	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	line-height: 1.85rem;
-}
-
-#___gcse_0
-	> div
-	> form
-	> table
-	> tbody
-	> tr
-	> td.gsc-search-button
-	> button:hover,
-#___gcse_0
-	> div
-	> form
-	> table
-	> tbody
-	> tr
-	> td.gsc-search-button
-	> button:focus {
-	background-color: rgba(252, 252, 252, 0.15);
-	background-color: rgba(var(--swatch-menubg-color), 0.15);
-	text-decoration: none;
-}
-
 /* Sigma Overwrite Specific Styles */
 
-#side-bar > div[style="background-color: #e5e5ff;"] {
+#side-bar>div[style="background-color: #e5e5ff;"] {
 	border: 0;
 	margin-top: 1rem;
 	margin-bottom: 0;
@@ -494,10 +430,9 @@ flex-grow: 1;
 	flex-shrink: 0;
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
+#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div {
 	height: auto;
-	display: grid;
-	margin: 0.5rem 0.25rem;
+	display: flex;
 	padding: 0;
 	width: 100%;
 	grid-template-columns: repeat(6, 1fr);
@@ -505,7 +440,7 @@ flex-grow: 1;
 	border-left: none !important;
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
+#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div>a {
 	height: auto;
 	margin: 0;
 	padding: 0.25rem 0;
@@ -516,16 +451,17 @@ flex-grow: 1;
 	align-items: center;
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:hover::before {
+#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div>a:hover::before {
 	transform: translateX(0rem);
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a > img {
+#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div>a>img {
 	display: block;
 }
 
 /* there's an empty menu item in the old sidebar design */
-#side-bar .close-menu,#side-bar div.menu-item:empty {
+#side-bar .close-menu,
+#side-bar div.menu-item:empty {
 	display: none;
 }
 
@@ -533,18 +469,53 @@ flex-grow: 1;
 a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
 	min-width: calc(0.875rem * 2.5);
-	min-width: calc((var(--base-font-size) * (14/15)) * 2.5);
-	display: flex;
-	align-items: center;
+	min-width: calc((var(--base-font-size) * (14/15)) * 6.5);
+	justify-content: flex-start;
+}
+
+#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"] {
 	justify-content: center;
 }
+
+#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]::before {
+	width: 200%;
+}
+
+/* Search box specific styling */
+
+#___gcse_0>div {
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
+	height: 2rem;
+}
+
+#___gcse_0>div>form {
+	margin: 0;
+}
+
+#___gcse_0>div>form>table>tbody>tr>td.gsc-search-button>button {
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-secondary-color));
+	background-color: rgba(100, 3, 15, 0);
+	background-color: rgba(var(--swatch-primary-darkest), 0);
+	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	line-height: 1.85rem;
+}
+
+#___gcse_0>div>form>table>tbody>tr>td.gsc-search-button>button:hover,
+#___gcse_0>div>form>table>tbody>tr>td.gsc-search-button>button:focus {
+	background-color: rgba(252, 252, 252, 0.15);
+	background-color: rgba(var(--swatch-menubg-color), 0.15);
+	text-decoration: none;
+}
+
 
 /* Centering Translation Box in Sidebar */
 
 #side-bar div.scpnet-interwiki-wrapper {
 	transform: translate(calc(((((var(--sidebar-width-on-desktop)) - 240px) / 2) - (var(--scrollbar-width) / 2))),
-		0
-	);
+			0);
 	border: 0;
 }
 
@@ -552,6 +523,60 @@ iframe.scpnet-interwiki-frame {
 	border: 0;
 }
 
+/* ===COMMON THEME COMPATABILITY=== */
+#side-bar div.menu-item.expandable {
+	max-width: calc(100% - (var(--base-font-size) * (14/15)));
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block {
+	background: none;
+}
+
+#side-bar .menu-item.expandable+.collapsible-block .collapsible-block-folded,
+#side-bar .menu-item.expandable+.collapsible-block .collapsible-block-unfolded-link {
+	min-height: 0;
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block a.collapsible-block-link {
+	padding-right: 0;
+	justify-content: flex-end;
+	height: calc(1.5rem - (var(--sidebar-internal-border-thickness) * 5));
+	top: calc((1.5rem - var(--sidebar-internal-border-thickness)) * -1);
+	display: flex;
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-link::before {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	text-shadow: none;
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-link::after {
+	display: none;
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block a.collapsible-block-link:hover {
+	background-color: transparent;
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-content .menu-item p {
+	padding: 0;
+	font-size: calc(var(--base-font-size) * 0.7);
+	height: calc(1.25rem - var(--sidebar-internal-border-thickness));
+	min-height: calc(1.25rem - var(--sidebar-internal-border-thickness));
+}
+
+#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-content .menu-item a {
+	padding: 0;
+	font-size: calc(var(--base-font-size) * 0.7);
+}
+
+/* ===MOBILE SIDEBAR=== */
 @media only screen and (max-width: 768px) {
 	#side-bar {
 		display: block;
@@ -582,16 +607,16 @@ iframe.scpnet-interwiki-frame {
 		margin-top: 0.25rem;
 	}
 
-	#side-bar div.menu-item > a:first-of-type {
+	#side-bar div.menu-item a:first-of-type {
 		padding: 0 calc((var(--base-font-size) * (14/15)) * 0.5);
 	}
 
 	#side-bar .heading p,
-	#side-bar .side-block > .collapsible-block .collapsible-block-link {
+	#side-bar .side-block>.collapsible-block .collapsible-block-link {
 		letter-spacing: 0.1rem;
 	}
 
-	#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
+	#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div {
 		grid-template-columns: repeat(3, 1fr);
 	}
 
@@ -619,8 +644,7 @@ iframe.scpnet-interwiki-frame {
 		margin-left: var(--scrollbar-width);
 		padding-right: var(--sidebar-width-on-mobile);
 		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
-		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem
-			repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		z-index: -1;
 		visibility: hidden;
 		opacity: 0;
@@ -647,8 +671,8 @@ iframe.scpnet-interwiki-frame {
 		background: rgba(var(--swatch-tertiary-color), 0.05) !important;
 	}
 
-	#skrollr-body:target + #main-content,
-	#side-bar:target + #main-content {
+	#skrollr-body:target+#main-content,
+	#side-bar:target+#main-content {
 		left: 0;
 	}
 

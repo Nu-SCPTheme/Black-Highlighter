@@ -7,11 +7,9 @@ body#translations {
 
 #translations .interwiki__title {
 	min-height: 1.5625rem;
-	background: linear-gradient(
-		10deg,
-		rgba(140, 20, 25, 0.45) 0%,
-		rgba(140, 20, 25, 0.55) 100%
-	);
+	background: linear-gradient(10deg,
+			rgba(140, 20, 25, 0.45) 0%,
+			rgba(140, 20, 25, 0.55) 100%);
 	background: var(--gradient-sidemenu-header);
 }
 
@@ -45,8 +43,7 @@ body#translations {
 	min-height: calc(2rem - 0.125rem);
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid
-		rgba(var(--swatch-border-color), 0.08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 	flex-shrink: 2;
 }
 
