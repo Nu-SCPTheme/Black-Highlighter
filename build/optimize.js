@@ -1,7 +1,6 @@
 const fs = require('fs').promises;
 const process2 = require('process');
 
-const imagemine = require('imagemin');
 const gifsicle = require('imagemin-gifsicle');
 const optipng = require('imagemin-optipng');
 const svgo = require('imagemin-svgo');
