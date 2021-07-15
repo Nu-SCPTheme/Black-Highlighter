@@ -117,34 +117,36 @@ $(function () {
 		}
 	};
 
-	//Function to pull ?url= parameter
-	let getUrlParameter = (sParam) => {
-		var sPageURL = window.location.search.substring(1),
-			sURLVariables = sPageURL.split("&"),
-			sParameterName,
-			i;
+	//Extract parameters into a map
+	let urlParams;
+	if (URLSearchParams !== undefined) {
+		let urlSearchParams = new URLSearchParams(window.location.search);
+		urlParams = Object.fromEntries(urlSearchParams.entries());
+	} else {
+		urlParams = {};
+		let urlSearchParts = window.location.search.split("&");
+		for (let i = 0; i < urlSearchParts.length; i++) {
+			let urlParameter = urlSearchParts[i].split("=");
+			let urlParameterName = urlParameter[0];
+			let urlParameterValue = urlParameter[1];
 
-		for (i = 0; i < sURLVariables.length; i++) {
-			sParameterName = sURLVariables[i].split("=");
-
-			if (sParameterName[0] === sParam) {
-				return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-			}
+			urlParams[urlParameterName] = decodeURIComponent(urlParameterValue);
 		}
-		return false;
-	};
+	}
 
 	//Get parameters
-	let page = getUrlParameter("url");
-	let siteName = getUrlParameter("site");
+	let page = urlParams.url;
+	let siteName = urlParams.site;
+
+	//Get wiki slug
 	let siteURL = getLanguageWiki(siteName);
 	if (siteURL === null) {
 		//Fallback, use the parameter as the actual wiki slug
 		siteURL = siteName;
 	}
 
+	//Use codetabs.com to pull source of page & Apply to local page
 	let getNewElems = async () => {
-		//Use codetabs.com to pull source of page & Apply to local page
 		$.ajax({
 			url: `https://api.codetabs.com/v1/proxy/?quest=https://${siteURL}.wikidot.com/${page}?${randomString(5)}`,
 			type: 'GET',
