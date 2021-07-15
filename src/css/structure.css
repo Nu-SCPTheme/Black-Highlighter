@@ -1,20 +1,20 @@
 * {
-    font-variation-settings: 
-		"wght" var(--wght), 
+	font-variation-settings:
+		"wght" var(--wght),
 		"ital" var(--ital),
-		"slnt" var(--slnt), 
-		"CASL" var(--CASL), 
-		"CRSV" var(--CRSV), 
+		"slnt" var(--slnt),
+		"CASL" var(--CASL),
+		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
 	font-kerning: auto;
 	font-variant-ligatures: common-ligatures contextual;
 	font-variant-numeric: lining-nums proportional-nums;
-	font-feature-settings: 
+	font-feature-settings:
 		"lnum" var(--lnum),
-		"pnum" var(--pnum), 
-		"kern" var(--kern), 
+		"pnum" var(--pnum),
+		"kern" var(--kern),
 		"liga" var(--liga),
-		"clig" var(--clig), 
+		"clig" var(--clig),
 		"dlig" var(--dlig),
 		"calt" var(--calt);
 }
@@ -24,7 +24,8 @@ html {
 	line-height: 1.5;
 }
 
-html,body {
+html,
+body {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
@@ -54,7 +55,7 @@ body {
 	font-family: "Lato", sans-serif;
 	font-family: var(--body-font);
 	font-size: 0.875rem;
-	font-size: var(--base-font-size);	
+	font-size: var(--base-font-size);
 
 	/* line behavior */
 	orphans: 2;
@@ -62,19 +63,19 @@ body {
 	word-break: normal;
 }
 
-body strong, 
+body strong,
 body strong *,
-body b, 
-body b *, 
+body b,
+body b *,
 body .bold,
 body .bold * {
 	--wght: 800;
 	--mono-wght: calc(var(--wght) - 50);
 }
-  
-body i, 
+
+body i,
 body i *,
-body em, 
+body em,
 body em *,
 body .italic,
 body .italic * {
@@ -90,6 +91,7 @@ body .italic * {
 	--wght: 1000;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 900"],
 [style*="weight: 900"] *,
 [style*="weight:900"],
@@ -97,6 +99,7 @@ body .italic * {
 	--wght: 900;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 800"],
 [style*="weight: 800"] *,
 [style*="weight:800"],
@@ -104,6 +107,7 @@ body .italic * {
 	--wght: 800;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 700"],
 [style*="weight: 700"] *,
 [style*="weight:700"],
@@ -111,6 +115,7 @@ body .italic * {
 	--wght: 700;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 600"],
 [style*="weight: 600"] *,
 [style*="weight:600"],
@@ -118,6 +123,7 @@ body .italic * {
 	--wght: 600;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 500"],
 [style*="weight: 500"] *,
 [style*="weight:500"],
@@ -125,6 +131,7 @@ body .italic * {
 	--wght: 500;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 400"],
 [style*="weight: 400"] *,
 [style*="weight:400"],
@@ -132,6 +139,7 @@ body .italic * {
 	--wght: 400;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 300"],
 [style*="weight: 300"] *,
 [style*="weight:300"],
@@ -139,6 +147,7 @@ body .italic * {
 	--wght: 300;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 200"],
 [style*="weight: 200"] *,
 [style*="weight:200"],
@@ -146,6 +155,7 @@ body .italic * {
 	--wght: 200;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="weight: 100"],
 [style*="weight: 100"] *,
 [style*="weight:100"],
@@ -153,6 +163,7 @@ body .italic * {
 	--wght: 100;
 	--mono-wght: calc(var(--wght) - 50);
 }
+
 [style*="style: italic"],
 [style*="style: italic"] *,
 [style*="style:italic"],
@@ -164,6 +175,7 @@ body .italic * {
 	--ital: 1;
 	--slnt: -15;
 }
+
 /* HTML5 Media Items */
 
 audio,
@@ -194,7 +206,7 @@ progress {
 	font-family: var(--body-font);
 }
 
-table:not(.form) td > input {
+table:not(.form) td>input {
 	width: 100%;
 }
 
@@ -220,7 +232,7 @@ input.checkbox,
 div.note,
 #lock-info {
 	font-family: var(--body-font);
-	border: 0.0625rem solid rgba(var(--swatch-border-color),0.25);
+	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
 	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6) rgba(var(--swatch-tertiary-color), 0.1);
@@ -247,22 +259,26 @@ pre * {
 	font-family: var(--mono-font);
 	max-width: 90vw;
 	white-space: pre;
-	font-variation-settings: 
-		"wght" var(--mono-wght), 
-		"CASL" var(--CASL), 
-		"CRSV" var(--CRSV), 
+	font-variation-settings:
+		"wght" var(--mono-wght),
+		"CASL" var(--CASL),
+		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
 }
-sub, sup {
+
+sub,
+sup {
 	font-size: 0.75em;
 	position: relative;
 }
+
 sub {
 	vertical-align: sub;
 	bottom: -0.25em;
 }
+
 sup {
-	vertical-align: super;	
+	vertical-align: super;
 	top: -0.25em;
 }
 
@@ -318,7 +334,8 @@ a {
 	color: rgb(var(--link-color));
 }
 
-a,a.newpage {
+a,
+a.newpage {
 	text-decoration: none;
 	background: transparent;
 }
@@ -349,7 +366,8 @@ ruby {
 	vertical-align: text-bottom;
 }
 
-ruby,rt {
+ruby,
+rt {
 	text-align: center;
 	white-space: nowrap;
 }
@@ -372,10 +390,10 @@ tt,
 tt * {
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	font-variation-settings: 
-		"wght" var(--mono-wght), 
-		"CASL" var(--CASL), 
-		"CRSV" var(--CRSV), 
+	font-variation-settings:
+		"wght" var(--mono-wght),
+		"CASL" var(--CASL),
+		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
 }
 
