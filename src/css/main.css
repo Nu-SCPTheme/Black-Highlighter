@@ -99,10 +99,10 @@ tt * {
 		"side-bar . content";
 	grid-template-columns:
 		calc(var(--sidebar-width-on-desktop)) calc((((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop)) * 3) / 2) 1fr calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2);
-	/* Important because some Int branches add margin and padding via !important */
-	width: calc(100vw - (100vw - 100%)) !important;
-	margin: 0 auto !important;
-	padding: 0 !important;
+	
+	width: calc(100vw - (100vw - 100%));
+	margin: 0 auto;
+	padding: 0;
 }
 
 #action-area-top {
