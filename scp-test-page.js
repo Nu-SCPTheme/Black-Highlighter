@@ -1,5 +1,6 @@
 /* jshint esversion: 8 */
-$(function() {
+
+$(function () {
 
 	let styleSheets = [];
 	let bhlSheets = "bhl";
@@ -17,13 +18,12 @@ $(function() {
 	function wait(ms) {
 		return new Promise(r => setTimeout(r, ms));
 	}
-	  
 
 	//Polyfill for DOMParser
 	(function (DOMParser) {
 		"use strict";
 
-		var	DOMParser_proto = DOMParser.prototype,
+		var DOMParser_proto = DOMParser.prototype,
 			real_parseFromString = DOMParser_proto.parseFromString;
 
 		// Firefox/Opera/IE throw errors on unsupported types
@@ -56,11 +56,11 @@ $(function() {
 		let result = '';
 		let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 		let charactersLength = characters.length;
-		for ( let i = 0; i < length; i++ ) {
-			result += characters.charAt(Math.floor(Math.random() * 
-	 		charactersLength));
-	   }
-	   return result;
+		for (let i = 0; i < length; i++) {
+			result += characters.charAt(Math.floor(Math.random() *
+				charactersLength));
+		}
+		return result;
 	}
 
 	//Function to inject stylesheets
@@ -101,7 +101,8 @@ $(function() {
 
 	let sitePara = getUrlParameter("site");
 	let siteURL;
-	switch(sitePara) {
+
+	switch (sitePara) {
 		case "int":
 			siteURL = "scp-int";
 			break;
@@ -147,18 +148,19 @@ $(function() {
 		default:
 			siteURL = "scp-wiki";
 	}
-	let getNewElems = async () => {	
+  
+	let getNewElems = async () => {
 		$.ajax({
-			url:`https://api.codetabs.com/v1/proxy/?quest=https://${siteURL}.wikidot.com/${scpwikiurl}?${randomString(5)}`,
-			type:'GET',
-			success: function(data){							
+			url: `https://api.codetabs.com/v1/proxy/?quest=https://${siteURL}.wikidot.com/${scpwikiurl}?${randomString(5)}`,
+			type: 'GET',
+			success: function (data) {
 				let href = `href=\"https://${siteURL}.wikidot.com/`;
 				let src = `src=\"https://${siteURL}.wikidot.com/`;
 				let dp = new DOMParser();
 				let doc = dp.parseFromString(data
 					.replace(/(href="\/)/g, href)
 					.replace(/(src="\/)/g, src)
-					.replace(/(http:\/\/)/g, "https://"), 
+					.replace(/(http:\/\/)/g, "https://"),
 					"text/html");
 				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 				let newHead = doc.getElementsByTagName("head")[0];
@@ -167,13 +169,13 @@ $(function() {
 				bhlDetect = String(newHeadContents).indexOf("black-highlighter.css");
 				let iframesReplace = document.getElementsByTagName("iframe");
 				document.getElementsByTagName("head")[0].appendChild(newHead).after("\n");
-				document.getElementsByTagName("body")[0].appendChild(newBody);	
-					
-				$(iframesReplace).each(function(idx,el){
+				document.getElementsByTagName("body")[0].appendChild(newBody);
+
+				$(iframesReplace).each(function (idx, el) {
 					el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`
 				});
 				return bhlMinDetect, bhlDetect;
-			}			
+			}
 		});
 	};
 
@@ -186,27 +188,27 @@ $(function() {
 			let lTime = 500;
 			let sTime = 500;
 			let bTime = 2000;
-			$(links).each(function(idx,el){
-				setTimeout( function(){
+			$(links).each(function (idx, el) {
+				setTimeout(function () {
 					let link = document.createElement("link");
 					let lHref = links[idx].getAttribute("href");
 					let lRel = links[idx].getAttribute("rel");
 					let lTyp = links[idx].getAttribute("type");
 					if (lTyp) {
-						link.type = lTyp;	
+						link.type = lTyp;
 					}
 					if (lHref) {
 						link.href = `${lHref}?${randomString(5)}`;
 					}
 					if (lRel) {
-						link.rel = lRel;					
+						link.rel = lRel;
 					}
 					document.getElementsByTagName("head")[0].prepend(link);
 				}, lTime)
 				lTime += 500;
-			});			
-			$(scripts).each(function(idx,el){
-				setTimeout( function(){
+			});
+			$(scripts).each(function (idx, el) {
+				setTimeout(function () {
 					let script = document.createElement("script");
 					let pSrc = scripts[idx].getAttribute("src");
 					let pTyp = scripts[idx].getAttribute("type");
@@ -220,13 +222,13 @@ $(function() {
 						if (pTxt) {
 							script.innerHTML = pTxt;
 							document.getElementsByTagName("head")[0].prepend(script);
-						}			
-					}	
+						}
+					}
 				}, sTime)
-				sTime += 500;		
+				sTime += 500;
 			});
-			$(bScripts).each(function(idx,el){
-				setTimeout( function(){
+			$(bScripts).each(function (idx, el) {
+				setTimeout(function () {
 					let script = document.createElement("script");
 					let bSrc = bScripts[idx].getAttribute("src");
 					let bTyp = bScripts[idx].getAttribute("type");
@@ -240,22 +242,20 @@ $(function() {
 						if (bTxt) {
 							script.innerHTML = bTxt;
 							document.getElementsByTagName("body")[0].prepend(script);
-						}			
-					}	
+						}
+					}
 				}, bTime)
-				bTime += 500;		
+				bTime += 500;
 			});
-			
-		} catch(e) {
+		} catch (e) {
 			console.log(e);
 		}
-	};	
+	};
 
 	let finalInit = async () => {
 		await getNewElems();
 		await wait(1000);
 		await refreshScripts().then(() => {
-			console.log(`bhlDetect: ${bhlDetect} // bhlMinDetect: ${bhlMinDetect}`);
 			if (bhlDetect == -1 && bhlMinDetect == -1 ) {
 				changeStyleSheet(styleSheets,bhlSheets);
 			}
