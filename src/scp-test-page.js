@@ -1,4 +1,5 @@
 /* jshint esversion: 8 */
+
 $(function () {
 
 	let styleSheets = [];
@@ -17,7 +18,6 @@ $(function () {
 	function wait(ms) {
 		return new Promise(r => setTimeout(r, ms));
 	}
-
 
 	//Polyfill for DOMParser
 	(function (DOMParser) {
@@ -101,6 +101,7 @@ $(function () {
 
 	let sitePara = getUrlParameter("site");
 	let siteURL;
+
 	switch (sitePara) {
 		case "int":
 			siteURL = "scp-int";
@@ -147,6 +148,7 @@ $(function () {
 		default:
 			siteURL = "scp-wiki";
 	}
+  
 	let getNewElems = async () => {
 		$.ajax({
 			url: `https://api.codetabs.com/v1/proxy/?quest=https://${siteURL}.wikidot.com/${scpwikiurl}?${randomString(5)}`,
@@ -245,7 +247,6 @@ $(function () {
 				}, bTime)
 				bTime += 500;
 			});
-
 		} catch (e) {
 			console.log(e);
 		}
@@ -254,11 +255,11 @@ $(function () {
 	let finalInit = async () => {
 		await getNewElems();
 		await wait(1000);
-		await refreshScripts();
-		console.log(`bhlDetect: ${bhlDetect} // bhlMinDetect: ${bhlMinDetect}`);
-		if (bhlDetect == -1 && bhlMinDetect == -1) {
-			await changeStyleSheet(styleSheets, bhlSheets);
-		}
+		await refreshScripts().then(() => {
+			if (bhlDetect == -1 && bhlMinDetect == -1 ) {
+				changeStyleSheet(styleSheets,bhlSheets);
+			}
+		});	
 	};
 
 	finalInit();
