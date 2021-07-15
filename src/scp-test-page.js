@@ -135,8 +135,8 @@ $(function () {
 	}
 
 	//Get parameters
-	let page = urlParams.url;
-	let siteName = urlParams.site;
+	let page = urlParams.url || "scp-001";
+	let siteName = urlParams.site || "en";
 
 	//Get wiki slug
 	let siteURL = getLanguageWiki(siteName);
