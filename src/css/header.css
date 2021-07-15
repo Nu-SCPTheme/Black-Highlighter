@@ -96,7 +96,7 @@ div#container-wrap {
 
 #header,
 #top-bar {
-	--wght: 500;
+	--wght: var(--ui-wght);
 	max-width: 61.25rem;
 	/* 980px */
 	margin: 0 auto;
@@ -117,9 +117,8 @@ div#container-wrap {
 }
 
 #header h1 a {
-	font-family: 'Poppins', sans-serif;
+	--wght: 750;
 	font-family: var(--header-font);
-	letter-spacing: -0.02em;
 	display: block;
 	line-height: 0;
 	color: rgb(252, 252, 252);
@@ -163,9 +162,7 @@ div#container-wrap {
 	--wght: 500;
 	display: block;
 	font-size: var(--header-h2-font-size);
-	font-family: 'Poppins', sans-serif;
 	font-family: var(--title-font);
-	font-weight: 500;
 	color: transparent;
 	text-shadow: none;
 	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
@@ -315,14 +312,14 @@ div.mobile-top-bar {
 }
 
 #header div#top-bar {
-	--wght: 400;
+	--wght: var(--ui-wght);
+	font-family: var(--UI-font, var(--header-font));
 	width: 100%;
 	position: initial;
 	z-index: 50;
 	height: var(--topbar-height-on-desktop);
 	font-size: calc(0.875rem * 0.85);
 	font-size: calc((var(--base-font-size) * (14/15)) * 0.85);
-	font-weight: 400;
 	display: inline-flex;
 	margin: var(--header-height-on-desktop) 0 1.75rem 0;
 	padding: 0;
@@ -362,6 +359,7 @@ div.mobile-top-bar {
 /* ul > li > a */
 
 #header div[class*="top-bar"]>ul>li>a {
+	--wght: var(--ui-wght);
 	padding: 0.3em;
 	width: 100%;
 	height: calc(100% - 0.6em);
@@ -369,7 +367,7 @@ div.mobile-top-bar {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	line-height: 1.15;
+	line-height: 1;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
 	background-color: transparent;
@@ -377,6 +375,10 @@ div.mobile-top-bar {
 	position: relative;
 	overflow: hidden;
 	white-space: normal;
+}
+
+#header div[class*="top-bar"]>ul>li:hover>a {
+	--wght: var(--ui-hvr-wght);
 }
 
 /* Sliding top/bottom borders on top-bar links */
@@ -412,6 +414,7 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"]>ul>li:hover>a {
+	--wght: var(--ui-hvr-wght);
 	background-color: transparent;
 }
 
@@ -432,7 +435,8 @@ div.mobile-top-bar {
 	padding: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.2s ease-in-out,
+	transition: 
+		opacity 0.2s ease-in-out,
 		transform 0.2s ease-in-out;
 }
 
@@ -448,6 +452,10 @@ div.mobile-top-bar {
 }
 
 /* any a after li */
+
+#header div[class*="top-bar"] li a {
+	transition:	font-variation-settings 160ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
 
 #header div[class*="top-bar"] li:hover a {
 	text-decoration: none;
@@ -504,7 +512,7 @@ div.mobile-top-bar {
 /* Background diagonal hover color on dropdown links */
 
 #header div[class*="top-bar"]>ul>li>ul li>a {
-	--wght: 300;
+	--wght: calc(var(--ui-wght) - 100);
 	position: relative;
 	overflow: hidden;
 	background: transparent;
@@ -514,7 +522,6 @@ div.mobile-top-bar {
 	height: 100%;
 	font-size: 0.75rem;
 	font-size: calc(var(--base-font-size) * (4/5));
-	font-weight: 300;
 	text-align: center;
 	border: 0px solid rgba(0, 0, 0, 0);
 	padding: 0 1em;
@@ -539,6 +546,10 @@ div.mobile-top-bar {
 	transform: skew(50deg, 0);
 	transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
+}
+
+#header div[class*="top-bar"]>ul>li>ul li:hover>a {
+	--wght: var(--ui-hvr-wght);
 }
 
 #header div[class*="top-bar"]>ul>li>ul li:hover>a::before {
@@ -1107,7 +1118,6 @@ div.mobile-top-bar {
 		--wght: 700;
 		font-family: var(--body-font);
 		font-size: 3em;
-		font-weight: 700;
 		letter-spacing: 0.016em;
 		text-decoration: none;
 		text-align: center;
