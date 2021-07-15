@@ -17,19 +17,16 @@
 
 /* ===TABVIEW=== */
 
-.yui-navset * {
-	transition: background-color 80ms cubic-bezier(0.4, 0.0, 0.2, 1), color 80ms cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
 .yui-navset {
 	z-index: 1;
+	zoom: unset;
 }
 
 .yui-navset .yui-nav,
 .yui-navset .yui-navset-top .yui-nav {
 	--tab-border-color: rgb(var(--swatch-primary-darker));
 	--box-shadow: var(--tab-border-color);
-	zoom: unset;
+	font-family: var(--UI-font, var(--header-font));
 	display: flex;
 	flex-wrap: wrap;
 	border-color: rgb(140, 20, 25);
@@ -39,26 +36,17 @@
 	border: 0;
 	box-shadow: 0 calc(0.0625rem * 5) 0 0 rgb(140, 20, 25);
 	box-shadow: 0 calc(0.0625rem * 5) 0 0 var(--box-shadow);
+	zoom: unset;
 }
 
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
-	zoom: unset;
 	background-image: none;
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
 	border: unset;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
-}
-
-.yui-navset .yui-nav a:hover,
-.yui-navset .yui-nav a:focus {
-	zoom: unset;
-	background-color: rgb(100, 3, 15);
-	background-color: rgb(var(--swatch-primary-darkest));
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-light));
 }
 
 .yui-navset .yui-nav li,
@@ -70,31 +58,55 @@
 	max-width: 100%;
 	padding: 0;
 	margin: 0;
-	zoom: unset;
 	display: flex;
 	position: relative;
 	flex-grow: 2;
 	box-shadow: 0 0 0 0.0625rem rgb(140, 20, 25);
 	box-shadow: 0 0 0 0.0625rem var(--box-shadow);
+	zoom: unset;
 }
 
 .yui-navset .yui-nav li a,
 .yui-navset-top .yui-nav li a,
 .yui-navset-bottom .yui-nav li a {
+	--wght: var(--ui-wght);
 	display: flex;
 	vertical-align: bottom;
-	zoom: unset;
 	width: 100%;
 	align-items: center;
 	justify-content: center;
+	transition:	
+		background-color 160ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		color 160ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		font-variation-settings 160ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.yui-navset .yui-nav a:hover,
+.yui-navset .yui-nav a:focus {
+	--wght: var(--ui-hvr-wght);
+	background-color: rgb(100, 3, 15);
+	background-color: rgb(var(--swatch-primary-darker));
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-light));
 }
 
 .yui-navset .yui-nav a em,
 .yui-navset .yui-navset-top .yui-nav a em {
+	--slnt: 0;
+	--MONO: 0;
 	padding: 0.35em 0.75em;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	transition: 
+		color 60ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.yui-navset .yui-nav a:hover em,
+.yui-navset .yui-nav a:focus em,
+.yui-navset .yui-navset-top .yui-nav a:hover em,
+.yui-navset .yui-navset-top .yui-nav a:focus em {
+	transition: color 100ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .yui-navset .yui-nav li em {
@@ -109,18 +121,16 @@
 	padding: 0;
 	margin: 0;
 	flex-grow: 2;
-	background-color: rgb(140, 20, 25);
-	background-color: rgb(var(--swatch-primary-darker));
 }
 
 .yui-navset .yui-nav .selected a,
 .yui-navset .yui-nav .selected a em {
 	border: none;
 	border-color: transparent;
-
 }
 
 .yui-navset .yui-nav .selected a {
+	--wght: var(--ui-hvr-wght);
 	/* Undoes a color set by wikidot's default layout */
 	color: rgb(252, 252, 252) !important;
 	color: rgb(var(--swatch-text-secondary-color)) !important;
@@ -128,10 +138,12 @@
 	background-image: none;
 }
 
+.yui-navset .yui-nav .selected,
+.yui-navset .yui-navset-top .yui-nav .selected,
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:active {
 	background-color: rgb(140, 20, 25);
-	background-color: rgb(var(--swatch-primary-darker));
+	background-color: rgb(var(--swatch-primary-darkest));
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-light));
 }
@@ -140,7 +152,6 @@
 	/* Indicate that the currently selected tab is not clickable */
 	cursor: default;
 }
-
 
 .yui-navset .yui-content {
 	background-color: rgba(244, 244, 244, 0.25);
@@ -153,6 +164,7 @@
 	border-color: rgb(170, 170, 170);
 	border-color: rgb(var(--swatch-tertiary-color));
 	/* content border */
+	zoom: unset;
 }
 
 .yui-navset-left .yui-content {
@@ -213,8 +225,7 @@ div.blockquote,
 }
 
 .footnotes-footer .title {
-	--wght: 800;
-	font-weight: 800;
+	--wght: 700;
 }
 
 .footnote-footer>a:nth-of-type(1) {
@@ -309,13 +320,12 @@ div.blockquote,
 }
 
 .scp-image-block .scp-image-caption {
-	--wght: 700;
+	--wght: 600;
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
 	border-top: .0625rem outset rgba(12, 12, 12, 0.25);
 	border-top: .0625rem outset rgba(var(--swatch-primary-darkest), 0.25);
 	font-size: 80%;
-	font-weight: 700;
 	letter-spacing: 0.016em;
 	text-align: center;
 	padding: 0.25em 0.5em;
@@ -415,10 +425,9 @@ div.block-left {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	--wght: 700;
+	--wght: 600;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--rating-module-text-color));
-	font-weight: 700;
 	position: relative;
 	background: transparent;
 }
@@ -426,10 +435,9 @@ div.block-left {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	--wght: 700;
+	--wght: 600;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--rating-module-button-color));
-	font-weight: 700;
 	position: relative;
 }
 
@@ -710,8 +718,7 @@ div.colmod-block>ul>li {
 }
 
 #who-rated-page-area>div>span[style*="color"] {
-	--wght: 900;
-	font-weight: 900;
+	--wght: 800;
 	text-align: left;
 }
 

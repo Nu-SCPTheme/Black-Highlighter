@@ -14,7 +14,8 @@
 
 /* ===MAIN BLOCK=== */
 
-#side-bar {
+#side-bar {	
+	font-family: var(--UI-font, var(--header-font));
 	border: none;
 	display: flex;
 	flex-direction: column;
@@ -170,7 +171,7 @@
 #side-bar .heading p,
 #side-bar .collapsible-block .collapsible-block-link {
 	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
-	--wght: 700;
+	--wght: calc(var(--ui-wght) + 200);
 	display: flex;
 	letter-spacing: 0.2rem;
 	color: rgb(252, 252, 252);
@@ -181,7 +182,6 @@
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
 	font-size: calc((var(--base-font-size) * (14/15)) * 0.9);
-	font-weight: 700;
 	letter-spacing: 0.016em;
 	justify-content: center;
 	align-items: center;
@@ -319,6 +319,7 @@
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item .text {
+	--wght: var(--ui-wght);
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
@@ -336,6 +337,7 @@
 	line-height: 1.375rem;
 	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	letter-spacing: .04em;
+	transition:	font-variation-settings 160ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Menu Item Hover Color Bar */
@@ -358,6 +360,10 @@
 	transform: translateX(-1rem);
 }
 
+#side-bar div.menu-item a:hover {
+	--wght: var(--ui-hvr-wght);
+}
+
 #side-bar div.menu-item a:visited,
 #side-bar div.menu-item a:active {
 	color: rgb(12, 12, 12);
@@ -371,8 +377,6 @@
 #side-bar div.menu-item a:first-of-type {
 	padding: 0 0.875rem;
 	padding: 0 calc(var(--base-font-size) * (14/15));
-	flex-grow: 1;
-	flex-shrink: 0;
 	justify-content: flex-start;
 }
 
@@ -398,7 +402,7 @@
 
 /* SCP Series Specific */
 
-#side-bar div.menu-item a[href*="scp-series"] {
+#side-bar div.menu-item a[href*="scp-series"] {	
 	padding: 0 .5em;
 	width: auto;
 	justify-content: center;

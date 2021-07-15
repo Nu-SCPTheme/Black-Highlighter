@@ -1,22 +1,29 @@
 * {
 	font-variation-settings:
-		"wght" var(--wght),
-		"ital" var(--ital),
-		"slnt" var(--slnt),
-		"CASL" var(--CASL),
-		"CRSV" var(--CRSV),
-		"MONO" var(--MONO);
+		"wght" var(--wght, 400),
+		"ital" var(--ital, 0),
+		"slnt" var(--slnt, 0),
+		"CASL" var(--CASL, 0),
+		"CRSV" var(--CRSV, 0),
+		"MONO" var(--MONO, 0),
+		"FLAR" var(--FLAR, 0);
 	font-kerning: auto;
 	font-variant-ligatures: common-ligatures contextual;
 	font-variant-numeric: lining-nums proportional-nums;
 	font-feature-settings:
-		"lnum" var(--lnum),
-		"pnum" var(--pnum),
-		"kern" var(--kern),
-		"liga" var(--liga),
-		"clig" var(--clig),
-		"dlig" var(--dlig),
-		"calt" var(--calt);
+		"lnum" var(--lnum, 1),
+		"pnum" var(--pnum, 1),
+		"kern" var(--kern, 1),
+		"cpsp" var(--cpsp, 1),
+		"liga" var(--liga, 1),
+		"clig" var(--clig, 1),
+		"dlig" var(--dlig, 0),
+		"calt" var(--calt, 1),
+		"aalt" var(--aalt, 0),
+		"ss01" var(--ss01, 0),
+		"ss02" var(--ss02, 0),
+		"ss03" var(--ss03, 0),
+		"ss04" var(--ss04, 0);
 }
 
 html {
@@ -69,7 +76,7 @@ body b,
 body b *,
 body .bold,
 body .bold * {
-	--wght: 800;
+	--wght: 700;
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -254,6 +261,7 @@ input.text::-webkit-scrollbar-thumb {
 
 pre,
 pre * {
+	--MONO: 1;
 	--calt: 0;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
@@ -299,15 +307,15 @@ h3,
 h4,
 h5,
 h6 {
+	--wght: 700;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
-	font-family: "Poppins", sans-serif;
 	font-family: var(--title-font);
 }
 
 h1 {
+	--wght: 700;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
-	font-weight: 700;
 	margin: 0.7em 0 0.6em;
 	padding: 0 0 0.25em;
 }
@@ -317,7 +325,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 900;
+	--wght: 900;
 	letter-spacing: 0.063rem;
 	margin: 0.5em 0 0.4em;
 	padding: 0;
@@ -388,6 +396,7 @@ tt {
 
 tt,
 tt * {
+	--MONO: 1;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	font-variation-settings:
