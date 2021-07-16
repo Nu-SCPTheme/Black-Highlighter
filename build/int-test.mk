@@ -7,6 +7,9 @@ INT_OUTPUTS_TEST := \
 	dist/css/int/test/min/black-highlighter.min.css \
 	dist/css/int/test/min/normalize.min.css
 
+dist/css/int/test/:
+	mkdir -p $@
+
 dist/css/int/test/black-highlighter.css dist/css/int/test/normalize.css: $(INT_SOURCES_TEST)
 	build/int-patch-and-merge.sh test
 

@@ -4,7 +4,12 @@ BUILD_SOURCES := \
 	cssnano.config.js
 
 # Directory creation
-dist/%/:
+DIRECTORIES := \
+	dist/css/min/ \
+	dist/img/ \
+	dist/stable/styles/
+
+$(DIRECTORIES):
 	mkdir -p $@
 
 # npm rules

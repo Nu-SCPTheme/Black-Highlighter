@@ -16,6 +16,9 @@ INT_OUTPUTS_$(1) := \
 	dist/css/int/$(1)/min/black-highlighter.min.css \
 	dist/css/int/$(1)/min/normalize.min.css
 
+dist/css/int/$(1)/:
+	mkdir -p $@
+
 dist/css/int/$(1)/black-highlighter.css dist/css/int/$(1)/normalize.css: $(INT_SOURCES_$(1))
 	build/int-patch-and-merge.sh $(1)
 
