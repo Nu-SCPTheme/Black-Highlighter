@@ -16,5 +16,6 @@ dest="$3"
 # Derived values
 directory="${dest%/*}"
 
+# Execution
 mkdir -p "$directory"
 install -m"$mode" "$src" "$dest"
