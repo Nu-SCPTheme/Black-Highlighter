@@ -12,7 +12,7 @@ FILES_OUTPUTS := \
 package-lock.json:
 
 dist/spherical/domicile.html: src/misc/domicile.html
-	install -D -m644 $< $@
+	build/install.sh 644 $< $@
 
 dist/%.html: src/root/%.html
-	install -D -m644 $< $@
+	build/install.sh 644 $< $@
