@@ -8,7 +8,7 @@ LEGACY_CSS_OUTPUTS := \
 
 # Legacy symlinks for stable/styles CSS
 dist/stable/styles/DEPRECATED: src/misc/legacy-deprecation-notice.txt
-	install -D -m444 $< $@
+	build/install.sh 444 $< $@
 
 dist/stable/styles/black-highlighter.min.css:
 	cd $(@D); ln -sf ../../css/min/$(@F)

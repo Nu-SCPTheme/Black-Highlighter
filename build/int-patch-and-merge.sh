@@ -66,7 +66,7 @@ cat \
 
 # Export finished files
 echo "+ Exporting black-highlighter.css"
-install -D -m644 "$tempdir/out/black-highlighter.css" "dist/css/int/$lang/black-highlighter.css"
+build/install.sh 644 "$tempdir/out/black-highlighter.css" "dist/css/int/$lang/black-highlighter.css"
 
 echo "+ Exporting normalize.css"
-install -D -m644 "$tempdir/out/normalize.css" "dist/css/int/$lang/normalize.css"
+build/install.sh 644 "$tempdir/out/normalize.css" "dist/css/int/$lang/normalize.css"

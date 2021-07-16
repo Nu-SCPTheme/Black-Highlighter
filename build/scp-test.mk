@@ -8,10 +8,10 @@ SCP_TEST_OUTPUTS := \
 
 # Copy and inline-patch files
 dist/scp-test-page.html: src/scp-test-page.html
-	install -D -m644 $< $@
+	build/install.sh 644 $< $@
 	sed -i 's|\./scp-test-page.js|/Black-Highlighter/scp-test-page.js|' $@
 
 dist/scp-test-page.js: src/scp-test-page.js
-	install -D -m644 $< $@
+	build/install.sh 644 $< $@
 	sed -i 's|\./css|/Black-Highlighter/css|' $@
 
