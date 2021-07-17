@@ -215,7 +215,7 @@ progress {
 	font-family: var(--body-font);
 }
 
-table:not(.form) td>input {
+table:not(.form) td > input {
 	width: 100%;
 }
 
@@ -355,7 +355,8 @@ a.newpage {
 	color: rgb(var(--newpage-color));
 }
 
-a:hover {
+a:hover,
+a:active {
 	text-decoration: underline;
 	background-color: transparent;
 	color: rgb(255, 52, 76);
