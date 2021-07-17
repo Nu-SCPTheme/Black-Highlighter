@@ -3,24 +3,37 @@
 $(function () {
 
 	let styleSheets = [];
-	let bhlSheets = "bhl";
+	const bhlSheets = "bhl";
 
 	var bhlMinDetect;
 	var bhlDetect;
 
 	//BHL Stylesheets
-	styleSheets = [
-		"./css/normalize.css",
-		"./css/black-highlighter.css"
-	];
+	fetch("./css/black-highlighter.css")
+		.then((resp) => {
+			resp = resp.statusText;
+			switch (resp) {
+			case "OK":
+				return styleSheets = [
+					"./css/normalize.css",
+					"./css/black-highlighter.css"
+				];
+			default:
+				return styleSheets = [
+					"/Black-Highlighter/css/normalize.css",
+					"/Black-Highlighter/css/black-highlighter.css"
+				];
+			}
+		})
+		.catch(err => console.log(err));
 
 	//Async Wait Function
-	function wait(ms) {
+	const wait = (ms) => {
 		return new Promise(r => setTimeout(r, ms));
 	}
 
 	//Convert branch language code to wiki name
-	function getLanguageWiki(name) {
+	const getLanguageWiki = (name) => {
 		switch (name) {
 			case "int":
 				return "scp-int";
@@ -90,10 +103,10 @@ $(function () {
 	}(DOMParser));
 
 	//Create Random String for forced Cache Refresh
-	let randomString = (length) => {
+	const randomString = (length) => {
 		let result = '';
-		let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-		let charactersLength = characters.length;
+		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		const charactersLength = characters.length;
 		for (let i = 0; i < length; i++) {
 			result += characters.charAt(Math.floor(Math.random() *
 				charactersLength));
@@ -102,41 +115,45 @@ $(function () {
 	}
 
 	//Function to inject stylesheets
-	let changeStyleSheet = async (cssFile, cssId) => {
-		let cssIdSelect = "#" + cssId;
-		if ($(cssIdSelect) && cssFile.length == 1) {
-			$(cssIdSelect).href = cssFile;
-		} else {
-			for (let i = 0; i < cssFile.length; i++) {
-				let link = document.createElement("link");
-				link.href = cssFile[i];
-				link.rel = "stylesheet";
-				link.id = cssId;
-				document.getElementsByTagName("head")[0].appendChild(link);
+	const changeStyleSheet = async (cssFile, cssId) => {
+		try {
+			let cssIdSelect = "#" + cssId;
+			if ($(cssIdSelect) && cssFile.length == 1) {
+				$(cssIdSelect).href = cssFile;
+			} else {
+				for (let i = 0; i < cssFile.length; i++) {
+					let link = document.createElement("link");
+					link.href = cssFile[i];
+					link.rel = "stylesheet";
+					link.id = cssId;
+					document.getElementsByTagName("head")[0].appendChild(link);
+				}
 			}
-		}
+		} catch (e) {
+			console.error(`changeStyleSheet error: ${e}`);
+		}  
 	};
 
 	//Extract parameters into a map
 	let urlParams;
 	if (URLSearchParams !== undefined) {
-		let urlSearchParams = new URLSearchParams(window.location.search);
+		const urlSearchParams = new URLSearchParams(window.location.search);
 		urlParams = Object.fromEntries(urlSearchParams.entries());
 	} else {
 		urlParams = {};
-		let urlSearchParts = window.location.search.split("&");
+		const urlSearchParts = window.location.search.split("&");
 		for (let i = 0; i < urlSearchParts.length; i++) {
-			let urlParameter = urlSearchParts[i].split("=");
-			let urlParameterName = urlParameter[0];
-			let urlParameterValue = urlParameter[1];
+			const urlParameter = urlSearchParts[i].split("=");
+			const urlParameterName = urlParameter[0];
+			const urlParameterValue = urlParameter[1];
 
 			urlParams[urlParameterName] = decodeURIComponent(urlParameterValue);
 		}
 	}
 
 	//Get parameters
-	let page = urlParams.url || "scp-001";
-	let siteName = urlParams.site || "en";
+	const page = urlParams.url || "scp-001";
+	const siteName = urlParams.site || "en";
 
 	//Get wiki slug
 	let siteURL = getLanguageWiki(siteName);
@@ -146,51 +163,60 @@ $(function () {
 	}
 
 	//Use codetabs.com to pull source of page & Apply to local page
-	let getNewElems = async () => {
-		$.ajax({
-			url: `https://api.codetabs.com/v1/proxy/?quest=https://${siteURL}.wikidot.com/${page}?${randomString(5)}`,
-			type: 'GET',
-			success: function (data) {
-				let href = `href=\"https://${siteURL}.wikidot.com/`;
-				let src = `src=\"https://${siteURL}.wikidot.com/`;
-				let dp = new DOMParser();
-				let doc = dp.parseFromString(data
-					.replace(/(href="\/)/g, href)
-					.replace(/(src="\/)/g, src)
-					.replace(/(http:\/\/)/g, "https://"),
-					"text/html");
-				let newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
-				let newHead = doc.getElementsByTagName("head")[0];
-				let newBody = doc.getElementsByTagName("body")[0];
-				bhlMinDetect = String(newHeadContents).indexOf("black-highlighter.min.css");
-				bhlDetect = String(newHeadContents).indexOf("black-highlighter.css");
-				let iframesReplace = document.getElementsByTagName("iframe");
-				document.getElementsByTagName("head")[0].appendChild(newHead).after("\n");
-				document.getElementsByTagName("body")[0].appendChild(newBody);
+	const getNewElems = async () => {
+		try {
+			$.ajax({
+				url: `https://api.codetabs.com/v1/proxy/?quest=https://${siteURL}.wikidot.com/${page}?${randomString(5)}`,
+				type: 'GET',
+				success: function (data) {
+					const href = `href=\"https://${siteURL}.wikidot.com/`;
+					const src = `src=\"https://${siteURL}.wikidot.com/`;
+					const dp = new DOMParser();
+					let doc = dp.parseFromString(data
+						.replace(/(href="\/)/g, href)
+						.replace(/(src="\/)/g, src)
+						.replace(/(http:\/\/)/g, "https://"),
+						"text/html");
+					const newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
+					const newHead = doc.getElementsByTagName("head")[0];
+					if (siteURL === siteName) {					
+						doc.getElementById("internal-style").remove();
+					}
+					const newBody = doc.getElementsByTagName("body")[0];
+					const iframesReplace = document.getElementsByTagName("iframe");
 
-				$(iframesReplace).each(function (idx, el) {
-					el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`
-				});
-				return bhlMinDetect, bhlDetect;
-			}
-		});
+					bhlMinDetect = String(newHeadContents).indexOf("black-highlighter.min.css");
+					bhlDetect = String(newHeadContents).indexOf("black-highlighter.css");	
+
+					document.getElementsByTagName("head")[0].appendChild(newHead).after("\n");
+					document.getElementsByTagName("body")[0].appendChild(newBody);
+
+					$(iframesReplace).each(function (idx, el) {
+						el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`
+					});
+					return bhlMinDetect, bhlDetect;
+				}
+			});
+		} catch (e) {
+			console.error(`getNewElems error: ${e}`);
+		}
 	};
 
 	//Reapply remotely pulled scripts & links to page to make sure they are run
-	let refreshScripts = async () => {
+	const refreshScripts = async () => {
 		try {
-			let scripts = document.querySelectorAll("head > head > script");
-			let links = document.querySelectorAll("head > head > link");
-			let bScripts = document.querySelectorAll("body > body script");
+			const scripts = document.querySelectorAll("head > head > script");
+			const links = document.querySelectorAll("head > head > link");
+			const bScripts = document.querySelectorAll("body > body script");
 			let lTime = 500;
 			let sTime = 500;
 			let bTime = 2000;
 			$(links).each(function (idx, el) {
 				setTimeout(function () {
 					let link = document.createElement("link");
-					let lHref = links[idx].getAttribute("href");
-					let lRel = links[idx].getAttribute("rel");
-					let lTyp = links[idx].getAttribute("type");
+					const lHref = links[idx].getAttribute("href");
+					const lRel = links[idx].getAttribute("rel");
+					const lTyp = links[idx].getAttribute("type");
 					if (lTyp) {
 						link.type = lTyp;
 					}
@@ -207,9 +233,9 @@ $(function () {
 			$(scripts).each(function (idx, el) {
 				setTimeout(function () {
 					let script = document.createElement("script");
-					let pSrc = scripts[idx].getAttribute("src");
-					let pTyp = scripts[idx].getAttribute("type");
-					let pTxt = scripts[idx].innerHTML;
+					const pSrc = scripts[idx].getAttribute("src");
+					const pTyp = scripts[idx].getAttribute("type");
+					const pTxt = scripts[idx].innerHTML;
 					if (pTyp) {
 						script.type = pTyp;
 						if (pSrc) {
@@ -227,9 +253,9 @@ $(function () {
 			$(bScripts).each(function (idx, el) {
 				setTimeout(function () {
 					let script = document.createElement("script");
-					let bSrc = bScripts[idx].getAttribute("src");
-					let bTyp = bScripts[idx].getAttribute("type");
-					let bTxt = bScripts[idx].innerHTML;
+					const bSrc = bScripts[idx].getAttribute("src");
+					const bTyp = bScripts[idx].getAttribute("type");
+					const bTxt = bScripts[idx].innerHTML;
 					if (bTyp) {
 						script.type = bTyp;
 						if (bSrc) {
@@ -245,18 +271,22 @@ $(function () {
 				bTime += 500;
 			});
 		} catch (e) {
-			console.log(e);
+			console.error(`refreshScripts error: ${e}`);
 		}
 	};
 
 	let finalInit = async () => {
-		await getNewElems();
-		await wait(1000);
-		await refreshScripts().then(() => {
-			if (bhlDetect == -1 && bhlMinDetect == -1 ) {
-				changeStyleSheet(styleSheets,bhlSheets);
-			}
-		});
+		try {
+			await getNewElems();
+			await wait(1000);
+			await refreshScripts().then(() => {
+				if (bhlDetect == -1 && bhlMinDetect == -1 ) {
+					changeStyleSheet(styleSheets,bhlSheets);
+				}
+			});
+		} catch (e) {
+			console.error(`finalInit error: ${e}`);
+		}
 	};
 
 	finalInit();

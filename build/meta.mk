@@ -6,6 +6,7 @@ BUILD_SOURCES := \
 # Directory creation
 DIRECTORIES := \
 	dist/css/min/ \
+	dist/fonts/ \
 	dist/img/ \
 	dist/stable/styles/
 
