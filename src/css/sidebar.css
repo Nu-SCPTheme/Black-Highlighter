@@ -37,6 +37,7 @@
 	scrollbar-color: rgba(var(--swatch-tertiary-color), 0) rgba(var(--swatch-tertiary-color), 0);
 	grid-area: side-bar;
 	justify-self: start;
+	direction: rtl;
 	background-image:
 		/* Shadow covers */
 		linear-gradient(rgba(var(--swatch-menubg-color), 1) 30%,
@@ -107,7 +108,9 @@
 #side-bar div[style*="#e5e5ff"],
 #side-bar .side-block.media {
 	background-color: rgba(140, 20, 25, 0.25) !important;
-	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
+	background-color: rgba(var(--swatch-primary-darker), 0.125) !important;
+	padding: 0.5rem !important;
+	margin: 0.5rem 0.5rem 0 0;
 }
 
 /*Forcing default sidebar coloring on any INT branches that still use Background Color*/
@@ -132,12 +135,12 @@
 /* ===SUB-BLOCK=== */
 #side-bar .side-block,
 #side-bar div[style*="center"],
-#side-bar div[style*="center"]>div {
+#side-bar div[style*="center"] > div {
 	display: grid;
 }
 
 #side-bar div[style*="center"],
-#side-bar div[style*="center"]>div {
+#side-bar div[style*="center"] > div {
 	width: 100%;
 	justify-content: space-evenly;
 	grid-auto-flow: column;
@@ -145,8 +148,10 @@
 
 #side-bar .side-block {
 	border: 0;
-	margin-top: 1rem;
+	margin-top: 0.5rem;
+	padding: 0 0.5rem 0 0;
 	background: rgb(0, 0, 0, 0);
+	direction: ltr;
 }
 
 #side-bar .side-area {
@@ -156,38 +161,26 @@
 /* ===HEADING & COLLAPSIBLES=== */
 #side-bar .heading,
 #side-bar .collapsible-block .collapsible-block-folded {
-	min-height: 1.25rem;
-	background: linear-gradient(10deg,
-			rgba(140, 20, 25, 0.45) 0%,
-			rgba(140, 20, 25, 0.55) 100%);
-	background: var(--gradient-sidemenu-header);
-}
-
-#side-bar .heading {
-	margin-top: 0.5rem;
-	flex-basis: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	margin: 0.5rem 0 0.25rem 0.25rem;
+	min-height: 1.5rem;
+	box-shadow: 0 0.0625rem 0 0 rgb(var(--swatch-important-text));
 }
 
 #side-bar .heading p,
 #side-bar .collapsible-block .collapsible-block-link {
-	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
-	--wght: calc(var(--ui-wght) + 200);
-	display: flex;
-	letter-spacing: 0.2rem;
+	--wght: calc(var(--ui-wght) + 300);	
 	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-secondary-color));
-	height: 1.25rem;
+	color: rgb(var(--swatch-primary-darker));
 	margin: 0;
 	font-family: var(--title-font);
-	line-height: 1.25rem;
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
 	font-size: calc((var(--base-font-size) * (14/15)) * 0.9);
 	letter-spacing: 0.016em;
-	justify-content: center;
-	align-items: center;
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
+	line-height: 1.15;
 }
 
 #side-bar .heading p {
@@ -202,7 +195,7 @@
 }
 
 #side-bar div.collapsible-block a.collapsible-block-link,
-#side-bar .side-block>.collapsible-block a.collapsible-block-link {
+#side-bar .side-block > .collapsible-block a.collapsible-block-link {
 	padding-right: 2rem;
 	position: relative;
 }
@@ -215,7 +208,7 @@
 
 /* create a dropdown triangle next to the collapsible */
 #side-bar div.menu-item a.collapsible-block-link::after,
-#side-bar .side-block>.collapsible-block a.collapsible-block-link::after {
+#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
 	content: "";
 	position: absolute;
 	height: 100%;
@@ -227,12 +220,12 @@
 	background-position: 50% 50%;
 }
 
-#side-bar .side-block>.collapsible-block a.collapsible-block-link::after {
+#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
 	filter: invert(100%);
 }
 
 #side-bar .collapsible-block-unfolded-link a.collapsible-block-link::after,
-#side-bar .side-block>.collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
+#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
 	transform: rotate(180deg);
 }
 
@@ -259,14 +252,14 @@
 
 /* for full-block collapsibles, give the open collapsible the same background as the side block */
 /* variable should be set in nav:side */
-#side-bar .side-block>.collapsible-block .collapsible-block-unfolded-link {
+#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
 	background: rgba(140, 20, 25, 0.5);
 	background: rgba(var(--medium-accent));
 }
 
 /* ===MENU ITEMS=== */
 #side-bar div.menu-item,
-#side-bar div.menu-item>p {
+#side-bar div.menu-item > p {
 	display: flex;
 	flex-shrink: 0;
 	flex-basis: 100%;
@@ -287,8 +280,8 @@
 	display: none;
 }
 
-#side-bar div.menu-item>span,
-#side-bar div.menu-item>p>span {
+#side-bar div.menu-item > span,
+#side-bar div.menu-item > p>span {
 	display: none;
 }
 
@@ -314,7 +307,8 @@
 	overflow: hidden;
 }
 
-#side-bar div.menu-item a:hover {
+#side-bar div.menu-item a:hover,
+#side-bar div.menu-item a:active {
 	background-color: transparent;
 }
 
@@ -357,16 +351,17 @@
 	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
 }
 
-#side-bar div.menu-item a:hover::before {
+#side-bar div.menu-item a:hover::before,
+#side-bar div.menu-item a:active::before {
 	transform: translateX(-11.25%);
 }
 
-#side-bar div.menu-item a:hover {
+#side-bar div.menu-item a:hover,
+#side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
 }
 
-#side-bar div.menu-item a:visited,
-#side-bar div.menu-item a:active {
+#side-bar div.menu-item a:visited {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--sidebar-links-text));
 }
@@ -381,13 +376,14 @@
 	justify-content: flex-start;
 }
 
-#side-bar div.menu-item>div:not(:nth-child(2)):not(.collapsible-block),
-#side-bar div.menu-item>span:not(:nth-child(2)):not(.collapsible-block) {
+#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
+#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
 	border-left: 0.125rem solid rgba(12, 12, 12, 0.08);
 	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
 }
 
-#side-bar div.menu-item a:hover {
+#side-bar div.menu-item a:hover,
+#side-bar div.menu-item a:active {
 	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
 	text-decoration: none;
@@ -426,7 +422,7 @@
 
 /* Sigma Overwrite Specific Styles */
 
-#side-bar>div[style="background-color: #e5e5ff;"] {
+#side-bar > div[style="background-color: #e5e5ff;"] {
 	border: 0;
 	margin-top: 1rem;
 	margin-bottom: 0;
@@ -435,7 +431,7 @@
 	flex-shrink: 0;
 }
 
-#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
 	height: auto;
 	display: flex;
 	padding: 0;
@@ -445,7 +441,7 @@
 	border-left: none !important;
 }
 
-#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div>a {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
 	height: auto;
 	margin: 0;
 	padding: 0.25rem 0;
@@ -456,11 +452,12 @@
 	align-items: center;
 }
 
-#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div>a:hover::before {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:hover::before,
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:active::before {
 	transform: translateX(0rem);
 }
 
-#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div>a>img {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a>img {
 	display: block;
 }
 
@@ -488,18 +485,18 @@ a[href*="/most-recently-edited"] {
 
 /* Search box specific styling */
 
-#___gcse_0>div {
+#___gcse_0 > div {
 	display: inline-flex;
 	flex-direction: row;
 	width: 100%;
 	height: 2rem;
 }
 
-#___gcse_0>div>form {
+#___gcse_0 > div > form {
 	margin: 0;
 }
 
-#___gcse_0>div>form>table>tbody>tr>td.gsc-search-button>button {
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
 	background-color: rgba(100, 3, 15, 0);
@@ -508,8 +505,8 @@ a[href*="/most-recently-edited"] {
 	line-height: 1.85rem;
 }
 
-#___gcse_0>div>form>table>tbody>tr>td.gsc-search-button>button:hover,
-#___gcse_0>div>form>table>tbody>tr>td.gsc-search-button>button:focus {
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
 	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
@@ -533,16 +530,16 @@ iframe.scpnet-interwiki-frame {
 	max-width: calc(100% - (var(--base-font-size) * (14/15)));
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block {
+#side-bar div.menu-item.expandable + .collapsible-block {
 	background: none;
 }
 
-#side-bar .menu-item.expandable+.collapsible-block .collapsible-block-folded,
-#side-bar .menu-item.expandable+.collapsible-block .collapsible-block-unfolded-link {
+#side-bar .menu-item.expandable + .collapsible-block .collapsible-block-folded,
+#side-bar .menu-item.expandable + .collapsible-block .collapsible-block-unfolded-link {
 	min-height: 0;
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block a.collapsible-block-link {
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link {
 	padding-right: 0;
 	justify-content: flex-end;
 	height: calc(1.5rem - (var(--sidebar-internal-border-thickness) * 5));
@@ -550,7 +547,7 @@ iframe.scpnet-interwiki-frame {
 	display: flex;
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-link::before {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::before {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -561,22 +558,22 @@ iframe.scpnet-interwiki-frame {
 	text-shadow: none;
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-link::after {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::after {
 	display: none;
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block a.collapsible-block-link:hover {
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:hover {
 	background-color: transparent;
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-content .menu-item p {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item p {
 	padding: 0;
 	font-size: calc(var(--base-font-size) * 0.7);
 	height: calc(1.25rem - var(--sidebar-internal-border-thickness));
 	min-height: calc(1.25rem - var(--sidebar-internal-border-thickness));
 }
 
-#side-bar div.menu-item.expandable+.collapsible-block .collapsible-block-content .menu-item a {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
 	padding: 0;
 	font-size: calc(var(--base-font-size) * 0.7);
 }
@@ -617,11 +614,11 @@ iframe.scpnet-interwiki-frame {
 	}
 
 	#side-bar .heading p,
-	#side-bar .side-block>.collapsible-block .collapsible-block-link {
+	#side-bar .side-block > .collapsible-block .collapsible-block-link {
 		letter-spacing: 0.1rem;
 	}
 
-	#side-bar>div[style="background-color: #e5e5ff;"]>div.menu-item>div {
+	#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
 		grid-template-columns: repeat(3, 1fr);
 	}
 
@@ -676,8 +673,8 @@ iframe.scpnet-interwiki-frame {
 		background: rgba(var(--swatch-tertiary-color), 0.05) !important;
 	}
 
-	#skrollr-body:target+#main-content,
-	#side-bar:target+#main-content {
+	#skrollr-body:target + #main-content,
+	#side-bar:target + #main-content {
 		left: 0;
 	}
 

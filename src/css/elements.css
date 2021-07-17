@@ -83,6 +83,7 @@
 }
 
 .yui-navset .yui-nav a:hover,
+.yui-navset .yui-nav a:active,
 .yui-navset .yui-nav a:focus {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgb(100, 3, 15);
@@ -104,8 +105,10 @@
 }
 
 .yui-navset .yui-nav a:hover em,
+.yui-navset .yui-nav a:active em,
 .yui-navset .yui-nav a:focus em,
 .yui-navset .yui-navset-top .yui-nav a:hover em,
+.yui-navset .yui-navset-top .yui-nav a:active em,
 .yui-navset .yui-navset-top .yui-nav a:focus em {
 	transition: color 100ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
@@ -149,7 +152,8 @@
 	color: rgb(var(--swatch-text-light));
 }
 
-.yui-navset .yui-nav .selected a:hover {
+.yui-navset .yui-nav .selected a:hover,
+.yui-navset .yui-nav .selected a:active {
 	/* Indicate that the currently selected tab is not clickable */
 	cursor: default;
 }
@@ -229,7 +233,7 @@ div.blockquote,
 	--wght: 700;
 }
 
-.footnote-footer>a:nth-of-type(1) {
+.footnote-footer > a:nth-of-type(1) {
 	position: relative;
 	display: initial;
 	height: 100%;
@@ -334,7 +338,7 @@ div.blockquote,
 	box-sizing: border-box;
 }
 
-.scp-image-block .scp-image-caption>p {
+.scp-image-block .scp-image-caption > p {
 	margin: 0;
 	padding: 0;
 }
@@ -399,8 +403,8 @@ div.block-left {
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a,
 /* Credit Button Rating Module Specific */
-.rate-box-with-credit-button>.creditButton,
-.rate-box-with-credit-button>.creditButton>p {
+.rate-box-with-credit-button > .creditButton,
+.rate-box-with-credit-button > .creditButton > p {
 	padding: 0;
 	width: calc(0.875rem * 1.5);
 	width: calc((var(--base-font-size) * (14/15)) * 1.5);
@@ -448,19 +452,25 @@ div.block-left {
 
 .page-rate-widget-box .rateup a:hover,
 .page-rate-widget-box .ratedown a:hover,
-.page-rate-widget-box .cancel a:hover {
+.page-rate-widget-box .cancel a:hover,
+.page-rate-widget-box .rateup a:active,
+.page-rate-widget-box .ratedown a:active,
+.page-rate-widget-box .cancel a:active {
 	text-decoration: none;
 }
 
-.page-rate-widget-box .rateup a:hover {
+.page-rate-widget-box .rateup a:hover,
+.page-rate-widget-box .rateup a:active {
 	background-color: rgba(var(--rating-module-button-plus-color), 0.8);
 }
 
-.page-rate-widget-box .ratedown a:hover {
+.page-rate-widget-box .ratedown a:hover,
+.page-rate-widget-box .ratedown a:active {
 	background-color: rgba(var(--rating-module-button-negative-color), 0.8);
 }
 
-.page-rate-widget-box .cancel a:hover {
+.page-rate-widget-box .cancel a:hover,
+.page-rate-widget-box .cancel a:active {
 	background-color: rgba(var(--rating-module-button-cancel-color), 0.8);
 }
 
@@ -533,7 +543,10 @@ div.block-left {
 
 		.page-rate-widget-box .rateup a:hover::before,
 		.page-rate-widget-box .ratedown a:hover::before,
-		.page-rate-widget-box .cancel a:hover::before {
+		.page-rate-widget-box .cancel a:hover::before,
+		.page-rate-widget-box .rateup a:active::before,
+		.page-rate-widget-box .ratedown a:active::before,
+		.page-rate-widget-box .cancel a:active::before {
 			background-color: rgb(var(--rating-module-text-hover-color))
 		}
 	}
@@ -605,31 +618,31 @@ div.block-left {
 	height: var(--rating-module-height);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton:hover {
+#page-content .rate-box-with-credit-button > .creditButton:hover {
 	background: rgba(50, 50, 50, 0.1);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p {
+#page-content .rate-box-with-credit-button > .creditButton > p {
 	display: block;
 	margin: 0;
 	padding: 0;
 	position: relative;
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p,
-#page-content .rate-box-with-credit-button>.creditButton>p>a {
+#page-content .rate-box-with-credit-button > .creditButton > p,
+#page-content .rate-box-with-credit-button > .creditButton > p>a {
 	width: calc(var(--rating-module-height) * 1.5);
 	height: var(--rating-module-height);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a {
+#page-content .rate-box-with-credit-button > .creditButton > p>a {
 	border-left: none;
 	font-size: 1em;
 	display: flex;
 	margin-left: 0;
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a::before {
+#page-content .rate-box-with-credit-button > .creditButton > p>a::before {
 	--credit-button-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 103 205.3' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M4.2,75.6c24.1-2.6,48.2-5.2,74.9-8.1c0,15.6,0,29.4,0,43.3c0,20.8,0.4,41.6-0.2,62.3 c-0.3,10.5,4,16.3,13.4,20c4,1.5,7.1,5.3,10.6,8c-0.8,1.4-1.6,2.8-2.4,4.3c-32.4,0-64.8,0-97.3,0c-0.9-1.1-1.7-2.3-2.6-3.4 c3.3-2.7,6.2-7,9.9-7.8c11.4-2.3,15.3-9,15.2-19.9c-0.2-20.3-0.6-40.5,0.1-60.8c0.4-11.8-4.4-18.1-15-22.3c-4.4-1.8-7.4-7.2-11-11 C1.4,78.6,2.8,77.1,4.2,75.6z'/%3E%3Cpath fill='%23FFFFFF' d='M79.6,27c0,16.3-11,26.9-27.5,26.7c-16.5-0.2-26.2-9.9-26.2-26c0-17,10.1-27.7,26.5-27.7 C68.6-0.1,79.6,10.8,79.6,27z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
 	content: " ";
 	position: absolute;
@@ -647,11 +660,11 @@ div.block-left {
 	pointer-events: none;
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a:hover::before {
+#page-content .rate-box-with-credit-button > .creditButton > p>a:hover::before {
 	background-color: rgb(var(--rating-module-button-credit-color))
 }
 
-#page-content .rate-box-with-credit-button>.page-rate-widget-box {
+#page-content .rate-box-with-credit-button > .page-rate-widget-box {
 	overflow: hidden;
 	display: inline-flex;
 	border-radius: 0;
@@ -693,8 +706,8 @@ table.wiki-content-table tr {
 
 /* Nested Collapsible Block Fix */
 
-div.colmod-block>ul,
-div.colmod-block>ul>li {
+div.colmod-block > ul,
+div.colmod-block > ul > li {
 	line-height: 1.5;
 }
 
@@ -1019,7 +1032,7 @@ table[style*="margin:0"] * {
 
 /* Rating List Columns */
 
-#who-rated-page-area>div {
+#who-rated-page-area > div {
 	display: grid;
 	grid-gap: 0.25em;
 	grid-template-columns: repeat(4, 1fr auto);
@@ -1031,7 +1044,7 @@ table[style*="margin:0"] * {
 	display: none;
 }
 
-#who-rated-page-area>div>span[style*="color"] {
+#who-rated-page-area > div > span[style*="color"] {
 	--wght: 800;
 	text-align: left;
 }
@@ -1055,7 +1068,7 @@ table[style*="margin:0"] * {
 		margin: 0 auto;
 	}
 
-	#who-rated-page-area>div {
+	#who-rated-page-area > div {
 		grid-template-columns: repeat(2, 1fr auto);
 	}
 
@@ -1119,8 +1132,8 @@ table[style*="margin:0"] * {
 	display: none !important;
 }
 
-#html-body:target #page-content>*:not([style*="text-align:"]):not(.creditRate),
-#html-body:target #page-content>*:not(.page-rate-widget-box):not(.creditRate)>*:not(.page-rate-widget-box):not(.creditRate) {
+#html-body:target #page-content > *:not([style*="text-align:"]):not(.creditRate),
+#html-body:target #page-content > *:not(.page-rate-widget-box):not(.creditRate) > *:not(.page-rate-widget-box):not(.creditRate) {
 	display: none !important;
 }
 
