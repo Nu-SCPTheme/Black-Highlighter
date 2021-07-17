@@ -105,6 +105,7 @@ div#container-wrap {
 #header h1,
 #header h2 {
 	position: absolute;
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
@@ -117,7 +118,7 @@ div#container-wrap {
 }
 
 #header h1 a {
-	--wght: 750;
+	--wght: 800;
 	font-family: var(--header-font);
 	display: block;
 	line-height: 0;
@@ -139,8 +140,8 @@ div#container-wrap {
 	content: var(--header-title);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
-	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
+	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
+	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
 }
 
 #header h1 a>span {
@@ -176,8 +177,8 @@ div#container-wrap {
 	content: var(--header-subtitle);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh2-color));
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
-	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
+	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
+	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
 }
 
 #header-extra-div-1,
@@ -266,8 +267,8 @@ form[id="search-top-box-form"] {
 	border: var(--border-styling);
 	border-radius: 0.0625rem;
 	border-radius: var(--border-radius-width);
-	text-shadow: 0 0 0.063rem rgba(12, 12, 12, 0.75);
-	text-shadow: 0 0 0.063rem var(--text-shadow);
+	text-shadow: 0 0 0.0625rem rgba(12, 12, 12, 0.75);
+	text-shadow: 0 0 0.0625rem var(--text-shadow);
 }
 
 /* ===LOGIN BOX=== */
@@ -276,6 +277,7 @@ form[id="search-top-box-form"] {
 	color: rgb(var(--swatch-tertiary-color));
 	font-size: 90%;
 	z-index: 10000;
+	position: absolute;
 	right: 3%;
 	top: 0.5rem;
 }
@@ -330,6 +332,8 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"]>ul {
 	width: 90vw;
+	margin: 0;
+	padding: 0;
 	flex-direction: row;
 	justify-content: space-around;
 	flex-wrap: nowrap;
@@ -338,6 +342,7 @@ div.mobile-top-bar {
 	height: 100%;
 	display: flex;
 	letter-spacing: 0.0625rem;
+	line-height: 0;
 	text-align: center;
 }
 

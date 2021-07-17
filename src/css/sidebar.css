@@ -178,6 +178,7 @@
 	color: rgb(var(--swatch-text-secondary-color));
 	height: 1.25rem;
 	margin: 0;
+	font-family: var(--title-font);
 	line-height: 1.25rem;
 	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
@@ -185,8 +186,8 @@
 	letter-spacing: 0.016em;
 	justify-content: center;
 	align-items: center;
-	text-shadow: 0.063rem 0.063rem 0.063rem rgb(12, 12, 12);
-	text-shadow: 0.063rem 0.063rem 0.063rem var(--text-shadow);
+	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
+	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
 }
 
 #side-bar .heading p {
@@ -350,14 +351,14 @@
 	background-color: rgb(var(--bright-accent), 0.25);
 	opacity: 1;
 	z-index: -1;
-	transform: translateX(calc(-100% - 4rem));
+	transform: translateX(calc(-125%));
 	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
 }
 
 #side-bar div.menu-item a:hover::before {
-	transform: translateX(-1rem);
+	transform: translateX(-11.25%);
 }
 
 #side-bar div.menu-item a:hover {
