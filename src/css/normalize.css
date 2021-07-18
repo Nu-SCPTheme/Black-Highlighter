@@ -10,6 +10,7 @@ h1,
 #page-title {
 	color: inherit;
 	margin: inherit;
+	padding-top: inherit;
 }
 h1,
 #page-title,h1 {
@@ -33,13 +34,13 @@ h7 {
 	border-color: inherit;
 }
 ul {
-	/* list-style-image: inherit;
+	
 	 */
 	list-style: inherit;
 }
 #top-bar ul {
-	/* list-style-image: inherit;
-	/* IE ONLY! IF list-style-image IS SET */
+	
+	
 	right: inherit;
 	bottom: inherit;
 }
@@ -66,7 +67,7 @@ a:hover {
 .form-control {
 	width: inherit;
 }
-/* GLOBAL WIDTH */
+
 #header,
 #top-bar {
 	max-width: inherit;
@@ -95,7 +96,7 @@ sup {
 	vertical-align: inherit;
 	top: inherit;
 }
-/* HEADER */
+
 sup,#header {
 	position: inherit;
 }
@@ -103,7 +104,7 @@ sup,#header {
 	height: inherit;
 	z-index: inherit;
 	padding-bottom: inherit;
-	/* FOR MENU */
+	
 	background: inherit;
 }
 #search-top-box {
@@ -112,11 +113,15 @@ sup,#header {
 	right: inherit;
 	width: inherit;
 	text-align: inherit;
+	z-index: inherit;
 }
 #search-top-box-input {
 	border: inherit;
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
+}
+#search-top-box input.empty{
+	color: inherit;
 }
 #search-top-box-input,#search-top-box-input:hover,
 #search-top-box-input:focus {
@@ -153,6 +158,11 @@ sup,#header {
 	box-shadow: inherit;
 }
 #login-status {
+	position: inherit;
+	right: inherit;
+	top: inherit;
+	overflow: inherit;
+	z-index: inherit;
 	color: inherit;
 	font-size: inherit;
 	z-index: inherit;
@@ -161,8 +171,59 @@ sup,#header {
 	background: inherit;
 	color: inherit;
 }
+#login-status > a > strong {
+    text-decoration: inherit;
+    -webkit-animation-name: inherit;  
+    -webkit-animation-iteration-count: inherit;  
+    -webkit-animation-timing-function: inherit;
+    -webkit-animation-duration: inherit; 
+}
 .printuser img.small {
 	margin-right: inherit;
+}
+#account-options{
+	position: inherit;
+	box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	width: inherit;
+	right: inherit;
+	padding: inherit;
+	z-index: inherit;
+	background-color: inherit;
+	display: inherit;
+	border: inherit;
+}
+
+#account-options ul{
+	display: inherit;
+	margin: inherit; 
+	padding: inherit;
+	list-style: inherit;
+}
+#account-options li{
+	display: inherit;
+	margin: inherit; 
+	padding: inherit;
+}
+#account-options li a{
+	display: inherit;
+	box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	padding: inherit;
+	z-index: inherit;
+}
+
+#account-options li a:hover{
+	color: inherit;
+}
+#account-topbutton{
+	font-size: inherit;
+	font-weight: inherit;
+	padding: inherit;
+	border: inherit;
+	margin-left: inherit;
+	text-decoration: inherit;
+	background-color: inherit;
 }
 #header h1,#header h2 {
 	margin-left: inherit;
@@ -193,7 +254,7 @@ sup,#header {
 #header h2 span {
 	font-weight: inherit;
 }
-/* TOP MENU */
+
 #top-bar {
 	position: inherit;
 	z-index: inherit;
@@ -273,12 +334,13 @@ sup,#header {
 .top-bar ul li:last-of-type ul {
 	right: inherit;
 }
-/* IE7 HACK */
+
 #top-bar ul > li > ul {
 	*margin-top: inherit;
 }
-/* SIDE MENU */
+
 #side-bar {
+	float: inherit;
 	clear: inherit;
 	position: inherit;
 	top: inherit;
@@ -357,38 +419,57 @@ sup,#header {
 	list-style-type: inherit;
 	padding: inherit;
 }
-/* interwiki frame */
+
 div.scpnet-interwiki-wrapper {
     width: inherit;
     margin-left: inherit;
 }
 iframe.scpnet-interwiki-frame {
-    height: inherit;
-    width: inherit;
     border: inherit;
 }
-@media (min-width: 768px) {
-    iframe.scpnet-interwiki-frame, div.scpnet-interwiki-wrapper {
-        width: inherit;
-    }
-}
-/* CONTENT */
+
 #main-content {
 	margin: inherit;
 	padding: inherit;
 	position: inherit;
 }
-/* ACTUALLY HIDE HIDDEN TAGS */
-#main-content .page-tags a[href^="/system:page-tags/tag/_"] {
-	display: inherit;
+
+#page-info-break {
+    clear: both;
+    height: 1px;
+    font-size:1px;
 }
+
+#page-info{
+	clear: inherit;
+	text-align: inherit;
+	font-size: inherit%;
+	margin: inherit inherit;
+}
+
+.page-tags{
+	clear: inherit;
+	text-align: inherit;
+	margin: inherit; 
+	padding: inherit;
+}
+.page-tags a{
+	margin: inherit;
+}
+
+.page-tags span{
+	padding-top: inherit;
+	border-top: inherit;
+	font-size: inherit%;
+}
+
 #breadcrumbs {
 	margin: inherit;
 }
 .psuedocrumbs {
 	margin: inherit;
 }
-/* YUI-TABS */
+
 .yui-navset .yui-content {
 	background-color: inherit;
 }
@@ -398,11 +479,11 @@ iframe.scpnet-interwiki-frame {
 	background-image: inherit;
 }
 .yui-navset .yui-nav .selected a, .yui-navset .yui-nav .selected a:focus,
-/* no focus effect for selected */
+
  .yui-navset .yui-nav .selected a:hover {
-	/* no hover effect for selected */
+	
 	background: inherit;
-	/* selected tab background */
+	
 	color: inherit;
 }
 .yui-navset .yui-nav a:hover,
@@ -418,7 +499,7 @@ iframe.scpnet-interwiki-frame {
 .yui-navset li {
 	line-height: inherit;
 }
-/* FOOTER */
+
 #footer {
 	clear: inherit;
 	font-size: inherit;
@@ -439,7 +520,33 @@ iframe.scpnet-interwiki-frame {
 	color: inherit;
 	background: inherit;
 }
-/* SOME NICE BOXES */
+
+#footer p {
+	margin: inherit;
+	padding: inherit;	
+}
+
+#license-area {
+	padding: inherit;
+	color: inherit;
+	text-align: inherit;
+}
+
+#toc {
+	border: inherit;
+	background-color: inherit;
+}
+
+#toc #toc-action-bar {
+	padding: inherit;
+}
+
+#toc .title {
+    font-weight: inherit;
+    margin: inherit;
+    text-align: inherit;
+}
+
 div.sexy-box {
 	background: inherit;
 	overflow: inherit;
@@ -449,7 +556,7 @@ div.sexy-box,div.sexy-box div.image-container img {
 	padding: inherit;
 	margin: inherit;
 }
-/* Custom page content classes */
+
 #page-content {
 	min-height: inherit;
 }
@@ -495,7 +602,7 @@ div.sexy-box,div.sexy-box div.image-container img {
 .content-panel .panel-body {
 	padding: inherit;
 	background: inherit;
-	/* box-shadow: inherit; */
+	
 }
 .content-panel .panel-footer {
 	padding: inherit;
@@ -523,7 +630,7 @@ div.sexy-box,div.sexy-box div.image-container img {
 .alternate:nth-child(even) {
 	background-color: inherit;
 }
-/* Page Rating Module Customizations */
+
 .page-rate-widget-box {
 	display: inherit;
 	-webkit-border-radius: inherit;
@@ -579,7 +686,7 @@ div.sexy-box,div.sexy-box div.image-container img {
 	color: inherit;
 	text-decoration: inherit;
 }
-/* Heritage Collection Rating Module */
+
 .heritage-rating-module {
 	display: inherit;
 	background-color: inherit;
@@ -609,7 +716,7 @@ div.sexy-box,div.sexy-box div.image-container img {
 	height: inherit;
 	border: inherit;
 }
-/* Fixes for multi-line page tags */
+
 #main-content .page-tags {
 	margin: inherit;
 	padding: inherit;
@@ -623,7 +730,7 @@ div.sexy-box,div.sexy-box div.image-container img {
 	display: inherit;
 	white-space: inherit;
 }
-/* Standard Image Block */
+
 .scp-image-block {
 	border: inherit;
 	-webkit-box-shadow: inherit;
@@ -659,12 +766,12 @@ div.sexy-box,div.sexy-box div.image-container img {
 	margin: inherit;
 	padding: inherit;
 }
-/* Wikiwalk Navigation */
+
 .footer-wikiwalk-nav {
 	font-weight: inherit;
 	font-size: inherit;
 }
-/* Forum Customizations */
+
 .forum-thread-box .description-block,.thread-container .post .head {
 	padding: inherit;
 	-webkit-border-radius: inherit;
@@ -676,11 +783,11 @@ div.sexy-box,div.sexy-box div.image-container img {
 	background-color: inherit;
 	background: inherit;
 }
-/* Hide Forum Signatures */
+
 .signature {
 	display: inherit;
 }
-/* Ruby by Nanimono Demonai */
+
 .ruby,
 ruby {
 	height: inherit;
@@ -694,7 +801,7 @@ rt {
 	white-space: inherit;
 	line-height: inherit;
 }
-/* Keycap */
+
 .rt,
 rt,.keycap {
 	font-size: inherit;
@@ -709,7 +816,7 @@ rt,.keycap {
 	font-family: inherit;
 	white-space: inherit;
 }
-/* tag style */
+
 .keycap,.tags {
 	padding: inherit;
 }
@@ -749,7 +856,7 @@ rt,.keycap {
 	-webkit-box-shadow: inherit;
 	box-shadow: inherit;
 }
-/* Display Black Block by Nanimono Demonai */
+
 .bblock {
 	-webkit-transition: inherit;
 	-o-transition: inherit;
@@ -769,15 +876,15 @@ rt,.keycap {
 	background-color: inherit;
 	text-decoration: inherit;
 }
-/* 2011-11-13 Minobe Hiroyuki @ Marguerite Site www.marguerite.jp/Nihongo/WWW/CSSTips/EmphasizeDots-CSS3.html Edited for the SCP Foundation by Nanimono_Demonai */
+
 .emph {
 	-webkit-text-emphasis-style: inherit;
 	text-emphasis-style: inherit;
 }
-/* For FireFox */
+
 @document url-prefix() {
 	.emph {
-		/* For the environments which comply with CSS3. */
+		
 		font-family: inherit;
 		font-style: inherit;
 		font-weight: inherit;
@@ -790,10 +897,10 @@ rt,.keycap {
 		background-size: inherit;
 	}
 }
-/* For IE10 */
+
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.emph {
-		/* For the environments which comply with CSS3. */
+		
 		font-family: inherit;
 		font-style: inherit;
 		font-weight: inherit;
@@ -806,7 +913,7 @@ rt,.keycap {
 		background-size: inherit;
 	}
 }
-/* viewport */
+
 @-ms-viewport {
 	width: inherit;
 	zoom: inherit;
@@ -819,16 +926,16 @@ rt,.keycap {
 	width: inherit;
 	zoom: inherit;
 }
-/* IE viewport */
-/* opera viewport */
-/* chrome viewport - maybe it isn't work... */
-/* firefox viewport - maybe it isn't work too... */
-/* webkit scrollbar */
+
+
+
+
+
 ::-webkit-scrollbar {
 	width: inherit;
-	/* for vertical scrollbars */
+	
 	height: inherit;
-	/* for horizontal scrollbars */
+	
 	border: inherit;
 	border-round: inherit;
 }
@@ -838,7 +945,7 @@ rt,.keycap {
 .page-source {
 	word-break: inherit;
 }
-/* Responsive Web Design */
+
 img,
 embed,
 video,
@@ -851,7 +958,7 @@ table,#page-content div,
 #edit-page-comments {
 	width: inherit;
 }
-/* basic Query for mobile devices */
+
 @media (max-width: 767px) {
 	.owindow {
 		min-width: inherit;
@@ -873,7 +980,7 @@ table,#page-content div,
 		word-break: inherit;
 	}
 }
-/* Mobile Media Query */
+
 @media (max-width: 479px) {
 	#search-top-box-input {
 		display: inherit;
@@ -925,7 +1032,7 @@ table,#page-content div,
 	table.form th {
 		float: inherit;
 	}
-	/* td.title {
+	
 		 width: inherit;
 	}
 	 */
@@ -952,7 +1059,7 @@ table,#page-content div,
 		word-break: inherit;
 	}
 }
-/* Note Media Query */
+
 @media (min-width: 480px) and (max-width: 580px) {
 	#search-top-box-input {
 		width: inherit;
@@ -994,7 +1101,7 @@ table,#page-content div,
 	#header h2 {
 		margin-left: inherit;
 	}
-	/* td.title {
+	
 		 width: inherit;
 	}
 	 */
@@ -1014,7 +1121,7 @@ table,#page-content div,
 		clear: inherit;
 	}
 }
-/* Mini Tablet Media Query */
+
 @media (min-width: 581px) and (max-width: 767px) {
 	#search-top-box-input,#side-bar {
 		width: inherit;
@@ -1048,7 +1155,7 @@ table,#page-content div,
 		margin-left: inherit;
 	}
 }
-/* Tablet Media Query */
+
 @media (min-width: 768px) and (max-width: 979px) {
 	#main-content {
 		margin: inherit;
@@ -1089,13 +1196,13 @@ table,#page-content div,
 		clear: inherit;
 	}
 }
-/* Desktop Media Query ----------- @media (min-width: 980px) and (max-width: 1399px) {
+
 }
  ------------------------------------------ */
-/* Wide Monitor Media Query ----- @media (min-width: 1400px) {
+
 }
  ------------------------------------------ */
-/* off-canvas */
+
 .close-menu {
 	display: inherit;
 }

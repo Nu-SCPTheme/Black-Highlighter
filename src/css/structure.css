@@ -1,29 +1,38 @@
 * {
-	font-variation-settings:
-		"wght" var(--wght, 400),
-		"ital" var(--ital, 0),
-		"slnt" var(--slnt, 0),
-		"CASL" var(--CASL, 0),
-		"CRSV" var(--CRSV, 0),
-		"MONO" var(--MONO, 0),
-		"FLAR" var(--FLAR, 0);
 	font-kerning: auto;
 	font-variant-ligatures: common-ligatures contextual;
 	font-variant-numeric: lining-nums proportional-nums;
-	font-feature-settings:
-		"lnum" var(--lnum, 1),
-		"pnum" var(--pnum, 1),
-		"kern" var(--kern, 1),
-		"cpsp" var(--cpsp, 1),
-		"liga" var(--liga, 1),
-		"clig" var(--clig, 1),
-		"dlig" var(--dlig, 0),
-		"calt" var(--calt, 1),
-		"aalt" var(--aalt, 0),
-		"ss01" var(--ss01, 0),
-		"ss02" var(--ss02, 0),
-		"ss03" var(--ss03, 0),
-		"ss04" var(--ss04, 0);
+	font-weight: var(--wght, revert);
+}
+@supports (font-variation-settings: inherit) { 
+	* {
+		font-variation-settings:
+			"wght" var(--wght, 400),
+			"ital" var(--ital, 0),
+			"slnt" var(--slnt, 0),
+			"CASL" var(--CASL, 0),
+			"CRSV" var(--CRSV, 0),
+			"MONO" var(--MONO, 0),
+			"FLAR" var(--FLAR, 0);
+	}
+}
+@supports (font-feature-settings: inherit) {
+	* {
+		font-feature-settings:
+			"lnum" var(--lnum, 1),
+			"pnum" var(--pnum, 1),
+			"kern" var(--kern, 1),
+			"cpsp" var(--cpsp, 1),
+			"liga" var(--liga, 1),
+			"case" var(--case, 1),
+			"clig" var(--clig, 1),
+			"dlig" var(--dlig, 0),
+			"calt" var(--calt, 1),
+			"aalt" var(--aalt, 0),
+			"ss01" var(--ss01, 1),
+			"ss02" var(--ss02, 1),
+			"ss03" var(--ss03, 1);
+	}
 }
 
 html {
@@ -61,9 +70,7 @@ body {
 	background-color: rgba(var(--swatch-background), 1);
 
 	/* font behavior */
-	font-family: "Lato", sans-serif;
 	font-family: var(--body-font);
-	font-size: 0.875rem;
 	font-size: var(--base-font-size);
 
 	/* line behavior */
@@ -309,28 +316,62 @@ h3,
 h4,
 h5,
 h6 {
-	--wght: 700;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 	font-family: var(--title-font);
+	margin: 0 0 0.5em 0;
+	line-height:1.4;
+	font-weight: revert;
 }
 
-h1 {
+h1,
+h2 {
 	--wght: 700;
-	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-general));
-	margin: 0.7em 0 0.6em;
-	padding: 0 0 0.25em;
 }
 
-h2,
 h3,
 h4,
 h5,
 h6 {
-	--wght: 900;
-	letter-spacing: 0.0625rem;
-	margin: 0.5em 0 0.4em;
-	padding: 0;
+	--wght: 500;
+}
+
+h1 {
+	font-size:1.5em
+}
+h2 {
+	font-size:1.25em
+}
+h3 {
+	font-size:1.1875em
+}
+h4 {
+	font-size:1.125em
+}
+h5 {
+	font-size:1.0625em
+}
+h6 {
+	font-size:1em
+}
+@media only screen and (min-width: 900px) {
+	h1 {
+		font-size:2em
+	}
+	h2 {
+		font-size:1.75em
+	}
+	h3 {
+		font-size:1.5375em
+	}
+	h4 {
+		font-size:1.3625em
+	}
+	h5 {
+		font-size:1.15em
+	}
+	h6 {
+		font-size:1em
+	}
 }
 
 ul {
@@ -357,6 +398,13 @@ a.newpage {
 
 a:hover,
 a:active {
+	text-decoration: underline;
+	background-color: transparent;
+	color: rgb(255, 52, 76);
+	color: rgb(var(--hover-link-color));
+}
+
+a:focus-within {
 	text-decoration: underline;
 	background-color: transparent;
 	color: rgb(255, 52, 76);

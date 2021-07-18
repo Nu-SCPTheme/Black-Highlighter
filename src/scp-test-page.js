@@ -180,7 +180,7 @@ $(function () {
 					const newHeadContents = doc.getElementsByTagName("head")[0].innerHTML;
 					const newHead = doc.getElementsByTagName("head")[0];
 					if (siteURL === siteName) {					
-						doc.getElementById("internal-style").remove();
+						doc.getElementById("internal-style").innerHTML = "@import url(http://d3g0gp89917ko0.cloudfront.net/v--3e3a6f7dbcc9/common--theme/base/css/style.css);";
 					}
 					const newBody = doc.getElementsByTagName("body")[0];
 					const iframesReplace = document.getElementsByTagName("iframe");

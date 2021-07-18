@@ -16,10 +16,10 @@
 	--header-subtitle: "SECURE, CONTAIN, PROTECT";
 
 	/* Typefaces */
-	--body-font: Inter, Arimo, Verdana, Geneva, sans-serif;
-	--UI-font: PTRootUI, Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, Arial, sans-serif;
-	--header-font: Inter, Arimo, Verdana, Geneva, sans-serif;
-	--title-font: Inter, Arimo, Verdana, Geneva, sans-serif;
+	--body-font: Inter, Arimo, Verdana, Geneva, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--header-font: Inter, Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	--title-font: var(--header-font);
 	--mono-font: Recursive, Consolas, monaco, monospace;
 
 	/* Variable Body Font Settings */
@@ -54,6 +54,8 @@
 	--cpsp: 1;
 	/* ========================== Capital Spacing		|	Any: 	0 OR 1	 */
 	--liga: 1;
+	/* ========================== Case Alternatives		|	Any: 	0 OR 1	 */
+	--case: 1;
 	/* ========================== Standard Ligature		|	Any: 	0 OR 1	 */
 	--clig: 1;
 	/* ========================== Contextual Ligature	|	Any: 	0 OR 1	 */
@@ -63,10 +65,10 @@
 	/* ========================== Contextual Alternate	|	Any: 	0 OR 1	 */
 	--aalt: 0;
 	/* ========================== Access All Alternates	|	Any: 	0 OR 1	 */
-	--ss01: 0;
-	--ss02: 0;
-	--ss03: 0;
-	--ss04: 0;
+	--ss01: 1;
+	--ss02: 1;
+	--ss03: 1;
+	/* ========================== Stylistic Sets		|	Any: 	0 OR 1	 */
 	/* Standard Colors */
 	--white-monochrome: 252, 252, 252;
 	/* white */
