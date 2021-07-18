@@ -1168,10 +1168,22 @@ table[style*="margin:0"] * {
 	width: 1.5em;
 	height: 1.5em;
 	position: absolute;
-	left: -1.5em;
 	bottom: 0;
 	background-color: rgb(var(--bright-accent));
-	clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+
+.pager .current:not(:last-of-type)::before {
+	left: -1.5em;
+	clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.pager .current:last-of-type {
+	width: calc(100% - 1.5em);
+}
+
+.pager .current:last-of-type::before {
+	right: -1.5em;
+	clip-path: polygon(0 0, 0 100%, 100% 100%);
 }
 
 .pager a {
