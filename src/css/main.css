@@ -92,7 +92,6 @@ tt * {
 	display: grid;
 	flex-direction: column;
 	min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
-	flex-grow: 2;
 	height: auto;
 	position: initial;
 	margin: 0 auto;
@@ -100,8 +99,14 @@ tt * {
 	grid-template-areas:
 		"side-bar . content";
 	grid-template-columns:
-		calc(var(--sidebar-width-on-desktop)) calc((((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop)) * 3) / 2) 1fr calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2);
-	
+		/* Sidebar Width */
+		calc(var(--sidebar-width-on-desktop))
+		/* Space Between Sidebar and Content Width */
+		calc((((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop)) * 3) / 2) 
+		/* Content Width */
+		1fr 
+		/* Space Between Content and Scrollbar Width */
+		calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2);
 	width: calc(100vw - (100vw - 100%));
 	margin: 0 auto;
 	padding: 0;
@@ -119,30 +124,52 @@ tt * {
 .meta-title {
 	--wght: 700;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
-	font-size: 2em;
-	min-height: 2rem;
+	display: flex;
+	align-items: center;
+	font-size: 1.5em;
+	text-align: left;
+	min-height: 1em;
 	font-family: var(--title-font);
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
-	/* Counteracting Aers' dropdown. Remove later when Aers fixes it */
-	margin: 0 0 0.6em;
-	padding: 0 0 0.25em;
-	border-bottom: 0.0625rem solid rgb(66, 66, 72);
-	border-bottom: 0.0625rem solid rgb(var(--swatch-menubg-medium-dark-color, 66, 66, 72));
+	margin: 0.5em 0 1em 0;
+	padding: 0;
 	text-align: left;
+	border: none;
+	line-height: 1;
+}
+
+@media only screen and (min-width: 900px) {
+	#page-title,
+	.meta-title {
+		font-size: 2em;
+	}
 }
 
 #page-title {
 	grid-area: page-title;
+}
+	
+#page-title::after,
+.meta-title::after {
+	content: "";
+	flex-grow: 1;
+	height: 0.0625rem;
+	background: rgb(var(--swatch-tertiary-color));
+	margin: auto auto auto 1.25rem;
 }
 
 .form-control {
 	width: 95%;
 }
 
-/* no idea what this does - croque */
 .info-container .collapsible-block-link,
-.info-container:hover .collapsible-block-link {
+.info-container:hover .collapsible-block-link,
+.info-container:active .collapsible-block-link {
+	line-height: 1.6em;
+}
+
+.info-container:focus-within .collapsible-block-link {
 	line-height: 1.6em;
 }
 
@@ -151,14 +178,26 @@ tt * {
 span.printuser {
 	display: inline-flex;
 	flex-wrap: nowrap;
-	align-items: baseline;
-	justify-content: center;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	margin-right: 0;
+}
+	
+span.printuser a:first-of-type {
+	width: 1.75em;
 }
 
 .printuser img.small {
+	width: 1em;
+	height: 1em;
+	object-fit: fill;
+	object-position: center center;
 	margin-right: 0.0625rem;
 	min-width: auto;
-	/* Fixes issue where avatar gets stretched in specific situations */
+	background-position: center left;
+	padding: 0 0 0 0.5625em;
+	margin: 0 0.25rem 0 0;
 }
 
 #main-content {
@@ -207,60 +246,79 @@ div.page-watch-options {
 	grid-area: page-options;
 }
 
-div#page-options-bottom {
-	width: 90%;
-	margin: 0 auto 2.125rem auto;
-}
-
-div#page-options-bottom-2 {
-	width: 90%;
-	margin: -2.125rem auto 0 auto;
-}
-
-div#page-options-bottom,
-div#page-options-bottom-2 {
+div[id*="page-options-bottom"] {
+	--wght: var(--ui-wght);
+	font-family: var(--UI-font);
 	text-align: left;
-	flex-wrap: wrap;
+	display: grid;
+	white-space: nowrap;
+	grid-template-columns: repeat(12, 1fr);
+	justify-content: space-between;
 }
 
-div#page-options-bottom,
-div#page-options-bottom-2,
-div#page-options-bottom > a {
-	display: flex;
+/* One Orphan Button */
+div[id*="page-options-bottom"] > a:last-child:nth-child(6n+1) {
+	grid-column-end: -6;
 }
-
-div#page-options-bottom > a,
-div#page-options-bottom-2 > a {
-	flex-grow: 2;
-	padding: .25rem;
-	border-radius: .25rem;
-	background-color: rgba(100, 3, 15, 1);
-	background-color: rgba(var(--swatch-primary-darkest, 100, 3, 15), 1);
-	border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color, 48, 48, 52), 1);
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
-	justify-content: center;
-	transition:
-		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	
+/* Two Orphan Button */
+div[id*="page-options-bottom"] > a:last-child:nth-child(6n+2) {
+	grid-column-end: -5;
 }
-
-div#page-options-bottom-2 > a {
-	display: flex;
+	
+div[id*="page-options-bottom"] > a:nth-last-child(2):nth-child(6n+1) {
+	grid-column-end: -7;
 }
-
-div#page-options-bottom > a:hover,
-div#page-options-bottom > a:active,
-div#page-options-bottom-2 > a:hover,
-div#page-options-bottom-2 > a:active {
-	text-decoration: none;
-	background-color: rgba(100, 3, 15, 1);
-	background-color: rgba(var(--swatch-menubg-dark-color, 100, 3, 15), 1);
-	border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-primary-darkest, 48, 48, 52), 1);
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	
+/* Three Orphan Button */
+div[id*="page-options-bottom"] > a:last-child:nth-child(6n+3) {
+	grid-column-end: -4;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(2):nth-child(6n+2) {
+	grid-column-end: -6;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(3):nth-child(6n+1) {
+	grid-column-end: -8;
+}
+	
+/* Four Orphan Button */	
+div[id*="page-options-bottom"] > a:last-child:nth-child(6n+4) {
+	grid-column-end: -3;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(2):nth-child(6n+3) {
+	grid-column-end: -5;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(3):nth-child(6n+2) {
+	grid-column-end: -7;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(4):nth-child(6n+1) {
+	grid-column-end: -9;
+}
+	
+/* Five Orphan Button */	
+div[id*="page-options-bottom"] > a:last-child:nth-child(6n+5) {
+	grid-column-end: -2;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(2):nth-child(6n+4) {
+	grid-column-end: -4;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(3):nth-child(6n+3) {
+	grid-column-end: -6;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(4):nth-child(6n+2) {
+	grid-column-end: -8;
+}
+	
+div[id*="page-options-bottom"] > a:nth-last-child(5):nth-child(6n+1) {
+	grid-column-end: -10;
 }
 
 #footer {
@@ -573,6 +631,16 @@ div.sexy-box div.image-container img {
 	color: rgb(var(--swatch-primary-darker))
 }
 
+#page-content > div.forum-thread-box > div.new-post > a:focus-within,
+#page-content > div.forum-thread-box > div.options > a:focus-within,
+.post-container > .post > div.long > div.options a:focus-within {
+	text-decoration: none;
+	background-color: rgba(30, 55, 30, 1);
+	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	color: rgb(140, 20, 25);
+	color: rgb(var(--swatch-primary-darker))
+}
+
 .ruby {
 	display: inline-table;
 	line-height: 1;
@@ -660,7 +728,8 @@ div.sexy-box div.image-container img {
 	box-shadow: -0.0625rem -0.0625rem 0.125rem var(--box-shadow);
 }
 
-.bblock:hover {
+.bblock:hover,
+.bblock:active {
 	background-color: rgb(12, 12, 12);
 	background-color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
 	color: rgb(100, 3, 15);
@@ -668,8 +737,11 @@ div.sexy-box div.image-container img {
 	text-decoration: none;
 }
 
-.dblock:hover {
-	background-color: transparent;
+.bblock:focus-within {
+	background-color: rgb(12, 12, 12);
+	background-color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
+	color: rgb(100, 3, 15);
+	color: rgb(var(--swatch-primary-darkest, 100, 3, 15));
 	text-decoration: none;
 }
 
@@ -839,46 +911,68 @@ div.buttons input {
 	display: flex;
 }
 
-div.buttons input,
-input.button,
-button,
-file,
-a.button,
-.owindow .button-bar a {
-	flex-grow: 2;
+#upload-userfile,
+.btn {
+	--wght: var(--ui-wght);
+	font-family: var(--UI-font);
+	display: inline-flex;
+	grid-column: span 2;
 	padding: .25rem;
-	border-radius: .25rem;
-	background-color: rgba(100, 3, 15, 1);
-	background-color: rgba(var(--swatch-primary-darkest, 100, 3, 15), 1);
-	border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-menubg-dark-color, 48, 48, 52), 1);
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	margin: 0;
+	border: none;
+	color: rgb(var(--swatch-text-tertiary-color));
 	justify-content: center;
-	transition:
-		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	box-shadow: 0 0.125rem 0 0 rgb(var(--bright-accent));
+	transition:	
+		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-div.buttons input:hover,
-div.buttons input:active,
-input.button:hover,
-input.button:active,
-button:hover,
-button:active,
-file:hover,
-file:active,
-a.button:hover,
-a.button:active,
-.owindow .button-bar a:hover,
-.owindow .button-bar a:active {
+#upload-userfile::before,
+.btn::before {
+	content: " ";
+	width: 100%;
+	height: 125%;
+	position: absolute;
+	top: 0;
+	background-color: rgb(var(--bright-accent));
+	transform: translateY(100%);	
+	pointer-events: none;
+	z-index: -1;
+	clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#upload-userfile:hover,
+#upload-userfile:active,
+.btn:hover,
+.btn:active {
+	--wght: var(--ui-hvr-wght);
 	text-decoration: none;
-	background-color: rgba(100, 3, 15, 1);
-	background-color: rgba(var(--swatch-menubg-dark-color, 100, 3, 15), 1);
-	border: 0.125rem solid rgba(48, 48, 52, 0);
-	border: 0.125rem solid rgba(var(--swatch-primary-darkest, 48, 48, 52), 1);
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+}
+
+#upload-userfile:focus-within,
+.btn:focus-within {
+	--wght: var(--ui-hvr-wght);
+	text-decoration: none;
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+}
+
+#upload-userfile:hover::before,
+#upload-userfile:active::before,
+.btn:hover::before,
+.btn:active::before {
+	transform: translateY(-15%);
+}
+
+#upload-userfile:focus-within::before,
+.btn:focus-within::before {
+	transform: translateY(-15%);
 }
 
 div.buttons.alignleft > input {
@@ -913,7 +1007,7 @@ div.buttons.alignleft {
 	-webkit-text-emphasis-style: dot;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
 	#page-content {
 		font-size: 0.9em;
 	}
