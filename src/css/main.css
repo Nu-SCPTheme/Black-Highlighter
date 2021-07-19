@@ -45,6 +45,19 @@
 		"MONO"var(--MONO);
 }
 
+.code i,
+.code i *,
+.code em,
+.code em *,
+.code .italic,
+.code .italic *,
+.code [style*="italic"],
+.code [style*="italic"] *,
+.code [style*="oblique"],
+.code [style*="oblique"] * {
+	--slnt: -15;
+}
+
 .code p,
 .code pre {
 	margin: 0;
@@ -254,6 +267,10 @@ div[id*="page-options-bottom"] {
 	white-space: nowrap;
 	grid-template-columns: repeat(12, 1fr);
 	justify-content: space-between;
+}
+
+div[id*="page-options-bottom"] > a {
+	grid-column: span 2;
 }
 
 /* One Orphan Button */
@@ -912,33 +929,46 @@ div.buttons input {
 }
 
 #upload-userfile,
-.btn {
+.owindow .button-bar a,
+div.buttons input, 
+input.button, 
+button, 
+file, 
+a.button,
+.btn:not(.rateup):not(.ratedown):not(.cancel) {
 	--wght: var(--ui-wght);
 	font-family: var(--UI-font);
 	display: inline-flex;
-	grid-column: span 2;
 	padding: .25rem;
 	margin: 0;
-	border: none;
+	border: 0.0625rem solid rgba(var(--swatch-border-color),0.15);
 	color: rgb(var(--swatch-text-tertiary-color));
+	background-color: transparent;
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
 	z-index: 2;
-	box-shadow: 0 0.125rem 0 0 rgb(var(--bright-accent));
+	box-shadow: inset 0 -0.125rem 0 0 rgb(var(--bright-accent));
 	transition:	
+		box-shadow 600ms cubic-bezier(0.4, 0.0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0.0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #upload-userfile::before,
-.btn::before {
+.owindow .button-bar a::before,
+input.button::before, 
+button::before, 
+file::before, 
+a.button::before,
+.btn:not(.rateup):not(.ratedown):not(.cancel)::before {
 	content: " ";
 	width: 100%;
 	height: 125%;
 	position: absolute;
 	top: 0;
+	border-radius: initial;
 	background-color: rgb(var(--bright-accent));
 	transform: translateY(100%);	
 	pointer-events: none;
@@ -949,28 +979,68 @@ div.buttons input {
 
 #upload-userfile:hover,
 #upload-userfile:active,
-.btn:hover,
-.btn:active {
+.owindow .button-bar a:hover,
+.owindow .button-bar a:active,
+div.buttons input:hover,
+div.buttons input:active,
+input.button:hover,
+input.button:active,
+button:hover,
+button:active,
+file:hover,
+file:active,
+a.button:hover,
+a.button:active,
+.btn:not(.rateup):not(.ratedown):not(.cancel):hover,
+.btn:not(.rateup):not(.ratedown):not(.cancel):active {
 	--wght: var(--ui-hvr-wght);
 	text-decoration: none;
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	box-shadow: inset 0 -3rem 0 0 rgb(var(--bright-accent));
+	cursor: pointer;
 }
 
 #upload-userfile:focus-within,
-.btn:focus-within {
+.owindow .button-bar a:focus-within,
+div.buttons input:focus-within,
+input.button:focus-within,
+button:focus-within,
+file:focus-within,
+a.button:focus-within,
+.btn:not(.rateup):not(.ratedown):not(.cancel):focus-within {
 	--wght: var(--ui-hvr-wght);
 	text-decoration: none;
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	box-shadow: inset 0 -3rem 0 0 rgb(var(--bright-accent));
+	cursor: pointer;
 }
 
 #upload-userfile:hover::before,
 #upload-userfile:active::before,
-.btn:hover::before,
-.btn:active::before {
+.owindow .button-bar a:hover::before,
+.owindow .button-bar a:active::before,
+div.buttons input:hover::before,
+div.buttons input:active::before,
+input.button:hover::before,
+input.button:active::before,
+button:hover::before,
+button:active::before,
+file:hover::before,
+file:active::before,
+a.button:hover::before,
+a.button:active::before,
+.btn:not(.rateup):not(.ratedown):not(.cancel):hover::before, 
+.btn:not(.rateup):not(.ratedown):not(.cancel):active::before {
 	transform: translateY(-15%);
 }
 
 #upload-userfile:focus-within::before,
+.owindow .button-bar a:focus-within::before,
+div.buttons input:focus-within::before,
+input.button:focus-within::before,
+button:focus-within::before,
+file:focus-within::before,
+a.button:focus-within::before,
 .btn:focus-within::before {
 	transform: translateY(-15%);
 }

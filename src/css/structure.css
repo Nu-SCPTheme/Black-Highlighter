@@ -96,7 +96,6 @@ body em *,
 body .italic,
 body .italic * {
 	--ital: 1;
-	--slnt: -15;
 }
 
 /* Attribute Selectors for font-weight and font-style */
@@ -180,16 +179,11 @@ body .italic * {
 	--mono-wght: calc(var(--wght) - 50);
 }
 
-[style*="style: italic"],
-[style*="style: italic"] *,
-[style*="style:italic"],
-[style*="style:italic"] *,
-[style*="style: oblique"],
-[style*="style: oblique"] *,
-[style*="style:oblique"],
-[style*="style:oblique"] * {
+[style*="italic"],
+[style*="italic"] *,
+[style*="oblique"],
+[style*="oblique"] * {
 	--ital: 1;
-	--slnt: -15;
 }
 
 /* HTML5 Media Items */
@@ -281,6 +275,19 @@ pre * {
 		"CASL" var(--CASL),
 		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
+}
+
+pre i,
+pre i *,
+pre em,
+pre em *,
+pre .italic,
+pre .italic *,
+pre [style*="italic"],
+pre [style*="italic"] *,
+pre [style*="oblique"],
+pre [style*="oblique"] * {
+	--slnt: -15;
 }
 
 sub,
@@ -455,6 +462,19 @@ tt * {
 		"CASL" var(--CASL),
 		"CRSV" var(--CRSV),
 		"MONO" var(--MONO);
+}
+
+tt i,
+tt i *,
+tt em,
+tt em *,
+tt .italic,
+tt .italic *,
+tt [style*="italic"],
+tt [style*="italic"] *,
+tt [style*="oblique"],
+tt [style*="oblique"] * {
+	--slnt: -15;
 }
 
 /* Chrome, Safari, Opera Scrollbar */
