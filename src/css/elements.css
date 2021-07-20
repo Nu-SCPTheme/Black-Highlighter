@@ -962,16 +962,32 @@ table[style*="margin:0"] * {
 }
 
 #toc #toc-list,
-#toc #toc-list [style*="display: grid"],
-#toc #toc-list [style*="opacity:"] {
-	animation: hide 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
-	animation-direction: reverse;
-	animation-fill-mode: forwards;
+#toc #toc-list[style*="grid"] {
+	transition: 
+		opacity 200ms cubic-bezier(0.4, 0.0, 0.2, 1) 200ms, 
+		max-height 200ms cubic-bezier(0.4, 0.0, 0.2, 1) 200ms;
+	opacity: 1;
+	overflow-y: hidden !important;
 }
 
-#toc #toc-list[style*="display: none"] {
-	animation: hide 200ms cubic-bezier(0.4, 0.0, 0.2, 1);	
-	animation-fill-mode: forwards;
+#toc #toc-list[style*="grid"]:not([style*="opacity"]) {
+	opacity: 1 !important;
+	max-height: 100vh;
+}
+
+#toc #toc-list[style*="opacity"] {
+	display: grid !important;
+	max-height: 0vh !important;
+	opacity: 0 !important;
+	transition: 
+		opacity 200ms cubic-bezier(0.4, 0.0, 0.2, 1),
+		max-height 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#toc #toc-list[style*="none"] {
+	max-height: 0vh !important;
+	opacity: 0 !important;
+	transition: max-height 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 @keyframes hide {
@@ -979,15 +995,23 @@ table[style*="margin:0"] * {
 		max-height: 100vh !important;
 		opacity: 1 !important;
 	}	
-	99% {		
-		display: grid !important;
-	}
-	100% {	
+	100% {
 		max-height: 0vh !important;
-		opacity: 0 !important;	
-		display: none !important;		
+		opacity: 0 !important;
 	}
 }
+
+@keyframes show {
+	0% {
+		max-height: 0vh !important;
+		opacity: 0 !important;
+	}	
+	100% {	
+		max-height: 100vh !important;
+		opacity: 1 !important;
+	}
+}
+
 
 #toc #toc-list div {
 	position: relative;
