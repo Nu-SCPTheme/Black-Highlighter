@@ -2755,8 +2755,7 @@ form[id="search-top-box-form"] {
 }
 
 #search-top-box-form input[type="submit"] {
-	font-size: calc(0.875rem * .85);
-	font-size: calc((var(--base-font-size) * (14/15)) * .85);
+	font-size: 0;
 	cursor: pointer;
 	margin-right: 0;
 }
@@ -3574,7 +3573,7 @@ div.mobile-top-bar {
 		transform: translate(-50%, 0);
 	}
 
-	#header div[class*="top-bar"]>ul>li:last-of-type>ul {
+	#header div[class*="top-bar"]>ul:first-of-type>li:last-of-type>ul {
 		right: 0;
 		left: 50%;
 	}
