@@ -328,18 +328,16 @@ div#container-wrap {
 
 #search-top-box form[id="search-top-box-form"] input[type="submit"] {
 	position: relative;
-	font-size: 0;
 	right: 0;
 	width: 2em;
 	height: 2em;
 	background-color: rgba(0, 0, 0, 0);
 	color: transparent;
+	font-size: 0;
 	pointer-events: all;
 }
 
-#search-top-box
-	form[id="search-top-box-form"]:not(:focus-within)
-	input[type="submit"] {
+#search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="submit"] {
 	width: 2em;
 	pointer-events: none;
 }
