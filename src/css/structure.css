@@ -1,37 +1,29 @@
-* {
+*,
+*::before,
+*::after {
 	font-kerning: auto;
 	font-variant-ligatures: common-ligatures contextual;
 	font-variant-numeric: lining-nums proportional-nums;
 	font-weight: var(--wght, revert);
 }
-@supports (font-variation-settings: inherit) { 
-	* {
-		font-variation-settings:
-			"wght" var(--wght, 350),
-			"ital" var(--ital, 0),
-			"slnt" var(--slnt, 0),
-			"CASL" var(--CASL, 0),
-			"CRSV" var(--CRSV, 0),
-			"MONO" var(--MONO, 0),
-			"FLAR" var(--FLAR, 0);
+@supports (font-variation-settings: inherit) {
+	*,
+	*::before,
+	*::after {
+		font-variation-settings: "wght" var(--wght, 350), "ital" var(--ital, 0),
+			"slnt" var(--slnt, 0), "CASL" var(--CASL, 0), "CRSV" var(--CRSV, 0),
+			"MONO" var(--MONO, 0), "FLAR" var(--FLAR, 0);
 	}
 }
 @supports (font-feature-settings: inherit) {
-	* {
-		font-feature-settings:
-			"lnum" var(--lnum, 1),
-			"pnum" var(--pnum, 1),
-			"kern" var(--kern, 1),
-			"cpsp" var(--cpsp, 1),
-			"liga" var(--liga, 1),
-			"case" var(--case, 1),
-			"clig" var(--clig, 1),
-			"dlig" var(--dlig, 0),
-			"calt" var(--calt, 1),
-			"aalt" var(--aalt, 0),
-			"ss01" var(--ss01, 1),
-			"ss02" var(--ss02, 1),
-			"ss03" var(--ss03, 1);
+	*,
+	*::before,
+	*::after {
+		font-feature-settings: "lnum" var(--lnum, 1), "pnum" var(--pnum, 1),
+			"kern" var(--kern, 1), "cpsp" var(--cpsp, 1), "liga" var(--liga, 1),
+			"case" var(--case, 1), "clig" var(--clig, 1), "dlig" var(--dlig, 0),
+			"calt" var(--calt, 1), "aalt" var(--aalt, 0), "ss01" var(--ss01, 1),
+			"ss02" var(--ss02, 1), "ss03" var(--ss03, 1);
 	}
 }
 
@@ -42,12 +34,13 @@ html {
 
 html,
 body {
+	margin: 0;
+	padding: 0;
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6) rgba(var(--swatch-tertiary-color), 0.1);
-	margin: 0;
-	padding: 0;
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6)
+		rgba(var(--swatch-tertiary-color), 0.1);
 }
 
 /* Webkit Scrollbar */
@@ -72,11 +65,11 @@ body {
 	/* font behavior */
 	font-family: var(--body-font);
 	font-size: var(--base-font-size);
+	word-break: normal;
+	hyphens: manual;
 
 	/* line behavior */
 	orphans: 2;
-	hyphens: manual;
-	word-break: normal;
 }
 
 body strong,
@@ -223,17 +216,17 @@ table:not(.form) td > input {
 /* User Input Items */
 
 fieldset {
-	border: 0;
 	margin: 0;
 	padding: 0;
+	border: 0;
 }
 
 #edit-page-comments {
-	resize: both;
-	line-height: 1.5;
-	padding: 0 1rem;
-	min-height: 3rem;
 	width: calc(100% - 2rem);
+	min-height: 3rem;
+	padding: 0 1rem;
+	line-height: 1.5;
+	resize: both;
 }
 
 textarea,
@@ -241,11 +234,12 @@ input.text,
 input.checkbox,
 div.note,
 #lock-info {
-	font-family: var(--body-font);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6) rgba(var(--swatch-tertiary-color), 0.1);
+	font-family: var(--body-font);
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6)
+		rgba(var(--swatch-tertiary-color), 0.1);
 }
 
 textarea::-webkit-scrollbar-track,
@@ -266,15 +260,12 @@ pre,
 pre * {
 	--MONO: 1;
 	--calt: 0;
+	max-width: 90vw;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	max-width: 90vw;
 	white-space: pre;
-	font-variation-settings:
-		"wght" var(--mono-wght),
-		"CASL" var(--CASL),
-		"CRSV" var(--CRSV),
-		"MONO" var(--MONO);
+	font-variation-settings: "wght" var(--mono-wght), "CASL" var(--CASL),
+		"CRSV" var(--CRSV), "MONO" var(--MONO);
 }
 
 pre i,
@@ -292,28 +283,28 @@ pre [style*="oblique"] * {
 
 sub,
 sup {
-	font-size: 0.75em;
 	position: relative;
+	font-size: 0.75em;
 }
 
 sub {
-	vertical-align: sub;
 	bottom: -0.25em;
+	vertical-align: sub;
 }
 
 sup {
-	vertical-align: super;
 	top: -0.25em;
+	vertical-align: super;
 }
 
 hr {
 	display: block;
 	height: 0.0625rem;
+	margin: 1em 0;
+	padding: 0;
 	border: 0;
 	border-top: 0.0625rem solid rgba(66, 66, 72);
 	border-top: 0.0625rem solid rgba(var(--swatch-tertiary-color, 66, 66, 72));
-	margin: 1em 0;
-	padding: 0;
 }
 
 /* Headers */
@@ -323,11 +314,11 @@ h3,
 h4,
 h5,
 h6 {
-	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
-	font-family: var(--title-font);
 	margin: 0 0 0.5em 0;
-	line-height:1.4;
+	font-family: var(--title-font);
 	font-weight: revert;
+	line-height: 1.4;
+	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 }
 
 h1,
@@ -343,41 +334,41 @@ h6 {
 }
 
 h1 {
-	font-size:1.5em
+	font-size: 1.5em;
 }
 h2 {
-	font-size:1.25em
+	font-size: 1.25em;
 }
 h3 {
-	font-size:1.1875em
+	font-size: 1.1875em;
 }
 h4 {
-	font-size:1.125em
+	font-size: 1.125em;
 }
 h5 {
-	font-size:1.0625em
+	font-size: 1.0625em;
 }
 h6 {
-	font-size:1em
+	font-size: 1em;
 }
 @media only screen and (min-width: 900px) {
 	h1 {
-		font-size:2em
+		font-size: 2em;
 	}
 	h2 {
-		font-size:1.75em
+		font-size: 1.75em;
 	}
 	h3 {
-		font-size:1.5375em
+		font-size: 1.5375em;
 	}
 	h4 {
-		font-size:1.3625em
+		font-size: 1.3625em;
 	}
 	h5 {
-		font-size:1.15em
+		font-size: 1.15em;
 	}
 	h6 {
-		font-size:1em
+		font-size: 1em;
 	}
 }
 
@@ -394,8 +385,8 @@ a {
 
 a,
 a.newpage {
-	text-decoration: none;
 	background: transparent;
+	text-decoration: none;
 }
 
 a.newpage {
@@ -405,17 +396,17 @@ a.newpage {
 
 a:hover,
 a:active {
-	text-decoration: underline;
 	background-color: transparent;
 	color: rgb(255, 52, 76);
 	color: rgb(var(--hover-link-color));
+	text-decoration: underline;
 }
 
 a:focus-within {
-	text-decoration: underline;
 	background-color: transparent;
 	color: rgb(255, 52, 76);
 	color: rgb(var(--hover-link-color));
+	text-decoration: underline;
 }
 
 a:visited {
@@ -427,8 +418,8 @@ a:visited {
 
 ruby {
 	display: inline-table;
-	line-height: 1;
 	height: 1em;
+	line-height: 1;
 	vertical-align: text-bottom;
 }
 
@@ -457,11 +448,8 @@ tt * {
 	--MONO: 1;
 	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
-	font-variation-settings:
-		"wght" var(--mono-wght),
-		"CASL" var(--CASL),
-		"CRSV" var(--CRSV),
-		"MONO" var(--MONO);
+	font-variation-settings: "wght" var(--mono-wght), "CASL" var(--CASL),
+		"CRSV" var(--CRSV), "MONO" var(--MONO);
 }
 
 tt i,
@@ -502,6 +490,6 @@ tt [style*="oblique"] * {
 /* Setting mobile body font size to 14px/0.875rem) */
 @media only screen and (max-width: 320px) {
 	body {
-		font-size: calc(var(--base-font-size) * (14/15));
+		font-size: calc(var(--base-font-size) * (14 / 15));
 	}
 }
