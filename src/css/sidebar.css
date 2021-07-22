@@ -14,71 +14,77 @@
 
 /* ===MAIN BLOCK=== */
 
-#side-bar {	
-	font-family: var(--UI-font, var(--header-font));
-	border: none;
-	display: flex;	
-	flex-direction: column;
-	height: 100vh;
-	width: 15.75rem;
-	width: calc((0.9375rem * (14/15)) * 19);
-	width: var(--sidebar-width-on-desktop);
-	flex-shrink: 0;
-	padding: 0;
-	margin: 0;
+#side-bar {
+	display: flex;
 	position: sticky;
-	top: 0;
-	scrollbar-width: thin;
 	z-index: 9;
-	overscroll-behavior: contain;
-	overflow-y: auto;
-	overflow-x: hidden;
-	scrollbar-color: 
-		rgba(var(--swatch-tertiary-color), 0)	/* Thumb */  
-		rgba(var(--swatch-tertiary-color), 0);	/* Track */
-	border-color: rgba(var(--swatch-tertiary-color), 0);
+	top: 0;
 	grid-area: side-bar;
-	justify-self: start;
-	direction: rtl;
-	background-image:
-		/* Shadow covers */
-		linear-gradient(rgba(var(--swatch-menubg-color), 1) 30%,
-			rgba(var(--swatch-menubg-color), 0)),
-		linear-gradient(rgba(var(--swatch-menubg-color), 0),
-			rgba(var(--swatch-menubg-color), 1) 70%) 0 100%,
-
-		/* Shadows */
-		radial-gradient(farthest-side at 50% 0,
-			rgba(var(--swatch-primary-darkest), 0.5),
-			rgba(var(--swatch-menubg-black-color), 0)),
-		radial-gradient(farthest-side at 50% 100%,
-			rgba(var(--swatch-primary-darkest), 0.5),
-			rgba(var(--swatch-menubg-black-color), 0)) 0 100%;
-	background-color: rgba(var(--swatch-menubg-color), 1);
-	background-repeat: no-repeat;
-	background-attachment: local, local, scroll, fixed;
-	background-size: 100% 3rem, 100% 3rem, 100% 1.5rem, var(--sidebar-width-on-desktop) 1.5rem;
-	background-position: top center, bottom center, top center, bottom -0.25rem left;
-	transition: 
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+	flex-direction: column;
+	flex-shrink: 0;
+	width: 15.75rem;
+	width: calc((0.9375rem * (14 / 15)) * 19);
+	width: var(--sidebar-width-on-desktop);
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		scrollbar-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: none;
+	border-color: rgba(var(--swatch-tertiary-color), 0);
+	background-attachment: local, local, scroll, fixed;
+	background-color: rgba(var(--swatch-menubg-color), 1);
+	background-image:
+		/* Shadow covers */ linear-gradient(
+			rgba(var(--swatch-menubg-color), 1) 30%,
+			rgba(var(--swatch-menubg-color), 0)
+		),
+		linear-gradient(
+				rgba(var(--swatch-menubg-color), 0),
+				rgba(var(--swatch-menubg-color), 1) 70%
+			)
+			0 100%,
+		/* Shadows */
+			radial-gradient(
+				farthest-side at 50% 0,
+				rgba(var(--swatch-primary-darkest), 0.5),
+				rgba(var(--swatch-menubg-black-color), 0)
+			),
+		radial-gradient(
+				farthest-side at 50% 100%,
+				rgba(var(--swatch-primary-darkest), 0.5),
+				rgba(var(--swatch-menubg-black-color), 0)
+			)
+			0 100%;
+	background-repeat: no-repeat;
+	background-position: top center, bottom center, top center,
+		bottom -0.25rem left;
+	background-size: 100% 3rem, 100% 3rem, 100% 1.5rem,
+		var(--sidebar-width-on-desktop) 1.5rem;
+	font-family: var(--UI-font, var(--header-font));
+	direction: rtl;
+	scrollbar-width: thin;
+	overscroll-behavior: contain;
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0) /* Thumb */
+		rgba(var(--swatch-tertiary-color), 0); /* Track */
+	justify-self: start;
 }
 
 /* Hover Scrollbar Behavior */
 
 #side-bar:hover,
 #side-bar:active {
-	scrollbar-color: 
-		rgba(var(--swatch-primary-darker), 0.4) 	/* Thumb */ 
-		rgba(var(--swatch-primary-darker), 0.05); 	/* Track */
+	scrollbar-color: rgba(var(--swatch-primary-darker), 0.4) /* Thumb */
+		rgba(var(--swatch-primary-darker), 0.05); /* Track */
 	border-color: rgba(var(--swatch-primary-darker), 0.4);
 }
 
 #side-bar:focus-within {
-	scrollbar-color: 
-		rgba(var(--swatch-primary-darker), 0.4) 	/* Thumb */ 
-		rgba(var(--swatch-primary-darker), 0.05); 	/* Track */
+	scrollbar-color: rgba(var(--swatch-primary-darker), 0.4) /* Thumb */
+		rgba(var(--swatch-primary-darker), 0.05); /* Track */
 	border-color: rgba(var(--swatch-primary-darker), 0.4);
 }
 
@@ -90,9 +96,9 @@
 #side-bar::-webkit-scrollbar-thumb,
 #side-bar::-webkit-scrollbar-corner {
 	width: 0.5rem;
-	border-color: inherit;
-	border-right-style: inset;
 	border-right-width: calc(100vw + 100vh);
+	border-right-style: inset;
+	border-color: inherit;
 	background-color: rgba(var(--swatch-menubg-color), 0);
 }
 
@@ -115,34 +121,34 @@
 
 #side-bar div[style*="#e5e5ff"],
 #side-bar .side-block.media {
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5rem !important;
 	background-color: rgba(140, 20, 25, 0.25) !important;
 	background-color: rgba(var(--swatch-primary-darker), 0.125) !important;
-	padding: 0.5rem !important;
-	margin: 0.5rem 0.5rem 0 0;
 }
 
 /* Social Media Icons */
 #side-bar .side-block.media a {
+	position: relative;
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
 	mask-image: var(--social-logo-mask);
 	mask-repeat: no-repeat;
 	mask-size: contain;
 	mask-position: center center;
-	background-color: rgb(var(--social-color));
-	position: relative;
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #side-bar .side-block.media a::before {
 	content: " ";
-	width: 125%;
-	height: 100%;
 	position: absolute;
 	top: 0;
+	width: 125%;
+	height: 100%;
+	transform: translateX(calc(-125%));
+	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
-	transform: translateX(calc(-125%));	
 	pointer-events: none;
-	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
-	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	clip-path: polygon(0% 0%, 100% 0px, 90% 100%, 0px 100%);
 }
 
 #side-bar .side-block.media a:hover::before,
@@ -172,12 +178,14 @@
 #side-bar .side-block.media a[href*="instagram"] {
 	--social-logo-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Instagram_Logo' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2215 2080' overflow='visible' xml:space='preserve'%3E%3Cg%3E%3Cellipse transform='matrix(0.7071 -0.7071 0.7071 0.7071 -435.692 1097.9515)' cx='1107.5' cy='1074.9' rx='204.3' ry='204.3'/%3E%3Cpath d='M1585.3,713.4c-11.1-28.6-24.4-49-45.8-70.5c-21.4-21.4-41.9-34.7-70.5-45.8c-21.6-8.4-54.1-18.4-113.8-21.1 c-64.6-2.9-84-3.6-247.7-3.6s-183,0.6-247.7,3.6c-59.8,2.7-92.2,12.7-113.8,21.1c-28.6,11.1-49,24.4-70.5,45.8 c-21.4,21.4-34.7,41.9-45.8,70.5c-8.4,21.6-18.4,54.1-21.1,113.8c-2.9,64.6-3.6,84-3.6,247.7s0.6,183,3.6,247.7 c2.7,59.8,12.7,92.2,21.1,113.8c11.1,28.6,24.4,49,45.8,70.5c21.4,21.4,41.9,34.7,70.5,45.8c21.6,8.4,54,18.4,113.8,21.1 c64.6,2.9,84,3.6,247.7,3.6s183-0.6,247.7-3.6c59.8-2.7,92.2-12.7,113.8-21.1c28.6-11.1,49-24.4,70.5-45.8 c21.4-21.4,34.7-41.9,45.8-70.5c8.4-21.6,18.4-54.1,21.1-113.8c2.9-64.6,3.6-84,3.6-247.7s-0.6-183-3.6-247.7 C1603.7,767.5,1593.7,735,1585.3,713.4z M1107.5,1389.6c-173.8,0-314.7-140.9-314.7-314.7s140.9-314.7,314.7-314.7 s314.7,140.9,314.7,314.7S1281.3,1389.6,1107.5,1389.6z M1434.7,821.3c-40.6,0-73.5-32.9-73.5-73.5s32.9-73.5,73.5-73.5 c40.6,0,73.5,32.9,73.5,73.5S1475.3,821.3,1434.7,821.3z'/%3E%3Cpath d='M2090,1212.1c4.9-40,7.5-80.8,7.5-122.1c0-410-249.3-761.8-604.6-912.1L1434.5,0h-654l-58.4,177.9 C366.8,328.2,117.5,680,117.5,1090c0,41.4,2.6,82.1,7.5,122.1L0,1351.8l327,566.4l183.5-38.4c166,125.7,372.8,200.2,597,200.2 s431-74.5,597-200.2l183.5,38.4l327-566.4L2090,1212.1z M1716.7,1327.6c-3,65.2-13.3,109.8-28.5,148.8 c-15.7,40.3-36.6,74.5-70.7,108.6c-34.1,34.1-68.3,55-108.6,70.7c-39,15.2-83.5,25.5-148.8,28.5c-65.4,3-86.2,3.7-252.7,3.7 s-187.3-0.7-252.7-3.7c-65.2-3-109.8-13.3-148.8-28.5c-40.3-15.7-74.5-36.6-108.6-70.7c-34.1-34.1-55-68.3-70.7-108.6 c-15.2-39-25.5-83.5-28.5-148.8c-3-65.4-3.7-86.2-3.7-252.7c0-166.5,0.7-187.3,3.7-252.7c3-65.2,13.3-109.8,28.5-148.8 c15.7-40.3,36.6-74.5,70.7-108.6c34.1-34.1,68.3-55,108.6-70.7c39-15.2,83.5-25.5,148.8-28.5c65.4-3,86.2-3.7,252.7-3.7 s187.3,0.7,252.7,3.7c65.2,3,109.8,13.3,148.8,28.5c40.3,15.7,74.5,36.6,108.6,70.7c34.1,34.1,55,68.3,70.7,108.6 c15.2,39,25.5,83.5,28.5,148.8c3,65.4,3.7,86.2,3.7,252.7C1720.4,1241.4,1719.7,1262.2,1716.7,1327.6z'/%3E%3C/g%3E%3C/svg%3E");
 	--social-color: 240, 148, 51;
-	background-image: 
-		linear-gradient(45deg, 
-			rgb(240, 148, 51) 0%,#e6683c 25%,
-			rgb(220, 39, 67) 50%,
-			rgb(204, 35, 102) 75%,
-			rgb(188, 24, 136) 100%);
+	background-image: linear-gradient(
+		45deg,
+		rgb(240, 148, 51) 0%,
+		#e6683c 25%,
+		rgb(220, 39, 67) 50%,
+		rgb(204, 35, 102) 75%,
+		rgb(188, 24, 136) 100%
+	);
 	background-size: contain;
 }
 
@@ -214,14 +222,14 @@
 
 #side-bar div[style*="center"],
 #side-bar div[style*="center"] > div {
-	width: 100%;
-	justify-content: space-evenly;
 	grid-auto-flow: column;
+	justify-content: space-evenly;
+	width: 100%;
 }
 
 #side-bar .side-block {
-	border: 0;
 	margin: 0.5rem 0.5rem 0 0;
+	border: 0;
 	background: rgb(0, 0, 0, 0);
 	direction: ltr;
 }
@@ -236,24 +244,24 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
-	margin: 0 0 0.25rem 0;
 	min-height: 1.5rem;
+	margin: 0 0 0.25rem 0;
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--swatch-important-text));
 }
 
 #side-bar .heading p,
 #side-bar .collapsible-block .collapsible-block-link {
-	--wght: calc(var(--ui-wght) + 300);	
+	--wght: calc(var(--ui-wght) + 300);
+	margin: 0;
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-primary-darker));
-	margin: 0;
 	font-family: var(--title-font);
-	text-transform: uppercase;
 	font-size: calc(0.875rem * 0.9);
-	font-size: calc((var(--base-font-size) * (14/15)) * 0.9);
+	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.9);
 	letter-spacing: 0.016em;
 	line-height: 1.15;
 	text-indent: 0.25rem;
+	text-transform: uppercase;
 }
 
 #side-bar .heading p {
@@ -263,37 +271,36 @@
 /* Collapsibles in the sidebar */
 
 #side-bar div.collapsible-block {
-	width: 100%;
-	flex-basis: 100%;
 	position: relative;
+	flex-basis: 100%;
+	width: 100%;
 }
-	
+
 #side-bar div.collapsible-block div[class*="folded"] {
 	position: relative;
 	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
-}	
+}
 
 #side-bar div.collapsible-block a.collapsible-block-link,
 #side-bar .side-block > .collapsible-block a.collapsible-block-link {
 	display: flex;
-	flex-grow: 2;
-	justify-content: flex-start;
-	align-items: center;
-	width: 100%;
-	height: 100%;
+	position: absolute;
 	top: 0;
 	left: 0;
+	flex-grow: 2;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-text-secondary-color));
-	position: absolute;
-	transition:	
-		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		font-weight 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 #side-bar a.collapsible-block-link:hover,
 #side-bar a.collapsible-block-link:active {
-	--wght: var(--ui-hvr-wght);	
+	--wght: var(--ui-hvr-wght);
 	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--swatch-primary));
 	text-decoration: none;
@@ -304,10 +311,10 @@
 #side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
 	content: "";
 	position: absolute;
-	height: 100%;
-	width: 2rem;
 	top: 0;
 	right: 0;
+	width: 2rem;
+	height: 100%;
 	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -318,15 +325,19 @@
 }
 
 #side-bar .collapsible-block-unfolded-link a.collapsible-block-link::after,
-#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
+#side-bar
+	.side-block
+	> .collapsible-block
+	.collapsible-block-unfolded-link
+	a.collapsible-block-link::after {
 	transform: rotate(180deg);
 }
 
 /* create a gap next to the collapsible contents */
 #side-bar .collapsible-block-content {
+	box-sizing: border-box;
 	border-right: 2rem solid rgba(12, 12, 12, 0.08);
 	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
-	box-sizing: border-box;
 }
 
 /* hide the last border within the collapsible */
@@ -344,7 +355,9 @@
 	color: rgb(var(--swatch-menutxt-light-color));
 }
 
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link:focus-within {
+#side-bar
+	.collapsible-block-unfolded-link
+	.collapsible-block-link:focus-within {
 	color: rgb(var(--swatch-menutxt-light-color));
 }
 
@@ -359,17 +372,18 @@
 #side-bar div.menu-item,
 #side-bar div.menu-item > p {
 	display: flex;
-	flex-shrink: 0;
 	flex-basis: 100%;
 	flex-flow: row wrap;
-	justify-content: flex-start;
+	flex-shrink: 0;
 	align-items: center;
-	margin: 0;
-	padding: 0;
-	border-bottom: .125rem solid hsla(0, 0%, 5%, .08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), .08);
+	justify-content: flex-start;
 	min-height: 1.375rem;
 	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	margin: 0;
+	padding: 0;
+	border-bottom: 0.125rem solid hsla(0, 0%, 5%, 0.08);
+	border-bottom: var(--sidebar-internal-border-thickness) solid
+		rgba(var(--swatch-border-color), 0.08);
 	font-size: 0;
 }
 
@@ -384,18 +398,18 @@
 }
 
 #side-bar div.menu-item span:first-of-type {
-	padding: 0 0 0 calc((var(--base-font-size) * (14/15)) * 1.6);
+	padding: 0 0 0 calc((var(--base-font-size) * (14 / 15)) * 1.6);
 }
 
 /* Sub-Text Styling for select Int Branches */
 #side-bar div.menu-item .sub-text {
-	font-size: calc((var(--base-font-size) * (14/15)) * 0.7);
 	display: inline-flex;
-	color: rgba(var(--swatch-primary), 1);
-	text-align: left;
-	padding-left: 1em;
-	padding-right: 3em;
 	min-width: 35%;
+	padding-right: 3em;
+	padding-left: 1em;
+	color: rgba(var(--swatch-primary), 1);
+	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.7);
+	text-align: left;
 }
 
 #side-bar div.menu-item a {
@@ -411,41 +425,40 @@
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
-	transition: background-color 80ms cubic-bezier(.4, 0, .2, 1);
+	height: 1.375rem;
+	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
+	padding: 0 0.6em;
+	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-clip: padding-box;
 	background-color: hsla(0, 0%, 5%, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
-	padding: 0 .6em;
-	height: 1.375rem;
-	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	color: rgb(var(--sidebar-links-text));
-	font-size: .875rem;
-	font-size: calc(var(--base-font-size)*.93333);
+	font-size: 0.875rem;
+	font-size: calc(var(--base-font-size) * 0.93333);
+	letter-spacing: 0.04em;
 	line-height: 1.375rem;
 	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
-	letter-spacing: .04em;
-	transition:	
-		background-color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		color 500ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		font-weight 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Menu Item Hover Color Bar */
 #side-bar div.menu-item a::before {
 	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
 	width: 125%;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	background-color: rgb(var(--bright-accent));
+	transform: translateX(-125%);
+	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	z-index: -1;
-	transform: translateX(-125%);	
+	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
-	clip-path: polygon(0.00% 0.00%, 100% 0px, 90% 100%, 0px 100%);
-	transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	clip-path: polygon(0% 0%, 100% 0px, 90% 100%, 0px 100%);
 }
 
 #side-bar div.menu-item a:hover::before,
@@ -465,29 +478,28 @@
 #side-bar div.menu-item a:hover,
 #side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--swatch-text-secondary-color));
 	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
+	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
 }
 
 #side-bar div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--swatch-text-secondary-color));
 	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
+	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
 }
-
 
 #side-bar div.menu-item a:only-child {
 	flex-grow: 1;
 }
 
 #side-bar div.menu-item a:first-of-type {
-	padding: 0 0.875rem;
-	padding: 0 calc(var(--base-font-size) * (14/15));
 	justify-content: flex-start;
+	padding: 0 0.875rem;
+	padding: 0 calc(var(--base-font-size) * (14 / 15));
 }
 
 #side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
@@ -500,16 +512,16 @@
 	cursor: default;
 }
 
-#side-bar div.menu-item> :last-child {
+#side-bar div.menu-item > :last-child {
 	flex-grow: 2;
 }
 
 /* SCP Series Specific */
 
-#side-bar div.menu-item a[href*="scp-series"] {	
-	padding: 0 .5em;
-	width: auto;
+#side-bar div.menu-item a[href*="scp-series"] {
 	justify-content: center;
+	width: auto;
+	padding: 0 0.5em;
 	white-space: nowrap;
 }
 
@@ -523,52 +535,69 @@
 }
 
 #side-bar ul {
-	list-style-type: none;
 	padding: 0 0.25rem;
+	list-style-type: none;
 }
 
 /* Sigma Overwrite Specific Styles */
 
 #side-bar > div[style="background-color: #e5e5ff;"] {
-	border: 0;
-	margin-top: 1rem;
-	margin-bottom: 0;
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
+	margin-top: 1rem;
+	margin-bottom: 0;
+	border: 0;
 }
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
-	height: auto;
 	display: flex;
-	padding: 0;
-	width: 100%;
-	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 0.125rem;
+	grid-template-columns: repeat(6, 1fr);
+	width: 100%;
+	height: auto;
+	padding: 0;
 	border-left: none !important;
 }
 
 #side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: auto;
 	margin: 0;
 	padding: 0.25rem 0;
 	border: none;
 	border-radius: initial;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:hover::before,
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:active::before {
+#side-bar
+	> div[style="background-color: #e5e5ff;"]
+	> div.menu-item
+	> div
+	> a:hover::before,
+#side-bar
+	> div[style="background-color: #e5e5ff;"]
+	> div.menu-item
+	> div
+	> a:active::before {
 	transform: translateX(0rem);
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:focus-within::before {
+#side-bar
+	> div[style="background-color: #e5e5ff;"]
+	> div.menu-item
+	> div
+	> a:focus-within::before {
 	transform: translateX(0rem);
 }
 
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a>img {
+#side-bar
+	> div[style="background-color: #e5e5ff;"]
+	> div.menu-item
+	> div
+	> a
+	> img {
 	display: block;
 }
 
@@ -581,16 +610,18 @@
 /* Pleasing Nico by making the two Random buttons the same width */
 a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
-	min-width: calc(0.875rem * 2.5);
-	min-width: calc((var(--base-font-size) * (14/15)) * 6.5);
 	justify-content: flex-start;
+	min-width: calc(0.875rem * 2.5);
+	min-width: calc((var(--base-font-size) * (14 / 15)) * 6.5);
 }
 
-#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"] {
+#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]
+{
 	justify-content: center;
 }
 
-#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]::before {
+#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]::before
+{
 	width: 200%;
 }
 
@@ -608,23 +639,51 @@ a[href*="/most-recently-edited"] {
 }
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-text-secondary-color));
+	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgba(100, 3, 15, 0);
 	background-color: rgba(var(--swatch-primary-darkest), 0);
-	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-secondary-color));
 	line-height: 1.85rem;
 }
 
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:active,
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
+#___gcse_0
+	> div
+	> form
+	> table
+	> tbody
+	> tr
+	> td.gsc-search-button
+	> button:hover,
+#___gcse_0
+	> div
+	> form
+	> table
+	> tbody
+	> tr
+	> td.gsc-search-button
+	> button:active,
+#___gcse_0
+	> div
+	> form
+	> table
+	> tbody
+	> tr
+	> td.gsc-search-button
+	> button:focus {
 	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
 }
 
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus-within {
+#___gcse_0
+	> div
+	> form
+	> table
+	> tbody
+	> tr
+	> td.gsc-search-button
+	> button:focus-within {
 	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
@@ -633,43 +692,43 @@ a[href*="/most-recently-edited"] {
 /* Interwiki Styling specifically not targetting CN Branch */
 html:not(:lang(cn)) div.scpnet-interwiki-wrapper div.list-pages-item {
 	display: flex;
-	width: 100%;
 	align-items: flex-end;
 	justify-content: flex-end;
+	width: 100%;
 }
 
 html:not(:lang(cn)) div.scpnet-interwiki-wrapper p {
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
-	position: relative;
 	margin-bottom: 2rem;
+	overflow: hidden;
 }
 
 html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
-	margin: -0.75rem auto 0;
 	width: 13.625rem;
 	height: fit-content !important;
+	margin: -0.75rem auto 0;
 	overflow: hidden;
 	filter: grayscale(1);
 }
-	
+
 html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	content: " ";
-	pointer-events: none;
-	width: 100%;
-	height: 100%;
 	position: absolute;
+	z-index: 9999;
 	top: 0;
 	left: 0;
-	box-shadow: inset 0 0 0 0.5rem  rgb(var(--swatch-menubg-color));;
-	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 0 0 0.5rem rgb(var(--swatch-menubg-color));
+	pointer-events: none;
 }
 
 /* ===COMMON THEME COMPATABILITY=== */
 #side-bar div.menu-item.expandable {
-	max-width: calc(100% - (var(--base-font-size) * (14/15)));
+	max-width: calc(100% - (var(--base-font-size) * (14 / 15)));
 }
 
 #side-bar div.menu-item.expandable + .collapsible-block {
@@ -677,50 +736,81 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 }
 
 #side-bar .menu-item.expandable + .collapsible-block .collapsible-block-folded,
-#side-bar .menu-item.expandable + .collapsible-block .collapsible-block-unfolded-link {
+#side-bar
+	.menu-item.expandable
+	+ .collapsible-block
+	.collapsible-block-unfolded-link {
 	min-height: 0;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link {
-	padding-right: 0;
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	a.collapsible-block-link {
+	display: flex;
+	top: calc((1.5rem - var(--sidebar-internal-border-thickness)) * -1);
 	justify-content: flex-end;
 	height: calc(1.5rem - (var(--sidebar-internal-border-thickness) * 5));
-	top: calc((1.5rem - var(--sidebar-internal-border-thickness)) * -1);
-	display: flex;
+	padding-right: 0;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::before {
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	.collapsible-block-link::before {
 	display: flex;
-	justify-content: center;
-	align-content: center;
 	position: absolute;
 	top: 0;
 	right: 0;
+	align-content: center;
+	justify-content: center;
 	height: 100%;
 	text-shadow: none;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::after {
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	.collapsible-block-link::after {
 	display: none;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:hover,
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:active {
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	a.collapsible-block-link:hover,
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	a.collapsible-block-link:active {
 	background-color: transparent;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:focus-within {
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	a.collapsible-block-link:focus-within {
 	background-color: transparent;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item p {
-	padding: 0;
-	font-size: calc(var(--base-font-size) * 0.7);
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	.collapsible-block-content
+	.menu-item
+	p {
 	height: calc(1.25rem - var(--sidebar-internal-border-thickness));
 	min-height: calc(1.25rem - var(--sidebar-internal-border-thickness));
+	padding: 0;
+	font-size: calc(var(--base-font-size) * 0.7);
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
+#side-bar
+	div.menu-item.expandable
+	+ .collapsible-block
+	.collapsible-block-content
+	.menu-item
+	a {
 	padding: 0;
 	font-size: calc(var(--base-font-size) * 0.7);
 }
@@ -730,14 +820,14 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	#side-bar {
 		display: block;
 		position: fixed;
+		z-index: 10;
 		top: 0;
 		left: -16.625rem;
 		left: calc(var(--sidebar-width-on-mobile) * -1);
-		height: 100%;
 		width: var(--sidebar-width-on-mobile) !important;
 		max-width: calc(80vw + (var(--base-font-size) * 0.5)) !important;
+		height: 100%;
 		overflow-y: auto;
-		z-index: 10;
 		transition: left 0.5s ease-in-out 0.1s;
 		transition: left var(--sidebar-transition-timing);
 	}
@@ -757,7 +847,7 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	}
 
 	#side-bar div.menu-item a:first-of-type {
-		padding: 0 calc((var(--base-font-size) * (14/15)) * 0.5);
+		padding: 0 calc((var(--base-font-size) * (14 / 15)) * 0.5);
 	}
 
 	#side-bar .heading p,
@@ -772,34 +862,35 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	#skrollr-body:target .close-menu,
 	#side-bar .close-menu {
 		display: block;
+		visibility: hidden;
 		position: fixed;
-		width: 100%;
-		height: 100%;
+		z-index: -1;
 		top: 0;
 		left: 0;
+		width: 100%;
+		height: 100%;
 		margin-left: var(--scrollbar-width);
 		padding-right: var(--sidebar-width-on-mobile);
-		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
-		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
-		z-index: -1;
-		visibility: hidden;
-		opacity: 0;
-		pointer-events: none;
 		transition: all 0.5s ease-in-out 0.1s;
 		transition: all var(--sidebar-transition-timing);
+		opacity: 0;
+		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem
+			0.0625rem repeat;
+		pointer-events: none;
 	}
 
 	#skrollr-body:target #side-bar,
 	#side-bar:target {
 		--box-shadow: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 		display: block;
-		left: 0;
-		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
-		box-shadow: inset 0 0 0 -0.0625rem var(--box-shadow);
 		z-index: 10;
+		left: 0;
+		left: 0;
 		margin: 0;
 		overflow-x: hidden;
-		left: 0;
+		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
+		box-shadow: inset 0 0 0 -0.0625rem var(--box-shadow);
 	}
 
 	#side-bar::-webkit-scrollbar {
@@ -814,19 +905,19 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 
 	#skrollr-body:target .close-menu,
 	#side-bar:target .close-menu {
-		width: calc(100% - var(--sidebar-width-on-mobile));
-		height: 100%;
-		margin-left: var(--sidebar-width-on-mobile);
-		padding-right: 0;
-		visibility: visible;
-		pointer-events: auto;
-		opacity: 1;
 		display: block;
+		visibility: visible;
 		position: fixed;
 		z-index: -1;
 		top: 0;
 		left: 0;
+		width: calc(100% - var(--sidebar-width-on-mobile));
+		height: 100%;
+		margin-left: var(--sidebar-width-on-mobile);
+		padding-right: 0;
+		opacity: 1;
 		background: rgba(12, 12, 12, 0.3) 1px 1px repeat;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 1px 1px repeat;
+		pointer-events: auto;
 	}
 }
