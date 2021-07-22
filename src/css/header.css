@@ -328,6 +328,7 @@ div#container-wrap {
 
 #search-top-box form[id="search-top-box-form"] input[type="submit"] {
 	position: relative;
+	font-size: 0;
 	right: 0;
 	width: 2em;
 	height: 2em;
@@ -1148,7 +1149,7 @@ div.mobile-top-bar {
 		transform: translate(-50%, 0);
 	}
 
-	#header div[class*="top-bar"] > ul > li:last-of-type > ul {
+	#header div[class*="top-bar"]>ul:first-of-type>li:last-of-type>ul {
 		right: 0;
 		left: 50%;
 	}
