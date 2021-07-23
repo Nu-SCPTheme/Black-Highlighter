@@ -226,10 +226,9 @@ span.printuser a:first-of-type {
 		"breadcrumbs breadcrumbs breadcrumbs breadcrumbs breadcrumbs breadcrumbs"
 		"page-content page-content page-content page-content page-content page-content"
 		"page-info-break page-info-break page-info-break page-info-break page-info-break page-info-break"
-		"page-tags page-tags page-tags page-tags page-tags page-tags"
-		"page-tags page-tags page-tags page-tags page-tags page-tags"
 		". . pwatch pwatch pwatch pwatch"
 		". . pinfo pinfo pinfo pinfo"
+		"page-tags page-tags page-tags page-tags page-tags page-tags"
 		"options-1 options-1 options-1 options-1 options-1 options-1"
 		"options-2 options-2 options-2 options-2 options-2 options-2"
 		"pbottom pbottom pbottom pbottom pbottom pbottom"
@@ -766,15 +765,242 @@ form#edit-page-form {
 	background-color: rgba(170, 170, 170, 0.25);
 	background-color: rgba(var(--swatch-tertiary-color), 0.25);
 }
+form#edit-page-form,
+form#edit-page-form * {
+	box-sizing: border-box;
+}
 
 .wd-editor-toolbar-panel {
-	display: flex;
-	box-sizing: content-box;
-	flex-direction: column;
+	display: grid;
+	grid-auto-flow: row;
+	grid-auto-rows: 2em;
+	grid-template-columns: repeat(auto-fit, 2em);
 	align-items: center;
+	justify-content: center;
 	height: 100%;
 	margin: 0;
 	padding: 0.5rem 0;
+}
+
+.wd-editor-toolbar-panel div {
+	display: contents;
+	height: calc(var(--base-font-size) * 2);
+}
+
+.wd-editor-toolbar-panel li.hseparator {
+	display: none;
+}
+
+.wd-editor-toolbar-panel ul {
+	display: contents;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a,
+.wd-editor-toolbar-panel ul li,
+.wd-editor-toolbar-panel ul li ul,
+.wd-editor-toolbar-panel ul li:hover ul, 
+.wd-editor-toolbar-panel ul li.sfhover ul {
+	margin: 0;
+	border: none;
+	background-color: rgb(var(--swatch-secondary-color));
+	background-image: initial;
+	background-position: initial;
+	font-size: var(--base-font-size);
+}
+
+.wd-editor-toolbar-panel ul li {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-rows: 2em;
+	grid-template-columns: repeat(auto-fit, 2em);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a {
+	position: relative;
+	width: 2em;
+	height: 2em;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(var(--swatch-menutxt-general-color));
+	mask-image: var(--edit-menu-mask);
+	mask-size: 1.5em;
+	mask-position: center center;
+	mask-repeat: no-repeat;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h1::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H1-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M27.4 160V40h14.5v53.4h64V40h14.5v120h-14.5v-53.7h-64V160H27.4zM172.6 40v120h-14.5V61.1h-.9c-.5 1.1-2 2.3-4.2 3.7-2.3 1.4-5.2 2.6-8.8 3.6-3.6 1-7.7 1.6-12.3 1.6V57.8c4.6 0 8.7-.8 12.1-2.5 3.4-1.7 6.2-3.7 8.5-5.9 2.3-2.3 4-4.3 5.2-6.2 1.2-1.8 1.9-2.9 2.1-3.2h12.8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h2::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H2-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M10.2 160.8v-120h14.5v53.4h64V40.8h14.5v120H88.7v-53.7h-64v53.7H10.2zm106.8 0v-10.5l39.6-43.4c4.6-5.1 8.5-9.5 11.5-13.3 3-3.8 5.2-7.3 6.7-10.7s2.2-6.8 2.2-10.5c0-4.2-1-7.9-3-11-2-3.1-4.8-5.5-8.2-7.1-3.5-1.7-7.4-2.5-11.7-2.5-4.6 0-8.6.9-12 2.8-3.4 1.9-6.1 4.5-7.9 7.9s-2.8 7.4-2.8 12h-13.8c0-7 1.6-13.2 4.9-18.5 3.2-5.3 7.7-9.5 13.3-12.4 5.6-3 11.9-4.5 18.9-4.5 7 0 13.3 1.5 18.7 4.5 5.4 3 9.7 7 12.8 12s4.6 10.6 4.6 16.8c0 4.4-.8 8.7-2.4 12.9-1.6 4.2-4.3 8.9-8.2 14-3.9 5.1-9.3 11.4-16.1 18.8l-27 28.8v.9h55.8v12.9H117z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h3::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H3-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M6.1 160V40h14.5v53.4h64V40h14.5v120H84.6v-53.7h-64V160H6.1zm147.3 1.6c-7.7 0-14.6-1.3-20.7-4s-10.8-6.4-14.4-11.1c-3.5-4.7-5.5-10.3-5.8-16.6h14.8c.3 3.9 1.6 7.2 4 10 2.3 2.8 5.4 5 9.2 6.5 3.8 1.5 8 2.3 12.6 2.3 5.2 0 9.7-.9 13.7-2.7 4-1.8 7.1-4.3 9.4-7.5 2.3-3.2 3.4-6.9 3.4-11.1 0-4.4-1.1-8.3-3.3-11.7-2.2-3.4-5.4-6-9.6-7.9-4.2-1.9-9.4-2.9-15.5-2.9h-9.6V92h9.6c4.8 0 9-.9 12.6-2.6 3.6-1.7 6.4-4.1 8.5-7.3 2.1-3.1 3.1-6.8 3.1-11 0-4.1-.9-7.6-2.7-10.6-1.8-3-4.3-5.4-7.6-7-3.3-1.7-7.1-2.5-11.5-2.5-4.1 0-8 .8-11.7 2.3-3.7 1.5-6.6 3.7-8.9 6.5-2.3 2.8-3.6 6.2-3.8 10.2h-14.1c.2-6.3 2.1-11.8 5.7-16.6 3.6-4.7 8.2-8.4 14-11.1 5.8-2.7 12.1-4 19-4 7.4 0 13.8 1.5 19.1 4.5 5.3 3 9.4 6.9 12.2 11.8 2.9 4.9 4.3 10.2 4.3 15.8 0 6.8-1.8 12.5-5.3 17.3-3.5 4.8-8.3 8.1-14.4 9.9v.9c7.6 1.3 13.5 4.5 17.8 9.6 4.3 5.2 6.4 11.6 6.4 19.2 0 6.5-1.8 12.4-5.3 17.5-3.5 5.2-8.3 9.2-14.4 12.2s-13 4.6-20.8 4.6z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h4::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H4-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M83.2 93.4h-64V40H4.6v120h14.6v-53.7h64V160h14.5V40H83.2zm112.2 29.1H179V40h-17.7l-52.7 83.4v12h56.5V160h13.8v-24.6h16.4v-12.9zm-71.1-.9 39.8-63h.9v64h-40.8v-1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h5::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H5-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M6.4 159.2v-120h14.5v53.4h64V39.2h14.5v120H84.9v-53.7h-64v53.7H6.4zm147.6 1.6c-6.9 0-13.1-1.4-18.6-4.1s-9.9-6.5-13.2-11.2c-3.3-4.8-5.1-10.2-5.4-16.3h14.1c.5 5.4 3 9.9 7.4 13.4s9.7 5.3 15.8 5.3c4.9 0 9.3-1.2 13.2-3.5 3.8-2.3 6.9-5.5 9.1-9.5s3.3-8.6 3.3-13.7c0-5.2-1.1-9.9-3.4-14s-5.4-7.4-9.4-9.8c-4-2.4-8.5-3.6-13.7-3.6-3.7 0-7.4.5-11.3 1.7-3.9 1.2-7.1 2.6-9.6 4.4l-13.6-1.6 7.3-59.1h62.3v12.9h-50.2l-4.2 35.4h.7c2.5-2 5.5-3.6 9.3-4.9s7.6-1.9 11.6-1.9c7.3 0 13.9 1.7 19.7 5.2 5.8 3.5 10.3 8.3 13.6 14.3 3.3 6.1 5 13 5 20.7 0 7.7-1.7 14.5-5.1 20.5-3.4 6-8.1 10.7-14.1 14.2s-13 5.2-20.6 5.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h6::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H6-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M5 160.1v-120h14.5v53.4h64V40.1H98v120H83.5v-53.7h-64v53.7H5zm149.9 1.7c-4.9-.1-9.8-1-14.8-2.8s-9.4-4.8-13.5-9.1-7.3-10.1-9.8-17.4c-2.5-7.3-3.7-16.5-3.7-27.6 0-10.7 1-20.1 3-28.4s4.9-15.2 8.7-20.9c3.8-5.7 8.4-10 13.7-12.9s11.4-4.4 18.2-4.4c6.7 0 12.7 1.3 18 4s9.5 6.4 12.9 11.2c3.3 4.8 5.5 10.3 6.4 16.6h-14.3c-1.3-5.5-3.9-10-7.7-13.6s-8.9-5.4-15.2-5.4c-9.3 0-16.6 4.1-21.9 12.2-5.3 8.1-8 19.5-8.1 34.2h.9c2.2-3.3 4.8-6.2 7.8-8.5 3-2.4 6.4-4.2 10-5.5s7.6-1.9 11.7-1.9c6.9 0 13.2 1.7 18.9 5.1 5.7 3.4 10.3 8.1 13.7 14.1 3.4 6 5.2 12.9 5.2 20.6 0 7.4-1.7 14.2-5 20.4s-8 11-14 14.6c-5.9 3.7-13 5.4-21.1 5.4zm0-12.9c4.9 0 9.3-1.2 13.3-3.7s7-5.8 9.3-9.9c2.3-4.1 3.4-8.8 3.4-13.8s-1.1-9.5-3.3-13.6c-2.2-4.1-5.2-7.3-9.1-9.8-3.8-2.4-8.2-3.6-13.2-3.6-3.7 0-7.2.7-10.4 2.2s-6 3.5-8.4 6c-2.4 2.5-4.3 5.4-5.7 8.7-1.4 3.3-2.1 6.7-2.1 10.3 0 4.8 1.1 9.2 3.4 13.4 2.2 4.1 5.3 7.5 9.3 10 4.1 2.5 8.5 3.8 13.5 3.8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bold::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Bold-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M53.9 159.4V40h47.8c8.8 0 16.1 1.3 22 3.9 5.9 2.6 10.3 6.2 13.2 10.8 3 4.6 4.4 9.9 4.4 15.9 0 4.7-.9 8.8-2.8 12.3s-4.4 6.4-7.7 8.6c-3.2 2.2-7 3.8-11.1 4.8v1.2c4.5.2 8.8 1.5 12.8 3.8 4 2.4 7.2 5.7 9.7 9.9 2.5 4.3 3.7 9.3 3.7 15.2 0 6.3-1.6 12-4.7 16.9-3.1 5-7.7 8.9-13.9 11.8-6.1 2.9-13.6 4.3-22.6 4.3H53.9zM79.2 90h18.7c3.5 0 6.5-.6 9.2-1.8 2.7-1.2 4.8-3 6.4-5.2 1.6-2.3 2.4-5 2.4-8.1 0-4.3-1.5-7.8-4.6-10.4-3.1-2.6-7.4-4-13-4H79.2V90zm0 48.8h20.6c7 0 12.2-1.4 15.4-4.1 3.2-2.7 4.8-6.3 4.8-10.8 0-3.3-.8-6.2-2.4-8.7-1.6-2.5-3.9-4.5-6.8-5.9-2.9-1.4-6.4-2.2-10.5-2.2H79.2v31.7z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-italic::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Italic-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m136.4 52.9 2.2-12.9H81.4l-2.1 12.9h21.3l-15.7 94.2H63.6L61.4 160h57.2l2.1-12.9H99.4l15.7-94.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-underline::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Underline-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M30 172.5h140v10H30zM131.5 40h14.3v78c0 8.1-1.9 15.2-5.7 21.5-3.8 6.3-9.1 11.3-16 14.9-6.9 3.6-14.9 5.4-24.2 5.4-9.2 0-17.3-1.8-24.2-5.4-6.9-3.6-12.2-8.6-16-14.9C55.9 133.2 54 126 54 118V40h14.3v76.9c0 5.8 1.3 10.9 3.8 15.3 2.5 4.5 6.1 8 10.8 10.5 4.7 2.6 10.3 3.8 16.9 3.8s12.2-1.3 16.9-3.8c4.7-2.6 8.3-6.1 10.8-10.5 2.5-4.5 3.8-9.6 3.8-15.3V40z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-strikethrough::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Strike-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M30 95h140v10H30z'/%3E%3Cpath d='M127.5 69.8c-.7-5.9-3.6-10.5-8.6-13.8s-11-5-18.3-5c-5.3 0-10 .9-13.9 2.6-4 1.7-7.1 4.1-9.3 7.1-2.2 3-3.3 6.4-3.3 10.3 0 3.2.8 5.9 2.3 8.2 1.5 2.3 3.5 4.2 5.9 5.7 2.4 1.5 5 2.7 7.6 3.7 2.7 1 5.1 1.7 7.3 2.3l12.2 3.3c3.1.8 6.6 2 10.5 3.4 3.8 1.4 7.5 3.4 11.1 5.9s6.5 5.7 8.8 9.5 3.5 8.6 3.5 14.2c0 6.5-1.7 12.3-5.1 17.6-3.4 5.2-8.3 9.4-14.8 12.5s-14.3 4.6-23.5 4.6c-8.6 0-16-1.4-22.3-4.2s-11.2-6.6-14.8-11.6c-3.6-5-5.6-10.7-6.1-17.3h15c.4 4.5 1.9 8.3 4.6 11.2 2.7 3 6.1 5.1 10.2 6.6 4.1 1.4 8.6 2.1 13.3 2.1 5.5 0 10.5-.9 14.9-2.7s7.9-4.4 10.5-7.6c2.6-3.3 3.9-7.1 3.9-11.5 0-4-1.1-7.2-3.3-9.7s-5.2-4.5-8.8-6.1-7.6-2.9-11.8-4.1l-14.8-4.2c-9.4-2.7-16.8-6.5-22.3-11.5s-8.2-11.5-8.2-19.6c0-6.7 1.8-12.6 5.5-17.6 3.7-5 8.6-8.9 14.8-11.7 6.2-2.8 13.1-4.2 20.8-4.2 7.7 0 14.6 1.4 20.6 4.1s10.8 6.5 14.3 11.3c3.5 4.8 5.4 10.2 5.6 16.2h-14z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-teletype::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Teletype-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M166 70.9c-.3-.3-.8-.5-1.3-.5h-34.4V43.9c0-.4-.1-.8-.2-1l-.6-.6c-.2-.2-.6-.2-1-.2h-9.8v28.3H67.4V43.9c0-.4-.1-.8-.2-1l-.6-.6c-.2-.2-.6-.2-1-.2h-9.8v28.3H33.5V79c0 .3 0 .6.1.8l.3.6c.2.2.4.3.6.3.2.1.5.1.8.1h20.5V126c0 6.3.8 11.5 2.4 15.6 1.6 4.1 3.9 7.4 6.8 9.8 2.9 2.4 6.3 4.1 10.1 5 3.8 1 7.9 1.5 12.2 1.5h14.6c.7 0 1.1-.2 1.4-.5.3-.3.4-.8.4-1.5v-8.8H88.3c-3.7 0-6.9-.3-9.5-1-2.6-.7-4.7-1.8-6.4-3.5-1.7-1.7-2.9-4-3.7-6.9-.8-3-1.2-6.7-1.2-11.2V80.8h51.3V126c0 6.3.8 11.5 2.4 15.6 1.6 4.1 3.9 7.4 6.8 9.8 2.9 2.4 6.3 4.1 10.1 5s7.9 1.5 12.2 1.5h14.6c.7 0 1.1-.2 1.4-.5.3-.3.4-.8.4-1.5v-8.8h-15.4c-3.7 0-6.9-.3-9.5-1-2.6-.7-4.7-1.8-6.4-3.5-1.7-1.7-2.9-4-3.7-6.9-.8-3-1.2-6.7-1.2-11.2V80.8h36.2v-8.6c-.2-.5-.4-1-.7-1.3z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-quote::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Quote-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M114.8 150v-37.2c0-4.1.2-8.6.5-13.7.3-4 .8-8 1.8-12.4.8-3.8 2.2-7.5 4-11.2 1.8-3.5 4.3-6.9 7.5-10.1 5.4-5.4 10.8-8.9 16.5-10.6 3.1-.9 6.2-1.8 9.4-2.6v10c-3.2 1.5-5.9 3.2-8.1 5.1-3.6 3.2-6.3 6.7-8.2 10.4-1.7 3.4-2.9 7.1-3.4 11v.4c-.4 3.4-.6 6.4-.6 9.1v10h20.3V150h-39.7zm-69.3 0v-37.2c0-4.1.2-8.6.5-13.7.3-4.1.9-8.1 1.8-12.2 1-4 2.3-7.8 4.2-11.5 1.6-3.3 4.1-6.6 7.4-9.7l.2-.2.2-.2c4.9-5.2 10.4-8.7 16.2-10.4 3.1-.9 6.3-1.8 9.6-2.6v10.1c-3.2 1.5-5.9 3.2-8.1 5.1-3.6 3.2-6.3 6.7-8.2 10.4-1.7 3.4-2.9 7.1-3.4 11v.4c-.4 3.4-.6 6.4-.6 9.1v10h20.3V150H45.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-superscript::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Superscript-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m33.9 39.9 30.9 49.9h.9l30.9-49.9h17.1L76 99.9l37.7 60h-17l-30.9-49h-.9l-30.9 49H16.8l38.7-60-38.7-60h17.1zm92.6 60v-9.1l27.4-24.4c2.7-2.4 5-4.6 6.9-6.5 1.8-1.9 3.2-3.8 4.2-5.6.9-1.8 1.4-3.7 1.4-5.7 0-3.5-1.3-6.3-4-8.4-2.7-2.1-6-3.1-10-3.1-4.2 0-7.6 1.1-10.2 3.4-2.6 2.2-3.9 5.2-3.9 8.8H126c0-6.7 2.5-12.1 7.4-16.1 5-4.1 11.3-6.1 19-6.1 5.2 0 9.7.9 13.6 2.8 3.9 1.9 7 4.4 9.1 7.6s3.3 6.9 3.3 10.9c0 3.2-.6 6.2-1.9 8.9-1.3 2.7-3.3 5.6-6 8.5s-6.2 6.3-10.5 10l-15.2 13.4v.5h35.9V100h-54.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-subscript::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Subscript-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m35.6 39.9 30.9 49.9h.9l30.9-49.9h17.1l-37.7 60 37.7 60h-17l-30.9-49h-.9l-30.9 49H18.4l38.7-60-38.7-60h17.2zm89.2 140.6v-9.1l27.4-24.4c2.7-2.4 5-4.6 6.9-6.5 1.8-1.9 3.2-3.8 4.2-5.6.9-1.8 1.4-3.7 1.4-5.7 0-3.5-1.3-6.3-4-8.4s-6-3.1-10-3.1c-4.2 0-7.6 1.1-10.2 3.4s-3.9 5.2-3.9 8.8h-12.2c0-6.7 2.5-12.1 7.4-16.1s11.3-6.1 19-6.1c5.2 0 9.7.9 13.6 2.8s7 4.4 9.1 7.6 3.3 6.9 3.3 10.9c0 3.2-.6 6.2-1.9 8.9-1.3 2.7-3.3 5.6-6 8.5s-6.2 6.3-10.5 10l-15.2 13.4v.5H179v10.3h-54.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-raw::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Raw-Text-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M104.3 109.8V98.5H81.1L65.6 71.4H35.8v.1l-13.1 36 10.6 3.9 10.5-28.7h8.7l-17.3 47.6H12.8v11.3h30.4l7.4-20.5 32.7 39 8.7-7.3-36.9-44 7.3-20.1 12.1 20.9v.2zm-37.2-42c3.2 1.2 6.4 1 9.5-.4 3.1-1.5 5.3-3.8 6.4-7 1.2-3.2 1-6.4-.4-9.5-1.5-3.1-3.8-5.3-7.1-6.5-3.2-1.2-6.3-1-9.5.5-3.1 1.5-5.3 3.8-6.5 7s-1 6.4.4 9.5c1.6 3 4 5.2 7.2 6.4z'/%3E%3Cpath d='M183.4 72.7C180.8 66 177 60.2 172 55.3c-5-4.9-11-8.6-18.2-11.3-7.1-2.6-15.2-4-24.3-4-9.8 0-18.5 1.4-26.2 4.3-5.6 2.1-10.6 4.9-15 8.4.6 3.1.4 6.3-.7 9.3-1.5 4.3-4.6 7.7-8.9 9.8l-.1.2c-1.9.8-3.8 1.3-5.7 1.5-.1.1-.1.3-.2.4L84 93.5h.4c.4-3.9 1.3-7.6 2.4-11.2 1.9-5.6 4.7-10.4 8.5-14.5s8.5-7.4 14.2-9.7c5.7-2.3 12.3-3.4 19.9-3.4 4.4 0 8.7.4 12.8 1.3 4.2.9 8 2.3 11.6 4.2 3.6 1.9 6.7 4.4 9.4 7.5 2.7 3.1 4.8 6.8 6.3 11.1s2.3 9.4 2.3 15.1c0 5.9-.4 10.8-1.1 14.7s-1.8 6.7-3.2 8.5c-1.4 1.9-3.2 2.8-5.3 2.8-1.5 0-2.8-.6-3.7-1.7-.9-1.2-1.4-2.8-1.4-4.9V68.7h-14.3v5.1h-.6c-.5-1.3-1.8-2.6-4-3.7-2.1-1.2-4.7-2-7.8-2.5-3.1-.5-6.3-.5-9.8 0-3 .4-6.1 1.4-9.1 2.9s-5.7 3.6-8.2 6.3c-2.4 2.7-4.4 6-5.9 9.9-.8 2.1-1.4 4.4-1.7 6.9h13.6v21.3H97.4c1.4 4 3.3 7.4 5.8 10.1 2.5 2.8 5.3 4.9 8.5 6.3 3.2 1.5 6.6 2.3 10.2 2.5 3.4.2 6.7-.1 9.7-.9 3.1-.8 5.6-2 7.8-3.4 2.1-1.5 3.6-3.1 4.3-5h.5c.3 2.1 1.1 3.9 2.2 5.5s2.8 2.7 5 3.5c2.2.8 5.1 1.1 8.6.8 4.9-.3 9.1-1.4 12.6-3.4s6.3-4.8 8.4-8.3c2.1-3.5 3.7-7.6 4.7-12.3 1-4.7 1.5-9.8 1.5-15.4.1-8.1-1.2-15.5-3.8-22.2zm-42.9 37.5c-1 2.8-2.5 4.9-4.7 6.4-2.2 1.4-5.2 2.1-8.9 2.1-4 0-7.1-.9-9.5-2.7s-4-4.1-5-7c-1-2.9-1.5-5.9-1.6-9.2 0-3.5.7-6.5 1.9-9.1 1.2-2.6 3-4.6 5.4-6 2.4-1.4 5.2-2.1 8.6-2.1 3.9 0 6.9.7 9.1 2 2.2 1.3 3.7 3.3 4.6 5.8.9 2.5 1.4 5.6 1.4 9.3.1 4.2-.4 7.7-1.3 10.5z'/%3E%3Cpath d='M149.4 142.5c-2.7.7-5.7 1.3-9.1 1.8-3.3.5-6.8.8-10.3.8-7.4 0-14-1-19.7-2.9-5.7-1.9-10.5-4.8-14.4-8.6-3.9-3.8-6.8-8.4-8.8-14-.6-1.5-1-3.2-1.4-4.8H69.5v-3.9l-1.4-2.4c.3 3.4.8 6.7 1.5 9.8L99 153.4l-.8.7c1.6.7 3.2 1.4 4.9 1.9 7.6 2.6 16.2 3.9 25.9 3.9 4.3 0 8.5-.3 12.6-.9 4.1-.6 7.8-1.4 11-2.3 3.3-1 5.9-2 7.8-3.1l-4.5-13.2c-1.7.7-3.8 1.4-6.5 2.1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-hr::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='hr-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M160 40v30H40V40m0 120v-30h120v30'/%3E%3Cpath d='M175 110H25V90h150v20z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-div::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Div-Block-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m59.5 65.5-18.8 69.7H30.3L49 65.5h10.5zm17.1 61.6c-3.3 0-6.3-.9-9-2.6-2.7-1.7-4.8-4.2-6.4-7.6-1.6-3.3-2.3-7.4-2.3-12.3 0-5 .8-9.2 2.4-12.5 1.6-3.3 3.8-5.8 6.4-7.5 2.7-1.7 5.6-2.5 8.8-2.5 2.4 0 4.5.4 6.1 1.2 1.6.8 3 1.8 4 3.1 1 1.2 1.8 2.4 2.3 3.6h.4V68.2h12.1v58.2H89.5v-7H89c-.6 1.2-1.4 2.4-2.4 3.6-1 1.2-2.4 2.2-4 2.9s-3.7 1.2-6 1.2zm3.8-9.6c2 0 3.6-.5 5-1.6s2.4-2.6 3.1-4.5c.7-1.9 1.1-4.2 1.1-6.8s-.4-4.8-1.1-6.8c-.7-1.9-1.8-3.4-3.1-4.4s-3-1.6-5-1.6-3.7.5-5 1.6-2.4 2.6-3.1 4.5c-.7 1.9-1.1 4.1-1.1 6.6s.4 4.8 1.1 6.7c.7 1.9 1.7 3.5 3.1 4.5s3 1.8 5 1.8zm35-40.4c-1.8 0-3.3-.6-4.6-1.8-1.3-1.2-1.9-2.6-1.9-4.3s.6-3.1 1.9-4.3c1.3-1.2 2.8-1.8 4.6-1.8 1.8 0 3.4.6 4.6 1.8 1.3 1.2 1.9 2.6 1.9 4.3 0 1.7-.6 3.1-1.9 4.3-1.3 1.2-2.8 1.8-4.6 1.8zm-6.1 49.3V82.7h12.1v43.6h-12.1zm60.4-43.7-15.3 43.6h-13.6l-15.3-43.6h12.8l9.1 31.2h.5l9-31.2h12.8z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-width='10' d='M42.4 160H5V40h37.4m115.2 0H195v120h-37.4'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloat::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Clear-Both-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M150 50v100H50V50h100m10-10H40v120h120V40z'/%3E%3Cpath d='m160 58.2 28 41.8-28 41.8V58.2m-.1-18.2H150v120h9.9l40.1-60-40.1-60zM40 58.2v83.6L12 100l28-41.8M50 40h-9.9L0 100l40.1 60H50V40zm77.3 102.7-70-69.9 15.4-15.5 70.1 70-15.5 15.4zm-54.7 0-15.4-15.4 70-70 15.4 15.5-70 69.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Clear-Left-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M170 50v100H70V50h100m10-10H60v120h120V40z'/%3E%3Cpath d='M60 58.2v83.6L32 100l28-41.8M70 40h-9.9L20 100l40.1 60H70V40zm77.3 102.7-70-69.9 15.4-15.5 70.1 70-15.5 15.4zm-54.7 0-15.4-15.4 70-70 15.4 15.5-70 69.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Clear-Right-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M130 50v100H30V50h100m10-10H20v120h120V40z'/%3E%3Cpath d='m140 58.2 28 41.8-28 41.8V58.2m-.1-18.2H130v120h9.9l40.1-60-40.1-60zm-32.6 102.7-70-69.9 15.4-15.5 70.1 70-15.5 15.4zm-54.7 0-15.4-15.4 70-70 15.4 15.5-70 69.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-table::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Tables-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M165 50v100H35V50h130m10-10H25v120h150V40z'/%3E%3Cpath d='M25 40h150v30H25z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M115 70v90m5-50H25'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-toc::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='TOC-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M66.5 50.5v9.1H40.2v-9.1h26.3zM46.2 40.1h12.1v40.7c0 1.1.2 2 .5 2.6s.8 1 1.4 1.3c.6.2 1.3.4 2.1.4.6 0 1.1-.1 1.7-.2s1-.2 1.3-.2l1.9 9c-.6.2-1.5.4-2.6.7-1.1.3-2.4.4-4 .5-2.9.1-5.5-.3-7.7-1.2-2.2-.9-3.9-2.3-5.1-4.1-1.2-1.9-1.8-4.2-1.8-7.1V40.1h.2zM90.1 95c-4.4 0-8.2-.9-11.4-2.8-3.2-1.9-5.7-4.5-7.4-7.9-1.7-3.4-2.6-7.3-2.6-11.8s.9-8.5 2.6-11.8c1.7-3.4 4.2-6 7.4-7.9 3.2-1.9 7-2.8 11.4-2.8s8.2.9 11.4 2.8c3.2 1.9 5.7 4.5 7.4 7.9 1.7 3.4 2.6 7.3 2.6 11.8s-.9 8.4-2.6 11.8-4.2 6-7.4 7.9c-3.1 1.9-7 2.8-11.4 2.8zm.1-9.3c2 0 3.7-.6 5-1.7s2.4-2.7 3.1-4.7 1-4.3 1-6.8-.3-4.8-1-6.8-1.7-3.6-3.1-4.7c-1.3-1.2-3-1.7-5-1.7s-3.7.6-5.1 1.7c-1.4 1.2-2.4 2.7-3.1 4.7s-1 4.3-1 6.8.3 4.8 1 6.8 1.7 3.6 3.1 4.7 3.1 1.7 5.1 1.7zm47.4 9.3c-4.5 0-8.3-1-11.5-2.9s-5.7-4.5-7.4-7.9c-1.7-3.4-2.6-7.3-2.6-11.7 0-4.5.9-8.4 2.6-11.8s4.2-6 7.4-7.9c3.2-1.9 7-2.9 11.4-2.9 3.8 0 7.1.7 10 2.1 2.9 1.4 5.1 3.3 6.8 5.8s2.6 5.4 2.8 8.8h-11.4c-.3-2.2-1.2-3.9-2.5-5.3-1.4-1.3-3.2-2-5.4-2-1.9 0-3.5.5-4.9 1.5s-2.5 2.5-3.3 4.4c-.8 1.9-1.2 4.3-1.2 7 0 2.8.4 5.2 1.2 7.1s1.9 3.4 3.3 4.5c1.4 1 3 1.5 4.9 1.5 1.4 0 2.6-.3 3.7-.9 1.1-.6 2-1.4 2.8-2.5.7-1.1 1.2-2.4 1.4-3.9h11.4c-.2 3.3-1.1 6.3-2.7 8.8s-3.8 4.5-6.7 5.9c-2.9 1.6-6.2 2.3-10.1 2.3z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-width='10' d='M70 155h80m-80-28.8h80'/%3E%3Cpath stroke='%23000000' stroke-width='2.5' d='M50.2 131.2v-10l10 5zm0 29v-10l10 5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-code::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Code-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M165 50v100H35V50h130m10-10H25v120h150V40z'/%3E%3Cpath d='M60.5 86.4c-2.9 1.3-5.6 2.5-8.3 3.7-2.7 1.2-5.3 2.4-7.7 3.5v13.5c0 .3 0 .5.1.6.1.2.2.3.4.5s.4.3.6.4c3.5 1.6 7.1 3.1 10.7 4.7 3.5 1.6 7.1 3.1 10.6 4.7s7.1 3.1 10.6 4.7v-9.5c0-.4-.1-.7-.1-.8-.1-.2-.3-.3-.7-.5-.9-.4-2.3-1-4.1-1.8-1.8-.8-3.9-1.8-6.3-2.8-2.4-1-4.8-2.1-7.3-3.2-2-.9-3.8-1.7-5.5-2.4V100c1.2-.6 2.6-1.2 4-1.8 1.9-.9 3.9-1.7 5.8-2.6 2-.8 3.8-1.7 5.6-2.5 1.8-.8 3.4-1.5 4.7-2.1s2.4-1 3.1-1.4c.3-.2.6-.4.7-.6.1-.2.1-.4.1-.8v-9.4c-2.7 1.2-5.5 2.4-8.4 3.7-2.9 1.4-5.8 2.7-8.6 3.9zm54.8 38.4c-2.5-6.3-4.9-12.7-7.3-19.1-2.5-6.4-4.9-12.8-7.4-19.1-2.5-6.4-4.9-12.7-7.4-19.1-.1-.1-.1-.3-.2-.3-.1-.1-.2-.1-.3-.1H82.5c2.8 7.2 5.6 14.4 8.4 21.7 2.8 7.3 5.6 14.5 8.4 21.8 2.8 7.3 5.6 14.5 8.3 21.8.1.3.3.5.5.6.2.1.4.2.6.2h9.8c-.6-1.3-1.1-2.7-1.6-4.1s-1.1-2.9-1.6-4.3zm40.2-30.9c-.1-.2-.2-.4-.4-.5-.2-.2-.4-.3-.6-.4-3.6-1.5-7.1-3.1-10.6-4.7s-7.1-3.1-10.6-4.7c-3.6-1.5-7.1-3.1-10.6-4.7v9.4c0 .4 0 .6.1.8.1.2.3.4.7.6.9.4 2.3 1 4.1 1.8 1.8.8 3.9 1.8 6.3 2.8 2.4 1.1 4.8 2.1 7.3 3.2 2 .9 3.8 1.7 5.6 2.4v1.6c-1.2.6-2.6 1.2-4 1.8-1.9.9-3.9 1.7-5.8 2.6-2 .9-3.8 1.7-5.6 2.5s-3.4 1.5-4.7 2.1c-1.3.6-2.4 1-3.1 1.3-.4.2-.6.4-.7.5-.1.2-.1.4-.1.8v9.5c2.7-1.2 5.5-2.5 8.4-3.8 2.9-1.2 5.7-2.5 8.6-3.8 2.8-1.3 5.6-2.5 8.3-3.8 2.7-1.2 5.3-2.4 7.7-3.5V94.3c-.2 0-.3-.2-.3-.4z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-codewiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Code-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M60.5 86.4c-2.9 1.3-5.6 2.5-8.3 3.7-2.7 1.2-5.3 2.4-7.7 3.5v13.5c0 .3 0 .5.1.6.1.2.2.3.4.5s.4.3.6.4c3.5 1.6 7.1 3.1 10.7 4.7 3.5 1.6 7.1 3.1 10.6 4.7s7.1 3.1 10.6 4.7v-9.5c0-.4-.1-.7-.1-.8-.1-.2-.3-.3-.7-.5-.9-.4-2.3-1-4.1-1.8-1.8-.8-3.9-1.8-6.3-2.8-2.4-1-4.8-2.1-7.3-3.2-2-.9-3.8-1.7-5.5-2.4V100c1.2-.6 2.6-1.2 4-1.8 1.9-.9 3.9-1.7 5.8-2.6 2-.8 3.8-1.7 5.6-2.5 1.8-.8 3.4-1.5 4.7-2.1s2.4-1 3.1-1.4c.3-.2.6-.4.7-.6.1-.2.1-.4.1-.8v-9.4c-2.7 1.2-5.5 2.4-8.4 3.7-2.9 1.4-5.8 2.7-8.6 3.9zm54.8 38.4c-2.5-6.3-4.9-12.7-7.3-19.1-2.5-6.4-4.9-12.8-7.4-19.1l-2.1-5.4-8.6-8.6-5.6-5.6h-1.8c2.8 7.2 5.6 14.4 8.4 21.7 2.8 7.3 5.6 14.5 8.4 21.8 2.8 7.3 5.6 14.5 8.3 21.8.1.3.3.5.5.6.2.1.4.2.6.2h9.8c-.6-1.3-1.1-2.7-1.6-4.1s-1.1-2.8-1.6-4.2zm12.1-14.7c-.3.1-.6.3-.9.4-1.3.6-2.4 1-3.1 1.3-.4.2-.6.4-.7.5-.1.2-.1.4-.1.8v9.5c2.7-1.2 5.5-2.5 8.4-3.8 1.2-.5 2.4-1.1 3.6-1.6l-7.2-7.1zM140.7 50H165v24.3l10 10V40h-44.3z'/%3E%3Cpath d='m169.4 152.2-4.4-4.5v2.3H35V50h63.3l10-10H25v120h150v-2.3z'/%3E%3Cpath d='m199.1 122.5-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM119.5 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-uri::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Link-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M96 100.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3z'/%3E%3Cpath d='M114.2 107.2c5.3-6.8-5-14.9-10.3-8.1l-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 2.1-2.7 4.6-4 7.2-4.3 7.9-1.6 15.3 6 13.6 13.8-.3 3.1-3.4 6.4-5.3 8.8 4 1.6 7.8 4.5 10.3 8 8.3-9.4 11-18.9 6.3-28.7-3.3-8.6-12.8-15.1-22-15.2-7.2-.6-14.6 2.1-20.4 9.5L71.1 81.6c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l3.9-4.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-uriwiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Link-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M52.5 100.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3z'/%3E%3Cpath d='m60.5 99.1-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 2.1-2.7 4.6-4 7.2-4.3 4.1-.9 8.1.8 10.7 3.8l9.3-9.3C85.8 43.1 79.4 40 73.2 40c-7.2-.6-14.6 2.1-20.4 9.5L27.7 81.7c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l4-5.1c5.1-6.8-5.2-14.9-10.4-8zm128.3 23.4-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM109.2 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelink::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Page-Link-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M96 100.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3z'/%3E%3Cpath d='M114.2 107.2c5.3-6.8-5-14.9-10.3-8.1l-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 2.1-2.7 4.6-4 7.2-4.3 7.9-1.6 15.3 6 13.6 13.8-.3 3.1-3.4 6.4-5.3 8.8 4 1.6 7.8 4.5 10.3 8 8.3-9.4 11-18.9 6.3-28.7-3.3-8.6-12.8-15.1-22-15.2-7.2-.6-14.6 2.1-20.4 9.5L71.1 81.6c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l3.9-4.9z'/%3E%3Cpath d='M35.9 150V50h70.7l10-10H25.9v120h150v-10z'/%3E%3Cpath d='m165.9 140 10-10v30h-10zm-140-70h69.9V40H25.9v30zm39.9-20h10v10h-10V50zm-19.9 0h10v10h-10V50z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Page-Link-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M35.9 150V70h28.6l10.7-13.7c6.8-8.6 16.1-13.4 26.3-13.4.8 0 1.6 0 2.4.1 1.5 0 3 .2 4.6.4l1.8-1.8L112 40H25.9v120h12.4c-1.2-2.9-2.1-6.3-2.4-10zm10-100h10v10h-10V50zm124.4 102.2-4.4-4.5v2.3h-52.2l-7.8 10h70v-2.3z'/%3E%3Cpath d='M82.8 113.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3zm117.2 8.6-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM120.4 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3Cpath d='m90.7 112.1-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 1.6-2.1 3.5-3.4 5.5-4l-1-1 11.6-11.6c-2-.6-4-.9-6-.9-7.2-.6-14.6 2.1-20.4 9.5L57.9 94.7c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l4-5.1c5.2-6.8-5.1-14.9-10.4-8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-image::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Image-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M25 40v120h150V40H25zm10 110v-20.3l24.1-24.1 21.6 21.6L130 78l35 35v37H35zm28-89c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15c0-8.2 6.7-15 15-15z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-imagewiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Image-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M175 83.9V40h-43.9zm-10 63.5v2.6H35v-20.3l24.1-24.1 21.6 21.6 32-32-22.6-22.7-7.1-7 7.1-7.1L108.5 40H25v120h150v-2.6l-10-10zM63 61c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15c0-8.2 6.7-15 15-15z'/%3E%3Cpath d='m199.4 122.5-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM119.8 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-html::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-numlist::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bullist::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-incindent::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-decindent::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-deflist::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-footnote::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-math::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-mathinline::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-eqref::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bib::before {
+	--edit-menu-mask: 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bibcite::before {
+	--edit-menu-mask: 
 }
 
 .change-textarea-size {
@@ -915,7 +1141,7 @@ button:hover,
 button:active,
 file:hover,
 file:active {
-	box-shadow: inset 20vw 0 0 0 rgb(var(--bright-accent));
+	box-shadow: inset 50vw 0 0 0 rgb(var(--bright-accent));
 }
 
 #upload-userfile:focus-within,
@@ -936,7 +1162,7 @@ div.buttons input:focus-within,
 input.button:focus-within,
 button:focus-within,
 file:focus-within {
-	box-shadow: inset 20vw 0 0 0 rgb(var(--bright-accent));
+	box-shadow: inset 50vw 0 0 0 rgb(var(--bright-accent));
 }
 
 #upload-userfile:hover::before,
@@ -947,14 +1173,14 @@ a.button:hover::before,
 a.button:active::before,
 .btn:not(.rateup):not(.ratedown):not(.cancel):hover::before,
 .btn:not(.rateup):not(.ratedown):not(.cancel):active::before {
-	transform: translateX(15%);
+	transform: translateX(0);
 }
 
 #upload-userfile:focus-within::before,
 .owindow .button-bar a:focus-within::before,
 a.button:focus-within::before,
 .btn:not(.rateup):not(.ratedown):not(.cancel):focus-within::before {
-	transform: translateX(15%);
+	transform: translateX(0);
 }
 
 div.buttons.alignleft > input {
@@ -976,49 +1202,99 @@ div.buttons.alignleft {
 	position: relative;
 	grid-area: page-tags;
 	width: 100%;
-	margin: 0.7rem 0 -0.35rem 0;
-	padding: 0;
+	margin: 0.2rem 0 0 0;
+	padding: 0.2rem 0 0 0;
+	box-shadow: 0 -0.125rem 0 0 rgb(var(--swatch-primary-darkest));
 	font-family: var(--UI-font);
 	font-size: 0.8em;
 	justify-self: flex-start;
 }
 
-#main-content .page-tags span {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    font-size: 0.9em;
+#main-content .page-tags::before {
+	--wght: var(--ui-hvr-wght);
+	content: "TAGS\0021b4";
+	position: absolute;
+	top: -2em;
+	left: 0;
+	height: 1.5em;
+	padding: 0.25em;
+	background-color: rgb(var(--swatch-primary-darkest));
+	color: rgb(var(--swatch-background));
+	font-size: 0.8em;
+	cursor: pointer;
 }
 
-#main-content .page-tags span::before {
-	content: "";
-	position: relative;
-	top: 0;
-	width: 50%;
-	height: 100%;
-	float: right;
-	pointer-events: none;
-	shape-outside: polygon(5% 100%, 4rem calc(100% - 2rem), 100% calc(100% - 2rem), 100% 100%);
+#main-content .page-tags span {
+    display: flex;
+    position: relative;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+    width: 100%;
+    height: 100%;
+	padding: 0;
+    font-size: 0.9em
 }
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
+	--hover-link-color: var(--swatch-background);
 	display: inline-flex;
-	margin: 0.15rem;
-	padding: 0.2rem 0.35rem;
+	position: relative;
+	z-index: 1;
+	margin: 0.2em -0.2em 0.2em 0.2em;
+	padding: 0.1em 0.3em 0.1em 0.3em;
+	overflow: hidden;
 	transition:
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: inset 0 -0.0625rem 0 0 rgb(var(--swatch-primary));
+	border-right: 0.0625rem dotted rgba(var(--swatch-primary-darkest),0.5);
 	line-height: 1;
+}
+
+#main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"])::before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	width: 125%;
+	height: 100%;
+	transform: translateX(-125%);
+	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	background-color: rgb(var(--swatch-primary));
+	pointer-events: none;
+	clip-path: polygon(0% 0%, 100% 0px, 90% 100%, 0px 100%);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active {
 	--wght: calc(var(--ui-hvr-wght));
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within {
+	--wght: calc(var(--ui-hvr-wght));
+	transition:
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover::before,
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active::before {
+	transform: translateX(-12.5%);
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within::before {
+	transform: translateX(-12.5%);
 }
 
 #page-info-break {
@@ -1035,7 +1311,6 @@ div#page-info {
 	grid-area: pinfo;
 	align-self: flex-end;
 	height: min-content;
-	padding-right: 1em;
 	overflow: visible;
 	font-size: 0.7em;
 	text-align: right;
@@ -1045,9 +1320,9 @@ div.page-watch-options {
 	grid-area: pwatch;
 	align-self: flex-end;
 	height: min-content;
-	padding-right: 1em;
 	overflow: visible;
 	font-size: 0.7em;
+	line-height: 1
 }
 
 div.page-watch-options a:any-link {
@@ -1075,8 +1350,7 @@ div.page-watch-options a:active {
 div#page-options-bottom {
 	position: relative;
 	grid-area: options-1;
-	padding-top: 0.25rem;
-	box-shadow: 0 -0.125rem 0 0 rgb(var(--swatch-primary-darkest));
+	padding-top: 0.1rem;
 }
 
 div#page-options-bottom-2 {
@@ -1094,6 +1368,7 @@ div[id*="page-options-bottom"] {
 	grid-template-columns: repeat(10, 1fr);
 	justify-content: space-between;
 	font-family: var(--UI-font);
+	font-size: var(--base-font-size);
 	text-align: left;
 	white-space: nowrap;
 }
@@ -1172,6 +1447,7 @@ div[id*="page-options-bottom"] > a#site-tools-button {
 
 div[id*="page-options-bottom"] > a#more-options-button {
 	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 200 200' overflow='visible' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M55,35v30H25V35H55 M65,25H55H25H15v10v30v10h10h30h10V65V35V25L65,25z'/%3E%3Cg%3E%3Crect y='40' width='15' height='20'/%3E%3Crect x='65' y='40' width='135' height='20'/%3E%3C/g%3E%3Cpath d='M165,85v30h-30V85H165 M175,75h-10h-30h-10v10v30v10h10h30h10v-10V85V75L175,75z'/%3E%3Cg%3E%3Crect x='175' y='90' width='25' height='20'/%3E%3Crect y='90' width='125' height='20'/%3E%3C/g%3E%3Cpath d='M105,135v30H75v-30H105 M115,125h-10H75H65v10v30v10h10h30h10v-10v-30V125L115,125z'/%3E%3Cg%3E%3Crect y='140' width='65' height='20'/%3E%3Crect x='115' y='140' width='85' height='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	grid-column: span 4;
 }
 
 div[id*="page-options-bottom"] > a#edit-sections-button {
