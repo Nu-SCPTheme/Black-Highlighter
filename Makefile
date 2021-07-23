@@ -19,7 +19,7 @@ include build/scp-test.mk
 
 # Top-level rules
 css: dist/css/min/ $(CSS_OUTPUTS) $(INT_OUTPUTS)
-images: dist/img/ $(IMAGE_OUTPUTS)
+images: dist/img/ $(IMAGE_PLAIN_OUTPUTS) $(IMAGE_OPTIMIZE_OUTPUTS)
 files: $(FILES_OUTPUTS)
 scp-test: $(SCP_TEST_OUTPUTS)
 legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
