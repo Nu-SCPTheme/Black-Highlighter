@@ -383,6 +383,11 @@ a {
 	color: rgb(var(--link-color));
 }
 
+a:visited {
+	color: rgb(255, 52, 76);
+	color: rgb(var(--visited-link-color));
+}
+
 a,
 a.newpage {
 	background: transparent;
@@ -407,11 +412,6 @@ a:focus-within {
 	color: rgb(255, 52, 76);
 	color: rgb(var(--hover-link-color));
 	text-decoration: underline;
-}
-
-a:visited {
-	color: rgb(255, 52, 76);
-	color: rgb(var(--visited-link-color));
 }
 
 /* Ruby Text */

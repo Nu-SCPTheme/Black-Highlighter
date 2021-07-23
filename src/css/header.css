@@ -645,14 +645,14 @@ div.mobile-top-bar {
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	right: 150%;
-	width: 200%;
+	width: 125%;
 	height: 100%;
-	transform: skew(50deg, 0);
-	transition: right 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateX(-125%);
+	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
+	clip-path: polygon(0% 0%, 100% 0px, 90% 100%, 0px 100%);
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:hover > a,
