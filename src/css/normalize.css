@@ -1141,6 +1141,12 @@ table,
 	max-width: inherit;
 }
 
+table.form td,
+table.form th {
+	padding: inherit;
+	vertical-align: inherit;
+}
+
 #edit-page-comments {
 	width: inherit;
 }
@@ -1236,7 +1242,9 @@ table,
 
 	table.form td,
 	table.form th {
-		float: inherit;
+		padding: inherit;
+		float: inherit;		
+		vertical-align: inherit;
 	}
 
 	td.name {

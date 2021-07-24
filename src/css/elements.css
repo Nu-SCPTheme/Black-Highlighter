@@ -76,7 +76,8 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	transition: background-color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		background-color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -288,7 +289,8 @@ div.blockquote,
 }
 
 .hovertip[style="display:none;"] {
-	transition: left 100ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		left 100ms cubic-bezier(0.4, 0, 0.2, 1),
 		top 100ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -476,12 +478,10 @@ div.block-left {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 125%;
-	transform: translateY(100%);
-	transform: translateY(100%);
-	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	height: 100%;
+	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 }
 
 .page-rate-widget-box .rateup a::after {
@@ -502,13 +502,13 @@ div.block-left {
 .page-rate-widget-box .ratedown a:active::after,
 .page-rate-widget-box .cancel a:hover::after,
 .page-rate-widget-box .cancel a:active::after {
-	transform: translateY(-15%);
+	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 }
 
 .page-rate-widget-box .rateup a:focus-within::after,
 .page-rate-widget-box .ratedown a:focus-within::after,
 .page-rate-widget-box .cancel a:focus-within::after {
-	transform: translateY(-15%);
+	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 }
 
 .page-rate-widget-box .rate-points {
@@ -665,12 +665,10 @@ div.block-left {
 	z-index: -1;
 	top: 0;
 	width: 100%;
-	height: 125%;
-	transform: translateY(100%);
-	transform: translateY(100%);
-	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	height: 100%;
+	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
@@ -678,20 +676,12 @@ div.block-left {
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:hover::after,
-#page-content
-	.rate-box-with-credit-button
-	> .creditButton
-	> p
-	> a:active::after {
-	transform: translateY(-15%);
+#page-content .rate-box-with-credit-button > .creditButton > p > a:active::after {
+	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 }
 
-#page-content
-	.rate-box-with-credit-button
-	> .creditButton
-	> p
-	> a:focus-within::after {
-	transform: translateY(-15%);
+#page-content .rate-box-with-credit-button > .creditButton > p > a:focus-within::after {
+	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
@@ -711,24 +701,12 @@ div.block-left {
 	mask-repeat: no-repeat;
 }
 
-#page-content
-	.rate-box-with-credit-button
-	> .creditButton
-	> p
-	> a:hover::before,
-#page-content
-	.rate-box-with-credit-button
-	> .creditButton
-	> p
-	> a:active::before {
+#page-content .rate-box-with-credit-button > .creditButton > p > a:hover::before,
+#page-content .rate-box-with-credit-button > .creditButton > p > a:active::before {
 	background-color: rgb(var(--rating-module-text-hover-color));
 }
 
-#page-content
-	.rate-box-with-credit-button
-	> .creditButton
-	> p
-	> a:focus-within::before {
+#page-content .rate-box-with-credit-button > .creditButton > p > a:focus-within::before {
 	background-color: rgb(var(--rating-module-text-hover-color));
 }
 
@@ -839,7 +817,8 @@ table[style*="margin:0"] * {
 	--wght: calc(var(--ui-wght) + 100);
 	display: flex !important;
 	align-items: center;
-	transition: font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-tertiary-color));
 	color: rgb(var(--swatch-text-secondary-color));
@@ -863,7 +842,8 @@ table[style*="margin:0"] * {
 	width: 100%;
 	height: 100%;
 	padding: 0.25em 0.25em 0.25em 0;
-	transition: font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -907,7 +887,8 @@ table[style*="margin:0"] * {
 	position: relative;
 	width: 1em;
 	height: 1em;
-	transition: font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-text-secondary-color));
@@ -1061,7 +1042,8 @@ table[style*="margin:0"] * {
 #toc #toc-list a {
 	display: inline-block;
 	position: relative;
-	transition: font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1076,7 +1058,8 @@ table[style*="margin:0"] * {
 	width: 1em;
 	height: 100%;
 	transform: rotateY(25deg) translateX(-1.25em);
-	transition: transform 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		transform 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 0;
 	background-color: rgb(var(--link-color));
@@ -1177,7 +1160,8 @@ table[style*="margin:0"] * {
 	z-index: 2;
 	width: 100%;
 	overflow: hidden;
-	transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1205,17 +1189,20 @@ table[style*="margin:0"] * {
 	z-index: -1;
 	top: 0;
 	width: 100%;
-	height: 125%;
-	transform: translateY(100%);
-	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	height: 100%;
+	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
-	clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 }
 
 .pager a:hover::after,
 .pager a:active::after {
-	transform: translateY(-15%);
+	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+}
+
+.pager a:focus-within::after {
+	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 }
 
 /* ===RATING LIST COLUMNS=== */
@@ -1321,13 +1308,8 @@ table[style*="margin:0"] * {
 	display: none !important;
 }
 
-#html-body:target
-	#page-content
-	> *:not([style*="text-align:"]):not(.creditRate),
-#html-body:target
-	#page-content
-	> *:not(.page-rate-widget-box):not(.creditRate)
-	> *:not(.page-rate-widget-box):not(.creditRate) {
+#html-body:target #page-content > *:not([style*="text-align:"]):not(.creditRate),
+#html-body:target #page-content > *:not(.page-rate-widget-box):not(.creditRate) > *:not(.page-rate-widget-box):not(.creditRate) {
 	display: none !important;
 }
 

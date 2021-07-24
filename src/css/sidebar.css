@@ -30,7 +30,8 @@
 	padding: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		scrollbar-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
@@ -142,18 +143,18 @@
 	content: " ";
 	position: absolute;
 	top: 0;
-	width: 125%;
+	width: 100%;
 	height: 100%;
 	transform: translateX(calc(-125%));
-	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
-	clip-path: polygon(0% 0%, 100% 0px, 90% 100%, 0px 100%);
+	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 #side-bar .side-block.media a:hover::before,
 #side-bar .side-block.media a:active::before {
-	transform: translateX(-11.25%);
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 #side-bar .side-block.media a img {
@@ -292,7 +293,8 @@
 	justify-content: flex-start;
 	width: 100%;
 	height: 100%;
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-text-secondary-color));
@@ -325,11 +327,7 @@
 }
 
 #side-bar .collapsible-block-unfolded-link a.collapsible-block-link::after,
-#side-bar
-	.side-block
-	> .collapsible-block
-	.collapsible-block-unfolded-link
-	a.collapsible-block-link::after {
+#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
 	transform: rotate(180deg);
 }
 
@@ -355,9 +353,7 @@
 	color: rgb(var(--swatch-menutxt-light-color));
 }
 
-#side-bar
-	.collapsible-block-unfolded-link
-	.collapsible-block-link:focus-within {
+#side-bar .collapsible-block-unfolded-link .collapsible-block-link:focus-within {
 	color: rgb(var(--swatch-menutxt-light-color));
 }
 
@@ -429,8 +425,8 @@
 	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
 	padding: 0 0.6em;
-	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: 
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 500ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -451,23 +447,22 @@
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	width: 125%;
+	width: 100%;
 	height: 100%;
-	transform: translateX(-125%);
-	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
-	clip-path: polygon(0% 0%, 100% 0px, 90% 100%, 0px 100%);
+	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 #side-bar div.menu-item a:hover::before,
 #side-bar div.menu-item a:active::before {
-	transform: translateX(-11.25%);
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 #side-bar div.menu-item a:focus-within::before {
-	transform: translateX(-11.25%);
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 #side-bar div.menu-item a:visited {
@@ -496,10 +491,10 @@
 	flex-grow: 1;
 }
 
-#side-bar div.menu-item a:first-of-type {
+#side-bar div.menu-item a {
 	justify-content: flex-start;
-	padding: 0 0.875rem;
-	padding: 0 calc(var(--base-font-size) * (14 / 15));
+	padding: 0;
+	text-indent: calc(var(--base-font-size) * (14 / 15));
 }
 
 #side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
@@ -522,6 +517,7 @@
 	justify-content: center;
 	width: auto;
 	padding: 0 0.5em;
+	text-indent: 0;
 	white-space: nowrap;
 }
 
@@ -571,33 +567,16 @@
 	border-radius: initial;
 }
 
-#side-bar
-	> div[style="background-color: #e5e5ff;"]
-	> div.menu-item
-	> div
-	> a:hover::before,
-#side-bar
-	> div[style="background-color: #e5e5ff;"]
-	> div.menu-item
-	> div
-	> a:active::before {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:hover::before,
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:active::before {
 	transform: translateX(0rem);
 }
 
-#side-bar
-	> div[style="background-color: #e5e5ff;"]
-	> div.menu-item
-	> div
-	> a:focus-within::before {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:focus-within::before {
 	transform: translateX(0rem);
 }
 
-#side-bar
-	> div[style="background-color: #e5e5ff;"]
-	> div.menu-item
-	> div
-	> a
-	> img {
+#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a > img {
 	display: block;
 }
 
@@ -612,7 +591,7 @@ a[href*="/random:random-tale"],
 a[href*="/most-recently-edited"] {
 	justify-content: flex-start;
 	min-width: calc(0.875rem * 2.5);
-	min-width: calc((var(--base-font-size) * (14 / 15)) * 6.5);
+	min-width: calc((var(--base-font-size) * (14 / 15)) * 7.5);
 }
 
 #side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]
@@ -647,43 +626,15 @@ a[href*="/most-recently-edited"] {
 	line-height: 1.85rem;
 }
 
-#___gcse_0
-	> div
-	> form
-	> table
-	> tbody
-	> tr
-	> td.gsc-search-button
-	> button:hover,
-#___gcse_0
-	> div
-	> form
-	> table
-	> tbody
-	> tr
-	> td.gsc-search-button
-	> button:active,
-#___gcse_0
-	> div
-	> form
-	> table
-	> tbody
-	> tr
-	> td.gsc-search-button
-	> button:focus {
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:active,
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
 	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
 }
 
-#___gcse_0
-	> div
-	> form
-	> table
-	> tbody
-	> tr
-	> td.gsc-search-button
-	> button:focus-within {
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus-within {
 	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(--swatch-menubg-color), 0.15);
 	text-decoration: none;
@@ -736,17 +687,11 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 }
 
 #side-bar .menu-item.expandable + .collapsible-block .collapsible-block-folded,
-#side-bar
-	.menu-item.expandable
-	+ .collapsible-block
-	.collapsible-block-unfolded-link {
+#side-bar .menu-item.expandable + .collapsible-block .collapsible-block-unfolded-link {
 	min-height: 0;
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	a.collapsible-block-link {
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link {
 	display: flex;
 	top: calc((1.5rem - var(--sidebar-internal-border-thickness)) * -1);
 	justify-content: flex-end;
@@ -754,10 +699,7 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	padding-right: 0;
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	.collapsible-block-link::before {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::before {
 	display: flex;
 	position: absolute;
 	top: 0;
@@ -768,49 +710,27 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	text-shadow: none;
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	.collapsible-block-link::after {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::after {
 	display: none;
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	a.collapsible-block-link:hover,
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	a.collapsible-block-link:active {
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:hover,
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:active {
 	background-color: transparent;
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	a.collapsible-block-link:focus-within {
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:focus-within {
 	background-color: transparent;
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	.collapsible-block-content
-	.menu-item
-	p {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item p {
 	height: calc(1.25rem - var(--sidebar-internal-border-thickness));
 	min-height: calc(1.25rem - var(--sidebar-internal-border-thickness));
 	padding: 0;
 	font-size: calc(var(--base-font-size) * 0.7);
 }
 
-#side-bar
-	div.menu-item.expandable
-	+ .collapsible-block
-	.collapsible-block-content
-	.menu-item
-	a {
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
 	padding: 0;
 	font-size: calc(var(--base-font-size) * 0.7);
 }
@@ -828,7 +748,7 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 		max-width: calc(80vw + (var(--base-font-size) * 0.5)) !important;
 		height: 100%;
 		overflow-y: auto;
-		transition: left 0.5s ease-in-out 0.1s;
+		transition: left 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 		transition: left var(--sidebar-transition-timing);
 	}
 
@@ -871,7 +791,7 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 		height: 100%;
 		margin-left: var(--scrollbar-width);
 		padding-right: var(--sidebar-width-on-mobile);
-		transition: all 0.5s ease-in-out 0.1s;
+		transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 		transition: all var(--sidebar-transition-timing);
 		opacity: 0;
 		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
