@@ -8,6 +8,8 @@ DIRECTORIES := \
 	dist/css/min/ \
 	dist/fonts/ \
 	dist/img/ \
+	dist/img/page-toolbar-icons \
+	dist/img/text-editor-icons \
 	dist/stable/styles/
 
 $(DIRECTORIES):

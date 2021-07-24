@@ -1346,19 +1346,9 @@ form#edit-page-form > div:nth-of-type(2) {
 		inset 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.25);
 }
 
-form#edit-page-form > div:nth-of-type(2)::after {
-	content: " ";
-	position: absolute;
-	right: 0.0625rem;
-	bottom: 0.125rem;
-	width: 1rem;
-	height: 1rem;
-	background-color: rgba(var(--swatch-primary-darker), 0.05);
-	pointer-events: none;
-}
-
 form#edit-page-form #edit-page-textarea {
 	min-width: var(--body-width-on-desktop);
+	min-height: calc(var(--body-width-on-desktop) / 2);
 	padding: 0.75rem 1rem;
 	overflow-y: auto;
 	border: none;
@@ -1376,14 +1366,30 @@ form#edit-page-form #edit-page-textarea {
 		rgba(var(--swatch-primary-darker), 0.05); /* Track */
 }
 
-form#edit-page-form #edit-page-textarea::-webkit-scrollbar-track {
+form#edit-page-form #edit-page-textarea::-webkit-scrollbar-track,
+form#edit-page-form #edit-page-textarea::-webkit-scrollbar-corner,
+form#edit-page-form #edit-page-textarea::-webkit-scrollbar-thumb,
+form#edit-page-form #edit-page-textarea::-webkit-resizer {
+	width: 1rem;
+}
+
+
+form#edit-page-form #edit-page-textarea::-webkit-scrollbar-track,
+form#edit-page-form #edit-page-textarea::-webkit-scrollbar-corner {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 }
 
-form#edit-page-form #edit-page-textarea::-webkit-scrollbar-thumb,
-form#edit-page-form #edit-page-textarea::-webkit-scrollbar-corner {
-	width: 1rem;
+form#edit-page-form #edit-page-textarea::-webkit-scrollbar-thumb {
 	background-color: rgba(var(--swatch-primary-darker), 0.4);
+}	
+
+form#edit-page-form #edit-page-textarea::-webkit-resizer {
+	--resizer-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Resizer-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M160 0h-30c0 71.7-58.3 130-130 130v30c88.2 0 160-71.8 160-160z'/%3E%3Cpath d='M200 78.9V0h-15c0 102-83 185-185 185v15h78.9c55.2-21.8 99.3-65.9 121.1-121.1zm0 102.5v-48.6c-8.8 13.1-18.9 25.5-30.3 36.9-11.4 11.4-23.8 21.5-36.9 30.3h48.6c3.2-2.9 6.4-6 9.5-9.1 3.1-3.1 6.2-6.3 9.1-9.5z'/%3E%3C/svg%3E");
+	background-color: rgba(var(--swatch-primary-darker), 0.4);
+	mask-image: var(--resizer-mask);
+	mask-size: 1rem 1rem;
+	mask-position: center center;
+	mask-repeat: no-repeat;
 }	
 
 form#edit-page-form #edit-page-textarea:focus {
@@ -1392,36 +1398,110 @@ form#edit-page-form #edit-page-textarea:focus {
 
 form#edit-page-form .change-textarea-size {
 	grid-area: text-resize;
-	padding: 0.5rem;
-	float: right;
-	text-align: right;
+	padding: 0;
+	margin: 0;
 }
 
 form#edit-page-form .change-textarea-size a {
-	--wght: 700;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 1rem;
-	height: 1rem;
-	padding: 0.15rem;
-	border: 0.0625rem solid rgba(12, 12, 12);
-	border: 0.0625rem solid rgba(var(--swatch-border-color));
-	background-color: rgba(170, 170, 170);
-	background-color: rgba(var(--swatch-tertiary-color));
-	color: rgba(12, 12, 12);
-	color: rgba(var(--swatch-text-tertiary-color));
+    --wght: var(--ui-wght);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    background-color: rgba(var(--swatch-menubg-dark-color));
+    color: rgba(var(--swatch-text-secondary-color));
+    border: none;
+    margin: 0;
+    box-shadow: none;
 }
 
 /* Text Editor Help Links */
 form#edit-page-form .edit-help-34 {
+	--wght: var(--ui-wght);
 	grid-area: edit-help;
-	margin: 0.5rem;
+	padding: 0 0 0 1rem;
+	margin: 0;
 	text-transform: capitalize;
+	font-size: 0.7rem;
+	background-color: rgb(var(--swatch-tertiary-color),0.15);
+	height: 1.125rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-form#edit-page-form .edit-help-34 > a:nth-of-type(1)::after {
-	content: " |";
+form#edit-page-form .edit-help-34 > a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 0 0.25em;
+}
+	
+form#edit-page-form .edit-help-34 > a:nth-of-type(1) {
+	margin: 0 1.5em 0 0.5em;
+}
+
+form#edit-page-form .edit-help-34 > a:nth-of-type(1)::after,
+form#edit-page-form .edit-help-34 > a:nth-of-type(1):hover::after,
+form#edit-page-form .edit-help-34 > a:nth-of-type(1):active::after {
+	content: " | ";
+	position: absolute;
+	right: -1em;
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+form#edit-page-form .edit-help-34 > a:nth-of-type(1):focus-within::after {
+	content: " | ";
+	position: absolute;
+	right: -1em;
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+form#edit-page-form .edit-help-34 > a::before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	background-color: rgb(var(--swatch-primary));
+	pointer-events: none;
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+form#edit-page-form .edit-help-34 > a:hover,
+form#edit-page-form .edit-help-34 > a:active {
+	--wght: calc(var(--ui-hvr-wght));
+	color: rgb(var(--swatch-background));
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+form#edit-page-form .edit-help-34 > a:focus-within {
+	--wght: calc(var(--ui-hvr-wght));
+	color: rgb(var(--swatch-background));
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+form#edit-page-form .edit-help-34 > a:hover::before,
+form#edit-page-form .edit-help-34 > a:active::before {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+form#edit-page-form .edit-help-34 > a:focus-within::before {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 /* Text Editor Description Box */
@@ -1445,9 +1525,11 @@ form#edit-page-form div.do-not-notify  {
 
 /* Text Editor Buttons */
 form#edit-page-form div.buttons {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	grid-area: editbuttons;
-	flex-wrap: wrap;
+	grid-gap: 0.5rem;
+	margin: 0 0.5rem;
 }
 
 /* All Buttons Styling */
@@ -1456,7 +1538,6 @@ form#edit-page-form div.buttons {
 div.buttons input,
 input.button,
 button,
-file,
 a.button,
 .btn:not(.rateup):not(.ratedown):not(.cancel) {
 	--wght: var(--ui-wght);
@@ -1478,10 +1559,9 @@ a.button,
 	font-family: var(--UI-font);
 }
 
-div.buttons input,
-input.button,
-button,
-file {
+div.buttons input:not(.rateup):not(.ratedown):not(.cancel),
+input.button:not(.rateup):not(.ratedown):not(.cancel),
+button:not(.rateup):not(.ratedown):not(.cancel) {
 	transition: 
 		box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1517,8 +1597,6 @@ input.button:hover,
 input.button:active,
 button:hover,
 button:active,
-file:hover,
-file:active,
 a.button:hover,
 a.button:active,
 .btn:not(.rateup):not(.ratedown):not(.cancel):hover,
@@ -1534,7 +1612,6 @@ a.button:active,
 div.buttons input:focus-within,
 input.button:focus-within,
 button:focus-within,
-file:focus-within,
 a.button:focus-within,
 .btn:not(.rateup):not(.ratedown):not(.cancel):focus-within {
 	--wght: var(--ui-hvr-wght);
@@ -1543,21 +1620,18 @@ a.button:focus-within,
 	cursor: pointer;
 }
 
-div.buttons input:hover,
-div.buttons input:active,
-input.button:hover,
-input.button:active,
-button:hover,
-button:active,
-file:hover,
-file:active {
+div.buttons input:not(.rateup):not(.ratedown):not(.cancel):hover,
+div.buttons input:not(.rateup):not(.ratedown):not(.cancel):active,
+input.button:not(.rateup):not(.ratedown):not(.cancel):hover,
+input.button:not(.rateup):not(.ratedown):not(.cancel):active,
+button:not(.rateup):not(.ratedown):not(.cancel):hover,
+button:not(.rateup):not(.ratedown):not(.cancel):active {
 	box-shadow: inset 50vw 0 0 0 rgb(var(--bright-accent));
 }
 
-div.buttons input:focus-within,
-input.button:focus-within,
-button:focus-within,
-file:focus-within {
+div.buttons input:not(.rateup):not(.ratedown):not(.cancel):focus-within,
+input.button:not(.rateup):not(.ratedown):not(.cancel):focus-within,
+button:not(.rateup):not(.ratedown):not(.cancel):focus-within {
 	box-shadow: inset 50vw 0 0 0 rgb(var(--bright-accent));
 }
 
@@ -1577,18 +1651,6 @@ a.button:active::before,
 a.button:focus-within::before,
 .btn:not(.rateup):not(.ratedown):not(.cancel):focus-within::before {
 	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-}
-
-div.buttons.alignleft > input {
-	flex-grow: 2;
-	padding: 0.25rem;
-	border-radius: 0.25rem;
-}
-
-div.buttons.alignleft {
-	display: flex;
-	flex-wrap: wrap;
-	text-align: left;
 }
 
 /* Page Tags */
