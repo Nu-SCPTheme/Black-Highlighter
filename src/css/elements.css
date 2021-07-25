@@ -14,18 +14,21 @@
 	8. =TOC
 	9. =LISTPAGES PAGER
 	10. =RATING LIST COLUMNS
-	11. =MOBILE ELEMENTS
+	10. =WIKIDOT USER ICONS
+	11. =MISC SMALL ELEMENTS
+	12. =FRONT PAGE ELEMENTS
+		12.1 =CONTENT PANEL
+	12. =MOBILE ELEMENTS
+	13. =MYSTERY ELEMENTS
   =============== */
 
 /* ===TABVIEW=== */
 
 .yui-navset {
 	z-index: 1;
-	zoom: unset;
 }
 
-.yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
+.yui-navset .yui-nav {
 	--tab-border-color: rgb(var(--swatch-primary-darker));
 	--box-shadow: var(--tab-border-color);
 	display: flex;
@@ -39,10 +42,10 @@
 	box-shadow: 0 calc(0.0625rem * 5) 0 0 rgb(140, 20, 25);
 	box-shadow: 0 calc(0.0625rem * 5) 0 0 var(--box-shadow);
 	font-family: var(--UI-font, var(--header-font));
+	clip-path: polygon(-0.0625rem -0.5rem, calc(100% + 0.0625rem) -0.5rem, calc(100% + 0.0625rem) 100%, -0.0625rem 100%);
 }
 
-.yui-navset .yui-nav a,
-.yui-navset .yui-navset-top .yui-nav a {
+.yui-navset .yui-nav a {
 	border: unset;
 	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
@@ -51,21 +54,24 @@
 	color: rgb(var(--swatch-text-general));
 }
 
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li {
-	--box-shadow: var(--tab-border-color);
+.yui-navset .yui-nav li {
 	display: flex;
 	position: relative;
 	flex-grow: 2;
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
-	zoom: unset;
-	border-color: transparent;
-	background-color: rgb(244, 244, 244);
-	background-color: rgb(var(--swatch-secondary-color));
-	box-shadow: 0 0 0 0.0625rem rgb(140, 20, 25);
-	box-shadow: 0 0 0 0.0625rem var(--box-shadow);
+	border: none;
+	transition: 
+		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0;
+	transform: translateY(0);
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
 }
 
 .yui-navset .yui-nav li a,
@@ -73,6 +79,7 @@
 .yui-navset-bottom .yui-nav li a {
 	--wght: var(--ui-wght);
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
@@ -88,43 +95,48 @@
 .yui-navset .yui-nav a:active,
 .yui-navset .yui-nav a:focus {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgb(100, 3, 15);
-	background-color: rgb(var(--swatch-primary-darker));
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-light));
 }
 
 .yui-navset .yui-nav a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgb(100, 3, 15);
-	background-color: rgb(var(--swatch-primary-darker));
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-light));
 }
 
+.yui-navset .yui-nav a::before {
+	content: " ";
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+	clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+	background-color: rgb(var(--swatch-primary-darker));
+}
+
+.yui-navset .yui-nav li:hover a::before,
+.yui-navset .yui-nav li:active a::before,
+.yui-navset .yui-nav li:focus a::before {
+	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+}
+
+.yui-navset .yui-nav li:focus-within a::before {
+	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+}
+
 .yui-navset .yui-nav a em,
-.yui-navset .yui-navset-top .yui-nav a em {
-	--slnt: 0;
-	--MONO: 0;
+.yui-navset .yui-nav .selected a em {
 	padding: 0.35em 0.75em;
 	overflow: hidden;
-	transition: color 60ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-overflow: ellipsis;
 	white-space: nowrap;
-}
-
-.yui-navset .yui-nav a:hover em,
-.yui-navset .yui-nav a:active em,
-.yui-navset .yui-nav a:focus em,
-.yui-navset .yui-navset-top .yui-nav a:hover em,
-.yui-navset .yui-navset-top .yui-nav a:active em,
-.yui-navset .yui-navset-top .yui-nav a:focus em {
-	transition: color 100ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.yui-navset .yui-nav a:focus-within em,
-.yui-navset .yui-navset-top .yui-nav a:focus-within em {
-	transition: color 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	top: 0;
+	line-height: 1.5;
 }
 
 .yui-navset .yui-nav li em {
@@ -134,11 +146,14 @@
 
 /* Selected Tab */
 
-.yui-navset .yui-nav .selected,
-.yui-navset .yui-navset-top .yui-nav .selected {
-	flex-grow: 2;
+.yui-navset .yui-nav .selected {
+	transform: translateY(-0.1875rem);
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.25rem;
 	margin: 0;
 	padding: 0;
+	z-index: 10;
 }
 
 .yui-navset .yui-nav .selected a,
@@ -149,22 +164,30 @@
 
 .yui-navset .yui-nav .selected a {
 	--wght: var(--ui-hvr-wght);
-	width: 100%;
 	background-image: none;
 	/* Undoes a color set by wikidot's default layout */
-	color: rgb(252, 252, 252) !important;
 	color: rgb(var(--swatch-text-secondary-color)) !important;
 }
 
 .yui-navset .yui-nav .selected,
-.yui-navset .yui-navset-top .yui-nav .selected,
 .yui-navset .yui-nav .selected a:focus,
 .yui-navset .yui-nav .selected a:active {
-	background-color: rgb(140, 20, 25);
-	background-color: rgb(var(--swatch-primary-darkest));
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-light));
 }
+
+.yui-navset .yui-nav .selected a::before,
+.yui-navset .yui-nav .selected:hover a::before,
+.yui-navset .yui-nav .selected:focus a::before,
+.yui-navset .yui-nav .selected:active a::before {
+	background-color: rgb(var(--swatch-primary));
+	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+}
+
+.yui-navset .yui-nav .selected:focus-within a::before {
+	background-color: rgb(var(--swatch-primary));
+	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+}
+
 
 .yui-navset .yui-nav .selected a:hover,
 .yui-navset .yui-nav .selected a:active {
@@ -262,36 +285,114 @@ div.blockquote,
 /* ===HOVER BLOCKS=== */
 
 .hovertip {
-	width: 25% !important;
-	/* border is added via js so !important is required */
-	animation-name: fade-in;
-	animation-duration: 600ms;
-	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	animation-delay: 300ms;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
-	/* bg-color is added via js so !important is required */
-	border: 0.0625rem solid rgb(var(--swatch-border-color)) !important;
+	width: min(50%, fit-content) !important;
+	max-width: calc(var(--body-width-on-desktop) - 2rem );
+	animation: fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
+	border: none !important; /* border is added via js so !important is required */
 	opacity: 0;
-	background-color: rgb(var(--swatch-menubg-color)) !important;
-	color: rgb(var(--swatch-text-tertiary-color));
-	animation-fill-mode: forwards;
+	background-color: rgba(var(--swatch-primary-darker), 0.05) !important; /* bg-color is added via js so !important is required */
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+.hovertip::before {
+	content: "";
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-color: rgb(var(--swatch-background));
+	animation: 
+		lift-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards,
+		slide-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
+	box-shadow:
+		0 0 0 0 rgba(var(--swatch-menubg-dark-color),0.25),
+		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+}
+
+	
+.hovertip .content {
+	padding: 0;
+	margin: 0;
+	transform: translateY(0) translateX(0);
+	animation: slide-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
+}
+	
+.hovertip .footnote {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.hovertip .f-heading {
+	--wght: 550;
+	font-family: var(--UI-font);
+	font-size: 0.96em;
+	height: 1.5em;
+	width: max-content;
+	padding: 0.125em 0.25em;
+	margin: -0.75rem 0 0 -1rem;
+	background-color: rgb(var(--swatch-primary-darker));
+	color: rgb(var(--swatch-menutxt-light-color));
+}
+	
+.hovertip .f-content {
+	padding: 0 0.75rem;
+	margin: 0.125em 0;
+	flex-grow: 2;
+}
+	
+.hovertip .f-footer {
+	padding: 0.25rem 0.75rem;
+	font-size: 0.8em;
+	text-align: right;
+	font-family: var(--UI-font);
+	color: rgba(var(--gray-monochrome)0.8);
+	flex-grow: 2;
+	align-self: flex-end;
+	justify-self: flex-end;
 }
 
 @keyframes fade-in {
-	0% {
+	from {
 		opacity: 0;
 	}
 
-	100% {
+	to {
 		opacity: 1;
 	}
 }
 
-.hovertip[style="display:none;"] {
-	transition: 
-		left 100ms cubic-bezier(0.4, 0, 0.2, 1),
-		top 100ms cubic-bezier(0.4, 0, 0.2, 1);
+@keyframes slide-in {
+	from {
+		transform: translateY(1rem) translateX(1rem);
+	}
+
+	to {
+		transform: translateY(0) translateX(0);
+	}
+}
+
+@keyframes lift-in {
+	from {
+		box-shadow:
+		0 0 0 0 rgba(var(--swatch-menubg-dark-color), 0.25),
+		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+	}
+
+	to {
+		box-shadow:
+		0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-menubg-dark-color),0.25),
+		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));		
+	}
 }
 
 /* ===IMAGE BLOCK=== */
@@ -442,12 +543,7 @@ div.block-left {
 .page-rate-widget-box .rateup a,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a {
-	--wght: 600;
-	position: relative;
 	z-index: 0;
-	background-color: transparent;
-	color: rgb(12, 12, 12);
-	color: rgb(var(--rating-module-button-color));
 }
 
 .page-rate-widget-box .cancel {
@@ -554,7 +650,7 @@ div.block-left {
 			left: 0;
 			width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
 			height: var(--rating-module-height);
-			background-color: rgb(var(--rating-module-button-color));
+			background-color: rgb(var(--rating-module-text-color));
 			pointer-events: none;
 			mask-size: calc(var(--rating-module-height) - 0.5rem);
 			mask-position: center;
@@ -672,7 +768,7 @@ div.block-left {
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
-	background-color: rgba(var(--rating-module-button-color), 1);
+	background-color: rgba(var(--rating-module-text-color), 1);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:hover::after,
@@ -1207,8 +1303,6 @@ table[style*="margin:0"] * {
 
 /* ===RATING LIST COLUMNS=== */
 
-/* Rating List Columns */
-
 #who-rated-page-area > div {
 	display: grid;
 	grid-auto-flow: row;
@@ -1229,6 +1323,217 @@ table[style*="margin:0"] * {
 #who-rated-page-area .printuser a {
 	font-size: 80%;
 	white-space: nowrap;
+}
+
+/* ===WIKIDOT USER ICONS=== */
+span.printuser {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	width: max-content;
+	height: 1em;
+	margin-right: 0;
+}
+
+span.printuser a:first-of-type {
+	width: 1.75em;
+	margin: 0 0.125rem 0 0;
+}
+
+span.printuser img.small {
+	width: 100%;
+	min-width: auto;
+	height: 1em;
+	padding: 0 0 0 0.5625em;
+	background-position: left center;
+	object-fit: contain;
+	object-position: left center;
+}
+
+/* ===MISC SMALL ELEMENTS=== */
+
+/* Class that removes margin from Paragraphs */
+.unmargined > p {
+	margin: 0;
+}
+
+/* Wikiwalk Nav */
+.footer-wikiwalk-nav {
+	--wght: 700;
+	font-size: 75%;
+	letter-spacing: 0.016em;
+}
+
+.browserupgrade {
+	margin: 0.2em 0;
+	padding: 0.2em 0;
+	background: rgb(var(--swatch-menubg-light-color));
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+/* Sexy Box (apparently) */
+div.sexy-box {
+	margin: 0.4375rem 0.25rem 0.75rem;
+	padding: 0 0.625rem 0.75rem;
+	overflow: hidden;
+	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
+	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.25);
+	background: rgb(252, 252, 252);
+	background: rgb(var(--swatch-background, 252, 252, 252));
+}
+
+div.sexy-box div.image-container img {
+	margin: 0.3125rem;
+	padding: 0.125rem;
+	border: 0.0625rem solid rgba(12, 12, 12, 0.5);
+	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.5);
+}
+
+/* Keycap Styling */
+.keycap {
+	--MONO: 1;
+	font-family: var(--mono-font);
+	margin: 0.3125em 0.3125em 0.375em;
+	box-shadow:
+		0em 0.0625em 0em rgb(var(--swatch-secondary-color)),
+		0em 0.125em 0em rgb(var(--swatch-secondary-color)),
+		0em 0.1875em 0em rgb(var(--swatch-secondary-color)),
+		0em 0.25em 0em 0.0625em rgb(var(--swatch-tertiary-color)),
+		0em 0.25em 0em 0.125em rgb(var(--swatch-tertiary-color));
+	background: rgb(var(--swatch-background));
+	background: linear-gradient(to bottom,  
+		rgb(var(--swatch-background)) 0%,
+		rgb(var(--swatch-tertiary-color)) 95%,
+		rgb(var(--swatch-tertiary-color)) 100%);
+	border-radius: 0.1875em;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 0.8125em;
+	box-decoration-break: clone;
+}
+
+/* General Odate Styling */
+.odate {
+	--MONO: 1;
+	font-family: var(--mono-font);
+}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ===FRONT PAGE ELEMENTS=== */
+
+/* ===CONTENT PANEL=== */
+.content-panel {
+	--box-shadow-1: rgba(var(--swatch-text-dark, 12, 12, 12), 0.16);
+	--box-shadow-2: rgba(var(--swatch-text-dark, 12, 12, 12), 0.23);
+	--box-shadow-3: rgb(var(--swatch-tertiary-color, 170, 170, 170));
+	margin: 0.625em 0 0.938em;
+	border-radius: 0.625rem;
+	background-color: rgba(66, 66, 72, 0.5);
+	background-color: rgba(var(--gray-monochrome, 66, 66, 72), 0.5);
+	box-shadow: 0 0.188em 0.375em rgba(12, 12, 12, 0.16),
+		0 0.188em 0.375em rgba(12, 12, 12, 0.23),
+		0 0 0.0625rem 0 rgb(170, 170, 170) inset,
+		0 0 0.0625rem 0 rgb(170, 170, 170);
+	box-shadow: 0 0.188em 0.375em var(--box-shadow-1),
+		0 0.188em 0.375em var(--box-shadow-2),
+		0 0 0.0625rem 0 var(--box-shadow-3) inset,
+		0 0 0.0625rem 0 var(--box-shadow-3);
+}
+
+.content-panel.standalone {
+	box-sizing: border-box;
+	padding: 1em 2em 2em 2em !important;
+	background: rgb(252, 252, 252);
+	background: rgb(var(--swatch-background, 252, 252, 252));
+}
+
+.content-panel.series {
+	margin-bottom: 1.25rem;
+	padding: 0 1.25rem;
+}
+
+.content-panel.centered {
+	text-align: center;
+}
+
+.content-panel.left-column {
+	width: 48%;
+	float: left;
+}
+
+.content-panel.right-column {
+	width: 48%;
+	float: right;
+}
+
+.content-panel .panel-heading {
+	--wght: 700;
+	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
+	padding: 0.313em 0.625em;
+	color: rgb(252, 252, 252);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	font-size: 100%;
+	text-align: center;
+	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.35);
+	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
+	text-transform: uppercase;
+}
+
+.content-panel .panel-body {
+	padding: 0.313em 0.625em;
+	background: rgb(var(--swatch-tertiary-color));
+}
+
+.content-panel .panel-body > .news-title {
+	--wght: 700;
+	font-family: var(--title-font);
+	font-size: 90%;
+	text-transform: uppercase;
+}
+
+.content-panel .panel-footer {
+	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.5);
+	--wght: 700;
+	padding: 0.0625rem 0.625rem;
+	font-size: 80%;
+	letter-spacing: 0.016em;
+	text-align: right;
+	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.5);
+	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
+}
+
+.content-panel .panel-footer,
+.content-panel .panel-footer a {
+	color: rgb(var(--swatch-tertiary-color));
+}
+
+.content-panel .content-toc {
+	--box-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.15);
+	margin: 1.25rem 0 0.313rem 0.313rem;
+	padding: 0 1.25rem;
+	float: right;
+	border: solid 0.0625rem rgb(var(--swatch-menubg-medium-dark-color));
+	border-radius: 0.625rem;
+	background-color: rgb(var(--swatch-tertiary-color));
+	box-shadow: inset 0.0625rem 0.125rem 0.375rem rgba(0, 0, 0, 0.15);
+	box-shadow: inset 0.0625rem 0.125rem 0.375rem var(--box-shadow);
+	white-space: nowrap;
+}
+
+.news-block .alternate:nth-child(even) {
+	background-color: rgba(var(--swatch-menubg-color), 0.9);
 }
 
 /* ===MOBILE ELEMENTS=== */
@@ -1254,7 +1559,7 @@ table[style*="margin:0"] * {
 	}
 
 	.hovertip {
-		width: 90% !important;
+		width: fit-content !important;
 	}
 
 	.scp-image-block.block-right,
@@ -1277,77 +1582,26 @@ table[style*="margin:0"] * {
 	.curved {
 		margin: 0;
 	}
+
+	.content-panel.left-column,
+	.content-panel.right-column {
+		width: 99%;
+		float: left;
+	}
 }
 
-/* RATING MODULE ONLY TARGET */
-/* This is a ridiculous hack that is included for no other reason than because I could. */
-
-#html-body:target .page-title,
-#html-body:target #page-title,
-#html-body:target #breadcrumbs,
-#html-body:target .pseudocrumbs,
-#html-body:target #page-options-container,
-#html-body:target .page-header,
-#html-body:target .page-info-break,
-#html-body:target .page-options-container,
-#html-body:target .action-area,
-#html-body:target header,
-#html-body:target #header,
-#html-body:target footer,
-#html-body:target #footer,
-#html-body:target #navi-bar,
-#html-body:target #navi-bar-shadow,
-#html-body:target #page-option-bottom-tips,
-#html-body:target #page-option-bottom-2-tips,
-#html-body:target #odialog-hovertips,
-#html-body:target #wd-ed-dialogs,
-#html-body:target #odialog-container,
-#html-body:target #license-area,
-#html-body:target #side-bar,
-#html-body:target .page-tags {
-	display: none !important;
+/* ===Mystery Elements===
+   ===Unsure what these are for=== */
+.form-control {
+	width: 95%;
 }
 
-#html-body:target #page-content > *:not([style*="text-align:"]):not(.creditRate),
-#html-body:target #page-content > *:not(.page-rate-widget-box):not(.creditRate) > *:not(.page-rate-widget-box):not(.creditRate) {
-	display: none !important;
+.info-container .collapsible-block-link,
+.info-container:hover .collapsible-block-link,
+.info-container:active .collapsible-block-link {
+	line-height: 1.6em;
 }
 
-#html-body:target {
-	color: rgba(0, 0, 0, 0);
-}
-
-#html-body:target,
-#html-body:target div#container-wrap {
-	background: none !important;
-}
-
-#html-body:target div#container-wrap,
-#html-body:target #page-content,
-#html-body:target {
-	background: none !important;
-}
-
-#html-body:target #page-content {
-	min-height: 0;
-}
-
-#html-body:target div[style*="text-align:"] .page-rate-widget-box,
-#html-body:target div.creditRate {
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-#html-body:target #page-content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-#html-body:target #container,
-#html-body:target #container-wrap-wrap,
-#html-body:target #container-wrap {
-	background: rgba(0, 0, 0, 0);
+.info-container:focus-within .collapsible-block-link {
+	line-height: 1.6em;
 }

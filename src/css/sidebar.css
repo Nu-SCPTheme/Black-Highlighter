@@ -748,7 +748,6 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 		height: 100%;
 		overflow-y: auto;
 		transition: left 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
-		transition: left var(--sidebar-transition-timing);
 	}
 
 	#side-bar:after {
@@ -791,7 +790,6 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 		margin-left: var(--scrollbar-width);
 		padding-right: var(--sidebar-width-on-mobile);
 		transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
-		transition: all var(--sidebar-transition-timing);
 		opacity: 0;
 		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem

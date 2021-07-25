@@ -1,7 +1,38 @@
-/* All Vars Used */
+/* ROOT VARS
+   ============================= */
+
+/* Structural elements generally part of standard HTML spec as well as Wikidot's base structural elements */
+
+/* ===DIRECTORY===
+	1. =S-CSS-P INTEGRATION
+	2. =HEADER ELEMENTS
+	3. =TYPEFACES
+		3.1 =BASE FONT SIZE & LINE HEIGHT
+		3.2 =HEADER TITLE FONT SIZES
+	4. =VARIABLE FONT SETTINGS
+		4.1 =VARIABLE MONO FONT SETTINGS
+	5. =OPENTYPE FEATURE SETTINGS
+	6. =STANDARD THEME COLORS
+	7. =PRIMARY COLORS
+		8.1. =GENERAL COLORS
+		8.2. =GENERAL TEXT COLORS
+	8. =BACKGROUND & HEADER COLORS
+	9. =MENU COLORS
+		9.1 =MEMU BACKGROUND COLORS
+		9.2 =MEMU TEXT COLORS
+	10. =SECONDARY & TERTIARY COLORS
+	11. =LINK COLORS
+	12. =RATING MODULE COLORS
+	13. =PRIMARY GRADIENTS
+	14. =STRUCTURAL SPACING ELEMENTS
+		14.1 =HEADER MEASUREMENTS
+		14.2 =TOPBAR MEASUREMENTS
+
+	15. =LEGACY VARS
+  =============== */
 
 :root {
-	/* S-CSS-P Integration */
+/* ===S-CSS-P INTEGRATION=== */
 	/* If you're making a new CSS theme, please include the following three variables at minimum. */
 	--theme-base: "black-highlighter";
 	/* must be either "black-highlighter" or "sigma9" */
@@ -10,12 +41,12 @@
 	--theme-name: "nu-SCP Theme";
 	/* set this to your theme's full name */
 
-	/* Header */
+/* ===HEADER ELEMENTS=== */
 	--logo-image: url("https://nu-scptheme.github.io/Black-Highlighter/img/logo.svg");
 	--header-title: "SCP Foundation";
 	--header-subtitle: "SECURE, CONTAIN, PROTECT";
 
-	/* Typefaces */
+/* ===TYPEFACES=== */
 	--body-font: Inter, Arimo, Verdana, Geneva, "Helvetica Neue", "Helvetica",
 		Arial, sans-serif;
 	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont,
@@ -26,99 +57,125 @@
 	--title-font: var(--header-font);
 	--mono-font: Recursive, Consolas, monaco, monospace;
 
-	/* Variable Body Font Settings */
+	/* ===BASE FONT SIZE & LINE HEIGHT=== */
+	--base-font-size: 0.9375rem;
+	--base-line-height: 1.3125rem;
+
+	/* ===HEADER TITLE FONT SIZES=== */
+	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
+	--header-h2-font-size: var(--base-font-size);
+
+/* ===VARIABLE FONT SETTINGS=== */
 	/* SETTING  |  ============== DESCRIPTION			|	FONT: 	RANGE 	 */
+	/* SETTING  |  ============== Weight				|	Body: 100 - 900  */
 	/* --wght: 400; Unsetting wght var as it breaks font-weight: bold
-	/* SETTING  |  ============== Weight for UI			|	FONT: 	RANGE 	 */
+	/* SETTING  |  ============== Weight for UI			|	  UI: 100 - 700  */
 	--ui-wght: 400;
-	/* SETTING  |  ============== Hover Weight for UI	|	FONT: 	RANGE 	 */
+	/* SETTING  |  ============== Hover Weight for UI	|	  UI: 100 - 700  */
 	--ui-hvr-wght: 550;
-	/* ========================== Body Font Weight 		| 	Body: 100 - 900  */
-	--ital: 0;
 	/* ========================== Body Font Italic 		| 	Body:   0 - 1    */
-	/* Variable Mono Font Settings */
+	--ital: 0;
+	
+	/* ===VARIABLE MONO FONT SETTINGS=== */
+	/* See here for Recursive Font information: https://www.recursive.design/ */
+	/*=========================== Mono Font Weight 		| 	Mono: 300 - 1000 */
 	--mono-wght: 350;
-	/*===================== Mono Font Weight 			| 	Mono: 300 - 1000 */
-	--slnt: 0;
 	/* ========================== Mono Font Italic 		| 	Mono: -15 - 0    */
-	--CASL: 0;
+	--slnt: 0;
 	/* ========================== Mono Font Casual Amnt | 	Mono:   0 - 1    */
-	--CRSV: 0;
+	--CASL: 0;
 	/* ========================== Mono Font Cursive Amnt|	Mono:   0 - 1    */
-	--MONO: 1;
+	--CRSV: 0;
 	/* ========================== Mono Font Mono Amnt	| 	Mono:   0 - 1    */
-	/* Font Feature Settings */
-	/* See here for detailed explainations: https://sparanoid.com/lab/opentype-features/ */
-	--lnum: 1;
+	--MONO: 1;
+	
+
+/* ===OPENTYPE FEATURE SETTINGS=== */
+/* See here for detailed explainations: https://sparanoid.com/lab/opentype-features/ */
 	/* ========================== Lining Numerals		|	Any: 	0 OR 1	 */
-	--pnum: 1;
+	--lnum: 1;
 	/* ========================== Proportional Numerals	|	Any: 	0 OR 1	 */
-	--kern: 1;
+	--pnum: 1;
 	/* ========================== Kerning				|	Any: 	0 OR 1	 */
-	--cpsp: 1;
+	--kern: 1;
 	/* ========================== Capital Spacing		|	Any: 	0 OR 1	 */
-	--liga: 1;
+	--cpsp: 1;
 	/* ========================== Case Alternatives		|	Any: 	0 OR 1	 */
-	--case: 1;
+	--liga: 1;
 	/* ========================== Standard Ligature		|	Any: 	0 OR 1	 */
-	--clig: 1;
+	--case: 1;
 	/* ========================== Contextual Ligature	|	Any: 	0 OR 1	 */
-	--dlig: 0;
+	--clig: 1;
 	/* ========================== Discretionary Ligature|	Any: 	0 OR 1	 */
-	--calt: 1;
+	--dlig: 0;
 	/* ========================== Contextual Alternate	|	Any: 	0 OR 1	 */
-	--aalt: 0;
+	--calt: 1;
 	/* ========================== Access All Alternates	|	Any: 	0 OR 1	 */
+	--aalt: 0;
+	/* ========================== Stylistic Sets		|	Any: 	0 OR 1	 */
 	--ss01: 1;
 	--ss02: 1;
 	--ss03: 1;
-	/* ========================== Stylistic Sets		|	Any: 	0 OR 1	 */
-	/* Standard Colors */
-	--white-monochrome: 252, 252, 252;
+	
+/* ===STANDARD THEME COLORS=== */
 	/* white */
-	--pale-gray-monochrome: 244, 244, 244;
+	--white-monochrome: 252, 252, 252;
 	/* v light gray for blockquotes and stuff */
-	--light-pale-gray-monochrome: 244, 244, 244;
+	--pale-gray-monochrome: 244, 244, 244;
 	/* very light pale gray for misc. use */
-	--very-light-gray-monochrome: 215, 215, 215;
+	--light-pale-gray-monochrome: 244, 244, 244;
 	/* very light accent gray for misc. use */
-	--light-gray-monochrome: 160, 160, 160;
+	--very-light-gray-monochrome: 215, 215, 215;
 	/* light accent gray for login status */
-	--gray-monochrome: 66, 66, 72;
+	--light-gray-monochrome: 160, 160, 160;
 	/* gray */
-	--dark-gray-monochrome: 48, 48, 52;
+	--gray-monochrome: 66, 66, 72;
 	/* dark accent gray for sidebar background */
-	--black-monochrome: 12, 12, 12;
+	--dark-gray-monochrome: 48, 48, 52;
 	/* black */
+	--black-monochrome: 12, 12, 12;
+	/* subdued theme color, for visited links */
 	--pale-accent: 230, 40, 60;
-	/* light red, for visited links */
+	/* vivid theme color, the "default" accent color */
 	--bright-accent: 133, 0, 5;
-	/* bright red */
+	/* theme color */
 	--medium-accent: 100, 46, 44;
-	/* medium red - the "default" accent color */
+	/* darker theme color */
 	--dark-accent: 100, 3, 15;
-	/* dark red */
+	/* alternate accent color, for newpage links */
 	--alt-accent: 221, 102, 17;
-	/* pale orange, for newpage links */
-
-	/* Background and Header Colors */
-	--background-gradient-color: var(--very-light-gray-monochrome);
-	--header-gradient-color-bottom: var(--medium-accent);
-	--header-gradient-color-middle: var(--black-monochrome);
-	--header-gradient-color-top: var(--black-monochrome);
-
-	/* Primary Theme Colors */
-	--swatch-background: var(--white-monochrome);
+	
+/* ===PRIMARY COLORS=== */
+	/* ===GENERAL COLORS=== */
 	--swatch-primary: var(--bright-accent);
 	--swatch-primary-darker: var(--medium-accent);
 	--swatch-primary-darkest: var(--dark-accent);
-	/* Primary Text Colors */
+	--swatch-border-color: var(--black-monochrome);
+
+	/* ===GENERAL TEXT COLORS=== */
 	--swatch-text-dark: var(--black-monochrome);
 	--swatch-text-light: var(--white-monochrome);
 	--swatch-text-general: var(--swatch-text-dark);
 	--swatch-important-text: var(--bright-accent);
 
-	/* Primary Menu Colors */
+/* ===BACKGROUND & HEADER COLORS=== */
+	/* General Background Color */
+	--swatch-background: var(--white-monochrome);
+
+	/* Gradient Color used for the --gradient-background var */
+	--background-gradient-color: var(--very-light-gray-monochrome);
+
+	/* Colors forming the header gradient used in --gradient-header var */
+	--header-gradient-color-bottom: var(--medium-accent);
+	--header-gradient-color-middle: var(--black-monochrome);
+	--header-gradient-color-top: var(--black-monochrome);
+
+	/* Header H1 and H2 colors */
+	--swatch-headerh1-color: var(--swatch-text-light);
+	--swatch-headerh2-color: var(--swatch-text-light);
+
+/* ===MEMU COLORS=== */
+	/* ===MEMU BACKGROUND COLORS=== */
 	--swatch-menubg-color: var(--white-monochrome);
 	--swatch-menubg-light-color: var(--pale-gray-monochrome);
 	--swatch-menubg-medium-color: var(--light-gray-monochrome);
@@ -126,48 +183,60 @@
 	--swatch-menubg-dark-color: var(--dark-gray-monochrome);
 	--swatch-menubg-black-color: var(--black-monochrome);
 	--swatch-menubg-hover-color: var(--black-monochrome);
+
+	/* ===MEMU TEXT COLORS=== */
 	--swatch-menutxt-dark-color: var(--black-monochrome);
 	--swatch-menutxt-light-color: var(--white-monochrome);
 	--swatch-menutxt-general-color: var(--swatch-menutxt-dark-color);
-	--swatch-border-color: var(--black-monochrome);
 
-	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
+	/* ===TOPBAR MENU BACKGROUND COLORS=== */
+	/* Colors used in the --gradient-topmenu var to give the topbar its color */
+	--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
+	--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
+
+/* ===SECONDARY & TERTIARY COLORS=== */
+/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
 	--swatch-secondary-color: var(--swatch-menubg-light-color);
 	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
 	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
 	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
 	--swatch-text-tertiary-color: var(--swatch-menutxt-dark-color);
-
-	/* Primary Header Colors */
-	--swatch-headerh1-color: var(--swatch-text-light);
-	--swatch-headerh2-color: var(--swatch-text-light);
-	--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
-	--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
-
-	/* Link Colors */
+	
+/* ===LINK COLORS=== */
 	--link-color: var(--pale-accent);
 	--visited-link-color: var(--swatch-primary);
 	--hover-link-color: var(--swatch-primary);
 	--newpage-color: var(--alt-accent);
+
+	/* Color specificaly used for the sidebar links, ignores :visited status */
 	--sidebar-links-text: var(--swatch-menutxt-general-color);
 
-	/* Rating Module Colors */
-	--rating-module-button-color: var(--swatch-menutxt-dark-color);
+/* ===RATING MODULE COLORS=== */
 	--rating-module-button-plus-color: 0, 200, 0;
 	--rating-module-button-negative-color: 200, 0, 0;
 	--rating-module-button-cancel-color: var(--swatch-tertiary-color);
 	--rating-module-button-credit-color: var(--swatch-secondary-color);
+
 	--rating-module-text-color: var(--swatch-menutxt-dark-color);
 	--rating-module-text-hover-color: var(--swatch-menutxt-light-color);
 
-	/* Header Gradients */
-
+/* ===PRIMARY GRADIENTS=== */
+	/* Creates the header image at top of page */
 	--gradient-header: linear-gradient(
 		to top,
 		rgb(var(--header-gradient-color-bottom)) 0%,
 		rgb(var(--header-gradient-color-middle)) 90%,
 		rgb(var(--header-gradient-color-top)) 100%
 	);
+	/* Diagonal Strikes placed on top of header image */
+	--diagonal-stripes: repeating-linear-gradient(
+		45deg,
+		hsla(0, 0%, 100%, 0),
+		hsla(0, 0%, 100%, 0) 0.25vh,
+		rgba(88, 88, 88, 0.1) 0.35vh,
+		rgba(88, 88, 88, 0.2) 0.5vh
+	);
+	/* Create top-menu bar below the header */
 	--gradient-topmenu: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0) 0%,
@@ -191,49 +260,46 @@
 		rgba(var(--swatch-topmenu-border-color), 1)
 			var(--topbar-height-on-mobile)
 	);
-	--diagonal-stripes: repeating-linear-gradient(
-		45deg,
-		hsla(0, 0%, 100%, 0),
-		hsla(0, 0%, 100%, 0) 0.25vh,
-		rgba(88, 88, 88, 0.1) 0.35vh,
-		rgba(88, 88, 88, 0.2) 0.5vh
-	);
+	/* Subtle gradient that begins just below the top-bar and header */
 	--background-gradient-distance: 40rem;
 	--gradient-background: linear-gradient(
 		to bottom,
 		rgba(var(--background-gradient-color), 1) 0,
-		rgba(var(--background-gradient-color), 0.987)
-			calc(0.008 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.951)
-			calc(0.029 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.896)
-			calc(0.064 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.825)
-			calc(0.11 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.741)
-			calc(0.166 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.648)
-			calc(0.231 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.55)
-			calc(0.304 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.45)
-			calc(0.383 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.352)
-			calc(0.467 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.259)
-			calc(0.554 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.175)
-			calc(0.644 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.104)
-			calc(0.735 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.049)
-			calc(0.825 * var(--background-gradient-distance)),
-		rgba(var(--background-gradient-color), 0.013)
-			calc(0.914 * var(--background-gradient-distance)),
 		rgba(var(--background-gradient-color), 0)
 			var(--background-gradient-distance)
 	);
 
+/* ===STRUCTURAL SPACING ELEMENTS=== */
+	--body-width-on-desktop: 44.25rem;
+	--scrollbar-width: 1rem;
+
+	/* ===HEADER MEASUREMENTS=== */
+	--header-height-on-desktop: 7.5rem;
+	--header-height-on-mobile: 7.5rem;
+	--header-background-image-size: 100% var(--header-height-on-desktop);
+
+	/* ===TOPBAR MEASUREMENTS=== */
+	--topbar-height-on-desktop: 1.875rem;
+	--topbar-height-on-mobile: 3rem;
+
+	/* ===FINAL HEADER + TOPBAR MEASUREMENTS=== */
+	/* These Vars should not be edited unless necessary. */
+	--final-header-height-on-desktop: calc(
+		var(--header-height-on-desktop) + var(--topbar-height-on-desktop)
+	);
+	--final-header-height-on-mobile: calc(
+		var(--header-height-on-mobile) + var(--topbar-height-on-mobile)
+	);
+	
+	/* ===SIDEBAR MEASUREMENTS=== */
+	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14 / 15)) * 19);
+	--sidebar-width-on-mobile: calc((var(--base-font-size) * (14 / 15)) * 16);
+	--sidebar-internal-border-thickness: 0.125rem;
+}
+
+/* LEGACY VARS */
+/* These Vars are being left for now in case they are used in various these but will eventually be removed */
+:root {
 	/* Legacy Var -- No longer used */
 	--gradient-sidemenu-header: linear-gradient(
 		10deg,
@@ -241,20 +307,10 @@
 		rgba(var(--swatch-primary-darker), 0.55) 100%
 	);
 
-	/* Spacing Measurements */
+	--rating-module-button-color: var(--swatch-menutxt-general-color);
 
-	/* header measurements */
-	--header-height-on-desktop: 7.5rem;
-	--header-height-on-mobile: 7.5rem;
-	--topbar-height-on-desktop: 1.875rem;
-	--topbar-height-on-mobile: 3rem;
-	--header-background-image-size: 100% var(--header-height-on-desktop);
-
-	--body-width-on-desktop: 44.25rem;
-	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14 / 15)) * 19);
-	--sidebar-width-on-mobile: calc((var(--base-font-size) * (14 / 15)) * 16);
-	--scrollbar-width: 1rem;
 	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color));
+
 	--border-radius-width: 0.0625rem;
 
 	/* Box-Shadow 1px Borders */
@@ -264,19 +320,5 @@
 	--box-border-right: 0.0625rem 0 0 0 rgb(var(--swatch-border-color));
 	--box-border-all: 0 0 0 0.0625rem rgb(var(--swatch-border-color));
 
-	/* Sidebar */
 	--sidebar-transition-timing: 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
-	--sidebar-internal-border-thickness: 0.125rem;
-
-	/* final values */
-	--base-font-size: 0.9375rem;
-	--base-line-height: 1.313rem;
-	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
-	--header-h2-font-size: var(--base-font-size);
-	--final-header-height-on-desktop: calc(
-		var(--header-height-on-desktop) + var(--topbar-height-on-desktop)
-	);
-	--final-header-height-on-mobile: calc(
-		var(--header-height-on-mobile) + var(--topbar-height-on-mobile)
-	);
 }

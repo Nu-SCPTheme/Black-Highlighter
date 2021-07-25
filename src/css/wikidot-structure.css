@@ -1,0 +1,1773 @@
+/* WIKIDOT SPECIFIC STRUCTURE
+   ============================= */
+
+/* Structural Elements specific to Wikidot's functionality
+
+/* ===DIRECTORY===
+	1. =CONTAINER & CONTAINER-WRAP
+		1.1 =MAIN-CONTENT
+			1.1.1 =PAGE-TITLE
+			1.1.2 =BREADCRUMBS
+			1.1.3 =PAGE-CONTENT
+			1.1.4 =PAGE INFO & PAGE WATCH
+			1.1.6 =PAGE TAGS
+			1.1.6 =PAGE OPTIONS BUTTONS
+		1.2 =FOOTER BOX
+		1.3 =LICENSE BOX
+	2 =ACTION AREA 
+		2.1 =EDIT AREA
+			2.1.1 =EDITOR CAPTCHA FIELDS
+			2.1.2 =EDITOR TITLE BOX
+			2.1.3 =EDITOR TOOLBAR
+				2.3.1 =TOOLBAR ICONS
+			2.1.4 =EDITOR TEXTAREA
+			2.1.5 =EDITOR HELP LINKS
+			2.1.6 =EDITOR TEXTAREA HEIGHT BUTTONS
+			2.1.7 =EDITOR DESCRIPTION BOX
+				2.1.7.1 =DESCRIPTION CHAR COUNT
+			2.1.8 =EDITOR LOCK INFO
+			2.1.9 =EDITOR NOTIFY CHECKBOX
+			2.1.10 =EDITOR BUTTONS
+		2.2 =PAGE SOURCE
+	4. =MODALS
+	5. =FORUM
+	6. =MOBILE FORMATTING
+=============== */
+
+/* ===CONTAINER & CONTAINER WRAP=== */
+#container {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"content-wrap"
+		"footer"
+		"license";
+	grid-template-rows: auto;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+#container,
+#content-wrap {
+	padding: 0;
+}
+
+#content-wrap {
+	display: grid;
+	position: initial;
+	grid-area: content-wrap;
+	grid-template-areas: "side-bar . content .";
+	grid-template-columns:
+		/* Sidebar Width */
+		calc(var(--sidebar-width-on-desktop))
+		/* Space Between Sidebar and Content Width */
+		calc((((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop)) * 3) / 2 )
+		/* Content Width */
+		1fr
+		/* Space Between Content and Scrollbar Width */
+		calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2 );
+	flex-direction: column;
+	width: calc(100vw - (100vw - 100%));
+	height: auto;
+	min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
+	margin: 0 auto;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* ===MAIN-CONTENT=== */
+#main-content {
+	display: grid;
+	grid-area: content;
+	grid-template-areas:
+		"action-area-top action-area-top action-area-top action-area-top action-area-top action-area-top"
+		"page-title page-title page-title page-title page-title page-title"
+		"breadcrumbs breadcrumbs breadcrumbs breadcrumbs breadcrumbs breadcrumbs"
+		"page-content page-content page-content page-content page-content page-content"
+		"page-info-break page-info-break page-info-break page-info-break page-info-break page-info-break"
+		". . pwatch pwatch pwatch pwatch"
+		". . pinfo pinfo pinfo pinfo"
+		"page-tags page-tags page-tags page-tags page-tags page-tags"
+		"options-1 options-1 options-1 options-1 options-1 options-1"
+		"options-2 options-2 options-2 options-2 options-2 options-2"
+		"pbottom pbottom pbottom pbottom pbottom pbottom"
+		"action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm";
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(7, min-content) 1fr repeat(3, min-content);;
+	flex-basis: var(--body-width-on-desktop);
+	width: calc(100% - 3rem);
+	max-width: var(--body-width-on-desktop);
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	padding-right: 0;
+	padding-left: 0;
+	background-color: transparent;
+}
+
+#action-area-top {
+	grid-area: action-area-top;
+}
+
+/* ===PAGE-TITLE=== */
+#page-title,
+.meta-title {
+	--wght: 700;
+	display: flex;
+	align-items: center;
+	min-height: 1em;
+	margin: 0.5em 0 1em 0;
+	padding: 0;
+	border: none;
+	color: rgb(12, 12, 12);
+	color: rgb(var(--swatch-text-general));
+	font-family: var(--title-font);
+	font-size: 1.5em;
+	line-height: 1;
+	text-align: left;
+	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
+}
+
+@media only screen and (min-width: 56.25rem) {
+	#page-title,
+	.meta-title {
+		font-size: 2em;
+	}
+}
+
+#page-title {
+	grid-area: page-title;
+}
+
+#page-title::after,
+.meta-title::after {
+	content: "";
+	flex-grow: 1;
+	height: 0.0625rem;
+	margin: auto auto auto 1.25rem;
+	background: rgb(var(--swatch-tertiary-color));
+}
+
+/* ===BREADCRUMBS=== */
+#breadcrumbs,
+.pseudocrumbs {
+	grid-area: breadcrumbs;
+	margin: -1em 0 1em;
+	font-size: 85%;
+}
+
+/* ===PAGE-CONTENT=== */
+#page-content {
+	grid-area: page-content;
+	max-width: 90vw;
+	min-height: 45rem;
+}
+
+#page-content div,
+#page-content div table {
+	max-width: var(--body-width-on-desktop);
+}
+
+/* ===PAGE INFO & PAGE WATCH=== */
+#page-info-break {
+	grid-area: page-info-break;
+}
+
+#page-options-container {
+	display: contents;
+	font-family: var(--UI-font);
+}
+
+div#page-info {
+	grid-area: pinfo;
+	align-self: flex-end;
+	height: -webkit-min-content;
+	height: -moz-min-content;
+	height: min-content;
+	overflow: visible;
+	font-size: 0.7em;
+	text-align: right;
+}
+	
+div#page-info .odate {
+	font-size: 0.8em;
+}
+
+div.page-watch-options {
+	grid-area: pwatch;
+	align-self: flex-end;
+	height: min-content;
+	overflow: visible;
+	font-size: 0.7em;
+	margin-top: 1em;
+	line-height: 1
+}
+
+div.page-watch-options a:any-link {
+	--hover-link-color: var(--swatch-menutxt-light-color);
+	--wght: calc(var(--ui-wght) + 200);
+	margin: -0.15em 0;
+	padding: 0.15em;
+	transition:
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
+	box-decoration-break: clone;
+}
+
+div.page-watch-options a:hover,
+div.page-watch-options a:active {
+	--wght: calc(var(--ui-hvr-wght) + 200);
+	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-menutxt-light-color));
+	text-decoration: none;
+}
+
+/* ===PAGE TAGS=== */
+#main-content .page-tags {
+	display: block;
+	position: relative;
+	grid-area: page-tags;
+	width: 100%;
+	margin: 0.2rem 0 0 0;
+	padding: 0.2rem 0 0 0;
+	box-shadow: 0 -0.125rem 0 0 rgb(var(--swatch-primary-darkest));
+	font-family: var(--UI-font);
+	font-size: 0.8em;
+	justify-self: flex-start;
+}
+
+#main-content .page-tags::before {
+	--wght: var(--ui-hvr-wght);
+	content: "TAGS\0021b4";
+	position: absolute;
+	top: -2em;
+	left: 0;
+	height: 1.5em;
+	padding: 0.25em;
+	background-color: rgb(var(--swatch-primary-darkest));
+	color: rgb(var(--swatch-background));
+	font-size: 0.8em;
+	cursor: pointer;
+}
+
+#main-content .page-tags span {
+    display: flex;
+    position: relative;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+    width: auto;
+    height: 100%;
+	padding: 0;
+    font-size: 0.9em;
+	clip-path: polygon(0 0, calc(100% - 0.0625rem) 0, calc(100% - 0.0625rem) 100%, 0% 100%);
+}
+
+#main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]) {
+	--wght: calc(var(--ui-wght));
+	--hover-link-color: var(--swatch-background);
+	display: inline-flex;
+	position: relative;
+	z-index: 1;
+	margin: 0.2em -0.2em 0.2em 0.2em;
+	padding: 0.1em 0.4em 0.1em 0.3em;
+	overflow: hidden;
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	line-height: 1;
+}
+
+#main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]):not(:last-child) {
+	border-right: 0.0625rem dotted rgba(var(--swatch-primary-darkest),0.5);
+}
+
+#main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"])::before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	background-color: rgb(var(--swatch-primary));
+	pointer-events: none;
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active {
+	--wght: calc(var(--ui-hvr-wght));
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within {
+	--wght: calc(var(--ui-hvr-wght));
+	transition:
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover::before,
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active::before {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within::before {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+/* Hiding Hidden Tags */
+#main-content .page-tags a[href^="/system:page-tags/tag/_"] {
+	display: none;
+}
+
+/* ===PAGE OPTIONS BUTTONS=== */
+div#page-options-bottom {
+	position: relative;
+	grid-area: options-1;
+	padding-top: 0.1rem;
+}
+
+div#page-options-bottom-2 {
+	grid-area: options-2;
+}
+
+div#page-options-area-bottom {
+	grid-area: pbottom;
+}
+
+div[id*="page-options-bottom"] {
+	--wght: var(--ui-wght);
+	display: grid;
+	gap: 0.25em;
+	grid-template-columns: repeat(auto-fit, minmax( min( calc(var(--body-width-on-desktop) / 6), 25vw), 1fr));
+	justify-content: space-between;
+	font-family: var(--UI-font);
+	font-size: var(--base-font-size);
+	text-align: left;
+	white-space: nowrap;
+}
+
+div[id*="page-options-bottom"] > a.btn:not(.rateup):not(.ratedown):not(.cancel) {
+	padding-left: 2.5em;
+	box-shadow: 
+		inset 2em 0 0 0 rgb(var(--dark-accent));
+	line-height: 1.5;
+}
+
+div[id*="page-options-bottom"] > a.btn:not(.rateup):not(.ratedown):not(.cancel):hover,
+div[id*="page-options-bottom"] > a.btn:not(.rateup):not(.ratedown):not(.cancel):active {
+	box-shadow: 
+		inset 2em 0 0 0 rgb(var(--bright-accent));
+}
+
+div[id*="page-options-bottom"] > a.btn:not(.rateup):not(.ratedown):not(.cancel):focus-within {
+	box-shadow: 
+		inset 2em 0 0 0 rgb(var(--bright-accent));
+}
+
+div[id*="page-options-bottom"] > a > * {
+	text-indent: 0;
+}
+
+div[id*="page-options-bottom"] > a::after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 2em;
+	height: 2em;
+	transform: translateY(-50%);
+	background-color: rgb(var(--swatch-text-secondary-color));
+	mask-image: var(--button-icon);
+	mask-size: 1.5em 1.5em;
+	mask-position: center center;
+	mask-repeat: no-repeat;
+}
+
+div[id*="page-options-bottom"] > a#edit-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Edit-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M103.1 36.1h50v71.7h-50z' transform='matrix(0.7071 0.7071 -0.7071 0.7071 88.3726 -69.4924)'/%3E%3Cpath d='m60.3 139.7 17.7-53 35.3 35.3z'/%3E%3Cpath d='M146.1 13.9h50v30h-50z' transform='matrix(0.7071 0.7071 -0.7071 0.7071 70.5477 -112.5254)'/%3E%3Cpath d='M178.5 97.5c-.5-3.6-1.2-7.2-2.2-10.8-.9-3.5-2.1-6.9-3.4-10.2l-15.8 15.8c.7 2.6 1.2 5.3 1.6 7.9l1.3 9 7.6 5 2 1.3-7.7 28.9-2.4.1-9.1.5-5.6 7.2c-9.3 12-22 20.4-36.6 24.3-5.9 1.6-11.9 2.4-17.9 2.4-8.9 0-17.6-1.7-25.9-5.1l-8.4-3.4-8.1 4.1-2.1 1.1-21.2-21.2 1.1-2.1 4.1-8.1-3.4-8.4c-1.1-2.6-2-5.4-2.7-8.1C16.5 100.8 26 72.4 48 55.2l7.2-5.6.5-9.1.1-2.4 28.9-7.7 1.3 2 5 7.6 9 1.3c2.7.4 5.3.9 7.9 1.6l15.8-15.8c-6.7-2.7-13.7-4.6-21-5.6L93.3 7.4 36.4 22.6l-.9 16.8C8 60.8-5.4 97.2 4.1 132.9c1 3.6 2.1 7.1 3.5 10.4L0 158.4 41.6 200l15.1-7.6c10.5 4.3 21.8 6.6 33.5 6.6 7.6 0 15.4-1 23.1-3.1 19.5-5.2 35.7-16.5 47.3-31.3l16.9-.9 15.2-56.9-14.2-9.3z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#pagerate-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Vote-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M0 100c0 51.9 39.5 94.5 90 99.5v-20.2c-39.4-4.9-70-38.6-70-79.4 0-33.5 20.7-62.2 50-74.1V100H40l50 60V.5C39.5 5.5 0 48.1 0 100zM110 .5v20.2c39.4 4.9 70 38.6 70 79.4 0 33.5-20.7 62.2-50 74.1V100h30l-50-60v159.6c50.5-5 90-47.7 90-99.5S160.5 5.5 110 .5z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#tags-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Tags-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m183.5 37 1.7-16.6-20.9-6.9zM124.4.3.2 82.4l54.5 83.9L77 151.5l6.2-28-22.6 15.1-5.5-8.4 31.1-20.7 4.7-21.2L47 117.7l-5.5-8.4L94 74.2l4.6-21.1-65.3 43.6-5.4-8.4L101.7 39l.6-2.6 52.1-26.2z'/%3E%3Cpath d='m159.5 7.7-57.2 28.7L71 178.9l97.8 20.8 31.3-142.5-40.6-49.5zm-16.1 27.5c2.6-12.8 22.4-8.5 19.6 4.2-2.6 12.7-22.4 8.4-19.6-4.2zm17.8 152.6-78.3-16.6 28.1-128 23-11.5c-7.2 27.3 34.5 36.1 39 8.3l16.3 19.9-28.1 127.9z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#discuss-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Discuss-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m85.4 107-5.4 8h60v10H73.4l-10 15H140v10H20v-10h36.6l-10-15H20v-10h20l-10-15H20V90h10V70H0v100h120l20 30 20-30v-63z'/%3E%3Cpath d='M40 0v97l20 30 20-30h120V0H40zm81.8 56.8c0-5.3 4-10.6 10.6-10.6 5.3 0 7.9 5.3 7.9 5.3s2.6-5.3 7.9-5.3c6.6 0 10.6 5.3 10.6 10.6 0 10.6-13.2 13.2-18.5 21.2-5.2-7.9-18.5-10.6-18.5-21.2zm31-46.8-9.9 9.9 1.7-9.9h8.2zM74.6 87l-3 4.5L60 109 50 94V10h90.6l-1.5 8.6L110 39v44.7l-7.1 3.3H74.6zM190 87h-12.9l-7.1-3.3V39l-19.6-13.7 21.2-7.7-1.4-3.8-23.8 8.7-.2-.2 12.1-12.1-.2-.2H190v77z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#history-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='History-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m108.9 113.9 14.7-50.5-14.5-4.1-18.8 64.8 14.4 4.2 21.6 6.2 4.2-14.4z'/%3E%3Cpath d='M192.1 141.1c4.4-10.9 6.8-22.7 6.8-34.7 0-7.9-1-16-3.2-24-5.4-20.2-17.2-37.1-32.5-49.1l-1-17.5-59-15.8-9.6 14.7c-3.7.5-7.5 1.3-11.2 2.3-3.6 1-7.1 2.1-10.5 3.5l-10-10-18.3 55 55.1-18.4-10.3-10.3c2.7-.7 5.4-1.2 8.1-1.6l9.3-1.3L111 26l1.4-2.1 30 8 .1 2.5.5 9.4 7.5 5.8c12.4 9.7 21.1 22.8 25.2 38 1.6 6.1 2.5 12.4 2.5 18.6 0 9.2-1.8 18.3-5.3 26.9l-3.6 8.8 4.3 8.4 1.1 2.2-22 22-2.2-1.1-8.4-4.3-8.7 3.5c-2.7 1.1-5.6 2.1-8.4 2.8-27.9 7.5-57.5-2.4-75.2-25.2l-5.8-7.4-9.4-.5-2.5-.1-8-30L26 111l7.9-5.2 1.3-9.3c.4-2.8.9-5.5 1.6-8.2L20.5 71.9c-2.8 6.9-4.8 14.2-5.8 21.8L0 103.2l15.8 59.1 17.5 1c22.2 28.4 60 42.4 97 32.5 3.7-1 7.4-2.2 10.8-3.6l15.6 7.9 43.2-43.2-7.8-15.8z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#files-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Files-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M18.4 43.5.3 48.3l34.5 102.6z'/%3E%3Cpath fill='none' d='M60 20v180h140V75l-55-55z'/%3E%3Cpath d='M60 200h90.9H60zm85-180H60v180h140V75l-55-55zm35.9 50H150V39.1L180.9 70zm9.1 120H70V30h70v50h50v110z'/%3E%3Cpath d='M130 125h-10V10H90v90h10V40h10v70H80V0h50zm86.6 50.6c.2-1.7.3-3.5.3-5.2 0-19.7-11.5-37.4-29.4-45.3l-3-9.1h-34.3l-3 9.1c-17.9 8-29.4 25.7-29.4 45.3 0 1.7.1 3.5.3 5.2l-6.4 7.1 17.2 29.7 9.4-2c8.5 6.2 18.6 9.5 29.2 9.5s20.7-3.3 29.2-9.5l9.4 2 17.2-29.7-6.7-7.1zm-14.8 28.1-7.4-1.6-.7.6c-7.4 6.1-16.8 9.4-26.4 9.4s-19-3.3-26.4-9.4l-.7-.6-7.4 1.6-11.5-20 5.1-5.7-.2-.9c-.4-2.2-.5-4.4-.5-6.7 0-17.2 10.8-32.9 26.9-39.1l.9-.3 2.4-7.2H179l2.4 7.2.9.3c16.1 6.1 26.9 21.8 26.9 39.1 0 2.2-.2 4.5-.5 6.7l-.2.9 5.1 5.7-11.8 20z'/%3E%3Cpath d='M200.5 170.4c0-16.9-12.7-31.1-29.3-33v-4.8h-7.8v4.8c-16.6 2-29.3 16.1-29.3 33 0 4.6.9 9 2.7 13.1l-4.1 2.4 3.9 6.8 4.1-2.4c6.3 8.4 16.1 13.3 26.6 13.3s20.4-5 26.6-13.3l4.1 2.4 3.9-6.8-4.1-2.4c1.8-4.1 2.7-8.5 2.7-13.1zm-56.7 0c0-11.5 8.4-21.3 19.6-23.2v7.2H158l7.3 14.7h-.3l.2.3-16.4 1 2.7 4.6-6.2 3.6c-1.1-2.6-1.5-5.4-1.5-8.2zm23.4 23.5c-7 0-13.6-3.1-18.1-8.5l6.2-3.6 2.7 4.6 9-13.7.1.3.1-.3 9 13.7 2.7-4.6 6.2 3.6c-4.2 5.3-10.8 8.5-17.9 8.5zm22-15.3L183 175l2.7-4.6-16.4-1 .2-.3h-.3l7.3-14.7h-5.3v-7.2c11.1 1.9 19.6 11.7 19.6 23.2-.1 2.8-.6 5.6-1.6 8.2z'/%3E%3Cpath fill='none' d='M200 200H60V20h85l55 55z'/%3E%3Cpath d='m27 30 23 170V28z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#print-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Print-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M140 10v60H60V10h80m10-10H50v80h100V0zM40 120v80h120v-80H40zm110 70H50v-60h100v60z'/%3E%3Cpath d='M0 50v100h50v-20h100v20h50V50H0zm30 17h20v20H30V67zm140 48H30v-10h140v10z'/%3E%3Cpath d='M76.5 200h9.1l-9.4-16.3 5.1-5.7-.2-.9c-.4-2.2-.5-4.4-.5-6.7 0-17.2 10.8-32.9 26.9-39.1l.9-.3 2.4-7.2h23.1l2.4 7.2.9.3c10.3 3.9 18.5 11.8 23 21.5v-14.6c-4.7-5.5-10.7-10.1-17.6-13.2l-3-9.1h-34.3l-3 9.1c-17.9 8-29.4 25.7-29.4 45.3 0 1.7.1 3.5.3 5.2l-6.4 7.1 9.7 17.4zm82.4 0h1.1v-1.9z'/%3E%3Cpath d='m91.5 192.7 4.1-2.4c3.1 4.1 7 7.4 11.5 9.7h30.3c4.5-2.3 8.4-5.6 11.5-9.7l4.1 2.4 3.9-6.8-4.1-2.4c1.8-4.1 2.7-8.5 2.7-13.1 0-16.9-12.7-31.1-29.3-33v-4.8h-7.8v4.8c-16.6 2-29.3 16.1-29.3 33 0 4.6.9 9 2.7 13.1l-4.1 2.4 3.8 6.8zm34.7-38.2v-7.2c11.1 1.9 19.6 11.7 19.6 23.2 0 2.8-.5 5.6-1.5 8.2L138 175l2.7-4.6-16.4-1 .2-.3h-.3l7.3-14.7h-5.3zm-4 18.5.1-.3 9 13.7 2.7-4.6 6.2 3.6c-4.4 5.4-11.1 8.5-18.1 8.5-7 0-13.6-3.1-18.1-8.5l6.2-3.6 2.7 4.6 9-13.7.3.3zm-3.9-25.7v7.2H113l7.3 14.7h-.3l.2.3-16.4 1 2.7 4.6-6.2 3.6c-1-2.6-1.5-5.3-1.5-8.2 0-11.6 8.4-21.4 19.5-23.2z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#site-tools-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Site-Tools-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m66 186.6-.8-14.5-.7-.6c-12.4-10.1-21.2-23.7-25.3-39.2-1.7-6.5-2.6-13.1-2.6-19.7 0-9.2 1.7-18.3 4.9-26.9l.3-.8-6.6-13 36.6-36.6 13 6.6.8-.3c2.4-.9 4.8-1.7 7.2-2.3 6.5-1.7 13.1-2.6 19.7-2.6 22.5 0 44.5 10.4 58.8 27.9l.6.7 14.5.8 13.4 50-12.2 8-.1.9c-.9 5.5-2.4 10.9-4.5 16.1l-1.1 2.8-15.9-16.2.3-1.1c.5-2.1 1-4.2 1.3-6.4l1.2-8.4 7.5-4.9-5.7-21.2-9-.5-5.2-6.7c-10.6-13.6-26.5-21.4-43.7-21.4-4.8 0-9.7.6-14.4 1.9-2.2.6-4.4 1.3-6.5 2.2L84 64.4l-8-4.1-15.6 15.6 4.1 8-3.2 7.8c-2.7 6.7-4.1 13.6-4.1 20.8 0 4.8.6 9.7 1.9 14.4 3.2 11.8 9.9 21.9 19.5 29.4l6.7 5.2.5 9 21.2 5.7 4.9-7.5 8.4-1.2c2.1-.3 4.2-.7 6.3-1.3l1.1-.3 16.1 16.1-2.8 1.1c-2.8 1.1-5.8 2.1-8.7 2.9-2.4.7-4.9 1.2-7.4 1.6l-.9.1-8 12.2-50-13.3z'/%3E%3Cpath d='M144 112.9c0-2.4-.3-4.7-.8-6.9l8.8-7.9c-2-5.3-5-10.1-8.9-14.2l-11 4.4c-1.8-1.4-3.8-2.7-5.9-3.7l-.7-11.8c-2.6-.9-5.4-1.5-8.2-1.8-2.8-.3-5.7-.4-8.4-.1l-3.4 11.4c-2.3.5-4.5 1.3-6.6 2.3l-9.7-6.8c-4.7 3.1-8.7 7.1-11.9 11.8l6.8 9.7c-1 2.1-1.8 4.3-2.3 6.6l-11.4 3.3c-.5 5.8.1 11.4 1.8 16.6l11.8.8c1 2.1 2.2 4.1 3.7 5.9l-4.5 11c4 3.8 8.8 6.9 14.1 9l8-8.8c1.1.3 2.3.5 3.4.6 1.2.1 2.3.2 3.5.2l5.8 10.4c5.7-.8 11-2.7 15.8-5.5l-1.9-11.7c1.8-1.4 3.5-3.1 4.9-4.9l11.7 2c2.8-4.7 4.8-10 5.6-15.8l-10.1-6.1zm-33.1 14.6c-8.4-1-14.5-8.6-13.5-17s8.6-14.4 17-13.5c8.4 1 14.5 8.6 13.5 17s-8.6 14.4-17 13.5z'/%3E%3Cpath d='M21.1 8.1h55.6v80H21.1z' transform='matrix(0.7071 0.7071 -0.7071 0.7071 48.305 -20.5051)'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#more-options-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Layer_1' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M55 35v30H25V35h30m10-10H15v50h50V25zM0 40h15v20H0zm65 0h135v20H65zm100 45v30h-30V85h30m10-10h-50v50h50V75zm0 15h25v20h-25zM0 90h125v20H0zm105 45v30H75v-30h30m10-10H65v50h50v-50zM0 140h65v20H0zm115 0h85v20h-85z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#edit-sections-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Edit-Sections-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M14.1 63.7 0 49.6V140h90v-.4zM0 160h90v40H0zM110 0v60.6l20 20V20h50v160h-50v-19.9l-20-6.7V200h90V0z'/%3E%3Cpath d='M56.3 31.4h50v100h-50z' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 196.4094 81.5396)'/%3E%3Cpath d='m159.1 159.2-17.7-53-35.3 35.4z'/%3E%3Cpath d='M3.3 13.4h50v30h-50z' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 68.3764 28.5066)'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#edit-append-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Append-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M62.5 62.4 7.5 44 44.2 7.3z'/%3E%3Cpath d='M93.9 14.7c-3.7.5-7.5 1.3-11.2 2.3-3.6 1-7.1 2.2-10.5 3.5l16.4 16.4c2.7-.7 5.5-1.3 8.2-1.6l9.3-1.3 5.2-7.9 1.4-2.1 30 8 .1 2.5.5 9.4 7.5 5.8c12.4 9.7 21.1 22.8 25.2 38 1.6 6.1 2.5 12.4 2.5 18.6 0 9.2-1.8 18.3-5.3 26.9l-3.6 8.8 4.3 8.4 1.1 2.2-22 22-2.2-1.1-8.4-4.3-8.7 3.5c-2.7 1.1-5.6 2.1-8.4 2.8-27.9 7.5-57.5-2.4-75.2-25.2l-5.8-7.4-9.4-.5-2.5-.1-8-30 2.1-1.3 7.9-5.2 1.3-9.3c.4-2.8.9-5.5 1.6-8.2L20.8 71.9C18 78.8 16 86.1 15 93.6L.4 103.2l15.8 59.1 17.5 1c22.2 28.4 60 42.4 97 32.5 3.7-1 7.4-2.2 10.8-3.6l15.6 7.9 43.2-43.2-7.9-15.6c4.4-10.9 6.8-22.7 6.8-34.7 0-7.9-1-16-3.2-24-5.4-20.2-17.2-37.1-32.5-49.1l-1-17.5-59-16-9.6 14.7z'/%3E%3Ccircle cx='106.6' cy='106' r='72.5' fill='none'/%3E%3Cpath d='M106.6 61c-24.9 0-45 20.1-45 45s20.1 45 45 45 45-20.1 45-45-20.2-45-45-45zm30 50h-25v25h-10v-25h-25v-10h25V76h10v25h25v10z'/%3E%3Cpath d='M3.7 6.6h25.8v20H3.7z' transform='matrix(0.7071 0.7071 -0.7071 0.7071 16.6282 -6.885)'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#edit-meta-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Meta-Tags-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M78.4 20.7 7.7 91.5 110.2 194l63.6-7.1 7.1-63.6L78.4 20.7zm35.5 162.8-92.1-92 56.6-56.6 92.1 92.1-5.7 50.9-50.9 5.6z'/%3E%3Cpath d='m180.9 123.3-5.3 47.4 16.8-30.4-55.5-134-51.6 21.4zM61.6 37.5l-17.1 7.1 3 7.1zm79.8 153 20.1 5.9 4.7-8.6z'/%3E%3Cpath d='M154.4 153.9c2.6 0 5.1 1 7.1 2.9 3.9 3.9 3.9 10.2 0 14.1-2 2-4.5 2.9-7.1 2.9s-5.1-1-7.1-2.9c-3.9-3.9-3.9-10.2 0-14.1 2-1.9 4.5-2.9 7.1-2.9m0-10c-5.3 0-10.4 2.1-14.1 5.9-7.8 7.8-7.8 20.5 0 28.3 3.8 3.8 8.8 5.9 14.1 5.9 5.3 0 10.4-2.1 14.1-5.9 7.8-7.8 7.8-20.5 0-28.3-3.7-3.8-8.8-5.9-14.1-5.9z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M65 105.2v-30h30m33.5 33.6v30h-30m-11.3-8.7 19.1-46.2'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#watchers-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Watchers-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M76.9 124.8c-5.8-10.1-5.7-22.7.1-32.9l8.7 5c-4.1 7.1-4.1 15.9-.1 23l-8.7 4.9zm-67.3.5-9.2-4C27.5 56.5 98.3 18 158.8 25.8l-1 10c-56.5-7.4-123 28.8-148.2 89.5z'/%3E%3Cpath d='M111.8 51.2C47.9 63.9 10.6 136.8 8.2 167.1 89.8 198.2 188.3 131.5 200 54.6c-14.3-4.9-48-14.2-88.2-3.4zm29.2 80.9c-3.6 3.2-7.5 6.1-11.5 8.8l-9.4-16.6c6.2-7 3.8-19.4-5.1-23.2-7.4-2.8-11.3-12.5-8-19.7-20 9-21.3 48.7 4.4 47.9l9.6 16.8c-25.9 14.8-57.2 19.6-86.4 13.3l2.1-9.8c12.7 3.1 38.2 4.3 59.4-3.3-33.2-6.7-40.2-55.6-10.1-71.8 28-17.7 65 10.5 57 41.9 8.6-9.2 15.8-19.9 21-31.5l9.1 4.1c-7.4 16.5-18.5 31.4-32.1 43.1z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#backlinks-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Backlinks-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M192.1 141.1c4.4-10.9 6.8-22.7 6.8-34.7 0-7.9-1-16-3.2-24-5.4-20.2-17.2-37.1-32.5-49.1l-1-17.5-59-15.8-9.6 14.7c-3.7.5-7.5 1.3-11.2 2.3-3.6 1-7.1 2.1-10.5 3.5l-10-10-18.3 55 55.1-18.4-10.3-10.3c2.7-.7 5.4-1.2 8.1-1.6l9.3-1.3L111 26l1.4-2.1 30 8 .1 2.5.5 9.4 7.5 5.8c12.4 9.7 21.1 22.8 25.2 38 1.6 6.1 2.5 12.4 2.5 18.6 0 9.2-1.8 18.3-5.3 26.9l-3.6 8.8 4.3 8.4 1.1 2.2-22 22-2.2-1.1-8.4-4.3-8.7 3.5c-2.7 1.1-5.6 2.1-8.4 2.8-27.9 7.5-57.5-2.4-75.2-25.2l-5.8-7.4-9.4-.5-2.5-.1-8-30L26 111l7.9-5.2 1.3-9.3c.4-2.8.9-5.5 1.6-8.2L20.5 71.9c-2.8 6.9-4.8 14.2-5.8 21.8L0 103.2l15.8 59.1 17.5 1c22.2 28.4 60 42.4 97 32.5 3.7-1 7.4-2.2 10.8-3.6l15.6 7.9 43.2-43.2-7.8-15.8z'/%3E%3Cpath d='M102.2 108.3c-4.4 5.7-13-1-8.6-6.7l3.3-4.3c7.1-9.1 17-9.9 24.8-6.1 2.9 1.3 5.7 3.5 7.7 6 5.6 6.6 7.2 16.5.1 25.6l-20.9 26.9c-4.8 6.2-11 8.4-17 7.9-7.6 0-15.5-5.5-18.3-12.6-3.9-8.1-1.7-16.1 5.2-23.9 2.1 2.9 5.3 5.3 8.6 6.7-1.5 2-4.1 4.8-4.4 7.4-1.5 6.5 4.8 12.8 11.3 11.5 2.1-.3 4.3-1.4 6-3.6 4.9-6.3 20.9-26.9 20.9-26.9 1.3-1.6 1.9-3.3 2-4.9 1.1-9.8-11.4-14.8-17.4-7.1l-3.3 4.1z'/%3E%3Cpath d='M117.3 113.5c4.4-5.7-4.1-12.5-8.6-6.7l-3.3 4.3c-6 7.7-18.5 2.7-17.4-7.1.1-1.6.7-3.3 2-4.9 0 0 16-20.6 20.9-26.9 1.7-2.2 3.9-3.3 6-3.6 6.5-1.4 12.8 5 11.3 11.5-.3 2.6-2.9 5.4-4.4 7.4 3.3 1.3 6.5 3.8 8.6 6.7 6.9-7.8 9.2-15.8 5.2-23.9-2.8-7.2-10.7-12.6-18.3-12.6-6-.5-12.2 1.7-17 7.9L81.4 92.5c-7.1 9.1-5.4 18.9.1 25.6 2 2.5 4.8 4.7 7.7 6 7.8 3.7 17.7 3 24.8-6.1l3.3-4.5z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#view-source-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='View-Source-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M69.2 139.9h-15v-60h15m-30 60h-15v-60h15m91.6 0h15v60h-15m30-60h15v60h-15m-44.8-70-32 80'/%3E%3Cpath d='M190 45v130H10V45h180m10-10H0v150h200V35z'/%3E%3Cpath d='M0 45h200V15H0v30zm59.9-20H180v10H59.9V25zm-20 0h10v10h-10V25zM20 25h10v10H20V25z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#parent-page-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Parent-Page-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M114.2 95.9c-.5-3.7-1.3-7.5-2.3-11.2-1-3.6-2.1-7.1-3.5-10.5l10-10-55-18.4 18.4 55.1L92 90.6c.7 2.7 1.2 5.4 1.6 8.1l1.3 9.3 7.9 5.2 2.1 1.4-8 30 16.2 19.9 15.8-59.1-14.7-9.5z'/%3E%3Cpath d='M160 70V0H0v130h40v70h160V70h-40zM59.9 10H140v10H59.9V10zm-20 0h10v10h-10V10zM20 10h10v10H20V10zm170 180H50v-90h20.9l-3.3-10H60V80h4.3L61 70H39.9v50H10V30h140v40h-23.2l-1.2 1.2-5.5 5.5c.4 1.1.7 2.2 1 3.2h59v10h-56.5l10.8 7.1 4.5 2.9H190V190z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#page-block-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Page-Lock-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M140 120c5.5 0 10 4.5 10 10v50c0 5.5-4.5 10-10 10H60c-5.5 0-10-4.5-10-10v-50c0-5.5 4.5-10 10-10h80m0-10H60c-11 0-20 9-20 20v50c0 11 9 20 20 20h80c11 0 20-9 20-20v-50c0-11-9-20-20-20z'/%3E%3Cpath d='M0 40v140h40v-10H10V50h180v120h-30v10h40V40z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M130 113H70V83c0-5.5 4.5-10 10-10h40c5.5 0 10 4.5 10 10v30z'/%3E%3Cpath d='M0 50h200V20H0v30zm59.9-20H180v10H59.9V30zm-20 0h10v10h-10V30zM20 30h10v10H20V30zm80 155c-2.8 0-5-2.2-5-5v-30c0-2.8 2.2-5 5-5s5 2.2 5 5v30c0 2.8-2.2 5-5 5z'/%3E%3Cpath d='M105 160H95c-5.5 0-10-4.5-10-10v-10c0-5.5 4.5-10 10-10h10c5.5 0 10 4.5 10 10v10c0 5.5-4.5 10-10 10z'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#rename-move-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Rename-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M80 140h20v20H80zm-30 0h20v20H50zm-30 0h20v20H20z'/%3E%3Cpath d='M190 110h-16l3.4 10H190v50H10v-50h81.2l-10-10H0v70h200v-70z'/%3E%3Cpath d='m179.9 159.2-53.1-17.7 35.4-35.4z'/%3E%3Cpath d='M24.1 13.4h50v30h-50z' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -5.6833 42.9942)'/%3E%3Cpath d='M76.8 31.1h50v100h-50z' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -27.5307 95.7386)'/%3E%3C/svg%3E");
+}
+
+div[id*="page-options-bottom"] > a#delete-button {
+	--button-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Delete-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M150 70v120H50V70h100m10-10H40v140h120V60zm10-30v20H30V30h140m10-10H20v40h160V20z'/%3E%3Cpath d='M95 90h10v80H95zm30 0h10v80h-10zm-60 0h10v80H65zm55-80v10H80V10h40m10-10H70v30h60V0z'/%3E%3C/svg%3E");
+}
+
+/* ===FOOTER BOX=== */
+#footer {
+	display: flex !important;
+	position: relative;
+	left: 0;
+	box-sizing: border-box;
+	grid-area: footer;
+	flex-direction: row;
+	align-items: center;
+	align-items: center;
+	align-self: auto;
+	justify-content: flex-end;
+	width: 100%;
+	height: 1rem;
+	margin: 0;
+	padding: 0.2875rem 0;
+	clear: both;
+	background: rgb(100, 3, 15);
+	background: rgb(var(--swatch-primary-darkest, 100, 3, 15));
+	color: rgb(66, 66, 72);
+	color: rgb(var(--swatch-tertiary-color, 66, 66, 72));
+	font-size: 77%;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+#footer > a {
+	margin-right: auto;
+	padding-right: 0.5em;
+}
+
+#footer .options {
+	display: block;
+	visibility: visible;
+	width: auto;
+	margin-right: 0.25em;
+	margin-left: auto;
+	padding-right: 0.25em;
+	float: right;
+	border-right: 0.125rem solid rgba(var(--swatch-primary));
+	font-size: 100%;
+	text-align: right;
+}
+
+#footer .options,
+#footer .options * {
+	white-space: normal;
+}
+
+#footer .options * {
+	white-space: nowrap;
+}
+
+/* ===LICENSE BOX=== */
+#license-area {
+	position: relative;
+	grid-area: license;
+	align-self: flex-end;
+	width: 100%;
+	padding: 0;
+}
+
+/* ===ACTION AREA=== */
+#action-area {
+	grid-area: action-area-btm;
+}
+
+#action-area h1 {
+	display: none;
+}
+
+#action-area > div:first-of-type {
+	padding-top: 2rem;
+}
+
+/* ===EDIT AREA=== */
+form#edit-page-form {
+	display: grid;
+	font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
+	grid-template-areas:		
+		"pageid . captcha-1 captcha-1 captcha-2 captcha-2"
+		"title-txt title-txt . . . ."
+		"title-box title-box title-box title-box title-box title-box"
+		"toolbar toolbar toolbar toolbar toolbar toolbar"
+		"editbox editbox editbox editbox editbox editbox"
+		"edit-help edit-help edit-help edit-help edit-help text-resize"
+		"descrip descrip descrip descrip descrip descrip"
+		"descsub descsub descsub descsub descsub descsub"
+		"info-lock info-lock info-lock info-lock info-lock info-lock"
+		"nonotif nonotif nonotif nonotif nonotif nonotif"
+		"captcha-3 captcha-3 captcha-3 captcha-3 captcha-3 captcha-3"
+		"editbuttons editbuttons editbuttons editbuttons editbuttons editbuttons";
+	grid-template-columns: repeat(6, 1fr);
+	padding: 0;
+	background-color: transparent;
+	box-shadow: 
+		-0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),0.5),
+		0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),0.5),
+		0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.5);
+}
+
+form#edit-page-form,
+form#edit-page-form * {
+	box-sizing: border-box;
+}
+
+form#edit-page-form,
+form#edit-page-form *:not(#edit-page-textarea) {
+	max-width: var(--body-width-on-desktop);
+}
+
+form#edit-page-form *:not(input):not(textarea) {
+	font-family: var(--UI-font);
+}
+
+form#edit-page-form > table,
+form#edit-page-form > table tbody,
+form#edit-page-form > table tr,
+form#edit-page-form > table:not(:first-of-type) td {
+	display: contents;
+}
+
+/* ===EDITOR CAPTCHA FIELDS=== */
+
+form#edit-page-form #page_id {
+	grid-area: pageid;
+}
+
+form#edit-page-form #recaptcha_challenge_field {
+	grid-area: captcha-1;
+}
+
+form#edit-page-form #recaptcha_response_field {
+	grid-area: captcha-2;
+}
+
+form#edit-page-form #edit-page-captcha {
+	grid-area: captcha-3;
+}
+
+/* ===EDITOR TITLE BOX=== */
+
+form#edit-page-form table.form:first-of-type td:first-of-type {
+	--wght: calc(var(--ui-wght) + 100);
+	grid-area: title-txt;
+	width: max-content;
+	margin: calc(-0.75em + 0.0625rem) 1.25em -0.75em 1.5em;
+	padding: 0 0.25em;
+	transform: translateY(0);
+	transition: 
+		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0;
+	background-color: rgba(var(--swatch-background),1);
+	color: rgb(var(--swatch-text-general));
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+form#edit-page-form table.form:first-of-type:focus-within td:first-of-type {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+	transform: translateY(-0.15625rem);
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.15625rem;
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-background));
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type {
+	grid-area: title-box;
+	box-shadow: 0 -0.0625em 0 0 rgba(var(--swatch-tertiary-color),0.5);
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type input {
+	--wght: var(--ui-wght);
+	width: calc(100% - 2em);
+	margin: 0.5em 1em;
+	padding: 0.25rm;
+	transition: 
+		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: none;
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0;
+	font-size: 1.2em !important; /* Overwrite Wikidot Inline Styling */
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type input:not(:placeholder-shown) {
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-shown {
+	background-color: rgba(var(--swatch-primary-darker), 0.4);
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
+	--wght: var(--ui-hvr-wght);
+	border: none;
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.125em;
+	background-color: rgba(var(--swatch-secondary-color),0);
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
+	--wght: var(--ui-hvr-wght);
+	border: none;
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.125em;
+	background-color: rgba(var(--swatch-secondary-color),0);
+}
+
+form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
+	--wght: var(--ui-hvr-wght);
+	border: none;
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.125em;
+	background-color: rgba(var(--swatch-secondary-color),0);
+}
+
+/* ===EDITOR TOOLBAR=== */
+
+form#edit-page-form .wd-editor-toolbar-panel {
+	--icon-size: clamp(1.5em, 5.75vw, calc((var(--body-width-on-desktop) - 6em)/22));
+	display: grid;
+	position: relative;
+	grid-area: toolbar;
+	grid-auto-flow: row;
+	grid-auto-rows: var(--icon-size);
+	grid-auto-columns: var(--icon-size);
+	grid-gap: 0.125em;
+	grid-template-areas:
+		"header-h1 bold-txt italic-txt underline-txt strike-txt super-txt sub-txt raw-txt teletype-txt . ordered-list unordered-list increment-list decrement-list . quote-block hr-txt div-block code-block code-wizard html-block create-table"
+		"url-txt url-wizard page-link-txt page-link-wizard image-block image-wizard . create-footnote create-toc definition-list bibliography bib-cite clear-all-fl . math-block math-inline equation-ref . . . . .";
+	grid-template-columns: repeat(auto-fit, minmax(1fr, var(--icon-size)));
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0 1em;
+	background-color: rgb(var(--swatch-background));
+	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-tertiary-color));
+}
+
+@media only screen and (max-width: 480px), (orientation: portrait) {
+	form#edit-page-form .wd-editor-toolbar-panel {	
+		grid-template-areas:
+			"header-h1 bold-txt italic-txt underline-txt strike-txt super-txt sub-txt raw-txt teletype-txt . ordered-list unordered-list increment-list decrement-list"
+			"quote-block hr-txt div-block code-block code-wizard html-block create-table . url-txt url-wizard page-link-txt page-link-wizard image-block image-wizard"
+			". . create-footnote create-toc definition-list bibliography bib-cite clear-all-fl . math-block math-inline equation-ref . .";
+		justify-content: center;
+	}
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div {
+	display: contents;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel li.hseparator {
+	display: none;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div > ul {
+	display: contents;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li {
+	position: relative;
+	margin: 0;
+	height: 100%;
+}
+	
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
+	display: grid;
+	top: 0;
+	left: var(--icon-size);
+	grid-auto-columns: var(--icon-size);
+	grid-auto-flow: column;
+	grid-template-columns: repeat(auto-fill, var(--icon-size));
+	height: var(--icon-size);
+	padding-left: 0;
+	overflow: hidden;
+	transition:	
+		clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
+		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+	border: none;
+	background-color: rgb(var(--swatch-background));
+	box-shadow: inset 0 0 0 0 rgb(var(--swatch-tertiary-color));
+	pointer-events: none;
+	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li:hover > ul, 
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li.sfhover > ul {
+	left: var(--icon-size);
+	padding-left: 0.125em;
+	transition:	
+		clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1),
+		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
+	pointer-events: all;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	border: none;
+	background-color: transparent;
+	background-image: initial;
+	background-position: initial;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul a {
+	background-color: rgba(var(--swatch-tertiary-color),0.25); 
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a::before,
+form#edit-page-form .wd-editor-toolbar-panel a::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a::before {
+	z-index: 1;
+	width: 100%;
+	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--swatch-menutxt-general-color));
+	mask-image: var(--edit-menu-mask);
+	mask-size: calc(var(--icon-size) * 0.8);
+	mask-position: center center;
+	mask-repeat: no-repeat;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel li:hover > a::before,
+form#edit-page-form .wd-editor-toolbar-panel li:active > a::before {
+	background-color: rgb(var(--swatch-background));
+}
+
+form#edit-page-form .wd-editor-toolbar-panel > li:focus-within a::before {
+	background-color: rgb(var(--swatch-background));
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a::after {
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	background-color: rgb(var(--bright-accent));
+	pointer-events: none;
+	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel li:hover > a::after,
+form#edit-page-form .wd-editor-toolbar-panel li:active > a::after {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel li:focus-within a::after {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1) {
+	grid-area: header-h1;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2) {
+	grid-area: bold-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3) {
+	grid-area: italic-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4) {
+	grid-area: underline-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5) {
+	grid-area: strike-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6) {
+	grid-area: teletype-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7) {
+	grid-area: quote-block;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8) {
+	grid-area: super-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9) {
+	grid-area: sub-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10) {
+	grid-area: raw-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1) {
+	grid-area: hr-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2) {
+	grid-area: div-block;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3) {
+	grid-area: clear-all-fl;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4) {
+	grid-area: create-table;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5) {
+	grid-area: create-toc;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7) {
+	grid-area: code-block
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8) {
+	grid-area: code-wizard;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10) {
+	grid-area: url-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11) {
+	grid-area: url-wizard;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12) {
+	grid-area: page-link-txt;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13) {
+	grid-area: page-link-wizard;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15) {
+	grid-area: image-block;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16) {
+	grid-area: image-wizard;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18) {
+	grid-area: html-block;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1) {
+	grid-area: ordered-list;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2) {
+	grid-area: unordered-list;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3) {
+	grid-area: increment-list;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4) {
+	grid-area: decrement-list;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5) {
+	grid-area: definition-list;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6) {
+	grid-area: create-footnote;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8) {
+	grid-area: math-block;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9) {
+	grid-area: math-inline;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10) {
+	grid-area: equation-ref;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12) {
+	grid-area: bibliography;
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13) {
+	grid-area: bib-cite;
+}
+
+/* ===TOOLBAR ICONS ===*/
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h1::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H1-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M22.4 160V40h14.5v53.4h64V40h14.5v120h-14.5v-53.7h-64V160H22.4zM177.6 40v120h-14.5V61.1h-.9c-.5 1.1-2 2.3-4.2 3.7-2.3 1.4-5.2 2.6-8.8 3.6s-7.7 1.6-12.3 1.6V57.8c4.6 0 8.7-.8 12.1-2.5 3.4-1.7 6.2-3.7 8.5-5.9 2.3-2.3 4-4.3 5.2-6.2 1.2-1.8 1.9-2.9 2.1-3.2h12.8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h2::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H2-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M10.2 160.8v-120h14.5v53.4h64V40.8h14.5v120H88.7v-53.7h-64v53.7H10.2zm106.8 0v-10.5l39.6-43.4c4.6-5.1 8.5-9.5 11.5-13.3 3-3.8 5.2-7.3 6.7-10.7s2.2-6.8 2.2-10.5c0-4.2-1-7.9-3-11-2-3.1-4.8-5.5-8.2-7.1-3.5-1.7-7.4-2.5-11.7-2.5-4.6 0-8.6.9-12 2.8-3.4 1.9-6.1 4.5-7.9 7.9s-2.8 7.4-2.8 12h-13.8c0-7 1.6-13.2 4.9-18.5 3.2-5.3 7.7-9.5 13.3-12.4 5.6-3 11.9-4.5 18.9-4.5 7 0 13.3 1.5 18.7 4.5 5.4 3 9.7 7 12.8 12s4.6 10.6 4.6 16.8c0 4.4-.8 8.7-2.4 12.9-1.6 4.2-4.3 8.9-8.2 14-3.9 5.1-9.3 11.4-16.1 18.8l-27 28.8v.9h55.8v12.9H117z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h3::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H3-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M6.1 160V40h14.5v53.4h64V40h14.5v120H84.6v-53.7h-64V160H6.1zm147.3 1.6c-7.7 0-14.6-1.3-20.7-4s-10.8-6.4-14.4-11.1c-3.5-4.7-5.5-10.3-5.8-16.6h14.8c.3 3.9 1.6 7.2 4 10 2.3 2.8 5.4 5 9.2 6.5 3.8 1.5 8 2.3 12.6 2.3 5.2 0 9.7-.9 13.7-2.7 4-1.8 7.1-4.3 9.4-7.5 2.3-3.2 3.4-6.9 3.4-11.1 0-4.4-1.1-8.3-3.3-11.7-2.2-3.4-5.4-6-9.6-7.9-4.2-1.9-9.4-2.9-15.5-2.9h-9.6V92h9.6c4.8 0 9-.9 12.6-2.6 3.6-1.7 6.4-4.1 8.5-7.3 2.1-3.1 3.1-6.8 3.1-11 0-4.1-.9-7.6-2.7-10.6-1.8-3-4.3-5.4-7.6-7-3.3-1.7-7.1-2.5-11.5-2.5-4.1 0-8 .8-11.7 2.3-3.7 1.5-6.6 3.7-8.9 6.5-2.3 2.8-3.6 6.2-3.8 10.2h-14.1c.2-6.3 2.1-11.8 5.7-16.6 3.6-4.7 8.2-8.4 14-11.1 5.8-2.7 12.1-4 19-4 7.4 0 13.8 1.5 19.1 4.5 5.3 3 9.4 6.9 12.2 11.8 2.9 4.9 4.3 10.2 4.3 15.8 0 6.8-1.8 12.5-5.3 17.3-3.5 4.8-8.3 8.1-14.4 9.9v.9c7.6 1.3 13.5 4.5 17.8 9.6 4.3 5.2 6.4 11.6 6.4 19.2 0 6.5-1.8 12.4-5.3 17.5-3.5 5.2-8.3 9.2-14.4 12.2s-13 4.6-20.8 4.6z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h4::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H4-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M83.2 93.4h-64V40H4.6v120h14.6v-53.7h64V160h14.5V40H83.2zm112.2 29.1H179V40h-17.7l-52.7 83.4v12h56.5V160h13.8v-24.6h16.4v-12.9zm-71.1-.9 39.8-63h.9v64h-40.8v-1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h5::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H5-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M6.4 159.2v-120h14.5v53.4h64V39.2h14.5v120H84.9v-53.7h-64v53.7H6.4zm147.6 1.6c-6.9 0-13.1-1.4-18.6-4.1s-9.9-6.5-13.2-11.2c-3.3-4.8-5.1-10.2-5.4-16.3h14.1c.5 5.4 3 9.9 7.4 13.4s9.7 5.3 15.8 5.3c4.9 0 9.3-1.2 13.2-3.5 3.8-2.3 6.9-5.5 9.1-9.5s3.3-8.6 3.3-13.7c0-5.2-1.1-9.9-3.4-14s-5.4-7.4-9.4-9.8c-4-2.4-8.5-3.6-13.7-3.6-3.7 0-7.4.5-11.3 1.7-3.9 1.2-7.1 2.6-9.6 4.4l-13.6-1.6 7.3-59.1h62.3v12.9h-50.2l-4.2 35.4h.7c2.5-2 5.5-3.6 9.3-4.9s7.6-1.9 11.6-1.9c7.3 0 13.9 1.7 19.7 5.2 5.8 3.5 10.3 8.3 13.6 14.3 3.3 6.1 5 13 5 20.7 0 7.7-1.7 14.5-5.1 20.5-3.4 6-8.1 10.7-14.1 14.2s-13 5.2-20.6 5.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h6::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='H6-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M5 160.1v-120h14.5v53.4h64V40.1H98v120H83.5v-53.7h-64v53.7H5zm149.9 1.7c-4.9-.1-9.8-1-14.8-2.8s-9.4-4.8-13.5-9.1-7.3-10.1-9.8-17.4c-2.5-7.3-3.7-16.5-3.7-27.6 0-10.7 1-20.1 3-28.4s4.9-15.2 8.7-20.9c3.8-5.7 8.4-10 13.7-12.9s11.4-4.4 18.2-4.4c6.7 0 12.7 1.3 18 4s9.5 6.4 12.9 11.2c3.3 4.8 5.5 10.3 6.4 16.6h-14.3c-1.3-5.5-3.9-10-7.7-13.6s-8.9-5.4-15.2-5.4c-9.3 0-16.6 4.1-21.9 12.2-5.3 8.1-8 19.5-8.1 34.2h.9c2.2-3.3 4.8-6.2 7.8-8.5 3-2.4 6.4-4.2 10-5.5s7.6-1.9 11.7-1.9c6.9 0 13.2 1.7 18.9 5.1 5.7 3.4 10.3 8.1 13.7 14.1 3.4 6 5.2 12.9 5.2 20.6 0 7.4-1.7 14.2-5 20.4s-8 11-14 14.6c-5.9 3.7-13 5.4-21.1 5.4zm0-12.9c4.9 0 9.3-1.2 13.3-3.7s7-5.8 9.3-9.9c2.3-4.1 3.4-8.8 3.4-13.8s-1.1-9.5-3.3-13.6c-2.2-4.1-5.2-7.3-9.1-9.8-3.8-2.4-8.2-3.6-13.2-3.6-3.7 0-7.2.7-10.4 2.2s-6 3.5-8.4 6c-2.4 2.5-4.3 5.4-5.7 8.7-1.4 3.3-2.1 6.7-2.1 10.3 0 4.8 1.1 9.2 3.4 13.4 2.2 4.1 5.3 7.5 9.3 10 4.1 2.5 8.5 3.8 13.5 3.8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bold::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Bold-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M53.9 159.4V40h47.8c8.8 0 16.1 1.3 22 3.9 5.9 2.6 10.3 6.2 13.2 10.8 3 4.6 4.4 9.9 4.4 15.9 0 4.7-.9 8.8-2.8 12.3s-4.4 6.4-7.7 8.6c-3.2 2.2-7 3.8-11.1 4.8v1.2c4.5.2 8.8 1.5 12.8 3.8 4 2.4 7.2 5.7 9.7 9.9 2.5 4.3 3.7 9.3 3.7 15.2 0 6.3-1.6 12-4.7 16.9-3.1 5-7.7 8.9-13.9 11.8-6.1 2.9-13.6 4.3-22.6 4.3H53.9zM79.2 90h18.7c3.5 0 6.5-.6 9.2-1.8 2.7-1.2 4.8-3 6.4-5.2 1.6-2.3 2.4-5 2.4-8.1 0-4.3-1.5-7.8-4.6-10.4-3.1-2.6-7.4-4-13-4H79.2V90zm0 48.8h20.6c7 0 12.2-1.4 15.4-4.1 3.2-2.7 4.8-6.3 4.8-10.8 0-3.3-.8-6.2-2.4-8.7-1.6-2.5-3.9-4.5-6.8-5.9-2.9-1.4-6.4-2.2-10.5-2.2H79.2v31.7z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-italic::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Italic-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m136.4 52.9 2.2-12.9H81.4l-2.1 12.9h21.3l-15.7 94.2H63.6L61.4 160h57.2l2.1-12.9H99.4l15.7-94.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-underline::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Underline-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M30 172.5h140v10H30zM131.5 40h14.3v78c0 8.1-1.9 15.2-5.7 21.5-3.8 6.3-9.1 11.3-16 14.9-6.9 3.6-14.9 5.4-24.2 5.4-9.2 0-17.3-1.8-24.2-5.4-6.9-3.6-12.2-8.6-16-14.9C55.9 133.2 54 126 54 118V40h14.3v76.9c0 5.8 1.3 10.9 3.8 15.3 2.5 4.5 6.1 8 10.8 10.5 4.7 2.6 10.3 3.8 16.9 3.8s12.2-1.3 16.9-3.8c4.7-2.6 8.3-6.1 10.8-10.5 2.5-4.5 3.8-9.6 3.8-15.3V40z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-strikethrough::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Strike-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M30 95h140v10H30z'/%3E%3Cpath d='M127.5 69.8c-.7-5.9-3.6-10.5-8.6-13.8s-11-5-18.3-5c-5.3 0-10 .9-13.9 2.6-4 1.7-7.1 4.1-9.3 7.1-2.2 3-3.3 6.4-3.3 10.3 0 3.2.8 5.9 2.3 8.2 1.5 2.3 3.5 4.2 5.9 5.7 2.4 1.5 5 2.7 7.6 3.7 2.7 1 5.1 1.7 7.3 2.3l12.2 3.3c3.1.8 6.6 2 10.5 3.4 3.8 1.4 7.5 3.4 11.1 5.9s6.5 5.7 8.8 9.5 3.5 8.6 3.5 14.2c0 6.5-1.7 12.3-5.1 17.6-3.4 5.2-8.3 9.4-14.8 12.5s-14.3 4.6-23.5 4.6c-8.6 0-16-1.4-22.3-4.2s-11.2-6.6-14.8-11.6c-3.6-5-5.6-10.7-6.1-17.3h15c.4 4.5 1.9 8.3 4.6 11.2 2.7 3 6.1 5.1 10.2 6.6 4.1 1.4 8.6 2.1 13.3 2.1 5.5 0 10.5-.9 14.9-2.7s7.9-4.4 10.5-7.6c2.6-3.3 3.9-7.1 3.9-11.5 0-4-1.1-7.2-3.3-9.7s-5.2-4.5-8.8-6.1-7.6-2.9-11.8-4.1l-14.8-4.2c-9.4-2.7-16.8-6.5-22.3-11.5s-8.2-11.5-8.2-19.6c0-6.7 1.8-12.6 5.5-17.6 3.7-5 8.6-8.9 14.8-11.7 6.2-2.8 13.1-4.2 20.8-4.2 7.7 0 14.6 1.4 20.6 4.1s10.8 6.5 14.3 11.3c3.5 4.8 5.4 10.2 5.6 16.2h-14z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-teletype::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Teletype-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M166 70.9c-.3-.3-.8-.5-1.3-.5h-34.4V43.9c0-.4-.1-.8-.2-1l-.6-.6c-.2-.2-.6-.2-1-.2h-9.8v28.3H67.4V43.9c0-.4-.1-.8-.2-1l-.6-.6c-.2-.2-.6-.2-1-.2h-9.8v28.3H33.5V79c0 .3 0 .6.1.8l.3.6c.2.2.4.3.6.3.2.1.5.1.8.1h20.5V126c0 6.3.8 11.5 2.4 15.6 1.6 4.1 3.9 7.4 6.8 9.8 2.9 2.4 6.3 4.1 10.1 5 3.8 1 7.9 1.5 12.2 1.5h14.6c.7 0 1.1-.2 1.4-.5.3-.3.4-.8.4-1.5v-8.8H88.3c-3.7 0-6.9-.3-9.5-1-2.6-.7-4.7-1.8-6.4-3.5-1.7-1.7-2.9-4-3.7-6.9-.8-3-1.2-6.7-1.2-11.2V80.8h51.3V126c0 6.3.8 11.5 2.4 15.6 1.6 4.1 3.9 7.4 6.8 9.8 2.9 2.4 6.3 4.1 10.1 5s7.9 1.5 12.2 1.5h14.6c.7 0 1.1-.2 1.4-.5.3-.3.4-.8.4-1.5v-8.8h-15.4c-3.7 0-6.9-.3-9.5-1-2.6-.7-4.7-1.8-6.4-3.5-1.7-1.7-2.9-4-3.7-6.9-.8-3-1.2-6.7-1.2-11.2V80.8h36.2v-8.6c-.2-.5-.4-1-.7-1.3z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-quote::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Quote-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M114.8 150v-37.2c0-4.1.2-8.6.5-13.7.3-4 .8-8 1.8-12.4.8-3.8 2.2-7.5 4-11.2 1.8-3.5 4.3-6.9 7.5-10.1 5.4-5.4 10.8-8.9 16.5-10.6 3.1-.9 6.2-1.8 9.4-2.6v10c-3.2 1.5-5.9 3.2-8.1 5.1-3.6 3.2-6.3 6.7-8.2 10.4-1.7 3.4-2.9 7.1-3.4 11v.4c-.4 3.4-.6 6.4-.6 9.1v10h20.3V150h-39.7zm-69.3 0v-37.2c0-4.1.2-8.6.5-13.7.3-4.1.9-8.1 1.8-12.2 1-4 2.3-7.8 4.2-11.5 1.6-3.3 4.1-6.6 7.4-9.7l.2-.2.2-.2c4.9-5.2 10.4-8.7 16.2-10.4 3.1-.9 6.3-1.8 9.6-2.6v10.1c-3.2 1.5-5.9 3.2-8.1 5.1-3.6 3.2-6.3 6.7-8.2 10.4-1.7 3.4-2.9 7.1-3.4 11v.4c-.4 3.4-.6 6.4-.6 9.1v10h20.3V150H45.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-superscript::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Superscript-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m33.9 39.9 30.9 49.9h.9l30.9-49.9h17.1L76 99.9l37.7 60h-17l-30.9-49h-.9l-30.9 49H16.8l38.7-60-38.7-60h17.1zm92.6 60v-9.1l27.4-24.4c2.7-2.4 5-4.6 6.9-6.5 1.8-1.9 3.2-3.8 4.2-5.6.9-1.8 1.4-3.7 1.4-5.7 0-3.5-1.3-6.3-4-8.4-2.7-2.1-6-3.1-10-3.1-4.2 0-7.6 1.1-10.2 3.4-2.6 2.2-3.9 5.2-3.9 8.8H126c0-6.7 2.5-12.1 7.4-16.1 5-4.1 11.3-6.1 19-6.1 5.2 0 9.7.9 13.6 2.8 3.9 1.9 7 4.4 9.1 7.6s3.3 6.9 3.3 10.9c0 3.2-.6 6.2-1.9 8.9-1.3 2.7-3.3 5.6-6 8.5s-6.2 6.3-10.5 10l-15.2 13.4v.5h35.9V100h-54.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-subscript::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Subscript-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m35.6 39.9 30.9 49.9h.9l30.9-49.9h17.1l-37.7 60 37.7 60h-17l-30.9-49h-.9l-30.9 49H18.4l38.7-60-38.7-60h17.2zm89.2 140.6v-9.1l27.4-24.4c2.7-2.4 5-4.6 6.9-6.5 1.8-1.9 3.2-3.8 4.2-5.6.9-1.8 1.4-3.7 1.4-5.7 0-3.5-1.3-6.3-4-8.4s-6-3.1-10-3.1c-4.2 0-7.6 1.1-10.2 3.4s-3.9 5.2-3.9 8.8h-12.2c0-6.7 2.5-12.1 7.4-16.1s11.3-6.1 19-6.1c5.2 0 9.7.9 13.6 2.8s7 4.4 9.1 7.6 3.3 6.9 3.3 10.9c0 3.2-.6 6.2-1.9 8.9-1.3 2.7-3.3 5.6-6 8.5s-6.2 6.3-10.5 10l-15.2 13.4v.5H179v10.3h-54.2z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-raw::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Raw-Text-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M104.3 109.8V98.5H81.1L65.6 71.4H35.8v.1l-13.1 36 10.6 3.9 10.5-28.7h8.7l-17.3 47.6H12.8v11.3h30.4l7.4-20.5 32.7 39 8.7-7.3-36.9-44 7.3-20.1 12.1 20.9v.2zm-37.2-42c3.2 1.2 6.4 1 9.5-.4 3.1-1.5 5.3-3.8 6.4-7 1.2-3.2 1-6.4-.4-9.5-1.5-3.1-3.8-5.3-7.1-6.5-3.2-1.2-6.3-1-9.5.5-3.1 1.5-5.3 3.8-6.5 7s-1 6.4.4 9.5c1.6 3 4 5.2 7.2 6.4z'/%3E%3Cpath d='M183.4 72.7C180.8 66 177 60.2 172 55.3c-5-4.9-11-8.6-18.2-11.3-7.1-2.6-15.2-4-24.3-4-9.8 0-18.5 1.4-26.2 4.3-5.6 2.1-10.6 4.9-15 8.4.6 3.1.4 6.3-.7 9.3-1.5 4.3-4.6 7.7-8.9 9.8l-.1.2c-1.9.8-3.8 1.3-5.7 1.5-.1.1-.1.3-.2.4L84 93.5h.4c.4-3.9 1.3-7.6 2.4-11.2 1.9-5.6 4.7-10.4 8.5-14.5s8.5-7.4 14.2-9.7c5.7-2.3 12.3-3.4 19.9-3.4 4.4 0 8.7.4 12.8 1.3 4.2.9 8 2.3 11.6 4.2 3.6 1.9 6.7 4.4 9.4 7.5 2.7 3.1 4.8 6.8 6.3 11.1s2.3 9.4 2.3 15.1c0 5.9-.4 10.8-1.1 14.7s-1.8 6.7-3.2 8.5c-1.4 1.9-3.2 2.8-5.3 2.8-1.5 0-2.8-.6-3.7-1.7-.9-1.2-1.4-2.8-1.4-4.9V68.7h-14.3v5.1h-.6c-.5-1.3-1.8-2.6-4-3.7-2.1-1.2-4.7-2-7.8-2.5-3.1-.5-6.3-.5-9.8 0-3 .4-6.1 1.4-9.1 2.9s-5.7 3.6-8.2 6.3c-2.4 2.7-4.4 6-5.9 9.9-.8 2.1-1.4 4.4-1.7 6.9h13.6v21.3H97.4c1.4 4 3.3 7.4 5.8 10.1 2.5 2.8 5.3 4.9 8.5 6.3 3.2 1.5 6.6 2.3 10.2 2.5 3.4.2 6.7-.1 9.7-.9 3.1-.8 5.6-2 7.8-3.4 2.1-1.5 3.6-3.1 4.3-5h.5c.3 2.1 1.1 3.9 2.2 5.5s2.8 2.7 5 3.5c2.2.8 5.1 1.1 8.6.8 4.9-.3 9.1-1.4 12.6-3.4s6.3-4.8 8.4-8.3c2.1-3.5 3.7-7.6 4.7-12.3 1-4.7 1.5-9.8 1.5-15.4.1-8.1-1.2-15.5-3.8-22.2zm-42.9 37.5c-1 2.8-2.5 4.9-4.7 6.4-2.2 1.4-5.2 2.1-8.9 2.1-4 0-7.1-.9-9.5-2.7s-4-4.1-5-7c-1-2.9-1.5-5.9-1.6-9.2 0-3.5.7-6.5 1.9-9.1 1.2-2.6 3-4.6 5.4-6 2.4-1.4 5.2-2.1 8.6-2.1 3.9 0 6.9.7 9.1 2 2.2 1.3 3.7 3.3 4.6 5.8.9 2.5 1.4 5.6 1.4 9.3.1 4.2-.4 7.7-1.3 10.5z'/%3E%3Cpath d='M149.4 142.5c-2.7.7-5.7 1.3-9.1 1.8-3.3.5-6.8.8-10.3.8-7.4 0-14-1-19.7-2.9-5.7-1.9-10.5-4.8-14.4-8.6-3.9-3.8-6.8-8.4-8.8-14-.6-1.5-1-3.2-1.4-4.8H69.5v-3.9l-1.4-2.4c.3 3.4.8 6.7 1.5 9.8L99 153.4l-.8.7c1.6.7 3.2 1.4 4.9 1.9 7.6 2.6 16.2 3.9 25.9 3.9 4.3 0 8.5-.3 12.6-.9 4.1-.6 7.8-1.4 11-2.3 3.3-1 5.9-2 7.8-3.1l-4.5-13.2c-1.7.7-3.8 1.4-6.5 2.1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-hr::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='hr-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M160 40v30H40V40m0 120v-30h120v30'/%3E%3Cpath d='M175 110H25V90h150v20z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-div::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Div-Block-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m59.5 65.5-18.8 69.7H30.3L49 65.5h10.5zm17.1 61.6c-3.3 0-6.3-.9-9-2.6-2.7-1.7-4.8-4.2-6.4-7.6-1.6-3.3-2.3-7.4-2.3-12.3 0-5 .8-9.2 2.4-12.5 1.6-3.3 3.8-5.8 6.4-7.5 2.7-1.7 5.6-2.5 8.8-2.5 2.4 0 4.5.4 6.1 1.2 1.6.8 3 1.8 4 3.1 1 1.2 1.8 2.4 2.3 3.6h.4V68.2h12.1v58.2H89.5v-7H89c-.6 1.2-1.4 2.4-2.4 3.6-1 1.2-2.4 2.2-4 2.9s-3.7 1.2-6 1.2zm3.8-9.6c2 0 3.6-.5 5-1.6s2.4-2.6 3.1-4.5c.7-1.9 1.1-4.2 1.1-6.8s-.4-4.8-1.1-6.8c-.7-1.9-1.8-3.4-3.1-4.4s-3-1.6-5-1.6-3.7.5-5 1.6-2.4 2.6-3.1 4.5c-.7 1.9-1.1 4.1-1.1 6.6s.4 4.8 1.1 6.7c.7 1.9 1.7 3.5 3.1 4.5s3 1.8 5 1.8zm35-40.4c-1.8 0-3.3-.6-4.6-1.8-1.3-1.2-1.9-2.6-1.9-4.3s.6-3.1 1.9-4.3c1.3-1.2 2.8-1.8 4.6-1.8 1.8 0 3.4.6 4.6 1.8 1.3 1.2 1.9 2.6 1.9 4.3 0 1.7-.6 3.1-1.9 4.3-1.3 1.2-2.8 1.8-4.6 1.8zm-6.1 49.3V82.7h12.1v43.6h-12.1zm60.4-43.7-15.3 43.6h-13.6l-15.3-43.6h12.8l9.1 31.2h.5l9-31.2h12.8z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-width='10' d='M42.4 160H5V40h37.4m115.2 0H195v120h-37.4'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloat::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Clear-Both-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M150 50v100H50V50h100m10-10H40v120h120V40z'/%3E%3Cpath d='m160 58.2 28 41.8-28 41.8V58.2m-.1-18.2H150v120h9.9l40.1-60-40.1-60zM40 58.2v83.6L12 100l28-41.8M50 40h-9.9L0 100l40.1 60H50V40zm77.3 102.7-70-69.9 15.4-15.5 70.1 70-15.5 15.4zm-54.7 0-15.4-15.4 70-70 15.4 15.5-70 69.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Clear-Left-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M170 50v100H70V50h100m10-10H60v120h120V40z'/%3E%3Cpath d='M60 58.2v83.6L32 100l28-41.8M70 40h-9.9L20 100l40.1 60H70V40zm77.3 102.7-70-69.9 15.4-15.5 70.1 70-15.5 15.4zm-54.7 0-15.4-15.4 70-70 15.4 15.5-70 69.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Clear-Right-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M130 50v100H30V50h100m10-10H20v120h120V40z'/%3E%3Cpath d='m140 58.2 28 41.8-28 41.8V58.2m-.1-18.2H130v120h9.9l40.1-60-40.1-60zm-32.6 102.7-70-69.9 15.4-15.5 70.1 70-15.5 15.4zm-54.7 0-15.4-15.4 70-70 15.4 15.5-70 69.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-table::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Tables-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M165 50v100H35V50h130m10-10H25v120h150V40z'/%3E%3Cpath d='M25 40h150v30H25z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M115 70v90m5-50H25'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-toc::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='TOC-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M66.5 50.5v9.1H40.2v-9.1h26.3zM46.2 40.1h12.1v40.7c0 1.1.2 2 .5 2.6s.8 1 1.4 1.3c.6.2 1.3.4 2.1.4.6 0 1.1-.1 1.7-.2s1-.2 1.3-.2l1.9 9c-.6.2-1.5.4-2.6.7-1.1.3-2.4.4-4 .5-2.9.1-5.5-.3-7.7-1.2-2.2-.9-3.9-2.3-5.1-4.1-1.2-1.9-1.8-4.2-1.8-7.1V40.1h.2zM90.1 95c-4.4 0-8.2-.9-11.4-2.8-3.2-1.9-5.7-4.5-7.4-7.9-1.7-3.4-2.6-7.3-2.6-11.8s.9-8.5 2.6-11.8c1.7-3.4 4.2-6 7.4-7.9 3.2-1.9 7-2.8 11.4-2.8s8.2.9 11.4 2.8c3.2 1.9 5.7 4.5 7.4 7.9 1.7 3.4 2.6 7.3 2.6 11.8s-.9 8.4-2.6 11.8-4.2 6-7.4 7.9c-3.1 1.9-7 2.8-11.4 2.8zm.1-9.3c2 0 3.7-.6 5-1.7s2.4-2.7 3.1-4.7 1-4.3 1-6.8-.3-4.8-1-6.8-1.7-3.6-3.1-4.7c-1.3-1.2-3-1.7-5-1.7s-3.7.6-5.1 1.7c-1.4 1.2-2.4 2.7-3.1 4.7s-1 4.3-1 6.8.3 4.8 1 6.8 1.7 3.6 3.1 4.7 3.1 1.7 5.1 1.7zm47.4 9.3c-4.5 0-8.3-1-11.5-2.9s-5.7-4.5-7.4-7.9c-1.7-3.4-2.6-7.3-2.6-11.7 0-4.5.9-8.4 2.6-11.8s4.2-6 7.4-7.9c3.2-1.9 7-2.9 11.4-2.9 3.8 0 7.1.7 10 2.1 2.9 1.4 5.1 3.3 6.8 5.8s2.6 5.4 2.8 8.8h-11.4c-.3-2.2-1.2-3.9-2.5-5.3-1.4-1.3-3.2-2-5.4-2-1.9 0-3.5.5-4.9 1.5s-2.5 2.5-3.3 4.4c-.8 1.9-1.2 4.3-1.2 7 0 2.8.4 5.2 1.2 7.1s1.9 3.4 3.3 4.5c1.4 1 3 1.5 4.9 1.5 1.4 0 2.6-.3 3.7-.9 1.1-.6 2-1.4 2.8-2.5.7-1.1 1.2-2.4 1.4-3.9h11.4c-.2 3.3-1.1 6.3-2.7 8.8s-3.8 4.5-6.7 5.9c-2.9 1.6-6.2 2.3-10.1 2.3z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-width='10' d='M70 155h80m-80-28.8h80'/%3E%3Cpath stroke='%23000000' stroke-width='2.5' d='M50.2 131.2v-10l10 5zm0 29v-10l10 5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-code::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Code-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M165 50v100H35V50h130m10-10H25v120h150V40z'/%3E%3Cpath d='M60.5 86.4c-2.9 1.3-5.6 2.5-8.3 3.7-2.7 1.2-5.3 2.4-7.7 3.5v13.5c0 .3 0 .5.1.6.1.2.2.3.4.5s.4.3.6.4c3.5 1.6 7.1 3.1 10.7 4.7 3.5 1.6 7.1 3.1 10.6 4.7s7.1 3.1 10.6 4.7v-9.5c0-.4-.1-.7-.1-.8-.1-.2-.3-.3-.7-.5-.9-.4-2.3-1-4.1-1.8-1.8-.8-3.9-1.8-6.3-2.8-2.4-1-4.8-2.1-7.3-3.2-2-.9-3.8-1.7-5.5-2.4V100c1.2-.6 2.6-1.2 4-1.8 1.9-.9 3.9-1.7 5.8-2.6 2-.8 3.8-1.7 5.6-2.5 1.8-.8 3.4-1.5 4.7-2.1s2.4-1 3.1-1.4c.3-.2.6-.4.7-.6.1-.2.1-.4.1-.8v-9.4c-2.7 1.2-5.5 2.4-8.4 3.7-2.9 1.4-5.8 2.7-8.6 3.9zm54.8 38.4c-2.5-6.3-4.9-12.7-7.3-19.1-2.5-6.4-4.9-12.8-7.4-19.1-2.5-6.4-4.9-12.7-7.4-19.1-.1-.1-.1-.3-.2-.3-.1-.1-.2-.1-.3-.1H82.5c2.8 7.2 5.6 14.4 8.4 21.7 2.8 7.3 5.6 14.5 8.4 21.8 2.8 7.3 5.6 14.5 8.3 21.8.1.3.3.5.5.6.2.1.4.2.6.2h9.8c-.6-1.3-1.1-2.7-1.6-4.1s-1.1-2.9-1.6-4.3zm40.2-30.9c-.1-.2-.2-.4-.4-.5-.2-.2-.4-.3-.6-.4-3.6-1.5-7.1-3.1-10.6-4.7s-7.1-3.1-10.6-4.7c-3.6-1.5-7.1-3.1-10.6-4.7v9.4c0 .4 0 .6.1.8.1.2.3.4.7.6.9.4 2.3 1 4.1 1.8 1.8.8 3.9 1.8 6.3 2.8 2.4 1.1 4.8 2.1 7.3 3.2 2 .9 3.8 1.7 5.6 2.4v1.6c-1.2.6-2.6 1.2-4 1.8-1.9.9-3.9 1.7-5.8 2.6-2 .9-3.8 1.7-5.6 2.5s-3.4 1.5-4.7 2.1c-1.3.6-2.4 1-3.1 1.3-.4.2-.6.4-.7.5-.1.2-.1.4-.1.8v9.5c2.7-1.2 5.5-2.5 8.4-3.8 2.9-1.2 5.7-2.5 8.6-3.8 2.8-1.3 5.6-2.5 8.3-3.8 2.7-1.2 5.3-2.4 7.7-3.5V94.3c-.2 0-.3-.2-.3-.4z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-codewiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Code-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M60.5 86.4c-2.9 1.3-5.6 2.5-8.3 3.7-2.7 1.2-5.3 2.4-7.7 3.5v13.5c0 .3 0 .5.1.6.1.2.2.3.4.5s.4.3.6.4c3.5 1.6 7.1 3.1 10.7 4.7 3.5 1.6 7.1 3.1 10.6 4.7s7.1 3.1 10.6 4.7v-9.5c0-.4-.1-.7-.1-.8-.1-.2-.3-.3-.7-.5-.9-.4-2.3-1-4.1-1.8-1.8-.8-3.9-1.8-6.3-2.8-2.4-1-4.8-2.1-7.3-3.2-2-.9-3.8-1.7-5.5-2.4V100c1.2-.6 2.6-1.2 4-1.8 1.9-.9 3.9-1.7 5.8-2.6 2-.8 3.8-1.7 5.6-2.5 1.8-.8 3.4-1.5 4.7-2.1s2.4-1 3.1-1.4c.3-.2.6-.4.7-.6.1-.2.1-.4.1-.8v-9.4c-2.7 1.2-5.5 2.4-8.4 3.7-2.9 1.4-5.8 2.7-8.6 3.9zm54.8 38.4c-2.5-6.3-4.9-12.7-7.3-19.1-2.5-6.4-4.9-12.8-7.4-19.1l-2.1-5.4-8.6-8.6-5.6-5.6h-1.8c2.8 7.2 5.6 14.4 8.4 21.7 2.8 7.3 5.6 14.5 8.4 21.8 2.8 7.3 5.6 14.5 8.3 21.8.1.3.3.5.5.6.2.1.4.2.6.2h9.8c-.6-1.3-1.1-2.7-1.6-4.1s-1.1-2.8-1.6-4.2zm12.1-14.7c-.3.1-.6.3-.9.4-1.3.6-2.4 1-3.1 1.3-.4.2-.6.4-.7.5-.1.2-.1.4-.1.8v9.5c2.7-1.2 5.5-2.5 8.4-3.8 1.2-.5 2.4-1.1 3.6-1.6l-7.2-7.1zM140.7 50H165v24.3l10 10V40h-44.3z'/%3E%3Cpath d='m169.4 152.2-4.4-4.5v2.3H35V50h63.3l10-10H25v120h150v-2.3z'/%3E%3Cpath d='m199.1 122.5-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM119.5 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-uri::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Link-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M96 100.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3z'/%3E%3Cpath d='M114.2 107.2c5.3-6.8-5-14.9-10.3-8.1l-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 2.1-2.7 4.6-4 7.2-4.3 7.9-1.6 15.3 6 13.6 13.8-.3 3.1-3.4 6.4-5.3 8.8 4 1.6 7.8 4.5 10.3 8 8.3-9.4 11-18.9 6.3-28.7-3.3-8.6-12.8-15.1-22-15.2-7.2-.6-14.6 2.1-20.4 9.5L71.1 81.6c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l3.9-4.9z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-uriwiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Link-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M52.5 100.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3z'/%3E%3Cpath d='m60.5 99.1-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 2.1-2.7 4.6-4 7.2-4.3 4.1-.9 8.1.8 10.7 3.8l9.3-9.3C85.8 43.1 79.4 40 73.2 40c-7.2-.6-14.6 2.1-20.4 9.5L27.7 81.7c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l4-5.1c5.1-6.8-5.2-14.9-10.4-8zm128.3 23.4-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM109.2 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelink::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Page-Link-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M96 100.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3z'/%3E%3Cpath d='M114.2 107.2c5.3-6.8-5-14.9-10.3-8.1l-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 2.1-2.7 4.6-4 7.2-4.3 7.9-1.6 15.3 6 13.6 13.8-.3 3.1-3.4 6.4-5.3 8.8 4 1.6 7.8 4.5 10.3 8 8.3-9.4 11-18.9 6.3-28.7-3.3-8.6-12.8-15.1-22-15.2-7.2-.6-14.6 2.1-20.4 9.5L71.1 81.6c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l3.9-4.9z'/%3E%3Cpath d='M35.9 150V50h70.7l10-10H25.9v120h150v-10z'/%3E%3Cpath d='m165.9 140 10-10v30h-10zm-140-70h69.9V40H25.9v30zm39.9-20h10v10h-10V50zm-19.9 0h10v10h-10V50z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Page-Link-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M35.9 150V70h28.6l10.7-13.7c6.8-8.6 16.1-13.4 26.3-13.4.8 0 1.6 0 2.4.1 1.5 0 3 .2 4.6.4l1.8-1.8L112 40H25.9v120h12.4c-1.2-2.9-2.1-6.3-2.4-10zm10-100h10v10h-10V50zm124.4 102.2-4.4-4.5v2.3h-52.2l-7.8 10h70v-2.3z'/%3E%3Cpath d='M82.8 113.9c-5.3 6.9-15.6-1.2-10.3-8.1l4-5.1c8.5-10.9 20.3-11.9 29.7-7.4 3.5 1.5 6.9 4.1 9.3 7.2 6.7 8 8.6 19.8.2 30.7l-25.1 32.2c-5.8 7.4-13.2 10.1-20.4 9.5-9.1 0-18.7-6.6-22-15.2-4.7-9.7-2-19.3 6.3-28.7 2.5 3.5 6.3 6.4 10.3 8-1.8 2.4-5 5.8-5.3 8.8-1.7 7.8 5.7 15.4 13.6 13.8 2.6-.3 5.1-1.6 7.2-4.3 5.9-7.5 25.1-32.3 25.1-32.3 1.5-1.9 2.2-3.9 2.4-5.9 1.3-11.7-13.7-17.8-20.9-8.5l-4.1 5.3zm117.2 8.6-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM120.4 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3Cpath d='m90.7 112.1-4 5.1c-7.2 9.3-22.2 3.2-20.9-8.5.1-2 .9-4 2.4-5.9 0 0 19.2-24.7 25.1-32.3 1.6-2.1 3.5-3.4 5.5-4l-1-1 11.6-11.6c-2-.6-4-.9-6-.9-7.2-.6-14.6 2.1-20.4 9.5L57.9 94.7c-8.5 10.9-6.5 22.7.2 30.7 2.4 3 5.7 5.7 9.3 7.2 9.4 4.5 21.2 3.5 29.7-7.4l4-5.1c5.2-6.8-5.1-14.9-10.4-8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-image::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Image-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M25 40v120h150V40H25zm10 110v-20.3l24.1-24.1 21.6 21.6L130 78l35 35v37H35zm28-89c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15c0-8.2 6.7-15 15-15z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-imagewiz::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Image-Wizard-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M175 83.9V40h-43.9zm-10 63.5v2.6H35v-20.3l24.1-24.1 21.6 21.6 32-32-22.6-22.7-7.1-7 7.1-7.1L108.5 40H25v120h150v-2.6l-10-10zM63 61c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15c0-8.2 6.7-15 15-15z'/%3E%3Cpath d='m199.4 122.5-57-57-22.6-22.6-22.6 22.6 22.6 22.6 57 57 22.6-22.6zM119.8 57l8.5 8.5-8.5 8.5-8.5-8.5 8.5-8.5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-html::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='HTML-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M76.5 110.6c-1.7.8-3.3 1.5-4.9 2.2s-3.1 1.4-4.6 2.1v8c0 .2 0 .3.1.4.1.1.1.2.2.3s.2.2.4.2c2.1.9 4.2 1.8 6.4 2.8 2.1.9 4.2 1.8 6.3 2.8s4.2 1.8 6.3 2.8v-5.6c0-.2-.1-.4-.1-.5-.1-.1-.2-.2-.4-.3-.5-.2-1.4-.6-2.4-1.1-1.1-.5-2.3-1.1-3.7-1.7-1.4-.6-2.8-1.2-4.3-1.9-1.2-.5-2.3-1-3.3-1.4v-1c.7-.4 1.5-.7 2.4-1.1 1.1-.5 2.3-1 3.4-1.5 1.2-.5 2.3-1 3.3-1.5 1.1-.5 2-.9 2.8-1.2.8-.4 1.4-.6 1.8-.8.2-.1.4-.2.4-.4.1-.1.1-.2.1-.5v-5.6c-1.6.7-3.3 1.4-5 2.2-1.9.8-3.6 1.6-5.2 2.3zm14 25.3c-.3.8-.6 1.7-.9 2.4h5.8c.1 0 .2-.1.4-.1.1-.1.2-.2.3-.4 1.6-4.3 3.3-8.6 4.9-12.9s3.3-8.6 5-12.9c1.7-4.3 3.3-8.6 5-12.9h-6.1c-.1 0-.1 0-.2.1-.1 0-.1.1-.1.2-1.5 3.8-2.9 7.5-4.4 11.3-1.5 3.7-2.9 7.5-4.4 11.3-1.4 3.8-2.8 7.6-4.3 11.3-.4.9-.7 1.8-1 2.6zm42.4-20.9c-.1-.1-.1-.2-.2-.3-.1-.1-.2-.2-.4-.2-2.1-.9-4.2-1.8-6.3-2.8-2.1-.9-4.2-1.8-6.3-2.8-2.1-.9-4.2-1.8-6.3-2.8v5.6c0 .2 0 .4.1.5l.4.4c.5.2 1.4.6 2.4 1.1 1.1.5 2.3 1.1 3.7 1.7 1.4.7 2.8 1.2 4.3 1.9 1.2.5 2.3 1 3.3 1.4v.9c-.7.4-1.5.7-2.4 1.1-1.1.5-2.3 1-3.4 1.5-1.2.5-2.3 1-3.3 1.5-1.1.5-2 .9-2.8 1.2-.8.4-1.4.6-1.8.8-.2.1-.4.2-.4.3-.1.1-.1.2-.1.5v5.6c1.6-.7 3.3-1.5 5-2.3 1.7-.7 3.4-1.5 5.1-2.3 1.7-.8 3.3-1.5 4.9-2.3 1.6-.7 3.1-1.4 4.6-2.1v-8c-.1.2-.1.1-.1-.1z'/%3E%3Cpath d='M110.7 38.3H51.6v123.5h96.8V75.9l-37.7-37.6zm4.4 33.3V57l14.6 14.6h-14.6zm23.1 10.2v69.8H61.7V48.4h43.2v33.3h33.3z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-numlist::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='OL-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-width='15' d='M65 150h110M65 100h110M65 50h110'/%3E%3Cpath d='M49.2 60.5c-1.7-.4-4.5 0-6.7-.1V33.2c-.9-1.3-6-.2-7.7-.5-2.4 1.6-5 3.4-7.4 5.1.2.3-.3 8.3.2 8.2 2.7-.8 5.2-3.5 6.6-6.1h1v20.5h-8.8c.1 2-.2 4.8.1 6.8 7 .4 15.7 0 22.8.1-.1-1.8.3-5-.1-6.8zm.5 50.3c-4.9-.5-11.8-.2-16.3 1.2.2-7.1 10.8-8.1 14-13.5 6.7-12.1-5.4-19-16.2-15.1-5.7 1.3-3.9 4.7-4.1 9h1c3.4-2.4 10.8-5 13.7-1.2.8 7.6-13.2 8.8-14.8 16.1-1 2.6-1.3 7.5-.6 10.2 7.3.2 16.3 0 23.6.1-.3-2 .1-4.9-.3-6.8zm-.7 43.1c-1.5-2.2-4.3-3.3-7.3-3.9v-1c9.3-.6 10.8-13.7 1.8-16.1-4.6-1.5-12.5-1.2-16.6.7-.3 2 0 4.9-.1 6.9 4.5-.4 11-3 15 .3 2.4 6.2-6.7 5.1-11.2 5.4-.8 11.4 1.7 4.7 10 7.9 3 1 2.9 5.4-.2 6.2-4.6 1.3-10-.1-14.5-1v6.6c.2 1.1 1 .9 2.4 1.3 9.3 2.6 26.5.1 20.7-13.3z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bullist::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='UL-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-width='15' d='M65 150h110M65 100h110M65 50h110'/%3E%3Ccircle cx='37.5' cy='50.2' r='12.5'/%3E%3Ccircle cx='37.5' cy='100' r='12.5'/%3E%3Ccircle cx='37.5' cy='150' r='12.5'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-incindent::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Inc-List-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-width='15' d='M90 140h110M90 100h110M90 60h110M58 40v120'/%3E%3Cpath d='M0 125V75l30 25z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-decindent::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Dec-List-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-width='15' d='M90 140h110M90 100h110M90 60h110M58 40v120'/%3E%3Cpath d='M30 75v50L0 100z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-deflist::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Def-List-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M34.2 63.4c-1.5 0-2.9-.5-4-1.7-1.1-1.1-1.7-2.4-1.7-4 0-1.5.5-2.9 1.7-4 1.1-1.1 2.4-1.7 4-1.7 1.5 0 2.9.6 4 1.7s1.7 2.4 1.7 4c0 1-.3 2-.8 2.8-.5.9-1.2 1.5-2 2-.9.6-1.9.9-2.9.9zm0 32.2c-1.5 0-2.9-.5-4-1.7-1.1-1.1-1.7-2.4-1.7-4s.5-2.9 1.7-4c1.1-1.1 2.4-1.7 4-1.7 1.5 0 2.9.5 4 1.7 1.1 1.1 1.7 2.4 1.7 4 0 1-.3 2-.8 2.8-.5.9-1.2 1.5-2 2-.9.7-1.9.9-2.9.9zm19.2 8.2h-8.1L68.7 40h8l23.4 63.8H92L73 50.1h-.5l-19.1 53.7zm3-24.9H89v6.9H56.4v-6.9zm54.9-15.5c-1.5 0-2.9-.5-4-1.7-1.1-1.1-1.7-2.4-1.7-4 0-1.5.6-2.9 1.7-4s2.4-1.7 4-1.7 2.9.6 4 1.7 1.7 2.4 1.7 4c0 1-.3 2-.8 2.8-.5.9-1.2 1.5-2 2-1 .6-1.9.9-2.9.9zm0 32.2c-1.5 0-2.9-.5-4-1.7-1.1-1.1-1.7-2.4-1.7-4s.6-2.9 1.7-4 2.4-1.7 4-1.7 2.9.5 4 1.7 1.7 2.4 1.7 4c0 1-.3 2-.8 2.8s-1.2 1.5-2 2c-1 .7-1.9.9-2.9.9zm17.3 8.2V40h22.3c4.4 0 8.1.8 11 2.3s5 3.6 6.4 6.1c1.4 2.6 2.1 5.4 2.1 8.5 0 2.7-.5 5-1.4 6.8-1 1.8-2.2 3.2-3.8 4.2s-3.3 1.8-5.1 2.3v.6c2 .1 3.9.8 5.9 2.1 2 1.2 3.6 3 5 5.4s2 5.2 2 8.5c0 3.2-.7 6.1-2.2 8.6s-3.7 4.6-6.9 6.1c-3.1 1.5-7.2 2.2-12.2 2.2h-23.1zm7.7-35.8h14.3c2.3 0 4.4-.5 6.3-1.4 1.9-.9 3.4-2.2 4.5-3.9 1.1-1.7 1.7-3.6 1.7-5.9 0-2.8-1-5.2-2.9-7.1s-5-2.9-9.3-2.9h-14.6V68zm0 28.9h15.3c5 0 8.6-1 10.8-2.9s3.2-4.3 3.2-7.1c0-2.2-.6-4.2-1.7-6-1.1-1.8-2.7-3.3-4.7-4.4-2-1.1-4.4-1.7-7.2-1.7h-15.7v22.1z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-width='10' d='M69.9 154.2h80m-80-28.8h80'/%3E%3Cpath stroke='%23000000' stroke-width='2.5' d='M50.1 130.4v-10l10 5-10 5zm0 29v-10l10 5-10 5z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-footnote::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Footnotes-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M127.9 84.7v14.6H73.5v15.4'/%3E%3Cpath d='M185 125.1v30h-75v-30h75m5-5h-85v40h85v-40zM75 77.4H10v-5h65v5zm-20-15H10v-5h45v5zm40-15H10v-5h85v5z'/%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='5' d='M95 44.9H10m45 15H10m65 15H10'/%3E%3Cpath d='M130.4 44.9v30H125V50.2h-.2l-7 4.5v-5l7.5-4.8h5.1zm-54.7 80.2v30h-5.4v-24.7h-.2l-7 4.5v-5l7.5-4.8h5.1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-math::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Math-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='10' d='M160 157H40m0-110h120'/%3E%3Cpath d='m65.1 142-3-7.1 29.1-35.7-28.7-29.1 3-8.1h60.1l5.2 4.3V83h-8.4l-5.6-10.7H82.4l28.5 28.6v4.7l-24.6 28h35.4l4.2-10.8h6.8V142H65.1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-mathinline::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Inline-Math-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='m65.1 142-3-7.1 29.1-35.7-28.7-29.1 3-8.1h60.1l5.2 4.3V83h-8.4l-5.6-10.7H82.4l28.5 28.6v4.7l-24.6 28h35.4l4.2-10.8h6.8V142H65.1z'/%3E%3Cpath d='m65.8 103.4-54.9 28v-10.9L53 100.2l-.3.7v-1.7l.3.7-42.1-20.4V68.6l54.9 28v6.8zm69.3-6.8 54.9-28v10.9l-42.1 20.3.3-.7v1.7l-.3-.7 42.1 20.3v10.9l-54.9-28v-6.7z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-eqref::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Equation-Ref-Icon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath fill='none' d='M.5 0h200v200H.5z'/%3E%3Cpath d='m145.7 106.1.9-25-21.1 13.4L120 85l22.3-11.6L120 61.8l5.5-9.5 21.1 13.4-.9-25h10.9l-.9 25 21.1-13.4 5.5 9.5L160 73.4 182.3 85l-5.5 9.5-21.1-13.4.9 25h-10.9zM21 160V87.3h45.6v9.4H32v22.2h32.2v9.4H32v22.3h35v9.4H21zm100.9 20.5h-10.6v-28.9h-.6c-.6 1.2-1.6 2.5-2.8 4s-2.8 2.8-4.9 3.9c-2.1 1.1-4.8 1.7-8.1 1.7-4.4 0-8.3-1.1-11.8-3.4-3.4-2.3-6.1-5.5-8.1-9.7s-2.9-9.3-2.9-15.1 1-10.9 3-15.1c2-4.2 4.7-7.4 8.1-9.6 3.5-2.2 7.4-3.3 11.8-3.3 3.4 0 6.1.6 8.2 1.7 2.1 1.1 3.7 2.4 4.8 3.9 1.1 1.5 2 2.8 2.7 3.9h.9v-8.8H122v74.8zm-10.5-47.8c0-3.8-.5-7.1-1.6-9.9-1.1-2.8-2.7-5.1-4.8-6.6-2.1-1.6-4.7-2.4-7.8-2.4-3.2 0-5.9.8-8 2.5-2.1 1.7-3.7 3.9-4.8 6.8-1.1 2.9-1.6 6.1-1.6 9.7 0 3.6.5 6.9 1.6 9.8 1.1 2.9 2.7 5.2 4.8 6.9 2.1 1.7 4.8 2.5 7.9 2.5 3.1 0 5.6-.8 7.8-2.4 2.1-1.6 3.7-3.9 4.8-6.8 1.2-2.9 1.7-6.2 1.7-10.1z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bib::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath id='Bibliography-Icon' d='M165.6 110.1c2.6-6.4 2.6-13.8 0-20.2 2.7-6.7 2.6-14.6-.4-21.2-.2-.5-.6-.9-1-1.1l-46.4-27.1c-.4-.3-1-.4-1.5-.3l-81.4 6.9h-.5c-.1 0-.2.1-.2.1s-.1 0-.1.1c-.1 0-.2.1-.2.1l-.1.1-.2.2-.1.1-.2.2s-.1.1-.1.2-.1.1-.1.2-.1.1-.1.2-.1.1-.1.2 0 .1-.1.2v1.4c0 .1 0 .2.1.2 2.6 5.7 2.6 12.5 0 18.2v.1c0 .1-.1.2-.1.3v.1c0 .1 0 .3-.1.4v.6c0 .1 0 .2.1.3 0 .1 0 .1.1.2 0 .1 0 .1.1.2 2.6 5.7 2.6 12.5 0 18.2v.1c0 .1-.1.2-.1.3v.1c0 .1 0 .3-.1.4v.6c0 .1 0 .2.1.3 0 .1 0 .1.1.2 0 .1 0 .1.1.2 2.6 5.7 2.6 12.5 0 18.2v.1c0 .1-.1.2-.1.3v.1c0 .1 0 .3-.1.4v.6c0 .1 0 .2.1.3 0 .1 0 .1.1.2 0 .1 0 .1.1.2 2.6 5.7 2.6 12.5 0 18.2-.5 1.2-.1 2.5 1 3.2l46.4 27.1c.4.2.8.3 1.3.3h.2l81.4-6.9c.9-.1 1.7-.6 2.1-1.5 3-6.6 3.1-14.5.4-21.3 2.1-7 2.1-14.4-.4-20.8zm-81.3 6.7c2.5-6.4 2.4-13.7-.1-20 0-.1.1-.2.1-.2l76.1-6.5c0 .3.1.6.2.8 2.6 5.7 2.6 12.5 0 18.2-.2.4-.2.8-.2 1.2l-76.1 6.5zm-4.8-38.5c1.9 4.7 2.1 10 .7 14.8l-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l34.8 20.4 5.4 3.2zm0 20.2c1.9 4.7 2.1 10 .7 14.8l-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l40.2 23.6zm0 20.3c1.9 4.7 2.1 10 .7 14.8l-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l40.2 23.6zm.6 35-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l40.1 23.5.1.1c2 4.7 2.2 10 .7 14.8zm81-5.6-76 6.5c1.6-5.7 1.2-11.9-.9-17.4 0-.1.1-.2.1-.2l76.1-6.5c0 .3.1.6.2.8 2.3 5.2 2.5 11.4.5 16.8z'/%3E%3C/svg%3E");
+}
+
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bibcite::before {
+	--edit-menu-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cg id='Bibliography-Cite-Icon'%3E%3Cpath d='m145.2 106.1.9-25L125 94.5l-5.5-9.5 22.3-11.6-22.3-11.6 5.5-9.5 21.1 13.4-.9-25h10.9l-.9 25 21.1-13.4 5.5 9.5-22.3 11.6L181.8 85l-5.5 9.5-21.1-13.4.9 25h-10.9z'/%3E%3Cpath d='m165.9 99.7.2 6 .1 2.6c.8-2.4 1.2-5 1.3-7.6l-1.6-1zm.5 12.8.1 3.6h-31.7l.1-3.6-50.7 4.3c2.5-6.4 2.4-13.7-.1-20 0-.1.1-.2.1-.2l29-2.5-2.4-4.2-5.2-9 9.2-4.8 5.2-2.7-5.2-2.7-9.2-4.8 5.2-9 5.5-9.5 3.3-5.8-1.9-1.1c-.4-.3-1-.4-1.5-.3l-81.4 6.9h-.5c-.1 0-.2.1-.2.1s-.1 0-.1.1c-.1 0-.2.1-.2.1l-.1.1-.2.2-.1.1-.2.2s-.1.1-.1.2-.1.1-.1.2-.1.1-.1.2-.1.1-.1.2 0 .1-.1.2v1.4c0 .1 0 .2.1.2 2.6 5.7 2.6 12.5 0 18.2v.1c0 .1-.1.2-.1.3v.1c0 .1 0 .3-.1.4v.6c0 .1 0 .2.1.3 0 .1 0 .1.1.2 0 .1 0 .1.1.2 2.6 5.7 2.6 12.5 0 18.2v.1c0 .1-.1.2-.1.3v.1c0 .1 0 .3-.1.4v.6c0 .1 0 .2.1.3 0 .1 0 .1.1.2 0 .1 0 .1.1.2 2.6 5.7 2.6 12.5 0 18.2v.1c0 .1-.1.2-.1.3v.1c0 .1 0 .3-.1.4v.6c0 .1 0 .2.1.3 0 .1 0 .1.1.2 0 .1 0 .1.1.2 2.6 5.7 2.6 12.5 0 18.2-.5 1.2-.1 2.5 1 3.2l46.4 27.1c.4.2.8.3 1.3.3h.2l81.4-6.9c.9-.1 1.7-.6 2.1-1.5 3-6.6 3.1-14.5.4-21.3 1.9-6.2 2.2-12.6.5-18.4zm-86.3 41.3-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l40.1 23.5.1.1c2 4.7 2.2 10 .7 14.8zm0-20.2-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l40.2 23.5c2 4.7 2.2 10.1.7 14.9zm0-20.2-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8l40.2 23.5c2 4.7 2.2 10 .7 14.9zm0-20.3-42-24.6c1.5-4.4 1.9-9.2 1.1-13.8L74 75.1l5.4 3.2c2 4.7 2.2 10 .7 14.8zm81 55.1-76 6.5c1.6-5.7 1.2-11.9-.9-17.4 0-.1.1-.2.1-.2l76.1-6.5c0 .3.1.6.2.8 2.3 5.2 2.5 11.4.5 16.8z'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+/* ===EDITOR TEXTAREA=== */
+form#edit-page-form > div:nth-of-type(2) {
+	position: relative;
+	grid-area: editbox;
+	padding: 0.125em 0;
+	box-shadow: 
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.25),
+		inset 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.25);
+}
+
+form#edit-page-form #edit-page-textarea {
+	min-width: 100%;
+	min-height: calc(var(--body-width-on-desktop) / 2);
+	padding: 0.75em 1em;
+}
+
+form#edit-page-form #edit-page-textarea:focus {
+	outline: 0 solid transparent;	
+}
+
+form#edit-page-form textarea {
+	overflow-y: auto;
+	border: none;
+	outline: 0 solid transparent;
+	font-size: 0.8125em;
+	line-height: 1.42;
+	text-align: left;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	tab-size: 4;
+	scrollbar-width: 1rem;
+	overscroll-behavior: contain;
+	scrollbar-color: 
+		rgba(var(--swatch-primary-darker), 0.4) /* Thumb */
+		rgba(var(--swatch-primary-darker), 0.05); /* Track */
+}
+
+form#edit-page-form textarea::-webkit-scrollbar-track,
+form#edit-page-form textarea::-webkit-scrollbar-corner,
+form#edit-page-form textarea::-webkit-scrollbar-thumb {
+	width: 1rem;
+}
+
+
+form#edit-page-form textarea::-webkit-scrollbar-track,
+form#edit-page-form textarea::-webkit-scrollbar-corner {
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+}
+
+form#edit-page-form textarea::-webkit-scrollbar-thumb {
+	background-color: rgba(var(--swatch-primary-darker), 0.4);
+}
+
+/* ===EDITOR HELP LINKS=== */
+form#edit-page-form .edit-help-34 {
+    --wght: var(--ui-wght);
+    grid-area: edit-help;
+    padding: 0.125em 0;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 0.7em;
+    background-color: rgb(var(--swatch-tertiary-color),0.15);
+    min-height: 1.125em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.25; 
+}
+
+form#edit-page-form .edit-help-34 > a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 0 0.25em;
+}
+	
+form#edit-page-form .edit-help-34 > a:nth-of-type(1) {
+	margin: 0 1.5em 0 0.5em;
+}
+
+form#edit-page-form .edit-help-34 > a:nth-of-type(2)::before,
+form#edit-page-form .edit-help-34 > a:nth-of-type(2):hover::before,
+form#edit-page-form .edit-help-34 > a:nth-of-type(2):active::before {
+	content: " | ";
+	position: absolute;
+	left: -1em;
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+form#edit-page-form .edit-help-34 > a:nth-of-type(2):focus-within::before {
+	content: " | ";
+	position: absolute;
+	right: -1em;
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+form#edit-page-form .edit-help-34 > a::after {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	opacity: 1;
+	background-color: rgb(var(--swatch-primary));
+	pointer-events: none;
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+form#edit-page-form .edit-help-34 > a:hover,
+form#edit-page-form .edit-help-34 > a:active {
+	--wght: calc(var(--ui-hvr-wght));
+	color: rgb(var(--swatch-background));
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+form#edit-page-form .edit-help-34 > a:focus-within {
+	--wght: calc(var(--ui-hvr-wght));
+	color: rgb(var(--swatch-background));
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+form#edit-page-form .edit-help-34 > a:hover::after,
+form#edit-page-form .edit-help-34 > a:active::after {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+form#edit-page-form .edit-help-34 > a:focus-within::after {
+	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+}
+
+/* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
+form#edit-page-form .change-textarea-size {
+	grid-area: text-resize;
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 0.25em;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(var(--swatch-tertiary-color),0.15);
+	height: 100%;
+}
+
+form#edit-page-form .change-textarea-size a {
+    --wght: calc(var(--ui-wght) + 100);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125em;
+    height: 1.125em;
+    padding: 0;
+    background-color: rgba(var(--swatch-primary-darker), 0.4);
+    color: rgba(var(--swatch-text-secondary-color));
+	transition:
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    box-shadow: none;
+    font-size: 1em;
+}
+
+form#edit-page-form .change-textarea-size a:hover,
+form#edit-page-form .change-textarea-size a:active {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+    background-color: rgba(var(--swatch-primary));
+}
+
+form#edit-page-form .change-textarea-size a:focus-within {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+    background-color: rgba(var(--swatch-primary));
+}
+
+/* ===EDITOR DESCRIPTION BOX=== */
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
+	--wght: var(--ui-hvr-wght);
+	grid-area: descrip;
+	display: grid;
+	position: relative;
+	margin-top: 1rem;
+	padding-top: 0.75em;
+	align-items: center;
+	justify-content: stretch;
+	grid-template-rows: 1em 1fr;
+	background-color: rgba(var(--swatch-background),1);
+	color: transparent;
+	box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.5);
+}
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before {
+	content: "Short Description of Changes:";
+	position: absolute;
+	top: -1em;
+	left: 1.47692em;
+	padding: 0.15625em;
+	background-color: rgba(var(--swatch-background),1);
+	color: rgb(var(--swatch-text-general));
+	font-size: 0.8em;
+	text-transform: uppercase;
+	transform: translateY(0);
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0;
+	z-index: 2;
+	transition:  
+		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-background));
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.15625em;
+	transform: translateY(-0.15625em);
+}
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br {
+	display: none;
+}
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea {
+	--wght: var(--ui-wght);
+	width: calc(100% - 2.95384em);
+	height: 100%;
+	min-height: 7em;
+	margin: -1.325em auto 0;
+	padding: 0.75em 0.5em 0.5em;
+	transition: 
+		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: -1;
+	z-index: 1;
+	color: rgb(var(--swatch-menutxt-general-color));
+	resize: none;
+}
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown) {
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	color: rgb(var(--swatch-menutxt-general-color));
+}
+	
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown {
+	background-color: rgba(var(--swatch-primary-darker), 0.4);
+	color: rgb(var(--swatch-menutxt-general-color));
+}
+	
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea {
+	border: none;
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0.125em;
+	background-color: rgba(var(--swatch-secondary-color),0);
+	color: rgb(var(--swatch-menutxt-general-color));
+}
+
+/* ===DESCRIPTION CHAR COUNT=== */
+form#edit-page-form .edit-page-bottomtable div.sub {
+	grid-area: descsub;
+	margin: -1.5em 1rem 0 0;
+	height: 1rem;
+	font-size: 0.8em;
+	text-align: right;
+	padding: 0 1.25em 0 0;
+	z-index: 5;
+}
+
+/* ===EDITOR LOCK INFO=== */
+form#edit-page-form #lock-info  {
+	grid-area: info-lock;
+	font-size: 0.8125em;
+	margin: 0.25em auto;
+	text-align: center;
+	line-height: 1.42;
+	border: none;
+}
+
+/* ===EDITOR NOTIFY CHECKBOX=== */
+form#edit-page-form div.do-not-notify  {
+	grid-area: nonotif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+form#edit-page-form div.do-not-notify label {
+	height: 1em;
+	display: flex;
+}
+	
+form#edit-page-form div.do-not-notify label input {
+	margin-right: 0.5em;
+}
+
+/* ===EDITOR BUTTONS=== */
+form#edit-page-form div.buttons {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-area: editbuttons;
+	grid-gap: 0.5em;
+	margin: 0 0.5em;
+}
+
+/* ===PAGE SOURCE=== */
+.page-source {
+	word-break: break-all;
+}
+
+/* ===PAGE HISTORY=== */
+table.page-history tr td:nth-of-type(2) input {
+	width: initial;
+}
+
+/* ===MODALS=== */
+div.odialog-shader {
+	background-color: rgb(var(--swatch-menubg-dark-color),0.5);
+	pointer-events: none;
+}
+
+div.odialog-shader-iframe {
+	opacity: 0;
+}
+
+#odialog-container,
+#odialog-container * {
+	box-sizing: border-box;
+}
+	
+#odialog-container div.owindow {
+	position: fixed;
+	top: 50% !important; /* Overwrite Wikidot Inline-Styling */
+	left: 50% !important; /* Overwrite Wikidot Inline-Styling */
+	transform: translateY(-50%) translateX(-50%);
+	display: grid;
+	box-shadow: 
+		inset 0 0 0 0.125rem rgba(var(--swatch-menubg-dark-color),0.25),
+		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-menubg-dark-color),0.25);
+	background-color: rgb(var(--swatch-background));
+	border: none;
+}
+	
+#odialog-container .modal-header {
+	--wght: 600;
+	display: flex;
+	justify-content: flex-start;
+	text-transform: uppercase;
+	background-color: rgb(var(--swatch-primary));
+	background-image: linear-gradient(125deg, 
+		rgba(var(--swatch-primary-darkest),0.75) 25%, 
+		transparent 25%, 
+		transparent 50%, 
+		rgba(var(--swatch-primary-darkest),0.75) 50%, 
+		rgba(var(--swatch-primary-darkest),0.75) 75%, 
+		transparent 75%, 
+		transparent 100%);
+	background-size: 3rem 4.35rem;
+	color: rgb(var(--swatch-menutxt-light-color));
+	margin: 0;
+	padding: 0.5em 1.25rem;
+	width: 100%;
+}
+	
+#odialog-container .modal-body {
+	display: grid;
+	margin: 0 1rem;
+	padding: 0;
+}
+	
+#odialog-container .modal-body h1 {
+	width: max-content;
+	margin: 0.25rem 0.25rem 0.5rem;
+	padding-bottom: 0.5rem;
+	color: rgb(var(--swatch-primary-darkest));
+	box-shadow: 0 0.0625rem 0 0 rgba(var(--swatch-primary-darkest),0.2);
+}
+	
+#odialog-container .modal-body p {
+	margin: 0 1rem 0 0;
+	width: 100%;
+}
+
+#odialog-container .modal-body p + p {
+	margin-top: 1em;
+}
+	
+#odialog-container .modal-footer {
+	width: 100%;
+	margin: 1rem 0 1em 0;
+	padding: 1rem 1rem 0 0;
+	box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-primary-darkest),0.2);
+}
+	
+.title.modal-header .btn:not(.rateup):not(.ratedown):not(.cancel),
+.owindow .btn:not(.rateup):not(.ratedown):not(.cancel) {
+	background-color: rgb(var(--swatch-menubg-light-color));
+	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+/* ===FORUM=== */
+.forum-thread-box .description-block {
+	--box-shadow-1: rgba(var(--swatch-menubg-black-color), 0.15);
+	--box-shadow-2: rgba(var(--swatch-menubg-black-color), 0.8);
+	--box-shadow-3: rgba(var(--swatch-menubg-color), 0.25);
+	--box-shadow-4: rgba(var(--swatch-menubg-black-color), 0.1);
+	padding: 0.5em 1em;
+	border-radius: 0.625rem;
+	box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.15),
+		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.8),
+		inset 0 0.625rem 0.3125rem rgba(255, 255, 255, 0.25),
+		inset 0 -0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
+		inset 0 0.0625rem 0 var(--box-shadow-2),
+		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
+		inset 0 -0.9375rem 1.875rem var(--box-shadow-4);
+}
+
+.thread-container .post .long {
+	padding: 0.5em;
+	border: 0.0625rem solid rgba(var(--gray-monochrome), 0.25);
+	border-radius: 0.3125rem;
+}
+
+.thread-container .post .head {
+	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
+	padding: 0.5em 1em;
+	border-radius: 0.3125rem 0.3125rem 0 0;
+	background: linear-gradient(
+			to right,
+			rgba(244, 244, 244),
+			rgba(170, 170, 170)
+		),
+		rgba(244, 244, 244);
+	background: linear-gradient(
+			to right,
+			rgba(var(--swatch-secondary-color)),
+			rgba(var(--swatch-tertiary-color))
+		),
+		rgba(var(--swatch-secondary-color));
+	box-shadow: inset 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15);
+	box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
+	background-blend-mode: screen;
+}
+
+.thread-container .post .long .content {
+	padding: 0 1em;
+}
+
+.thread-container .post .long .head .title {
+	--wght: 700;
+	font-family: var(--title-font);
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+}
+
+#page-content > div.forum-thread-box > div.new-post {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#page-content > div.forum-thread-box > div.options,
+.post-container > .post > div.long > div.options {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#page-content > div.forum-thread-box > div.new-post > a,
+#page-content > div.forum-thread-box > div.options a,
+.post-container > .post > div.long > div.options a {
+	--wght: 700;
+	display: flex;
+	flex-grow: 0;
+	justify-content: center;
+	margin: 0.1rem;
+	padding: 0.25rem;
+	transition: 
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: 0.0625rem solid rgba(140, 20, 25, 1);
+	border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
+	border-radius: 0.25rem;
+	background-color: rgba(178, 210, 180, 0.25);
+	background-color: rgba(var(--swatch-secondary-color), 0.25);
+	color: #64030f;
+	color: rgb(var(--swatch-primary-darkest));
+	letter-spacing: 0.016em;
+}
+
+#page-content > div.forum-thread-box > div.new-post > a:hover,
+#page-content > div.forum-thread-box > div.new-post > a:active,
+#page-content > div.forum-thread-box > div.options > a:hover,
+#page-content > div.forum-thread-box > div.options > a:active,
+.post-container > .post > div.long > div.options a:hover,
+.post-container > .post > div.long > div.options a:active {
+	background-color: rgba(30, 55, 30, 1);
+	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	color: rgb(140, 20, 25);
+	color: rgb(var(--swatch-primary-darker));
+	text-decoration: none;
+}
+
+#page-content > div.forum-thread-box > div.new-post > a:focus-within,
+#page-content > div.forum-thread-box > div.options > a:focus-within,
+.post-container > .post > div.long > div.options a:focus-within {
+	background-color: rgba(30, 55, 30, 1);
+	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	color: rgb(140, 20, 25);
+	color: rgb(var(--swatch-primary-darker));
+	text-decoration: none;
+}
+
+.signature,
+.hidden {
+	display: none;
+}
+
+/* ===MOBILE FORMATTING=== */
+
+@media screen and (max-width: 56.25rem) {
+	#content-wrap {
+		grid-template-areas: 
+			"content content content";
+		margin: 2.875em auto 0 !important;
+	}
+
+	#page-content {
+		font-size: 0.9em;
+	}
+
+	#page-content div,
+	#page-content div table {
+		clear: both;
+	}
+
+	#main-content {
+		max-width: 90vw;
+		margin: 2.1em auto 0;
+		padding: 0;
+	}
+
+	#page-options-bottom {
+		width: 100%;
+	}
+
+	#footer {
+		align-self: auto;
+		width: auto;
+		height: 2rem;
+	}
+
+	#license-area {
+		bottom: -0.5em;
+		width: 90%;
+		height: 3rem;
+		margin: 0 auto;
+		font-size: 1em;
+		line-height: 1;
+	}
+
+	.license-area {
+		font-size: 0.8em;
+	}
+
+	.page-history tbody tr td:last-child {
+		width: 35%;
+		font-size: 1.5rem;
+	}
+
+	#odialog-container div.owindow {
+		min-width: 80%;
+		max-width: 99%;
+	}
+
+	#odialog-container .modal-body .table,
+	#odialog-container .modal-body .table ~ div {
+		float: left;
+	}
+
+	#odialog-container .owindow .button-bar {
+		float: right;
+	}
+
+	#odialog-container .owindow div .btn-primary {
+		width: 100%;
+		float: left;
+	}
+}
