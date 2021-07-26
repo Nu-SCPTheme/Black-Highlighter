@@ -20,6 +20,7 @@
 	7. =BROWSER SPECIFIC FIXES
 	8. =PRINT FORMATTING
 	9. =MOBILE FORMATTING
+	10. =ANIMATIONS
   =============== */
 
 /* ===OPENTYPE STYLING=== */
@@ -328,8 +329,31 @@ div.note,
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--body-font);
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6)
+	scrollbar-color:
+		rgba(var(--swatch-tertiary-color), 0.6)
 		rgba(var(--swatch-tertiary-color), 0.1);
+	transition: 
+		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="text"] {
+	outline-color: rgb(var(--swatch-primary));
+	outline-style: solid;
+	outline-width: 0;
+}
+
+input[type="text"]:not(:placeholder-shown) {
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+}
+
+input[type="text"]:placeholder-shown {
+	background-color: rgba(var(--swatch-primary-darker), 0.4);
+}
+
+input[type="text"]:focus {
+	outline-width: 0.125em;
 }
 
 /* ===TEXTAREA & TEXT=== */
@@ -347,22 +371,22 @@ input.text::-webkit-scrollbar-thumb {
 }
 
 /* ===BUTTONS=== */
-#upload-userfile,
-.owindow .button-bar a,
-div.buttons input,
-input.button,
-button,
-a.button,
-div.buttons input:not(.rateup):not(.ratedown):not(.cancel),
-input.button:not(.rateup):not(.ratedown):not(.cancel),
-button:not(.rateup):not(.ratedown):not(.cancel),
-.btn:not(.rateup):not(.ratedown):not(.cancel) {
+*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .button,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn {
 	--wght: var(--ui-wght);
 	display: inline-flex;
 	position: relative;
 	min-width: 5rem;
 	z-index: 2;
-	justify-content: flex-start;
+	justify-content: center;
 	margin: 0;
 	padding: 0.25rem;
 	overflow: hidden;
@@ -381,26 +405,26 @@ button:not(.rateup):not(.ratedown):not(.cancel),
 	font-family: var(--UI-font);
 }
 
-#upload-userfile:hover,
-#upload-userfile:active,
-.owindow .button-bar a:hover,
-.owindow .button-bar a:active,
-div.buttons input:hover,
-div.buttons input:active,
-input.button:hover,
-input.button:active,
-button:hover,
-button:active,
-a.button:hover,
-a.button:active,
-div.buttons input:not(.rateup):not(.ratedown):not(.cancel):hover,
-div.buttons input:not(.rateup):not(.ratedown):not(.cancel):active,
-input.button:not(.rateup):not(.ratedown):not(.cancel):hover,
-input.button:not(.rateup):not(.ratedown):not(.cancel):active,
-button:not(.rateup):not(.ratedown):not(.cancel):hover,
-button:not(.rateup):not(.ratedown):not(.cancel):active,
-.btn:not(.rateup):not(.ratedown):not(.cancel):hover,
-.btn:not(.rateup):not(.ratedown):not(.cancel):active {
+*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:active,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--swatch-primary),1);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
@@ -411,16 +435,16 @@ button:not(.rateup):not(.ratedown):not(.cancel):active,
 	outline-width: 0.125rem;
 }
 
-#upload-userfile:focus-within,
-.owindow .button-bar a:focus-within,
-div.buttons input:focus-within,
-input.button:focus-within,
-button:focus-within,
-a.button:focus-within,
-div.buttons input:not(.rateup):not(.ratedown):not(.cancel):focus-within,
-input.button:not(.rateup):not(.ratedown):not(.cancel):focus-within,
-button:not(.rateup):not(.ratedown):not(.cancel):focus-within,
-.btn:not(.rateup):not(.ratedown):not(.cancel):focus-within {
+*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
@@ -795,29 +819,40 @@ a:focus-within {
 /* BlACK BLOCK ELEMENT */
 .bblock,
 .dblock {
-	transition: 200ms;
-	background-color: rgb(12, 12, 12);
-	background-color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
-	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-text-dark, 12, 12, 12));
+	background-color: rgb(var(--swatch-menubg-black-color));
+	color: rgb(var(--swatch-text-dark));
+	text-decoration: none;
+	transition: 
+		background-color 2000ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 2000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dblock:hover,
+.dblock:active {
+	background-color: rgba(var(--swatch-menubg-black-color),0);
+	text-decoration: none;
+}
+
+.dblock:focus-within {
+	background-color: rgb(var(--swatch-menubg-black-color),0);
 	text-decoration: none;
 }
 
 .bblock:hover,
 .bblock:active {
-	background-color: rgb(12, 12, 12);
-	background-color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
-	color: rgb(100, 3, 15);
-	color: rgb(var(--swatch-primary-darkest, 100, 3, 15));
+	background-color: rgb(var(--swatch-menubg-black-color));
+	color: rgb(var(--swatch-primary-darkest));
 	text-decoration: none;
 }
 
 .bblock:focus-within {
-	background-color: rgb(12, 12, 12);
-	background-color: rgb(var(--swatch-menubg-black-color, 12, 12, 12));
-	color: rgb(100, 3, 15);
-	color: rgb(var(--swatch-primary-darkest, 100, 3, 15));
+	background-color: rgb(var(--swatch-menubg-black-color));
+	color: rgb(var(--swatch-primary-darkest));
 	text-decoration: none;
+}
+
+.bblock::selection {
+	color: rgb(var(--swatch-menutxt-light-color))
 }
 
 /* ===CODE FORMATTING=== */
@@ -869,24 +904,22 @@ a:focus-within {
 	white-space: pre-wrap;
 }
 
-/* Ruby Text */
-ruby {
+/* Ruby Elements from Sigma-9 */
+.ruby, ruby {
 	display: inline-table;
-	height: 1em;
+	text-align: center;
+	white-space: nowrap;
 	line-height: 1;
+	height: 1em;
 	vertical-align: text-bottom;
 }
 
-ruby,
-rt {
+.rt, rt {
+	display: table-header-group;
+	font-size: .6em;
+	line-height: 1.1;
 	text-align: center;
 	white-space: nowrap;
-}
-
-rt {
-	display: table-header-group;
-	font-size: 0.6em;
-	line-height: 1.1;
 }
 
 /* ===BROWSER SPECIFIC FIXES=== */
@@ -991,4 +1024,50 @@ rt {
 		width: 15em;
 	}
 
+}
+
+/* ===ANIMATIONS=== */
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateY(1rem) translateX(1rem);
+	}
+
+	to {
+		transform: translateY(0) translateX(0);
+	}
+}
+
+@keyframes slide-down {
+	from {
+		max-height: 0;
+	}
+
+	to {
+		max-height: var(--header-height-on-desktop);
+	}
+}
+
+@keyframes lift-in {
+	from {
+		box-shadow:
+		0 0 0 0 rgba(var(--swatch-menubg-dark-color), 0.25),
+		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+	}
+
+	to {
+		box-shadow:
+		0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-menubg-dark-color),0.25),
+		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));		
+	}
 }

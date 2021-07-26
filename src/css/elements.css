@@ -6,20 +6,19 @@
 /* ===DIRECTORY===
 	1. =TABVIEW
 	2. =BLOCKQUOTE
-	3. =FOOTNOTES
+	3. =FOOTNOTES & BIBLIOGRAPHY
 	4. =HOVER BLOCKS
 	5. =IMAGE BLOCK
 	6. =RATING MODULE
 	7. =TABLES
 	8. =TOC
 	9. =LISTPAGES PAGER
-	10. =RATING LIST COLUMNS
 	10. =WIKIDOT USER ICONS
 	11. =MISC SMALL ELEMENTS
 	12. =FRONT PAGE ELEMENTS
 		12.1 =CONTENT PANEL
-	12. =MOBILE ELEMENTS
-	13. =MYSTERY ELEMENTS
+	13. =MOBILE ELEMENTS
+	14. =MYSTERY ELEMENTS
   =============== */
 
 /* ===TABVIEW=== */
@@ -226,60 +225,126 @@ blockquote,
 .blockquote,
 div.blockquote,
 [class*="blockquote"] {
-	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.1);
 	display: block;
-	margin: 0.5em 2.5rem;
-	padding: 0 1em;
+	position: relative;
+	margin: 0.5em 1.25rem;
 	clear: both;
-	border-width: 0.0625rem;
-	border-style: dashed;
-	border-color: rgba(var(--swatch-border-color), 0.25);
-	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color));
-	box-shadow: 0em 0.0625rem 0.125em rgba(0, 0, 0, 0.1);
-	box-shadow: 0em 0.0625rem 0.125em var(--box-shadow);
+	border: none;
+	padding: 0.825em 1.25em;
+	box-shadow: 
+		inset 0 0 0 0.0625rem rgba(var(--swatch-tertiary-color),0.5),
+		inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),0.5),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.75);
+}
+
+.colorbar-quote {
+	box-shadow: 
+		inset 0.25rem 0 0 0 rgba(var(--swatch-primary),1),
+		-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color),0.25),
+		inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),0.5),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.75);
 }
 
 @supports (display: flow-root) {
 	blockquote,
 	.blockquote,
 	div.blockquote,
+	.colorbar-quote
 	[class*="blockquote"] {
 		display: flow-root;
 	}
 }
 
-.curved {
-	margin: 0 0.625rem;
-	border-radius: 0.625rem;
-}
+/* ===FOOTNOTES & BIBLIOGRAPHY=== */
 
-/* ===FOOTNOTES=== */
-
-.footnotes-footer {
+.footnotes-footer,
+.bibitems {
 	display: block;
 	position: relative;
 	box-sizing: border-box;
 	width: 95%;
 	height: auto;
-	margin: 0.5rem 1.5rem;
-	padding: 0.15em 1em 1em 2em;
-	border-left: 0.5em solid rgba(140, 20, 25);
-	border-left: 0.5em solid rgba(var(--swatch-primary-darker));
-	background-color: rgba(170, 170, 170, 0.25);
+	margin: 1.5rem 1.5rem 0.5rem;
+	padding: 0.15em 1em 1em 0;
+	box-shadow: inset 0.5em 0 0 0 rgba(var(--swatch-primary-darkest));
 	background-color: rgba(var(--swatch-tertiary-color), 0.25);
 }
 
-.footnotes-footer .title {
-	--wght: 700;
+.footnotes-footer {
+	counter-reset: footnotes 0;
 }
 
-.footnote-footer > a:nth-of-type(1) {
-	display: initial;
+.bibitems {
+	counter-reset: bibitems 0;
+}
+
+.footnotes-footer .title,
+.bibitems .title {
+	--wght: 700;
+	display: inline-block;
+    font-size: 1.25em;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    background-color: rgb(var(--swatch-primary-darkest));
+    color: rgb(var(--swatch-text-secondary-color));
+    padding: 0 0.5em;
+    margin-top: -0.75em;
+}
+
+.footnotes-footer .footnote-footer {
+	margin: 0.25em 0 0 6ch;
+}
+
+.bibitems .bibitem {
+	margin: 0.25em 0 0 3ch;
+	text-indent: 2ch;
+}
+
+.bibitems .bibitem::first-letter {
+	font-size: 0;
+}
+
+.footnotes-footer .footnote-footer::before,
+.bibitems .bibitem::after {
+	--wght: 800;
+	--MONO: 1;
+	font-family: var(--mono-font);
+	margin-right: 0;
+	color: rgb(var(--swatch-primary));
+	display: inline-flex;
+	align-items: flex-end;
+	margin: 0 0 0 -2ch;
+	width: calc(1em - 0.5ch);
+}
+
+.footnotes-footer .footnote-footer::before {
+	counter-increment: footnotes;
+	content: counter(footnotes) ".";
+}
+
+.footnotes-footer .footnote-footer,
+.bibitems .bibitem {
 	position: relative;
-	width: 1rem;
-	height: 100%;
-	margin-left: -1rem;
+}
+
+.bibitems .bibitem::after {
+	counter-increment: bibitems;
+	content: counter(bibitems) ".";
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.footnotes-footer .footnote-footer:nth-child(n+11)::before,
+.bibitems .bibitem:nth-child(n+11)::before {
+	width: calc(1em + 0.75ch);
+	margin: 0 0 0 -2em;
+}
+
+.footnote-footer > a[href*="javascript"] {
+	display: none;
 }
 
 /* ===HOVER BLOCKS=== */
@@ -361,53 +426,19 @@ div.blockquote,
 	justify-self: flex-end;
 }
 
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes slide-in {
-	from {
-		transform: translateY(1rem) translateX(1rem);
-	}
-
-	to {
-		transform: translateY(0) translateX(0);
-	}
-}
-
-@keyframes lift-in {
-	from {
-		box-shadow:
-		0 0 0 0 rgba(var(--swatch-menubg-dark-color), 0.25),
-		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
-	}
-
-	to {
-		box-shadow:
-		0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-menubg-dark-color),0.25),
-		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));		
-	}
-}
-
 /* ===IMAGE BLOCK=== */
 
 .image-block,
 .scp-image-block {
-	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.1);
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 	width: 18.75rem;
 	min-width: 100%;
-	border: 0.0625rem outset rgba(var(--swatch-primary-darkest), 0.25);
-	box-shadow: 0.125rem 0.125rem 0.25rem rgba(12, 12, 12, 0.1);
-	box-shadow: 0.125rem 0.125rem 0.25rem var(--box-shadow);
+	box-shadow: 
+		0 0 0 0.0625rem rgba(var(--swatch-tertiary-color),1), 
+		-0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),1), 
+		 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.75);
 }
 
 .scp-image-block.block-right {
@@ -445,11 +476,9 @@ div.blockquote,
 	--wght: 600;
 	box-sizing: border-box;
 	padding: 0.25em 0.5em;
-	border-top: 0.0625rem outset rgba(12, 12, 12, 0.25);
-	border-top: 0.0625rem outset rgba(var(--swatch-primary-darkest), 0.25);
-	background-color: rgb(244, 244, 244);
+	box-shadow: inset 0 0.0625rem 0 0 rgb(var(--swatch-tertiary-color),0.75);
 	background-color: rgb(var(--swatch-secondary-color));
-	font-size: 80%;
+	font-size: 0.9em;
 	letter-spacing: 0.016em;
 	line-height: 1.25;
 	text-align: center;
@@ -458,11 +487,6 @@ div.blockquote,
 .scp-image-block .scp-image-caption > p {
 	margin: 0;
 	padding: 0;
-}
-
-div.block-right,
-div.block-left {
-	min-width: 30%;
 }
 
 /* ===RATING MODULE=== */
@@ -1088,7 +1112,7 @@ table[style*="margin:0"] * {
 	display: block;
 	position: absolute;
 	left: -0.25em;
-	color: rgb(var(--swatch-tertiary-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: monospace;
 }
 
@@ -1301,30 +1325,6 @@ table[style*="margin:0"] * {
 	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 }
 
-/* ===RATING LIST COLUMNS=== */
-
-#who-rated-page-area > div {
-	display: grid;
-	grid-auto-flow: row;
-	grid-gap: 0.25em;
-	grid-template-columns: repeat(4, 1fr auto);
-	justify-items: end;
-}
-
-#who-rated-page-area br {
-	display: none;
-}
-
-#who-rated-page-area > div > span[style*="color"] {
-	--wght: 800;
-	text-align: left;
-}
-
-#who-rated-page-area .printuser a {
-	font-size: 80%;
-	white-space: nowrap;
-}
-
 /* ===WIKIDOT USER ICONS=== */
 span.printuser {
 	display: inline-flex;
@@ -1342,16 +1342,28 @@ span.printuser a:first-of-type {
 }
 
 span.printuser img.small {
-	width: 100%;
-	min-width: auto;
-	height: 1em;
+	width: calc(50% + 0.375em);
 	padding: 0 0 0 0.5625em;
 	background-position: left center;
-	object-fit: contain;
+	background-size: cover;
+	object-fit: cover;
 	object-position: left center;
+	color: transparent;
+}
+	
+span.printuser img.small::before {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
 }
 
 /* ===MISC SMALL ELEMENTS=== */
+
+/* Class that adds rounded corners */
+.curved {
+	margin: 0 0.625rem;
+	border-radius: 0.625rem;
+}
 
 /* Class that removes margin from Paragraphs */
 .unmargined > p {
@@ -1391,27 +1403,54 @@ div.sexy-box div.image-container img {
 }
 
 /* Keycap Styling */
+/* Reworked from Sigma-9 */
 .keycap {
-	--MONO: 1;
-	font-family: var(--mono-font);
-	margin: 0.3125em 0.3125em 0.375em;
+	font-size: .85em;
+	padding: 0.0625rem 0.1875rem;
 	box-shadow:
-		0em 0.0625em 0em rgb(var(--swatch-secondary-color)),
-		0em 0.125em 0em rgb(var(--swatch-secondary-color)),
-		0em 0.1875em 0em rgb(var(--swatch-secondary-color)),
-		0em 0.25em 0em 0.0625em rgb(var(--swatch-tertiary-color)),
-		0em 0.25em 0em 0.125em rgb(var(--swatch-tertiary-color));
+		0 -0.03125rem 0 rgba(var(--swatch-tertiary-color),0.5),
+		0 0.03125em 0 rgb(var(--swatch-secondary-color)),
+		0 0.0625em 0 rgb(var(--swatch-secondary-color)),
+		0 0.125em 0 rgb(var(--swatch-secondary-color)),
+		0 0.125em 0 0.0625em rgb(var(--swatch-tertiary-color),0.25),
+		0 0.125em 0 0.125em rgba(var(--swatch-tertiary-color),0.5);
 	background: rgb(var(--swatch-background));
-	background: linear-gradient(to bottom,  
-		rgb(var(--swatch-background)) 0%,
-		rgb(var(--swatch-tertiary-color)) 95%,
-		rgb(var(--swatch-tertiary-color)) 100%);
 	border-radius: 0.1875em;
-	box-sizing: border-box;
-	overflow: hidden;
-	text-align: center;
-	padding-top: 0.8125em;
 	box-decoration-break: clone;
+}	
+
+/* Tags Styling */
+/* Reworked from Sigma-9 */
+
+.tags {
+	--wght: 500;
+    display: inline-block;
+	position: relative;
+    margin: 0 0 0 0.5125rem;
+    padding: 0.1875rem 0.3125rem 0.1875rem 1rem;
+    height: 1.175em;
+    line-height: 0.8125rem;
+    font-size: 0.6875rem;
+    background: rgb(var(--swatch-tertiary-color));
+    color: rgb(var(--swatch-text-secondary-color));
+    text-decoration: none;
+	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-menubg-dark-color));
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+	clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
+}
+
+.tags::after {
+	content: "";
+    position: absolute;
+    top: 50%;
+	transform: translateY(-50%);
+    left: 0.5rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    background: rgb(var(--swatch-background));
+    box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-menubg-dark-color));
 }
 
 /* General Odate Styling */
@@ -1429,6 +1468,11 @@ div.sexy-box div.image-container img {
 
 .clearfix:after {
     clear: both;
+}
+
+div.block-right,
+div.block-left {
+	min-width: 30%;
 }
 
 /* ===FRONT PAGE ELEMENTS=== */
@@ -1516,7 +1560,7 @@ div.sexy-box div.image-container img {
 
 .content-panel .panel-footer,
 .content-panel .panel-footer a {
-	color: rgb(var(--swatch-tertiary-color));
+	color: rgb(var(--swatch--text-tertiary-color));
 }
 
 .content-panel .content-toc {
@@ -1555,7 +1599,7 @@ div.sexy-box div.image-container img {
 
 	.footnotes-footer {
 		width: 100%;
-		margin: 0;
+		margin: 1.5em 0 0 0;
 	}
 
 	.hovertip {
