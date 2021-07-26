@@ -11,6 +11,7 @@
 		4.1 =TEXTAREA & TEXT
 		4.2 =BUTTONS
 		4.3 =CHECKBOXES
+		4.4 =RADIO BUTTONS
 	5. =STANDARD STRUCTURE
 		5.1 =STYLING
 		5.2 =HEADERS
@@ -292,11 +293,6 @@ progress {
 }
 
 /* ===USER INPUT & FORMS=== */
-
-table:not(.form) td > input {
-	width: 100%;
-}
-
 table.form {
 	margin: 0.5rem -0.25rem;
 }
@@ -325,6 +321,10 @@ input.text,
 input.checkbox,
 div.note,
 #lock-info {
+	transition: 
+		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -332,27 +332,25 @@ div.note,
 	scrollbar-color:
 		rgba(var(--swatch-tertiary-color), 0.6)
 		rgba(var(--swatch-tertiary-color), 0.1);
-	transition: 
-		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-input[type="text"] {
-	outline-color: rgb(var(--swatch-primary));
-	outline-style: solid;
-	outline-width: 0;
+input[type="text"],
+textarea {
+	outline: 0 solid rgb(var(--swatch-primary));
 }
 
-input[type="text"]:not(:placeholder-shown) {
+input[type="text"]:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 }
 
-input[type="text"]:placeholder-shown {
+input[type="text"]:placeholder-shown,
+textarea:placeholder-shown {
 	background-color: rgba(var(--swatch-primary-darker), 0.4);
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
 	outline-width: 0.125em;
 }
 
@@ -371,7 +369,6 @@ input.text::-webkit-scrollbar-thumb {
 }
 
 /* ===BUTTONS=== */
-*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > input.button,
@@ -384,29 +381,25 @@ input.text::-webkit-scrollbar-thumb {
 	--wght: var(--ui-wght);
 	display: inline-flex;
 	position: relative;
-	min-width: 5rem;
 	z-index: 2;
 	justify-content: center;
+	min-width: 5rem;
 	margin: 0;
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	outline-color: rgb(var(--swatch-primary));
-	outline-style: solid;
-	outline-width: 0;
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
 }
 
-*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile:active,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:active,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:hover,
@@ -426,16 +419,13 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
+	outline: 0.125rem solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
-	outline-color: rgb(var(--swatch-primary));
-	outline-style: solid;
-	outline-width: 0.125rem;
 }
 
-*:not(.page-rate-widget-box):not(#search-top-box-form) > #upload-userfile:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:focus-within,
@@ -446,50 +436,46 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
+	outline: 0.125rem solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
-	outline-color: rgb(var(--swatch-primary));
-	outline-style: solid;
-	outline-width: 0.125rem;
 }
 
 /* ===CHECKBOXES=== */
 input[type=checkbox] {
-	appearance: none;
-	cursor: pointer;
-	height: 1em;
-	width: 1em;
-	background-color: transparent;
-	border: 0.0625rem solid rgb(var(--swatch-tertiary-color));
-	position: relative;
 	display: inline-block;
-	outline-color: rgb(var(--swatch-primary));
-	outline-style: solid;
-	outline-width: 0;
+	position: relative;
+	width: 1em;
+	height: 1em;
 	transition: 
-		outline-width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: 0.0625rem solid rgb(var(--swatch-tertiary-color));
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: transparent;
+	cursor: pointer;
+	appearance: none;
 }
 
 input[type=checkbox]::before, 
 input[type=checkbox]::after {
 	content: " ";
-	position: absolute;
-	height: 0;
-	width: 20%;
-	box-shadow: 0 0 0 0 rgb(var(--swatch-secondary-color));
-	background-color: rgba(var(--swatch-primary),0);
 	display: inline-block;
+	position: absolute;
+	width: 20%;
+	height: 0;
 	transform-origin: left top;
+	background-color: rgba(var(--swatch-primary),0);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-secondary-color));
 	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 input[type=checkbox]::before {
-	height: 150%;
 	top: 75%;
 	left: 40%;
+	height: 150%;
 	transform: rotate(-135deg);
 	transition:	
 		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
@@ -498,9 +484,9 @@ input[type=checkbox]::before {
 }
 
 input[type=checkbox]::after {
-	height: 50%;
 	top: 40%;
 	left: 5%;
+	height: 50%;
 	transform: rotate(-45deg);
 	transition: 
 		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
@@ -532,6 +518,71 @@ input[type=checkbox]:checked::after {
 		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
 		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===RADIO BUTTONS=== */
+input[type="radio"],
+input[type="radio"] * {
+	box-sizing: border-box;
+	padding: 0;
+    overflow: hidden;
+    outline: 0;
+}
+
+input[type="radio"] {
+	display: inline-flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+	outline: 0.05em solid rgb(var(--swatch-primary));
+    background: rgb(var(--swatch-primary));
+	appearance: none;
+	cursor: pointer;
+}
+input[type="radio"]::before,
+input[type="radio"]:not(:checked)::before {
+    content: "";
+    position: absolute;
+    width: 0.8em;
+    height: 0.8em;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    background: rgb(var(--swatch-background));
+}
+
+input[type="radio"]::after {
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    transform: scale(0);
+    border-radius: 50%;
+    background: rgba(var(--swatch-tertiary-color),0.5);
+}
+
+input[type="radio"]:checked {
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	outline-width: 0.15em;
+    background: rgb(var(--swatch-background));
+    box-shadow: 
+		inset rgba(var(--swatch-tertiary-color), 0.15) 0 0 0.06em 0, 
+		inset rgba(var(--swatch-tertiary-color), 0.25) 0 0.06em 0.06em 0;
+}
+
+input[type="radio"]:checked::after {
+    transform: scale(1);
+    transition: all 500ms;
+    background: transparent;
+}
+
+input[type="radio"]:checked::before {
+    width: 0.5em;
+    height: 0.5em;
+    transition: all 400ms;
+    background: rgb(var(--swatch-primary));
 }
 
 /* ===STANDARD STRUCTURE=== */
@@ -597,10 +648,10 @@ sup {
 
 tt {
 	--calt: 0;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
 	word-wrap: anywhere;
+	white-space: pre-wrap;
 	hyphens: auto;
+	overflow-wrap: break-word;
 }
 
 tt,
@@ -695,9 +746,9 @@ h6 {
 
 /* ===LISTS=== */
 ul, ol {
-	list-style: outside none;
 	margin-left: 0;
 	padding-left: 0;
+	list-style: outside none;
 }
 
 /* Unorderd Lists */
@@ -708,10 +759,10 @@ ul, ol {
 
 #page-content ul:not(.yui-nav) > li::before {
 	--MONO: 1;
-	font-family: var(--mono-font);
-	font-size: 0.8em;
 	content: "\0025a1";
 	margin-right: 0.5em;
+	font-family: var(--mono-font);
+	font-size: 0.8em;
 }
 
 #page-content ul:not(.yui-nav) > li::before {
@@ -741,9 +792,9 @@ ul, ol {
 }
 
 #page-content ol > li:before {
+	content: counter(step1) ".";
 	margin-right: 0.5em;
 	counter-increment: step1;
-	content: counter(step1) ".";
 }
 
 /* Special Heirarchal Ordered List */
@@ -764,23 +815,23 @@ ul, ol {
 }
 
 #page-content .heirarch ol ol > li:before {
-	counter-increment: step2;
 	content: counter(step1) "." counter(step2);
+	counter-increment: step2;
 }
 
 #page-content .heirarch ol ol ol > li:before {
-	counter-increment: step3;
 	content: counter(step1) "." counter(step2) "." counter(step3);
+	counter-increment: step3;
 }
 
 #page-content .heirarch ol ol ol ol > li:before {
-	counter-increment: step4;
 	content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4);
+	counter-increment: step4;
 }
 
 #page-content .heirarch ol ol ol ol ol > li:before {
-	counter-increment: step5;
 	content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4) "." counter(step5);
+	counter-increment: step5;
 }
 
 /* ===ANCHOR LINKS=== */
@@ -819,12 +870,12 @@ a:focus-within {
 /* BlACK BLOCK ELEMENT */
 .bblock,
 .dblock {
-	background-color: rgb(var(--swatch-menubg-black-color));
-	color: rgb(var(--swatch-text-dark));
-	text-decoration: none;
 	transition: 
 		background-color 2000ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 2000ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--swatch-menubg-black-color));
+	color: rgb(var(--swatch-text-dark));
+	text-decoration: none;
 }
 
 .dblock:hover,
@@ -907,11 +958,11 @@ a:focus-within {
 /* Ruby Elements from Sigma-9 */
 .ruby, ruby {
 	display: inline-table;
-	text-align: center;
-	white-space: nowrap;
-	line-height: 1;
 	height: 1em;
+	line-height: 1;
+	text-align: center;
 	vertical-align: text-bottom;
+	white-space: nowrap;
 }
 
 .rt, rt {
