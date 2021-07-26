@@ -1721,7 +1721,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(2) > input {
 	margin-left: 50%
 }
 
-table.page-history tr {
+table.page-history tr[id*="evision-row"] {
 	display: grid;
 	grid-template-areas: 
 		"rev-num rev-radio rev-flags rev-actions rev-user rev-date"
@@ -1730,31 +1730,31 @@ table.page-history tr {
 	grid-template-rows: 2rem 1fr;
 }
 
-table.page-history tr td:nth-of-type(1) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(1) {
 	grid-area: rev-num;
 }
 
-table.page-history tr td:nth-of-type(2) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(2) {
 	grid-area: rev-radio;
 }
 
-table.page-history tr td:nth-of-type(3) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(3) {
 	grid-area: rev-flags;
 }
 
-table.page-history tr td:nth-of-type(4) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(4) {
 	grid-area: rev-actions;
 }
 
-table.page-history tr td:nth-of-type(5) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(5) {
 	grid-area: rev-user;
 }
 
-table.page-history tr td:nth-of-type(6) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(6) {
 	grid-area: rev-date;
 }
 
-table.page-history tr td:nth-of-type(7) {
+table.page-history tr[id*="evision-row"] td:nth-of-type(7) {
 	width: 100%;
 	grid-area: rev-com;
 }
