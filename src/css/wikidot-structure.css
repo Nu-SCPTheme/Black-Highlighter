@@ -375,6 +375,7 @@ div[id*="page-options-bottom"] {
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
 	padding-left: 2.5em;
 	box-shadow: 
+		0 0 0 0 rgb(var(--swatch-primary)),
 		inset 2em 0 0 0 rgb(var(--dark-accent));
 	line-height: 1.5;
 }
@@ -382,11 +383,13 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:hover,
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:active {
 	box-shadow: 
+		0 0 0 0.125rem rgb(var(--swatch-primary)),
 		inset 2em 0 0 0 rgb(var(--bright-accent));
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:focus-within {
 	box-shadow: 
+		0 0 0 0.125rem rgb(var(--swatch-primary)),
 		inset 2em 0 0 0 rgb(var(--bright-accent));
 }
 
@@ -759,7 +762,7 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -767,16 +770,28 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
-	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 #action-area a.action-area-close:hover,
 #action-area a.action-area-close:active {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#action-area a.action-area-close:focus-within {
+	--wght: var(--ui-hvr-wght);
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
@@ -857,7 +872,7 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	padding: 0 0.25em;
 	transform: translateY(0);
 	transition: 
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -865,17 +880,19 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-background),1);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-general));
 	font-size: 0.8em;
 	text-transform: uppercase;
-	will-change: outline-width, outline-color, color, background-color, transform, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type:focus-within td:first-of-type {
 	--wght: calc(var(--ui-hvr-wght) + 100);
 	transform: translateY(-0.15625rem);
-	outline: 0.15625rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-background));
 }
 
@@ -890,14 +907,15 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	margin: 0.5em 1em;
 	padding: 0.25rm;
 	transition: 
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	font-size: 1.2em !important; /* Overwrite Wikidot Inline Styling */
-	will-change: outline-width, outline-color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, background-color, font-weight, font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:not(:placeholder-shown) {
@@ -911,22 +929,25 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-s
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 	--wght: var(--ui-hvr-wght);
 	border: none;
-	outline: 0.125em solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color),0);
+	box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
 	--wght: var(--ui-hvr-wght);
 	border: none;
-	outline: 0.125em solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color),0);
+	box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
 	--wght: var(--ui-hvr-wght);
 	border: none;
-	outline: 0.125em solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color),0);
+	box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
 }
 
 /* ===EDITOR TOOLBAR=== */
@@ -1586,7 +1607,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	grid-template-rows: 1em 1fr;
 	align-items: center;
 	justify-content: stretch;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 	padding-top: 0.75em;
 	background-color: rgba(var(--swatch-background),1);
 	box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.5);
@@ -1598,25 +1619,27 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	position: absolute;
 	z-index: 2;
 	top: -1em;
-	left: 1.47692em;
+	left: 1.6em;
 	padding: 0.15625em;
 	transform: translateY(0);
 	transition:  
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-background),1);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-general));
 	font-size: 0.8em;
 	text-transform: uppercase;
-	will-change: outline-width, outline-color, color, background-color;
+	will-change: box-shadow, color, background-color;
 }
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
-	transform: translateY(-0.15625em);
-	outline: 0.15625em solid rgb(var(--swatch-primary));
+	transform: translateY(-0.25em);
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-background));
 }
 
@@ -1634,11 +1657,13 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	margin: -1.325em auto 0;
 	padding: 0.75em 0.5em 0.5em;
 	transition: 
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	outline: 0 solid rgb(var(--swatch-primary));
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-menutxt-general-color));
 	resize: none;
-	will-change: outline-width, outline-color, background-color;
+	will-change: box-shadow, background-color;
 }
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown) {
@@ -1653,8 +1678,9 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea {
 	border: none;
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color),0);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-menutxt-general-color));
 }
 
@@ -1717,7 +1743,7 @@ form#edit-page-form div.buttons {
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1725,16 +1751,18 @@ form#edit-page-form div.buttons {
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
-	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 #action-area a[onclick*="PageRateModule"]:hover,
 #action-area a[onclick*="PageRateModule"]:active {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
@@ -1742,8 +1770,9 @@ form#edit-page-form div.buttons {
 
 #action-area a[onclick*="PageRateModule"]:focus-within {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
@@ -1975,7 +2004,7 @@ table.page-history td.optionstd a {
 	padding: 0.125rem;
 	overflow: hidden;
 	transition:
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1983,16 +2012,18 @@ table.page-history td.optionstd a {
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
-	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 table.page-history td.optionstd a:hover,
 table.page-history td.optionstd a:active {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
@@ -2000,8 +2031,9 @@ table.page-history td.optionstd a:active {
 
 table.page-history td.optionstd a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
@@ -2193,12 +2225,13 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	transition: 
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	border-radius: 0;
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
@@ -2251,6 +2284,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	border-radius: 0;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
 	cursor: pointer;
@@ -2347,7 +2381,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2355,16 +2389,18 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
-	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 #site-tools-box ul.nav li a:hover,
 #site-tools-box ul.nav li a:active {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
@@ -2372,8 +2408,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	outline: 0.125rem solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
+	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-decoration: none;
 	cursor: pointer;
