@@ -11,7 +11,7 @@ DIRECTORIES := \
 	dist/img/page-toolbar-icons \
 	dist/img/text-editor-icons \
 	dist/stable/styles/ \
-	beta/
+	src/beta/
 
 $(DIRECTORIES):
 	mkdir -p $@
