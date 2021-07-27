@@ -28,4 +28,4 @@ legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 
 # Utility rules
 clean:
-	rm -rf dist
+	rm -rf dist beta
