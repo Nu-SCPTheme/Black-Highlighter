@@ -232,6 +232,7 @@ div#container-wrap {
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
+	will-change: outline-width, outline-color, box-shadow, font-variation-settings, font-weight, background-color, color, right, width, padding, max-width;
 }
 
 #search-top-box:focus-within,
@@ -249,6 +250,7 @@ div#container-wrap {
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: outline-width, outline-color, box-shadow, font-variation-settings, font-weight, background-color, color, right, width, padding, max-width;
 }
 
 #search-top-box:focus-within {
@@ -379,9 +381,9 @@ div#container-wrap {
 /* Not Logged In Styling */
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in {
-	color: rgb(var(--swatch-menutxt-light-color));
-	background-color: rgba(var(--swatch-primary-darker), 1);
 	margin: 0 1em;
+	background-color: rgba(var(--swatch-primary-darker), 1);
+	color: rgb(var(--swatch-menutxt-light-color));
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:hover,

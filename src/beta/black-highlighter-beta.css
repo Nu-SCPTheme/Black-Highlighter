@@ -155,7 +155,7 @@
 	/* black */
 	--black-monochrome: 12, 12, 12;
 	/* subdued theme color, for visited links */
-	--pale-accent: 230, 40, 60;
+	--pale-accent: 170, 0, 5;
 	/* vivid theme color, the "default" accent color */
 	--bright-accent: 133, 0, 5;
 	/* theme color */
@@ -890,6 +890,7 @@ div.note,
 	scrollbar-color:
 		rgba(var(--swatch-tertiary-color), 0.6)
 		rgba(var(--swatch-tertiary-color), 0.1);
+	will-change: outline-width, outline-color, color, background-color;
 }
 
 input[type="text"],
@@ -965,6 +966,7 @@ input.text::-webkit-scrollbar-thumb {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:hover,
@@ -1026,6 +1028,7 @@ input[type=checkbox] {
 	cursor: pointer;
 	-webkit-appearance: none;
 	        appearance: none;
+	will-change: outline-width, outline-color, border-color;
 }
 
 input[type=checkbox]::before, 
@@ -1040,6 +1043,7 @@ input[type=checkbox]::after {
 	box-shadow: 0 0 0 0 rgb(var(--swatch-secondary-color));
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 	        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	will-change: outline-width, outline-color, border-color;
 }
 
 input[type=checkbox]::before {
@@ -2048,9 +2052,9 @@ div.page-watch-options a:active {
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	-webkit-transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2067,9 +2071,9 @@ div.page-watch-options a:active {
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2467,9 +2471,9 @@ div[id*="page-options-bottom"] > a#delete-button {
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2609,6 +2613,7 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 #action-area a.action-area-close:hover,
@@ -2709,6 +2714,7 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	color: rgb(var(--swatch-text-general));
 	font-size: 0.8em;
 	text-transform: uppercase;
+	will-change: outline-width, outline-color, color, background-color, transform, font-weight, font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type:focus-within td:first-of-type {
@@ -2737,6 +2743,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	font-size: 1.2em !important; /* Overwrite Wikidot Inline Styling */
+	will-change: outline-width, outline-color, background-color, font-weight, font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:not(:-ms-input-placeholder) {
@@ -2835,7 +2842,7 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
 	left: var(--icon-size);
 	grid-auto-columns: var(--icon-size);
 	grid-auto-flow: column;
-	grid-template-columns: repeat(auto-fill, var(--icon-size));
+	grid-template-columns: repeat(auto-fit, var(--icon-size));
 	height: var(--icon-size);
 	padding-left: 0;
 	overflow: hidden;
@@ -3497,6 +3504,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	color: rgb(var(--swatch-text-general));
 	font-size: 0.8em;
 	text-transform: uppercase;
+	will-change: outline-width, outline-color, color, background-color;
 }
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
@@ -3524,6 +3532,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-menutxt-general-color));
 	resize: none;
+	will-change: outline-width, outline-color, background-color;
 }
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:-ms-input-placeholder) {
@@ -3627,6 +3636,7 @@ form#edit-page-form div.buttons {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 #action-area a[onclick*="PageRateModule"]:hover,
@@ -3888,6 +3898,7 @@ table.page-history td.optionstd a {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 table.page-history td.optionstd a:hover,
@@ -3978,9 +3989,9 @@ table.page-files tbody tr::before {
 	content: "";
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	background-color: rgb(var(--swatch-primary),0);
 }
 
@@ -4333,6 +4344,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 #site-tools-box ul.nav li a:any-link {
@@ -4356,6 +4368,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 #site-tools-box ul.nav li a:hover,
@@ -5724,9 +5737,9 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
 	position: absolute;
 	z-index: 9999;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	box-shadow: inset 0 0 0 0.5rem rgb(var(--swatch-menubg-color));
 	pointer-events: none;
 }
@@ -6135,6 +6148,7 @@ div#container-wrap {
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
+	will-change: outline-width, outline-color, box-shadow, font-variation-settings, font-weight, background-color, color, right, width, padding, max-width;
 }
 
 #search-top-box:focus-within,
@@ -6152,6 +6166,7 @@ div#container-wrap {
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: outline-width, outline-color, box-shadow, font-variation-settings, font-weight, background-color, color, right, width, padding, max-width;
 }
 
 #search-top-box:focus-within {
@@ -6291,9 +6306,9 @@ div#container-wrap {
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in {
-	color: rgb(var(--swatch-menutxt-light-color));
-	background-color: rgba(var(--swatch-primary-darker), 1);
 	margin: 0 1em;
+	background-color: rgba(var(--swatch-primary-darker), 1);
+	color: rgb(var(--swatch-menutxt-light-color));
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:hover,
@@ -7353,6 +7368,7 @@ div.mobile-top-bar {
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	will-change: outline-width, outline-color, color, background-color, transform;
 }
 
 .yui-navset .yui-nav li a,
@@ -7391,9 +7407,9 @@ div.mobile-top-bar {
 	position: absolute;
 	z-index: 0;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -7940,9 +7956,9 @@ div.blockquote,
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	left: -0.5%;
+	width: 101%;
+	height: 101%;
 	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -9324,6 +9340,7 @@ body.print-body #print-options a:-webkit-any-link {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 body.print-body #print-options a:any-link {
@@ -9347,6 +9364,7 @@ body.print-body #print-options a:any-link {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	will-change: outline-width, outline-color, color, background-color, font-weight, font-variation-settings;
 }
 
 body.print-body #print-options a:hover,
