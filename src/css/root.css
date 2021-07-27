@@ -72,7 +72,7 @@
 	/* SETTING  |  ============== Weight for UI			|	  UI: 100 - 700  */
 	--ui-wght: 400;
 	/* SETTING  |  ============== Hover Weight for UI	|	  UI: 100 - 700  */
-	--ui-hvr-wght: 550;
+	--ui-hvr-wght: 400;
 	/* ========================== Body Font Italic 		| 	Body:   0 - 1    */
 	--ital: 0;
 	
@@ -294,8 +294,12 @@
 	);
 	
 	/* ===SIDEBAR MEASUREMENTS=== */
-	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14 / 15)) * 19);
-	--sidebar-width-on-mobile: calc((var(--base-font-size) * (14 / 15)) * 16);
+	--sidebar-width-on-desktop: calc(
+		(var(--base-font-size) * (14 / 15)) * 19
+	);
+	--sidebar-width-on-mobile: calc(
+		(var(--base-font-size) * (14 / 15)) * 17
+	);
 	--sidebar-internal-border-thickness: 0.125rem;
 }
 
