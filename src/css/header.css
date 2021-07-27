@@ -105,7 +105,7 @@ div#container-wrap {
 #header,
 #top-bar {
 	--wght: var(--ui-wght);
-	max-width: 61.25rem;
+	max-width: var(--header-width-on-desktop,61.25rem);
 	/* 980px */
 	margin: 0 auto;
 }
@@ -549,7 +549,7 @@ div.mobile-top-bar {
 	flex-wrap: nowrap;
 	justify-content: space-around;
 	width: 90vw;
-	max-width: 61.25rem;
+	max-width: var(--header-width-on-desktop,61.25rem);
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -718,7 +718,7 @@ div.mobile-top-bar {
 	align-self: flex-start;
 	width: auto;
 	min-width: 100%;
-	max-width: 61.25rem;
+	max-width: var(--header-width-on-desktop,61.25rem);
 	margin-top: var(--topbar-height-on-desktop);
 	border-top: none;
 	background: rgba(48, 48, 52, 0.93);
@@ -1063,10 +1063,10 @@ div.mobile-top-bar {
 	/* ***MAIN*** */
 	:root {
 		--header-h1-font-size: calc(
-			1.15rem + (2.405 - 1.15) * ((100vw - 18.75rem) / (48 - 18.75))
+			1.15rem + (2.405 - 1.15) * ((var(--header-width-on-mobile,100vw) - 18.75rem) / (48 - 18.75))
 		);
 		--header-h2-font-size: calc(
-			0.5rem + (0.945 - 0.5) * ((100vw - 18.75rem) / (48 - 18.75))
+			0.5rem + (0.945 - 0.5) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
 		);
 	}
 
@@ -1083,21 +1083,15 @@ div.mobile-top-bar {
 	#header {
 		position: sticky;
 		top: calc(var(--header-height-on-mobile) * -1);
-		width: 100vw;
+		width: var(--header-width-on-mobile, 100vw);
 		height: var(--header-height-on-mobile);
 		margin: 0;
 		background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
-		background-position: calc(
-				(var(--header-height-on-mobile) - 0.75rem) - var(--size)
-			)
-			calc(
-				(
-						(var(--size) * -1) + var(--header-height-on-mobile) +
-							var(--y-offset)
-					) / 2
-			);
+		background-position: 
+			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
+			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
 		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
 		--y-offset: 1.5rem;
@@ -1274,7 +1268,7 @@ div.mobile-top-bar {
 		right: 0;
 		left: 0;
 		align-items: center;
-		width: 100vw;
+		width: var(--header-width-on-mobile, 100vw);
 		margin: 0;
 		padding: 0;
 		background: linear-gradient(

@@ -19,9 +19,8 @@
 		5.4 =LINKS
 	6. =CODE FORMATTING
 	7. =BROWSER SPECIFIC FIXES
-	8. =PRINT FORMATTING
-	9. =MOBILE FORMATTING
-	10. =ANIMATIONS
+	8. =MOBILE FORMATTING
+	9. =ANIMATIONS
   =============== */
 
 /* ===OPENTYPE STYLING=== */
@@ -293,6 +292,12 @@ progress {
 }
 
 /* ===USER INPUT & FORMS=== */
+
+/* Controls the width of many form elements*/
+.form-control {
+	width: calc(100% - 1.0625rem);
+}
+
 table.form {
 	margin: 0.5rem -0.25rem;
 }
@@ -984,76 +989,6 @@ a:focus-within {
 	height: auto;
 }
 
-/* ===PRINT FORMATTING=== */
-@media print {
-	*,
-	:before,
-	:after {
-		background: transparent;
-		box-shadow: none;
-		color: rgb(12, 12, 12);
-		color: rgb(var(--swatch-text-dark, 12, 12, 12));
-		text-shadow: none;
-	}
-
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
-
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
-
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
-
-	a[href^="#"]:after,
-	a[href^="javascript:"]:after {
-		content: "";
-	}
-
-	pre {
-		white-space: pre-wrap;
-	}
-
-	pre,
-	blockquote,
-	.blockquote,
-	[class*="blockquote"] {
-		page-break-inside: avoid;
-		border: 0.0625rem solid rgb(66, 66, 72);
-		border: 0.0625rem solid rgb(var(--swatch-tertiary-color, 66, 66, 72));
-	}
-
-	/* See https://scp-wiki.wikidot.com/component:preview */
-	div.preview {
-		display: none;
-	}
-
-	thead {
-		display: table-header-group;
-	}
-
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
-
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
-
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
-}
- 
 /* ===MOBILE FORMATTING=== */
 
 @media screen and (max-width: 56.25rem) {

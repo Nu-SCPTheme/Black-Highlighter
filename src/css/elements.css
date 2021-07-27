@@ -19,6 +19,7 @@
 		12.1 =CONTENT PANEL
 	13. =MOBILE ELEMENTS
 	14. =MYSTERY ELEMENTS
+	15. =PRINT FORMATTING
   =============== */
 
 /* ===TABVIEW=== */
@@ -261,7 +262,7 @@ div.blockquote,
 	height: auto;
 	margin: 1.5rem 1.5rem 0.5rem;
 	padding: 0.15em 1em 1em 0;
-	background-color: rgba(var(--swatch-tertiary-color), 0.25);
+	background-color: rgb(var(--swatch-secondary-color));
 	box-shadow: inset 0.5em 0 0 0 rgba(var(--swatch-primary-darkest));
 }
 
@@ -277,8 +278,6 @@ div.blockquote,
 .bibitems .title {
 	--wght: 700;
 	display: inline-block;
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     margin-top: -0.75em;
     padding: 0 0.5em;
@@ -300,45 +299,82 @@ div.blockquote,
 	font-size: 0;
 }
 
-.footnotes-footer .footnote-footer::before,
-.bibitems .bibitem::after {
-	--wght: 800;
-	--MONO: 1;
+.footnotes-footer a[href*="javascript"]:any-link {
 	display: inline-flex;
-	align-items: flex-end;
-	width: calc(1em - 0.5ch);
-	margin: 0 0 0 -2ch;
-	margin-right: 0;
-	color: rgb(var(--swatch-primary));
+	position: relative;
+	min-width: 2ch;
+	margin: 0 0 0 -3ch;
+	color: transparent;
+}
+
+.footnotes-footer a[href*="javascript"]:any-link,
+.footnotes-footer a[href*="javascript"]::before,
+.bibitems .bibitem::after {
+	--MONO: 1;
+	--wght: calc(var(--ui-wght) + 100);
 	font-family: var(--mono-font);
 }
 
-.footnotes-footer .footnote-footer::before {
+.footnotes-footer a[href*="javascript"]::before,
+.bibitems .bibitem::after {
+	display: inline-flex;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: -25%;
+	width: 100%;
+	background-color: rgb(var(--swatch-secondary-color));
+}
+	
+.footnotes-footer a[href*="javascript"]::before {
 	content: counter(footnotes) ".";
+	display: inline-flex;
+	justify-content: flex-end;
+	transition:
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	color: rgb(var(--link-color));
 	counter-increment: footnotes;
 }
 
-.footnotes-footer .footnote-footer,
+@supports (font-feature-settings: inherit) {
+	.footnotes-footer a[href*="javascript"]::before {
+		transition:
+			color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+			font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}
+
+.footnotes-footer a[href*="javascript"]:hover::before,
+.footnotes-footer a[href*="javascript"]:active::before {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+	color: rgb(var(--hover-link-color));
+	
+}
+
+.footnotes-footer a[href*="javascript"]:focus-within::before {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+	color: rgb(var(--hover-link-color));
+}
+	
 .bibitems .bibitem {
 	position: relative;
 }
 
 .bibitems .bibitem::after {
+	width: calc(1em - 0.5ch);
+	margin: 0 0 0 -2ch;
+	color: rgb(var(--swatch-primary));
+}
+
+.bibitems .bibitem::after {
 	content: counter(bibitems) ".";
-	position: absolute;
-	top: 0;
-	left: 0;
 	counter-increment: bibitems;
 }
 
-.footnotes-footer .footnote-footer:nth-child(n+11)::before,
-.bibitems .bibitem:nth-child(n+11)::before {
+.bibitems .bibitem:nth-child(n+11)::after {
 	width: calc(1em + 0.75ch);
 	margin: 0 0 0 -2em;
-}
-
-.footnote-footer > a[href*="javascript"] {
-	display: none;
 }
 
 /* ===HOVER BLOCKS=== */
@@ -1636,9 +1672,6 @@ div.block-left {
 
 /* ===Mystery Elements===
    ===Unsure what these are for=== */
-.form-control {
-	width: 95%;
-}
 
 .info-container .collapsible-block-link,
 .info-container:hover .collapsible-block-link,
@@ -1649,3 +1682,251 @@ div.block-left {
 .info-container:focus-within .collapsible-block-link {
 	line-height: 1.6em;
 }
+
+/* See https://scp-wiki.wikidot.com/component:preview */
+div.preview {
+	display: none;
+}
+
+/* ===PRINT FORMATTING=== */
+body.print-body {
+	--body-width-on-desktop: calc(100vw - (100vw - 100%));
+	--header-width-on-desktop:  calc(100vw - (100vw - 100%));
+
+	background: white;
+}
+
+body.print-body pre,
+body.print-body blockquote,
+body.print-body .blockquote {
+	background: none;
+}
+
+body.print-body #side-bar,
+body.print-body #search-top-box,
+body.print-body #login-status,
+body.print-body #page-options-container {
+	display: none;
+}
+
+body.print-body #container {
+    grid-template-areas: 
+		"print-options" 
+		"print-head" 
+		"content-wrap" 
+		"print-hr"
+		"license";
+}
+
+body.print-body #print-options {
+	grid-area: print-options;
+	font-family: var(--UI-font);
+}
+	
+body.print-body #print-options tbody {
+	display: grid;
+	grid-gap: 0.25em;
+}
+	
+body.print-body #print-options tr {
+	display: grid;
+	grid-gap: 0.5em;
+	grid-template-columns: 10rem 1fr;
+}
+
+body.print-body #print-options tr > td:first-of-type {
+	--wght: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-transform: uppercase;
+}
+	
+body.print-body #print-options tr > td:last-of-type {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr 0.25em);
+	color: transparent
+}
+
+body.print-body #print-options tr > td b {
+	display: contents;
+}
+
+body.print-body #print-options a:any-link {
+	--wght: var(--ui-wght);
+	display: inline-flex;
+	position: relative;
+	z-index: 2;
+	justify-content: center;
+	min-width: 5rem;
+	margin: 0;
+	padding: 0.25rem;
+	overflow: hidden;
+	transition:
+		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	color: rgb(var(--swatch-text-tertiary-color));
+	font-family: var(--UI-font);
+}
+
+body.print-body #print-options a:hover,
+body.print-body #print-options a:active {
+	--wght: var(--ui-hvr-wght);
+	outline: 0.125rem solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+
+body.print-body #print-options a:focus-within {
+	--wght: var(--ui-hvr-wght);
+	outline: 0.125rem solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+
+body.print-body #print-options tr > td b a:any-link {
+	--wght: calc(var(--ui-wght) + 100);
+}
+
+body.print-body #print-options tr > td b a:hover,
+body.print-body #print-options tr > td b a:active {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+}
+
+body.print-body #print-options tr > td b a:focus-within {
+	--wght: calc(var(--ui-hvr-wght) + 100);
+}
+
+body.print-body #print-options a[onclick*="Georgia"] {
+	font-family: Georgia;
+}
+
+body.print-body #print-options a[onclick*="roman"] {
+	font-family: 'Times New Roman', Times;
+}
+
+body.print-body #print-options a[onclick*="serif"] {
+	font-family: serif;
+}
+
+body.print-body #print-options a[onclick*="arial"] {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body.print-body #print-head {
+	grid-area: print-head;
+	padding-right: 1em;
+	font-family: var(--UI-font);
+}
+
+body.print-body #container > hr {
+	grid-area: print-hr;
+}
+
+body.print-body #content-wrap {
+	grid-template-areas: "content";
+	grid-template-columns: 1fr;
+}
+
+body.print-body #main-content .page-tags {
+	margin-top: 1rem;
+}
+
+body.print-body #main-content .page-tags span {
+	justify-content: flex-start;
+	font-size: 1em;
+}
+
+@media print {
+	:root {
+		--background-gradient-color: var(--swatch-background);
+
+		--body-width-on-desktop: calc(100vw - (100vw - 100%));
+		--header-width-on-desktop:  calc(100vw - (100vw - 100%));
+	}
+
+	*,
+	:before,
+	:after {
+		break-inside: avoid;
+	}
+
+	pre,
+	blockquote,
+	.blockquote {
+		break-inside: avoid;
+		background: none;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		break-inside: avoid;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		break-after: avoid;
+	}
+
+	table, img, svg {
+		break-inside: avoid;
+	}
+
+	#side-bar,
+	#search-top-box,
+	#login-status,
+	#page-options-container {
+		display: none;
+	}
+
+	#content-wrap {
+		grid-template-areas: "content";
+		grid-template-columns: 1fr;
+	}
+
+	#main-content .page-tags {
+		margin-top: 1rem;
+	}
+
+	#main-content .page-tags span {
+		justify-content: flex-start;
+		font-size: 1em;
+	}
+
+	#page-title {
+		break-inside: avoid;
+		break-after: avoid;
+	}
+
+	#print-head {
+		break-before: avoid;
+		break-after: avoid;
+	}
+
+	.bibitems .bibitem::after {
+		right: calc(100% + 1ch);
+	}
+	
+}
+ 

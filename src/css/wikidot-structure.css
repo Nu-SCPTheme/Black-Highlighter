@@ -32,7 +32,11 @@
 		2.3 =PAGE TAGS ACTION
 		2.4 =PAGE HISTORY
 		2.5 =FILES UPLOAD
-		2.6 =PAGE SOURCE
+		2.7 =SITE TOOLS 
+			2.7.1 =WANTED PAGES
+			2.7.2 =ORPHANED/DRAFT PAGES
+		2.8 =EDIT META
+		2.9 =WATCHERS/LOCK/RENAME/DELETE/SOURCE
 	4. =MODALS
 	5. =FORUM
 	6. =MOBILE FORMATTING
@@ -693,7 +697,7 @@ form#edit-page-form *:not(input):not(textarea) {
 form#edit-page-form > table,
 form#edit-page-form > table tbody,
 form#edit-page-form > table tr,
-form#edit-page-form > table:not(:first-of-type) td {
+form#edit-page-form > table:not(.form) td {
 	display: contents;
 }
 
@@ -1256,7 +1260,7 @@ form#edit-page-form .wd-editor-toolbar-panel a.weditor-bibcite::before {
 }
 
 /* ===EDITOR TEXTAREA=== */
-form#edit-page-form > div:nth-of-type(2) {
+form#edit-page-form #wd-editor-toolbar-panel + div {
 	position: relative;
 	grid-area: editbox;
 	padding: 0.125em 0;
@@ -1925,12 +1929,44 @@ table.page-files tbody {
 
 table.page-files tr {
 	display: grid;
-	grid-template-columns: 1.5fr 1.5fr 1fr 2fr;
+	position: relative;
 	width: 100%;
+}
+
+table.page-files tbody tr::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(var(--swatch-primary),0);
+}
+	
+table.page-files thead tr,
+table.page-files tr[id*="file-row"] {
+	grid-template-columns: 1.5fr 1.5fr 1fr 2fr;
 	padding: 0.5em 0;
 }
 
-table.page-files tbody tr:nth-child(odd) {
+table.page-files tr[id*="file-options"] {
+	grid-template-columns: 0 0 0 1fr;
+	margin-top: 0;
+	padding: 0 0 0.5em;
+}
+
+table.page-files tr[id*="file-row"]:nth-of-type(odd),
+table.page-files tr[id*="file-row"]:nth-of-type(odd) + table.page-files tr[id*="file-options"],
+table.page-files tr[id*="file-row"]:nth-of-type(odd) + .highlight {
+	background-color: rgba(var(--swatch-tertiary-color),0.2);
+}
+	
+table.page-files tr[id*="file-options"] ~ tr[id*="file-row"]:nth-of-type(odd),
+table.page-files tr[id*="file-row"]:nth-of-type(even) + .highlight {
+	background-color: transparent;
+}
+	
+table.page-files tr[id*="file-options"] ~ tr[id*="file-row"]:nth-of-type(even) {
 	background-color: rgba(var(--swatch-tertiary-color),0.2);
 }
 
@@ -1991,12 +2027,24 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	margin: 0 0.5em;
 }
 
+#file-upload-form table,
+#file-upload-form table > *,
+#file-upload-form table > * > * {
+	display: contents;
+}
+	
+#file-upload-form table.form {
+	display: grid;
+	grid-gap: 0.5em;
+	grid-template-columns: repeat(2, 1fr);
+}
+	
+#file-upload-form table.form tr:nth-of-type(3) td {
+		grid-column: span 2;
+}
+
+/* Removing for now until autoprefixer preFIXES itself 
 #upload-userfile[type="file"]::file-selector-button {
-	--transition: 
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	--wght: var(--ui-wght);
 	display: inline-flex;
 	position: relative;
@@ -2006,7 +2054,11 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	margin: -0.0625rem 0.5rem -0.0625rem -0.0625rem;
 	padding: 0.25rem;
 	overflow: hidden;
-	transition: var(--transition);		
+	transition: 
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	border-radius: 0;
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -2016,8 +2068,8 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	cursor: pointer;
 }
 
-#upload-userfile[type="file"]:hover::file-selector-button,
-#upload-userfile[type="file"]:active::file-selector-button {
+#upload-userfile[type="file"]::file-selector-button:hover,
+#upload-userfile[type="file"]::file-selector-button:active {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--swatch-primary),1);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
@@ -2025,7 +2077,49 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	cursor: pointer;
 }
 
-#upload-userfile[type="file"]:focus-within::file-selector-button {
+#upload-userfile[type="file"]::file-selector-button:focus-within {
+	--wght: var(--ui-hvr-wght);
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+*/
+/* Temporary until Autoprefixer is fixed */
+#upload-userfile[type="file"]::file-selector-button {
+	min-width: 5rem;
+	height: 2em;
+	border: none;
+	border-radius: 0;
+	font-family: var(--UI-font);
+}
+
+#upload-userfile[type="file"] {
+	--wght: var(--ui-wght);
+	display: inline-flex;
+	position: relative;
+	z-index: 2;
+	justify-content: center;
+	min-width: 5rem;
+	height: 2em;
+	padding: 0.25rem;
+	overflow: hidden;
+	transition: 
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	border-radius: 0;
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	color: rgb(var(--swatch-text-tertiary-color));
+	font-family: var(--UI-font);
+	cursor: pointer;
+}
+
+#upload-userfile[type="file"]:hover,
+#upload-userfile[type="file"]:active {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--swatch-primary),1);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
@@ -2033,12 +2127,392 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	cursor: pointer;
 }
 
-#upload-userfile[type=file] {
+#upload-userfile[type="file"]:focus-within {
+	--wght: var(--ui-hvr-wght);
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+	
+#upload-userfile[type="file"] {
+	width: calc(95% + 0.5ch);
+}
+/* End of temporary section */
+
+#upload-userfile[type="file"] {
 	padding: 0 !important; /* Overwriting Wikidot Inline-Styling */
+	cursor: pointer;
 }
+
+/* ===SITE TOOLS=== */
+#site-tools-box {
+	position: relative;
+	margin-top: 1.5em;
+}
+	
+#site-tools-box::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: calc(100% -  6em);
+	height: 100%;
+	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-tertiary-color));
+}
+
+#site-tools-box::before {
+	--wght: 700;
+	content: "Site Tools";
+	display: flex;
+	align-items: center;
+	width: max-content;
+	min-height: 1em;
+	margin: -1.25em 0 0.25em 0;
+	padding: 0 0.5em 0 0;
+	border: none;
+	background-color: rgb(var(--swatch-background));
+	color: rgb(var(--swatch-text-general));
+	font-family: var(--title-font);
+	font-size: 1.1875em;
+	line-height: 1;
+	text-align: left;
+	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
+}
+
+@media only screen and (min-width: 56.25rem) {
+	#site-tools-box::before {
+		font-size: 1.5375em;
+	}
+}
+
+#site-tools-box ul.nav {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+}
+
+#site-tools-box ul.nav li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#site-tools-box ul.nav li a:any-link {
+	--wght: var(--ui-wght);
+	display: inline-flex;
+	position: relative;
+	z-index: 2;
+	justify-content: center;
+	min-width: 5rem;
+	margin: 0;
+	padding: 0.25rem;
+	overflow: hidden;
+	transition:
+		outline 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary-darker), 0.05);
+	color: rgb(var(--swatch-text-tertiary-color));
+	font-family: var(--UI-font);
+}
+
+#site-tools-box ul.nav li a:hover,
+#site-tools-box ul.nav li a:active {
+	--wght: var(--ui-hvr-wght);
+	outline: 0.125rem solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#site-tools-box ul.nav li a:focus-within {
+	--wght: var(--ui-hvr-wght);
+	outline: 0.125rem solid rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* ===WANTED PAGES=== */
+#site-tools-box div.wanted-pages-module table {
+	display: grid;
+	grid-auto-rows: auto;
+	grid-template-columns: 1fr 1fr;
+}
+
+#site-tools-box div.wanted-pages-module tbody,
+#site-tools-box div.wanted-pages-module tbody tr {
+	display: contents;
+}
+	
+#site-tools-box div.wanted-pages-module table tr {
+	width: 100%;
+}
+	
+#site-tools-box div.wanted-pages-module table tr:first-of-type th {
+	--wght: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-transform: uppercase;
+}
+	
+#site-tools-box div.wanted-pages-module table tr:nth-of-type(odd) td {
+	background-color: rgb(var(--swatch-tertiary-color), 0.1);
+}
+	
+#site-tools-box div.wanted-pages-module table tr br {
+	display: none
+}
+	
+#site-tools-box div.wanted-pages-module table tr a {
+	display: flex;
+	width: calc(100% - 2em);
+	margin: 0.125rem 1em;
+}
+	
+#site-tools-box div.wanted-pages-module table tr a:not(:first-of-type) {
+	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-primary),0.25);
+}
+	
+#site-tools-box div.wanted-pages-module table.form.grid td, 
+#site-tools-box div.wanted-pages-module table.form.grid th {
+	border-color: rgb(var(--swatch-tertiary-color),0.4);
+}
+
+/* ===ORPHANED/DRAFT PAGES=== */
+
+#st-action-area {
+	display: grid;
+	grid-auto-rows: auto;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 3rem 1fr;
+}
+#st-action-area br {
+	display: none;
+}
+
+#st-action-area > h1:first-of-type {
+	grid-column: span 2;
+}
+
+#st-action-area > p:first-of-type {
+	display: block;
+	position: relative;
+	grid-column: span 2;
+	margin: 0.5em 1.25rem;
+	padding: 0.825em 1.25em;
+	clear: both;
+	border: none;
+	background-color: rgb(var(--swatch-secondary-color));
+	box-shadow: 
+		inset 0.25rem 0 0 0 rgba(var(--swatch-primary),1),
+		-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color),0.25),
+		inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),0.5),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.75);
+}
+	
+#st-action-area > span,
+#st-action-area > a {
+	display: flex;
+	width: fit-content;
+	padding: 0.125rem 0;
+}
+	
+#st-action-area > span:not(:first-of-type),
+#st-action-area > a:not(:first-of-type) {
+	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-primary),0.25);
+}
+
+#st-action-area > a {
+	justify-content: flex-end;
+	padding-right: 0.125em;
+	text-align: right;
+}
+	
+#st-action-area > span {
+	padding-left: 0.125em;
+	color: rgb(var(--swatch-text-tertiary-color),0.6) !important;
+	text-align: left;
+	hyphens: auto;
+}
+
+#st-action-area > span:nth-of-type(even) {
+	background-color: rgb(var(--swatch-tertiary-color), 0.05);
+}
+
+#st-action-area > a:any-link {
+	--link-color: rgb(var(--swatch-text-general));
+	--visited-link-color: rgb(var(--swatch-text-general));
+	--wght: var(--ui-wght);
+	display: flex;
+	align-items: center;
+	padding: 0 0.5em;
+	transition: 
+		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: transparent;
+	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
+	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
+}
+
+#st-action-area > a:not(.btn):hover,
+#st-action-area > a:not(.btn):active {
+	--wght: var(--ui-hvr-wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: underline rgb(var(--swatch-primary)) 0;
+}
+
+#st-action-area > a:not(.btn):focus-within {
+	--wght: var(--ui-hvr-wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: underline rgb(var(--swatch-primary)) 0;
+}
+	
+#st-action-area a:nth-of-type(n) {
+	justify-content: flex-end;
+}
+	
+#st-action-area *:not(span) + a:nth-of-type(4n-1),
+#st-action-area *:not(span) + a:nth-of-type(4n-4) {
+	background-color: rgb(var(--swatch-tertiary-color), 0.1);
+}
+	
+#st-action-area span ~ a:nth-of-type(n) {
+	background-color: transparent;
+}
+
+/* ===EDIT META=== */
+#action-area > div[style="padding-left:3em;"] {
+	padding: 1em 0 !important;
+}	
+	
+#action-area > div[style="padding-left:3em;"] > div {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: 3rem 1fr;
+}
+
+#action-area a[onclick*="deleteTag"] {
+	--wght: var(--ui-wght);
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 1em 0 0.6em;
+	padding: 0 1em;
+	transition: 
+		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: transparent;
+	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
+	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
+}
+
+#action-area a[onclick*="deleteTag"]:not(.btn):hover,
+#action-area a[onclick*="deleteTag"]:not(.btn):active {
+	--wght: var(--ui-hvr-wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: underline rgb(var(--swatch-primary)) 0;
+}
+
+#action-area a[onclick*="deleteTag"]:not(.btn):focus-within {
+	--wght: var(--ui-hvr-wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: underline rgb(var(--swatch-primary)) 0;
+}
+
+#edit-meta-newtag-form table {
+	display: grid;
+	grid-template-columns: repeat(2, min-content 1fr) min-content;
+	grid-template-rows: 1.5em;
+	width: 100%;
+	max-width: 100%;
+}
+
+#edit-meta-newtag-form table tbody,
+#edit-meta-newtag-form table tr,
+#edit-meta-newtag-form table td:nth-of-type(2),
+#edit-meta-newtag-form table td:nth-of-type(4) {
+	display: contents;
+}
+
+#edit-meta-newtag-form table td {
+	white-space: nowrap;
+}
+
+#edit-meta-newtag-form > div {
+	display: grid;
+	grid-gap: 2em;
+	grid-template-columns: repeat(3, 1fr);
+	margin: 0 2em;
+}
+
+/* ===WATCHERS/LOCK/RENAME/DELETE/SOURCE=== */
+#action-area p + ul[style*="list-style: none"] {
+	display: grid;
+	grid-auto-flow: row;
+	grid-gap: 1em;	
+	grid-template-columns: repeat(auto-fill, minmax(calc(var(--body-width-on-desktop) / 4), 1fr));
+}
+
+#action-area > form:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) {
+	display: flex;
+	justify-content: center
+}	
+
+#action-area form[onsubmit*="RenamePage"] table {
+	display: grid;
+	grid-gap: 0.25em;
+	grid-template-columns: 0.5fr 1.5fr;
+	grid-template-rows: 1.5em 1.5em;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+}
+	
+#action-area form[onsubmit*="RenamePage"] table td:first-of-type {
+	padding-right: 0.5em;
+	text-align: right;
+}
+	
+#action-area form[onsubmit*="RenamePage"] table td:last-of-type {
+	display: flex;
+}
+	
+#action-area form[onsubmit*="RenamePage"] table td:last-of-type * {
+	flex-grow: 2;
+}
+
+
+#action-area form[onsubmit*="RenamePage"] tbody,
+#action-area form[onsubmit*="RenamePage"] tr {
+	display: contents;
+}
+
+
 
 /* ===PAGE SOURCE=== */
 .page-source {
+	margin: 1em 0 0 0;
 	text-align: left;
 	word-break: break-word;
 	hyphens: auto;
