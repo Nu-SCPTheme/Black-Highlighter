@@ -376,6 +376,26 @@ div#container-wrap {
 	white-space: nowrap;
 }
 
+/* Not Logged In Styling */
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account,
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in {
+	color: rgb(var(--swatch-menutxt-light-color));
+	background-color: rgba(var(--swatch-primary-darker), 1);
+	margin: 0 1em;
+}
+
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:hover,
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:active,
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:hover,
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:active {
+	background-color: rgba(var(--swatch-primary), 1);
+}
+
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:focus-within,
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:hover:focus-within {
+	background-color: rgba(var(--swatch-primary), 1);
+}
+
 #login-status span.printuser {
 	height: 100%;
 	margin-right: 0.5em;
