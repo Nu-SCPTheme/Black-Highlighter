@@ -362,13 +362,11 @@ div.blockquote,
 }
 
 .bibitems .bibitem::after {
-	width: calc(1em - 0.5ch);
+	content: counter(bibitems) ".";
+	left: 0;
+	width: min-content;
 	margin: 0 0 0 -2ch;
 	color: rgb(var(--swatch-primary));
-}
-
-.bibitems .bibitem::after {
-	content: counter(bibitems) ".";
 	counter-increment: bibitems;
 }
 
@@ -1925,7 +1923,7 @@ body.print-body #main-content .page-tags span {
 	}
 
 	.bibitems .bibitem::after {
-		right: calc(100% + 1ch);
+		
 	}
 	
 }
