@@ -18,8 +18,8 @@
 		8.2. =GENERAL TEXT COLORS
 	8. =BACKGROUND & HEADER COLORS
 	9. =MENU COLORS
-		9.1 =MEMU BACKGROUND COLORS
-		9.2 =MEMU TEXT COLORS
+		9.1 =MENU BACKGROUND COLORS
+		9.2 =MENU TEXT COLORS
 	10. =SECONDARY & TERTIARY COLORS
 	11. =LINK COLORS
 	12. =RATING MODULE COLORS
@@ -72,7 +72,7 @@
 	/* SETTING  |  ============== Weight for UI			|	  UI: 100 - 700  */
 	--ui-wght: 400;
 	/* SETTING  |  ============== Hover Weight for UI	|	  UI: 100 - 700  */
-	--ui-hvr-wght: 400;
+	--ui-hvr-wght: 550;
 	/* ========================== Body Font Italic 		| 	Body:   0 - 1    */
 	--ital: 0;
 	
@@ -174,8 +174,8 @@
 	--swatch-headerh1-color: var(--swatch-text-light);
 	--swatch-headerh2-color: var(--swatch-text-light);
 
-/* ===MEMU COLORS=== */
-	/* ===MEMU BACKGROUND COLORS=== */
+/* ===MENU COLORS=== */
+	/* ===MENU BACKGROUND COLORS=== */
 	--swatch-menubg-color: var(--white-monochrome);
 	--swatch-menubg-light-color: var(--pale-gray-monochrome);
 	--swatch-menubg-medium-color: var(--light-gray-monochrome);
@@ -184,7 +184,7 @@
 	--swatch-menubg-black-color: var(--black-monochrome);
 	--swatch-menubg-hover-color: var(--black-monochrome);
 
-	/* ===MEMU TEXT COLORS=== */
+	/* ===MENU TEXT COLORS=== */
 	--swatch-menutxt-dark-color: var(--black-monochrome);
 	--swatch-menutxt-light-color: var(--white-monochrome);
 	--swatch-menutxt-general-color: var(--swatch-menutxt-dark-color);
@@ -194,22 +194,22 @@
 	--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
 	--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
 
+	/* Color specificaly used for the sidebar links, ignores :visited status */
+	--sidebar-links-text: var(--swatch-menutxt-general-color);
+
 /* ===SECONDARY & TERTIARY COLORS=== */
-/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
+	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
 	--swatch-secondary-color: var(--swatch-menubg-light-color);
 	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
+
 	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
 	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
-	--swatch-text-tertiary-color: var(--swatch-menutxt-dark-color);
-	
+	--swatch-text-tertiary-color: var(--swatch-menutxt-dark-color);	
 /* ===LINK COLORS=== */
 	--link-color: var(--pale-accent);
 	--visited-link-color: var(--swatch-primary);
 	--hover-link-color: var(--swatch-primary);
 	--newpage-color: var(--alt-accent);
-
-	/* Color specificaly used for the sidebar links, ignores :visited status */
-	--sidebar-links-text: var(--swatch-menutxt-general-color);
 
 /* ===RATING MODULE COLORS=== */
 	--rating-module-button-plus-color: 0, 200, 0;

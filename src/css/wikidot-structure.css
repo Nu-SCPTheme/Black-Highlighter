@@ -103,7 +103,6 @@
 		"action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm";
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(3, min-content) 1fr repeat(8, min-content);
-	flex-basis: var(--body-width-on-desktop);
 	width: calc(100% - 3rem);
 	max-width: var(--body-width-on-desktop);
 	margin: 0 auto;
@@ -2744,6 +2743,11 @@ div.odialog-shader-iframe {
 .owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
 	background-color: rgb(var(--swatch-menubg-light-color));
 	color: rgb(var(--swatch-menutxt-dark-color));
+}
+
+.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:not(:last-of-type),
+.owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:not(:last-of-type) {
+	margin-right: 0.5em;
 }
 
 /* ===FORUM=== */
