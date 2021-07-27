@@ -8856,21 +8856,23 @@ span.printuser {
 	justify-content: flex-start;
 	width: -webkit-max-content;
 	width: max-content;
-	height: 100%;
+	height: -webkit-min-content;
+	height: min-content;
 	margin-right: 0;
 }
 
 span.printuser a:first-of-type {
 	width: 1.75em;
+	height: 1em;
 	margin: 0 0.125rem 0 0;
 }
 
 span.printuser img.small {
-	width: calc(50% + 0.375em);
+	width: 100%;
 	padding: 0 0 0 0.5625em;
 	background-position: left center;
 	background-size: cover;
-	object-fit: cover;
+	object-fit: contain;
 	object-position: left center;
 	color: transparent;
 }
