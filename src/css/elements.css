@@ -147,7 +147,7 @@
 	z-index: 10;
 	margin: 0;
 	padding: 0;
-	transform: translateY(-0.1875rem);
+	transform: translateY(-0.25rem);
 	outline: 0.25rem solid rgb(var(--swatch-primary));
 }
 
@@ -248,6 +248,7 @@ div.blockquote,
 	.colorbar-quote
 	[class*="blockquote"] {
 		display: flow-root;
+		clear: none;
 	}
 }
 
@@ -1439,6 +1440,7 @@ div.sexy-box div.image-container img {
 /* Keycap Styling */
 /* Reworked from Sigma-9 */
 .keycap {
+	display: inline;
 	padding: 0.0625rem 0.1875rem;
 	border-radius: 0.1875em;
 	background: rgb(var(--swatch-background));
@@ -1451,14 +1453,18 @@ div.sexy-box div.image-container img {
 		0 0.125em 0 0.125em rgba(var(--swatch-tertiary-color),0.5);
 	font-size: .85em;
 	box-decoration-break: clone;
-}	
+}
+
+div.keycap {
+	display: inline-block;
+}
 
 /* Tags Styling */
 /* Reworked from Sigma-9 */
 
 .tags {
 	--wght: 500;
-    display: inline-block;
+    display: inline;
 	position: relative;
     height: 1.175em;
     margin: 0 0 0 0.5125rem;
@@ -1472,6 +1478,10 @@ div.sexy-box div.image-container img {
     text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-menubg-dark-color));
 	clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
+}
+
+div.tags {
+	display: inline-block;
 }
 
 .tags::after {

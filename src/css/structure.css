@@ -875,12 +875,18 @@ a:focus-within {
 /* BlACK BLOCK ELEMENT */
 .bblock,
 .dblock {
+	display: inline;
 	transition: 
 		background-color 2000ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 2000ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-menubg-black-color));
 	color: rgb(var(--swatch-text-dark));
 	text-decoration: none;
+}
+
+div.bblock,
+div.dblock {
+	display: inline-block;
 }
 
 .dblock:hover,
