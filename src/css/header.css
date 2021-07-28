@@ -224,8 +224,8 @@ div#container-wrap {
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -242,8 +242,8 @@ div#container-wrap {
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -582,7 +582,7 @@ div.mobile-top-bar {
 	width: auto;
 	margin: 0;
 	padding: 0;
-	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	list-style: outside none none;
 	cursor: pointer;
 }
@@ -674,7 +674,6 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] li ul {
 	display: flex;
-	visibility: hidden;
 	position: relative;
 	align-items: center;
 	justify-content: center;
@@ -723,6 +722,7 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li > ul {
 	--box-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.5);
 	display: flex;
+	visibility: visible;
 	position: absolute;
 	z-index: 20;
 	left: 0;
@@ -741,17 +741,18 @@ div.mobile-top-bar {
 		inset 0 0 0 0.0625rem rgba(12, 12, 12, 0.5);
 	box-shadow: 0 0.125rem 0.375rem var(--box-shadow),
 		inset 0 0 0 0.0625rem var(--box-shadow);
+	pointer-events: none;
 }
 
 #header div[class*="top-bar"] > ul > li:hover > ul,
 #header div[class*="top-bar"] > ul > li:active > ul {
-	visibility: visible;
 	opacity: 1;
+	pointer-events: all;
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > ul {
-	visibility: visible;
 	opacity: 1;
+	pointer-events: all;
 }
 
 #header div[class*="top-bar"] > ul:first-of-type > li:last-of-type > ul {
@@ -775,8 +776,8 @@ div.mobile-top-bar {
 	padding: 0 1em;
 	overflow: hidden;
 	transition: 
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0rem solid rgba(0, 0, 0, 0);
@@ -821,23 +822,23 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li ul > li {
 	display: flex;
+	visibility: visible;
 	position: relative;
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
 
-	/* Text positioning */
+	width: 100%;
 	height: 2rem;
 	margin: 0;
 	padding: 0;
+
 	overflow: visible;
 	border-collapse: collapse;
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: inset 0 0 0 0.0625rem rgba(12, 12, 12, 0.5);
 	box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
 	word-break: normal;
-
+	
 	/* Prevent splitting in half onto the next column */
 	break-inside: avoid;
 }
@@ -872,14 +873,12 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li > ul > li:active ul,
 #header div[class*="top-bar"] > ul > li > ul > li:hover ul:hover,
 #header div[class*="top-bar"] > ul > li > ul > li:active ul:active {
-	visibility: visible;
 	opacity: 1;
 	pointer-events: all;
 }
 
 #header div[class*="top-bar"] > ul > li > ul > li:focus-within ul,
 #header div[class*="top-bar"] > ul > li > ul > li:focus-within ul:focus-within {
-	visibility: visible;
 	opacity: 1;
 	pointer-events: all;
 }
@@ -918,11 +917,16 @@ div.mobile-top-bar {
 
 /* Backdrop Filter Blur Support */
 
-@supports (
-	(-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))
-) {
+@supports (backdrop-filter: blur(1rem)) {
 	#header div[class*="top-bar"] > ul > li ul {
-		-webkit-backdrop-filter: blur(0.125rem);
+		backdrop-filter: blur(0);
+		transition: 
+			backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), 
+			transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	#header div[class*="top-bar"] > ul > li:hover ul {
 		backdrop-filter: blur(0.125rem);
 	}
 }
@@ -1011,7 +1015,7 @@ div.mobile-top-bar {
 	width: 1.875rem;
 	height: 1.875rem;
 	font-size: 1.25rem;
-	line-height: 1.875rem;
+	line-height: 1.875;
 	text-align: center;
 }
 
@@ -1058,9 +1062,8 @@ div.mobile-top-bar {
 @media only screen and (max-width: 56.25rem) {
 	/* ===MOBILE DIRECTORY===
 		1. *MAIN
-		2. *SEARCH BOX
-		3. *LOGIN BOX
-		4. *TOP BAR
+		2. *LOGIN/SEARCH BOX
+		3. *TOP BAR
 	=============== */
 
 	/* Removing Scrollbar to deal with horizontal overflow and still allow sticky scrolling */
@@ -1133,6 +1136,17 @@ div.mobile-top-bar {
 	#header h2 span {
 		margin-top: calc(((var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) + 0.5rem));
 		line-height: 1;
+	}
+
+	/* ***LOGIN/SEARCH BOX*** */
+	#search-top-box {
+		top: 2em;
+		right: 3%;
+	}
+
+	#login-status {
+		top: 2em;
+		right: calc(7% - 1em);
 	}
 
 	/* ***TOP BAR*** */
@@ -1249,12 +1263,24 @@ div.mobile-top-bar {
 		text-align: center;
 	}
 
+	#header div[class*="top-bar"] > ul > li ul > li:nth-last-of-type(2):nth-of-type(even) {
+		box-shadow: 
+			inset 0 0 0 0.0625rem var(--box-shadow),
+			0 0.0625rem 0 0 var(--box-shadow);
+	}
+	
+	#header div[class*="top-bar"] > ul > li ul > li:last-of-type:nth-of-type(odd) {
+		box-shadow: 
+			inset 0 0 0 0.0625rem var(--box-shadow),
+			0.0625rem 0 0 0 var(--box-shadow);
+	}	
+
 	/* ul > li > ul li > a */
 
 	#header div[class*="top-bar"] > ul > li > ul li > a {
 		font-size: 0.875rem;
 		font-size: calc(var(--base-font-size) * (14 / 15));
-		line-height: 1em;
+		line-height: 1;
 		white-space: inherit;
 	}
 

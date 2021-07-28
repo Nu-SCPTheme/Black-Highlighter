@@ -83,10 +83,10 @@
 	--base-font-size: 
 		clamp(
 			var(--min-font-size), 
-			calc((var(--min-font-size) - var(--min-font-size)) + 2vw), 
+			2vmin,
 			var(--max-font-size)
 		);
-	--base-line-height: 1.3125;
+	--base-line-height: 1.5;
 
 	/* ===HEADER TITLE FONT SIZES=== */
 	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
@@ -628,7 +628,7 @@
 
 html {
 	font-size: 1em;
-	line-height: 1.5;
+	line-height: var(--base-line-height);
 }
 
 html,
@@ -638,28 +638,26 @@ body {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6)
-		rgba(var(--swatch-tertiary-color), 0.1);
+	scrollbar-color: 
+		rgba(var(--swatch-tertiary-color), 1) /* Thumb */
+		rgba(var(--swatch-secondary-color), 1); /* Track */
 }
 
 /* Webkit Scrollbar */
 
-html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-	background: rgba(170, 170, 170, 0.05);
-	background: rgba(var(--swatch-tertiary-color), 0.1);
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+	background: rgba(var(--swatch-tertiary-color), 1);
 }
 
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-	background: rgba(170, 170, 170, 0.6);
-	background: rgba(var(--swatch-tertiary-color), 0.6);
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+	background: rgba(var(--swatch-secondary-color), 1);
 }
 
 /* Selection color */
 
 ::selection {
-	background: rgba(180, 35, 35, 0.25);
 	background: rgba(var(--swatch-primary, 180, 35, 35), 0.25);
 	text-shadow: none;
 }
@@ -671,7 +669,9 @@ body {
 
 	/* font behavior */
 	font-family: var(--body-font);
+	font-size: var(--max-font-size);
 	font-size: var(--base-font-size);
+	line-height: var(--base-line-height);
 	word-break: normal;
 	-webkit-hyphens: manual;
 	    -ms-hyphens: manual;
@@ -888,8 +888,8 @@ div.note,
 #lock-info {
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -966,8 +966,8 @@ input.text::-webkit-scrollbar-thumb {
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -1210,7 +1210,7 @@ input[type="radio"]:checked::after {
 input[type="radio"]:checked::before {
     width: 0.5em;
     height: 0.5em;
-    transition: all 400ms;
+    transition: all 200ms;
     background: rgb(var(--swatch-primary));
 }
 
@@ -1641,6 +1641,10 @@ div.dblock {
 /* ===MOBILE FORMATTING=== */
 
 @media screen and (max-width: 56.25rem) {
+	body {
+		font-size: var(--min-font-size);
+		font-size: var(--base-font-size);
+	}
 	.page-options-bottom {
 		height: initial;
 	}
@@ -1790,11 +1794,9 @@ div.dblock {
 		1fr
 		/* Space Between Content and Scrollbar Width */
 		calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2 );
-	flex-direction: column;
 	width: calc(100vw - (100vw - 100%));
 	height: auto;
 	min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
-	margin: 0 auto;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -1886,13 +1888,16 @@ div.dblock {
 
 #page-content {
 	grid-area: page-content;
-	max-width: 90vw;
-	min-height: 45rem;
+	min-height: calc(100vh - var(--final-header-height-on-desktop));
 }
 
-#page-content div,
-#page-content div table {
-	max-width: var(--body-width-on-desktop);
+#page-content,
+#page-content * {
+	max-width: min(90vw, var(--body-width-on-desktop));
+}
+
+#page-content table {
+	table-layout: fixed;
 }
 
 /* ===PAGE INFO & PAGE WATCH=== */
@@ -1938,12 +1943,12 @@ div.page-watch-options a:-webkit-any-link {
 	padding: 0.15em;
 	-webkit-transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
@@ -1958,7 +1963,7 @@ div.page-watch-options a:any-link {
 	padding: 0.15em;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
@@ -2008,13 +2013,18 @@ div.page-watch-options a:active {
     position: relative;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-between;
     width: auto;
     height: 100%;
 	padding: 0;
     font-size: 0.9em;
 	-webkit-clip-path: polygon(0 0, calc(100% - 0.0625rem) 0, calc(100% - 0.0625rem) 100%, 0% 100%);
 	        clip-path: polygon(0 0, calc(100% - 0.0625rem) 0, calc(100% - 0.0625rem) 100%, 0% 100%);
+}
+
+#main-content .page-tags span::after {
+	content: " ";
+	flex-grow: 2;
 }
 
 #main-content .page-tags span a:-webkit-any-link:not([href^="/system:page-tags/tag/_"]) {
@@ -2030,11 +2040,11 @@ div.page-watch-options a:active {
 	padding: 0.1em 0.4em 0.1em 0.3em;
 	overflow: hidden;
 	-webkit-transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
@@ -2053,7 +2063,7 @@ div.page-watch-options a:active {
 	padding: 0.1em 0.4em 0.1em 0.3em;
 	overflow: hidden;
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
@@ -2109,7 +2119,7 @@ div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2119,7 +2129,7 @@ div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2317,8 +2327,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	grid-template-columns: repeat(9, min-content);
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	padding: 0;
+	padding: 0 1.5em 0 0;
 	color: transparent;
 }
 
@@ -2327,12 +2336,22 @@ div[id*="page-options-bottom"] > a#delete-button {
 	white-space: nowrap;
 }
 
-#footer .options a {
+#footer .options a:-webkit-any-link {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 	height: 1em;
+	box-shadow: 0.0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));
+}
+
+#footer .options a:any-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 1em;
+	box-shadow: 0.0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));
 }
 
 #footer a:-webkit-any-link {
@@ -2346,11 +2365,11 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	-webkit-transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
@@ -2368,19 +2387,11 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
 	line-height: 1;
-}
-
-#footer a:-webkit-any-link:not(:last-of-type) {
-	box-shadow: 0.0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));		
-}
-
-#footer a:any-link:not(:last-of-type) {
-	box-shadow: 0.0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));		
 }
 
 #footer a::before {
@@ -2391,21 +2402,21 @@ div[id*="page-options-bottom"] > a#delete-button {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--swatch-background));
 	pointer-events: none;
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 #footer a:hover,
 #footer a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
@@ -2415,7 +2426,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #footer a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
@@ -2436,8 +2447,9 @@ div[id*="page-options-bottom"] > a#delete-button {
 /* ===LICENSE BOX=== */
 
 #license-area {
-	--link-color: var(--swatch-primary);
-	--hover-link-color: var(--swatch-secondary-color);
+	--link-color: var(--swatch-secondary-color);
+	--visited-link-color: var(--swatch-secondary-color);
+	--hover-link-color: var(--swatch-primary);
 	display: flex;
 	position: relative;
 	box-sizing: border-box;
@@ -2448,6 +2460,8 @@ div[id*="page-options-bottom"] > a#delete-button {
 	justify-content: center;
 	width: 100%;
 	padding: 1em 0.5em;
+	background-color: rgb(var(--swatch-menubg-dark-color));
+    color: rgb(var(--swatch-menutxt-light-color));
 	font-family: var(--UI-font);
 	line-height: 1;
 }
@@ -2463,14 +2477,29 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	-webkit-transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
+	-webkit-text-decoration: underline 0.125em rgb(var(--swatch-primary));
+	        text-decoration: underline 0.125em rgb(var(--swatch-primary));
 }
 
 #license-area a:any-link {
@@ -2484,10 +2513,24 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
+	-webkit-text-decoration: underline 0.125em rgb(var(--swatch-primary));
+	        text-decoration: underline 0.125em rgb(var(--swatch-primary));
 }
 
 #license-area a::before {
@@ -2498,21 +2541,21 @@ div[id*="page-options-bottom"] > a#delete-button {
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	background-color: rgb(var(--swatch-primary));
+	background-color: rgb(var(--swatch-background));
 	pointer-events: none;
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 #license-area a:hover,
 #license-area a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2521,7 +2564,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #license-area a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2628,8 +2671,8 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -2740,8 +2783,8 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	transform: translateY(0);
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2775,7 +2818,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	padding: 0.25rm;
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
@@ -2959,7 +3002,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 form#edit-page-form .wd-editor-toolbar-panel a::before {
 	z-index: 1;
 	width: 100%;
-	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-menutxt-general-color));
 	-webkit-mask-image: var(--edit-menu-mask);
 	        mask-image: var(--edit-menu-mask);
@@ -3425,9 +3468,9 @@ form#edit-page-form .edit-help-34 > a::after {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--swatch-primary));
 	pointer-events: none;
@@ -3439,7 +3482,7 @@ form#edit-page-form .edit-help-34 > a:hover,
 form#edit-page-form .edit-help-34 > a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
@@ -3449,7 +3492,7 @@ form#edit-page-form .edit-help-34 > a:active {
 form#edit-page-form .edit-help-34 > a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
@@ -3491,8 +3534,8 @@ form#edit-page-form .change-textarea-size a {
     height: 1.125em;
     padding: 0;
 	transition:
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
@@ -3539,8 +3582,8 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	transform: translateY(0);
 	transition:  
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-background),1);
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -3573,7 +3616,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	padding: 0.75em 0.5em 0.5em;
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-menutxt-general-color));
@@ -3674,8 +3717,8 @@ form#edit-page-form div.buttons {
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -3716,7 +3759,7 @@ form#edit-page-form div.buttons {
 	grid-auto-rows: 1.5rem;
 	grid-row-gap: 0.25em;
 	grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr) 1em);
-	line-height: 1rem;
+	line-height: 1;
 }
 
 #who-rated-page-area br {
@@ -3939,8 +3982,8 @@ table.page-history td.optionstd a {
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4215,7 +4258,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	overflow: hidden;
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4275,8 +4318,8 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	transition: 
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4384,14 +4427,14 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	overflow: hidden;
 	-webkit-transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4415,8 +4458,8 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4990,8 +5033,8 @@ div.odialog-shader-iframe {
 	margin: 0.1rem;
 	padding: 0.25rem;
 	transition: 
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(140, 20, 25, 1);
 	border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
 	border-radius: 0.25rem;
@@ -5039,10 +5082,8 @@ div.odialog-shader-iframe {
 		margin: 2.875em auto 0 !important;
 	}
 
-	#main-content {
-		max-width: 90vw;
-		margin: 2.1em auto 0;
-		padding: 0;
+	#page-content {
+		min-height: calc(100vh - var(--final-header-height-on-mobile));
 	}
 
 	#page-options-bottom {
@@ -5117,11 +5158,11 @@ div.odialog-shader-iframe {
 	overflow-x: hidden;
 	overflow-y: auto;
 	transition: 
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		scrollbar-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		scrollbar-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
-	border-color: rgba(var(--swatch-tertiary-color), 0);
+	border-color: rgba(var(--swatch-tertiary-color), 0.4);
 	background-attachment: local, local, scroll, fixed;
 	background-color: rgba(var(--swatch-menubg-color), 1);
 	background-image:
@@ -5156,8 +5197,9 @@ div.odialog-shader-iframe {
 	scrollbar-width: thin;
 	-ms-scroll-chaining: none;
 	    overscroll-behavior: contain;
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0) /* Thumb */
-		rgba(var(--swatch-tertiary-color), 0); /* Track */
+	scrollbar-color: 
+		rgba(var(--swatch-primary-darker), 0.1) /* Thumb */
+		rgba(var(--swatch-tertiary-color), 0.05); /* Track */
 	justify-self: start;
 }
 
@@ -5165,19 +5207,21 @@ div.odialog-shader-iframe {
 
 #side-bar:hover,
 #side-bar:active {
-	scrollbar-color: rgba(var(--swatch-primary-darker), 0.4) /* Thumb */
-		rgba(var(--swatch-primary-darker), 0.05); /* Track */
-	border-color: rgba(var(--swatch-primary-darker), 0.4);
+	scrollbar-color: 
+		rgb(var(--swatch-primary-darker), 1) /* Thumb */
+		rgb(var(--swatch-menubg-color), 1); /* Track */
+	border-color: rgba(var(--swatch-primary-darker), 1);
 }
 
 #side-bar:focus-within {
-	scrollbar-color: rgba(var(--swatch-primary-darker), 0.4) /* Thumb */
-		rgba(var(--swatch-primary-darker), 0.05); /* Track */
-	border-color: rgba(var(--swatch-primary-darker), 0.4);
+	scrollbar-color: 
+		rgb(var(--swatch-primary-darker), 1) /* Thumb */
+		rgb(var(--swatch-menubg-color), 1); /* Track */
+	border-color: rgba(var(--swatch-primary-darker), 1);
 }
 
 #side-bar::-webkit-scrollbar-track {
-	background-color: rgba(var(--swatch-menubg-color), 0);
+	background-color: rgba(var(--swatch-secondary-color), 0.8);
 }
 
 #side-bar::-webkit-scrollbar,
@@ -5220,7 +5264,7 @@ div.odialog-shader-iframe {
 
 #side-bar .side-block.media a {
 	position: relative;
-	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
 	-webkit-mask-image: var(--social-logo-mask);
 	        mask-image: var(--social-logo-mask);
@@ -5398,7 +5442,7 @@ div.odialog-shader-iframe {
 	width: 100%;
 	height: 100%;
 	transition: 
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-text-secondary-color));
@@ -5537,8 +5581,8 @@ div.odialog-shader-iframe {
 	margin: 0;
 	padding: 0 0.6em;
 	transition: 
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-clip: padding-box;
@@ -5548,8 +5592,7 @@ div.odialog-shader-iframe {
 	font-size: 0.875rem;
 	font-size: calc(var(--base-font-size) * 0.93333);
 	letter-spacing: 0.04em;
-	line-height: 1.375rem;
-	line-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	line-height: calc(1.5em - var(--sidebar-internal-border-thickness));
 }
 
 /* Menu Item Hover Color Bar */
@@ -5742,7 +5785,7 @@ a[href*="/most-recently-edited"] {
 	background-color: rgba(var(--swatch-primary-darkest), 0);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
-	line-height: 1.85rem;
+	line-height: 1.85;
 }
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
@@ -6195,8 +6238,8 @@ div#container-wrap {
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -6213,8 +6256,8 @@ div#container-wrap {
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -6581,7 +6624,7 @@ div.mobile-top-bar {
 	width: auto;
 	margin: 0;
 	padding: 0;
-	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	list-style: outside none none;
 	cursor: pointer;
 }
@@ -6682,7 +6725,6 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] li ul {
 	display: flex;
-	visibility: hidden;
 	position: relative;
 	align-items: center;
 	justify-content: center;
@@ -6732,6 +6774,7 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li > ul {
 	--box-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.5);
 	display: flex;
+	visibility: visible;
 	position: absolute;
 	z-index: 20;
 	left: 0;
@@ -6750,17 +6793,18 @@ div.mobile-top-bar {
 		inset 0 0 0 0.0625rem rgba(12, 12, 12, 0.5);
 	box-shadow: 0 0.125rem 0.375rem var(--box-shadow),
 		inset 0 0 0 0.0625rem var(--box-shadow);
+	pointer-events: none;
 }
 
 #header div[class*="top-bar"] > ul > li:hover > ul,
 #header div[class*="top-bar"] > ul > li:active > ul {
-	visibility: visible;
 	opacity: 1;
+	pointer-events: all;
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > ul {
-	visibility: visible;
 	opacity: 1;
+	pointer-events: all;
 }
 
 #header div[class*="top-bar"] > ul:first-of-type > li:last-of-type > ul {
@@ -6785,8 +6829,8 @@ div.mobile-top-bar {
 	padding: 0 1em;
 	overflow: hidden;
 	transition: 
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0rem solid rgba(0, 0, 0, 0);
@@ -6836,23 +6880,23 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li ul > li {
 	display: flex;
+	visibility: visible;
 	position: relative;
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
 
-	/* Text positioning */
+	width: 100%;
 	height: 2rem;
 	margin: 0;
 	padding: 0;
+
 	overflow: visible;
 	border-collapse: collapse;
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: inset 0 0 0 0.0625rem rgba(12, 12, 12, 0.5);
 	box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
 	word-break: normal;
-
+	
 	/* Prevent splitting in half onto the next column */
 	break-inside: avoid;
 }
@@ -6888,14 +6932,12 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li > ul > li:active ul,
 #header div[class*="top-bar"] > ul > li > ul > li:hover ul:hover,
 #header div[class*="top-bar"] > ul > li > ul > li:active ul:active {
-	visibility: visible;
 	opacity: 1;
 	pointer-events: all;
 }
 
 #header div[class*="top-bar"] > ul > li > ul > li:focus-within ul,
 #header div[class*="top-bar"] > ul > li > ul > li:focus-within ul:focus-within {
-	visibility: visible;
 	opacity: 1;
 	pointer-events: all;
 }
@@ -6937,12 +6979,28 @@ div.mobile-top-bar {
 
 /* Backdrop Filter Blur Support */
 
-@supports (
-	((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem)))
-) {
+@supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
 	#header div[class*="top-bar"] > ul > li ul {
+		-webkit-backdrop-filter: blur(0);
+		        backdrop-filter: blur(0);
+		transition: 
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), 
+			transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			-webkit-backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: 
+			backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), 
+			transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: 
+			backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), 
+			transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			-webkit-backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	#header div[class*="top-bar"] > ul > li:hover ul {
 		-webkit-backdrop-filter: blur(0.125rem);
-		backdrop-filter: blur(0.125rem);
+		        backdrop-filter: blur(0.125rem);
 	}
 }
 
@@ -7043,7 +7101,7 @@ div.mobile-top-bar {
 	width: 1.875rem;
 	height: 1.875rem;
 	font-size: 1.25rem;
-	line-height: 1.875rem;
+	line-height: 1.875;
 	text-align: center;
 }
 
@@ -7091,9 +7149,8 @@ div.mobile-top-bar {
 @media only screen and (max-width: 56.25rem) {
 	/* ===MOBILE DIRECTORY===
 		1. *MAIN
-		2. *SEARCH BOX
-		3. *LOGIN BOX
-		4. *TOP BAR
+		2. *LOGIN/SEARCH BOX
+		3. *TOP BAR
 	=============== */
 
 	/* Removing Scrollbar to deal with horizontal overflow and still allow sticky scrolling */
@@ -7167,6 +7224,17 @@ div.mobile-top-bar {
 	#header h2 span {
 		margin-top: calc(((var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) + 0.5rem));
 		line-height: 1;
+	}
+
+	/* ***LOGIN/SEARCH BOX*** */
+	#search-top-box {
+		top: 2em;
+		right: 3%;
+	}
+
+	#login-status {
+		top: 2em;
+		right: calc(7% - 1em);
 	}
 
 	/* ***TOP BAR*** */
@@ -7283,12 +7351,24 @@ div.mobile-top-bar {
 		text-align: center;
 	}
 
+	#header div[class*="top-bar"] > ul > li ul > li:nth-last-of-type(2):nth-of-type(even) {
+		box-shadow: 
+			inset 0 0 0 0.0625rem var(--box-shadow),
+			0 0.0625rem 0 0 var(--box-shadow);
+	}
+	
+	#header div[class*="top-bar"] > ul > li ul > li:last-of-type:nth-of-type(odd) {
+		box-shadow: 
+			inset 0 0 0 0.0625rem var(--box-shadow),
+			0.0625rem 0 0 0 var(--box-shadow);
+	}	
+
 	/* ul > li > ul li > a */
 
 	#header div[class*="top-bar"] > ul > li > ul li > a {
 		font-size: 0.875rem;
 		font-size: calc(var(--base-font-size) * (14 / 15));
-		line-height: 1em;
+		line-height: 1;
 		white-space: inherit;
 	}
 
@@ -7362,22 +7442,23 @@ div.mobile-top-bar {
 /* Modules, IMG blocks, text blocks, and other elements used outside of the structural html */
 
 /* ===DIRECTORY===
-	1. =TABVIEW
-	2. =BLOCKQUOTE
-	3. =FOOTNOTES & BIBLIOGRAPHY
-	4. =HOVER BLOCKS
-	5. =IMAGE BLOCK
-	6. =RATING MODULE
-	7. =TABLES
-	8. =TOC
-	9. =LISTPAGES PAGER
-	10. =WIKIDOT USER ICONS
-	11. =MISC SMALL ELEMENTS
-	12. =FRONT PAGE ELEMENTS
-		12.1 =CONTENT PANEL
-	13. =MOBILE ELEMENTS
-	14. =MYSTERY ELEMENTS
-	15. =PRINT FORMATTING
+	1.  =TABVIEW
+	2.  =BLOCKQUOTE
+	3.  =FOOTNOTES & BIBLIOGRAPHY
+	4.  =HOVER BLOCKS
+	5.  =IMAGE BLOCK
+	6.  =RATING MODULE
+	7.  =TABLES
+	8.  =TOC
+	9.  =WARNING BOX
+	10.  =LISTPAGES PAGER
+	11. =WIKIDOT USER ICONS
+	12. =MISC SMALL ELEMENTS
+	13. =FRONT PAGE ELEMENTS
+		13.1 =CONTENT PANEL
+	14. =MOBILE ELEMENTS
+	15. =MYSTERY ELEMENTS
+	16. =PRINT FORMATTING
   =============== */
 
 /* ===TABVIEW=== */
@@ -7423,8 +7504,8 @@ div.mobile-top-bar {
 	transform: translateY(0);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
@@ -7713,7 +7794,7 @@ div.blockquote,
 	display: inline-flex;
 	justify-content: flex-end;
 	transition:
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
 	counter-increment: footnotes;
@@ -7722,7 +7803,7 @@ div.blockquote,
 @supports (font-feature-settings: inherit) {
 	.footnotes-footer a[href*="javascript"]::before {
 		transition:
-			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 			font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 }
@@ -7912,7 +7993,7 @@ div.blockquote,
 /* ===RATING MODULE=== */
 
 :root {
-	--rating-module-height: 1.3125rem;
+	--rating-module-height: 1.3125em;
 }
 
 .page-rate-widget-box,
@@ -7958,6 +8039,7 @@ div.blockquote,
 .rate-box-with-credit-button > .creditButton > p {
 	display: block;
 	width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
+	height: 100%;
 	padding: 0;
 	line-height: var(--rating-module-height);
 	text-align: center;
@@ -8087,8 +8169,14 @@ div.blockquote,
 
 		.page-rate-widget-box .rateup a,
 		.page-rate-widget-box .ratedown a,
-		.page-rate-widget-box .cancel a {
-			font-size: 0;
+		.page-rate-widget-box .cancel a,
+		.page-rate-widget-box .rateup a:hover,
+		.page-rate-widget-box .ratedown a:hover,
+		.page-rate-widget-box .cancel a:hover,
+		.page-rate-widget-box .rateup a:active,
+		.page-rate-widget-box .ratedown a:active,
+		.page-rate-widget-box .cancel a:active {
+			color: transparent;
 		}
 
 		.page-rate-widget-box .rateup a::before,
@@ -8100,11 +8188,11 @@ div.blockquote,
 			top: 0;
 			left: 0;
 			width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
-			height: var(--rating-module-height);
+			height: 100%;
 			background-color: rgb(var(--rating-module-text-color));
 			pointer-events: none;
-			-webkit-mask-size: calc(var(--rating-module-height) - 0.5rem);
-			        mask-size: calc(var(--rating-module-height) - 0.5rem);
+			-webkit-mask-size: calc(var(--rating-module-height) - 0.5em);
+			        mask-size: calc(var(--rating-module-height) - 0.5em);
 			-webkit-mask-position: center;
 			        mask-position: center;
 			-webkit-mask-repeat: no-repeat;
@@ -8202,7 +8290,7 @@ div.blockquote,
 #page-content .rate-box-with-credit-button > .creditButton > p,
 #page-content .rate-box-with-credit-button > .creditButton > p > a {
 	width: 100%;
-	height: var(--rating-module-height);
+	height: 100%;
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a {
@@ -8219,9 +8307,9 @@ div.blockquote,
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 	        clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
@@ -8249,14 +8337,14 @@ div.blockquote,
 	top: 0;
 	left: 0;
 	width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
-	height: var(--rating-module-height);
-	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	height: 100%;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--rating-module-text-color));
 	pointer-events: none;
 	-webkit-mask-image: var(--credit-button-mask);
 	        mask-image: var(--credit-button-mask);
-	-webkit-mask-size: calc(var(--rating-module-height) - 0.375rem);
-	        mask-size: calc(var(--rating-module-height) - 0.375rem);
+	-webkit-mask-size: calc(var(--rating-module-height) - 0.375em);
+	        mask-size: calc(var(--rating-module-height) - 0.375em);
 	-webkit-mask-position: center center;
 	        mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
@@ -8714,7 +8802,7 @@ table[style*="margin:0"] * {
 	display: block;
 	position: absolute;
 	left: -0.25em;
-	color: rgb(var(--swatch-text-tertiary-color));
+	color: rgb(var(--swatch-tertiary-color));
 	font-family: monospace;
 }
 
@@ -8839,6 +8927,66 @@ table[style*="margin:0"] * {
 	pointer-events: all;
 }
 
+/* ===WARNING BOX=== */
+
+#page-content div.warning-top-box,
+#page-content div.archived-top-box,
+#page-content div.warning-top-box *,
+#page-content div.archived-top-box * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#page-content div.warning-top-box,
+#page-content div.archived-top-box {
+	display: grid;
+	width: 100%;
+	max-width: calc(var(--body-width-on-desktop) / 2);
+	margin: 0 auto 1em;
+	border: none;
+	border-radius: 0;
+	background-color: rgb(var(--swatch-background));
+	box-shadow: 
+		0 0 0 0.125rem rgba(var(--swatch-menubg-dark-color),0.25);
+	text-align: center;
+}
+
+#page-content div.warning-top-box > p:first-of-type span,
+#page-content div.warning-top-box > p:first-of-type h1,
+#page-content div.archived-top-box > p:first-of-type span,
+#page-content div.archived-top-box > p:first-of-type h1 {
+	--wght: 600;
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	margin: 0;
+	padding: 0.5em 1.25rem;
+	background-color: rgb(var(--swatch-primary));
+	background-image: linear-gradient(125deg, 
+		rgba(var(--swatch-primary-darkest),0.75) 25%, 
+		transparent 25%, 
+		transparent 50%, 
+		rgba(var(--swatch-primary-darkest),0.75) 50%, 
+		rgba(var(--swatch-primary-darkest),0.75) 75%, 
+		transparent 75%, 
+		transparent 100%);
+	background-size: 3rem 4.35rem;
+	color: rgb(var(--swatch-menutxt-light-color));
+	text-transform: uppercase;
+}
+
+#page-content div.warning-top-box > p:not(:first-of-type),
+#page-content div.archived-top-box > p:not(:first-of-type) {
+	width: 100%;
+	padding: 0.5em 0;
+}
+
+#page-content div.warning-top-box > p:first-of-type + p,
+#page-content div.archived-top-box > p:first-of-type + p {
+	margin-top: 0;
+}
+
 /* ===LISTPAGES PAGER=== */
 
 .pager {
@@ -8901,7 +9049,7 @@ table[style*="margin:0"] * {
 	width: 100%;
 	overflow: hidden;
 	transition: 
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -9080,7 +9228,7 @@ div.keycap {
     background: rgb(var(--swatch-tertiary-color));
     color: rgb(var(--swatch-text-secondary-color));
     font-size: 0.6875rem;
-    line-height: 0.8125rem;
+    line-height: 0.8125;
     text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-menubg-dark-color));
 	-webkit-clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
@@ -9237,7 +9385,7 @@ div.block-left {
 
 @media only screen and (max-width: 56.25rem) {
 	:root {
-		--rating-module-height: 1.5rem;
+		--rating-module-height: 1.5em;
 	}
 
 	div.block-right,
@@ -9250,7 +9398,8 @@ div.block-left {
 		grid-template-columns: repeat(2, 1fr auto);
 	}
 
-	.footnotes-footer {
+	.footnotes-footer,
+	.bibitems {
 		width: 100%;
 		margin: 1.5em 0 0 0;
 	}
@@ -9295,11 +9444,11 @@ div.block-left {
 .info-container .collapsible-block-link,
 .info-container:hover .collapsible-block-link,
 .info-container:active .collapsible-block-link {
-	line-height: 1.6em;
+	line-height: 1.6;
 }
 
 .info-container:focus-within .collapsible-block-link {
-	line-height: 1.6em;
+	line-height: 1.6;
 }
 
 /* See https://scp-wiki.wikidot.com/component:preview */
@@ -9387,14 +9536,14 @@ body.print-body #print-options a:-webkit-any-link {
 	overflow: hidden;
 	-webkit-transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -9417,8 +9566,8 @@ body.print-body #print-options a:any-link {
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -9611,7 +9760,7 @@ body#translations {
 	color: rgb(var(--swatch-menutxt-light-color));
 	font-size: calc(0.875rem * 0.95);
 	letter-spacing: 0.2rem;
-	line-height: 1.5625rem;
+	line-height: 1.5625;
 	text-align: right;
 	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
 	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
@@ -9651,8 +9800,7 @@ body#translations {
 	font-size: 0.875rem;
 	font-size: calc(var(--base-font-size) * (14 / 15));
 	letter-spacing: 0.04em;
-	line-height: calc(2rem - 0.125rem);
-	line-height: calc(2rem - var(--sidebar-internal-border-thickness));
+	line-height: calc(2em - var(--sidebar-internal-border-thickness));
 }
 
 }

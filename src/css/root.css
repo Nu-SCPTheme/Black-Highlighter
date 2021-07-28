@@ -63,10 +63,10 @@
 	--base-font-size: 
 		clamp(
 			var(--min-font-size), 
-			calc((var(--min-font-size) - var(--min-font-size)) + 2vw), 
+			2vmin,
 			var(--max-font-size)
 		);
-	--base-line-height: 1.3125;
+	--base-line-height: 1.5;
 
 	/* ===HEADER TITLE FONT SIZES=== */
 	--header-h1-font-size: calc(var(--base-font-size) * 2.65);

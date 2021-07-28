@@ -72,7 +72,7 @@
 /* ===HTML & BODY GLOBAL STYLING=== */
 html {
 	font-size: 1em;
-	line-height: 1.5;
+	line-height: var(--base-line-height);
 }
 
 html,
@@ -82,28 +82,25 @@ body {
 	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6)
-		rgba(var(--swatch-tertiary-color), 0.1);
+	scrollbar-color: 
+		rgba(var(--swatch-tertiary-color), 1) /* Thumb */
+		rgba(var(--swatch-secondary-color), 1); /* Track */
 }
 
 /* Webkit Scrollbar */
-
-html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-	background: rgba(170, 170, 170, 0.05);
-	background: rgba(var(--swatch-tertiary-color), 0.1);
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+	background: rgba(var(--swatch-tertiary-color), 1);
 }
 
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-	background: rgba(170, 170, 170, 0.6);
-	background: rgba(var(--swatch-tertiary-color), 0.6);
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+	background: rgba(var(--swatch-secondary-color), 1);
 }
 
 /* Selection color */
 
 ::selection {
-	background: rgba(180, 35, 35, 0.25);
 	background: rgba(var(--swatch-primary, 180, 35, 35), 0.25);
 	text-shadow: none;
 }
@@ -115,7 +112,9 @@ body {
 
 	/* font behavior */
 	font-family: var(--body-font);
+	font-size: var(--max-font-size);
 	font-size: var(--base-font-size);
+	line-height: var(--base-line-height);
 	word-break: normal;
 	hyphens: manual;
 
@@ -328,8 +327,8 @@ div.note,
 #lock-info {
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -398,8 +397,8 @@ input.text::-webkit-scrollbar-thumb {
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -599,7 +598,7 @@ input[type="radio"]:checked::after {
 input[type="radio"]:checked::before {
     width: 0.5em;
     height: 0.5em;
-    transition: all 400ms;
+    transition: all 200ms;
     background: rgb(var(--swatch-primary));
 }
 
@@ -1011,6 +1010,10 @@ div.dblock {
 /* ===MOBILE FORMATTING=== */
 
 @media screen and (max-width: 56.25rem) {
+	body {
+		font-size: var(--min-font-size);
+		font-size: var(--base-font-size);
+	}
 	.page-options-bottom {
 		height: initial;
 	}
