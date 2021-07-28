@@ -8527,6 +8527,17 @@ div.blockquote,
 	padding: 0.25em;
 }
 
+[id*="u-credit"] div.credit-back p,
+[id*="u-credit"] div.credit-back iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
 [id*="u-credit"] div.credit-back::before {
 	--wght: var(--ui-wght);
 	content: "Back";
@@ -8553,6 +8564,7 @@ div.blockquote,
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
+	pointer-events: none;
 }
 
 [id*="u-credit"] div.credit-back:hover::before,
@@ -8562,8 +8574,6 @@ div.blockquote,
 	background-color: rgba(var(--swatch-primary),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
-	text-decoration: none;
-	cursor: pointer;
 }
 
 [id*="u-credit"] div.credit-back:focus-within::before {
@@ -8572,8 +8582,6 @@ div.blockquote,
 	background-color: rgba(var(--swatch-primary),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
-	text-decoration: none;
-	cursor: pointer;
 }
 
 /* ===TABLES=== */
