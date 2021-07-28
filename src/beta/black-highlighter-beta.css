@@ -9063,10 +9063,8 @@ table[style*="margin:0"] * {
 	text-align: center;
 }
 
-#page-content div.warning-top-box > p:first-of-type span,
-#page-content div.warning-top-box > p:first-of-type h1,
-#page-content div.archived-top-box > p:first-of-type span,
-#page-content div.archived-top-box > p:first-of-type h1 {
+#page-content div.warning-top-box > h1,
+#page-content div.archived-top-box > h1 {
 	--wght: 600;
 	display: flex;
 	justify-content: flex-start;
@@ -9087,14 +9085,14 @@ table[style*="margin:0"] * {
 	text-transform: uppercase;
 }
 
-#page-content div.warning-top-box > p:not(:first-of-type),
-#page-content div.archived-top-box > p:not(:first-of-type) {
+#page-content div.warning-top-box > p:first-of-type,
+#page-content div.archived-top-box > p:first-of-type {
 	width: 100%;
 	padding: 0.5em 0;
 }
 
-#page-content div.warning-top-box > p:first-of-type + p,
-#page-content div.archived-top-box > p:first-of-type + p {
+#page-content div.warning-top-box > p + p,
+#page-content div.archived-top-box > p + p {
 	margin-top: 0;
 }
 
