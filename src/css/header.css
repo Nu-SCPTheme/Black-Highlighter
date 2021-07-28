@@ -471,6 +471,10 @@ div#container-wrap {
 	font-size: 0.85em;
 }
 
+#login-status #account-options ul li {
+	position: relative;
+}
+
 #login-status #account-options ul li,
 #login-status #account-options ul li a {
 	display: flex;
@@ -503,6 +507,27 @@ div#container-wrap {
 #login-status #account-options li > a:active {
 	--wght: var(--ui-hvr-wght);
 	text-decoration: none;
+}
+
+#login-status #account-options li > a:focus-within {
+	--wght: var(--ui-hvr-wght);
+	text-decoration: none;
+}
+
+#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	font-size: 0;
+}
+	
+#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+	content: "Messages";
+	font-size: calc(var(--base-font-size) * 0.765);
+	pointer-events: none;
 }
 
 #login-status #account-options li > a::before {	

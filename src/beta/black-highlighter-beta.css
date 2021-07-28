@@ -6503,6 +6503,10 @@ div#container-wrap {
 	font-size: 0.85em;
 }
 
+#login-status #account-options ul li {
+	position: relative;
+}
+
 #login-status #account-options ul li,
 #login-status #account-options ul li a {
 	display: flex;
@@ -6535,6 +6539,27 @@ div#container-wrap {
 #login-status #account-options li > a:active {
 	--wght: var(--ui-hvr-wght);
 	text-decoration: none;
+}
+
+#login-status #account-options li > a:focus-within {
+	--wght: var(--ui-hvr-wght);
+	text-decoration: none;
+}
+
+#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	font-size: 0;
+}
+
+#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+	content: "Messages";
+	font-size: calc(var(--base-font-size) * 0.765);
+	pointer-events: none;
 }
 
 #login-status #account-options li > a::before {	
@@ -8426,11 +8451,11 @@ div.blockquote,
 	padding: 0;
 }
 
-[id*="u-credit"] .credit.first {
+[id*="u-credit"] .credit.first,
+[id*="u-credit"] .credit.otherwise {
 	display: grid;
 	width: -webkit-max-content;
 	width: max-content;
-	height: -webkit-fit-content;
 	height: -webkit-max-content;
 	height: max-content;
 	margin: 0 1rem;
@@ -8518,7 +8543,8 @@ div.blockquote,
 	box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-primary-darkest),0.2);
 }
 
-[id*="u-credit"] div.credit-back {
+[id*="u-credit"] div.credit-back,
+[id*="u-credit"] a[href="#u-credit-otherwise"] {
 	position: relative;
 	width: 50%;
 	min-width: 5rem;
@@ -8530,25 +8556,30 @@ div.blockquote,
 [id*="u-credit"] div.credit-back p,
 [id*="u-credit"] div.credit-back iframe {
 	position: absolute;
-	width: 100%;
-	height: 100%;
 	top: 0;
 	left: 0;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	cursor: pointer;
 }
 
 [id*="u-credit"] div.credit-back::before {
-	--wght: var(--ui-wght);
 	content: "Back";
-	display: inline-flex;
 	position: absolute;
 	top: 0;
 	left: 0;
-	align-items: center;
-	justify-content: center;
 	width: 100%;
 	height: 100%;
+	pointer-events: none;
+}
+
+[id*="u-credit"] div.credit-back::before,
+[id*="u-credit"] a[href="#u-credit-otherwise"] {
+	--wght: var(--ui-wght);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	margin: 0;
 	overflow: hidden;
 	transition:
@@ -8564,24 +8595,28 @@ div.blockquote,
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
-	pointer-events: none;
 }
 
 [id*="u-credit"] div.credit-back:hover::before,
-[id*="u-credit"] div.credit-back:active::before {
+[id*="u-credit"] div.credit-back:active::before,
+[id*="u-credit"] a[href="#u-credit-otherwise"]:hover,
+[id*="u-credit"] a[href="#u-credit-otherwise"]:active {
 	--wght: var(--ui-hvr-wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
 }
 
-[id*="u-credit"] div.credit-back:focus-within::before {
+[id*="u-credit"] div.credit-back:focus-within::before,
+[id*="u-credit"] a[href="#u-credit-otherwise"]:focus-within {
 	--wght: var(--ui-hvr-wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	text-decoration: none;
 }
 
 /* ===TABLES=== */
