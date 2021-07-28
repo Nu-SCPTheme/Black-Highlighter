@@ -63,10 +63,10 @@
 	padding: 0;
 	transform: translateY(0);
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -112,7 +112,7 @@
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-primary-darker));
 	pointer-events: none;
 	clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
@@ -333,7 +333,7 @@ div.blockquote,
 	display: inline-flex;
 	justify-content: flex-end;
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
 	counter-increment: footnotes;
@@ -342,7 +342,7 @@ div.blockquote,
 @supports (font-feature-settings: inherit) {
 	.footnotes-footer a[href*="javascript"]::before {
 		transition:
-			color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 }
@@ -382,7 +382,7 @@ div.blockquote,
 .hovertip {
 	width: min(50%, fit-content) !important;
 	max-width: calc(var(--body-width-on-desktop) - 2rem );
-	animation: fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
+	animation: fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
 	border: none !important; /* Overwriting JS-injected inline styling */
 	opacity: 0;
 	background-color: rgba(var(--swatch-primary-darker), 0.05) !important; /* Overwriting JS-injected inline styling */
@@ -401,7 +401,7 @@ div.blockquote,
 	margin: 0;
 	padding: 0;
 	animation: 
-		lift-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards,
+		lift-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards,
 		slide-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
 	background-color: rgb(var(--swatch-background));
 	box-shadow:
@@ -635,7 +635,7 @@ div.blockquote,
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 }
@@ -847,7 +847,7 @@ div.blockquote,
 	left: 0;
 	width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
 	height: var(--rating-module-height);
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--rating-module-text-color));
 	pointer-events: none;
 	mask-image: var(--credit-button-mask);
@@ -978,7 +978,7 @@ div.blockquote,
 #u-credit-view .credit.first p:first-of-type::after {
 	--cancel-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Cancel' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 200 200' overflow='visible' xml:space='preserve'%3E%3Cpolygon points='198.3,20.1 179.9,1.7 100,81.6 20.1,1.7 1.7,20.1 81.6,100 1.7,179.9 20.1,198.3 100,118.4 179.9,198.3 198.3,179.9 118.4,100 '/%3E%3C/svg%3E%0A");
 	transform: rotate(0) scale(1);
-	transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--link-color));
 	mask-image: var(--cancel-mask);
 	mask-size: 0.75em;
@@ -1015,6 +1015,7 @@ div.blockquote,
 /* ===TABLES=== */
 
 table.wiki-content-table * {
+	--min-font-size: 0.8125rem; /* 12px */
 	margin: 0;
 	padding: 0;
 }
@@ -1139,8 +1140,8 @@ table[style*="margin:0"] * {
 	transition: 
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: all;
 	filter: drop-shadow(
 		0.0625rem 0.0625rem 0 rgb(var(--swatch-border-color, 12, 12, 12))
@@ -1184,7 +1185,7 @@ table[style*="margin:0"] * {
 	transition: 
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-text-secondary-color));
 	filter: drop-shadow(0.0625rem 0.0625rem 0 var(--text-shadow));
 	mask-image: var(--arrow-mask);
@@ -1456,7 +1457,7 @@ table[style*="margin:0"] * {
 	width: 100%;
 	overflow: hidden;
 	transition: 
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1485,7 +1486,7 @@ table[style*="margin:0"] * {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
 	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
@@ -1913,9 +1914,9 @@ body.print-body #print-options a:any-link {
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);

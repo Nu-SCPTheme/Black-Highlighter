@@ -327,9 +327,9 @@ input.checkbox,
 div.note,
 #lock-info {
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -397,9 +397,9 @@ input.text::-webkit-scrollbar-thumb {
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -463,7 +463,7 @@ input[type=checkbox] {
 	width: 1em;
 	height: 1em;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgb(var(--swatch-tertiary-color));
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -1029,6 +1029,11 @@ div.dblock {
 		width: 15em;
 	}
 
+	input[type="text"],
+	textarea {
+	--base-font-size: 1rem;
+	
+	}
 }
 
 /* ===ANIMATIONS=== */

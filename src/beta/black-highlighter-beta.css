@@ -78,8 +78,15 @@
 	--mono-font: Recursive, Consolas, monaco, monospace;
 
 	/* ===BASE FONT SIZE & LINE HEIGHT=== */
-	--base-font-size: 0.9375rem;
-	--base-line-height: 1.3125rem;
+	--min-font-size: 0.8125rem; /* 13px */
+	--max-font-size: 0.9375rem; /* 15px */
+	--base-font-size: 
+		clamp(
+			var(--min-font-size), 
+			calc((var(--min-font-size) - var(--min-font-size)) + 2vw), 
+			var(--max-font-size)
+		);
+	--base-line-height: 1.3125;
 
 	/* ===HEADER TITLE FONT SIZES=== */
 	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
@@ -880,9 +887,9 @@ input.checkbox,
 div.note,
 #lock-info {
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -958,9 +965,9 @@ input.text::-webkit-scrollbar-thumb {
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -1025,7 +1032,7 @@ input[type=checkbox] {
 	width: 1em;
 	height: 1em;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgb(var(--swatch-tertiary-color));
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -1652,6 +1659,11 @@ div.dblock {
 		width: 15em;
 	}
 
+	input[type="text"],
+	textarea {
+	--base-font-size: 1rem;
+	
+	}
 }
 
 /* ===ANIMATIONS=== */
@@ -1925,13 +1937,13 @@ div.page-watch-options a:-webkit-any-link {
 	margin: -0.15em 0;
 	padding: 0.15em;
 	-webkit-transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
@@ -1945,8 +1957,8 @@ div.page-watch-options a:any-link {
 	margin: -0.15em 0;
 	padding: 0.15em;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
@@ -1973,7 +1985,7 @@ div.page-watch-options a:active {
 	padding: 0.2rem 0 0 0;
 	box-shadow: 0 -0.125rem 0 0 rgb(var(--swatch-primary-darkest));
 	font-family: var(--UI-font);
-	font-size: 0.8em;
+	font-size: 0.9em;
 	justify-self: flex-start;
 }
 
@@ -1996,7 +2008,7 @@ div.page-watch-options a:active {
     position: relative;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
     width: auto;
     height: 100%;
 	padding: 0;
@@ -2011,18 +2023,18 @@ div.page-watch-options a:active {
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
-	flex-grow: 1;
+	flex-grow: 0;
 	align-items: center;
 	justify-content: center;
 	margin: 0.2em -0.2em 0.2em 0.2em;
 	padding: 0.1em 0.4em 0.1em 0.3em;
 	overflow: hidden;
 	-webkit-transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
@@ -2034,14 +2046,14 @@ div.page-watch-options a:active {
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
-	flex-grow: 1;
+	flex-grow: 0;
 	align-items: center;
 	justify-content: center;
 	margin: 0.2em -0.2em 0.2em 0.2em;
 	padding: 0.1em 0.4em 0.1em 0.3em;
 	overflow: hidden;
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
@@ -2063,15 +2075,15 @@ div.page-watch-options a:active {
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	-webkit-transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--swatch-primary));
 	pointer-events: none;
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"])::before {
@@ -2082,21 +2094,22 @@ div.page-watch-options a:active {
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--swatch-primary));
 	pointer-events: none;
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2105,8 +2118,8 @@ div.page-watch-options a:active {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2333,11 +2346,11 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	-webkit-transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
@@ -2355,7 +2368,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
@@ -2392,7 +2405,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #footer a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
@@ -2402,7 +2415,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #footer a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
@@ -2450,11 +2463,11 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	-webkit-transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
@@ -2471,7 +2484,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	padding: 0.2em;
 	overflow: hidden;
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	line-height: 1;
@@ -2499,7 +2512,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #license-area a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2508,7 +2521,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #license-area a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	text-decoration: none;
@@ -2614,9 +2627,9 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -2726,10 +2739,10 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	padding: 0 0.25em;
 	transform: translateY(0);
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -2761,8 +2774,8 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	margin: 0.5em 1em;
 	padding: 0.25rm;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
@@ -2878,16 +2891,16 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
 	transition:	
 		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
 		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
-		-webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:	
-		clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
 		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 	transition:	
-		clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
 		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
-		-webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	background-color: rgb(var(--swatch-background));
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-tertiary-color));
@@ -2903,16 +2916,16 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li.sfhover > ul {
 	transition:	
 		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
 	transition:	
-		clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
 		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:	
-		clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
 		box-shadow  100ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding-left  100ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
 	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
 	pointer-events: all;
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -2971,9 +2984,9 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 	z-index: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
@@ -3426,7 +3439,7 @@ form#edit-page-form .edit-help-34 > a:hover,
 form#edit-page-form .edit-help-34 > a:active {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
@@ -3436,7 +3449,7 @@ form#edit-page-form .edit-help-34 > a:active {
 form#edit-page-form .edit-help-34 > a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
@@ -3478,8 +3491,8 @@ form#edit-page-form .change-textarea-size a {
     height: 1.125em;
     padding: 0;
 	transition:
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
@@ -3525,9 +3538,9 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	padding: 0.15625em;
 	transform: translateY(0);
 	transition:  
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-background),1);
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -3559,8 +3572,8 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	margin: -1.325em auto 0;
 	padding: 0.75em 0.5em 0.5em;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-menutxt-general-color));
@@ -3660,9 +3673,9 @@ form#edit-page-form div.buttons {
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -3925,9 +3938,9 @@ table.page-history td.optionstd a {
 	padding: 0.125rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4093,27 +4106,27 @@ table.page-files tr > td > a:-webkit-any-link:not(.btn) {
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
@@ -4131,21 +4144,21 @@ table.page-files tr > td > a:any-link:not(.btn) {
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
@@ -4201,8 +4214,8 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4262,8 +4275,8 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	transition: 
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4370,15 +4383,15 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	-webkit-transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4401,9 +4414,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -4572,27 +4585,27 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
@@ -4610,21 +4623,21 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
@@ -4684,21 +4697,21 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
@@ -4977,8 +4990,8 @@ div.odialog-shader-iframe {
 	margin: 0.1rem;
 	padding: 0.25rem;
 	transition: 
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(140, 20, 25, 1);
 	border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
 	border-radius: 0.25rem;
@@ -5024,10 +5037,6 @@ div.odialog-shader-iframe {
 		grid-template-areas: 
 			"content content content";
 		margin: 2.875em auto 0 !important;
-	}
-
-	#page-content {
-		font-size: 0.9em;
 	}
 
 	#main-content {
@@ -5108,9 +5117,9 @@ div.odialog-shader-iframe {
 	overflow-x: hidden;
 	overflow-y: auto;
 	transition: 
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		scrollbar-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		scrollbar-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0);
 	background-attachment: local, local, scroll, fixed;
@@ -5211,7 +5220,7 @@ div.odialog-shader-iframe {
 
 #side-bar .side-block.media a {
 	position: relative;
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
 	-webkit-mask-image: var(--social-logo-mask);
 	        mask-image: var(--social-logo-mask);
@@ -5229,9 +5238,9 @@ div.odialog-shader-iframe {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -5389,9 +5398,9 @@ div.odialog-shader-iframe {
 	width: 100%;
 	height: 100%;
 	transition: 
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-text-secondary-color));
 }
 
@@ -5528,10 +5537,10 @@ div.odialog-shader-iframe {
 	margin: 0;
 	padding: 0 0.6em;
 	transition: 
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 500ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-clip: padding-box;
 	background-color: hsla(0, 0%, 5%, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
@@ -5553,9 +5562,9 @@ div.odialog-shader-iframe {
 	left: calc(var(--base-font-size) * (14 / 15) * -1);
 	width: calc(100% + calc(var(--base-font-size) * (14 / 15)));
 	height: 100%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
@@ -6183,12 +6192,12 @@ div#container-wrap {
 	margin: 0;
 	padding: 0;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		right 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -6201,12 +6210,12 @@ div#container-wrap {
 	margin: 0;
 	padding: 0;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		right 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
 		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -6381,15 +6390,15 @@ div#container-wrap {
 	align-items: center;
 	padding: 0 0.5em;
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: 
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-text-decoration 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 	color: rgb(var(--swatch-text-light));
@@ -6430,7 +6439,7 @@ div#container-wrap {
 	padding: 0;
 	overflow: hidden;
 	animation: 
-		fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms forwards;
+		fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms forwards;
 	opacity: 0;
 	background-color: rgb(var(--swatch-menubg-dark-color));
 }
@@ -6497,9 +6506,9 @@ div#container-wrap {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -6572,7 +6581,7 @@ div.mobile-top-bar {
 	width: auto;
 	margin: 0;
 	padding: 0;
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	list-style: outside none none;
 	cursor: pointer;
 }
@@ -6615,9 +6624,9 @@ div.mobile-top-bar {
 	position: absolute;
 	width: 100%;
 	height: calc(0.0625rem * 3);
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgba(180, 35, 35, 0.5);
 	background-color: rgba(var(--swatch-primary), 0.5);
 }
@@ -6703,8 +6712,8 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] li a {
 	transition: 
-		font-weight 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #header div[class*="top-bar"] li:hover a,
@@ -6775,6 +6784,11 @@ div.mobile-top-bar {
 	height: 100%;
 	padding: 0 1em;
 	overflow: hidden;
+	transition: 
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0rem solid rgba(0, 0, 0, 0);
 	background: transparent;
 	color: rgb(252, 252, 252);
@@ -6792,9 +6806,9 @@ div.mobile-top-bar {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
@@ -7408,10 +7422,10 @@ div.mobile-top-bar {
 	padding: 0;
 	transform: translateY(0);
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -7457,9 +7471,9 @@ div.mobile-top-bar {
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-primary-darker));
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
@@ -7699,7 +7713,7 @@ div.blockquote,
 	display: inline-flex;
 	justify-content: flex-end;
 	transition:
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
 	counter-increment: footnotes;
@@ -7708,7 +7722,7 @@ div.blockquote,
 @supports (font-feature-settings: inherit) {
 	.footnotes-footer a[href*="javascript"]::before {
 		transition:
-			color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 }
@@ -7751,7 +7765,7 @@ div.blockquote,
 	width: min(50%, -moz-fit-content) !important;
 	width: min(50%, fit-content) !important;
 	max-width: calc(var(--body-width-on-desktop) - 2rem );
-	animation: fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
+	animation: fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
 	border: none !important; /* Overwriting JS-injected inline styling */
 	opacity: 0;
 	background-color: rgba(var(--swatch-primary-darker), 0.05) !important; /* Overwriting JS-injected inline styling */
@@ -7770,7 +7784,7 @@ div.blockquote,
 	margin: 0;
 	padding: 0;
 	animation: 
-		lift-in 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards,
+		lift-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards,
 		slide-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
 	background-color: rgb(var(--swatch-background));
 	box-shadow:
@@ -8006,9 +8020,9 @@ div.blockquote,
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 	        clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
@@ -8236,7 +8250,7 @@ div.blockquote,
 	left: 0;
 	width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
 	height: var(--rating-module-height);
-	transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--rating-module-text-color));
 	pointer-events: none;
 	-webkit-mask-image: var(--credit-button-mask);
@@ -8378,7 +8392,7 @@ div.blockquote,
 #u-credit-view .credit.first p:first-of-type::after {
 	--cancel-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Cancel' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 200 200' overflow='visible' xml:space='preserve'%3E%3Cpolygon points='198.3,20.1 179.9,1.7 100,81.6 20.1,1.7 1.7,20.1 81.6,100 1.7,179.9 20.1,198.3 100,118.4 179.9,198.3 198.3,179.9 118.4,100 '/%3E%3C/svg%3E%0A");
 	transform: rotate(0) scale(1);
-	transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--link-color));
 	-webkit-mask-image: var(--cancel-mask);
 	        mask-image: var(--cancel-mask);
@@ -8421,6 +8435,7 @@ div.blockquote,
 /* ===TABLES=== */
 
 table.wiki-content-table * {
+	--min-font-size: 0.8125rem; /* 12px */
 	margin: 0;
 	padding: 0;
 }
@@ -8547,8 +8562,8 @@ table[style*="margin:0"] * {
 	transition: 
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: all;
 	filter: drop-shadow(
 		0.0625rem 0.0625rem 0 rgb(var(--swatch-border-color, 12, 12, 12))
@@ -8592,7 +8607,7 @@ table[style*="margin:0"] * {
 	transition: 
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-text-secondary-color));
 	filter: drop-shadow(0.0625rem 0.0625rem 0 var(--text-shadow));
 	-webkit-mask-image: var(--arrow-mask);
@@ -8886,7 +8901,7 @@ table[style*="margin:0"] * {
 	width: 100%;
 	overflow: hidden;
 	transition: 
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -8919,9 +8934,9 @@ table[style*="margin:0"] * {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	transition: -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--bright-accent));
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
@@ -9371,15 +9386,15 @@ body.print-body #print-options a:-webkit-any-link {
 	padding: 0.25rem;
 	overflow: hidden;
 	-webkit-transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
@@ -9401,9 +9416,9 @@ body.print-body #print-options a:any-link {
 	padding: 0.25rem;
 	overflow: hidden;
 	transition:
-		box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);

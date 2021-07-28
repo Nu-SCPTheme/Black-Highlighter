@@ -58,8 +58,15 @@
 	--mono-font: Recursive, Consolas, monaco, monospace;
 
 	/* ===BASE FONT SIZE & LINE HEIGHT=== */
-	--base-font-size: 0.9375rem;
-	--base-line-height: 1.3125rem;
+	--min-font-size: 0.8125rem; /* 13px */
+	--max-font-size: 0.9375rem; /* 15px */
+	--base-font-size: 
+		clamp(
+			var(--min-font-size), 
+			calc((var(--min-font-size) - var(--min-font-size)) + 2vw), 
+			var(--max-font-size)
+		);
+	--base-line-height: 1.3125;
 
 	/* ===HEADER TITLE FONT SIZES=== */
 	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
