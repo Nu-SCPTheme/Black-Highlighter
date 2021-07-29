@@ -960,7 +960,7 @@ input.text::-webkit-scrollbar-thumb {
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: 0;
 	padding: 0.25rem;
 	overflow: hidden;
@@ -1828,10 +1828,9 @@ div.dblock {
 		"pbottom pbottom pbottom pbottom pbottom pbottom"
 		"action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm";
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(3, -webkit-min-content) 1fr repeat(8, -webkit-min-content);
-	grid-template-rows: repeat(3, min-content) 1fr repeat(8, min-content);
-	width: calc(100% - 3rem);
-	max-width: var(--body-width-on-desktop);
+	grid-auto-rows: -webkit-min-content;
+	grid-auto-rows: min-content;
+	max-width: min(90vw, var(--body-width-on-desktop));
 	margin: 0 auto;
 	padding: 2rem 1rem;
 	padding-right: 0;
@@ -2174,8 +2173,9 @@ div#page-options-area-bottom {
 
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
+	--icon-size: clamp(1.5em, 5vmin, 2em);
 	display: grid;
-	gap: 0.25em;
+	gap: 0.5em;
 	grid-template-columns: repeat(auto-fit, minmax( min( calc(var(--body-width-on-desktop) / 6), 25vw), 1fr));
 	justify-content: space-between;
 	font-family: var(--UI-font);
@@ -2185,10 +2185,12 @@ div[id*="page-options-bottom"] {
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
-	padding-left: 2.5em;
+	--button-padding: calc(var(--icon-size) / 8);
+	padding: var(--button-padding);
+	padding-left: calc(var(--icon-size) + 0.5em);
 	box-shadow: 
 		0 0 0 0 rgb(var(--swatch-primary)),
-		inset 2em 0 0 0 rgb(var(--dark-accent));
+		inset var(--icon-size) 0 0 0 rgb(var(--dark-accent));
 	line-height: 1.5;
 }
 
@@ -2196,13 +2198,13 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:active {
 	box-shadow: 
 		0 0 0 0.125rem rgb(var(--swatch-primary)),
-		inset 2em 0 0 0 rgb(var(--bright-accent));
+		inset var(--icon-size) 0 0 0 rgb(var(--bright-accent));
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:focus-within {
 	box-shadow: 
 		0 0 0 0.125rem rgb(var(--swatch-primary)),
-		inset 2em 0 0 0 rgb(var(--bright-accent));
+		inset var(--icon-size) 0 0 0 rgb(var(--bright-accent));
 }
 
 div[id*="page-options-bottom"] > a > * {
@@ -2214,14 +2216,14 @@ div[id*="page-options-bottom"] > a::after {
 	position: absolute;
 	top: 50%;
 	left: 0;
-	width: 2em;
-	height: 2em;
+	width: var(--icon-size);
+	height: var(--icon-size);
 	transform: translateY(-50%);
 	background-color: rgb(var(--swatch-text-secondary-color));
 	-webkit-mask-image: var(--button-icon);
 	        mask-image: var(--button-icon);
-	-webkit-mask-size: 1.5em 1.5em;
-	        mask-size: 1.5em 1.5em;
+	-webkit-mask-size: calc(var(--icon-size) - 0.5em);
+	        mask-size: calc(var(--icon-size) - 0.5em);
 	-webkit-mask-position: center center;
 	        mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
@@ -2463,7 +2465,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	align-self: flex-end;
 	justify-content: center;
 	width: 100%;
-	padding: 1em 0.5em;
+	padding: 0.5em;
 	background-color: rgb(var(--swatch-menubg-dark-color));
     color: rgb(var(--swatch-menutxt-light-color));
 	font-family: var(--UI-font);
@@ -2670,8 +2672,8 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
-	padding: 0.25rem;
+	min-width: 5em;
+	padding: 0.25em;
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3715,9 +3717,9 @@ form#edit-page-form div.buttons {
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -4260,9 +4262,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: -0.0625rem 0.5rem -0.0625rem -0.0625rem;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	transition: 
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -4300,7 +4302,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 /* Temporary until Autoprefixer is fixed */
 
 #upload-userfile[type="file"]::-webkit-file-upload-button {
-	min-width: 5rem;
+	min-width: 5em;
 	height: 2em;
 	border: none;
 	border-radius: 0;
@@ -4308,7 +4310,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 }
 
 #upload-userfile[type="file"]::file-selector-button {
-	min-width: 5rem;
+	min-width: 5em;
 	height: 2em;
 	border: none;
 	border-radius: 0;
@@ -4321,9 +4323,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	height: 2em;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	transition: 
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -4429,9 +4431,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	-webkit-transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -4460,9 +4462,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -5039,7 +5041,7 @@ div.odialog-shader-iframe {
 	flex-grow: 0;
 	justify-content: center;
 	margin: 0.1rem;
-	padding: 0.25rem;
+	padding: 0.25em;
 	transition: 
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -8559,7 +8561,7 @@ div.blockquote,
 [id*="u-credit"] a[href="#u-credit-otherwise"] {
 	position: relative;
 	width: 50%;
-	min-width: 5rem;
+	min-width: 5em;
 	height: 2em;
 	margin: 1em auto;
 	padding: 0.25em;
@@ -9639,7 +9641,7 @@ body.print-body #print-options a:-webkit-any-link {
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: 0;
 	padding: 0.25rem;
 	overflow: hidden;
@@ -9669,7 +9671,7 @@ body.print-body #print-options a:any-link {
 	position: relative;
 	z-index: 2;
 	justify-content: center;
-	min-width: 5rem;
+	min-width: 5em;
 	margin: 0;
 	padding: 0.25rem;
 	overflow: hidden;
