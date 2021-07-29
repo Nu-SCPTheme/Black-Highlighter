@@ -16,7 +16,6 @@ body#translations {
 }
 
 #translations .interwiki__title p {
-	--text-shadow: rgb(var(--swatch-border-color, 12, 12, 12));
 	--wght: 900;
 	display: block;
 	height: 1.5625rem;
@@ -27,8 +26,7 @@ body#translations {
 	letter-spacing: 0.2rem;
 	line-height: 1.5625;
 	text-align: right;
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
+	text-shadow: none;
 	text-transform: uppercase;
 }
 

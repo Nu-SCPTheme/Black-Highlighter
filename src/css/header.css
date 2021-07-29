@@ -15,6 +15,7 @@
 /* ===MAIN=== */
 
 #header {
+	--topbar-height: var(--topbar-height-on-desktop);
 	position: relative;
 	z-index: 10;
 	grid-area: header;
@@ -147,8 +148,7 @@ div#container-wrap {
 	content: var(--header-title);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
+	text-shadow: none;
 }
 
 #header h1 a > span {
@@ -158,7 +158,7 @@ div#container-wrap {
 	top: 0;
 	left: 0;
 	width: calc(100% - 2rem);
-	height: var(--header-height-on-desktop);
+	height: calc(var(--header-height-on-desktop) - var(--topbar-height));
 	color: transparent;
 }
 
@@ -179,13 +179,11 @@ div#container-wrap {
 }
 
 #header h2 span::before {
-	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
 	content: "SECURE, CONTAIN, PROTECT";
 	content: var(--header-subtitle);
 	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh2-color));
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem rgb(12, 12, 12);
-	text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--text-shadow);
+	text-shadow: none;
 }
 
 #header-extra-div-1,
