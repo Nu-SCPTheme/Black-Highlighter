@@ -962,7 +962,7 @@ input.text::-webkit-scrollbar-thumb {
 	justify-content: center;
 	min-width: 5em;
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1814,6 +1814,8 @@ div.dblock {
 #main-content {
 	display: grid;
 	grid-area: content;
+	grid-auto-rows: -webkit-min-content;
+	grid-auto-rows: min-content;
 	grid-template-areas:
 		"action-area-top action-area-top action-area-top action-area-top action-area-top action-area-top"
 		"page-title page-title page-title page-title page-title page-title"
@@ -1828,8 +1830,6 @@ div.dblock {
 		"pbottom pbottom pbottom pbottom pbottom pbottom"
 		"action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm action-area-btm";
 	grid-template-columns: repeat(6, 1fr);
-	grid-auto-rows: -webkit-min-content;
-	grid-auto-rows: min-content;
 	max-width: min(90vw, var(--body-width-on-desktop));
 	margin: 0 auto;
 	padding: 2rem 1rem;
@@ -9251,6 +9251,54 @@ span.printuser img.small::before {
 
 /* ===MISC SMALL ELEMENTS=== */
 
+/* Wikidot [[note]]. Unsure why this exists. */
+
+div.wiki-note {
+	--CRSV: 1;
+	--MONO: 0;
+	--CASL: 1;
+	--note-color: 255, 255, 136;
+	position: relative;
+	width: min(calc(var(--body-width-on-desktop) / 2), 90vw);
+	margin: 2em auto;
+	padding: 1.25em 1.25em 0.50em 1.25em;
+	border: none;
+	border-radius: 0.5em 0.25em / 0 0 30% 75%;
+	background-color: rgb(var(--note-color));
+	background-image: 
+		linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+		linear-gradient(to bottom, rgba(255,255,255,0), rgb(255, 255, 255, 0.2));
+	background-repeat: no-repeat, repeat;
+	background-size: 100% 1.5em, contain;
+	font-family: var(--mono-font);
+	background-blend-mode: overlay, normal;
+}
+
+div.wiki-note:before,
+div.wiki-note:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	bottom: 1.5em;
+	width: 70%;
+	height: 55%;
+	max-height: 40%;
+	transform: scale(1.1);
+	box-shadow: 
+		inset 0 -0.5em 1.05em rgba(0, 0, 0, 0.3),
+		0 0.5em 1.05em rgba(0, 0, 0, 0.3);
+}
+
+div.wiki-note:before {
+	left: 1.35em;
+	transform: skew(-15deg) rotate(-6deg); 
+}
+
+div.wiki-note:after {
+	right: 1.125em;
+	transform: skew(15deg) rotate(6deg); 
+}
+
 /* Class that adds rounded corners */
 
 .curved {
@@ -9643,7 +9691,7 @@ body.print-body #print-options a:-webkit-any-link {
 	justify-content: center;
 	min-width: 5em;
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	-webkit-transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -9673,7 +9721,7 @@ body.print-body #print-options a:any-link {
 	justify-content: center;
 	min-width: 5em;
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25em;
 	overflow: hidden;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
