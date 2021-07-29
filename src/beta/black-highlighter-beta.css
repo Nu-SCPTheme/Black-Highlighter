@@ -4965,6 +4965,20 @@ div.odialog-shader-iframe {
 	margin-right: 0.5em;
 }
 
+.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:hover,
+.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:active,
+.owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:hover,
+.owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:active {
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+}
+
+.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:focus-within,
+.owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:focus-within {
+	background-color: rgba(var(--swatch-primary),1);
+	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+}
+
 /* ===FORUM=== */
 
 .forum-thread-box .description-block {
@@ -5128,10 +5142,6 @@ div.odialog-shader-iframe {
 		float: right;
 	}
 
-	#odialog-container .owindow div .btn-primary {
-		width: 100%;
-		float: left;
-	}
 }
 
 /* SIDEBAR
