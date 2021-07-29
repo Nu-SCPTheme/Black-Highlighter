@@ -7400,8 +7400,8 @@ div.mobile-top-bar {
 	/* ul > li > ul li > a */
 
 	#header div[class*="top-bar"] > ul > li > ul li > a {
-		font-size: 0.875rem;
-		font-size: calc(var(--base-font-size) * (14 / 15));
+		--min-font-size: 1rem;
+		--max-font-size: 1rem;
 		line-height: 1;
 		white-space: inherit;
 	}
@@ -9884,10 +9884,6 @@ body.print-body #main-content .page-tags span {
 	#print-head {
 		break-before: avoid;
 		break-after: avoid;
-	}
-
-	.bibitems .bibitem::after {
-		
 	}
 	
 }
