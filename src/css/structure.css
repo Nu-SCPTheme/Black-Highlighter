@@ -402,13 +402,13 @@ input.text::-webkit-scrollbar-thumb {
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	border: 0.0625rem solid rgb(var(--swatch-primary),0.05);
 	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgba(var(--swatch-primary-darker), 0.05);
-	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
-	color: rgb(var(--swatch-text-tertiary-color));
+	background-color: rgb(var(--ui-button-bg));
+	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
+	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
-	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
+	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:hover,
@@ -432,9 +432,9 @@ input.text::-webkit-scrollbar-thumb {
 	--wght: var(--ui-hvr-wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgba(var(--swatch-primary),1);
-	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
-	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	background-color: rgb(var(--ui-button-hover-bg));
+	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+	color: rgb(var(--ui-button-hover-txt));
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -451,9 +451,9 @@ input.text::-webkit-scrollbar-thumb {
 	--wght: var(--ui-hvr-wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgb(var(--swatch-primary));
-	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
-	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	background-color: rgb(var(--ui-button-hover-bg));
+	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+	color: rgb(var(--ui-button-hover-txt));
 	text-decoration: none;
 	cursor: pointer;
 }

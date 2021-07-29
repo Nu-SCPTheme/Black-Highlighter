@@ -28,7 +28,14 @@
 		14.1 =HEADER MEASUREMENTS
 		14.2 =TOPBAR MEASUREMENTS
 
-	15. =LEGACY VARS
+	15. =PAGE ELEMENTS COLORS
+		15.1 =UI BUTTON COLORS
+		15.2 =TABS COLORS
+		15.3 =TABLES COLORS
+		15.4 =MODAL COLORS
+		15.5 =FOOTNOTES HOVER BLOCK COLORS
+
+	16. =LEGACY VARS
   =============== */
 
 :root {
@@ -308,6 +315,52 @@
 		(var(--base-font-size) * (14 / 15)) * 17
 	);
 	--sidebar-internal-border-thickness: 0.125rem;
+}
+
+/* ===PAGE ELEMENTS COLORS=== */
+/* Colors for Buttons, Tabs, Tables, & Footnotes Hover/Modal */ 
+:root {
+	/* ===UI BUTTON COLORS=== */
+	--ui-button-bg: var(--swatch-secondary-color);
+	--ui-button-txt: var(--swatch-text-tertiary-color);
+	--ui-button-hover-bg: var(--swatch-primary);
+	--ui-button-hover-txt: var(--swatch-text-secondary-color);
+	--ui-button-hover-outline: var(--swatch-primary);
+
+	/* ===TABS COLORS=== */
+	--tabs-bg: var(--swatch-secondary-color);
+	--tabs-txt: var(--swatch-text-tertiary-color);
+	--tabs-hover-bg: var(--swatch-primary-darker);
+	--tabs-hover-txt: var(--swatch-text-secondary-color);
+	--tabs-selected-bg: var(--swatch-primary);
+	--tabs-selected-txt: var(--swatch-text-secondary-color);
+	--tabs-selected-outline: var(--swatch-primary);
+	--tabs-bottom-border-color: var(--swatch-primary-darker);
+
+	/* ===TABLES COLORS=== */
+	--tables-header-bg: var(--swatch-primary-darkest);
+	--tables-header-txt: var(--swatch-text-secondary-color);
+	--tables-border: var(--swatch-tertiary-color);
+	--tables-body-bg: var(--swatch-background);
+	--tables-body-txt: var(--swatch-text-general);
+
+	/* ===MODALS COLORS=== */
+	--modal-bg: var(--swatch-secondary-color);
+	--modal-text: var(--swatch-text-tertiary-color);
+		/* h1/h2/h3/h4/h5/h6 */
+	--modal-body-header-txt: var(--swatch-text-tertiary-color); 
+
+	--modal-header-bg: var(--swatch-primary-darkest);
+	--modal-header-txt: var(--swatch-text-secondary-color);
+	--modal-header-stripe: var(--swatch-primary-darkest);
+
+	/* ===FOOTNOTES HOVER BLOCK COLORS=== */
+	--hoverblock-bg: var(--swatch-secondary-color);
+	--hoverblock-txt: var(--swatch-text-tertiary-color);
+	--hoverblock-header-bg: var(--swatch-primary-darker);
+	--hoverblock-header-txt: var(--swatch-text-secondary-color);
+	--hoverblock-footer-bg: var(--swatch-tertiary-color);
+	--hoverblock-footer-txt: var(--swatch-text-tertiary-color);
 }
 
 /* LEGACY VARS */
