@@ -664,21 +664,9 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p {
 html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	width: 13.625rem;
 	height: fit-content !important;
-	margin: -0.75rem auto 0;
+	margin: 0 auto;
 	overflow: hidden;
 	filter: grayscale(1);
-}
-
-html:not(:lang(cn)) div.scpnet-interwiki-wrapper p::before {
-	content: " ";
-	position: absolute;
-	z-index: 9999;
-	top: 0;
-	left: -0.5%;
-	width: 101%;
-	height: 101%;
-	box-shadow: inset 0 0 0 0.5rem rgb(var(--swatch-menubg-color));
-	pointer-events: none;
 }
 
 /* ===COMMON THEME COMPATABILITY=== */
