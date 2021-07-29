@@ -6503,7 +6503,8 @@ div#container-wrap {
 	animation: 
 		fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms forwards;
 	opacity: 0;
-	background-color: rgb(var(--swatch-menubg-dark-color));
+	background-color: rgb(var(--swatch-menubg-color));
+	background-image: var(--gradient-header);
 }
 
 #login-status #account-options[style*="flex"],
@@ -8193,7 +8194,7 @@ div.blockquote,
 	color: rgb(var(--rating-module-text-color)) !important;
 	font-family: var(--UI-font);
 	font-size: 0.85em;
-	line-height: var(--rating-module-height);
+	line-height: calc(var(--rating-module-height) * 1.25);
 	text-transform: capitalize;
 }
 
