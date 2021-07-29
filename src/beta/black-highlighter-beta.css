@@ -965,6 +965,7 @@ input.text::-webkit-scrollbar-thumb {
 	padding: 0.25em;
 	overflow: hidden;
 	transition:
+		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -998,6 +999,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
+	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -1016,6 +1018,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
+	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -1573,24 +1576,29 @@ div.dblock {
 	border-width: 0.0625rem;
 	border-style: dashed;
 	border-color: rgba(var(--swatch-border-color), 0.25);
-	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color, 244, 244, 244));
-	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	word-break: break-all;
+	-webkit-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
 }
 
 .code * {
 	--MONO: 1;
 	--calt: 0;
 	max-width: 90vw;
-	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 }
 
 .code,
 .code * {
-	font-variation-settings: "wght" var(--mono-wght), "slnt" var(--slnt),
-		"CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
+	font-variation-settings: 
+		"wght" var(--mono-wght), 
+		"slnt" var(--slnt),
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 }
 
 .code i,
@@ -4933,7 +4941,7 @@ div.odialog-shader-iframe {
 	margin: 0.25rem 0.25rem 0.5rem;
 	padding-bottom: 0.5rem;
 	box-shadow: 0 0.0625rem 0 0 rgba(var(--swatch-primary-darkest),0.2);
-	color: rgb(var(--swatch-primary-darkest));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 #odialog-container .modal-body p,
@@ -6158,7 +6166,7 @@ div#container-wrap {
 }
 
 #header h1 a {
-	--wght: 800;
+	--wght: 900;
 	display: block;
 	z-index: 9999;
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
@@ -8380,9 +8388,9 @@ div.blockquote,
 	--credit-button-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Info' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 200 200' overflow='visible' xml:space='preserve'%3E%3Cpath d='M140.1,154.6c-12,23.7-29,45.4-57.7,45.4c-19,0-26.6-12-20.5-34.3l20.5-75c2.1-7.3,0.9-11.7-4.7-12L61.1,77l2.3-10.5 l66.8-8.2l1.8,2.1l-27.5,101.9c-1.8,7-2,12.6,3.2,12.6c5.9,0,16.1-14.9,22.8-26.9L140.1,154.6z M138.1,19.9 c0,15.5-10.8,24.3-24.9,24.3c-13.8,0-22-7.9-22-19.9C91.2,12.6,99.4,0,116.4,0C128.7,0,138.1,7,138.1,19.9z'/%3E%3C/svg%3E%0A");
 	content: " ";
 	position: absolute;
+	z-index: 1;
 	top: 0;
 	left: 0;
-	z-index: 1;
 	width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
 	height: 100%;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);

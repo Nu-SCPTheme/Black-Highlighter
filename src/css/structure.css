@@ -396,6 +396,7 @@ input.text::-webkit-scrollbar-thumb {
 	padding: 0.25em;
 	overflow: hidden;
 	transition:
+		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -429,6 +430,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
+	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -447,6 +449,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
+	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -944,24 +947,27 @@ div.dblock {
 	border-width: 0.0625rem;
 	border-style: dashed;
 	border-color: rgba(var(--swatch-border-color), 0.25);
-	background-color: rgb(244, 244, 244);
 	background-color: rgb(var(--swatch-secondary-color, 244, 244, 244));
-	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
+	word-break: break-all;
+	hyphens: auto;
 }
 
 .code * {
 	--MONO: 1;
 	--calt: 0;
 	max-width: 90vw;
-	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 }
 
 .code,
 .code * {
-	font-variation-settings: "wght" var(--mono-wght), "slnt" var(--slnt),
-		"CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
+	font-variation-settings: 
+		"wght" var(--mono-wght), 
+		"slnt" var(--slnt),
+		"CASL" var(--CASL), 
+		"CRSV" var(--CRSV), 
+		"MONO" var(--MONO);
 }
 
 .code i,
