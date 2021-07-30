@@ -72,21 +72,21 @@
 	18. =FOOTER
 	19. =LICENSE AREA
 
-	20. =MAIN CONTENT UI ELEMENTS
-		20.1 =UI BUTTONS
-		20.2 =UI ICONS
-			20.2.1 =PAGE OPTIONS ICONS
-			20.2.2 =TEXT EDITOR ICONS
-		20.3 =TABS
-		20.4 =TABLES
-		20.5 =BLOCKQUOTES
-		20.6 =FOOTNOTES/BIBLIOGRAPHY FOOTER
-		20.7 =TOC
+	20. =MAIN CONTENT UI ELEMENTS		
+		20.1 =UI ICONS
+			20.1.1 =PAGE OPTIONS ICONS
+			20.1.2 =TEXT EDITOR ICONS
+		20.2 =TABS
+		20.3 =TABLES
+		20.4 =BLOCKQUOTES
+		20.5 =FOOTNOTES/BIBLIOGRAPHY FOOTER
+		20.6 =TOC
 	
 	21. =GLOBAL ELEMENTS
-		21.1 =RATING MODULE
-		21.2 =MODALS
-		21.3 =FOOTNOTES HOVER BLOCK
+		21.1 =UI BUTTONS
+		21.2 =RATING MODULE
+		21.3 =MODALS
+		21.4 =FOOTNOTES HOVER BLOCK
 
 	===============================
 	========= DEPRECIATED =========
@@ -496,14 +496,6 @@
 
 #main-content {
 	/* ===MAIN CONTENT UI ELEMENTS */
-
-		/* ===UI BUTTONS=== */
-	--ui-button-bg: var(--swatch-secondary-color);
-	--ui-button-txt: var(--swatch-text-tertiary-color);
-	--ui-button-hover-bg: var(--swatch-primary);
-	--ui-button-hover-txt: var(--swatch-text-secondary-color);
-	--ui-button-hover-outline: var(--swatch-primary);
-
 		/* ===UI ICONS=== */
 			/* ===PAGE OPTIONS ICONS=== */
 	--ui-icon-color: var(--swatch-text-secondary-color);
@@ -575,6 +567,13 @@
 /* ===GLOBAL ELEMENTS=== */
 
 :root {
+		/* ===UI BUTTONS=== */
+	--ui-button-bg: var(--swatch-secondary-color);
+	--ui-button-txt: var(--swatch-text-tertiary-color);
+	--ui-button-hover-bg: var(--swatch-primary);
+	--ui-button-hover-txt: var(--swatch-text-secondary-color);
+	--ui-button-hover-outline: var(--swatch-primary);
+
 		/* ===RATING MODULE=== */
 	--rating-module-button-plus-color: 0, 200, 0;
 	--rating-module-button-negative-color: 200, 0, 0;
