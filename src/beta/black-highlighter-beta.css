@@ -387,7 +387,7 @@
 	--search-icon-focus-bg-color: var(--bright-accent);
 	--search-focus-outline-color: var(--swatch-primary);
 	--search-focus-textbox-bg-color: var(--swatch-menubg-dark-color), 0.7;
-	--search-focus-textbox-text-color: var(--swatch-menutxt-light-color);
+	--search-focus-textbox-text-color: var(--swatch-text-secondary-color);
 
 		/* ===LOGIN BOX ELEMENT=== */
 	--login-line-divider-color: var(--swatch-text-secondary-color);
@@ -399,9 +399,9 @@
 			/* Dropdown Box when arrow is clicked */
 	--login-dropdown-bg-color: var(--swatch-menubg-color);
 	--login-dropdown-bg-image: var(--gradient-header);
-	--login-dropdown-border-color: var(--swatch-menutxt-dark-color), 0.5;
-	--login-dropdown-text-color: var(--swatch-menutxt-light-color);
-	--login-dropdown-text-hover-color: var(--swatch-menutxt-light-color);
+	--login-dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
+	--login-dropdown-text-color: var(--swatch-text-secondary-color);
+	--login-dropdown-text-hover-color: var(--swatch-text-secondary-color);
 	--login-dropdown-bg-hover-color: var(--bright-accent);
 }
 
@@ -418,7 +418,7 @@
 
 		/* ===DROPDOWN MENU=== */
 	--dropdown-bg-color: var(--swatch-menubg-dark-color), 0.9;
-	--dropdown-border-color: var(--swatch-menutxt-dark-color), 0.5;
+	--dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
 	--dropdown-links-color: var(--swatch-text-secondary-color);
 	--dropdown-links-bg-color: 0,0,0,0; /* Transparent */
 	--dropdown-links-hover-color: var(--swatch-text-secondary-color);
@@ -6493,7 +6493,7 @@ div#container-wrap {
 
 #search-top-box:focus-within {
 	background: rgba(var(--search-active-textbox-bg-color));
-	box-shadow: calc(var(--search-height) / 2 * -1) 0 calc(var(--search-height) / 2) rgba(var(---search-active-textbox-bg-color));
+	box-shadow: calc(var(--search-height) / 2 * -1) 0 calc(var(--search-height) / 2) rgba(var(--search-active-textbox-bg-color));
 }
 
 #search-top-box::before,
@@ -6773,19 +6773,19 @@ div#container-wrap {
 
 #login-status #account-options li > a,
 #login-status #account-options li > a:visited {
-	color: rgb(var(---login-dropdown-text-color));
+	color: rgb(var(--login-dropdown-text-color));
 }
 
 #login-status #account-options li > a:hover,
 #login-status #account-options li > a:active {
 	--wght: var(--ui-hvr-wght);
-	color: rgb(var(---login-dropdown-text-hover-color));
+	color: rgb(var(--login-dropdown-text-hover-color));
 	text-decoration: none;
 }
 
 #login-status #account-options li > a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	color: rgb(var(---login-dropdown-text-hover-color));
+	color: rgb(var(--login-dropdown-text-hover-color));
 	text-decoration: none;
 }
 
