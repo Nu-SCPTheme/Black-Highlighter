@@ -349,6 +349,21 @@
 	--ui-button-hover-txt: var(--swatch-text-secondary-color);
 	--ui-button-hover-outline: var(--swatch-primary);
 
+	/* ===UI ICON COLORS=== */
+
+	/* Page Options Icons */
+	--ui-icon-color: var(--swatch-text-secondary-color);
+	--ui-icon-bg: var(--dark-accent);
+	--ui-icon-hover-color: var(--swatch-text-secondary-color);
+	--ui-icon-hover-bg: var(--bright-accent);
+
+	/* Text Editor Icons */
+	--editor-icon-color: var(--swatch-menutxt-general-color);
+	--editor-icon-bg: 0,0,0,0; /* Transparent */
+	--editor-icon-hover-color: var(--swatch-background);
+	--editor-icon-hover-bg: var(--bright-accent);
+	--editor-icon-submenu-bg: var(--swatch-secondary-color);
+
 	/* ===TABS COLORS=== */
 	--tabs-bg: var(--swatch-secondary-color);
 	--tabs-txt: var(--swatch-text-tertiary-color);
@@ -2252,22 +2267,22 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	padding: var(--button-padding);
 	padding-left: calc(var(--icon-size) + 0.5em);
 	box-shadow: 
-		0 0 0 0 rgb(var(--swatch-primary)),
-		inset var(--icon-size) 0 0 0 rgb(var(--dark-accent));
+		0 0 0 0 rgb(var(--ui-button-hover-outline)),
+		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
 	line-height: 1.5;
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:hover,
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:active {
 	box-shadow: 
-		0 0 0 0.125rem rgb(var(--swatch-primary)),
-		inset var(--icon-size) 0 0 0 rgb(var(--bright-accent));
+		0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
+		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:focus-within {
 	box-shadow: 
-		0 0 0 0.125rem rgb(var(--swatch-primary)),
-		inset var(--icon-size) 0 0 0 rgb(var(--bright-accent));
+		0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
+		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
 }
 
 div[id*="page-options-bottom"] > a > * {
@@ -2282,7 +2297,9 @@ div[id*="page-options-bottom"] > a::after {
 	width: var(--icon-size);
 	height: var(--icon-size);
 	transform: translateY(-50%);
-	background-color: rgb(var(--swatch-text-secondary-color));
+	transition:
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--ui-icon-color));
 	-webkit-mask-image: var(--button-icon);
 	        mask-image: var(--button-icon);
 	-webkit-mask-size: calc(var(--icon-size) - 0.5em);
@@ -2291,6 +2308,15 @@ div[id*="page-options-bottom"] > a::after {
 	        mask-position: center center;
 	-webkit-mask-repeat: no-repeat;
 	        mask-repeat: no-repeat;
+}
+
+div[id*="page-options-bottom"] > a:hover::after,
+div[id*="page-options-bottom"] > a:active::after {
+	background-color: rgb(var(--ui-icon-hover-color));
+}
+
+div[id*="page-options-bottom"] > a:focus-within::after {
+	background-color: rgb(var(--ui-icon-hover-color));
 }
 
 div[id*="page-options-bottom"] > a#edit-button {
@@ -3051,13 +3077,13 @@ form#edit-page-form .wd-editor-toolbar-panel a {
 	height: 100%;
 	overflow: hidden;
 	border: none;
-	background-color: transparent;
+	background-color: rgb(var(--editor-icon-bg));
 	background-image: initial;
 	background-position: initial;
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul a {
-	background-color: rgba(var(--swatch-tertiary-color),0.25); 
+	background-color: rgb(var(--editor-icon-submenu-bg)); 
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a::before,
@@ -3073,7 +3099,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::before {
 	z-index: 1;
 	width: 100%;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--swatch-menutxt-general-color));
+	background-color: rgb(var(--editor-icon-color));
 	-webkit-mask-image: var(--edit-menu-mask);
 	        mask-image: var(--edit-menu-mask);
 	-webkit-mask-size: calc(var(--icon-size) * 0.8);
@@ -3086,11 +3112,11 @@ form#edit-page-form .wd-editor-toolbar-panel a::before {
 
 form#edit-page-form .wd-editor-toolbar-panel li:hover > a::before,
 form#edit-page-form .wd-editor-toolbar-panel li:active > a::before {
-	background-color: rgb(var(--swatch-background));
+	background-color: rgb(var(--editor-icon-hover-color));
 }
 
 form#edit-page-form .wd-editor-toolbar-panel > li:focus-within a::before {
-	background-color: rgb(var(--swatch-background));
+	background-color: rgb(var(--editor-icon-hover-color));
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a::after {
@@ -3101,7 +3127,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	background-color: rgb(var(--bright-accent));
+	background-color: rgb(var(--editor-icon-hover-bg));
 	pointer-events: none;
 	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
