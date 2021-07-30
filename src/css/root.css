@@ -21,21 +21,57 @@
 		9.1 =MENU BACKGROUND COLORS
 		9.2 =MENU TEXT COLORS
 	10. =SECONDARY & TERTIARY COLORS
-	11. =LINK COLORS
-	12. =RATING MODULE COLORS
-	13. =PRIMARY GRADIENTS
-	14. =STRUCTURAL SPACING ELEMENTS
+	11. =PRIMARY GRADIENTS
+	12. =STRUCTURAL SPACING ELEMENTS
 		14.1 =HEADER MEASUREMENTS
 		14.2 =TOPBAR MEASUREMENTS
+		14.3 =FINAL HEADER + TOPBAR MEASUREMENTS
+		14.4 =SIDEBAR MEASUREMENTS
 
-	15. =PAGE ELEMENTS COLORS
-		15.1 =UI BUTTON COLORS
-		15.2 =TABS COLORS
-		15.3 =TABLES COLORS
-		15.4 =MODAL COLORS
-		15.5 =FOOTNOTES HOVER BLOCK COLORS
+	===============================
+	======= SPECIFIC COLORS =======
+	===============================
+	13. =BACKGROUND GRADIENT
+		13.1 =GENERAL BACKGROUND
+		13.2 =HEADER GRADIENT
+		13.3 =TOPBAR GRADIENT
+	14. =LINK COLORS
+	15. =HEADER ELEMENTS
+		15.1 =HEADER TITLES
+		15.2 =SEARCH ELEMENT
+		15.3 =LOGIN BOX ELEMENT
+	16. =TOPBAR ELEMENTS
+		16.1 =TOPBAR CATEGORIES
+		16.2 =DROPDOWN MENU
+	17. =SIDE-BAR ELEMENTS
+		17.1 =SIDE-BAR GENERAL
+		17.2 =SOCIAL MEDIA ICONS
+		17.3 =SIDEBLOCK MENU
+		17.4 =MENU-ITEMS
+		17.5 =SIDEBAR COLLAPSIBLES
+	18. =FOOTER
+	19. =LICENSE AREA
 
-	16. =LEGACY VARS
+	20. =MAIN CONTENT UI ELEMENTS
+		20.1 =UI BUTTONS
+		20.2 =UI ICONS
+			20.2.1 =PAGE OPTIONS ICONS
+			20.2.2 =TEXT EDITOR ICONS
+		20.3 =TABS
+		20.4 =TABLES
+		20.5 =BLOCKQUOTES
+		20.6 =FOOTNOTES/BIBLIOGRAPHY FOOTER
+		20.7 =TOC
+	
+	21. =GLOBAL ELEMENTS
+		21.1 =RATING MODULE
+		21.2 =MODALS
+		21.3 =FOOTNOTES HOVER BLOCK
+
+	===============================
+	========= DEPRECIATED =========
+	===============================
+	22. =LEGACY VARS
   =============== */
 
 :root {
@@ -172,22 +208,6 @@
 	--swatch-text-general: var(--swatch-text-dark);
 	--swatch-important-text: var(--bright-accent);
 
-/* ===BACKGROUND & HEADER COLORS=== */
-	/* General Background Color */
-	--swatch-background: var(--white-monochrome);
-
-	/* Gradient Color used for the --gradient-background var */
-	--background-gradient-color: var(--very-light-gray-monochrome);
-
-	/* Colors forming the header gradient used in --gradient-header var */
-	--header-gradient-color-bottom: var(--medium-accent);
-	--header-gradient-color-middle: var(--black-monochrome);
-	--header-gradient-color-top: var(--black-monochrome);
-
-	/* Header H1 and H2 colors */
-	--swatch-headerh1-color: var(--swatch-text-light);
-	--swatch-headerh2-color: var(--swatch-text-light);
-
 /* ===MENU COLORS=== */
 	/* ===MENU BACKGROUND COLORS=== */
 	--swatch-menubg-color: var(--white-monochrome);
@@ -203,15 +223,9 @@
 	--swatch-menutxt-light-color: var(--white-monochrome);
 	--swatch-menutxt-general-color: var(--swatch-menutxt-dark-color);
 
-	/* ===TOPBAR MENU BACKGROUND COLORS=== */
-	/* Colors used in the --gradient-topmenu var to give the topbar its color */
-	--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
-	--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
-
-	/* Color specificaly used for the sidebar links, ignores :visited status */
-	--sidebar-links-text: var(--swatch-menutxt-general-color);
-
 /* ===SECONDARY & TERTIARY COLORS=== */
+	/* Editing these will edit a vast majority of theme elements. Useful for making dark themes */
+
 	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
 	--swatch-secondary-color: var(--swatch-menubg-light-color);
 	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
@@ -219,20 +233,6 @@
 	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
 	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
 	--swatch-text-tertiary-color: var(--swatch-menutxt-dark-color);	
-/* ===LINK COLORS=== */
-	--link-color: var(--pale-accent);
-	--visited-link-color: var(--swatch-primary);
-	--hover-link-color: var(--swatch-primary);
-	--newpage-color: var(--alt-accent);
-
-/* ===RATING MODULE COLORS=== */
-	--rating-module-button-plus-color: 0, 200, 0;
-	--rating-module-button-negative-color: 200, 0, 0;
-	--rating-module-button-cancel-color: var(--swatch-tertiary-color);
-	--rating-module-button-credit-color: var(--swatch-secondary-color);
-
-	--rating-module-text-color: var(--swatch-menutxt-dark-color);
-	--rating-module-text-hover-color: var(--swatch-menutxt-light-color);
 
 /* ===PRIMARY GRADIENTS=== */
 	/* Creates the header image at top of page */
@@ -317,32 +317,186 @@
 	--sidebar-internal-border-thickness: 0.125rem;
 }
 
-/* ===PAGE ELEMENTS COLORS=== */
-/* Colors for Buttons, Tabs, Tables, & Footnotes Hover/Modal */ 
+/*  ===============================
+	======= SPECIFIC COLORS =======
+	===============================
+/* Colors for Buttons, Tabs, Tables, Footnotes Hover/Modal, Etc. */ 
+
 :root {
-	/* ===UI BUTTON COLORS=== */
+	/* ===BACKGROUND GRADIENT=== */
+
+		/* ===GENERAL BACKGROUND=== */
+		/* Overall Page Background Color */
+	--swatch-background: var(--white-monochrome);
+		/* Gradient Color used for the --gradient-background var */
+	--background-gradient-color: var(--very-light-gray-monochrome);
+
+		/* ===HEADER GRADIENT=== */
+		/* Colors forming the header gradient used in --gradient-header var */
+	--header-gradient-color-bottom: var(--medium-accent);
+	--header-gradient-color-middle: var(--black-monochrome);
+	--header-gradient-color-top: var(--black-monochrome);
+
+	/* ===TOPBAR GRADIENT=== */
+		/* Colors used in the --gradient-topmenu var to give the topbar its color */
+		--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
+		--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
+
+	/* ===LINK COLORS=== */
+	--link-color: var(--pale-accent);
+	--visited-link-color: var(--swatch-primary);
+	--hover-link-color: var(--swatch-primary);
+	--newpage-color: var(--alt-accent);
+}
+
+#header {
+	/* ===HEADER ELEMENTS=== */
+		/* ===HEADER TITLES=== */
+		/* Header H1 and H2 colors */
+	--swatch-headerh1-color: var(--swatch-text-light);
+	--swatch-headerh2-color: var(--swatch-text-light);
+
+		/* ===SEARCH ELEMENT=== */
+	--search-icon-color: var(--swatch-menubg-light-color);
+	--search-icon-bg-color: var(--bright-accent);
+	--search-icon-hover-color: var(--swatch-menubg-light-color);
+	--search-icon-hover-bg-color: var(--swatch-menubg-dark-color);
+	--search-textbox-text-color: 0,0,0,0;
+			/* Focus is when the search box has been clicked on */
+	--search-icon-focus-color: var(--swatch-menubg-light-color);
+	--search-icon-focus-bg-color: var(--bright-accent);
+	--search-focus-outline-color: var(--swatch-primary);
+	--search-focus-textbox-bg-color: var(--swatch-menubg-dark-color), 0.7;
+	--search-focus-textbox-text-color: var(--swatch-menutxt-light-color);
+
+		/* ===LOGIN BOX ELEMENT=== */
+	--login-line-divider-color: var(--swatch-text-secondary-color);
+	--login-username-color: var(--swatch-text-secondary-color);
+	--login-myaccount-color: var(--swatch-text-secondary-color);
+	--login-myaccount-underline-color: var(--swatch-primary-darkest);
+	--login-myaccount-hover-bg-color: var(--swatch-primary-darkest);
+	--login-arrow-color: var(--swatch-text-light);
+			/* Dropdown Box when arrow is clicked */
+	--login-dropdown-bg-color: var(--swatch-menubg-color);
+	--login-dropdown-bg-image: var(--gradient-header);
+	--login-dropdown-border-color: var(--swatch-menutxt-dark-color), 0.5;
+	--login-dropdown-text-color: var(--swatch-menutxt-light-color);
+	--login-dropdown-text-hover-color: var(--swatch-menutxt-light-color);
+	--login-dropdown-bg-hover-color: var(--bright-accent);
+}
+
+#top-bar {
+	/* ===TOPBAR ELEMENTS=== */
+
+		/* ===TOPBAR CATEGORIES=== */
+	--topmenu-category-color: var(--swatch-text-secondary-color);
+	--topmenu-category-hover-color: var(--swatch-text-secondary-color);
+	--topmenu-category-hover-bg: 0,0,0,0; /* Transparent */
+	--topmenu-hover-border-color: var(--swatch-primary);
+
+	--mobile-topmenu-sidebar-button-color: var(--swatch-text-secondary-color);
+
+		/* ===DROPDOWN MENU=== */
+	--dropdown-bg-color: var(--swatch-menubg-dark-color), 0.9;
+	--dropdown-border-color: var(--swatch-menutxt-dark-color), 0.5;
+	--dropdown-links-color: var(--swatch-text-secondary-color);
+	--dropdown-links-bg-color: 0,0,0,0; /* Transparent */
+	--dropdown-links-hover-color: var(--swatch-text-secondary-color);
+	--dropdown-links-hover-bg-color: var(--bright-accent);
+}
+
+#side-bar {
+	/* ===SIDE-BAR ELEMENTS=== */
+
+		/* ===SIDE-BAR GENERAL=== */
+	--sidebar-bg-color: var(--swatch-menubg-color);
+	--sidebar-resources-bg-color: var(--swatch-primary-darker), 0.25;
+	--sidebar-media-bg-color: var(--swatch-primary-darker), 0.125;
+
+		/* ===SOCIAL MEDIA ICONS=== */
+		--facebook-icon-color: 59, 89, 152;
+		--twitter-icon-color: 29, 161, 242;
+		--reddit-icon-color: 225, 69, 0;
+		--instagram-icon-color: 240, 148, 51;
+		--instagram-icon-gradient: 
+			linear-gradient(
+				45deg,
+				rgb(240, 148, 51) 0%,
+				#e6683c 25%,
+				rgb(220, 39, 67) 50%,
+				rgb(204, 35, 102) 75%,
+				rgb(188, 24, 136) 100%
+			);
+		--twitch-icon-color: 100, 65, 165;
+		--social-icon-hover-color: var(--bright-accent);
+
+		/* ===SIDEBLOCK MENU=== */
+	--sideblock-bg-color: 0,0,0,0; /* Transparent */
+	--sideblock-heading-border-color: var(--bright-accent);
+	--sideblock-heading-bg-color: 0,0,0,0; /* Transparent */
+	--sideblock-heading-text-color: var(--swatch-primary-darker);
+
+		/* ===MENU-ITEMS=== */
+	--sidebar-border-color: var(--swatch-border-color), 0.08;
+	--sidebar-subtest-color: var(--swatch-primary);
+		
+	--sidebar-links-text: var(--swatch-menutxt-general-color);
+	--sidebar-links-bg-color: 0,0,0,0; /* Transparent */
+	--sidebar-links-hover-bg-color: var(--bright-accent);
+	--sidebar-links-hover-text-color: var(--swatch-text-secondary-color);
+
+		/* ===SIDEBAR COLLAPSIBLES=== */
+	--sidebar-collapsible-link-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-link-hover-bg: var(--swatch-primary);
+	--sidebar-collapsible-arrow-color: var(--swatch-text-tertiary-color);
+		/* Background for Collapsibles Within Sideblocks */
+	--sidebar-sideblock-collapsible-bg: var(--medium-accent);
+}
+
+	/* ===FOOTER=== */
+#footer {
+	--footer-bg-color: var(--swatch-primary-darkest);
+	--footer-text-color: var(--swatch-text-secondary-color);
+	--footer-link-color: var(--swatch-text-secondary-color);
+	--footer-link-hover-color: var(--swatch-primary);
+	--footer-link-hover-bg-color: rgb(var(--swatch-secondary-color));
+}
+
+	/* ===LICENSE AREA=== */
+#license-area {
+	--license-bg-color: var(--swatch-menubg-dark-color);
+	--license-text-color: var(--swatch-text-secondary-color);
+	--license-link-color: var(--swatch-text-secondary-color);
+	--license-link-hover-color: var(--swatch-primary);
+	--license-link-hover-bg-color: rgb(var(--swatch-secondary-color));
+}
+
+#main-content {
+	/* ===MAIN CONTENT UI ELEMENTS */
+
+		/* ===UI BUTTONS=== */
 	--ui-button-bg: var(--swatch-secondary-color);
 	--ui-button-txt: var(--swatch-text-tertiary-color);
 	--ui-button-hover-bg: var(--swatch-primary);
 	--ui-button-hover-txt: var(--swatch-text-secondary-color);
 	--ui-button-hover-outline: var(--swatch-primary);
 
-	/* ===UI ICON COLORS=== */
-
-	/* Page Options Icons */
+		/* ===UI ICONS=== */
+			/* ===PAGE OPTIONS ICONS=== */
 	--ui-icon-color: var(--swatch-text-secondary-color);
 	--ui-icon-bg: var(--dark-accent);
 	--ui-icon-hover-color: var(--swatch-text-secondary-color);
 	--ui-icon-hover-bg: var(--bright-accent);
 
-	/* Text Editor Icons */
+			/* ===TEXT EDITOR ICONS=== */
 	--editor-icon-color: var(--swatch-menutxt-general-color);
 	--editor-icon-bg: 0,0,0,0; /* Transparent */
 	--editor-icon-hover-color: var(--swatch-background);
 	--editor-icon-hover-bg: var(--bright-accent);
 	--editor-icon-submenu-bg: var(--swatch-secondary-color);
 
-	/* ===TABS COLORS=== */
+		/* ===TABS=== */
 	--tabs-bg: var(--swatch-secondary-color);
 	--tabs-txt: var(--swatch-text-tertiary-color);
 	--tabs-hover-bg: var(--swatch-primary-darker);
@@ -352,14 +506,62 @@
 	--tabs-selected-outline: var(--swatch-primary);
 	--tabs-bottom-border-color: var(--swatch-primary-darker);
 
-	/* ===TABLES COLORS=== */
+	--tabs-content-bg-color: var(--swatch-secondary-color), 0.25;
+	--tabs-content-border-color: var(--swatch-tertiary-color);
+
+		/* ===TABLES=== */
 	--tables-header-bg: var(--swatch-primary-darkest);
 	--tables-header-txt: var(--swatch-text-secondary-color);
 	--tables-border: var(--swatch-tertiary-color);
 	--tables-body-bg: var(--swatch-background);
 	--tables-body-txt: var(--swatch-text-general);
 
-	/* ===MODALS COLORS=== */
+		/* ===BLOCKQUOTES=== */
+	--blockquote-bg-color: var(--swatch-secondary-color), 0.25;
+	--blockquote-border-color: var(--swatch-tertiary-color);
+		/* Color for special .colorbar-quote blockquote class */
+	--blockquote-colorbar-color: var(--swatch-primary), 1;
+
+		/* ===FOOTNOTES/BIBLIOGRAPHY FOOTER=== */
+	--footnotes-footer-bg-color: var(--swatch-secondary-color);
+	--footnotes-footer-colorbar-color: var(--swatch-primary-darkest);
+	--footnotes-footer-title-bg-color: var(--swatch-primary-darkest);
+	--footnotes-footer-title-text-color: var(--swatch-text-secondary-color);
+	--footnotes-footer-num-color: var(--link-color);
+	--footnotes-footer-num-hover-color: var(--hover-link-color);
+
+		/* ===TOC=== */
+	--toc-header-bg-color: var(--swatch-primary-darkest);
+	--toc-header-text-color: var(--swatch-text-secondary-color);
+	--toc-header-text-hover-color: var(--swatch-text-secondary-color);
+
+	--toc-body-bg-color: var(--swatch-menubg-color);
+	--toc-directory-lines-color: var(--swatch-tertiary-color);
+
+	--toc-body-link-color: var(--link-color);	
+	--toc-body-link-hover-color: var(--link-color);
+	--toc-body-hover-arrow-color: var(--link-color);
+
+		/* ===PAGE TAGS=== */
+	--pagetags-title-bg: var(--swatch-primary-darkest);
+	--pagetags-title-text: var(--swatch-text-secondary-color);
+	--pagetags-text-color: var(--swatch-primary-darkest);
+	--pagetags-text-hover-color: var(--swatch-background);
+	--pagetags-text-hover-bg-color: var(--swatch-primary);
+}
+
+	/* ===GLOBAL ELEMENTS=== */
+:root {
+		/* ===RATING MODULE=== */
+	--rating-module-button-plus-color: 0, 200, 0;
+	--rating-module-button-negative-color: 200, 0, 0;
+	--rating-module-button-cancel-color: var(--swatch-tertiary-color);
+	--rating-module-button-credit-color: var(--swatch-secondary-color);
+
+	--rating-module-text-color: var(--swatch-menutxt-dark-color);
+	--rating-module-text-hover-color: var(--swatch-menutxt-light-color);
+
+		/* ===MODALS=== */
 	--modal-bg: var(--swatch-secondary-color);
 	--modal-text: var(--swatch-text-tertiary-color);
 		/* h1/h2/h3/h4/h5/h6 */
@@ -369,7 +571,7 @@
 	--modal-header-txt: var(--swatch-text-secondary-color);
 	--modal-header-stripe: var(--swatch-primary-darkest);
 
-	/* ===FOOTNOTES HOVER BLOCK COLORS=== */
+		/* ===FOOTNOTES HOVER BLOCK=== */
 	--hoverblock-bg: var(--swatch-secondary-color);
 	--hoverblock-txt: var(--swatch-text-tertiary-color);
 	--hoverblock-header-bg: var(--swatch-primary-darker);
@@ -377,6 +579,10 @@
 	--hoverblock-footer-bg: var(--swatch-tertiary-color);
 	--hoverblock-footer-txt: var(--swatch-text-tertiary-color);
 }
+
+/*  ===============================
+	========= DEPRECIATED =========
+	===============================
 
 /* LEGACY VARS */
 /* These Vars are being left for now in case they are used in various these but will eventually be removed */

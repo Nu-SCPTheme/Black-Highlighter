@@ -234,7 +234,7 @@ div.page-watch-options a:active {
 	width: 100%;
 	margin: 0.2rem 0 0 0;
 	padding: 0.2rem 0 0 0;
-	box-shadow: 0 -0.125rem 0 0 rgb(var(--swatch-primary-darkest));
+	box-shadow: 0 -0.125rem 0 0 rgb(var(--pagetags-title-bg));
 	font-family: var(--UI-font);
 	font-size: 0.9em;
 	justify-self: flex-start;
@@ -248,8 +248,8 @@ div.page-watch-options a:active {
 	left: 0;
 	height: 1.5em;
 	padding: 0.25em;
-	background-color: rgb(var(--swatch-primary-darkest));
-	color: rgb(var(--swatch-text-secondary-color));
+	background-color: rgb(var(--pagetags-title-bg));
+	color: rgb(var(--pagetags-title-text));
 	font-size: 0.8em;
 	cursor: pointer;
 }
@@ -274,7 +274,8 @@ div.page-watch-options a:active {
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
-	--hover-link-color: var(--swatch-background);
+	--link-color: var(--pagetags-text-color);
+	--hover-link-color: var(--pagetags-text-hover-color);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -292,7 +293,7 @@ div.page-watch-options a:active {
 }
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]):not(:last-child) {
-	border-right: 0.0625rem dotted rgba(var(--swatch-primary-darkest),0.5);
+	border-right: 0.0625rem dotted rgba(var(--pagetags-text-color),0.5);
 }
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"])::before {
@@ -305,7 +306,7 @@ div.page-watch-options a:active {
 	height: 101%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	background-color: rgb(var(--swatch-primary));
+	background-color: rgb(var(--pagetags-text-hover-bg-color));
 	pointer-events: none;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
@@ -504,9 +505,9 @@ div[id*="page-options-bottom"] > a#delete-button {
 
 /* ===FOOTER BOX=== */
 #footer {
-	--link-color: var(--swatch-text-secondary-color);
-	--visited-link-color: var(--swatch-text-secondary-color);
-	--hover-link-color: var(--swatch-primary);
+	--link-color: var(--footer-link-color);
+	--visited-link-color: var(--footer-link-color);
+	--hover-link-color: var(--footer-link-hover-color);
 	display: flex !important;
 	box-sizing: border-box;
 	grid-area: footer;
@@ -515,8 +516,8 @@ div[id*="page-options-bottom"] > a#delete-button {
 	justify-content: center;
 	margin: 0;
 	padding: 0.25em 0;
-	background: rgb(var(--swatch-primary-darkest, 100, 3, 15));
-	color: rgb(var(--swatch-text-secondary-color));
+	background: rgb(var(--footer-bg-color));
+	color: rgb(var(--footer-text-color));
 	font-family: var(--UI-font);
 	font-size: 0.75em;
 	line-height: 1;
@@ -574,7 +575,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	height: 100%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	background-color: rgb(var(--swatch-background));
+	background-color: rgb(var(--footer-link-hover-bg-color));
 	pointer-events: none;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
@@ -612,9 +613,9 @@ div[id*="page-options-bottom"] > a#delete-button {
 
 /* ===LICENSE BOX=== */
 #license-area {
-	--link-color: var(--swatch-text-secondary-color);
-	--visited-link-color: var(--swatch-text-secondary-color);
-	--hover-link-color: var(--swatch-primary);
+	--link-color: var(--license-link-color);
+	--visited-link-color: var(--license-link-color);
+	--hover-link-color: var(--license-link-hover-color);
 	display: flex;
 	position: relative;
 	box-sizing: border-box;
@@ -625,8 +626,8 @@ div[id*="page-options-bottom"] > a#delete-button {
 	justify-content: center;
 	width: 100%;
 	padding: 0.5em;
-	background-color: rgb(var(--swatch-menubg-dark-color));
-    color: rgb(var(--swatch-menutxt-light-color));
+	background-color: rgb(var(--license-bg-color));
+    color: rgb(var(--license-text-color));
 	font-family: var(--UI-font);
 	line-height: 1;
 }
@@ -660,7 +661,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	height: 101%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	background-color: rgb(var(--swatch-background));
+	background-color: rgb(var(--license-link-hover-bg-color));
 	pointer-events: none;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }

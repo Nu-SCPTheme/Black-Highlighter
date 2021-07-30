@@ -22,8 +22,6 @@
 	grid-area: side-bar;
 	flex-direction: column;
 	flex-shrink: 0;
-	width: 15.75rem;
-	width: calc((0.9375rem * (14 / 15)) * 19);
 	width: var(--sidebar-width-on-desktop);
 	height: 100vh;
 	margin: 0;
@@ -37,34 +35,7 @@
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0.4);
 	background-attachment: local, local, scroll, fixed;
-	background-color: rgba(var(--swatch-menubg-color), 1);
-	background-image:
-		/* Shadow covers */ linear-gradient(
-			rgba(var(--swatch-menubg-color), 1) 30%,
-			rgba(var(--swatch-menubg-color), 0)
-		),
-		linear-gradient(
-				rgba(var(--swatch-menubg-color), 0),
-				rgba(var(--swatch-menubg-color), 1) 70%
-			)
-			0 100%,
-		/* Shadows */
-			radial-gradient(
-				farthest-side at 50% 0,
-				rgba(var(--swatch-primary-darkest), 0.5),
-				rgba(var(--swatch-menubg-black-color), 0)
-			),
-		radial-gradient(
-				farthest-side at 50% 100%,
-				rgba(var(--swatch-primary-darkest), 0.5),
-				rgba(var(--swatch-menubg-black-color), 0)
-			)
-			0 100%;
-	background-repeat: no-repeat;
-	background-position: top center, bottom center, top center,
-		bottom -0.25rem left;
-	background-size: 100% 3rem, 100% 3rem, 100% 1.5rem,
-		var(--sidebar-width-on-desktop) 1.5rem;
+	background-color: rgba(var(--sidebar-bg-color), 1);
 	font-family: var(--UI-font, var(--header-font));
 	direction: rtl;
 	scrollbar-width: thin;
@@ -107,27 +78,23 @@
 
 /* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
 #side-bar div[style*="#f0fff6"] {
-	background-color: rgba(140, 20, 25, 0.25) !important;
 	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 }
 
 #side-bar div[style*="#e7e5e8"] {
-	background-color: rgba(100, 3, 15, 0.3) !important;
 	background-color: rgba(var(--swatch-primary-darkest), 0.3) !important;
 }
 
 #side-bar div[style*="#fff0f0"],
 #side-bar .side-block.resources {
-	background-color: rgba(140, 20, 25, 0.15) !important;
-	background-color: rgba(var(--swatch-primary-darker), 0.15) !important;
+	background-color: rgba(var(--sidebar-resources-bg-color)) !important;
 }
 
 #side-bar div[style*="#e5e5ff"],
 #side-bar .side-block.media {
 	margin: 0.5rem 0.5rem 0 0;
 	padding: 0.5rem !important;
-	background-color: rgba(140, 20, 25, 0.25) !important;
-	background-color: rgba(var(--swatch-primary-darker), 0.125) !important;
+	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
 /* Social Media Icons */
@@ -148,7 +115,7 @@
 	width: 100%;
 	height: 100%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--bright-accent));
+	background-color: rgb(var(--social-icon-hover-color));
 	pointer-events: none;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
@@ -168,36 +135,29 @@
 
 #side-bar .side-block.media a[href*="facebook"] {
 	--social-logo-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.2' baseProfile='tiny' id='Facebook_Logo' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2215 2080' overflow='visible' xml:space='preserve'%3E%3Cpath d='M2090,1212.1c4.9-40,7.5-80.8,7.5-122.1c0-410-249.3-761.8-604.6-912.1L1434.5,0h-654l-58.4,177.9 C366.8,328.2,117.5,680,117.5,1090c0,41.4,2.6,82.1,7.5,122.1L0,1351.8l327,566.4l183.5-38.4c152.4,115.4,339.2,187.6,542.3,198.7 v-709H795.4v-293h257.4V853.2c0-254.1,151.4-394.4,382.8-394.4c110.9,0,226.9,19.8,226.9,19.8v249.4h-127.8 c-126,0-165.2,78.2-165.2,158.3v190.1h281.1l-44.9,293h-236.2V2045c122.8-33.6,236.2-90.3,335-165.2l183.5,38.4l327-566.4 L2090,1212.1z'/%3E%3C/svg%3E");
-	--social-color: 59, 89, 152;
+	--social-color: var(--facebook-icon-color);
 }
 
 #side-bar .side-block.media a[href*="twitter"] {
 	--social-logo-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Twitter_Logo' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2215 2080' overflow='visible' xml:space='preserve'%3E%3Cpath d='M2090,1212.1c4.9-40,7.5-80.8,7.5-122.1c0-410-249.3-761.8-604.6-912.1L1434.5,0h-654l-58.4,177.9 C366.8,328.2,117.5,680,117.5,1090c0,41.4,2.6,82.1,7.5,122.1L0,1351.8l327,566.4l183.5-38.4c166,125.7,372.8,200.2,597,200.2 s431-74.5,597-200.2l183.5,38.4l327-566.4L2090,1212.1z M1696.8,833.5c0.5,12.2,0.8,24.5,0.8,36.9c0,376.5-286.6,810.6-810.6,810.6 c-160.9,0-310.7-47.2-436.7-128c22.3,2.6,45,4,68,4c133.5,0,256.3-45.5,353.8-122c-124.7-2.3-229.9-84.7-266.2-197.9 c17.4,3.3,35.2,5.1,53.6,5.1c26,0,51.2-3.5,75.1-10c-130.3-26.2-228.5-141.3-228.5-279.4c0-1.2,0-2.4,0-3.6 c38.4,21.3,82.3,34.2,129,35.6c-76.4-51.1-126.7-138.3-126.7-237.1c0-52.2,14.1-101.2,38.6-143.2 C687.5,777,897.4,890.4,1134.2,902.3c-4.9-20.9-7.4-42.6-7.4-64.9c0-157.3,127.6-284.9,284.9-284.9c81.9,0,156,34.6,208,90 c64.9-12.8,125.9-36.5,180.9-69.1c-21.3,66.5-66.5,122.4-125.3,157.6c57.6-6.9,112.5-22.2,163.6-44.9c0,0,0,0,0,0l0,0c0,0,0,0,0,0 C1800.8,743.2,1752.5,793.4,1696.8,833.5z'/%3E%3C/svg%3E");
-	--social-color: 29, 161, 242;
+	--social-color: var(--twitter-icon-color);
 }
 
 #side-bar .side-block.media a[href*="reddit"] {
 	--social-logo-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Reddit_Logo' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2215 2080' overflow='visible' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M1318.4,1444.1c-46.5,47.8-148.4,64.1-220.1,64.1c-71.7,0-172.3-16.4-220.1-64.1c-11.3-11.3-28.9-11.3-40.2,0 c-11.3,11.3-11.3,28.9,0,40.2c74.2,74.2,217.6,80.5,260.3,80.5c41.5,0,184.9-5,260.3-80.5c10.1-11.3,10.1-28.9,0-40.2 C1347.3,1432.8,1329.7,1432.8,1318.4,1444.1z'/%3E%3Cpath d='M2090,1212.1c4.9-40,7.5-80.8,7.5-122.1c0-410-249.3-761.8-604.6-912.1L1434.5,0h-654l-58.4,177.9 C366.8,328.2,117.5,680,117.5,1090c0,41.4,2.6,82.1,7.5,122.1L0,1351.8l327,566.4l183.5-38.4c166,125.7,372.8,200.2,597,200.2 s431-74.5,597-200.2l183.5,38.4l327-566.4L2090,1212.1z M1800.1,1084.4c0,62.9-37.7,117-90.6,140.9c2.5,15.4,3.8,30.9,3.8,46.5 c0,237.7-275.4,428.9-615,428.9s-615-192.4-615-428.9c0-16.4,1.3-31.4,3.8-46.5c-15.9-7.2-30.5-17.1-43-29.2 c-61.1-58.8-62.9-155.9-4.1-217c58.8-61.1,155.9-62.9,217-4.1c106.9-76.7,254.1-125.8,417.6-130.8l78-367.2 c1-7.2,5.2-13.7,11.3-17.6c5-3.8,12.6-5,20.1-3.8l255.3,54.1c17.8-35.9,53.8-59.2,93.8-60.7c60.4-2.3,111.2,44.8,113.5,105.1 c2.3,60.4-44.8,111.2-105.1,113.5c-60.4,2.3-111.2-44.8-113.5-105.1l-228.9-49.1l-70.4,329.5c161,6.3,305.6,55.3,411.3,130.8 c28.8-28,67.4-43.5,107.5-43.4C1732,930.7,1800.4,999.7,1800.1,1084.4L1800.1,1084.4z'/%3E%3Cpath d='M964.9,1193.8c0-0.1,0-0.1,0-0.2c0-60.4-49.1-109.4-109.5-109.3c-60.4,0-109.4,49.1-109.3,109.5 c0,60.4,49,109.4,109.4,109.4C916,1303.2,964.9,1254.2,964.9,1193.8z'/%3E%3Cpath d='M1338.5,1085.7c-0.1,0-0.1,0-0.2,0c-60.4,0-109.4,49.1-109.3,109.5c0,60.4,49.1,109.4,109.5,109.3 c60.4,0,109.3-49,109.3-109.3C1447.9,1134.7,1398.9,1085.7,1338.5,1085.7z'/%3E%3C/g%3E%3C/svg%3E");
-	--social-color: 225, 69, 0;
+	--social-color: var(--reddit-icon-color);
 }
 
 #side-bar .side-block.media a[href*="instagram"] {
 	--social-logo-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Instagram_Logo' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2215 2080' overflow='visible' xml:space='preserve'%3E%3Cg%3E%3Cellipse transform='matrix(0.7071 -0.7071 0.7071 0.7071 -435.692 1097.9515)' cx='1107.5' cy='1074.9' rx='204.3' ry='204.3'/%3E%3Cpath d='M1585.3,713.4c-11.1-28.6-24.4-49-45.8-70.5c-21.4-21.4-41.9-34.7-70.5-45.8c-21.6-8.4-54.1-18.4-113.8-21.1 c-64.6-2.9-84-3.6-247.7-3.6s-183,0.6-247.7,3.6c-59.8,2.7-92.2,12.7-113.8,21.1c-28.6,11.1-49,24.4-70.5,45.8 c-21.4,21.4-34.7,41.9-45.8,70.5c-8.4,21.6-18.4,54.1-21.1,113.8c-2.9,64.6-3.6,84-3.6,247.7s0.6,183,3.6,247.7 c2.7,59.8,12.7,92.2,21.1,113.8c11.1,28.6,24.4,49,45.8,70.5c21.4,21.4,41.9,34.7,70.5,45.8c21.6,8.4,54,18.4,113.8,21.1 c64.6,2.9,84,3.6,247.7,3.6s183-0.6,247.7-3.6c59.8-2.7,92.2-12.7,113.8-21.1c28.6-11.1,49-24.4,70.5-45.8 c21.4-21.4,34.7-41.9,45.8-70.5c8.4-21.6,18.4-54.1,21.1-113.8c2.9-64.6,3.6-84,3.6-247.7s-0.6-183-3.6-247.7 C1603.7,767.5,1593.7,735,1585.3,713.4z M1107.5,1389.6c-173.8,0-314.7-140.9-314.7-314.7s140.9-314.7,314.7-314.7 s314.7,140.9,314.7,314.7S1281.3,1389.6,1107.5,1389.6z M1434.7,821.3c-40.6,0-73.5-32.9-73.5-73.5s32.9-73.5,73.5-73.5 c40.6,0,73.5,32.9,73.5,73.5S1475.3,821.3,1434.7,821.3z'/%3E%3Cpath d='M2090,1212.1c4.9-40,7.5-80.8,7.5-122.1c0-410-249.3-761.8-604.6-912.1L1434.5,0h-654l-58.4,177.9 C366.8,328.2,117.5,680,117.5,1090c0,41.4,2.6,82.1,7.5,122.1L0,1351.8l327,566.4l183.5-38.4c166,125.7,372.8,200.2,597,200.2 s431-74.5,597-200.2l183.5,38.4l327-566.4L2090,1212.1z M1716.7,1327.6c-3,65.2-13.3,109.8-28.5,148.8 c-15.7,40.3-36.6,74.5-70.7,108.6c-34.1,34.1-68.3,55-108.6,70.7c-39,15.2-83.5,25.5-148.8,28.5c-65.4,3-86.2,3.7-252.7,3.7 s-187.3-0.7-252.7-3.7c-65.2-3-109.8-13.3-148.8-28.5c-40.3-15.7-74.5-36.6-108.6-70.7c-34.1-34.1-55-68.3-70.7-108.6 c-15.2-39-25.5-83.5-28.5-148.8c-3-65.4-3.7-86.2-3.7-252.7c0-166.5,0.7-187.3,3.7-252.7c3-65.2,13.3-109.8,28.5-148.8 c15.7-40.3,36.6-74.5,70.7-108.6c34.1-34.1,68.3-55,108.6-70.7c39-15.2,83.5-25.5,148.8-28.5c65.4-3,86.2-3.7,252.7-3.7 s187.3,0.7,252.7,3.7c65.2,3,109.8,13.3,148.8,28.5c40.3,15.7,74.5,36.6,108.6,70.7c34.1,34.1,55,68.3,70.7,108.6 c15.2,39,25.5,83.5,28.5,148.8c3,65.4,3.7,86.2,3.7,252.7C1720.4,1241.4,1719.7,1262.2,1716.7,1327.6z'/%3E%3C/g%3E%3C/svg%3E");
-	--social-color: 240, 148, 51;
-	background-image: linear-gradient(
-		45deg,
-		rgb(240, 148, 51) 0%,
-		#e6683c 25%,
-		rgb(220, 39, 67) 50%,
-		rgb(204, 35, 102) 75%,
-		rgb(188, 24, 136) 100%
-	);
+	--social-color: var(--instagram-icon-color);
+	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
 
 #side-bar .side-block.media a[href*="twitch"] {
 	--social-logo-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Twitch_Logo' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 2215 2080' overflow='visible' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M1035.5,1510l175-175h200l200-200V585h-800v750h225V1510z M1360.5,760h100v300h-100V760z M1085.5,760h100v300h-100V760z'/%3E%3Cpath d='M2090,1212.1c4.9-40,7.5-80.8,7.5-122.1c0-410-249.3-761.8-604.6-912.1L1434.5,0h-654l-58.4,177.9 C366.8,328.2,117.5,680,117.5,1090c0,41.4,2.6,82.1,7.5,122.1L0,1351.8l327,566.4l183.5-38.4c166,125.7,372.8,200.2,597,200.2 s431-74.5,597-200.2l183.5,38.4l327-566.4L2090,1212.1z M1710.5,1185l-450,450h-200l-250,250v-250h-300V735l250-250h950V1185z'/%3E%3C/g%3E%3C/svg%3E%0A");
-	--social-color: 100, 65, 165;
+	--social-color: var(--twitch-icon-color);
 }
 
 /*Forcing default sidebar coloring on any INT branches that still use Background Color*/
@@ -236,7 +196,7 @@
 #side-bar .side-block {
 	margin: 0.5rem 0.5rem 0 0;
 	border: 0;
-	background: rgb(0, 0, 0, 0);
+	background: rgb(var(--sideblock-bg-color));
 	direction: ltr;
 }
 
@@ -252,15 +212,15 @@
 	justify-content: flex-start;
 	min-height: 1.5rem;
 	margin: 0 0 0.25rem 0;
-	box-shadow: 0 0.0625rem 0 0 rgb(var(--swatch-important-text));
+	background-color: rgb(var(--sideblock-heading-bg-color));
+	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 }
 
 #side-bar .heading p,
 #side-bar .collapsible-block .collapsible-block-link {
 	--wght: calc(var(--ui-wght) + 300);
 	margin: 0;
-	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-primary-darker));
+	color: rgb(var(--sideblock-heading-text-color));
 	font-family: var(--title-font);
 	font-size: calc(0.875rem * 0.9);
 	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.9);
@@ -299,17 +259,18 @@
 	width: 100%;
 	height: 100%;
 	transition: 
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	color: rgb(var(--swatch-text-secondary-color));
+	color: rgb(var(--sidebar-collapsible-link-color));
 }
 
 #side-bar a.collapsible-block-link:hover,
 #side-bar a.collapsible-block-link:active {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
-	background-color: rgba(var(--swatch-primary));
+	background-color: rgb(var(--sidebar-collapsible-link-hover-bg));
+	color: rgb(var(--sidebar-collapsible-link-hover-color));
 	text-decoration: none;
 }
 
@@ -322,9 +283,10 @@
 	right: 0;
 	width: 2rem;
 	height: 100%;
-	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-color: rgb(var(--sidebar-collapsible-arrow-color));
+	mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	mask-repeat: no-repeat;
+	mask-position: 50% 50%;
 }
 
 #side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
@@ -339,7 +301,6 @@
 /* create a gap next to the collapsible contents */
 #side-bar .collapsible-block-content {
 	box-sizing: border-box;
-	border-right: 2rem solid rgba(12, 12, 12, 0.08);
 	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
 }
 
@@ -349,24 +310,22 @@
 }
 
 #side-bar .collapsible-block-unfolded-link {
-	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
 	border-bottom: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover,
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link:active {
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--sidebar-collapsible-link-hover-color));
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link:focus-within {
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--sidebar-collapsible-link-hover-color));
 }
 
 /* for full-block collapsibles, give the open collapsible the same background as the side block */
 /* variable should be set in nav:side */
 #side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
-	background: rgba(140, 20, 25, 0.5);
-	background: rgba(var(--medium-accent));
+	background: rgba(var(--sidebar-sideblock-collapsible-bg));
 }
 
 /* ===MENU ITEMS=== */
@@ -378,13 +337,11 @@
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: flex-start;
-	min-height: 1.375rem;
 	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
 	padding: 0;
-	border-bottom: 0.125rem solid hsla(0, 0%, 5%, 0.08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid
-		rgba(var(--swatch-border-color), 0.08);
+	box-shadow: 
+		inset 0 calc(var(--sidebar-internal-border-thickness) * -1) 0 0 rgba(var(--sidebar-border-color));
 	font-size: 0;
 }
 
@@ -399,7 +356,7 @@
 }
 
 #side-bar div.menu-item span:first-of-type {
-	padding: 0 0 0 calc((var(--base-font-size) * (14 / 15)) * 1.6);
+	padding: 0 0 0 calc((var(--base-font-size) * 1.5));
 }
 
 /* Sub-Text Styling for select Int Branches */
@@ -408,8 +365,8 @@
 	min-width: 35%;
 	padding-right: 3em;
 	padding-left: 1em;
-	color: rgba(var(--swatch-primary), 1);
-	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.7);
+	color: rgba(var(--sidebar-subtest-color));
+	font-size: calc((var(--base-font-size) * 0.65));
 	text-align: left;
 }
 
@@ -426,8 +383,7 @@
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
-	height: 1.375rem;
-	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	height: 1.5em;
 	margin: 0;
 	padding: 0 0.6em;
 	transition: 
@@ -436,13 +392,11 @@
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-clip: padding-box;
-	background-color: hsla(0, 0%, 5%, 0);
-	background-color: rgba(var(--swatch-menubg-hover-color), 0);
+	background-color: rgba(var(--sidebar-links-bg-color));
 	color: rgb(var(--sidebar-links-text));
-	font-size: 0.875rem;
 	font-size: calc(var(--base-font-size) * 0.93333);
 	letter-spacing: 0.04em;
-	line-height: calc(1.5em - var(--sidebar-internal-border-thickness));
+	line-height: 1.5;
 }
 
 /* Menu Item Hover Color Bar */
@@ -456,7 +410,7 @@
 	height: 100%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 1;
-	background-color: rgb(var(--bright-accent));
+	background-color: rgb(var(--sidebar-links-hover-bg-color));
 	pointer-events: none;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
@@ -479,16 +433,16 @@
 #side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(12, 12, 12, 0.15);
-	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
-	color: rgb(var(--swatch-text-secondary-color));
+	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
 }
 
 #side-bar div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(12, 12, 12, 0.15);
-	background-color: rgba(var(--swatch-menubg-hover-color), 0.15);
-	color: rgb(var(--swatch-text-secondary-color));
+	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
 }
 
@@ -503,8 +457,7 @@
 
 #side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
 #side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
-	border-left: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-left: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
+	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
 }
 
 #side-bar div.menu-item .text {
@@ -634,13 +587,13 @@ a[href*="/most-recently-edited"] {
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:active,
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
 	background-color: rgba(252, 252, 252, 0.15);
-	background-color: rgba(var(--swatch-menubg-color), 0.15);
+	background-color: rgba(var(-sidebar-bg-color), 0.15);
 	text-decoration: none;
 }
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus-within {
 	background-color: rgba(252, 252, 252, 0.15);
-	background-color: rgba(var(--swatch-menubg-color), 0.15);
+	background-color: rgba(var(-sidebar-bg-color), 0.15);
 	text-decoration: none;
 }
 
@@ -716,8 +669,8 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 }
 
 #side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item p {
-	height: calc(1.25rem - var(--sidebar-internal-border-thickness));
-	min-height: calc(1.25rem - var(--sidebar-internal-border-thickness));
+	height: 1.25rem;
+	min-height: 1.25rem;
 	padding: 0;
 	font-size: calc(var(--base-font-size) * 0.7);
 }
@@ -749,7 +702,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		top: 0;
 		width: 0;
 		height: 100%;
-		background-color: rgba(12, 12, 12, 0.2);
 		background-color: rgba(var(--swatch-menubg-black-color), 0.2);
 	}
 
@@ -800,13 +752,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		max-width: calc(80vw + (var(--base-font-size) * 0.5)) !important;
 		margin: 0;
 		overflow-x: hidden;
-		box-shadow: inset 0 0 0 -0.0625rem rgb(252, 252, 252);
 		box-shadow: inset 0 0 0 -0.0625rem var(--box-shadow);
-	}
-
-	#side-bar::-webkit-scrollbar {
-		width: 0.5rem !important;
-		background: rgba(var(--swatch-tertiary-color), 0.05) !important;
 	}
 
 	#skrollr-body:target + #main-content,
@@ -827,7 +773,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		margin-left: var(--sidebar-width-on-mobile);
 		padding-right: 0;
 		opacity: 1;
-		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		pointer-events: auto;
 	}
