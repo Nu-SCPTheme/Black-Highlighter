@@ -1531,7 +1531,8 @@ table[style*="margin:0"] * {
 	grid-gap: 0;
 	grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
 	margin: 0 1em;
-	box-shadow: 0 0.125rem 0 0 rgb(var(--bright-accent));
+	box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
+	color: rgb(var(--pager-text));
 	white-space: nowrap;
 }
 
@@ -1543,6 +1544,14 @@ table[style*="margin:0"] * {
 	justify-content: center;
 }
 
+.pager span {
+	transition: 
+		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .pager .pager-no {
 	grid-column: 1 / span 4;
 	justify-self: flex-start;
@@ -1551,8 +1560,8 @@ table[style*="margin:0"] * {
 
 .pager .current {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgb(var(--bright-accent));
-	color: rgb(var(--swatch-menutxt-light-color));
+	background-color: rgb(var(--pager-selected-bg));
+	color: rgb(var(--pager-selected-link));
 }
 
 .pager .current::before {
@@ -1561,7 +1570,7 @@ table[style*="margin:0"] * {
 	bottom: 0;
 	width: 1.5em;
 	height: 1.5em;
-	background-color: rgb(var(--bright-accent));
+	background-color: rgb(var(--pager-selected-bg));
 }
 
 .pager .current:not(:last-of-type)::before {
@@ -1589,19 +1598,19 @@ table[style*="margin:0"] * {
 }
 
 .pager a:any-link {
-	color: rgb(var(--link-color));
+	color: rgb(var(--pager-link));
 }
 
 .pager a:hover,
 .pager a:active {
 	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--pager-link-hover));
 	text-decoration: none;
 }
 
 .pager a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--pager-link-hover));
 	text-decoration: none;
 }
 
@@ -1613,7 +1622,7 @@ table[style*="margin:0"] * {
 	width: 100%;
 	height: 100%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--bright-accent));
+	background-color: rgb(var(--pager-hover-bg));
 	pointer-events: none;
 	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
 }
