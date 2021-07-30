@@ -108,8 +108,10 @@
 	left: -0.5%;
 	width: 101%;
 	height: 101%;
-	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--tabs-hover-bg));
+	transition: 
+		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--tabs-bottom-border-color));
 	pointer-events: none;
 	clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
@@ -117,10 +119,12 @@
 .yui-navset .yui-nav li:hover a::before,
 .yui-navset .yui-nav li:active a::before,
 .yui-navset .yui-nav li:focus a::before {
+	background-color: rgb(var(--tabs-hover-bg));
 	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav li:focus-within a::before {
+	background-color: rgb(var(--tabs-hover-bg));
 	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
@@ -157,7 +161,7 @@
 .yui-navset .yui-nav .selected a {
 	--wght: var(--ui-hvr-wght);
 	background-image: none;
-	color: rgb(var(--swatch-text-secondary-color)) !important; /* Overwriting Wikidot Inline-Styling */
+	color: rgb(var(--tabs-selected-txt)) !important; /* Overwriting Wikidot Inline-Styling */
 }
 
 .yui-navset .yui-nav .selected a::before,
