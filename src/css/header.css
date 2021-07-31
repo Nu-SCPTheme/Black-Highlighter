@@ -305,9 +305,9 @@ div#container-wrap {
 	right: 0;
 	width: var(--search-height);
 	height: var(--search-height);
-	outline: 0 solid rgb(var(--search-focus-outline-color)));
+	outline: 0 solid rgb(var(--search-focus-outline-color));
 	background-color: rgba(0, 0, 0, 0);
-	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color)));
+	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));
 	color: transparent;
 	font-size: calc(var(--base-font-size) * (13 / 15));
 	cursor: pointer;
@@ -315,7 +315,7 @@ div#container-wrap {
 }
 
 #search-top-box form[id="search-top-box-form"]:not(:focus-within) input[type="submit"] {
-	box-shadow: 0 0 0 0 rgb(var(--search-focus-outline-color)));
+	box-shadow: 0 0 0 0 rgb(var(--search-focus-outline-color));
 	pointer-events: none;
 }
 

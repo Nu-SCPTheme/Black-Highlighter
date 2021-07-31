@@ -32,14 +32,14 @@
 	font-kerning: auto;
 	font-variant-ligatures: common-ligatures contextual;
 	font-variant-numeric: lining-nums proportional-nums;
-	font-weight: var(--wght, revert);
+	font-weight: var(--wght, 350);
 }
 @supports (font-variation-settings: inherit) {
 	*,
 	*::before,
 	*::after {
 		font-variation-settings: 
-			"wght" var(--wght, 350), 
+			"wght" var(--wght), 
 			"ital" var(--ital, 0),
 			"slnt" var(--slnt, 0), 
 			"CASL" var(--CASL, 0),
