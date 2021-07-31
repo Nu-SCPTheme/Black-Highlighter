@@ -79,7 +79,7 @@ div#container-wrap {
 #header h1 a {
 	--wght: 900;
 	display: block;
-	z-index: 9999;
+	z-index: 10;
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
 	margin-left: calc(var(--header-height-on-desktop) - 0.75rem);
 	padding: 1.875rem 0 0;
@@ -104,7 +104,6 @@ div#container-wrap {
 #header h1 a > span {
 	display: inline-table;
 	position: absolute;
-	z-index: 9999;
 	top: 0;
 	left: 0;
 	width: calc(100% - 2rem);
@@ -152,7 +151,7 @@ div#container-wrap {
 #search-top-box {
 	display: flex;
 	position: absolute;
-	z-index: 10;
+	z-index: 12;
 	top: 1.5em;
 	right: calc(3% - 0.25em);
 	align-items: center;
@@ -271,7 +270,6 @@ div#container-wrap {
 
 #search-top-box form[id="search-top-box-form"] input[type="text"] {
 	position: absolute;
-	z-index: 98;
 	z-index: 13;
 	right: 0;
 	width: var(--search-width);
@@ -301,7 +299,7 @@ div#container-wrap {
 #search-top-box form[id="search-top-box-form"] input[type="submit"] {
 	visibility: visible;
 	position: absolute;
-	z-index: 99;
+	z-index: 14;
 	right: 0;
 	width: var(--search-height);
 	height: var(--search-height);
@@ -323,7 +321,7 @@ div#container-wrap {
 #login-status {
 	display: flex;
 	position: absolute;
-	z-index: 9;
+	z-index: 11;
 	top: 1.5em;
 	right: calc(7% - 3em);
 	align-items: center;
@@ -395,7 +393,7 @@ div#container-wrap {
 #login-status #account-options {
 	display: none;
 	position: absolute;
-	z-index: 99;
+	z-index: 12;
 	top: 1.5rem;
 	right: 0;
 	width: 10em;
