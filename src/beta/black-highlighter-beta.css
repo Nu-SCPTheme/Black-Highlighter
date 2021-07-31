@@ -466,10 +466,29 @@
 	--sidebar-links-hover-text-color: var(--swatch-text-secondary-color);
 
 		/* ===SIDEBAR COLLAPSIBLES=== */
-	--sidebar-collapsible-link-color: var(--swatch-text-secondary-color);
-	--sidebar-collapsible-link-hover-color: var(--swatch-text-secondary-color);
+			/*Folded Colors */
+	--sidebar-collapsible-fld-link-bg: var(--swatch-primary-darker), 0.25;	
+	--sidebar-collapsible-fld-link-color: var(--swatch-primary-darkest);
+	--sidebar-collapsible-fld-link-hover-bg: var(--swatch-primary-darker);
+	--sidebar-collapsible-fld-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-fld-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-fld-arrow-hover-color: var(--swatch-text-secondary-color);
+
+			/*Unfolded Colors */
+	--sidebar-collapsible-ufld-link-bg: var(--swatch-primary-darker), 0.25;	
+	--sidebar-collapsible-ufld-link-color: var(--swatch-primary-darkest);
+	--sidebar-collapsible-ufld-link-hover-bg: var(--swatch-primary), 1;
+	--sidebar-collapsible-ufld-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-ufld-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-ufld-arrow-hover-color: var(--swatch-text-secondary-color);
+
+			/* Unfolded Body Colors */
+	--sidebar-collapsible-body-bg: var(--bright-accent), 0.125;
+	--sidebar-collapsible-link-color: var(--swatch-menutxt-general-color);
 	--sidebar-collapsible-link-hover-bg: var(--swatch-primary);
-	--sidebar-collapsible-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-link-hover-color: var(--swatch-text-secondary-color);
+	
+	
 		/* Background for Collapsibles Within Sideblocks */
 	--sidebar-sideblock-collapsible-bg: var(--medium-accent);
 }
@@ -5472,8 +5491,13 @@ div.odialog-shader-iframe {
 /* ===DIRECTORY===
 	1. =MAIN BLOCK
 	2. =SUB-BLOCK
-	3. =HEADING & COLLAPSIBLES
+	3. =HEADING
 	4. =MENU ITEMS
+		4.1 =SUB-TEXT
+		4.2 =MAIN LINKS & TEXT
+			4.2.1 =MAIN LINKS HOVER BG BAR
+		4.3 =SCP & TALES SERIES
+		4.4 =SIGMA-9 OVERWRITES
 	5. =COMMON THEME COMPATABILITY
 	6. =MOBILE SIDEBAR
   =============== */
@@ -5688,21 +5712,23 @@ div.odialog-shader-iframe {
 	padding: 0.625rem;
 }
 
-/* ===HEADING & COLLAPSIBLES=== */
+/* ===HEADING=== */
 
-#side-bar .heading,
-#side-bar .collapsible-block .collapsible-block-folded {
+#side-bar .heading {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
 	min-height: 1.5rem;
+	height: 1.5rem;
 	margin: 0 0 0.25rem 0;
-	background-color: rgb(var(--sideblock-heading-bg-color));
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 }
 
-#side-bar .heading p,
-#side-bar .collapsible-block .collapsible-block-link {
+#side-bar .heading {
+	background-color: rgb(var(--sideblock-heading-bg-color));
+}
+
+#side-bar .heading p {
 	--wght: calc(var(--ui-wght) + 300);
 	margin: 0;
 	color: rgb(var(--sideblock-heading-text-color));
@@ -5719,108 +5745,6 @@ div.odialog-shader-iframe {
 	cursor: default;
 }
 
-/* Collapsibles in the sidebar */
-
-#side-bar div.collapsible-block {
-	position: relative;
-	flex-basis: 100%;
-	width: 100%;
-}
-
-#side-bar div.collapsible-block div[class*="folded"] {
-	position: relative;
-	height: calc(1.5rem - var(--sidebar-internal-border-thickness));
-}
-
-#side-bar div.collapsible-block a.collapsible-block-link,
-#side-bar .side-block > .collapsible-block a.collapsible-block-link {
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	flex-grow: 2;
-	align-items: center;
-	justify-content: flex-start;
-	width: 100%;
-	height: 100%;
-	transition: 
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	color: rgb(var(--sidebar-collapsible-link-color));
-}
-
-#side-bar a.collapsible-block-link:hover,
-#side-bar a.collapsible-block-link:active {
-	--wght: var(--ui-hvr-wght);
-	background-color: rgb(var(--sidebar-collapsible-link-hover-bg));
-	color: rgb(var(--sidebar-collapsible-link-hover-color));
-	text-decoration: none;
-}
-
-/* create a dropdown triangle next to the collapsible */
-
-#side-bar div.menu-item a.collapsible-block-link::after,
-#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 2rem;
-	height: 100%;
-	background-color: rgb(var(--sidebar-collapsible-arrow-color));
-	-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-	        mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-	-webkit-mask-repeat: no-repeat;
-	        mask-repeat: no-repeat;
-	-webkit-mask-position: 50% 50%;
-	        mask-position: 50% 50%;
-}
-
-#side-bar .side-block > .collapsible-block a.collapsible-block-link::after {
-	filter: invert(100%);
-}
-
-#side-bar .collapsible-block-unfolded-link a.collapsible-block-link::after,
-#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
-	transform: rotate(180deg);
-}
-
-/* create a gap next to the collapsible contents */
-
-#side-bar .collapsible-block-content {
-	box-sizing: border-box;
-	border-right: 2rem solid rgba(var(--swatch-border-color), 0.08);
-}
-
-/* hide the last border within the collapsible */
-
-#side-bar .collapsible-block-content .menu-item:last-of-type {
-	border-bottom: none;
-}
-
-#side-bar .collapsible-block-unfolded-link {
-	border-bottom: 0.125rem solid rgba(var(--swatch-border-color), 0.08);
-}
-
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover,
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link:active {
-	color: rgb(var(--sidebar-collapsible-link-hover-color));
-}
-
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link:focus-within {
-	color: rgb(var(--sidebar-collapsible-link-hover-color));
-}
-
-/* for full-block collapsibles, give the open collapsible the same background as the side block */
-
-/* variable should be set in nav:side */
-
-#side-bar .side-block > .collapsible-block .collapsible-block-unfolded-link {
-	background: rgba(var(--sidebar-sideblock-collapsible-bg));
-}
-
 /* ===MENU ITEMS=== */
 
 #side-bar div.menu-item,
@@ -5831,7 +5755,8 @@ div.odialog-shader-iframe {
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: flex-start;
-	min-height: calc(1.5rem - var(--sidebar-internal-border-thickness));
+	min-height: 1.5rem;
+	height: 1.5rem;
 	margin: 0;
 	padding: 0;
 	box-shadow: 
@@ -5853,6 +5778,8 @@ div.odialog-shader-iframe {
 	padding: 0 0 0 calc((var(--base-font-size) * 1.5));
 }
 
+/* ===SUB-TEXT=== */
+
 /* Sub-Text Styling for select Int Branches */
 
 #side-bar div.menu-item .sub-text {
@@ -5865,6 +5792,8 @@ div.odialog-shader-iframe {
 	text-align: left;
 }
 
+/* ===MAIN LINKS & TEXT=== */
+
 #side-bar div.menu-item a {
 	position: relative;
 	z-index: 2;
@@ -5872,7 +5801,33 @@ div.odialog-shader-iframe {
 	overflow: hidden;
 }
 
-#side-bar div.menu-item a,
+#side-bar div.menu-item a:-webkit-any-link {
+	--wght: var(--ui-wght);
+	display: flex;
+	flex-grow: 2;
+	justify-content: flex-start;
+	height: 1.5em;
+	margin: 0;
+	padding: 0 0.6em;
+	-webkit-transition: 
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-clip: padding-box;
+	background-color: rgba(var(--sidebar-links-bg-color));
+	color: rgb(var(--sidebar-links-text));
+	font-size: calc(var(--base-font-size) * 0.93333);
+	letter-spacing: 0.04em;
+	line-height: 1.5;
+}
+
+#side-bar div.menu-item a:any-link,
 #side-bar div.menu-item .text {
 	--wght: var(--ui-wght);
 	display: flex;
@@ -5893,6 +5848,47 @@ div.odialog-shader-iframe {
 	letter-spacing: 0.04em;
 	line-height: 1.5;
 }
+
+#side-bar div.menu-item .text {
+	cursor: default;
+}
+
+#side-bar div.menu-item a:only-child {
+	flex-grow: 1;
+}
+
+#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
+#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
+	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
+}
+
+#side-bar div.menu-item > :last-child {
+	flex-grow: 2;
+}
+
+#side-bar div.menu-item a {
+	justify-content: flex-start;
+	padding: 0 0 0 calc(var(--base-font-size) * (14 / 15));
+}
+
+#side-bar div.menu-item a:hover,
+#side-bar div.menu-item a:active {
+	--wght: var(--ui-hvr-wght);
+	background-color: rgba(12, 12, 12, 0.15);
+	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+	text-decoration: none;
+}
+
+#side-bar div.menu-item a:focus-within {
+	--wght: var(--ui-hvr-wght);
+	background-color: rgba(12, 12, 12, 0.15);
+	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+	text-decoration: none;
+}
+
+/* ===MAIN LINKS HOVER BG BAR=== */
 
 /* Menu Item Hover Color Bar */
 
@@ -5925,52 +5921,10 @@ div.odialog-shader-iframe {
 	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
-#side-bar div.menu-item a:visited {
-	color: rgb(12, 12, 12);
-	color: rgb(var(--sidebar-links-text));
-}
+/* ===SCP & TALES SERIES==*/
 
-#side-bar div.menu-item a:hover,
-#side-bar div.menu-item a:active {
-	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
-	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
-	color: rgb(var(--sidebar-links-hover-text-color));
-	text-decoration: none;
-}
-
-#side-bar div.menu-item a:focus-within {
-	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
-	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
-	color: rgb(var(--sidebar-links-hover-text-color));
-	text-decoration: none;
-}
-
-#side-bar div.menu-item a:only-child {
-	flex-grow: 1;
-}
-
-#side-bar div.menu-item a {
-	justify-content: flex-start;
-	padding: 0 0 0 calc(var(--base-font-size) * (14 / 15));
-}
-
-#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
-#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
-	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
-}
-
-#side-bar div.menu-item .text {
-	cursor: default;
-}
-
-#side-bar div.menu-item > :last-child {
-	flex-grow: 2;
-}
-
-/* SCP Series Specific */
-
+#side-bar div.menu-item.scp-series a,
+#side-bar div.menu-item.scp-tales a,
 #side-bar div.menu-item a[href*="scp-series"] {
 	justify-content: center;
 	width: auto;
@@ -5979,6 +5933,8 @@ div.odialog-shader-iframe {
 	white-space: nowrap;
 }
 
+#side-bar div.menu-item.scp-series a,
+#side-bar div.menu-item.scp-tales a,
 #side-bar div.menu-item a[href*="scp-series"]::before {
 	width: 250%;
 }
@@ -5991,51 +5947,6 @@ div.odialog-shader-iframe {
 #side-bar ul {
 	padding: 0 0.25rem;
 	list-style-type: none;
-}
-
-/* Sigma Overwrite Specific Styles */
-
-#side-bar > div[style="background-color: #e5e5ff;"] {
-	display: flex;
-	flex-direction: column;
-	flex-shrink: 0;
-	margin-top: 1rem;
-	margin-bottom: 0;
-	border: 0;
-}
-
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
-	display: flex;
-	grid-gap: 0.125rem;
-	grid-template-columns: repeat(6, 1fr);
-	width: 100%;
-	height: auto;
-	padding: 0;
-	border-left: none !important;
-}
-
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: auto;
-	margin: 0;
-	padding: 0.25rem 0;
-	border: none;
-	border-radius: initial;
-}
-
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:hover::before,
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:active::before {
-	transform: translateX(0rem);
-}
-
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a:focus-within::before {
-	transform: translateX(0rem);
-}
-
-#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div > a > img {
-	display: block;
 }
 
 /* there's an empty menu item in the old sidebar design */
@@ -6126,6 +6037,181 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	margin: 0 auto;
 	overflow: hidden;
 	filter: grayscale(1);
+}
+
+/* Collapsibles in the sidebar */
+
+#side-bar div.collapsible-block {
+	position: relative;
+	flex-basis: 100%;
+	width: 100%;
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded,
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link {
+	--wght: calc(var(--ui-wght) + 300);
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	height: 1.5rem;
+	min-height: 1.5rem;
+	margin: 0 0 0.25rem 0;
+	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
+	font-family: var(--title-font);
+	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.9);
+	letter-spacing: 0.016em;
+	line-height: 1.15;
+	text-indent: 0.25rem;
+	text-transform: uppercase;
+	margin: 0;
+	position: relative;
+}
+
+#side-bar div.collapsible-block a.collapsible-block-link {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	flex-grow: 2;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
+	transition: 
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	color: rgb(var(--sidebar-collapsible-link-color));
+}
+
+#side-bar a.collapsible-block-link:hover,
+#side-bar a.collapsible-block-link:active {
+	--wght: calc(var(--ui-hvr-wght) + 300);
+	text-decoration: none;
+}
+
+#side-bar a.collapsible-block-link:focus-within {
+	--wght: var(--ui-hvr-wght);
+	text-decoration: none;
+}
+
+/* create a dropdown triangle next to the collapsible */
+
+#side-bar div.collapsible-block a.collapsible-block-link::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2rem;
+	height: 100%;
+	transition: 
+		transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	        mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='windows-1252'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-position: 50% 50%;
+	        mask-position: 50% 50%;
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded a.collapsible-block-link {
+	background: rgba(var(--sidebar-collapsible-fld-link-bg));
+	color: rgb(var(--sidebar-collapsible-fld-link-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:hover,
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:active {
+	background: rgba(var(--sidebar-collapsible-fld-link-hover-bg));
+	color: rgb(var(--sidebar-collapsible-fld-link-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:focus-within {
+	background: rgba(var(--sidebar-collapsible-fld-link-hover-bg));
+	color: rgb(var(--sidebar-collapsible-fld-link-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link::after {
+	background: rgba(var(--sidebar-collapsible-fld-arrow-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:hover:after,
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:active:after {
+	background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:focus-within:after {
+	background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link.collapsible-block-link {
+	background: rgba(var(--sidebar-collapsible-ufld-link-bg));
+	color: rgb(var(--sidebar-collapsible-ufld-link-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:hover,
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:active {
+	background: rgba(var(--sidebar-collapsible-ufld-link-hover-bg));
+	color: rgb(var(--sidebar-collapsible-ufld-link-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:focus-within {
+	background: rgba(var(--sidebar-collapsible-ufld-link-hover-bg));
+	color: rgb(var(--sidebar-collapsible-ufld-link-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link::after {
+	background: rgba(var(--sidebar-collapsible-ufld-arrow-color));
+	transform: rotate(180deg);
+}
+
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:hover:after,
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:active:after {
+	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
+}
+
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:focus-within:after {
+	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
+}
+
+/* create a gap next to the collapsible contents */
+
+#side-bar .collapsible-block-content {
+	box-sizing: border-box;
+	border-right: 2rem solid rgba(var(--sidebar-border-color));
+}
+
+/* hide the last border within the collapsible */
+
+#side-bar .collapsible-block-content .menu-item:last-of-type {
+	border-bottom: none;
+}
+
+#side-bar .collapsible-block-unfolded-link {
+	border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
+}
+
+#side-bar div.collapsible-block-content {
+	background-color: rgb(var(--sidebar-collapsible-body-bg));
+}
+
+#side-bar div.collapsible-block-content div.menu-item a::before {
+	background-color: rgb(var(--sidebar-collapsible-link-hover-bg));
+}
+
+#side-bar div.collapsible-block-content div.menu-item a,
+#side-bar div.collapsible-block-content div.menu-item a:visited {
+	color: rgb(var(--sidebar-collapsible-link-color));
+}
+
+#side-bar div.collapsible-block-content div.menu-item a:hover,
+#side-bar div.collapsible-block-content div.menu-item a:active {
+	color: rgb(var(--sidebar-collapsible-link-hover-color));
+}
+
+#side-bar div.collapsible-block-content div.menu-item a:focus-within {
+	color: rgb(var(--sidebar-collapsible-link-hover-color));
 }
 
 /* ===COMMON THEME COMPATABILITY=== */

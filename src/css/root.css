@@ -446,10 +446,29 @@
 	--sidebar-links-hover-text-color: var(--swatch-text-secondary-color);
 
 		/* ===SIDEBAR COLLAPSIBLES=== */
-	--sidebar-collapsible-link-color: var(--swatch-text-secondary-color);
-	--sidebar-collapsible-link-hover-color: var(--swatch-text-secondary-color);
+			/*Folded Colors */
+	--sidebar-collapsible-fld-link-bg: var(--swatch-primary-darker), 0.25;	
+	--sidebar-collapsible-fld-link-color: var(--swatch-primary-darkest);
+	--sidebar-collapsible-fld-link-hover-bg: var(--swatch-primary-darker);
+	--sidebar-collapsible-fld-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-fld-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-fld-arrow-hover-color: var(--swatch-text-secondary-color);
+
+			/*Unfolded Colors */
+	--sidebar-collapsible-ufld-link-bg: var(--swatch-primary-darker), 0.25;	
+	--sidebar-collapsible-ufld-link-color: var(--swatch-primary-darkest);
+	--sidebar-collapsible-ufld-link-hover-bg: var(--swatch-primary), 1;
+	--sidebar-collapsible-ufld-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-ufld-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-ufld-arrow-hover-color: var(--swatch-text-secondary-color);
+
+			/* Unfolded Body Colors */
+	--sidebar-collapsible-body-bg: var(--bright-accent), 0.125;
+	--sidebar-collapsible-link-color: var(--swatch-menutxt-general-color);
 	--sidebar-collapsible-link-hover-bg: var(--swatch-primary);
-	--sidebar-collapsible-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-link-hover-color: var(--swatch-text-secondary-color);
+	
+	
 		/* Background for Collapsibles Within Sideblocks */
 	--sidebar-sideblock-collapsible-bg: var(--medium-accent);
 }
