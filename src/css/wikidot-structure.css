@@ -205,7 +205,7 @@ div.page-watch-options {
 }
 
 div.page-watch-options a:any-link {
-	--hover-link-color: var(--swatch-menutxt-light-color);
+	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
 	margin: -0.15em 0;
 	padding: 0.15em;
@@ -222,7 +222,7 @@ div.page-watch-options a:hover,
 div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
 }
 
@@ -1496,14 +1496,14 @@ form#edit-page-form .edit-help-34 > a:nth-of-type(2):active::before {
 	content: " | ";
 	position: absolute;
 	left: -1em;
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 form#edit-page-form .edit-help-34 > a:nth-of-type(2):focus-within::before {
 	content: " | ";
 	position: absolute;
 	right: -1em;
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 form#edit-page-form .edit-help-34 > a::after {
@@ -2722,7 +2722,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 /* ===MODALS=== */
 div.odialog-shader {
-	background-color: rgb(var(--swatch-menubg-dark-color),0.5);
+	background-color: rgb(var(--swatch-alternate-color),0.5);
 	pointer-events: none;
 }
 
@@ -2744,8 +2744,8 @@ div.odialog-shader-iframe {
 	border: none;
 	background-color: rgb(var(--modal-bg));
 	box-shadow: 
-		inset 0 0 0 0.125rem rgba(var(--swatch-menubg-dark-color),0.25),
-		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-menubg-dark-color),0.25);
+		inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color),0.25),
+		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color),0.25);
 	color: rgb(var(--modal-body-text));
 }
 	
@@ -2934,7 +2934,7 @@ div.odialog-shader-iframe {
 .post-container > .post > div.long > div.options a:hover,
 .post-container > .post > div.long > div.options a:active {
 	background-color: rgba(30, 55, 30, 1);
-	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	background-color: rgba(var(--swatch-alternate-color), 1);
 	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
@@ -2944,7 +2944,7 @@ div.odialog-shader-iframe {
 #page-content > div.forum-thread-box > div.options > a:focus-within,
 .post-container > .post > div.long > div.options a:focus-within {
 	background-color: rgba(30, 55, 30, 1);
-	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	background-color: rgba(var(--swatch-alternate-color), 1);
 	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;

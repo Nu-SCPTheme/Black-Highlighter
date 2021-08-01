@@ -249,6 +249,7 @@
 	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
 	--swatch-secondary-color: var(--swatch-menubg-light-color);
 	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
+	--swatch-alternate-color: var(--swatch-menubg-dark-color);
 
 	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
 	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
@@ -380,13 +381,13 @@
 	--search-icon-color: var(--swatch-menubg-light-color);
 	--search-icon-bg-color: var(--bright-accent);
 	--search-icon-hover-color: var(--swatch-menubg-light-color);
-	--search-icon-hover-bg-color: var(--swatch-menubg-dark-color);
+	--search-icon-hover-bg-color: var(--swatch-alternate-color);
 	--search-textbox-text-color: 0,0,0,0;
 			/* Focus is when the search box has been clicked on */
 	--search-icon-focus-color: var(--swatch-menubg-light-color);
 	--search-icon-focus-bg-color: var(--bright-accent);
 	--search-focus-outline-color: var(--swatch-primary);
-	--search-focus-textbox-bg-color: var(--swatch-menubg-dark-color);
+	--search-focus-textbox-bg-color: var(--swatch-alternate-color);
 	--search-focus-textbox-text-color: var(--swatch-text-secondary-color);
 
 		/* ===LOGIN BOX ELEMENT=== */
@@ -417,7 +418,7 @@
 	--mobile-topmenu-sidebar-button-color: var(--swatch-text-secondary-color);
 
 		/* ===DROPDOWN MENU=== */
-	--dropdown-bg-color: var(--swatch-menubg-dark-color), 0.9;
+	--dropdown-bg-color: var(--swatch-alternate-color), 0.9;
 	--dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
 	--dropdown-links-color: var(--swatch-text-secondary-color);
 	--dropdown-links-bg-color: 0,0,0,0; /* Transparent */
@@ -502,7 +503,7 @@
 /* ===LICENSE AREA=== */
 
 #license-area {
-	--license-bg-color: var(--swatch-menubg-dark-color);
+	--license-bg-color: var(--swatch-alternate-color);
 	--license-text-color: var(--swatch-text-secondary-color);
 	--license-link-color: var(--swatch-text-secondary-color);
 	--license-link-hover-color: var(--swatch-primary);
@@ -2027,13 +2028,13 @@ div.dblock {
 @keyframes lift-in {
 	from {
 		box-shadow:
-		0 0 0 0 rgba(var(--swatch-menubg-dark-color), 0.25),
+		0 0 0 0 rgba(var(--swatch-alternate-color), 0.25),
 		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
 
 	to {
 		box-shadow:
-		0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-menubg-dark-color),0.25),
+		0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-alternate-color),0.25),
 		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));		
 	}
 }
@@ -2254,7 +2255,7 @@ div.page-watch-options {
 }
 
 div.page-watch-options a:-webkit-any-link {
-	--hover-link-color: var(--swatch-menutxt-light-color);
+	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
 	margin: -0.15em 0;
 	padding: 0.15em;
@@ -2274,7 +2275,7 @@ div.page-watch-options a:-webkit-any-link {
 }
 
 div.page-watch-options a:any-link {
-	--hover-link-color: var(--swatch-menutxt-light-color);
+	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
 	margin: -0.15em 0;
 	padding: 0.15em;
@@ -2292,7 +2293,7 @@ div.page-watch-options a:hover,
 div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
 }
 
@@ -3764,14 +3765,14 @@ form#edit-page-form .edit-help-34 > a:nth-of-type(2):active::before {
 	content: " | ";
 	position: absolute;
 	left: -1em;
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 form#edit-page-form .edit-help-34 > a:nth-of-type(2):focus-within::before {
 	content: " | ";
 	position: absolute;
 	right: -1em;
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 form#edit-page-form .edit-help-34 > a::after {
@@ -5197,7 +5198,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 /* ===MODALS=== */
 
 div.odialog-shader {
-	background-color: rgb(var(--swatch-menubg-dark-color),0.5);
+	background-color: rgb(var(--swatch-alternate-color),0.5);
 	pointer-events: none;
 }
 
@@ -5219,8 +5220,8 @@ div.odialog-shader-iframe {
 	border: none;
 	background-color: rgb(var(--modal-bg));
 	box-shadow: 
-		inset 0 0 0 0.125rem rgba(var(--swatch-menubg-dark-color),0.25),
-		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-menubg-dark-color),0.25);
+		inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color),0.25),
+		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color),0.25);
 	color: rgb(var(--modal-body-text));
 }
 
@@ -5411,7 +5412,7 @@ div.odialog-shader-iframe {
 .post-container > .post > div.long > div.options a:hover,
 .post-container > .post > div.long > div.options a:active {
 	background-color: rgba(30, 55, 30, 1);
-	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	background-color: rgba(var(--swatch-alternate-color), 1);
 	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
@@ -5421,7 +5422,7 @@ div.odialog-shader-iframe {
 #page-content > div.forum-thread-box > div.options > a:focus-within,
 .post-container > .post > div.long > div.options a:focus-within {
 	background-color: rgba(30, 55, 30, 1);
-	background-color: rgba(var(--swatch-menubg-dark-color), 1);
+	background-color: rgba(var(--swatch-alternate-color), 1);
 	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
@@ -6722,7 +6723,7 @@ div#container-wrap {
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in {
 	margin: 0 1em;
 	background-color: rgba(var(--swatch-primary-darker), 1);
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-text-secondary-color));
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:hover,
@@ -7466,14 +7467,14 @@ div.mobile-top-bar {
 #top-bar > .ct-theme-switch .lightbulb,
 #top-bar > .ct-theme-switch:hover .lightbulb,
 #top-bar > .ct-theme-switch:active .lightbulb {
-	border: 0.125rem solid rgb(var(--swatch-menubg-medium-color));
+	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
 	border-radius: 1.0625rem;
 	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
 		inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
 }
 
 #top-bar > .ct-theme-switch:focus-within .lightbulb {
-	border: 0.125rem solid rgb(var(--swatch-menubg-medium-color));
+	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
 	border-radius: 1.0625rem;
 	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
 		inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
@@ -7495,11 +7496,11 @@ div.mobile-top-bar {
 #top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
 #top-bar > .ct-theme-switch:hover .lightbulb .lightbulb-mask,
 #top-bar > .ct-theme-switch:active .lightbulb .lightbulb-mask {
-	background-color: rgb(var(--swatch-menutxt-light-color)) !important;
+	background-color: rgb(var(--swatch-text-secondary-color)) !important;
 }
 
 #top-bar > .ct-theme-switch:focus-within .lightbulb .lightbulb-mask {
-	background-color: rgb(var(--swatch-menutxt-light-color)) !important;
+	background-color: rgb(var(--swatch-text-secondary-color)) !important;
 }
 
 /* ===MOBILE HEADER=== */
@@ -8203,7 +8204,7 @@ div.blockquote,
 		slide-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
 	background-color: transparent;
 	box-shadow:
-		0 0 0 0 rgba(var(--swatch-menubg-dark-color),0.25),
+		0 0 0 0 rgba(var(--swatch-alternate-color),0.25),
 		inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 }
 
@@ -8745,8 +8746,8 @@ div.blockquote,
 	border-radius: 0;
 	background: rgb(var(--modal-bg));
 	box-shadow: 
-		inset 0 0 0 0.125rem rgba(var(--swatch-menubg-dark-color),0.25),
-		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-menubg-dark-color),0.25);
+		inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color),0.25),
+		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color),0.25);
 }
 
 [id*="u-credit"] .modalbox > div:first-of-type {
@@ -9360,7 +9361,7 @@ table[style*="margin:0"] * {
 	border-radius: 0;
 	background-color: rgb(var(--swatch-background));
 	box-shadow: 
-		0 0 0 0.125rem rgba(var(--swatch-menubg-dark-color),0.25);
+		0 0 0 0.125rem rgba(var(--swatch-alternate-color),0.25);
 	text-align: center;
 }
 
@@ -9382,7 +9383,7 @@ table[style*="margin:0"] * {
 		transparent 75%, 
 		transparent 100%);
 	background-size: 3rem 4.35rem;
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-text-secondary-color));
 	text-transform: uppercase;
 }
 
@@ -9631,8 +9632,8 @@ div.wiki-note:after {
 .browserupgrade {
 	margin: 0.2em 0;
 	padding: 0.2em 0;
-	background: rgb(var(--swatch-menubg-light-color));
-	color: rgb(var(--swatch-menutxt-dark-color));
+	background: rgb(var(--swatch-secondary-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 /* Sexy Box (apparently) */
@@ -9697,7 +9698,7 @@ div.keycap {
     font-size: 0.6875rem;
     line-height: 0.8125;
     text-decoration: none;
-	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-menubg-dark-color));
+	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
 	-webkit-clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
 	        clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
 }
@@ -9716,7 +9717,7 @@ div.tags {
 	transform: translateY(-50%);
     border-radius: 50%;
     background: rgb(var(--swatch-background));
-    box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-menubg-dark-color));
+    box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-alternate-color));
 }
 
 /* General Odate Styling */
@@ -10219,7 +10220,7 @@ body#translations {
 	height: 1.5625rem;
 	padding-right: 1rem;
 	color: rgb(252, 252, 252);
-	color: rgb(var(--swatch-menutxt-light-color));
+	color: rgb(var(--swatch-text-secondary-color));
 	font-size: calc(0.875rem * 0.95);
 	letter-spacing: 0.2rem;
 	line-height: 1.5625;
@@ -10257,7 +10258,7 @@ body#translations {
 	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
 	color: rgb(12, 12, 12);
-	color: rgb(var(--swatch-menutxt-dark-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 	font-size: 0.875rem;
 	font-size: calc(var(--base-font-size) * (14 / 15));
 	letter-spacing: 0.04em;

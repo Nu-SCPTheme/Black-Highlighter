@@ -229,6 +229,7 @@
 	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
 	--swatch-secondary-color: var(--swatch-menubg-light-color);
 	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
+	--swatch-alternate-color: var(--swatch-menubg-dark-color);
 
 	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
 	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
@@ -360,13 +361,13 @@
 	--search-icon-color: var(--swatch-menubg-light-color);
 	--search-icon-bg-color: var(--bright-accent);
 	--search-icon-hover-color: var(--swatch-menubg-light-color);
-	--search-icon-hover-bg-color: var(--swatch-menubg-dark-color);
+	--search-icon-hover-bg-color: var(--swatch-alternate-color);
 	--search-textbox-text-color: 0,0,0,0;
 			/* Focus is when the search box has been clicked on */
 	--search-icon-focus-color: var(--swatch-menubg-light-color);
 	--search-icon-focus-bg-color: var(--bright-accent);
 	--search-focus-outline-color: var(--swatch-primary);
-	--search-focus-textbox-bg-color: var(--swatch-menubg-dark-color);
+	--search-focus-textbox-bg-color: var(--swatch-alternate-color);
 	--search-focus-textbox-text-color: var(--swatch-text-secondary-color);
 
 		/* ===LOGIN BOX ELEMENT=== */
@@ -397,7 +398,7 @@
 	--mobile-topmenu-sidebar-button-color: var(--swatch-text-secondary-color);
 
 		/* ===DROPDOWN MENU=== */
-	--dropdown-bg-color: var(--swatch-menubg-dark-color), 0.9;
+	--dropdown-bg-color: var(--swatch-alternate-color), 0.9;
 	--dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
 	--dropdown-links-color: var(--swatch-text-secondary-color);
 	--dropdown-links-bg-color: 0,0,0,0; /* Transparent */
@@ -480,7 +481,7 @@
 
 	/* ===LICENSE AREA=== */
 #license-area {
-	--license-bg-color: var(--swatch-menubg-dark-color);
+	--license-bg-color: var(--swatch-alternate-color);
 	--license-text-color: var(--swatch-text-secondary-color);
 	--license-link-color: var(--swatch-text-secondary-color);
 	--license-link-hover-color: var(--swatch-primary);
