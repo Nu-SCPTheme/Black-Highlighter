@@ -6325,7 +6325,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		padding-right: var(--sidebar-width-on-mobile);
 		transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 		opacity: 0;
-		background: rgba(12, 12, 12, 0.3) 0.0625rem 0.0625rem repeat;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem
 			0.0625rem repeat;
 		pointer-events: none;
@@ -6337,8 +6336,8 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		display: block;
 		z-index: 10;
 		left: 0;
-		width: var(--sidebar-width-on-mobile) !important;
-		max-width: calc(80vw + (var(--base-font-size) * 0.5)) !important;
+		width: var(--sidebar-width-on-mobile);
+		max-width: calc(80vw + (var(--base-font-size) * 0.5));
 		margin: 0;
 		overflow-x: hidden;
 		box-shadow: inset 0 0 0 -0.0625rem var(--box-shadow);
@@ -6700,6 +6699,7 @@ div#container-wrap {
 /* ===LOGIN BOX=== */
 
 #login-status {
+	--wght: var(--ui-wght);
 	display: flex;
 	position: absolute;
 	z-index: 11;
@@ -6738,11 +6738,13 @@ div#container-wrap {
 }
 
 #login-status span.printuser {
+	--wght: var(--ui-wght);
 	margin-right: 0.5em;
 	color: rgb(var(--login-username-color));
 }
 
 #login-status a#my-account {
+	--wght: var(--ui-wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -6765,6 +6767,14 @@ div#container-wrap {
 
 #login-status a#my-account:hover,
 #login-status a#my-account:active {
+	--wght: var(--ui-hvr-wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
+	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+}
+
+#login-status a#my-account:focus-within {
+	--wght: var(--ui-hvr-wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
@@ -6852,8 +6862,11 @@ div#container-wrap {
 	box-shadow: inset 0 0 0 0.0625rem var(--login-dropdown-border-color);
 }
 
-#login-status #account-options li > a,
-#login-status #account-options li > a:visited {
+#login-status #account-options li > a:-webkit-any-link {
+	color: rgb(var(--login-dropdown-text-color));
+}
+
+#login-status #account-options li > a:any-link {
 	color: rgb(var(--login-dropdown-text-color));
 }
 

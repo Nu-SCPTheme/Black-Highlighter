@@ -319,6 +319,7 @@ div#container-wrap {
 
 /* ===LOGIN BOX=== */
 #login-status {
+	--wght: var(--ui-wght);
 	display: flex;
 	position: absolute;
 	z-index: 11;
@@ -356,11 +357,13 @@ div#container-wrap {
 }
 
 #login-status span.printuser {
+	--wght: var(--ui-wght);
 	margin-right: 0.5em;
 	color: rgb(var(--login-username-color));
 }
 
 #login-status a#my-account {
+	--wght: var(--ui-wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -375,6 +378,13 @@ div#container-wrap {
 
 #login-status a#my-account:hover,
 #login-status a#my-account:active {
+	--wght: var(--ui-hvr-wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
+	text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+}
+
+#login-status a#my-account:focus-within {
+	--wght: var(--ui-hvr-wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 	text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 }
@@ -457,8 +467,7 @@ div#container-wrap {
 	box-shadow: inset 0 0 0 0.0625rem var(--login-dropdown-border-color);
 }
 
-#login-status #account-options li > a,
-#login-status #account-options li > a:visited {
+#login-status #account-options li > a:any-link {
 	color: rgb(var(--login-dropdown-text-color));
 }
 
