@@ -7209,12 +7209,12 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li > ul li:hover > a,
 #header div[class*="top-bar"] > ul > li > ul li:active > a {
 	--wght: var(--ui-hvr-wght);
-	color: var(--dropdown-links-hover-color);
+	color: rgb(var(--dropdown-links-hover-color));
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:focus-within > a {
 	--wght: var(--ui-hvr-wght);
-	color: var(--dropdown-links-hover-color);
+	color: rgb(var(--dropdown-links-hover-color));
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:hover > a::before,
@@ -8942,7 +8942,7 @@ table.wiki-content-table {
 	margin: 0.5em auto;
 	border-spacing: 0;
 	background-color: rgb(var(--tables-body-bg));
-	color: var(--tables-body-txt);
+	color: rgb(var(--tables-body-txt));
 }
 
 table.wiki-content-table th {
