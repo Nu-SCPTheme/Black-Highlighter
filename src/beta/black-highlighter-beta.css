@@ -386,7 +386,7 @@
 	--search-icon-focus-color: var(--swatch-menubg-light-color);
 	--search-icon-focus-bg-color: var(--bright-accent);
 	--search-focus-outline-color: var(--swatch-primary);
-	--search-focus-textbox-bg-color: var(--swatch-menubg-dark-color), 0.7;
+	--search-focus-textbox-bg-color: var(--swatch-menubg-dark-color);
 	--search-focus-textbox-text-color: var(--swatch-text-secondary-color);
 
 		/* ===LOGIN BOX ELEMENT=== */
@@ -6578,8 +6578,8 @@ div#container-wrap {
 }
 
 #search-top-box:focus-within {
-	background: rgba(var(--search-active-textbox-bg-color));
-	box-shadow: calc(var(--search-height) / 2 * -1) 0 calc(var(--search-height) / 2) rgba(var(--search-active-textbox-bg-color));
+	background: rgba(var(--search-focus-textbox-bg-color),0.7);
+	box-shadow: calc(var(--search-height) / 2 * -1) 0 calc(var(--search-height) / 2) rgba(var(--search-focus-textbox-bg-color));
 }
 
 #search-top-box::before,
