@@ -251,8 +251,8 @@
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: flex-start;
-	min-height: 1.5rem;
 	height: 1.5rem;
+	min-height: 1.5rem;
 	margin: 0;
 	padding: 0;
 	box-shadow: 
@@ -505,11 +505,13 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link {
 	--wght: calc(var(--ui-wght) + 300);
 	display: flex;
+	position: relative;
 	align-items: flex-end;
 	justify-content: flex-start;
 	height: 1.5rem;
 	min-height: 1.5rem;
 	margin: 0 0 0.25rem 0;
+	margin: 0;
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 	font-family: var(--title-font);
 	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.9);
@@ -517,8 +519,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	line-height: 1.15;
 	text-indent: 0.25rem;
 	text-transform: uppercase;
-	margin: 0;
-	position: relative;
 }	
 
 #side-bar div.collapsible-block a.collapsible-block-link {
@@ -613,8 +613,8 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 }
 
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link::after {
-	background: rgba(var(--sidebar-collapsible-ufld-arrow-color));
 	transform: rotate(180deg);
+	background: rgba(var(--sidebar-collapsible-ufld-arrow-color));
 }
 
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:hover:after,
