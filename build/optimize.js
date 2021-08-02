@@ -5,17 +5,13 @@ const gifsicle = require('imagemin-gifsicle');
 const optipng = require('imagemin-optipng');
 const svgo = require('imagemin-svgo');
 
-const process = async (minifier, inputPath, outputPath) => {
-	try {
-		const inputBuffer = await fs.readFile(inputPath);
-		const outputBuffer = await minifier(inputBuffer);
-		await fs.writeFile(outputPath, outputBuffer);
-	} catch (e) {
-		console.error(`process error: ${e}`);
-	}
+async function process(minifier, inputPath, outputPath) {
+	const inputBuffer = await fs.readFile(inputPath);
+	const outputBuffer = await minifier(inputBuffer);
+	await fs.writeFile(outputPath, outputBuffer);
 }
 
-const main = () => {
+function main() {
 	// Usage: node build/optimize.js <file-type> <input> <output>
 	const fileType = process2.argv[2];
 	const input = process2.argv[3];
@@ -30,23 +26,23 @@ const main = () => {
 			minifier = optipng({ optimizationLevel: 5 });
 			break;
 		case 'svg':
-			minifier = svgo({
-				plugins: [
-					{ name: 'removeDoctype', active: false },
-					{ name: 'removeViewBox', active: false },
-					{ name: 'removeXMLProcInst', active: false },
-					{ name: 'collapseGroups' },
-					{ name: 'convertPathData' },
-					{ name: 'removeUselessStrokeAndFill' },
-					{ name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
-					{ name: 'mergePaths' },
-					{ name: 'sortAttrs' },
-					{ name: 'convertShapeToPath' },
-				],
-			});
-			break;
+		minifier = svgo({
+			plugins: [
+				{ name: 'removeDoctype',active: false},
+				{ name: 'removeViewBox', active: false },
+				{ name: 'removeXMLProcInst', active: false },
+				{ name: 'collapseGroups' }, 
+				{ name: 'convertPathData' },
+				{ name: 'removeUselessStrokeAndFill' },
+				{ name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
+				{ name: 'mergePaths' },
+				{ name: 'sortAttrs' },
+				{ name: 'convertShapeToPath' },
+			],
+		});
+		break;
 		default:
-			throw new Error(`Unknown image type to optimize: ${fileType}`);
+		throw new Error(`Unknown image type to optimize: ${fileType}`);
 	}
 
 	process(minifier, input, output);
