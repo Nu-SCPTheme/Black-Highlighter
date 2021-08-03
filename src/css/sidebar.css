@@ -358,7 +358,6 @@
 #side-bar div.menu-item a:hover,
 #side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -366,7 +365,6 @@
 
 #side-bar div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -535,7 +533,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	justify-content: flex-start;
 	height: 1.5rem;
 	min-height: 1.5rem;
-	margin: 0 0 0.25rem 0;
 	margin: 0;
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 	font-family: var(--title-font);
@@ -753,7 +750,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		position: fixed;
 		z-index: 10;
 		top: 0;
-		left: -16.625rem;
 		left: calc(var(--sidebar-width-on-mobile) * -1);
 		width: var(--sidebar-width-on-mobile);
 		max-width: calc(80vw + (var(--base-font-size) * 0.5));

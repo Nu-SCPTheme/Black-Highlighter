@@ -94,8 +94,7 @@ div#container-wrap {
 
 #header h1 a::before {
 	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
-	content: "SCP Foundation";
-	content: var(--header-title);
+	content: var(--header-title, "SCP Foundation");
 	color: rgb(var(--swatch-headerh1-color));
 	text-shadow: none;
 }
@@ -127,8 +126,7 @@ div#container-wrap {
 }
 
 #header h2 span::before {
-	content: "SECURE, CONTAIN, PROTECT";
-	content: var(--header-subtitle);
+	content: var(--header-subtitle, "SECURE, CONTAIN, PROTECT");
 	color: rgb(var(--swatch-headerh2-color));
 	text-shadow: none;
 }

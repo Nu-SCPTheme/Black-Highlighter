@@ -4006,7 +4006,6 @@ form#edit-page-form textarea {
 form#edit-page-form .edit-help-34 {
 	--wght: var(--ui-wght);
 	display: flex;
-	display: flex;
 	grid-area: edit-help;
 	flex-wrap: wrap;
 	align-items: center;
@@ -4212,7 +4211,6 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) textarea {
 	--wght: var(--ui-wght);
-	z-index: -1;
 	z-index: 1;
 	width: calc(100% - 2.95384em);
 	height: 100%;
@@ -6193,7 +6191,6 @@ div.odialog-shader-iframe {
 #side-bar div.menu-item a:hover,
 #side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -6201,7 +6198,6 @@ div.odialog-shader-iframe {
 
 #side-bar div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	background-color: rgba(12, 12, 12, 0.15);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -6379,7 +6375,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	justify-content: flex-start;
 	height: 1.5rem;
 	min-height: 1.5rem;
-	margin: 0 0 0.25rem 0;
 	margin: 0;
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 	font-family: var(--title-font);
@@ -6604,7 +6599,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		position: fixed;
 		z-index: 10;
 		top: 0;
-		left: -16.625rem;
 		left: calc(var(--sidebar-width-on-mobile) * -1);
 		width: var(--sidebar-width-on-mobile);
 		max-width: calc(80vw + (var(--base-font-size) * 0.5));
@@ -6791,8 +6785,7 @@ div#container-wrap {
 
 #header h1 a::before {
 	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
-	content: "SCP Foundation";
-	content: var(--header-title);
+	content: var(--header-title, "SCP Foundation");
 	color: rgb(var(--swatch-headerh1-color));
 	text-shadow: none;
 }
@@ -6824,8 +6817,7 @@ div#container-wrap {
 }
 
 #header h2 span::before {
-	content: "SECURE, CONTAIN, PROTECT";
-	content: var(--header-subtitle);
+	content: var(--header-subtitle, "SECURE, CONTAIN, PROTECT");
 	color: rgb(var(--swatch-headerh2-color));
 	text-shadow: none;
 }
@@ -9643,7 +9635,6 @@ table[style*="margin:0"] * {
 	max-width: var(--sidebar-width-on-desktop);
 	max-height: calc(100vh - 2em);
 	padding-top: 0.25rem;
-	overflow: hidden;
 	overflow: auto;
 	overflow-x: hidden;
 	overflow-y: auto;
