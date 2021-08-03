@@ -303,6 +303,14 @@ div.page-watch-options a:active {
 	text-decoration: none;
 }
 
+div.page-watch-options a:focus-within {
+	--wght: calc(var(--ui-hvr-wght) + 200);
+	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
+}
+
+
 /* ===PAGE TAGS=== */
 #main-content .page-tags {
 	display: block;

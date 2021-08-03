@@ -363,7 +363,7 @@ div#container-wrap {
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:focus-within,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:hover:focus-within {
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:focus-within {
 	background-color: rgba(var(--swatch-primary), 1);
 }
 
@@ -1006,7 +1006,7 @@ div.mobile-top-bar {
 /* Backdrop Filter Blur Support */
 
 @supports (backdrop-filter: blur(1rem)) {
-	#header div[class*="top-bar"] > ul > li ul {
+	#header div[class*="top-bar"] ul > li > ul {
 		backdrop-filter: blur(0);
 		transition: 
 			backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1014,7 +1014,12 @@ div.mobile-top-bar {
 			transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	#header div[class*="top-bar"] > ul > li:hover ul {
+	#header div[class*="top-bar"] ul > li:hover > ul,
+	#header div[class*="top-bar"] ul > li:active > ul {
+		backdrop-filter: blur(0.125rem);
+	}
+
+	#header div[class*="top-bar"] ul > li:focus-within > ul {
 		backdrop-filter: blur(0.125rem);
 	}
 }

@@ -741,6 +741,12 @@ div.blockquote,
 			color: transparent;
 		}
 
+		.page-rate-widget-box .rateup a:focus-within,
+		.page-rate-widget-box .ratedown a:focus-within,
+		.page-rate-widget-box .cancel a:focus-within {
+			color: transparent;
+		}
+
 		.page-rate-widget-box .rateup a::before,
 		.page-rate-widget-box .ratedown a::before,
 		.page-rate-widget-box .cancel a::before {
@@ -832,9 +838,15 @@ div.blockquote,
 	margin-bottom: 0;
 }
 
-#page-content .rate-box-with-credit-button > .creditButton:hover {
+#page-content .rate-box-with-credit-button > .creditButton:hover,
+#page-content .rate-box-with-credit-button > .creditButton:active {
 	background: initial;
 }
+
+#page-content .rate-box-with-credit-button > .creditButton:focus-within {
+	background: initial;
+}
+
 
 #page-content .rate-box-with-credit-button > .creditButton > p {
 	display: block;

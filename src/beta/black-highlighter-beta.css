@@ -2436,6 +2436,13 @@ div.page-watch-options a:active {
 	text-decoration: none;
 }
 
+div.page-watch-options a:focus-within {
+	--wght: calc(var(--ui-hvr-wght) + 200);
+	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
+}
+
 /* ===PAGE TAGS=== */
 
 #main-content .page-tags {
@@ -7063,7 +7070,7 @@ div#container-wrap {
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:focus-within,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:hover:focus-within {
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:focus-within {
 	background-color: rgba(var(--swatch-primary), 1);
 }
 
@@ -7742,7 +7749,7 @@ div.mobile-top-bar {
 /* Backdrop Filter Blur Support */
 
 @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
-	#header div[class*="top-bar"] > ul > li ul {
+	#header div[class*="top-bar"] ul > li > ul {
 		-webkit-backdrop-filter: blur(0);
 		        backdrop-filter: blur(0);
 		transition: 
@@ -7760,7 +7767,13 @@ div.mobile-top-bar {
 			-webkit-backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	#header div[class*="top-bar"] > ul > li:hover ul {
+	#header div[class*="top-bar"] ul > li:hover > ul,
+	#header div[class*="top-bar"] ul > li:active > ul {
+		-webkit-backdrop-filter: blur(0.125rem);
+		        backdrop-filter: blur(0.125rem);
+	}
+
+	#header div[class*="top-bar"] ul > li:focus-within > ul {
 		-webkit-backdrop-filter: blur(0.125rem);
 		        backdrop-filter: blur(0.125rem);
 	}
@@ -8953,6 +8966,12 @@ div.blockquote,
 			color: transparent;
 		}
 
+		.page-rate-widget-box .rateup a:focus-within,
+		.page-rate-widget-box .ratedown a:focus-within,
+		.page-rate-widget-box .cancel a:focus-within {
+			color: transparent;
+		}
+
 		.page-rate-widget-box .rateup a::before,
 		.page-rate-widget-box .ratedown a::before,
 		.page-rate-widget-box .cancel a::before {
@@ -9051,7 +9070,12 @@ div.blockquote,
 	margin-bottom: 0;
 }
 
-#page-content .rate-box-with-credit-button > .creditButton:hover {
+#page-content .rate-box-with-credit-button > .creditButton:hover,
+#page-content .rate-box-with-credit-button > .creditButton:active {
+	background: initial;
+}
+
+#page-content .rate-box-with-credit-button > .creditButton:focus-within {
 	background: initial;
 }
 
