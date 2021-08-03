@@ -2242,104 +2242,119 @@ div.dblock {
 
 #breadcrumbs,
 .pseudocrumbs {
-    display: flex;
-    position: relative;
-    grid-area: breadcrumbs;
-    align-items: center;
-    justify-content: center;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: -1em 0 1em;
-    padding: 0 0.75em 0 0;
-    font-family: var(--UI-font);
-    font-size: 0.85em;
-    line-height: 1;
+	display: flex;
+	position: relative;
+	grid-area: breadcrumbs;
+	align-items: center;
+	justify-content: center;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	margin: -1em 0 1em;
+	padding: 0 0.75em 0 0;
+	font-family: var(--UI-font);
+	font-size: 0.85em;
+	line-height: 1;
 }
 
 #breadcrumbs a:-webkit-any-link, .pseudocrumbs a:-webkit-any-link {
-    display: flex;
-    position: relative;
-    z-index: 2;
+	display: flex;
+	position: relative;
+	z-index: 2;
 	margin-right: 0.75em;
-    padding: 0.25em 0.5em 0.25em 0.5em;
-    -webkit-transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	padding: 0.25em 0.5em 0.25em 0.5em;
+	-webkit-transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #breadcrumbs a:any-link,
 .pseudocrumbs a:any-link {
-    display: flex;
-    position: relative;
-    z-index: 2;
+	display: flex;
+	position: relative;
+	z-index: 2;
 	margin-right: 0.75em;
-    padding: 0.25em 0.5em 0.25em 0.5em;
-    transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	padding: 0.25em 0.5em 0.25em 0.5em;
+	transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #breadcrumbs a:hover,
 .pseudocrumbs a:hover,
 #breadcrumbs a:active,
 .pseudocrumbs a:active {
-    color: rgb(var(--swatch-text-secondary-color));
-    text-decoration: none;
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
 }
 
 #breadcrumbs a:focus-within,
 .pseudocrumbs a:focus-within {
-    color: rgb(var(--swatch-text-secondary-color));
-    text-decoration: none;
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
 }
 
 #breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: skew(-25deg); 
-    -webkit-transition: 
-        box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); 
-    transition: 
-        box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    background: transparent;
-    box-shadow: 
-        0.0625rem 0.0625rem 0 0 rgb(var(--swatch-primary)),
-        0.25rem 0.0625rem 0 0 rgb(var(--background-gradient-color),0.7),
-        0.25rem 0.0625rem 0 0 rgb(var(--swatch-background)),
-        0.3125rem 0.0625rem 0 0 rgb(var(--swatch-primary));
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: skew(-25deg); 
+	-webkit-transition: 
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); 
+	transition: 
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background: transparent;
+	box-shadow: 
+		0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary),1),
+		0.25rem 0.0625rem 0 0 rgba(var(--background-gradient-color),0.7),
+		0.25rem 0.0625rem 0 0 rgba(var(--swatch-background),1),
+		0.3125rem 0.0625rem 0 0 rgba(var(--swatch-primary),1);
 }
 
 #breadcrumbs a:any-link::before,
 .pseudocrumbs a:any-link::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: skew(-25deg); 
-    transition: 
-        box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    background: transparent;
-    box-shadow: 
-        0.0625rem 0.0625rem 0 0 rgb(var(--swatch-primary)),
-        0.25rem 0.0625rem 0 0 rgb(var(--background-gradient-color),0.7),
-        0.25rem 0.0625rem 0 0 rgb(var(--swatch-background)),
-        0.3125rem 0.0625rem 0 0 rgb(var(--swatch-primary));
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: skew(-25deg); 
+	transition: 
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background: transparent;
+	box-shadow: 
+		0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary),1),
+		0.25rem 0.0625rem 0 0 rgba(var(--background-gradient-color),0.7),
+		0.25rem 0.0625rem 0 0 rgba(var(--swatch-background),1),
+		0.3125rem 0.0625rem 0 0 rgba(var(--swatch-primary),1);
 }
 
 #breadcrumbs a:hover::before,
-.pseudocrumbs a:hover::before {
-    background-color: rgb(var(--swatch-primary));
-    box-shadow: 
-        0 0 0 0.25rem rgb(var(--swatch-primary));
+.pseudocrumbs a:hover::before,
+#breadcrumbs a:active::before,
+.pseudocrumbs a:active::before {
+	background-color: rgb(var(--swatch-primary));
+	box-shadow: 
+		0 0 0 0.25rem rgba(var(--swatch-primary),1),
+		0 0 0 0 rgba(var(--background-gradient-color),0),
+		0 0 0 0 rgba(var(--swatch-background),0),
+		0 0 0 0 rgba(var(--swatch-primary),0);
+}
+
+#breadcrumbs a:focus-within::before,
+.pseudocrumbs a:focus-within::before {
+	background-color: rgb(var(--swatch-primary));
+	box-shadow: 
+		0 0 0 0.25rem rgba(var(--swatch-primary),1),
+		0 0 0 0 rgba(var(--background-gradient-color),0),
+		0 0 0 0 rgba(var(--swatch-background),0),
+		0 0 0 0 rgba(var(--swatch-primary),0);
 }
 
 /* ===PAGE-CONTENT=== */
