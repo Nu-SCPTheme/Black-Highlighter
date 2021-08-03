@@ -30,6 +30,13 @@
 }
 
 .yui-navset .yui-nav {
+	--clip-path: 
+		polygon(
+			-0.0625rem -0.5rem, 
+			calc(100% + 0.0625rem) -0.5rem, 
+			calc(100% + 0.0625rem) 100%, 
+			-0.0625rem 100%
+		);
 	display: flex;
 	flex-wrap: wrap;
 	width: calc(100% - 0.125rem);
@@ -38,12 +45,7 @@
 	border: 0;
 	box-shadow: 0 0.3125rem 0 0 var(--tab-bottom-border-color);
 	font-family: var(--UI-font, var(--header-font));
-	clip-path: polygon(
-		-0.0625rem -0.5rem, 
-		calc(100% + 0.0625rem) -0.5rem, 
-		calc(100% + 0.0625rem) 100%, 
-		-0.0625rem 100%
-	);
+	clip-path: var(--clip-path);
 }
 
 .yui-navset .yui-nav a {
@@ -101,6 +103,13 @@
 }
 
 .yui-navset .yui-nav a::before {
+	--clip-path: 
+		polygon(
+			0 calc(100% - 0.25rem), 
+			calc(100% + 1rem) calc(100% - 0.25rem), 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	content: " ";
 	position: absolute;
 	z-index: 0;
@@ -113,19 +122,31 @@
 		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--tabs-bottom-border-color));
 	pointer-events: none;
-	clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+	clip-path: var(--clip-path);
 }
 
 .yui-navset .yui-nav li:hover a::before,
 .yui-navset .yui-nav li:active a::before,
 .yui-navset .yui-nav li:focus a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-hover-bg));
-	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav li:focus-within a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-hover-bg));
-	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav a em,
@@ -168,13 +189,25 @@
 .yui-navset .yui-nav .selected:hover a::before,
 .yui-navset .yui-nav .selected:focus a::before,
 .yui-navset .yui-nav .selected:active a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-selected-bg));
-	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav .selected:focus-within a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-selected-bg));
-	clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 
@@ -614,6 +647,13 @@ div.blockquote,
 .page-rate-widget-box .rateup a::after,
 .page-rate-widget-box .ratedown a::after,
 .page-rate-widget-box .cancel a::after {
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 100%, 
+			0% 115%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -623,7 +663,7 @@ div.blockquote,
 	height: 101%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
+	clip-path: var(--clip-path);
 }
 
 .page-rate-widget-box .rateup a::after {
@@ -644,13 +684,25 @@ div.blockquote,
 .page-rate-widget-box .ratedown a:active::after,
 .page-rate-widget-box .cancel a:hover::after,
 .page-rate-widget-box .cancel a:active::after {
-	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 .page-rate-widget-box .rateup a:focus-within::after,
 .page-rate-widget-box .ratedown a:focus-within::after,
 .page-rate-widget-box .cancel a:focus-within::after {
-	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 .page-rate-widget-box .rate-points {
@@ -807,6 +859,13 @@ div.blockquote,
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 100%, 
+			0% 115%
+		);
 	content: " ";
 	position: absolute;
 	z-index: 0;
@@ -815,7 +874,7 @@ div.blockquote,
 	height: 100%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
+	clip-path: var(--clip-path);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
@@ -824,11 +883,23 @@ div.blockquote,
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:hover::after,
 #page-content .rate-box-with-credit-button > .creditButton > p > a:active::after {
-	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:focus-within::after {
-	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
@@ -1575,8 +1646,14 @@ table[style*="margin:0"] * {
 }
 
 .pager .current:not(:last-of-type)::before {
+	--clip-path: 
+		polygon(
+			100% 0, 
+			0 100%, 
+			100% 100%
+		);
 	left: -1.5em;
-	clip-path: polygon(100% 0, 0 100%, 100% 100%);
+	clip-path: var(--clip-path);
 }
 
 .pager .current:last-of-type {
@@ -1584,8 +1661,14 @@ table[style*="margin:0"] * {
 }
 
 .pager .current:last-of-type::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 100%, 
+			100% 100%
+		);
 	right: -1.5em;
-	clip-path: polygon(0 0, 0 100%, 100% 100%);
+	clip-path: var(--clip-path);
 }
 
 .pager a {
@@ -1616,6 +1699,13 @@ table[style*="margin:0"] * {
 }
 
 .pager a::after {
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 100%, 
+			0% 115%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -1625,16 +1715,28 @@ table[style*="margin:0"] * {
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--pager-hover-bg));
 	pointer-events: none;
-	clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
+	clip-path: var(--clip-path);
 }
 
 .pager a:hover::after,
 .pager a:active::after {
-	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 .pager a:focus-within::after {
-	clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 /* ===WIKIDOT USER ICONS=== */
@@ -1793,6 +1895,14 @@ div.keycap {
 /* Reworked from Sigma-9 */
 
 .tags {
+	--clip-path: 
+		polygon(
+			0.5rem 0, 
+			100% 0, 
+			100% 100%, 
+			0.5rem 100%, 
+			0 50%
+		);
 	--wght: 500;
     display: inline;
 	position: relative;
@@ -1807,7 +1917,7 @@ div.keycap {
     line-height: 0.8125;
     text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
-	clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
+	clip-path: var(--clip-path);
 }
 
 div.tags {

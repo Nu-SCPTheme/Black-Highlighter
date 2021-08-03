@@ -477,6 +477,13 @@ input[type=checkbox] {
 
 input[type=checkbox]::before, 
 input[type=checkbox]::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 0, 
+			0 0
+		);
 	content: " ";
 	display: inline-block;
 	position: absolute;
@@ -485,7 +492,7 @@ input[type=checkbox]::after {
 	transform-origin: left top;
 	background-color: rgba(var(--swatch-primary),0);
 	box-shadow: 0 0 0 0 rgb(var(--swatch-secondary-color));
-	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	clip-path: var(--clip-path);
 	will-change: box-shadow, border-color;
 }
 
@@ -519,8 +526,14 @@ input[type=checkbox]:checked {
 
 input[type=checkbox]:checked::before,
 input[type=checkbox]:checked::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0% 100%
+		);
 	background-color: rgba(var(--swatch-primary),1);
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 	box-shadow: 0 0 0 0.05em rgb(var(--swatch-secondary-color));
 }
 

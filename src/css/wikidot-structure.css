@@ -155,11 +155,165 @@
 }
 
 /* ===BREADCRUMBS=== */
+
 #breadcrumbs,
 .pseudocrumbs {
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5em) 0, 
+			100% 50%, 
+			calc(100% - 0.5em) 100%, 
+			0 100%, 
+			0 0
+		);
+	display: flex;
+	position: relative;
 	grid-area: breadcrumbs;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
 	margin: -1em 0 1em;
+	padding: 0 0.75em 0 0;
+	font-family: var(--UI-font);
 	font-size: 0.85em;
+	line-height: 1;
+	clip-path: var(--clip-path);
+}
+
+#breadcrumbs a:any-link,
+.pseudocrumbs a:any-link {
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5em) 0, 
+			100% 50%, 
+			calc(100% - 0.5em) 100%, 
+			0 100%, 
+			0 0
+		);
+	display: flex;
+	position: relative;
+	margin-right: -0.5em;
+	padding: 0.25em 0.75em 0.25em 0.5em;
+	transition: 
+		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--swatch-background));
+	background-image: 
+		var(--gradient-background);
+	background-repeat: repeat-x;
+	background-position: fixed;
+	background-position: top calc(-1.8 * var(--final-header-height-on-desktop)) left;
+	background-size: 
+		100% var(--background-gradient-distance);
+		clip-path: var(--clip-path);
+}
+
+#breadcrumbs a:hover,
+.pseudocrumbs a:hover,
+#breadcrumbs a:active,
+.pseudocrumbs a:active {
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
+}
+
+#breadcrumbs a:focus-within,
+.pseudocrumbs a:focus-within {
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
+}
+
+#breadcrumbs::before,
+.pseudocrumbs::before,
+#breadcrumbs a:any-link::before,
+.pseudocrumbs a:any-link::before,
+#breadcrumbs a:any-link::after,
+.pseudocrumbs a:any-link::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+#breadcrumbs a:any-link::after,
+.pseudocrumbs a:any-link::after {
+	background-image: 
+		linear-gradient(140deg,
+			rgb(var(--swatch-primary),0) 0%,
+			rgb(var(--swatch-primary),0.15) 100%);
+}
+
+#breadcrumbs::before,
+.pseudocrumbs::before,
+#breadcrumbs a:any-link::before,
+.pseudocrumbs a:any-link::before{
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5625em) calc(100% - 0.125em), 
+			calc(100% - 0.125em) 50%, 
+			calc(100% - 0.625em) 0, 
+			calc(100% - 0.125em) 0, 
+			100% 50%, 
+			calc(100% - 0.125em) 100%, 
+			0 100%, 
+			0 calc(100% - 0.125em)
+		);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		clip-path: var(--clip-path);
+}
+
+#breadcrumbs::before,
+.pseudocrumbs::before {
+	background-image: 
+		linear-gradient(to right,
+			rgb(var(--swatch-primary-darkest),1) 0%,
+			rgb(var(--swatch-primary),0) 100%);
+}
+
+#breadcrumbs a:any-link::before,
+.pseudocrumbs a:any-link::before {
+	background-image: 
+		linear-gradient(100deg,
+			rgb(var(--swatch-primary-darkest),1) 0%,
+			rgb(var(--swatch-primary-darkest),0.5) 100%);
+}
+
+#breadcrumbs a:hover::before,
+.pseudocrumbs a:hover::before,
+#breadcrumbs a:active::before,
+.pseudocrumbs a:active::before {
+	--clip-path: 
+		polygon(
+			0 33%,
+			0 0,
+			calc(100% - 0.625em) 0, 
+			calc(100% - 0.125em) 0, 
+			100% 50%, 
+			calc(100% - 0.125em) 100%, 
+			0 100%, 
+			0 66%
+		);
+	background-color: rgb(var(--swatch-primary));
+}
+
+#breadcrumbs a:focus-within::before,
+.pseudocrumbs a:focus-within::before {
+	--clip-path: 
+	polygon(
+		0 33%,
+		0 0,
+		calc(100% - 0.625em) 0, 
+		calc(100% - 0.125em) 0, 
+		100% 50%, 
+		calc(100% - 0.125em) 100%, 
+		0 100%, 
+		0 66%
+	);
+	background-color: rgb(var(--swatch-primary));
 }
 
 /* ===PAGE-CONTENT=== */
@@ -257,6 +411,13 @@ div.page-watch-options a:active {
 }
 
 #main-content .page-tags span {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% - 0.0625rem) 0, 
+			calc(100% - 0.0625rem) 100%, 
+			0% 100%
+		);
 	display: flex;
 	position: relative;
 	flex-direction: row;
@@ -266,7 +427,7 @@ div.page-watch-options a:active {
 	height: 100%;
 	padding: 0;
 	font-size: 0.9em;
-	clip-path: polygon(0 0, calc(100% - 0.0625rem) 0, calc(100% - 0.0625rem) 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #main-content .page-tags span::after {
@@ -299,6 +460,13 @@ div.page-watch-options a:active {
 }
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"])::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -310,7 +478,7 @@ div.page-watch-options a:active {
 	opacity: 1;
 	background-color: rgb(var(--pagetags-text-hover-bg-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
@@ -336,11 +504,23 @@ div.page-watch-options a:active {
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover::before,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* Hiding Hidden Tags */
@@ -569,6 +749,13 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #footer a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -580,7 +767,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 	opacity: 1;
 	background-color: rgb(var(--footer-link-hover-bg-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #footer a:hover,
@@ -605,12 +792,24 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #footer a:hover::before,
-#footer .options>a:active::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+#footer a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #footer a:focus-within::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 
@@ -655,6 +854,13 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #license-area a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0,
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -666,7 +872,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 	opacity: 1;
 	background-color: rgb(var(--license-link-hover-bg-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #license-area a:hover,
@@ -689,12 +895,24 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #license-area a:hover::before,
-#license-area .options>a:active::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+#license-area a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #license-area a:focus-within::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 
@@ -1033,6 +1251,13 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li {
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div>ul>li>ul {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
 	display: grid;
 	top: 0;
 	left: var(--icon-size);
@@ -1050,11 +1275,19 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li>ul {
 	background-color: rgb(var(--swatch-background));
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-tertiary-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div>ul>li:hover>ul,
+form#edit-page-form .wd-editor-toolbar-panel div>ul>li:active>ul,
 form#edit-page-form .wd-editor-toolbar-panel div>ul>li.sfhover>ul {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0% 100%
+		);
 	left: var(--icon-size);
 	padding-left: 0.125em;
 	transition:
@@ -1063,7 +1296,24 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li.sfhover>ul {
 		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
 	pointer-events: all;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div>ul>li:focus-within>ul {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0% 100%
+		);
+	left: var(--icon-size);
+	padding-left: 0.125em;
+	transition:
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+		box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
+	pointer-events: all;
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a {
@@ -1111,6 +1361,13 @@ form#edit-page-form .wd-editor-toolbar-panel>li:focus-within a::before {
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	z-index: 0;
 	width: 100%;
 	height: 100%;
@@ -1118,16 +1375,28 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 	opacity: 1;
 	background-color: rgb(var(--editor-icon-hover-bg));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel li:hover>a::after,
 form#edit-page-form .wd-editor-toolbar-panel li:active>a::after {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel li:focus-within a::after {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1)>ul>li:nth-of-type(1) {
@@ -1519,6 +1788,13 @@ form#edit-page-form .edit-help-34>a:nth-of-type(2):focus-within::before {
 }
 
 form#edit-page-form .edit-help-34>a::after {
+	--clip-path: 
+		polygon(
+			100% 0, 
+			100% 0, 
+			100% 100%, 
+			100% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -1529,7 +1805,7 @@ form#edit-page-form .edit-help-34>a::after {
 	opacity: 1;
 	background-color: rgb(var(--swatch-primary));
 	pointer-events: none;
-	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	clip-path: var(--clip-path);
 }
 
 form#edit-page-form .edit-help-34>a:hover,
@@ -1555,11 +1831,23 @@ form#edit-page-form .edit-help-34>a:focus-within {
 
 form#edit-page-form .edit-help-34>a:hover::after,
 form#edit-page-form .edit-help-34>a:active::after {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 form#edit-page-form .edit-help-34>a:focus-within::after {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */

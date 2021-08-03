@@ -31,7 +31,9 @@
 
 /* Body Background Image: Includes header image, subtle gradient that extends into the content, and page background color */
 body {
-	background-image: var(--gradient-header), var(--gradient-topmenu),
+	background-image: 
+		var(--gradient-header), 
+		var(--gradient-topmenu),
 		var(--gradient-background);
 	/* 120px, 150px */
 	background-repeat: repeat-x;
@@ -238,15 +240,28 @@ div#container-wrap {
 }
 
 #search-top-box::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%,
+			0% 100%
+		);
 	z-index: 13;
 	background-color: rgb(var(--search-icon-focus-bg-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #search-top-box:not(:focus-within)::after {
+	--clip-path: 
+		polygon(
+			100% 0, 
+			100% 0, 
+			100% 100%, 
+			100% 100%
+		);
 	background-color: rgb(var(--search-icon-focus-bg-color),0);
-	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 }
 
 #search-top-box form[id="search-top-box-form"] {
@@ -501,6 +516,13 @@ div#container-wrap {
 }
 
 #login-status #account-options li > a::before {	
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -510,16 +532,28 @@ div#container-wrap {
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--login-dropdown-bg-hover-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #login-status #account-options li > a:hover::before,
 #login-status #account-options li > a:active::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			00% 100%, 
+			0 100%
+		);
 }
 
 #login-status #account-options li > a:focus-within::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			00% 100%, 
+			0 100%
+		);
 }
 
 /* ===TOP BAR=== */
@@ -625,33 +659,71 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"] > ul > li > a::before {
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	--clip-path: 
+		polygon(
+			0 0,
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
+	clip-path: var(--clip-path);
 	top: 0;
 	left: 0;
 }
 
 #header div[class*="top-bar"] > ul > li > a::after {
-	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	--clip-path: 
+		polygon(
+			100% 0, 
+			100% 0, 
+			100% 100%, 
+			100% 100%
+		);
+	clip-path: var(--clip-path);
 	right: 0;
 	bottom: 0;
 }
 
 #header div[class*="top-bar"] > ul > li:hover > a::before,
 #header div[class*="top-bar"] > ul > li:active > a::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > a::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:hover > a::after,
 #header div[class*="top-bar"] > ul > li:active > a::after {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%)
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > a::after {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%)
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:hover > a,
@@ -783,6 +855,13 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"] > ul > li > ul li > a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -793,7 +872,7 @@ div.mobile-top-bar {
 	opacity: 1;
 	background-color: rgb(var(--dropdown-links-hover-bg-color));
 	pointer-events: none;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	clip-path: var(--clip-path);
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:hover > a,
@@ -809,11 +888,23 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li > ul li:hover > a::before,
 #header div[class*="top-bar"] > ul > li > ul li:active > a::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:focus-within > a::before {
-	clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ul > li ul > li */
@@ -882,6 +973,13 @@ div.mobile-top-bar {
 /* Prevent flyout menus from disappearing when moving to them diagonally */
 
 #header div[class*="top-bar"] > ul > li > ul li > ul::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0 0
+		);
 	content: " ";
 	position: absolute;
 	z-index: 5;
@@ -889,7 +987,7 @@ div.mobile-top-bar {
 	right: 100%;
 	width: 50%;
 	height: calc(100% - 2rem);
-	clip-path: polygon(0 0, 100% 0px, 100% 100%, 0 0);
+	clip-path: var(--clip-path);
 }
 
 /* Images in Dropdown Menu Support */

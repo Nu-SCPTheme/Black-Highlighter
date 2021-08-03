@@ -1372,6 +1372,13 @@ input[type=checkbox] {
 
 input[type=checkbox]::before, 
 input[type=checkbox]::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 0, 
+			0 0
+		);
 	content: " ";
 	display: inline-block;
 	position: absolute;
@@ -1380,8 +1387,8 @@ input[type=checkbox]::after {
 	transform-origin: left top;
 	background-color: rgba(var(--swatch-primary),0);
 	box-shadow: 0 0 0 0 rgb(var(--swatch-secondary-color));
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-	        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 	will-change: box-shadow, border-color;
 }
 
@@ -1433,9 +1440,14 @@ input[type=checkbox]:checked {
 
 input[type=checkbox]:checked::before,
 input[type=checkbox]:checked::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0% 100%
+		);
 	background-color: rgba(var(--swatch-primary),1);
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 	box-shadow: 0 0 0 0.05em rgb(var(--swatch-secondary-color));
 }
 
@@ -2222,9 +2234,257 @@ div.dblock {
 
 #breadcrumbs,
 .pseudocrumbs {
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5em) 0, 
+			100% 50%, 
+			calc(100% - 0.5em) 100%, 
+			0 100%, 
+			0 0
+		);
+	display: flex;
+	position: relative;
 	grid-area: breadcrumbs;
+	align-items: center;
+	justify-content: center;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	margin: -1em 0 1em;
+	padding: 0 0.75em 0 0;
+	font-family: var(--UI-font);
 	font-size: 0.85em;
+	line-height: 1;
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
+}
+
+#breadcrumbs a:-webkit-any-link, .pseudocrumbs a:-webkit-any-link {
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5em) 0, 
+			100% 50%, 
+			calc(100% - 0.5em) 100%, 
+			0 100%, 
+			0 0
+		);
+	display: flex;
+	position: relative;
+	margin-right: -0.5em;
+	padding: 0.25em 0.75em 0.25em 0.5em;
+	-webkit-transition: 
+		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--swatch-background));
+	background-image: 
+		var(--gradient-background);
+	background-repeat: repeat-x;
+	background-position: fixed;
+	background-position: top calc(-1.8 * var(--final-header-height-on-desktop)) left;
+	background-size: 
+		100% var(--background-gradient-distance);
+		-webkit-clip-path: var(--clip-path);
+		        clip-path: var(--clip-path);
+}
+
+#breadcrumbs a:any-link,
+.pseudocrumbs a:any-link {
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5em) 0, 
+			100% 50%, 
+			calc(100% - 0.5em) 100%, 
+			0 100%, 
+			0 0
+		);
+	display: flex;
+	position: relative;
+	margin-right: -0.5em;
+	padding: 0.25em 0.75em 0.25em 0.5em;
+	transition: 
+		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--swatch-background));
+	background-image: 
+		var(--gradient-background);
+	background-repeat: repeat-x;
+	background-position: fixed;
+	background-position: top calc(-1.8 * var(--final-header-height-on-desktop)) left;
+	background-size: 
+		100% var(--background-gradient-distance);
+		-webkit-clip-path: var(--clip-path);
+		        clip-path: var(--clip-path);
+}
+
+#breadcrumbs a:hover,
+.pseudocrumbs a:hover,
+#breadcrumbs a:active,
+.pseudocrumbs a:active {
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
+}
+
+#breadcrumbs a:focus-within,
+.pseudocrumbs a:focus-within {
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: none;
+}
+
+#breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before, #breadcrumbs a:-webkit-any-link::after, .pseudocrumbs a:-webkit-any-link::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+#breadcrumbs::before,
+.pseudocrumbs::before,
+#breadcrumbs a:any-link::before,
+.pseudocrumbs a:any-link::before,
+#breadcrumbs a:any-link::after,
+.pseudocrumbs a:any-link::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+#breadcrumbs a:-webkit-any-link::after, .pseudocrumbs a:-webkit-any-link::after {
+	background-image: 
+		linear-gradient(140deg,
+			rgb(var(--swatch-primary),0) 0%,
+			rgb(var(--swatch-primary),0.15) 100%);
+}
+
+#breadcrumbs a:any-link::after,
+.pseudocrumbs a:any-link::after {
+	background-image: 
+		linear-gradient(140deg,
+			rgb(var(--swatch-primary),0) 0%,
+			rgb(var(--swatch-primary),0.15) 100%);
+}
+
+#breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before{
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5625em) calc(100% - 0.125em), 
+			calc(100% - 0.125em) 50%, 
+			calc(100% - 0.625em) 0, 
+			calc(100% - 0.125em) 0, 
+			100% 50%, 
+			calc(100% - 0.125em) 100%, 
+			0 100%, 
+			0 calc(100% - 0.125em)
+		);
+	-webkit-transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-clip-path: var(--clip-path);
+		        clip-path: var(--clip-path);
+}
+
+#breadcrumbs::before,
+.pseudocrumbs::before,
+#breadcrumbs a:any-link::before,
+.pseudocrumbs a:any-link::before{
+	--clip-path: 
+		polygon(
+			calc(100% - 0.5625em) calc(100% - 0.125em), 
+			calc(100% - 0.125em) 50%, 
+			calc(100% - 0.625em) 0, 
+			calc(100% - 0.125em) 0, 
+			100% 50%, 
+			calc(100% - 0.125em) 100%, 
+			0 100%, 
+			0 calc(100% - 0.125em)
+		);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-clip-path: var(--clip-path);
+		        clip-path: var(--clip-path);
+}
+
+#breadcrumbs::before,
+.pseudocrumbs::before {
+	background-image: 
+		linear-gradient(to right,
+			rgb(var(--swatch-primary-darkest),1) 0%,
+			rgb(var(--swatch-primary),0) 100%);
+}
+
+#breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before {
+	background-image: 
+		linear-gradient(100deg,
+			rgb(var(--swatch-primary-darkest),1) 0%,
+			rgb(var(--swatch-primary-darkest),0.5) 100%);
+}
+
+#breadcrumbs a:any-link::before,
+.pseudocrumbs a:any-link::before {
+	background-image: 
+		linear-gradient(100deg,
+			rgb(var(--swatch-primary-darkest),1) 0%,
+			rgb(var(--swatch-primary-darkest),0.5) 100%);
+}
+
+#breadcrumbs a:hover::before,
+.pseudocrumbs a:hover::before,
+#breadcrumbs a:active::before,
+.pseudocrumbs a:active::before {
+	--clip-path: 
+		polygon(
+			0 33%,
+			0 0,
+			calc(100% - 0.625em) 0, 
+			calc(100% - 0.125em) 0, 
+			100% 50%, 
+			calc(100% - 0.125em) 100%, 
+			0 100%, 
+			0 66%
+		);
+	background-color: rgb(var(--swatch-primary));
+}
+
+#breadcrumbs a:focus-within::before,
+.pseudocrumbs a:focus-within::before {
+	--clip-path: 
+	polygon(
+		0 33%,
+		0 0,
+		calc(100% - 0.625em) 0, 
+		calc(100% - 0.125em) 0, 
+		100% 50%, 
+		calc(100% - 0.125em) 100%, 
+		0 100%, 
+		0 66%
+	);
+	background-color: rgb(var(--swatch-primary));
 }
 
 /* ===PAGE-CONTENT=== */
@@ -2348,6 +2608,13 @@ div.page-watch-options a:active {
 }
 
 #main-content .page-tags span {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% - 0.0625rem) 0, 
+			calc(100% - 0.0625rem) 100%, 
+			0% 100%
+		);
 	display: flex;
 	position: relative;
 	flex-direction: row;
@@ -2357,8 +2624,8 @@ div.page-watch-options a:active {
 	height: 100%;
 	padding: 0;
 	font-size: 0.9em;
-	-webkit-clip-path: polygon(0 0, calc(100% - 0.0625rem) 0, calc(100% - 0.0625rem) 100%, 0% 100%);
-	        clip-path: polygon(0 0, calc(100% - 0.0625rem) 0, calc(100% - 0.0625rem) 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #main-content .page-tags span::after {
@@ -2419,6 +2686,13 @@ div.page-watch-options a:active {
 }
 
 #main-content .page-tags span a:-webkit-any-link:not([href^="/system:page-tags/tag/_"])::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -2433,11 +2707,18 @@ div.page-watch-options a:active {
 	opacity: 1;
 	background-color: rgb(var(--pagetags-text-hover-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"])::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -2451,8 +2732,8 @@ div.page-watch-options a:active {
 	opacity: 1;
 	background-color: rgb(var(--pagetags-text-hover-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
@@ -2478,13 +2759,23 @@ div.page-watch-options a:active {
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover::before,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* Hiding Hidden Tags */
@@ -2752,6 +3043,13 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #footer a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -2765,8 +3063,8 @@ div[id*="page-options-bottom"]>a#delete-button {
 	opacity: 1;
 	background-color: rgb(var(--footer-link-hover-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #footer a:hover,
@@ -2791,14 +3089,24 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #footer a:hover::before,
-#footer .options>a:active::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+#footer a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #footer a:focus-within::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ===LICENSE BOX=== */
@@ -2891,6 +3199,13 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #license-area a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0,
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -2904,8 +3219,8 @@ div[id*="page-options-bottom"]>a#delete-button {
 	opacity: 1;
 	background-color: rgb(var(--license-link-hover-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #license-area a:hover,
@@ -2928,14 +3243,24 @@ div[id*="page-options-bottom"]>a#delete-button {
 }
 
 #license-area a:hover::before,
-#license-area .options>a:active::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+#license-area a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #license-area a:focus-within::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ===ACTION AREA=== */
@@ -3283,6 +3608,13 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li {
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div>ul>li>ul {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
 	display: grid;
 	top: 0;
 	left: var(--icon-size);
@@ -3309,12 +3641,20 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li>ul {
 	background-color: rgb(var(--swatch-background));
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-tertiary-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div>ul>li:hover>ul,
+form#edit-page-form .wd-editor-toolbar-panel div>ul>li:active>ul,
 form#edit-page-form .wd-editor-toolbar-panel div>ul>li.sfhover>ul {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0% 100%
+		);
 	left: var(--icon-size);
 	padding-left: 0.125em;
 	transition:
@@ -3332,8 +3672,33 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li.sfhover>ul {
 		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
 	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
 	pointer-events: all;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+form#edit-page-form .wd-editor-toolbar-panel div>ul>li:focus-within>ul {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0% 100%
+		);
+	left: var(--icon-size);
+	padding-left: 0.125em;
+	transition:
+		box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+	transition:
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+		box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+		box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
+	pointer-events: all;
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a {
@@ -3385,6 +3750,13 @@ form#edit-page-form .wd-editor-toolbar-panel>li:focus-within a::before {
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	z-index: 0;
 	width: 100%;
 	height: 100%;
@@ -3394,19 +3766,29 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 	opacity: 1;
 	background-color: rgb(var(--editor-icon-hover-bg));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel li:hover>a::after,
 form#edit-page-form .wd-editor-toolbar-panel li:active>a::after {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel li:focus-within a::after {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1)>ul>li:nth-of-type(1) {
@@ -3802,6 +4184,13 @@ form#edit-page-form .edit-help-34>a:nth-of-type(2):focus-within::before {
 }
 
 form#edit-page-form .edit-help-34>a::after {
+	--clip-path: 
+		polygon(
+			100% 0, 
+			100% 0, 
+			100% 100%, 
+			100% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -3814,8 +4203,8 @@ form#edit-page-form .edit-help-34>a::after {
 	opacity: 1;
 	background-color: rgb(var(--swatch-primary));
 	pointer-events: none;
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 form#edit-page-form .edit-help-34>a:hover,
@@ -3841,13 +4230,23 @@ form#edit-page-form .edit-help-34>a:focus-within {
 
 form#edit-page-form .edit-help-34>a:hover::after,
 form#edit-page-form .edit-help-34>a:active::after {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 form#edit-page-form .edit-help-34>a:focus-within::after {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
@@ -5662,6 +6061,13 @@ div.odialog-shader-iframe {
 }
 
 #side-bar .side-block.media a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -5672,19 +6078,29 @@ div.odialog-shader-iframe {
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-icon-hover-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #side-bar .side-block.media a:hover::before,
 #side-bar .side-block.media a:active::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #side-bar .side-block.media a:focus-within::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #side-bar .side-block.media a img {
@@ -5946,6 +6362,13 @@ div.odialog-shader-iframe {
 /* Menu Item Hover Color Bar */
 
 #side-bar div.menu-item a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -5959,19 +6382,29 @@ div.odialog-shader-iframe {
 	opacity: 1;
 	background-color: rgb(var(--sidebar-links-hover-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #side-bar div.menu-item a:hover::before,
 #side-bar div.menu-item a:active::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #side-bar div.menu-item a:focus-within::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ===SCP & TALES SERIES==*/
@@ -6449,7 +6882,9 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 /* Body Background Image: Includes header image, subtle gradient that extends into the content, and page background color */
 
 body {
-	background-image: var(--gradient-header), var(--gradient-topmenu),
+	background-image: 
+		var(--gradient-header), 
+		var(--gradient-topmenu),
 		var(--gradient-background);
 	/* 120px, 150px */
 	background-repeat: repeat-x;
@@ -6663,17 +7098,29 @@ div#container-wrap {
 }
 
 #search-top-box::after {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%,
+			0% 100%
+		);
 	z-index: 13;
 	background-color: rgb(var(--search-icon-focus-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #search-top-box:not(:focus-within)::after {
+	--clip-path: 
+		polygon(
+			100% 0, 
+			100% 0, 
+			100% 100%, 
+			100% 100%
+		);
 	background-color: rgb(var(--search-icon-focus-bg-color),0);
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 }
 
 #search-top-box form[id="search-top-box-form"] {
@@ -6949,6 +7396,13 @@ div#container-wrap {
 }
 
 #login-status #account-options li > a::before {	
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -6960,19 +7414,29 @@ div#container-wrap {
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--login-dropdown-bg-hover-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #login-status #account-options li > a:hover::before,
 #login-status #account-options li > a:active::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			00% 100%, 
+			0 100%
+		);
 }
 
 #login-status #account-options li > a:focus-within::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			00% 100%, 
+			0 100%
+		);
 }
 
 /* ===TOP BAR=== */
@@ -7082,39 +7546,73 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"] > ul > li > a::before {
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	--clip-path: 
+		polygon(
+			0 0,
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 	top: 0;
 	left: 0;
 }
 
 #header div[class*="top-bar"] > ul > li > a::after {
-	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	--clip-path: 
+		polygon(
+			100% 0, 
+			100% 0, 
+			100% 100%, 
+			100% 100%
+		);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 	right: 0;
 	bottom: 0;
 }
 
 #header div[class*="top-bar"] > ul > li:hover > a::before,
 #header div[class*="top-bar"] > ul > li:active > a::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > a::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:hover > a::after,
 #header div[class*="top-bar"] > ul > li:active > a::after {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%)
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > a::after {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%)
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li:hover > a,
@@ -7248,6 +7746,13 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"] > ul > li > ul li > a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0% 100%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -7260,8 +7765,8 @@ div.mobile-top-bar {
 	opacity: 1;
 	background-color: rgb(var(--dropdown-links-hover-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-	        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:hover > a,
@@ -7277,13 +7782,23 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li > ul li:hover > a::before,
 #header div[class*="top-bar"] > ul > li > ul li:active > a::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:focus-within > a::before {
-	-webkit-clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-	        clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
 }
 
 /* ul > li ul > li */
@@ -7354,6 +7869,13 @@ div.mobile-top-bar {
 /* Prevent flyout menus from disappearing when moving to them diagonally */
 
 #header div[class*="top-bar"] > ul > li > ul li > ul::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			100% 0, 
+			100% 100%, 
+			0 0
+		);
 	content: " ";
 	position: absolute;
 	z-index: 5;
@@ -7361,8 +7883,8 @@ div.mobile-top-bar {
 	right: 100%;
 	width: 50%;
 	height: calc(100% - 2rem);
-	-webkit-clip-path: polygon(0 0, 100% 0px, 100% 100%, 0 0);
-	        clip-path: polygon(0 0, 100% 0px, 100% 100%, 0 0);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 /* Images in Dropdown Menu Support */
@@ -7856,6 +8378,13 @@ div.mobile-top-bar {
 }
 
 .yui-navset .yui-nav {
+	--clip-path: 
+		polygon(
+			-0.0625rem -0.5rem, 
+			calc(100% + 0.0625rem) -0.5rem, 
+			calc(100% + 0.0625rem) 100%, 
+			-0.0625rem 100%
+		);
 	display: flex;
 	flex-wrap: wrap;
 	width: calc(100% - 0.125rem);
@@ -7864,18 +8393,8 @@ div.mobile-top-bar {
 	border: 0;
 	box-shadow: 0 0.3125rem 0 0 var(--tab-bottom-border-color);
 	font-family: var(--UI-font, var(--header-font));
-	-webkit-clip-path: polygon(
-		-0.0625rem -0.5rem, 
-		calc(100% + 0.0625rem) -0.5rem, 
-		calc(100% + 0.0625rem) 100%, 
-		-0.0625rem 100%
-	);
-	        clip-path: polygon(
-		-0.0625rem -0.5rem, 
-		calc(100% + 0.0625rem) -0.5rem, 
-		calc(100% + 0.0625rem) 100%, 
-		-0.0625rem 100%
-	);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 .yui-navset .yui-nav a {
@@ -7933,6 +8452,13 @@ div.mobile-top-bar {
 }
 
 .yui-navset .yui-nav a::before {
+	--clip-path: 
+		polygon(
+			0 calc(100% - 0.25rem), 
+			calc(100% + 1rem) calc(100% - 0.25rem), 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	content: " ";
 	position: absolute;
 	z-index: 0;
@@ -7952,22 +8478,32 @@ div.mobile-top-bar {
 		-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--tabs-bottom-border-color));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
-	        clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 .yui-navset .yui-nav li:hover a::before,
 .yui-navset .yui-nav li:active a::before,
 .yui-navset .yui-nav li:focus a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-hover-bg));
-	-webkit-clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
-	        clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav li:focus-within a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-hover-bg));
-	-webkit-clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
-	        clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav a em,
@@ -8010,15 +8546,25 @@ div.mobile-top-bar {
 .yui-navset .yui-nav .selected:hover a::before,
 .yui-navset .yui-nav .selected:focus a::before,
 .yui-navset .yui-nav .selected:active a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-selected-bg));
-	-webkit-clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
-	        clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav .selected:focus-within a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			calc(100% + 1rem) -1rem, 
+			calc(100% + 1rem) calc(100% + 1rem), 
+			0% calc(100% + 1rem)
+		);
 	background-color: rgb(var(--tabs-selected-bg));
-	-webkit-clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
-	        clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0% calc(100% + 1rem));
 }
 
 .yui-navset .yui-nav .selected a:hover,
@@ -8478,6 +9024,13 @@ div.blockquote,
 .page-rate-widget-box .rateup a::after,
 .page-rate-widget-box .ratedown a::after,
 .page-rate-widget-box .cancel a::after {
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 100%, 
+			0% 115%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -8489,8 +9042,8 @@ div.blockquote,
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 .page-rate-widget-box .rateup a::after {
@@ -8511,15 +9064,25 @@ div.blockquote,
 .page-rate-widget-box .ratedown a:active::after,
 .page-rate-widget-box .cancel a:hover::after,
 .page-rate-widget-box .cancel a:active::after {
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 .page-rate-widget-box .rateup a:focus-within::after,
 .page-rate-widget-box .ratedown a:focus-within::after,
 .page-rate-widget-box .cancel a:focus-within::after {
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 .page-rate-widget-box .rate-points {
@@ -8684,6 +9247,13 @@ div.blockquote,
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 100%, 
+			0% 115%
+		);
 	content: " ";
 	position: absolute;
 	z-index: 0;
@@ -8694,8 +9264,8 @@ div.blockquote,
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::after {
@@ -8704,13 +9274,23 @@ div.blockquote,
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:hover::after,
 #page-content .rate-box-with-credit-button > .creditButton > p > a:active::after {
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a:focus-within::after {
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 #page-content .rate-box-with-credit-button > .creditButton > p > a::before {
@@ -9497,9 +10077,15 @@ table[style*="margin:0"] * {
 }
 
 .pager .current:not(:last-of-type)::before {
+	--clip-path: 
+		polygon(
+			100% 0, 
+			0 100%, 
+			100% 100%
+		);
 	left: -1.5em;
-	-webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
-	        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 .pager .current:last-of-type {
@@ -9507,9 +10093,15 @@ table[style*="margin:0"] * {
 }
 
 .pager .current:last-of-type::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 100%, 
+			100% 100%
+		);
 	right: -1.5em;
-	-webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
-	        clip-path: polygon(0 0, 0 100%, 100% 100%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 .pager a {
@@ -9544,6 +10136,13 @@ table[style*="margin:0"] * {
 }
 
 .pager a::after {
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 100%, 
+			0% 115%
+		);
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -9555,19 +10154,29 @@ table[style*="margin:0"] * {
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--pager-hover-bg));
 	pointer-events: none;
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0% 115%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 .pager a:hover::after,
 .pager a:active::after {
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 .pager a:focus-within::after {
-	-webkit-clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
-	        clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+	--clip-path: 
+		polygon(
+			0 100%, 
+			100% 115%, 
+			100% 0, 
+			0 -15%
+		);
 }
 
 /* ===WIKIDOT USER ICONS=== */
@@ -9738,6 +10347,14 @@ div.keycap {
 /* Reworked from Sigma-9 */
 
 .tags {
+	--clip-path: 
+		polygon(
+			0.5rem 0, 
+			100% 0, 
+			100% 100%, 
+			0.5rem 100%, 
+			0 50%
+		);
 	--wght: 500;
     display: inline;
 	position: relative;
@@ -9752,8 +10369,8 @@ div.keycap {
     line-height: 0.8125;
     text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
-	-webkit-clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
-	        clip-path: polygon(0.5rem 0, 100% 0, 100% 100%, 0.5rem 100%, 0 50%);
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
 }
 
 div.tags {
