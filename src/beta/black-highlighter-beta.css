@@ -2512,10 +2512,10 @@ div#page-options-area-bottom {
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
 	--icon-size: clamp(1.5em, 5vmin, 2em);
-	display: grid;
+	display: flex;
 	gap: 0.5em;
-	grid-template-columns: repeat(auto-fit, minmax(min(calc(var(--body-width-on-desktop) / 6), 25vw), 1fr));
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
 	font-family: var(--UI-font);
 	font-size: var(--base-font-size);
 	text-align: left;
@@ -2524,6 +2524,7 @@ div[id*="page-options-bottom"] {
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
 	--button-padding: calc(var(--icon-size) / 8);
+	flex-basis: 5rem;
 	padding: var(--button-padding);
 	padding-left: calc(var(--icon-size) + 0.5em);
 	box-shadow:
