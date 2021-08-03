@@ -967,7 +967,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
 	scrollbar-color: 
@@ -996,7 +995,6 @@ body {
 
 body {
 	/* coloring */
-	background-color: rgba(252, 252, 252, 1);
 	background-color: rgba(var(--swatch-background), 1);
 
 	/* font behavior */
@@ -1024,22 +1022,17 @@ body {
 /* Chrome, Safari, Opera Scrollbar */
 
 ::-webkit-scrollbar {
-	width: 1rem;
 	width: var(--scrollbar-width);
-	height: 0.5625rem;
 	height: var(--scrollbar-width);
-	border: solid 0.0625rem rgba(12, 12, 12, 0.1);
 	border: solid 0.0625rem rgba(var(--swatch-menubg-black-color), 0.1);
 	border-radius: 0.031rem;
 }
 
 ::-webkit-scrollbar-track {
-	background: rgba(12, 12, 12, 0.1);
 	background: rgba(var(--swatch-menubg-black-color), 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgba(170, 170, 170, 0.4);
 	background: rgba(var(--swatch-tertiary-color), 0.4);
 }
 
@@ -1266,13 +1259,11 @@ textarea:focus {
 
 textarea::-webkit-scrollbar-track,
 input.text::-webkit-scrollbar-track {
-	background: rgba(170, 170, 170, 0.05);
 	background: rgba(var(--swatch-tertiary-color), 0.1);
 }
 
 textarea::-webkit-scrollbar-thumb,
 input.text::-webkit-scrollbar-thumb {
-	background: rgba(170, 170, 170, 0.6);
 	background: rgba(var(--swatch-tertiary-color), 0.6);
 }
 
@@ -1542,7 +1533,6 @@ input[type="radio"]:checked {
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
     background: rgb(var(--swatch-background));
-	box-shadow: 0 0 0 0.15em rgb(var(--swatch-primary));
     box-shadow: 
 		0 0 0 0.1em rgb(var(--swatch-primary)), 
 		inset 0 0 0 0.05em rgb(var(--swatch-primary)),
@@ -1639,7 +1629,6 @@ tt {
 tt,
 tt * {
 	--MONO: 1;
-	font-family: "PT Mono", "Andale Mono", "Courier New", Courier, monospace;
 	font-family: var(--mono-font);
 	font-variation-settings: 
 		"wght" var(--mono-wght), 
@@ -2208,7 +2197,6 @@ div.dblock {
 	margin: 0.5em 0 1em 0;
 	padding: 0;
 	border: none;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.5em;
@@ -3154,7 +3142,6 @@ div[id*="page-options-bottom"]>a#delete-button {
 	margin: 0.5em 0 0.25em 0;
 	padding: 0;
 	border: none;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.25em;
@@ -5656,10 +5643,6 @@ div.odialog-shader-iframe {
 	--box-shadow-4: rgba(var(--swatch-menubg-black-color), 0.1);
 	padding: 0.5em 1em;
 	border-radius: 0.625rem;
-	box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.15),
-		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.8),
-		inset 0 0.625rem 0.3125rem rgba(255, 255, 255, 0.25),
-		inset 0 -0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
 		inset 0 0.0625rem 0 var(--box-shadow-2),
 		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
@@ -5676,15 +5659,11 @@ div.odialog-shader-iframe {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
 	padding: 0.5em 1em;
 	border-radius: 0.3125rem 0.3125rem 0 0;
-	background: linear-gradient(to right,
-			rgba(244, 244, 244),
-			rgba(170, 170, 170)),
-		rgba(244, 244, 244);
-	background: linear-gradient(to right,
+	background: 
+		linear-gradient(to right,
 			rgba(var(--swatch-secondary-color)),
 			rgba(var(--swatch-tertiary-color))),
 		rgba(var(--swatch-secondary-color));
-	box-shadow: inset 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
 	background-blend-mode: screen;
 }
@@ -5723,12 +5702,9 @@ div.odialog-shader-iframe {
 	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0.0625rem solid rgba(140, 20, 25, 1);
 	border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
 	border-radius: 0.25rem;
-	background-color: rgba(178, 210, 180, 0.25);
 	background-color: rgba(var(--swatch-secondary-color), 0.25);
-	color: #64030f;
 	color: rgb(var(--swatch-primary-darkest));
 	letter-spacing: 0.016em;
 }
@@ -5739,9 +5715,7 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.options>a:active,
 .post-container>.post>div.long>div.options a:hover,
 .post-container>.post>div.long>div.options a:active {
-	background-color: rgba(30, 55, 30, 1);
 	background-color: rgba(var(--swatch-alternate-color), 1);
-	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
 }
@@ -5749,9 +5723,7 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.new-post>a:focus-within,
 #page-content>div.forum-thread-box>div.options>a:focus-within,
 .post-container>.post>div.long>div.options a:focus-within {
-	background-color: rgba(30, 55, 30, 1);
 	background-color: rgba(var(--swatch-alternate-color), 1);
-	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
 }
@@ -6074,7 +6046,6 @@ div.odialog-shader-iframe {
 	margin: 0;
 	color: rgb(var(--sideblock-heading-text-color));
 	font-family: var(--title-font);
-	font-size: calc(0.875rem * 0.9);
 	font-size: calc((var(--base-font-size) * (14 / 15)) * 0.9);
 	letter-spacing: 0.016em;
 	line-height: 1.15;
@@ -6339,9 +6310,7 @@ div.odialog-shader-iframe {
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button {
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgba(100, 3, 15, 0);
 	background-color: rgba(var(--swatch-primary-darkest), 0);
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
 	line-height: 1.85;
 }
@@ -6349,13 +6318,11 @@ div.odialog-shader-iframe {
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:active,
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
-	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(-sidebar-bg-color), 0.15);
 	text-decoration: none;
 }
 
 #___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus-within {
-	background-color: rgba(252, 252, 252, 0.15);
 	background-color: rgba(var(-sidebar-bg-color), 0.15);
 	text-decoration: none;
 }
@@ -6679,8 +6646,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		padding-right: var(--sidebar-width-on-mobile);
 		transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 		opacity: 0;
-		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem
-			0.0625rem repeat;
+		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		pointer-events: none;
 	}
 
@@ -6744,7 +6710,6 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	width: 90vw;
 	height: var(--final-header-height-on-desktop);
 	background-clip: border-box;
-	background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 	background-image: var(--logo-image);
 	background-repeat: no-repeat;
 	background-position: left 0.75rem top 1.1875rem;
@@ -6809,7 +6774,6 @@ div#container-wrap {
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
 	margin-left: calc(var(--header-height-on-desktop) - 0.75rem);
 	padding: 1.875rem 0 0;
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
 	font-family: var(--header-font);
 	font-size: var(--header-h1-font-size);
@@ -6822,7 +6786,6 @@ div#container-wrap {
 	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
 	content: "SCP Foundation";
 	content: var(--header-title);
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
 	text-shadow: none;
 }
@@ -6856,7 +6819,6 @@ div#container-wrap {
 #header h2 span::before {
 	content: "SECURE, CONTAIN, PROTECT";
 	content: var(--header-subtitle);
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh2-color));
 	text-shadow: none;
 }
@@ -6975,7 +6937,7 @@ div#container-wrap {
 			0 0, 
 			100% 0, 
 			100% 100%,
-			0% 100%
+			0 100%
 		);
 	z-index: 13;
 	background-color: rgb(var(--search-icon-focus-bg-color));
@@ -7423,7 +7385,7 @@ div.mobile-top-bar {
 			0 0,
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	-webkit-clip-path: var(--clip-path);
 	        clip-path: var(--clip-path);
@@ -7611,7 +7573,6 @@ div.mobile-top-bar {
 	border: 0rem solid rgba(0, 0, 0, 0);
 	background: var(--dropdown-links-bg-color);
 	color: rgb(var(--dropdown-links-color));
-	font-size: 0.75rem;
 	font-size: calc(var(--base-font-size) * (4 / 5));
 	text-align: center;
 	white-space: nowrap;
@@ -7623,7 +7584,7 @@ div.mobile-top-bar {
 			0 0, 
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	content: " ";
 	position: absolute;
@@ -7966,7 +7927,6 @@ div.mobile-top-bar {
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: rgb(180, 35, 35);
 		background: rgb(var(--bright-accent));
 	}
 
@@ -7993,7 +7953,6 @@ div.mobile-top-bar {
 		width: var(--header-width-on-mobile, 100vw);
 		height: var(--header-height-on-mobile);
 		margin: 0;
-		background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
 		background-position: 
@@ -8864,7 +8823,6 @@ div.blockquote,
 	--wght: 600;
 	position: relative;
 	background: transparent;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--rating-module-text-color));
 }
 
@@ -8962,7 +8920,6 @@ div.blockquote,
 	padding: 0 0.5em;
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
-	color: rgb(12, 12, 12) !important;
 	color: rgb(var(--rating-module-text-color)) !important;
 	font-family: var(--UI-font);
 	font-size: 0.85em;
@@ -8971,7 +8928,6 @@ div.blockquote,
 }
 
 .page-rate-widget-box .rate-points .number {
-	font-size: calc(0.875rem * 1.2);
 	font-size: calc((var(--base-font-size) * (14 / 15)) * 1.2);
 }
 
@@ -9056,10 +9012,11 @@ div.blockquote,
 	margin-right: 2em;
 	margin-bottom: 0.625rem;
 	padding: 0.125rem 0.5rem 0.125rem 0.3125rem;
-	border: solid 0.0625rem #ccc066;
-	border-radius: 0.5rem;
-	background-color: #633;
-	box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.25);
+	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	border-bottom-width: 0;
+	border-radius: 0;
+	background-color: rgb(var(--rating-module-bg-color));
+	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 }
 
 .heritage-rating-module .page-rate-widget-box {
@@ -10176,16 +10133,13 @@ div.sexy-box {
 	margin: 0.4375rem 0.25rem 0.75rem;
 	padding: 0 0.625rem 0.75rem;
 	overflow: hidden;
-	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
 	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.25);
-	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-background, 252, 252, 252));
 }
 
 div.sexy-box div.image-container img {
 	margin: 0.3125rem;
 	padding: 0.125rem;
-	border: 0.0625rem solid rgba(12, 12, 12, 0.5);
 	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.5);
 }
 
@@ -10296,12 +10250,7 @@ div.block-left {
 	--box-shadow-3: rgb(var(--swatch-tertiary-color, 170, 170, 170));
 	margin: 0.625em 0 0.938em;
 	border-radius: 0.625rem;
-	background-color: rgba(66, 66, 72, 0.5);
 	background-color: rgba(var(--gray-monochrome, 66, 66, 72), 0.5);
-	box-shadow: 0 0.188em 0.375em rgba(12, 12, 12, 0.16),
-		0 0.188em 0.375em rgba(12, 12, 12, 0.23),
-		0 0 0.0625rem 0 rgb(170, 170, 170) inset,
-		0 0 0.0625rem 0 rgb(170, 170, 170);
 	box-shadow: 0 0.188em 0.375em var(--box-shadow-1),
 		0 0.188em 0.375em var(--box-shadow-2),
 		0 0 0.0625rem 0 var(--box-shadow-3) inset,
@@ -10311,7 +10260,6 @@ div.block-left {
 .content-panel.standalone {
 	box-sizing: border-box;
 	padding: 1em 2em 2em 2em !important; 
-	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-background, 252, 252, 252));
 }
 
@@ -10338,10 +10286,8 @@ div.block-left {
 	--wght: 700;
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
 	padding: 0.313em 0.625em;
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-align: center;
-	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.35);
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 	text-transform: uppercase;
 }
@@ -10365,7 +10311,6 @@ div.block-left {
 	font-size: 0.8em;
 	letter-spacing: 0.016em;
 	text-align: right;
-	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.5);
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 }
 
@@ -10382,7 +10327,6 @@ div.block-left {
 	border: solid 0.0625rem rgb(var(--swatch-menubg-medium-dark-color));
 	border-radius: 0.625rem;
 	background-color: rgb(var(--swatch-tertiary-color));
-	box-shadow: inset 0.0625rem 0.125rem 0.375rem rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0.0625rem 0.125rem 0.375rem var(--box-shadow);
 	white-space: nowrap;
 }
@@ -10742,17 +10686,11 @@ body.print-body #main-content .page-tags span {
 /* most of this is copied from the sidebar */
 
 body#translations {
-	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-menubg-color));
 }
 
 #translations .interwiki__title {
 	min-height: 1.5625rem;
-	background: linear-gradient(
-		10deg,
-		rgba(140, 20, 25, 0.45) 0%,
-		rgba(140, 20, 25, 0.55) 100%
-	);
 	background: var(--gradient-sidemenu-header);
 }
 
@@ -10761,7 +10699,6 @@ body#translations {
 	display: block;
 	height: 1.5625rem;
 	padding-right: 1rem;
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
 	font-size: calc(0.875rem * 0.95);
 	letter-spacing: 0.2rem;
@@ -10778,30 +10715,22 @@ body#translations {
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: flex-end;
-	min-height: calc(2rem - 0.125rem);
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
-	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid
-		rgba(var(--swatch-border-color), 0.08);
-	/*color: transparent;*/
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 	font-size: 0;
 	text-align: right;
 }
 
 #translations .interwiki__entry a {
 	display: block;
-	height: calc(2rem - 0.125rem);
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
 	padding: 0 0.6em;
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-clip: padding-box;
-	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-tertiary-color));
-	font-size: 0.875rem;
 	font-size: calc(var(--base-font-size) * (14 / 15));
 	letter-spacing: 0.04em;
 	line-height: calc(2em - var(--sidebar-internal-border-thickness));
