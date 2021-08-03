@@ -108,7 +108,7 @@
 			0 calc(100% - 0.25rem), 
 			calc(100% + 1rem) calc(100% - 0.25rem), 
 			calc(100% + 1rem) calc(100% + 1rem), 
-			0% calc(100% + 1rem)
+			0 calc(100% + 1rem)
 		);
 	content: " ";
 	position: absolute;
@@ -133,7 +133,7 @@
 			0 0, 
 			calc(100% + 1rem) -1rem, 
 			calc(100% + 1rem) calc(100% + 1rem), 
-			0% calc(100% + 1rem)
+			0 calc(100% + 1rem)
 		);
 	background-color: rgb(var(--tabs-hover-bg));
 }
@@ -144,7 +144,7 @@
 			0 0, 
 			calc(100% + 1rem) -1rem, 
 			calc(100% + 1rem) calc(100% + 1rem), 
-			0% calc(100% + 1rem)
+			0 calc(100% + 1rem)
 		);
 	background-color: rgb(var(--tabs-hover-bg));
 }
@@ -194,7 +194,7 @@
 			0 0, 
 			calc(100% + 1rem) -1rem, 
 			calc(100% + 1rem) calc(100% + 1rem), 
-			0% calc(100% + 1rem)
+			0 calc(100% + 1rem)
 		);
 	background-color: rgb(var(--tabs-selected-bg));
 }
@@ -205,7 +205,7 @@
 			0 0, 
 			calc(100% + 1rem) -1rem, 
 			calc(100% + 1rem) calc(100% + 1rem), 
-			0% calc(100% + 1rem)
+			0 calc(100% + 1rem)
 		);
 	background-color: rgb(var(--tabs-selected-bg));
 }
@@ -615,7 +615,6 @@ div.blockquote,
 	--wght: 600;
 	position: relative;
 	background: transparent;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--rating-module-text-color));
 }
 
@@ -652,7 +651,7 @@ div.blockquote,
 			0 100%, 
 			100% 115%, 
 			100% 100%, 
-			0% 115%
+			0 115%
 		);
 	content: " ";
 	position: absolute;
@@ -710,7 +709,6 @@ div.blockquote,
 	padding: 0 0.5em;
 	/* !important is needed here to override styles loaded when Rate is clicked */
 	background-color: transparent !important;
-	color: rgb(12, 12, 12) !important;
 	color: rgb(var(--rating-module-text-color)) !important;
 	font-family: var(--UI-font);
 	font-size: 0.85em;
@@ -719,7 +717,6 @@ div.blockquote,
 }
 
 .page-rate-widget-box .rate-points .number {
-	font-size: calc(0.875rem * 1.2);
 	font-size: calc((var(--base-font-size) * (14 / 15)) * 1.2);
 }
 
@@ -797,10 +794,11 @@ div.blockquote,
 	margin-right: 2em;
 	margin-bottom: 0.625rem;
 	padding: 0.125rem 0.5rem 0.125rem 0.3125rem;
-	border: solid 0.0625rem #ccc066;
-	border-radius: 0.5rem;
-	background-color: #633;
-	box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.25);
+	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
+	border-bottom-width: 0;
+	border-radius: 0;
+	background-color: rgb(var(--rating-module-bg-color));
+	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 }
 
 .heritage-rating-module .page-rate-widget-box {
@@ -864,7 +862,7 @@ div.blockquote,
 			0 100%, 
 			100% 115%, 
 			100% 100%, 
-			0% 115%
+			0 115%
 		);
 	content: " ";
 	position: absolute;
@@ -1704,7 +1702,7 @@ table[style*="margin:0"] * {
 			0 100%, 
 			100% 115%, 
 			100% 100%, 
-			0% 115%
+			0 115%
 		);
 	content: " ";
 	position: absolute;
@@ -1856,16 +1854,13 @@ div.sexy-box {
 	margin: 0.4375rem 0.25rem 0.75rem;
 	padding: 0 0.625rem 0.75rem;
 	overflow: hidden;
-	border: 0.0625rem solid rgba(12, 12, 12, 0.25);
 	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.25);
-	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-background, 252, 252, 252));
 }
 
 div.sexy-box div.image-container img {
 	margin: 0.3125rem;
 	padding: 0.125rem;
-	border: 0.0625rem solid rgba(12, 12, 12, 0.5);
 	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.5);
 }
 
@@ -1968,12 +1963,7 @@ div.block-left {
 	--box-shadow-3: rgb(var(--swatch-tertiary-color, 170, 170, 170));
 	margin: 0.625em 0 0.938em;
 	border-radius: 0.625rem;
-	background-color: rgba(66, 66, 72, 0.5);
 	background-color: rgba(var(--gray-monochrome, 66, 66, 72), 0.5);
-	box-shadow: 0 0.188em 0.375em rgba(12, 12, 12, 0.16),
-		0 0.188em 0.375em rgba(12, 12, 12, 0.23),
-		0 0 0.0625rem 0 rgb(170, 170, 170) inset,
-		0 0 0.0625rem 0 rgb(170, 170, 170);
 	box-shadow: 0 0.188em 0.375em var(--box-shadow-1),
 		0 0.188em 0.375em var(--box-shadow-2),
 		0 0 0.0625rem 0 var(--box-shadow-3) inset,
@@ -1983,7 +1973,6 @@ div.block-left {
 .content-panel.standalone {
 	box-sizing: border-box;
 	padding: 1em 2em 2em 2em !important; 
-	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-background, 252, 252, 252));
 }
 
@@ -2010,10 +1999,8 @@ div.block-left {
 	--wght: 700;
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
 	padding: 0.313em 0.625em;
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
 	text-align: center;
-	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.35);
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 	text-transform: uppercase;
 }
@@ -2037,7 +2024,6 @@ div.block-left {
 	font-size: 0.8em;
 	letter-spacing: 0.016em;
 	text-align: right;
-	text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(12, 12, 12, 0.5);
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 }
 
@@ -2054,7 +2040,6 @@ div.block-left {
 	border: solid 0.0625rem rgb(var(--swatch-menubg-medium-dark-color));
 	border-radius: 0.625rem;
 	background-color: rgb(var(--swatch-tertiary-color));
-	box-shadow: inset 0.0625rem 0.125rem 0.375rem rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0.0625rem 0.125rem 0.375rem var(--box-shadow);
 	white-space: nowrap;
 }

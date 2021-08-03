@@ -124,7 +124,6 @@
 	margin: 0.5em 0 1em 0;
 	padding: 0;
 	border: none;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.5em;
@@ -338,7 +337,7 @@ div.page-watch-options a:active {
 			0 0, 
 			calc(100% - 0.0625rem) 0, 
 			calc(100% - 0.0625rem) 100%, 
-			0% 100%
+			0 100%
 		);
 	display: flex;
 	position: relative;
@@ -387,7 +386,7 @@ div.page-watch-options a:active {
 			0 0, 
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	content: " ";
 	position: absolute;
@@ -678,7 +677,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 			0 0, 
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	content: " ";
 	position: absolute;
@@ -783,7 +782,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 			0 0, 
 			0 0,
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	content: " ";
 	position: absolute;
@@ -858,7 +857,6 @@ div[id*="page-options-bottom"]>a#delete-button {
 	margin: 0.5em 0 0.25em 0;
 	padding: 0;
 	border: none;
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.25em;
@@ -1210,7 +1208,7 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li.sfhover>ul {
 			0 0, 
 			100% 0, 
 			100% 100%, 
-			0% 100%
+			0 100%
 		);
 	left: var(--icon-size);
 	padding-left: 0.125em;
@@ -1228,7 +1226,7 @@ form#edit-page-form .wd-editor-toolbar-panel div>ul>li:focus-within>ul {
 			0 0, 
 			100% 0, 
 			100% 100%, 
-			0% 100%
+			0 100%
 		);
 	left: var(--icon-size);
 	padding-left: 0.125em;
@@ -1290,7 +1288,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 			0 0, 
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	z-index: 0;
 	width: 100%;
@@ -3106,10 +3104,6 @@ div.odialog-shader-iframe {
 	--box-shadow-4: rgba(var(--swatch-menubg-black-color), 0.1);
 	padding: 0.5em 1em;
 	border-radius: 0.625rem;
-	box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.15),
-		inset 0 0.0625rem 0 rgba(255, 255, 255, 0.8),
-		inset 0 0.625rem 0.3125rem rgba(255, 255, 255, 0.25),
-		inset 0 -0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
 		inset 0 0.0625rem 0 var(--box-shadow-2),
 		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
@@ -3126,15 +3120,11 @@ div.odialog-shader-iframe {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
 	padding: 0.5em 1em;
 	border-radius: 0.3125rem 0.3125rem 0 0;
-	background: linear-gradient(to right,
-			rgba(244, 244, 244),
-			rgba(170, 170, 170)),
-		rgba(244, 244, 244);
-	background: linear-gradient(to right,
+	background: 
+		linear-gradient(to right,
 			rgba(var(--swatch-secondary-color)),
 			rgba(var(--swatch-tertiary-color))),
 		rgba(var(--swatch-secondary-color));
-	box-shadow: inset 0.125rem 0.1875rem 0.375rem rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
 	background-blend-mode: screen;
 }
@@ -3173,12 +3163,9 @@ div.odialog-shader-iframe {
 	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0.0625rem solid rgba(140, 20, 25, 1);
 	border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
 	border-radius: 0.25rem;
-	background-color: rgba(178, 210, 180, 0.25);
 	background-color: rgba(var(--swatch-secondary-color), 0.25);
-	color: #64030f;
 	color: rgb(var(--swatch-primary-darkest));
 	letter-spacing: 0.016em;
 }
@@ -3189,9 +3176,7 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.options>a:active,
 .post-container>.post>div.long>div.options a:hover,
 .post-container>.post>div.long>div.options a:active {
-	background-color: rgba(30, 55, 30, 1);
 	background-color: rgba(var(--swatch-alternate-color), 1);
-	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
 }
@@ -3199,9 +3184,7 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.new-post>a:focus-within,
 #page-content>div.forum-thread-box>div.options>a:focus-within,
 .post-container>.post>div.long>div.options a:focus-within {
-	background-color: rgba(30, 55, 30, 1);
 	background-color: rgba(var(--swatch-alternate-color), 1);
-	color: rgb(140, 20, 25);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
 }

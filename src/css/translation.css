@@ -1,17 +1,11 @@
 /* most of this is copied from the sidebar */
 
 body#translations {
-	background: rgb(252, 252, 252);
 	background: rgb(var(--swatch-menubg-color));
 }
 
 #translations .interwiki__title {
 	min-height: 1.5625rem;
-	background: linear-gradient(
-		10deg,
-		rgba(140, 20, 25, 0.45) 0%,
-		rgba(140, 20, 25, 0.55) 100%
-	);
 	background: var(--gradient-sidemenu-header);
 }
 
@@ -20,7 +14,6 @@ body#translations {
 	display: block;
 	height: 1.5625rem;
 	padding-right: 1rem;
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-text-secondary-color));
 	font-size: calc(0.875rem * 0.95);
 	letter-spacing: 0.2rem;
@@ -37,30 +30,22 @@ body#translations {
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: flex-end;
-	min-height: calc(2rem - 0.125rem);
 	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
-	border-bottom: 0.125rem solid rgba(12, 12, 12, 0.08);
-	border-bottom: var(--sidebar-internal-border-thickness) solid
-		rgba(var(--swatch-border-color), 0.08);
-	/*color: transparent;*/
+	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
 	font-size: 0;
 	text-align: right;
 }
 
 #translations .interwiki__entry a {
 	display: block;
-	height: calc(2rem - 0.125rem);
 	height: calc(2rem - var(--sidebar-internal-border-thickness));
 	margin: 0;
 	padding: 0 0.6em;
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-clip: padding-box;
-	background-color: rgba(12, 12, 12, 0);
 	background-color: rgba(var(--swatch-menubg-hover-color), 0);
-	color: rgb(12, 12, 12);
 	color: rgb(var(--swatch-text-tertiary-color));
-	font-size: 0.875rem;
 	font-size: calc(var(--base-font-size) * (14 / 15));
 	letter-spacing: 0.04em;
 	line-height: calc(2em - var(--sidebar-internal-border-thickness));

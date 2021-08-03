@@ -22,7 +22,6 @@
 	width: 90vw;
 	height: var(--final-header-height-on-desktop);
 	background-clip: border-box;
-	background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 	background-image: var(--logo-image);
 	background-repeat: no-repeat;
 	background-position: left 0.75rem top 1.1875rem;
@@ -85,7 +84,6 @@ div#container-wrap {
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
 	margin-left: calc(var(--header-height-on-desktop) - 0.75rem);
 	padding: 1.875rem 0 0;
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
 	font-family: var(--header-font);
 	font-size: var(--header-h1-font-size);
@@ -98,7 +96,6 @@ div#container-wrap {
 	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
 	content: "SCP Foundation";
 	content: var(--header-title);
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh1-color));
 	text-shadow: none;
 }
@@ -132,7 +129,6 @@ div#container-wrap {
 #header h2 span::before {
 	content: "SECURE, CONTAIN, PROTECT";
 	content: var(--header-subtitle);
-	color: rgb(252, 252, 252);
 	color: rgb(var(--swatch-headerh2-color));
 	text-shadow: none;
 }
@@ -245,7 +241,7 @@ div#container-wrap {
 			0 0, 
 			100% 0, 
 			100% 100%,
-			0% 100%
+			0 100%
 		);
 	z-index: 13;
 	background-color: rgb(var(--search-icon-focus-bg-color));
@@ -541,7 +537,7 @@ div#container-wrap {
 		polygon(
 			-15% 0, 
 			115% 0, 
-			00% 100%, 
+			100% 100%, 
 			0 100%
 		);
 }
@@ -550,8 +546,8 @@ div#container-wrap {
 	--clip-path: 
 		polygon(
 			-15% 0, 
-			115% 0, 
-			00% 100%, 
+			115% 0,
+			100% 100%, 
 			0 100%
 		);
 }
@@ -664,7 +660,7 @@ div.mobile-top-bar {
 			0 0,
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	clip-path: var(--clip-path);
 	top: 0;
@@ -848,7 +844,6 @@ div.mobile-top-bar {
 	border: 0rem solid rgba(0, 0, 0, 0);
 	background: var(--dropdown-links-bg-color);
 	color: rgb(var(--dropdown-links-color));
-	font-size: 0.75rem;
 	font-size: calc(var(--base-font-size) * (4 / 5));
 	text-align: center;
 	white-space: nowrap;
@@ -860,7 +855,7 @@ div.mobile-top-bar {
 			0 0, 
 			0 0, 
 			0 100%, 
-			0% 100%
+			0 100%
 		);
 	content: " ";
 	position: absolute;
@@ -1171,7 +1166,6 @@ div.mobile-top-bar {
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: rgb(180, 35, 35);
 		background: rgb(var(--bright-accent));
 	}
 
@@ -1197,7 +1191,6 @@ div.mobile-top-bar {
 		width: var(--header-width-on-mobile, 100vw);
 		height: var(--header-height-on-mobile);
 		margin: 0;
-		background-image: url("https://nu-scptheme.github.io/Black-Highlighter/images/logo.svg");
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
 		background-position: 
