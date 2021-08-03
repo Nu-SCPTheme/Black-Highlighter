@@ -2242,257 +2242,104 @@ div.dblock {
 
 #breadcrumbs,
 .pseudocrumbs {
-	--clip-path: 
-		polygon(
-			calc(100% - 0.5em) 0, 
-			100% 50%, 
-			calc(100% - 0.5em) 100%, 
-			0 100%, 
-			0 0
-		);
-	display: flex;
-	position: relative;
-	grid-area: breadcrumbs;
-	align-items: center;
-	justify-content: center;
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
-	margin: -1em 0 1em;
-	padding: 0 0.75em 0 0;
-	font-family: var(--UI-font);
-	font-size: 0.85em;
-	line-height: 1;
-	-webkit-clip-path: var(--clip-path);
-	        clip-path: var(--clip-path);
+    display: flex;
+    position: relative;
+    grid-area: breadcrumbs;
+    align-items: center;
+    justify-content: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: -1em 0 1em;
+    padding: 0 0.75em 0 0;
+    font-family: var(--UI-font);
+    font-size: 0.85em;
+    line-height: 1;
 }
 
 #breadcrumbs a:-webkit-any-link, .pseudocrumbs a:-webkit-any-link {
-	--clip-path: 
-		polygon(
-			calc(100% - 0.5em) 0, 
-			100% 50%, 
-			calc(100% - 0.5em) 100%, 
-			0 100%, 
-			0 0
-		);
-	display: flex;
-	position: relative;
-	margin-right: -0.5em;
-	padding: 0.25em 0.75em 0.25em 0.5em;
-	-webkit-transition: 
-		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 
-		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--swatch-background));
-	background-image: 
-		var(--gradient-background);
-	background-repeat: repeat-x;
-	background-position: fixed;
-	background-position: top calc(-1.8 * var(--final-header-height-on-desktop)) left;
-	background-size: 
-		100% var(--background-gradient-distance);
-		-webkit-clip-path: var(--clip-path);
-		        clip-path: var(--clip-path);
+    display: flex;
+    position: relative;
+    z-index: 2;
+	margin-right: 0.75em;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    -webkit-transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #breadcrumbs a:any-link,
 .pseudocrumbs a:any-link {
-	--clip-path: 
-		polygon(
-			calc(100% - 0.5em) 0, 
-			100% 50%, 
-			calc(100% - 0.5em) 100%, 
-			0 100%, 
-			0 0
-		);
-	display: flex;
-	position: relative;
-	margin-right: -0.5em;
-	padding: 0.25em 0.75em 0.25em 0.5em;
-	transition: 
-		color  150ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--swatch-background));
-	background-image: 
-		var(--gradient-background);
-	background-repeat: repeat-x;
-	background-position: fixed;
-	background-position: top calc(-1.8 * var(--final-header-height-on-desktop)) left;
-	background-size: 
-		100% var(--background-gradient-distance);
-		-webkit-clip-path: var(--clip-path);
-		        clip-path: var(--clip-path);
+    display: flex;
+    position: relative;
+    z-index: 2;
+	margin-right: 0.75em;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    transition: color  150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #breadcrumbs a:hover,
 .pseudocrumbs a:hover,
 #breadcrumbs a:active,
 .pseudocrumbs a:active {
-	color: rgb(var(--swatch-text-secondary-color));
-	text-decoration: none;
+    color: rgb(var(--swatch-text-secondary-color));
+    text-decoration: none;
 }
 
 #breadcrumbs a:focus-within,
 .pseudocrumbs a:focus-within {
-	color: rgb(var(--swatch-text-secondary-color));
-	text-decoration: none;
-}
-
-#breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before, #breadcrumbs a:-webkit-any-link::after, .pseudocrumbs a:-webkit-any-link::after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
-#breadcrumbs::before,
-.pseudocrumbs::before,
-#breadcrumbs a:any-link::before,
-.pseudocrumbs a:any-link::before,
-#breadcrumbs a:any-link::after,
-.pseudocrumbs a:any-link::after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
-#breadcrumbs a:-webkit-any-link::after, .pseudocrumbs a:-webkit-any-link::after {
-	background-image: 
-		linear-gradient(140deg,
-			rgb(var(--swatch-primary),0) 0%,
-			rgb(var(--swatch-primary),0.15) 100%);
-}
-
-#breadcrumbs a:any-link::after,
-.pseudocrumbs a:any-link::after {
-	background-image: 
-		linear-gradient(140deg,
-			rgb(var(--swatch-primary),0) 0%,
-			rgb(var(--swatch-primary),0.15) 100%);
-}
-
-#breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before{
-	--clip-path: 
-		polygon(
-			calc(100% - 0.5625em) calc(100% - 0.125em), 
-			calc(100% - 0.125em) 50%, 
-			calc(100% - 0.625em) 0, 
-			calc(100% - 0.125em) 0, 
-			100% 50%, 
-			calc(100% - 0.125em) 100%, 
-			0 100%, 
-			0 calc(100% - 0.125em)
-		);
-	-webkit-transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		-webkit-clip-path: var(--clip-path);
-		        clip-path: var(--clip-path);
-}
-
-#breadcrumbs::before,
-.pseudocrumbs::before,
-#breadcrumbs a:any-link::before,
-.pseudocrumbs a:any-link::before{
-	--clip-path: 
-		polygon(
-			calc(100% - 0.5625em) calc(100% - 0.125em), 
-			calc(100% - 0.125em) 50%, 
-			calc(100% - 0.625em) 0, 
-			calc(100% - 0.125em) 0, 
-			100% 50%, 
-			calc(100% - 0.125em) 100%, 
-			0 100%, 
-			0 calc(100% - 0.125em)
-		);
-	transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 
-		background-color  150ms cubic-bezier(0.4, 0, 0.2, 1),
-		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		-webkit-clip-path: var(--clip-path);
-		        clip-path: var(--clip-path);
-}
-
-#breadcrumbs::before,
-.pseudocrumbs::before {
-	background-image: 
-		linear-gradient(to right,
-			rgb(var(--swatch-primary-darkest),1) 0%,
-			rgb(var(--swatch-primary),0) 100%);
+    color: rgb(var(--swatch-text-secondary-color));
+    text-decoration: none;
 }
 
 #breadcrumbs a:-webkit-any-link::before, .pseudocrumbs a:-webkit-any-link::before {
-	background-image: 
-		linear-gradient(100deg,
-			rgb(var(--swatch-primary-darkest),1) 0%,
-			rgb(var(--swatch-primary-darkest),0.5) 100%);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skew(-25deg); 
+    -webkit-transition: 
+        box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: 
+        box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    box-shadow: 
+        0.0625rem 0.0625rem 0 0 rgb(var(--swatch-primary)),
+        0.25rem 0.0625rem 0 0 rgb(var(--background-gradient-color),0.7),
+        0.25rem 0.0625rem 0 0 rgb(var(--swatch-background)),
+        0.3125rem 0.0625rem 0 0 rgb(var(--swatch-primary));
 }
 
 #breadcrumbs a:any-link::before,
 .pseudocrumbs a:any-link::before {
-	background-image: 
-		linear-gradient(100deg,
-			rgb(var(--swatch-primary-darkest),1) 0%,
-			rgb(var(--swatch-primary-darkest),0.5) 100%);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skew(-25deg); 
+    transition: 
+        box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    box-shadow: 
+        0.0625rem 0.0625rem 0 0 rgb(var(--swatch-primary)),
+        0.25rem 0.0625rem 0 0 rgb(var(--background-gradient-color),0.7),
+        0.25rem 0.0625rem 0 0 rgb(var(--swatch-background)),
+        0.3125rem 0.0625rem 0 0 rgb(var(--swatch-primary));
 }
 
 #breadcrumbs a:hover::before,
-.pseudocrumbs a:hover::before,
-#breadcrumbs a:active::before,
-.pseudocrumbs a:active::before {
-	--clip-path: 
-		polygon(
-			0 33%,
-			0 0,
-			calc(100% - 0.625em) 0, 
-			calc(100% - 0.125em) 0, 
-			100% 50%, 
-			calc(100% - 0.125em) 100%, 
-			0 100%, 
-			0 66%
-		);
-	background-color: rgb(var(--swatch-primary));
-}
-
-#breadcrumbs a:focus-within::before,
-.pseudocrumbs a:focus-within::before {
-	--clip-path: 
-	polygon(
-		0 33%,
-		0 0,
-		calc(100% - 0.625em) 0, 
-		calc(100% - 0.125em) 0, 
-		100% 50%, 
-		calc(100% - 0.125em) 100%, 
-		0 100%, 
-		0 66%
-	);
-	background-color: rgb(var(--swatch-primary));
+.pseudocrumbs a:hover::before {
+    background-color: rgb(var(--swatch-primary));
+    box-shadow: 
+        0 0 0 0.25rem rgb(var(--swatch-primary));
 }
 
 /* ===PAGE-CONTENT=== */
@@ -2812,13 +2659,15 @@ div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
 	--icon-size: clamp(1.5em, 5vmin, 2em);
 	display: flex;
-	gap: 0.5em;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+	width: var(--body-width-on-desktop);
 	font-family: var(--UI-font);
 	font-size: var(--base-font-size);
 	text-align: left;
 	white-space: nowrap;
+	gap: 0.5em;
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
