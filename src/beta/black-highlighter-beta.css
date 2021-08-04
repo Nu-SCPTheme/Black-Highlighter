@@ -2672,7 +2672,7 @@ div[id*="page-options-bottom"] {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	width: var(--body-width-on-desktop);
+	width: min(90vw, var(--body-width-on-desktop));
 	font-family: var(--UI-font);
 	font-size: var(--base-font-size);
 	text-align: left;
@@ -8443,6 +8443,20 @@ div.blockquote,
 		inset 0 0 0 0.0625rem rgba(var(--blockquote-border-color),0.5),
 		inset 0.0625rem 0 0 0 rgba(var(--blockquote-border-color),0.5),
 		inset 0 -0.0625rem 0 0 rgba(var(--blockquote-border-color),0.75);
+}
+
+blockquote > :first-child,
+.blockquote > :first-child,
+div.blockquote > :first-child,
+[class*="blockquote"] > :first-child {
+	margin-top: 0;
+}
+
+blockquote > :last-child,
+.blockquote > :last-child,
+div.blockquote > :last-child,
+[class*="blockquote"] > :last-child {
+	margin-bottom: 0;
 }
 
 .colorbar-quote {
