@@ -358,14 +358,14 @@
 	--swatch-headerh2-color: var(--swatch-text-light);
 
 		/* ===SEARCH ELEMENT=== */
-	--search-icon-color: var(--swatch-menubg-light-color);
-	--search-icon-bg-color: var(--dark-accent);
-	--search-icon-hover-color: var(--swatch-menubg-light-color);
+	--search-icon-color: var(--swatch-secondary-color);
+	--search-icon-bg-color: var(--swatch-primary-darkest);
+	--search-icon-hover-color: var(--swatch-secondary-color);
 	--search-icon-hover-bg-color: var(--swatch-alternate-color);
 	--search-textbox-text-color: 0,0,0,0;
 			/* Focus is when the search box has been clicked on */
-	--search-icon-focus-color: var(--swatch-menubg-light-color);
-	--search-icon-focus-bg-color: var(--bright-accent);
+	--search-icon-focus-color: var(--swatch-secondary-color);
+	--search-icon-focus-bg-color: var(--swatch-primary);
 	--search-focus-outline-color: var(--swatch-primary);
 	--search-focus-textbox-bg-color: var(--swatch-alternate-color);
 	--search-focus-textbox-text-color: var(--swatch-text-secondary-color);
@@ -383,7 +383,7 @@
 	--login-dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
 	--login-dropdown-text-color: var(--swatch-text-secondary-color);
 	--login-dropdown-text-hover-color: var(--swatch-text-secondary-color);
-	--login-dropdown-bg-hover-color: var(--bright-accent);
+	--login-dropdown-bg-hover-color: var(--swatch-primary);
 }
 
 #top-bar {
@@ -403,7 +403,7 @@
 	--dropdown-links-color: var(--swatch-text-secondary-color);
 	--dropdown-links-bg-color: 0,0,0,0; /* Transparent */
 	--dropdown-links-hover-color: var(--swatch-text-secondary-color);
-	--dropdown-links-hover-bg-color: var(--bright-accent);
+	--dropdown-links-hover-bg-color: var(--swatch-primary);
 }
 
 #side-bar {
@@ -429,11 +429,11 @@
 				rgb(188, 24, 136) 100%
 			);
 		--twitch-icon-color: 100, 65, 165;
-		--social-icon-hover-color: var(--bright-accent);
+		--social-icon-hover-color: var(--swatch-primary);
 
 		/* ===SIDEBLOCK MENU=== */
 	--sideblock-bg-color: 0,0,0,0; /* Transparent */
-	--sideblock-heading-border-color: var(--bright-accent);
+	--sideblock-heading-border-color: var(--swatch-primary);
 	--sideblock-heading-bg-color: 0,0,0,0; /* Transparent */
 	--sideblock-heading-text-color: var(--swatch-primary-darker);
 
@@ -443,31 +443,31 @@
 		
 	--sidebar-links-text: var(--swatch-menutxt-general-color);
 	--sidebar-links-bg-color: 0,0,0,0; /* Transparent */
-	--sidebar-links-hover-bg-color: var(--bright-accent);
+	--sidebar-links-hover-bg-color: var(--swatch-primary);
 	--sidebar-links-hover-text-color: var(--swatch-text-secondary-color);
 
 		/* ===SIDEBAR COLLAPSIBLES=== */
 			/*Folded Colors */
 	--sidebar-collapsible-fld-link-bg: var(--swatch-primary-darker), 0.25;	
-	--sidebar-collapsible-fld-link-color: var(--swatch-primary-darkest);
+	--sidebar-collapsible-fld-link-color: var(--sideblock-heading-text-color);
 	--sidebar-collapsible-fld-link-hover-bg: var(--swatch-primary-darker);
 	--sidebar-collapsible-fld-link-hover-color: var(--swatch-text-secondary-color);
 	--sidebar-collapsible-fld-arrow-color: var(--swatch-text-tertiary-color);
 	--sidebar-collapsible-fld-arrow-hover-color: var(--swatch-text-secondary-color);
 
 			/*Unfolded Colors */
-	--sidebar-collapsible-ufld-link-bg: var(--swatch-primary-darker), 0.25;	
-	--sidebar-collapsible-ufld-link-color: var(--swatch-primary-darkest);
+	--sidebar-collapsible-ufld-link-bg: var(--sidebar-collapsible-fld-link-bg);	
+	--sidebar-collapsible-ufld-link-color: var(--sideblock-heading-text-color);
 	--sidebar-collapsible-ufld-link-hover-bg: var(--swatch-primary), 1;
-	--sidebar-collapsible-ufld-link-hover-color: var(--swatch-text-secondary-color);
-	--sidebar-collapsible-ufld-arrow-color: var(--swatch-text-tertiary-color);
-	--sidebar-collapsible-ufld-arrow-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-ufld-link-hover-color: var(---sidebar-collapsible-fld-link-hover-color);
+	--sidebar-collapsible-ufld-arrow-color: var(--sidebar-collapsible-fld-arrow-color);
+	--sidebar-collapsible-ufld-arrow-hover-color: var(--sidebar-collapsible-fld-arrow-hover-color);
 
 			/* Unfolded Body Colors */
-	--sidebar-collapsible-body-bg: var(--bright-accent), 0.125;
-	--sidebar-collapsible-link-color: var(--swatch-menutxt-general-color);
-	--sidebar-collapsible-link-hover-bg: var(--swatch-primary);
-	--sidebar-collapsible-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-body-bg: var(--swatch-primary), 0.125;
+	--sidebar-collapsible-link-color: var(--sidebar-links-text);
+	--sidebar-collapsible-link-hover-bg: var(--sidebar-links-hover-bg-color);
+	--sidebar-collapsible-link-hover-color: var(--sidebar-links-hover-text-color);
 }
 
 	/* ===FOOTER=== */
@@ -493,15 +493,15 @@
 		/* ===UI ICONS=== */
 			/* ===PAGE OPTIONS ICONS=== */
 	--ui-icon-color: var(--swatch-text-secondary-color);
-	--ui-icon-bg: var(--dark-accent);
+	--ui-icon-bg: var(--swatch-primary-darkest);
 	--ui-icon-hover-color: var(--swatch-text-secondary-color);
-	--ui-icon-hover-bg: var(--bright-accent);
+	--ui-icon-hover-bg: var(--swatch-primary);
 
 			/* ===TEXT EDITOR ICONS=== */
 	--editor-icon-color: var(--swatch-menutxt-general-color);
 	--editor-icon-bg: 0,0,0,0; /* Transparent */
 	--editor-icon-hover-color: var(--swatch-background);
-	--editor-icon-hover-bg: var(--bright-accent);
+	--editor-icon-hover-bg: var(--swatch-primary);
 	--editor-icon-submenu-bg: var(--swatch-secondary-color);
 
 		/* ===TABS=== */
@@ -574,10 +574,10 @@
 	--rating-module-button-credit-color: var(--swatch-secondary-color);
 
 	--rating-module-bg-color: var(--swatch-background);
-	--rating-module-bottom-border-color: var(--bright-accent);
+	--rating-module-bottom-border-color: var(--swatch-primary);
 
-	--rating-module-text-color: var(--swatch-menutxt-dark-color);
-	--rating-module-text-hover-color: var(--swatch-menutxt-light-color);	
+	--rating-module-text-color: var(--swatch-text-tertiary-color);
+	--rating-module-text-hover-color: var(--swatch-text-secondary-color);	
 
 		/* ===MODALS=== */
 	--modal-bg: var(--swatch-secondary-color);
