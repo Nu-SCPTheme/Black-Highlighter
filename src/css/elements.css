@@ -1246,10 +1246,10 @@ table[style*="margin:0"] * {
 #page-content div#toc {
 	display: grid;
 	position: relative;
-	grid-template-areas:
-		". fold title"
-		"list list list";
-	grid-template-columns: 2.5rem 5rem 1fr;
+	grid-template-areas: 
+		"fold title" 
+		"list list";
+	grid-template-columns: 1fr;
 	min-width: var(--sidebar-width-on-desktop);
 	max-width: var(--sidebar-width-on-desktop);
 	margin: 0;
@@ -1257,10 +1257,6 @@ table[style*="margin:0"] * {
 }
 
 #toc.floatleft {
-	grid-template-areas:
-		"fold title . "
-		"list list list";
-	grid-template-columns: 5rem max-content 2.5rem;
 	float: left;
 }
 
@@ -1342,15 +1338,11 @@ table[style*="margin:0"] * {
 }
 
 #toc #toc-action-bar a::before {
-	content: " ";
+	content: "";
 	display: inline-block;
 	position: relative;
 	width: 1em;
 	height: 1em;
-	transition: 
-		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
-		filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--toc-header-text-color));
 	mask-image: var(--arrow-mask);
 	mask-repeat: no-repeat;
@@ -1381,8 +1373,9 @@ table[style*="margin:0"] * {
 	content: "Table of Contents";
 	position: absolute;
 	left: 100%;
-	padding: 0.25em 0.5em 0.25em 0;
-	text-shadow: none;
+	transition: 
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1);
 	white-space: nowrap;
 }
 
@@ -1775,6 +1768,7 @@ span.printuser {
 }
 
 span.printuser a:first-of-type {
+	display: inline-block;
 	width: 1.75em;
 	height: 1em;
 	margin: 0 0.125rem 0 0;
@@ -2126,6 +2120,15 @@ div.block-left {
 	.content-panel.right-column {
 		width: 99%;
 		float: left;
+	}
+
+	#page-content div#toc {
+		min-width: var(--sidebar-width-on-mobile);
+		max-width: var(--sidebar-width-on-mobile);
+	}
+
+	#toc #toc-list {
+		max-width: var(--sidebar-width-on-mobile);
 	}
 }
 

@@ -106,7 +106,7 @@
 	--base-font-size: 
 		clamp(
 			var(--min-font-size), 
-			2vmin,
+			2vw,
 			var(--max-font-size)
 		);
 	--base-line-height: 1.5;
@@ -309,9 +309,15 @@
 	);
 	
 	/* ===SIDEBAR MEASUREMENTS=== */
-	--sidebar-width-on-desktop: calc(
-		(var(--base-font-size) * (14 / 15)) * 19
-	);
+	--sidebar-width-on-desktop: 
+		min(
+			calc(
+				(var(--base-font-size) * (14 / 15)) * 19
+			),
+			calc(
+				(100vw - var(--body-width-on-desktop))
+			)
+		);
 	--sidebar-width-on-mobile: calc(
 		(var(--base-font-size) * (14 / 15)) * 17
 	);
