@@ -3102,6 +3102,83 @@ div.odialog-shader-iframe {
 	}
 }
 
+/* User Screen Styling */
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] {
+	background-color: transparent!important; /*Overwriting inline styling */
+	box-shadow: 0 0 0 0.25rem rgb(var(--swatch-primary-darkest));
+	width: fit-content;
+	height: fit-content;
+	padding: 0 !important; /*Overwriting inline styling */
+	margin: 1em 0 0.25em 0.25rem;
+	grid-row: 1;
+	grid-column: 1;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] + h1 {
+	display: inline-flex;
+	width: calc(100% - 8rem);
+	grid-row: 1;
+	grid-column: 1/ span 2;
+	margin-left: 7.5rem;
+	align-self: center;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table tbody,
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table tr {
+	display: contents;	
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column: 1/ span 2;
+	margin-top: 0.25rem;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table td:first-of-type {
+	display: flex;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table tr:nth-of-type(5) td:first-of-type {
+	position: relative;
+	color: transparent;
+	user-select: none;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table tr:nth-of-type(5) td:first-of-type::before {
+	content: "Member of this site since:";
+	position: absolute;
+	left: 0;
+	user-select: all;
+	color: rgb(var(--modal-body-text));
+	font-weight: bold;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table td:first-of-type::after {
+	content: "";
+	flex-grow: 1;
+	height: 0.0625rem;
+	background: rgb(var(--swatch-primary));
+	margin: auto 1em auto;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table + div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: min-content;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table + div > div {
+	grid-row: 2;
+	grid-column: 3;
+}
+
+#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table + div > div > a {
+	width: 100%;
+}
+
 /* ===FORUM=== */
 .forum-thread-box .description-block {
 	--box-shadow-1: rgba(var(--swatch-menubg-black-color), 0.15);
