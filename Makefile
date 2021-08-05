@@ -20,7 +20,7 @@ include build/scp-test.mk
 
 # Top-level rules
 css: dist/css/min/ $(CSS_OUTPUTS) $(INT_OUTPUTS)
-images: dist/img/ $(IMAGE_OUTPUTS)
+images: dist/img/ $(IMAGE_COPY_OUTPUTS) $(IMAGE_OPTIMIZE_OUTPUTS)
 files: $(FILES_OUTPUTS)
 fonts: dist/fonts/ $(FONTS_OUTPUTS)
 scp-test: $(SCP_TEST_OUTPUTS)

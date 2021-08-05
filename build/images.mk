@@ -1,8 +1,18 @@
 # Variables
-IMAGE_SOURCES := $(wildcard src/img/*)
-IMAGE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_SOURCES))
+IMAGE_COPY_SOURCES := $(wildcard src/img/page-toolbar-icons/* src/img/text-editor-icons/*)
+IMAGE_COPY_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_COPY_SOURCES))
 
-# Image optimization
+IMAGE_OPTIMIZE_SOURCES := $(wildcard src/img/*)
+IMAGE_OPTIMIZE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_OPTIMIZE_SOURCES))
+
+# Images to copy
+dist/img/page-toolbar-icons/%: src/img/page-toolbar-icons/%
+	build/install.sh 644 $< $@
+
+dist/img/text-editor-icons/%: src/img/text-editor-icons/%
+	build/install.sh 644 $< $@
+
+# Images to optimize
 dist/img/%.gif: src/img/%.gif node_modules
 	npm run optimize -- gif $< $@
 
