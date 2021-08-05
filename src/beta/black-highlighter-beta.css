@@ -7001,9 +7001,9 @@ div#container-wrap {
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		right 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		width 600ms cubic-bezier(0.4, 0, 0.2, 1),
-		padding 600ms cubic-bezier(0.4, 0, 0.2, 1),
-		max-width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+		width 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		padding 300ms cubic-bezier(0.4, 0, 0.2, 1),
+		max-width 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	will-change: box-shadow, font-variation-settings, font-weight, background-color, color, right, width, padding, max-width;
 }
 
@@ -8146,52 +8146,55 @@ div.mobile-top-bar {
 	#login-status {
 		top: 2em;
 		right: calc(3% + var(--account-height) + 0.25em);
-		transition: -webkit-clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
-		transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
-		transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
-		-webkit-clip-path: 
-			polygon(
-				0 0, 
-				100% 0, 
-				100% calc(100% + var(--header-height-on-desktop)), 
-				0 calc(100% + var(--header-height-on-desktop))
-			);
-		        clip-path: 
-			polygon(
-				0 0, 
-				100% 0, 
-				100% calc(100% + var(--header-height-on-desktop)), 
-				0 calc(100% + var(--header-height-on-desktop))
-			);
+		transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-user-select: initial;
+		    -ms-user-select: initial;
+		        user-select: initial;
 	}
 
 	#login-status:not(:focus-within) {
-		-webkit-clip-path: 
-			polygon(
-				calc(100% - var(--account-height) - 2ch) 0, 
-				100% 0,
-				100% 100%, 
-				calc(100% - var(--account-height) - 2ch) 100%
-			);
-		        clip-path: 
-			polygon(
-				calc(100% - var(--account-height) - 2ch) 0, 
-				100% 0,
-				100% 100%, 
-				calc(100% - var(--account-height) - 2ch) 100%
-			);
+		color: transparent;
+		-webkit-user-select: none;
+		    -ms-user-select: none;
+		        user-select: none;
+	}
+
+	#login-status *:not(#account-topbutton):not([href*="account/messages"]) {
+		transition: 
+			box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: 
+			box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: 
+			box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			-webkit-text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			-webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 1;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+
+	#login-status:not(:focus-within) *:not(#account-topbutton):not([href*="account/messages"]) {
+		opacity: 0;
+		
+		-webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+		
+		        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+		pointer-events: none;
 	}
 
 	#login-status #account-topbutton {
-		margin-left: 0;
-		transition: margin 50ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	#login-status:not(:focus-within) #account-topbutton {
-		margin-left: 2ch;
-	}
-
-	#login-status:not(:focus-within) > a[href*="account/messages"] + #account-topbutton {
 		margin-left: 0;
 	}
 
