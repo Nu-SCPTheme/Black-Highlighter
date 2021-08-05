@@ -3076,10 +3076,8 @@ div.odialog-shader-iframe {
 }
 
 /* MODAL LOADING SCREEN BY ESTRELLAYOSHTE */
-.owindow.owait {
-
-}
 .owindow.owait .content {
+	padding: 0.5em 0.5em 2em;
 	background-image: none;
 }
 
@@ -3094,6 +3092,10 @@ div.odialog-shader-iframe {
 	border: 0.3rem solid rgb(var(--modal-body-text));
 	border-radius: 50%;
 	border-color: rgb(var(--modal-header-stripe)) transparent;
+}
+
+.owindow.osuccess {
+	padding: 0.5em;
 }
 
 @keyframes loading {
