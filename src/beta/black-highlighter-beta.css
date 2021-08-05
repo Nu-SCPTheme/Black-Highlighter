@@ -5597,39 +5597,39 @@ div.odialog-shader-iframe {
 	box-shadow: 0 -0.0625rem 0 0 rgba(var(--modal-header-stripe), 0.2);
 }
 
-.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn,
-.owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn,
+#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
 	background-color: rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 }
 
-.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:not(:last-of-type),
-.owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:not(:last-of-type) {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:not(:last-of-type),
+#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:not(:last-of-type) {
 	margin-right: 0.5em;
 }
 
-.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:hover,
-.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:active,
-.owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:hover,
-.owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:active {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:hover,
+#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:active,
+#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:hover,
+#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:active {
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
 
-.title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:focus-within,
-.owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:focus-within {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:focus-within,
+#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn:focus-within {
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
 
 /* MODAL LOADING SCREEN BY ESTRELLAYOSHTE */
 
-.owindow.owait .content {
+#odialog-container .owindow.owait .content {
 	padding: 0.5em 0.5em 2em;
 	background-image: none;
 }
 
-.owindow.owait .content::after {
+#odialog-container .owindow.owait .content::after {
 	content: " ";
 	display: block;
 	width: 1.5rem;
@@ -5642,7 +5642,7 @@ div.odialog-shader-iframe {
 	border-color: rgb(var(--modal-header-stripe)) transparent;
 }
 
-.owindow.osuccess {
+#odialog-container .owindow.osuccess {
 	padding: 0.5em;
 }
 
@@ -7277,9 +7277,9 @@ div#container-wrap {
 	pointer-events: none;
 }
 
-#account-topbutton:focus + #account-options,
-#account-topbutton:active + #account-options,
-#account-options:focus-within {
+#login-status #account-topbutton:focus + #account-options,
+#login-status #account-topbutton:active + #account-options,
+#login-status #account-options:focus-within {
     opacity: 1;
     pointer-events: all;
 }
@@ -7287,8 +7287,8 @@ div#container-wrap {
 /* Without this, touchscreen doesn't work */
 
 @media (pointer: coarse) {
-    #account-topbutton:hover + #account-options,
-    #account-options:hover {
+    #login-status #account-topbutton:hover + #account-options,
+    #login-status #account-options:hover {
         opacity: 1;
         pointer-events: all;
     }
