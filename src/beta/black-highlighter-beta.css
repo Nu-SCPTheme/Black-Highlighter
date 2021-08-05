@@ -386,7 +386,6 @@
 
 		/* ===SEARCH ELEMENT=== */
 	--search-icon-color: var(--swatch-text-secondary-color);
-	--search-icon-bg-color: var(--swatch-primary-darkest);
 	--search-icon-hover-color: var(--swatch-text-secondary-color);
 	--search-icon-hover-bg-color: var(--swatch-alternate-color);
 	--search-textbox-text-color: 0,0,0,0;
@@ -403,7 +402,7 @@
 	--login-myaccount-color: var(--swatch-text-secondary-color);
 	--login-myaccount-underline-color: var(--swatch-primary-darkest);
 	--login-myaccount-hover-bg-color: var(--swatch-primary-darkest);
-	--login-arrow-color: var(--swatch-text-light);
+	--login-arrow-color: var(--search-icon-color);
 			/* Dropdown Box when arrow is clicked */
 	--login-dropdown-bg-color: var(--swatch-menubg-color);
 	--login-dropdown-bg-image: var(--gradient-header);
@@ -411,6 +410,11 @@
 	--login-dropdown-text-color: var(--swatch-text-secondary-color);
 	--login-dropdown-text-hover-color: var(--swatch-text-secondary-color);
 	--login-dropdown-bg-hover-color: var(--swatch-primary);
+
+			/* Mobile Icon Styling */
+	--login-mobile-icon-color: var(--search-icon-color);
+	--login-mobile-icon-hover-color: var(--search-icon-hover-color);
+	--login-mobile-icon-hover-bg-color: var(--search-icon-hover-bg-color);
 }
 
 #top-bar {
@@ -5927,7 +5931,6 @@ div.odialog-shader-iframe {
 	top: 0;
 	grid-area: side-bar;
 	flex-direction: column;
-	flex-shrink: 0;
 	width: var(--sidebar-width-on-desktop);
 	height: 100vh;
 	margin: 0;
@@ -6856,6 +6859,7 @@ div#container-wrap {
 #header {
 	--search-width: calc(var(--base-font-size) * 15);
 	--search-height: calc(var(--base-font-size) * 1.8);
+	--account-height: var(--search-height);
 }
 
 #header,
@@ -7147,16 +7151,22 @@ div#container-wrap {
 	position: absolute;
 	z-index: 11;
 	top: 1.5em;
-	right: calc(7% - 3em);
+	right: calc(3% + var(--search-height) - 0.25em);;
 	align-items: center;
 	justify-content: center;
 	height: 2em;
-	padding: 0 2.15em 0 0.5em;
+	margin: 0 0 0 0.5em;
 	transform: translateY(-50%);
+	transition: 
+		opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--login-line-divider-color));
 	font-family: var(--UI-font);
 	font-size: 0.9em;
 	white-space: nowrap;
+}
+
+#search-top-box:focus-within ~ #login-status {
+	opacity: 0;
 }
 
 /* Not Logged In Styling */
@@ -7224,42 +7234,64 @@ div#container-wrap {
 }
 
 #login-status #account-topbutton {
-	--arrow-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.2' baseProfile='tiny' id='Right_Arrow' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 10 6' overflow='visible' xml:space='preserve'%3E%3Cpath d='M0,0l5,6l5-6H0z'/%3E%3C/svg%3E%0A");
-	padding: 0 0.25em;
-	background: rgb(var(--login-arrow-color));
-	color: rgb(var(--login-arrow-color));
-	-webkit-mask-image: var(--arrow-mask);
-	        mask-image: var(--arrow-mask);
-	-webkit-mask-size: 1em 0.45em;
-	        mask-size: 1em 0.45em;
-	-webkit-mask-repeat: no-repeat;
-	        mask-repeat: no-repeat;
-	-webkit-mask-position: center center;
-	        mask-position: center center;
+	position: relative;
+	width: var(--account-height);
+	height: var(--account-height);
+	margin: 0;
+	padding: 0;
+	transition: -webkit-clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--login-arrow-color));
+	color: transparent;
+	-webkit-clip-path: 
+		polygon(
+			30% 35%, 
+			70% 35%, 
+			50% 60%, 
+			50% 60%
+		);
+	        clip-path: 
+		polygon(
+			30% 35%, 
+			70% 35%, 
+			50% 60%, 
+			50% 60%
+		);
 }
 
 #login-status #account-options {
-	display: none;
+	display: block !important;
 	position: absolute;
 	z-index: 12;
 	top: 1.5rem;
 	right: 0;
 	width: 10em;
-	max-height: 0;
 	margin: 0.25em 0 0 0;
 	padding: 0;
 	overflow: hidden;
-	animation: 
-		fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms forwards;
+	transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 0;
 	background-color: rgb(var(--login-dropdown-bg-color));
 	background-image: var(--login-dropdown-bg-image);
+	pointer-events: none;
 }
 
-#login-status #account-options[style*="flex"],
-#login-status #account-options[style*="block"] {
-	display: flex !important;
-	max-height: 100vh;
+#account-topbutton:focus + #account-options,
+#account-topbutton:active + #account-options,
+#account-options:focus-within {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Without this, touchscreen doesn't work */
+
+@media (pointer: coarse) {
+    #account-topbutton:hover + #account-options,
+    #account-options:hover {
+        opacity: 1;
+        pointer-events: all;
+    }
 }
 
 #login-status #account-options * {
@@ -8113,7 +8145,103 @@ div.mobile-top-bar {
 
 	#login-status {
 		top: 2em;
-		right: calc(7% - 1em);
+		right: calc(3% + var(--account-height) + 0.25em);
+		transition: -webkit-clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-clip-path: 
+			polygon(
+				0 0, 
+				100% 0, 
+				100% calc(100% + var(--header-height-on-desktop)), 
+				0 calc(100% + var(--header-height-on-desktop))
+			);
+		        clip-path: 
+			polygon(
+				0 0, 
+				100% 0, 
+				100% calc(100% + var(--header-height-on-desktop)), 
+				0 calc(100% + var(--header-height-on-desktop))
+			);
+	}
+
+	#login-status:not(:focus-within) {
+		-webkit-clip-path: 
+			polygon(
+				calc(100% - var(--account-height) - 2ch) 0, 
+				100% 0,
+				100% 100%, 
+				calc(100% - var(--account-height) - 2ch) 100%
+			);
+		        clip-path: 
+			polygon(
+				calc(100% - var(--account-height) - 2ch) 0, 
+				100% 0,
+				100% 100%, 
+				calc(100% - var(--account-height) - 2ch) 100%
+			);
+	}
+
+	#login-status #account-topbutton {
+		margin-left: 0;
+		transition: margin 50ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	#login-status:not(:focus-within) #account-topbutton {
+		margin-left: 2ch;
+	}
+
+	#login-status:not(:focus-within) > a[href*="account/messages"] + #account-topbutton {
+		margin-left: 0;
+	}
+
+	#login-status #account-topbutton::before,
+	#login-status #account-topbutton::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	#login-status #account-topbutton::before {
+		--mask-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='UserIcon' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 200 200' xml:space='preserve'%3E%3Cpath d='M89.8 70.6c-9.9 0-15.8 7.9-15.8 15.8 0 15.8 19.8 19.8 27.7 31.6 7.9-11.9 27.7-15.8 27.7-31.6 0-7.9-5.9-15.8-15.8-15.8-7.9 0-11.9 7.9-11.9 7.9s-4-7.9-11.9-7.9z'/%3E%3Cpath d='M188.7 115.6c.1-.9.2-1.8.3-2.8.2-1.8.3-3.7.3-5.5v-2.8c0-1.1 0-2.2-.1-3.2 0-.4 0-.7-.1-1.1 0-.7-.1-1.4-.1-2.2 0-.4-.1-.8-.1-1.2-.1-.7-.1-1.3-.2-2 0-.4-.1-.9-.1-1.3-.1-.6-.2-1.3-.3-1.9-.1-.4-.1-.9-.2-1.3-.1-.6-.2-1.3-.3-1.9-.1-.4-.1-.8-.2-1.2-.1-.7-.3-1.4-.4-2.1-.1-.3-.1-.7-.2-1-.2-1-.5-2-.7-3-.1-.3-.2-.7-.3-1-.2-.7-.4-1.3-.6-2-.1-.4-.3-.9-.4-1.3-.2-.5-.4-1.1-.5-1.6-.2-.5-.3-.9-.5-1.4l-.6-1.5c-.2-.5-.4-.9-.5-1.4-.2-.5-.4-1-.6-1.4-.2-.5-.4-.9-.6-1.4-.2-.5-.4-.9-.6-1.4-.2-.5-.4-1-.7-1.4l-.6-1.2c-.5-1.1-1.1-2.1-1.7-3.2-.1-.3-.3-.5-.4-.8-.3-.5-.6-1.1-.9-1.6-.2-.3-.4-.6-.6-1-.3-.5-.7-1-1-1.6l-.6-.9c-.3-.5-.7-1-1.1-1.6l-.6-.9c-.4-.5-.7-1-1.1-1.6-.2-.3-.4-.5-.6-.8-.4-.5-.8-1.1-1.3-1.6-.1-.2-.3-.3-.4-.5-2.2-2.7-4.5-5.2-6.9-7.6l-.4-.4c-.5-.5-1.1-1-1.6-1.6-.2-.1-.3-.3-.5-.4-.6-.5-1.1-1-1.7-1.5-.2-.1-.3-.3-.5-.4l-1.8-1.5c-.1-.1-.2-.2-.3-.2-2.8-2.3-5.8-4.4-8.9-6.3-3.9-2.4-7.9-4.5-12.2-6.3L129.5 6h-59l-5.3 16.1c-32.1 13.6-54.6 45.4-54.6 82.4 0 1.8.1 3.7.2 5.5s.3 3.7.5 5.5L0 128.2l15 26.1 14.5 25.1 16.6-3.5c15 11.4 33.7 18.1 53.9 18.1 20.2 0 38.9-6.7 53.9-18.1l16.6 3.5 29.5-51.2-11.3-12.6zm-70-94.6 1.9 5.8 2.1 6.5 5.1 2.2-11 4 16.9 11.9c7.6 5.4 12.2 14.1 12.2 23.4v24.4c0 10.4-4.3 19.9-11.3 26.6-5.7 5.5-13.2 9.1-21.1 10.1-3.2.5-16.9.2-20.3.3-9.5 0-18.9-3.8-25.7-10.4-6.9-6.7-11.3-16.1-11.3-26.5V74.7c0-9.3 4.6-18.1 12.2-23.4l31.3-21.9 1.5-8.3h17.5zm44.2 141.5-5.9-1.2-6.7-1.4-5.4 4.1c-13 9.8-28.5 15-44.8 15s-31.9-5.2-44.8-15l-5.4-4.1-6.7 1.4-5.9 1.2-10.9-19c8.3-6.6 18.4-12 29.7-16C64.5 138.7 78 146 93.2 146H109c15.2 0 28.7-7.3 37.3-18.5 10.7 3.8 20.2 8.9 28.2 14.9l-11.6 20.1z'/%3E%3C/svg%3E%0A");
+		background-color: rgb(var(--login-mobile-icon-color),0);
+		-webkit-mask-image: var(--mask-image);
+		        mask-image: var(--mask-image);
+		-webkit-mask-size: calc(var(--account-height) - 0.5em);
+		        mask-size: calc(var(--account-height) - 0.5em);
+		-webkit-mask-position: center center;
+		        mask-position: center center;
+		-webkit-mask-repeat: no-repeat;
+		        mask-repeat: no-repeat;
+		pointer-events: none;
+	}
+		
+	#login-status:not(:focus-within) #account-topbutton::before {
+		z-index: 2;
+		background-color: rgb(var(--login-mobile-icon-color),1);
+	}
+
+	#login-status:not(:focus-within) #account-topbutton::after {
+		z-index: 1;
+		background-color: rgb(var(--login-mobile-hover-bg-color),0);
+	}
+
+	#login-status:not(:focus-within) #account-topbutton:hover::before {
+		background-color: rgb(var(--login-mobile-icon-hover-color),1);
+	}
+
+	#login-status:not(:focus-within) #account-topbutton:hover::after {
+		background-color: rgb(var(--login-mobile-icon-hover-bg-color),1);
+	}
+
+	#login-status:not(:focus-within) #account-topbutton {
+		background-color: rgb(var(--login-arrow-color),0);
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	}
 
 	/* ***TOP BAR*** */

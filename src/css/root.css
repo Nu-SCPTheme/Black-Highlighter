@@ -365,7 +365,6 @@
 
 		/* ===SEARCH ELEMENT=== */
 	--search-icon-color: var(--swatch-text-secondary-color);
-	--search-icon-bg-color: var(--swatch-primary-darkest);
 	--search-icon-hover-color: var(--swatch-text-secondary-color);
 	--search-icon-hover-bg-color: var(--swatch-alternate-color);
 	--search-textbox-text-color: 0,0,0,0;
@@ -382,7 +381,7 @@
 	--login-myaccount-color: var(--swatch-text-secondary-color);
 	--login-myaccount-underline-color: var(--swatch-primary-darkest);
 	--login-myaccount-hover-bg-color: var(--swatch-primary-darkest);
-	--login-arrow-color: var(--swatch-text-light);
+	--login-arrow-color: var(--search-icon-color);
 			/* Dropdown Box when arrow is clicked */
 	--login-dropdown-bg-color: var(--swatch-menubg-color);
 	--login-dropdown-bg-image: var(--gradient-header);
@@ -390,6 +389,11 @@
 	--login-dropdown-text-color: var(--swatch-text-secondary-color);
 	--login-dropdown-text-hover-color: var(--swatch-text-secondary-color);
 	--login-dropdown-bg-hover-color: var(--swatch-primary);
+
+			/* Mobile Icon Styling */
+	--login-mobile-icon-color: var(--search-icon-color);
+	--login-mobile-icon-hover-color: var(--search-icon-hover-color);
+	--login-mobile-icon-hover-bg-color: var(--search-icon-hover-bg-color);
 }
 
 #top-bar {
