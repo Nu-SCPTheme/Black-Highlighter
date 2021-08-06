@@ -553,28 +553,35 @@ input[type="radio"] * {
 }
 
 input[type="radio"] {
-	display: inline-flex;
+	display: grid;
 	position: relative;
 	align-items: center;
 	justify-content: center;
 	width: 1em;
 	height: 1em;
+	border: none;
 	border-radius: 50%;
-	outline: 0 solid rgb(var(--swatch-primary));
+	outline: 0 solid transparent;
 	background: rgb(var(--swatch-primary));
-	box-shadow: 0 0 0 calc(0.5em / 14) rgb(var(--swatch-primary));
+	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-primary));
 	font-size: 0.875rem;
 	cursor: pointer;
 	appearance: none;
 }
+
+input[type="radio"]::before,
+input[type="radio"]::after {
+	grid-column: 1;
+	grid-row: 1;
+	align-self: center;
+	justify-self: center;
+}
+
 input[type="radio"]::before,
 input[type="radio"]:not(:checked)::before {
 	content: "";
-	position: absolute;
-	top: calc(2em / 14);
-	left: calc(2em / 14);
-	width: calc(10em / 14);
-	height: calc(10em / 14);
+	width: 0.3625rem;
+	height: 0.3625rem;
 	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border-radius: 50%;
 	background: rgb(var(--swatch-primary));
@@ -582,7 +589,6 @@ input[type="radio"]:not(:checked)::before {
 
 input[type="radio"]::after {
 	content: "";
-	position: absolute;
 	width: 1em;
 	height: 1em;
 	transform: scale(0);
@@ -592,11 +598,11 @@ input[type="radio"]::after {
 
 input[type="radio"]:checked {
 	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	outline: calc(1em / 14) solid rgb(var(--swatch-primary));
+	outline: 0 solid rgb(var(--swatch-primary));
 	background: rgb(var(--swatch-background));
 	box-shadow: 
-		0 0 0 calc(1em / 14) rgb(var(--swatch-primary)), 
-		inset 0 0 0 calc(1em / 14) rgb(var(--swatch-primary));
+		0 0 0 0.0625rem rgb(var(--swatch-primary)), 
+		inset 0 0 0 0.0625rem rgb(var(--swatch-primary));
 }
 
 input[type="radio"]:checked::after {
@@ -606,8 +612,6 @@ input[type="radio"]:checked::after {
 }
 
 input[type="radio"]:checked::before {
-	top: 0.25em;
-	left: 0.25em;
 	width: 0.5em;
 	height: 0.5em;
 	transition: all 200ms;
