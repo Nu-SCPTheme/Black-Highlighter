@@ -449,17 +449,17 @@ div#container-wrap {
 #login-status #account-topbutton:focus + #account-options,
 #login-status #account-topbutton:active + #account-options,
 #login-status #account-options:focus-within {
-    opacity: 1;
-    pointer-events: all;
+	opacity: 1;
+	pointer-events: all;
 }
 
 /* Without this, touchscreen doesn't work */
 @media (pointer: coarse) {
-    #login-status #account-topbutton:hover + #account-options,
-    #login-status #account-options:hover {
-        opacity: 1;
-        pointer-events: all;
-    }
+	#login-status #account-topbutton:hover + #account-options,
+	#login-status #account-options:hover {
+		opacity: 1;
+		pointer-events: all;
+	}
 }
 
 #login-status #account-options * {

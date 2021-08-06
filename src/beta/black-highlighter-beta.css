@@ -1500,8 +1500,8 @@ input[type="radio"],
 input[type="radio"] * {
 	box-sizing: border-box;
 	padding: 0;
-    overflow: hidden;
-    outline: 0;
+	overflow: hidden;
+	outline: 0;
 }
 
 input[type="radio"] {
@@ -1509,12 +1509,13 @@ input[type="radio"] {
 	position: relative;
 	align-items: center;
 	justify-content: center;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
 	outline: 0 solid rgb(var(--swatch-primary));
-    background: rgb(var(--swatch-primary));
-	box-shadow: 0 0 0 0.05em rgb(var(--swatch-primary));
+	background: rgb(var(--swatch-primary));
+	box-shadow: 0 0 0 calc(0.5em / 14) rgb(var(--swatch-primary));
+	font-size: 0.875rem;
 	cursor: pointer;
 	-webkit-appearance: none;
 	        appearance: none;
@@ -1522,47 +1523,49 @@ input[type="radio"] {
 
 input[type="radio"]::before,
 input[type="radio"]:not(:checked)::before {
-    content: "";
-    position: absolute;
-    width: 0.8em;
-    height: 0.8em;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 50%;
-    background: rgb(var(--swatch-background));
+	content: "";
+	position: absolute;
+	top: calc(2em / 14);
+	left: calc(2em / 14);
+	width: calc(10em / 14);
+	height: calc(10em / 14);
+	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	border-radius: 50%;
+	background: rgb(var(--swatch-primary));
 }
 
 input[type="radio"]::after {
-    content: "";
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    transform: scale(0);
-    border-radius: 50%;
-    background: rgba(var(--swatch-tertiary-color),0.5);
+	content: "";
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	transform: scale(0);
+	border-radius: 50%;
+	background: rgba(var(--swatch-tertiary-color),0.5);
 }
 
 input[type="radio"]:checked {
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	outline: 0 solid rgb(var(--swatch-primary));
-    background: rgb(var(--swatch-background));
-    box-shadow: 
-		0 0 0 0.1em rgb(var(--swatch-primary)), 
-		inset 0 0 0 0.05em rgb(var(--swatch-primary)),
-		inset rgba(var(--swatch-tertiary-color), 0.15) 0 0 0.06em 0, 
-		inset rgba(var(--swatch-tertiary-color), 0.25) 0 0.06em 0.06em 0;
+	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	outline: calc(1em / 14) solid rgb(var(--swatch-primary));
+	background: rgb(var(--swatch-background));
+	box-shadow: 
+		0 0 0 calc(1em / 14) rgb(var(--swatch-primary)), 
+		inset 0 0 0 calc(1em / 14) rgb(var(--swatch-primary));
 }
 
 input[type="radio"]:checked::after {
-    transform: scale(1);
-    transition: all 500ms;
-    background: transparent;
+	transform: scale(1);
+	transition: all 500ms;
+	background: transparent;
 }
 
 input[type="radio"]:checked::before {
-    width: 0.5em;
-    height: 0.5em;
-    transition: all 200ms;
-    background: rgb(var(--swatch-primary));
+	top: 0.25em;
+	left: 0.25em;
+	width: 0.5em;
+	height: 0.5em;
+	transition: all 200ms;
+	background: rgb(var(--swatch-primary));
 }
 
 /* ===STANDARD STRUCTURE=== */
@@ -7285,18 +7288,18 @@ div#container-wrap {
 #login-status #account-topbutton:focus + #account-options,
 #login-status #account-topbutton:active + #account-options,
 #login-status #account-options:focus-within {
-    opacity: 1;
-    pointer-events: all;
+	opacity: 1;
+	pointer-events: all;
 }
 
 /* Without this, touchscreen doesn't work */
 
 @media (pointer: coarse) {
-    #login-status #account-topbutton:hover + #account-options,
-    #login-status #account-options:hover {
-        opacity: 1;
-        pointer-events: all;
-    }
+	#login-status #account-topbutton:hover + #account-options,
+	#login-status #account-options:hover {
+		opacity: 1;
+		pointer-events: all;
+	}
 }
 
 #login-status #account-options * {
@@ -8863,13 +8866,13 @@ div.blockquote > :last-child,
 .bibitems .title {
 	--wght: 700;
 	display: inline-block;
-    width: -webkit-min-content;
-    width: min-content;
-    margin-top: -0.75em;
-    padding: 0 0.5em;
-    background-color: rgb(var(--footnotes-footer-title-bg-color));
-    color: rgb(var(--footnotes-footer-title-text-color));
-    font-size: 1.25em;
+	width: -webkit-min-content;
+	width: min-content;
+	margin-top: -0.75em;
+	padding: 0 0.5em;
+	background-color: rgb(var(--footnotes-footer-title-bg-color));
+	color: rgb(var(--footnotes-footer-title-text-color));
+	font-size: 1.25em;
 }
 
 .footnotes-footer .footnote-footer {
@@ -10562,18 +10565,18 @@ div.keycap {
 			0 50%
 		);
 	--wght: 500;
-    display: inline;
+	display: inline;
 	position: relative;
-    height: 1.175em;
-    margin: 0 0 0 0.5125rem;
-    padding: 0.1875rem 0.3125rem 0.1875rem 1rem;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
-    background: rgb(var(--swatch-tertiary-color));
-    color: rgb(var(--swatch-text-secondary-color));
-    font-size: 0.6875rem;
-    line-height: 0.8125;
-    text-decoration: none;
+	height: 1.175em;
+	margin: 0 0 0 0.5125rem;
+	padding: 0.1875rem 0.3125rem 0.1875rem 1rem;
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+	background: rgb(var(--swatch-tertiary-color));
+	color: rgb(var(--swatch-text-secondary-color));
+	font-size: 0.6875rem;
+	line-height: 0.8125;
+	text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
 	-webkit-clip-path: var(--clip-path);
 	        clip-path: var(--clip-path);
@@ -10585,15 +10588,15 @@ div.tags {
 
 .tags::after {
 	content: "";
-    position: absolute;
-    top: 50%;
-    left: 0.5rem;
-    width: 0.25rem;
-    height: 0.25rem;
+	position: absolute;
+	top: 50%;
+	left: 0.5rem;
+	width: 0.25rem;
+	height: 0.25rem;
 	transform: translateY(-50%);
-    border-radius: 50%;
-    background: rgb(var(--swatch-background));
-    box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-alternate-color));
+	border-radius: 50%;
+	background: rgb(var(--swatch-background));
+	box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-alternate-color));
 }
 
 /* General Odate Styling */
@@ -10607,12 +10610,12 @@ div.tags {
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+	content: " ";
+	display: table;
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 div.block-right,
@@ -10823,7 +10826,7 @@ body.print-body #page-options-container {
 }
 
 body.print-body #container {
-    grid-template-areas: 
+	grid-template-areas: 
 		"print-options" 
 		"print-head" 
 		"content-wrap" 
