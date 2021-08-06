@@ -570,6 +570,7 @@
 	--footnotes-footer-title-text-color: var(--swatch-text-secondary-color);
 	--footnotes-footer-num-color: var(--link-color);
 	--footnotes-footer-num-hover-color: var(--hover-link-color);
+	--footnotes-footer-text-color: var(--swatch-text-general);
 
 		/* ===TOC=== */
 	--toc-header-bg-color: var(--swatch-primary-darkest);
@@ -7370,11 +7371,11 @@ div#container-wrap {
 
 #login-status #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
 	content: "Messages";
-	font-size: calc(var(--base-font-size) * 0.765);
-	pointer-events: none;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+	font-size: calc(var(--base-font-size) * 0.765);
+	pointer-events: none;
 }
 
 #login-status #account-options li > a::before {	
@@ -8828,6 +8829,7 @@ div.blockquote > :last-child,
 	padding: 0.15em 1em 1em 0;
 	background-color: rgb(var(--footnotes-footer-bg-color));
 	box-shadow: inset 0.5em 0 0 0 rgba(var(--footnotes-footer-colorbar-color));
+	color: rgb(var(--footnotes-footer-text-color));
 }
 
 .footnotes-footer {
