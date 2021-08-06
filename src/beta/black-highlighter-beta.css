@@ -7201,6 +7201,10 @@ div#container-wrap {
 	color: rgb(var(--login-username-color));
 }
 
+#login-status a[href*="account/messages"] {
+	color: rgb(var(--login-myaccount-color));
+}
+
 #login-status a#my-account {
 	--wght: var(--ui-wght);
 	display: flex;
@@ -8183,7 +8187,7 @@ div.mobile-top-bar {
 		pointer-events: all;
 	}
 
-	#login-status *:not(#account-topbutton):not([href*="account/messages"]) {
+	#login-status > *:not(#account-topbutton):not([href*="account/messages"]) {
 		--clip-path: 
 			polygon(
 				100% 0, 
@@ -8216,8 +8220,8 @@ div.mobile-top-bar {
 		        clip-path: var(--clip-path);
 	}
 
-	#login-status:hover *:not(#account-topbutton):not([href*="account/messages"]),
-	#login-status:active *:not(#account-topbutton):not([href*="account/messages"]) {
+	#login-status:hover > *:not(#account-topbutton):not([href*="account/messages"]),
+	#login-status:active > *:not(#account-topbutton):not([href*="account/messages"]) {
 		--clip-path: 
 			polygon(
 				0 0, 
@@ -8230,7 +8234,7 @@ div.mobile-top-bar {
 		        clip-path: var(--clip-path);
 	}
 
-	#login-status:focus-within *:not(#account-topbutton):not([href*="account/messages"]) {
+	#login-status:focus-within > *:not(#account-topbutton):not([href*="account/messages"]) {
 		--clip-path: 
 			polygon(
 				0 0, 
@@ -8347,6 +8351,11 @@ div.mobile-top-bar {
 
 	#login-status #account-options {
 		margin: 0;
+	}
+
+	#login-status a[href*="account/messages"] {
+		color: rgb(var(--login-myaccount-color));
+		pointer-events: all;
 	}
 
 	/* ***TOP BAR*** */
