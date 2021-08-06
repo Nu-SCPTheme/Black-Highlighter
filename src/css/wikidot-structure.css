@@ -974,7 +974,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 }
 
 /* ===EDIT AREA=== */
-form#edit-page-form {
+form#edit-page-form:not(.data-form) {
 	display: grid;
 	grid-template-areas:
 		"pageid . captcha-1 captcha-1 captcha-2 captcha-2"
@@ -1013,10 +1013,10 @@ form#edit-page-form *:not(input):not(textarea) {
 	font-family: var(--UI-font);
 }
 
-form#edit-page-form>table,
-form#edit-page-form>table tbody,
-form#edit-page-form>table tr,
-form#edit-page-form>table:not(.form) td {
+form#edit-page-form:not(.data-form)>table,
+form#edit-page-form:not(.data-form)>table tbody,
+form#edit-page-form:not(.data-form)>table tr,
+form#edit-page-form:not(.data-form)>table:not(.form) td {
 	display: contents;
 }
 
