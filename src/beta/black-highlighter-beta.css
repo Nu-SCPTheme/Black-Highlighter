@@ -907,6 +907,14 @@
 		4.2 =BUTTONS
 		4.3 =CHECKBOXES
 		4.4 =RADIO BUTTONS
+		4.5 =DATA-FORM STYLING
+			4.5.1 =DATA-FORM LABEL STYLING
+			4.5.2 =DATA-FORM GENERAL INPUT STYLING
+			4.5.3 =CHECKBOX & RADIO DATAFORM STYLING
+			4.5.4 =STATIC DATAFORM STYLING
+			4.5.5 =PASSWORD STYLING
+			4.5.6 =SELECT & PAGE SELECT STYLING
+			4.5.7 =JQUERY DATE PICKER STYLING
 	5. =STANDARD STRUCTURE
 		5.1 =STYLING
 		5.2 =HEADERS
@@ -1569,6 +1577,594 @@ input[type="radio"]:checked::before {
 	height: 0.5em;
 	transition: all 200ms;
 	background: rgb(var(--swatch-primary));
+}
+
+/* ===DATA-FORM STYLING=== */
+
+#edit-page-form.data-form {
+    padding: 0;
+    background-color: transparent;
+    font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
+}
+
+#edit-page-form.data-form,
+#edit-page-form.data-form * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#edit-page-form.data-form .form-row {
+    display: grid;
+    grid-auto-rows: auto;
+    margin: 1.25rem 0 0.75em 0;
+    box-shadow: 
+        0 0 0 0.0625rem rgba(var(--swatch-tertiary-color), 0.5);
+    font-size: 0.8em;
+}
+
+#edit-page-form.data-form .form-row .form-values {
+    padding: 0.5em 0;
+    box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
+}
+
+#edit-page-form.data-form .form-row .form-values > span {
+    display: contents;
+}
+
+/* ===DATA-FORM LABEL STYLING=== */
+
+#edit-page-form.data-form .form-row .form-labels {
+    z-index: 2;
+    margin: -1em 0 -0.5em 1rem;
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#edit-page-form.data-form .form-row:focus-within .form-labels {
+    transform: translateY(-0.125rem) translateX(-0.125rem);
+}
+
+#edit-page-form.data-form .form-row .form-labels span {
+    --wght: calc(var(--ui-wght) + 100);
+    --header-height: var(--final-header-height-on-desktop);
+    margin: 0;
+    padding: 0.125em 0.5em;
+    transition:
+        padding 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        padding 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        padding 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: 0 solid rgb(var(--swatch-primary));
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    color: rgb(var(--swatch-text-general));
+    text-transform: uppercase;
+    will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+}
+
+#edit-page-form.data-form .form-row .form-labels span::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition:
+        background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-image 50ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(var(--swatch-background), 1);
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(var(--background-gradient-color), 1),
+            rgba(var(--background-gradient-color), 0) var(--background-gradient-distance),
+            rgba(var(--background-gradient-color), 0) 100%
+        );
+    pointer-events: none;
+    background-position-y: top;
+}
+
+#edit-page-form.data-form .form-row:focus-within .form-labels span {
+    --wght: calc(var(--ui-hvr-wght) + 100);
+    padding-left: 0.5rem;
+    outline: 0 solid rgb(var(--swatch-primary));
+    color: rgb(var(--swatch-background));
+    -webkit-clip-path: 
+        polygon(
+            0 0, 
+            calc(100% + 0.125rem) 0, 
+            calc(100% + 0.125rem) calc(100% + 0.125rem), 
+            0 calc(100% + 0.125rem)
+        );
+            clip-path: 
+        polygon(
+            0 0, 
+            calc(100% + 0.125rem) 0, 
+            calc(100% + 0.125rem) calc(100% + 0.125rem), 
+            0 calc(100% + 0.125rem)
+        );
+}
+
+#edit-page-form.data-form .form-row:focus-within .form-labels span::before {
+    background-color: rgba(var(--swatch-primary), 1);
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(var(--background-gradient-color), 0) 0,
+            rgba(var(--background-gradient-color), 0)
+                var(--background-gradient-distance)
+        );
+    -webkit-clip-path: unset;
+            clip-path: unset
+}
+
+/* ===DATA-FORM GENERAL INPUT STYLING=== */
+
+#edit-page-form.data-form .form-row span.field-select-long,
+#edit-page-form.data-form .form-row div.dataform-pagepath-chooser {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 0 0.25rem 0.25rem 0.25rem;
+}
+
+#edit-page-form.data-form .form-row span.field-select-long *:not(.text-danger),
+#edit-page-form.data-form .form-row div.dataform-pagepath-chooser *:not(.text-danger) {
+    flex-grow: 1;
+    width: 100%;
+}
+
+#edit-page-form.data-form .form-row span.field-select-short,
+#edit-page-form.data-form .form-row span.field-checkbox,
+#edit-page-form.data-form .form-row div.field-static,
+#edit-page-form.data-form .form-row span.field-file {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(100% - 2rem);
+    height: auto;
+    margin: 0 0 0 1.25rem;
+}
+
+#edit-page-form.data-form .form-row input[type=text],
+#edit-page-form.data-form .form-row textarea,
+#edit-page-form.data-form .form-row input.form-control,
+#edit-page-form.data-form .form-row span.field-select-long select,
+#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select {
+    --wght: var(--ui-wght);
+    padding: 0.25rem;
+    transition:
+        box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    outline: 0 solid rgb(var(--swatch-primary));
+    box-shadow: inset 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color),0.3625);
+    font-size: 1.2em !important;
+    /* Overwrite Wikidot Inline Styling */
+    will-change: box-shadow, background-color, font-weight, font-variation-settings;
+}
+
+#edit-page-form.data-form .form-row input[type=text],
+#edit-page-form.data-form .form-row textarea,
+#edit-page-form.data-form .form-row input.form-control,
+#edit-page-form.data-form .form-row span.field-select-long,
+#edit-page-form.data-form .form-row div.dataform-pagepath-chooser {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+}
+
+#edit-page-form.data-form .form-row input[type=text]:focus,
+#edit-page-form.data-form .form-row textarea:focus,
+#edit-page-form.data-form .form-row td.form-values input.form-control:focus,
+#edit-page-form.data-form .form-row span.field-select-long select:focus,
+#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus {
+    --wght: var(--ui-hvr-wght);
+    border: none;
+    outline: 0 solid rgb(var(--swatch-primary));
+    background-color: rgba(var(--swatch-secondary-color), 0);
+    box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
+}
+
+#edit-page-form.data-form .form-row input[type=text]:focus-visible,
+#edit-page-form.data-form .form-row textarea:focus-visible,
+#edit-page-form.data-form .form-row td.form-values input.form-control:focus-visible,
+#edit-page-form.data-form .form-row span.field-select-long select:focus-visible,
+#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus-visible {
+    --wght: var(--ui-hvr-wght);
+    border: none;
+    outline: 0 solid rgb(var(--swatch-primary));
+    background-color: rgba(var(--swatch-secondary-color), 0);
+    box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
+}
+
+#edit-page-form.data-form .form-row:focus-within input[type=text],
+#edit-page-form.data-form .form-row:focus-within textarea,
+#edit-page-form.data-form .form-row:focus-within td.form-values input.form-control,
+#edit-page-form.data-form .form-row:focus-within span.field-select-long select,
+#edit-page-form.data-form .form-row:focus-within div.dataform-pagepath-chooser select {
+    --wght: var(--ui-hvr-wght);
+    border: none;
+    outline: 0 solid rgb(var(--swatch-primary));
+    background-color: rgba(var(--swatch-secondary-color), 0);
+    box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
+}
+
+#edit-page-form.data-form .form-row span.form-value select {
+    border-radius: 0 0.25rem 0.25rem 0.25rem;    
+}
+
+/* ===CHECKBOX & RADIO DATAFORM STYLING=== */
+
+#edit-page-form.data-form .form-row span.field-select-short label,
+#edit-page-form.data-form .form-row span.field-checkbox label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+	text-indent: 0.5ch;
+}
+
+#edit-page-form.data-form .form-row span.field-select-short input,
+#edit-page-form.data-form .form-row span.field-checkbox input {
+    margin: 0;
+}
+
+#edit-page-form.data-form .form-row span.field-checkbox {
+    padding: 0.75em 0;
+}
+
+#edit-page-form.data-form .form-row span.field-checkbox span.text-danger {
+    transform: translateX(0);
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+#edit-page-form.data-form .form-row span.field-checkbox input:checked + span.text-danger {
+     transform: translateX(0.25em);
+}
+
+/* ===STATIC DATAFORM STYLING=== */
+
+#edit-page-form.data-form .form-row div.field-static {
+    font-size: 1.2em !important;
+}
+
+/* ===PASSWORD STYLING=== */
+
+#edit-page-form.data-form .form-row span.field-password {
+    text-indent: 1rem;
+}
+
+#edit-page-form.data-form .form-row span.field-password .form-control {
+    width: calc(100% - 2rem);
+    margin: 0 0 0 1rem;
+}
+
+/* ===SELECT & PAGE SELECT STYLING=== */
+
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span select {
+    grid-column: 2;
+    grid-row: 1;
+    flex-grow: 2;
+    margin-bottom: 0.5em;
+}
+
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span {
+    display: grid;
+    position: relative;
+    grid-column: 2;
+    grid-row: 2;
+    grid-template-columns: 1em 1fr;
+    justify-content:stretch;
+    width: 100%;
+    overflow: hidden;
+}
+
+#edit-page-form.data-form .form-row span.field-select-long::after,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after,
+#edit-page-form.data-form .form-row span.field-select-long::before,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(1em + 0.875rem);
+    height: calc(1em + 0.875rem);
+    pointer-events: none;
+}
+
+#edit-page-form.data-form .form-row span.field-select-long::before,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before{
+    border-radius: 0 0.25rem 0.25rem 0;
+    background-color: rgb(var(--swatch-primary));
+}
+
+#edit-page-form.data-form .form-row span.field-select-long::after,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after {
+    --clip-path: 
+        polygon( 
+            35% 40%, 
+            65% 40%, 
+            50% 65%
+        );
+    transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgb(var(--swatch-secondary-color));
+    -webkit-clip-path: var(--clip-path);
+            clip-path: var(--clip-path);
+}
+
+#edit-page-form.data-form .form-row span.field-select-long:focus-within::after,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span::after,
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span span::after{
+    --clip-path: 
+        polygon(
+            40% 50%, 
+            60% 30%, 
+            60% 70%
+        );
+    background-color: rgb(var(--swatch-secondary-color));
+    -webkit-clip-path: var(--clip-path);
+            clip-path: var(--clip-path);
+}
+
+#edit-page-form.data-form .form-row td.form-values select {
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+            appearance: none;
+}
+
+#edit-page-form.data-form .form-row td.form-values select option {
+    margin-top: 2em;
+    color: rgb(var(--swatch-text-secondary-color))
+}
+
+#edit-page-form.data-form div.do-not-notify {
+    padding: 0 0 1em;
+}
+
+#edit-page-form.data-form div.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===JQUERY DATE PICKER STYLING=== */
+
+#ui-datepicker-div {
+    z-index: 2 !important;
+}
+
+#ui-datepicker-div,
+#ui-datepicker-div * {
+    border: none;
+    border-radius: none !important;
+    font-family: var(--UI-font);
+}
+
+#ui-datepicker-div.ui-datepicker {
+    width:min(90vw, 17em);
+    padding:0.25rem 0.25rem 0;
+    background-color: rgb(var(--swatch-background));
+    box-shadow: inset 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color),0.3625);
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-header {
+    display: grid;
+    position:relative;
+    grid-template-areas: "cal-prev cal-title cal-next";
+    align-items: center;
+    justify-content: space-between;
+    padding:.2em 0;
+    border: none;
+    background-color: rgb(var(--swatch-primary));
+    background-image: none;
+    color: rgb(var(--swatch-text-secondary-color));
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-header::before,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-header::after {
+    display: none;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next {
+    display: grid;
+    position:relative;
+    top:unset;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    width:2em;
+    height:2em;
+    margin: 0;
+    padding: 0;
+    line-height: 0;    
+    cursor: pointer;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev::before,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next::before,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev::after,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next::after {
+    content: "";
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev::after,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next::after {
+    width: 2em;
+    height: 2em;
+    transition: 
+        -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 
+        clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 
+        clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgb(var(--swatch-primary));
+    -webkit-clip-path: var(--clip-path);
+            clip-path: var(--clip-path);
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev::before,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next::before {
+    grid-column: 1;
+    grid-row: 1;
+    width: 1em;
+    height: 1em;
+    transition: 
+        height 200ms cubic-bezier(0.4, 0, 0.2, 1),
+        width 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0.25em;
+    background-color: rgb(var(--swatch-secondary-color));
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev:hover::before,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next:hover::before {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev-hover,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next-hover {
+    top:unset
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev {
+    --clip-path: 
+        polygon(
+            40% 50%, 
+            60% 30%, 
+            60% 70%
+        );
+    left:unset;
+    grid-area: cal-prev;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next {
+    --clip-path: 
+        polygon(
+            60% 50%, 
+            40% 30%, 
+            40% 70%
+        );
+    right:unset;
+    grid-area: cal-next;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev:hover,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev-hover {
+    --clip-path: 
+        polygon(
+            30% 50%, 
+            60% 20%, 
+            60% 80%
+        );
+    left:unset
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next:hover,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next-hover {
+    --clip-path: 
+        polygon(
+            70% 50%, 
+            40% 20%, 
+            40% 80%
+        );
+    right:unset
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-prev span,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next span {
+    display:none;
+    position:unset;
+    top:unset;
+    left:unset;
+    margin-top:unset;
+    margin-left:unset;
+    background-image: none; 
+}
+
+#ui-datepicker-div.ui-datepicker .ui-state-hover {
+    border: none;
+    background: none;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-title {
+    grid-area: cal-title;
+    margin:0;
+    line-height:0;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-calendar {
+    display: grid;
+    grid-gap: 0.125rem;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-calendar thead,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-calendar tbody,
+#ui-datepicker-div.ui-datepicker .ui-datepicker-calendar tr {
+    display: contents
+}
+
+#ui-datepicker-div.ui-datepicker th {
+    padding:0;
+    color: rgb(var(--swatch-text-tertiary-color));
+}
+
+#ui-datepicker-div.ui-datepicker td {
+    padding:0;
+    border:0;
+    background-image: none;
+}
+
+#ui-datepicker-div.ui-datepicker td span,
+#ui-datepicker-div.ui-datepicker td a {
+    --MONO: 1;
+    --CASL: 0;
+    --CRSV: 0;
+    padding: 0.1875rem 0;
+    background-color: rgb(var(--swatch-secondary-color));
+    background-image: none;
+    box-shadow: inset 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color),0.3625);
+    color: rgb(var(--swatch-text-tertiary-color));
+    font-family: var(--mono-font);
+    text-align:center;
+    text-decoration:none;
 }
 
 /* ===STANDARD STRUCTURE=== */
