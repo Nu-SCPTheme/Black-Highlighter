@@ -2338,50 +2338,10 @@ h6 {
 
 /* ===LISTS=== */
 
-ul, ol {
+ol {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: outside none;
-}
-
-/* Unorderd Lists */
-
-/* #page-content to make sure only content lists are targeted since lists are often used in UI Elements */
-
-#page-content ul:not(.yui-nav) > li {
-	padding-left: 1.25em;
-}
-
-#page-content ul:not(.yui-nav) > li::before {
-	--MONO: 1;
-	content: "\0025a1";
-	margin-right: 0.5em;
-	font-family: var(--mono-font);
-	font-size: 0.8em;
-}
-
-#page-content ul:not(.yui-nav) > li::before {
-	content: "\002022";
-}
-
-#page-content ul:not(.yui-nav) > li > ul > li::before {
-	content: "\0025e6";
-}
-
-#page-content ul:not(.yui-nav) > li > ul > li > ul > li::before {
-	content: "\0025b6";
-}
-
-#page-content ul:not(.yui-nav) > li > ul > li > ul > li > ul > li::before {
-	content: "\0025b7";
-}
-
-#page-content ul:not(.yui-nav) > li > ul > li > ul > li >  ul > li >  ul > li::before {
-	content: "\0025c6";
-}
-
-#page-content ul:not(.yui-nav) > li > ul > li > ul > li >  ul > li >  ul > li >  ul > li::before {
-	content: "\0025c7";
 }
 
 /* Ordered Lists */
