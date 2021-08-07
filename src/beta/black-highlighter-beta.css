@@ -3824,6 +3824,8 @@ div#action-area>a.btn-danger[href="javascript:;"],
 
 #action-area>div:not([style*="center"]):first-of-type {
 	padding-top: 2rem;
+	border: none;
+	box-shadow: inset 0 0 0 0.0625em rgba(var(--swatch-tertiary-color), 0.5);
 }
 
 #action-area a.action-area-close {
@@ -4628,7 +4630,7 @@ form#edit-page-form .edit-help-34 {
 	min-height: 1.125em;
 	margin: 0;
 	padding: 0.125em 0;
-	background-color: rgb(var(--swatch-tertiary-color), 0.15);
+	background-color: rgb(var(--swatch-tertiary-color), 0.05);
 	font-size: 0.7em;
 	line-height: 1.25;
 	text-transform: capitalize;
@@ -4868,6 +4870,11 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 	background-color: rgba(var(--swatch-secondary-color), 0);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-menutxt-general-color));
+}
+
+table.form td div.sub, 
+form div.sub {
+	color: rgb(var(--swatch-menutxt-general-color),0.5);
 }
 
 /* ===DESCRIPTION CHAR COUNT=== */
@@ -8711,6 +8718,8 @@ div.mobile-top-bar {
 	}
 
 	#header {
+		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
+		--y-offset: 1.5rem;
 		position: -webkit-sticky;
 		position: sticky;
 		top: calc(var(--header-height-on-mobile) * -1);
@@ -8723,8 +8732,6 @@ div.mobile-top-bar {
 			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
 			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
-		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
-		--y-offset: 1.5rem;
 	}
 
 	#header,

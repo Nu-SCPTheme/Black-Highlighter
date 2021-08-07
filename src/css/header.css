@@ -1221,6 +1221,8 @@ div.mobile-top-bar {
 	}
 
 	#header {
+		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
+		--y-offset: 1.5rem;
 		position: sticky;
 		top: calc(var(--header-height-on-mobile) * -1);
 		width: var(--header-width-on-mobile, 100vw);
@@ -1232,8 +1234,6 @@ div.mobile-top-bar {
 			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
 			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
-		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
-		--y-offset: 1.5rem;
 	}
 
 	#header,
