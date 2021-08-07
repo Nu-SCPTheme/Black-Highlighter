@@ -1,116 +1,144 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"
+      integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+      integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-	<head>
+    <style>
+      body > body {
+        position: relative;
+      }
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      #newCSSFrame {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        width: 90vw;
+        height: auto;
+        margin: 2rem auto 0;
+        max-height: 100vh;
+        z-index: 99999;
+        overflow: hidden;
+      }
 
-		<style>
-			body > body {
-				position: relative;
-			}
+      #newCSSFrame * {
+        width: 100%;
+        margin: 0 auto;
+      }
 
-			#newCSSFrame {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				-webkit-transform: translate(-50%, 0);
-				   -moz-transform: translate(-50%, 0);
-				    -ms-transform: translate(-50%, 0);
-				     -o-transform: translate(-50%, 0);
-				        transform: translate(-50%, 0);
-				width: 90vw;
-				height: auto;
-				margin: 0 auto;
-				max-height: 100vh;
-				z-index: 99999;
-				overflow: hidden;
-			}
+      input#reveal-css {
+        display: none;
+      }
 
-			#newCSSFrame * {
-				width: 100%;
-				margin: 0 auto;
-			}
+      input#reveal-css:checked ~ #newCSSFrame {
+        max-height: 0px;
+      }
 
-			input#reveal-css {
-				display: none;
-			}
+      #reveal-css-btn {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+        max-width: 90vw;
+        margin: 0 auto;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 0.125rem solid rgba(48, 48, 52, 0);
+        border: 0.125rem solid
+          rgba(var(--swatch-menubg-dark-color, 48, 48, 52), 1);
+        -webkit-border-radius: 0.25rem;
+        -moz-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        background-color: rgba(var(--swatch-primary-darkest, 100, 3, 15), 1);
+        padding: 0.25rem;
+        color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+        cursor: pointer;
+      }
+    </style>
 
-			input#reveal-css:checked ~ #newCSSFrame {
-				max-height: 0px;
-			}
+    <script type="text/javascript" src="./scp-test-page.js"></script>
+    <script type="text/javascript">
+      //CSS Upload
+      function newCSS() {
+        let newCSSInput = document.getElementById("newCSSInput").value;
+        let newCSSStyle = document.getElementById("newCSS");
 
-			#reveal-css-btn {
-				display: -webkit-box;
-				display: -webkit-flex;
-				display: -moz-box;
-				display: -ms-flexbox;
-				display: flex;
-				position: relative;
-				top: 0;
-				left: 0;
-				z-index: 999999;
-				max-width: 90vw;
-				margin: 0 auto;
-				-webkit-box-pack: center;
-				-webkit-justify-content: center;
-				   -moz-box-pack: center;
-				    -ms-flex-pack: center;
-				        justify-content: center;
-				-webkit-transition: background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1);
-				-o-transition: background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1);
-				-moz-transition: background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1);
-				transition: background-color .3s cubic-bezier(.4,0,.2,1),color .3s cubic-bezier(.4,0,.2,1);
-				border: .125rem solid rgba(48,48,52,0);
-				border: .125rem solid rgba(var(--swatch-menubg-dark-color,48,48,52),1);
-				-webkit-border-radius: .25rem;
-				   -moz-border-radius: .25rem;
-				        border-radius: .25rem;
-				background-color: rgb(100, 3, 15);
-				background-color: rgba(var(--swatch-primary-darkest,100,3,15),1);
-				padding: .25rem;
-				color: rgb(252, 252, 252);
-				color: rgb(var(--swatch-text-secondary-color,252,252,252));
-				cursor: pointer;
-			}
-		</style>
+        if (newCSSStyle) {
+          newCSSStyle.innerHTML = newCSSInput;
+        } else {
+          let style = document.createElement("style");
+          style.type = "text/css";
+          style.id = "newCSS";
+          style.innerHTML = newCSSInput;
 
-		<script type="text/javascript" src="/Black-Highlighter/scp-test-page.js"></script>
-		<script type="text/javascript">
-			//CSS Upload
-			function newCSS() {
-				let newCSSInput = document.getElementById("newCSSInput").value;
-				let newCSSStyle = document.getElementById("newCSS");
+          document.getElementsByTagName("head")[0].appendChild(style);
+        }
+      }
+    </script>
+  </head>
 
-				if (newCSSStyle) {
-					newCSSStyle.innerHTML = newCSSInput;
-				}
-				else {
-					let style = document.createElement("style");
-					style.type = "text/css";
-					style.id = "newCSS";
-					style.innerHTML = newCSSInput;
-
-					document.getElementsByTagName("head")[0].appendChild(style);
-				}
-			}
-		</script>
-	</head>
-
-	<body>
-		<label for="reveal-css" id="reveal-css-btn" style="width: 100%">Show CSS Input</label>
-		<input type="checkbox" id="reveal-css" role="button" checked>
-		<div id="newCSSFrame">
-			<div class="newCSSInputFrame">
-				<textarea name="newCSSInput" id="newCSSInput" placeholder="Input test CSS here" rows="15"></textarea>
-			</div>
-			<div class="newCSSSubmitFrame">
-				<button class="newCSSSubmitButton" type="button" onclick="newCSS()">Apply</button>
-			</div>
-		</div>
-	</body>
-
+  <body>
+    <label for="reveal-css" id="reveal-css-btn" style="width: 100%"
+      >Show CSS Input</label
+    >
+    <input type="checkbox" id="reveal-css" role="button" checked />
+    <div id="newCSSFrame">
+      <div class="newCSSInputFrame">
+        <textarea
+          name="newCSSInput"
+          id="newCSSInput"
+          placeholder="Input test CSS here"
+          rows="15"
+        ></textarea>
+      </div>
+      <div class="newCSSSubmitFrame">
+        <button class="newCSSSubmitButton" type="button" onclick="newCSS()">
+          Apply
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
