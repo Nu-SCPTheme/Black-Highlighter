@@ -9,20 +9,29 @@
     "url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "imagemin": "^8.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
     "postcss": "^8.2.8",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.0"
+    "postcss-import": "^14.0.0",
+    "prettier": "2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-property-sort-order-smacss": "^7.1.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0"
   },
   "scripts": {
     "build": "make",
     "postcss": "node node_modules/postcss-cli/bin/postcss",
     "styles": "node build/styles.js",
     "optimize": "node build/optimize.js"
-  }
+  },
+  "browserslist": [
+    "> 0.2% and not dead and supports css-grid"
+  ]
 }

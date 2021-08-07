@@ -7,10 +7,17 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended", 
+    "eslint-plugin-prettier"
+  ],
+  "plugins": [
+    "eslint-plugin-prettier"
+  ],
   "rules": {
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "prettier/prettier": "error",
     "no-console": "off"
   }
 }
