@@ -2933,7 +2933,7 @@ div.dblock {
 }
 
 #page-content,
-#page-content * {
+#page-content > * {
 	max-width: min(90vw, var(--body-width-on-desktop));
 }
 
@@ -10806,7 +10806,7 @@ table[style*="margin:0"] * {
 #page-content div.warning-top-box > p:first-of-type,
 #page-content div.archived-top-box > p:first-of-type {
 	width: 100%;
-	padding: 0.5em 0;
+	padding: 1em 0.5em;
 }
 
 #page-content div.warning-top-box > p + p,
