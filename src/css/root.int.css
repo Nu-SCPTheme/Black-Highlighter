@@ -16,6 +16,7 @@
 	10. =UKRAINIAN BRANCH
 	11. =SPANISH BRANCH
 	12. =GERMAN BRANCH
+	13. =CZECH BRANCH
 */
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
@@ -45,6 +46,10 @@
 	/* Header */
 	--header-title: "Fondazione SCP";
 	--header-subtitle: "Branca Italiana - SCP Foundation";
+}
+
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(it) {
+	flex-basis: 8rem;
 }
 
 /* ===JAPANESE BRANCH=== */
@@ -95,11 +100,19 @@
 	--header-subtitle: "Polska Filia SCP";
 }
 
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pl) {
+	flex-basis: 8rem;
+}
+
 /* ===PORTUGESE BRANCH=== */
 :root:lang(pt-br) {
 	/* Header */
 	--header-title: "Fundação SCP";
 	--header-subtitle: "Filial Lusófona";
+}
+
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pt-br) {
+	flex-basis: 8rem;
 }
 
 /* ===RUSSIAN BRANCH=== */
@@ -118,6 +131,10 @@
 		"ITC Franklin Gothic", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 	--title-font: var(--header-font);
 	--mono-font: Recursive, Consolas, monaco, monospace;
+}
+
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(ru) {
+	flex-basis: 8rem;
 }
 
 /* ===THAI BRANCH=== */
@@ -174,6 +191,11 @@
 	--mono-font: Recursive, Consolas, monaco, monospace;
 }
 
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(uk) {
+	flex-basis: 8rem;
+}
+
+
 /* ===FRENCH BRANCH=== */
 :root:lang(fr) {
 	/* Header */
@@ -195,9 +217,24 @@
 	--header-subtitle: "auf Deutsch";
 }
 
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(de) {
+	flex-basis: 8rem;
+}
+
 /* ===GREEK BRANCH=== */
 :root:lang(el) {
 	/* Header */
 	--header-title: "Το Ίδρυμα SCP";
 	--header-subtitle: "Ελληνόφωνος κλάδος";
+}
+
+/* ===CZECH BRANCH=== */
+:root:lang(cs) {
+	/* Header */
+	--header-title: "SCP Nadace";
+	--header-subtitle: "Česká Větev SCP Nadace";
+}
+
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(cs) {
+	flex-basis: 8rem;
 }
