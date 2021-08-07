@@ -27,6 +27,7 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $
 
 dist/css/min/black-highlighter.min.css: dist/css/black-highlighter.css node_modules
 	npm run postcss -- --config build/css-minify -o $@ $<
+	build/sed.sh 's|\.\./fonts/fonts\.css|../../fonts/fonts.css|' $@
 
 src/beta/normalize-beta.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize-wrap-begin.css src/css/normalize-wrap-close.css
 	cat \
