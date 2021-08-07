@@ -26,23 +26,23 @@ function main() {
 			minifier = optipng({ optimizationLevel: 5 });
 			break;
 		case 'svg':
-		minifier = svgo({
-			plugins: [
-				{ name: 'removeDoctype',active: false},
-				{ name: 'removeViewBox', active: false },
-				{ name: 'removeXMLProcInst', active: false },
-				{ name: 'collapseGroups' }, 
-				{ name: 'convertPathData' },
-				{ name: 'removeUselessStrokeAndFill' },
-				{ name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
-				{ name: 'mergePaths' },
-				{ name: 'sortAttrs' },
-				{ name: 'convertShapeToPath' },
-			],
-		});
-		break;
+			minifier = svgo({
+				plugins: [
+					{ name: 'removeDoctype',active: false},
+					{ name: 'removeViewBox', active: false },
+					{ name: 'removeXMLProcInst', active: false },
+					{ name: 'collapseGroups' },
+					{ name: 'convertPathData' },
+					{ name: 'removeUselessStrokeAndFill' },
+					{ name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
+					{ name: 'mergePaths' },
+					{ name: 'sortAttrs' },
+					{ name: 'convertShapeToPath' },
+				],
+			});
+			break;
 		default:
-		throw new Error(`Unknown image type to optimize: ${fileType}`);
+			throw new Error(`Unknown image type to optimize: ${fileType}`);
 	}
 
 	process(minifier, input, output);

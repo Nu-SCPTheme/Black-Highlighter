@@ -2451,7 +2451,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	grid-column: span 2;
 }
 
-/* Removing for now until autoprefixer preFIXES itself 
+/* 	Removing for now until autoprefixer preFIXES itself 
+	Issure filed here: https://github.com/postcss/autoprefixer/issues/1419
+	Currently, Autoprefixer breaks when there are multiple instances of ::file-selector-button
+	
 #upload-userfile[type="file"]::file-selector-button {
 	--wght: var(--ui-wght);
 	display: inline-flex;
@@ -2944,8 +2947,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #action-area form[onsubmit*="RenamePage"] tr {
 	display: contents;
 }
-
-
 
 /* ===PAGE SOURCE=== */
 .page-source {
