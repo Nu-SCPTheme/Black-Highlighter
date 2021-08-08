@@ -122,6 +122,7 @@
 #page-title,
 .meta-title {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	min-height: 1em;
@@ -288,6 +289,7 @@ div.page-watch-options {
 div.page-watch-options a:any-link {
 	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
+	font-weight: var(--wght);
 	margin: -0.15em 0;
 	padding: 0.15em;
 	transition:
@@ -302,6 +304,7 @@ div.page-watch-options a:any-link {
 div.page-watch-options a:hover,
 div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght) + 200);
+	font-weight: var(--wght);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
@@ -309,6 +312,7 @@ div.page-watch-options a:active {
 
 div.page-watch-options a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 200);
+	font-weight: var(--wght);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
@@ -331,6 +335,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags::before {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	content: "TAGS\0021b4";
 	position: absolute;
 	top: -2em;
@@ -369,6 +374,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
+	font-weight: var(--wght);
 	--link-color: var(--pagetags-text-color);
 	--hover-link-color: var(--pagetags-text-hover-color);
 	display: inline-flex;
@@ -416,6 +422,7 @@ div.page-watch-options a:focus-within {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -426,6 +433,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -477,6 +485,7 @@ div#page-options-area-bottom {
 
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	--icon-size: clamp(1.5em, 5vmin, 2em);
 	display: flex;
 	flex-wrap: wrap;
@@ -670,6 +679,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #footer a:any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -711,6 +721,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 #footer a:hover,
 #footer a:active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -721,6 +732,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #footer a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -774,6 +786,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #license-area a:any-link {
 	--wght: calc(var(--ui-wght));
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -816,6 +829,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 #license-area a:hover,
 #license-area a:active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -825,6 +839,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #license-area a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -866,6 +881,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 #action-area h3,
 #action-area h4 {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	min-height: 1em;
@@ -938,6 +954,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -963,6 +980,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 #action-area a.action-area-close:hover,
 #action-area a.action-area-close:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -973,6 +991,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -1050,6 +1069,7 @@ form#edit-page-form #edit-page-captcha {
 
 form#edit-page-form table.form:first-of-type td:first-of-type {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	grid-area: title-txt;
 	width: max-content;
 	margin: calc(-0.75em + 0.0625rem) 1rem -0.75em 1rem;
@@ -1073,6 +1093,7 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 
 form#edit-page-form table.form:first-of-type:focus-within td:first-of-type {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	transform: translateY(-0.15625rem);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
@@ -1087,6 +1108,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	width: calc(100% - 2em);
 	margin: 0.5em 1rem;
 	padding: 0.25em;
@@ -1113,6 +1135,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-s
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1121,6 +1144,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1129,6 +1153,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within 
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1683,6 +1708,7 @@ form#edit-page-form textarea {
 /* ===EDITOR HELP LINKS=== */
 form#edit-page-form .edit-help-34 {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	grid-area: edit-help;
 	flex-wrap: wrap;
@@ -1750,6 +1776,7 @@ form#edit-page-form .edit-help-34>a::after {
 form#edit-page-form .edit-help-34>a:hover,
 form#edit-page-form .edit-help-34>a:active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1760,6 +1787,7 @@ form#edit-page-form .edit-help-34>a:active {
 
 form#edit-page-form .edit-help-34>a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1806,6 +1834,7 @@ form#edit-page-form .change-textarea-size {
 
 form#edit-page-form .change-textarea-size a {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -1826,17 +1855,20 @@ form#edit-page-form .change-textarea-size a {
 form#edit-page-form .change-textarea-size a:hover,
 form#edit-page-form .change-textarea-size a:active {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	background-color: rgba(var(--swatch-primary));
 }
 
 form#edit-page-form .change-textarea-size a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	background-color: rgba(var(--swatch-primary));
 }
 
 /* ===EDITOR DESCRIPTION BOX=== */
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	display: grid;
 	position: relative;
 	grid-area: descrip;
@@ -1885,6 +1917,7 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) textarea {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	z-index: 1;
 	width: calc(100% - 2rem);
 	height: 100%;
@@ -1975,6 +2008,7 @@ form#edit-page-form div.buttons {
 /* ===WHO RATED AREA=== */
 #action-area a[onclick*="PageRateModule"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2002,6 +2036,7 @@ form#edit-page-form div.buttons {
 #action-area a[onclick*="PageRateModule"]:hover,
 #action-area a[onclick*="PageRateModule"]:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -2013,6 +2048,7 @@ form#edit-page-form div.buttons {
 
 #action-area a[onclick*="PageRateModule"]:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -2026,6 +2062,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area>div {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: grid;
 	grid-auto-rows: 1.5rem;
 	grid-row-gap: 0.25em;
@@ -2039,6 +2076,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area>div>span[style*="color"] {
 	--wght: 800;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	align-self: center;
@@ -2075,6 +2113,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area .printuser a {
 	--wght: 600;
+	font-weight: var(--wght);
 	font-family: var(--UI-font);
 	font-size: 0.8em;
 	white-space: nowrap;
@@ -2094,6 +2133,7 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td {
 
 form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(1) {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -2135,6 +2175,7 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(2)>input {
 
 #history-form-1>table>tbody>tr>td:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	width: max-content;
@@ -2247,6 +2288,7 @@ table.page-history tr td {
 
 table.page-history td.optionstd a {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	justify-content: center;
@@ -2273,6 +2315,7 @@ table.page-history td.optionstd a {
 table.page-history td.optionstd a:hover,
 table.page-history td.optionstd a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -2284,6 +2327,7 @@ table.page-history td.optionstd a:active {
 
 table.page-history td.optionstd a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -2295,6 +2339,7 @@ table.page-history td.optionstd a:focus-within {
 
 table.page-history tr:nth-of-type(2) td:not(:nth-of-type(7))::before {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	position: absolute;
 	top: calc(-100% - 0.5em);
@@ -2404,6 +2449,7 @@ table.page-files tbody tr td {
 
 table.page-files th {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2418,6 +2464,7 @@ table.page-files tr>td>a:any-link:not(.btn) {
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -2437,6 +2484,7 @@ table.page-files tr>td>a:any-link:not(.btn) {
 table.page-files tr>td>a:not(.btn):hover,
 table.page-files tr>td>a:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -2444,6 +2492,7 @@ table.page-files tr>td>a:not(.btn):active {
 
 table.page-files tr>td>a:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -2476,6 +2525,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	
 #upload-userfile[type="file"]::file-selector-button {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2502,6 +2552,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #upload-userfile[type="file"]::file-selector-button:hover,
 #upload-userfile[type="file"]::file-selector-button:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgb(var(--ui-button-hover-bg));
 	color: rgb(var(--ui-button-hover-txt));
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline));
@@ -2511,6 +2562,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"]::file-selector-button:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgb(var(--ui-button-hover-bg));
 	color: rgb(var(--ui-button-hover-txt));
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline));
@@ -2529,6 +2581,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2557,6 +2610,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #upload-userfile[type="file"]:hover,
 #upload-userfile[type="file"]:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.25em rgb(var(--ui-button-hover-outline));
@@ -2567,6 +2621,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"]:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.25em rgb(var(--ui-button-hover-outline));
@@ -2606,6 +2661,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box::before {
 	--wght: 700;
+	font-weight: var(--wght);
 	content: "Site Tools";
 	display: flex;
 	align-items: center;
@@ -2642,6 +2698,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2669,6 +2726,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #site-tools-box ul.nav li a:hover,
 #site-tools-box ul.nav li a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -2680,6 +2738,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -2716,6 +2775,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box div.wanted-pages-module table tr:first-of-type th {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2813,6 +2873,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -2830,6 +2891,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #st-action-area>a:not(.btn):not([href="javascript:;"]):hover,
 #st-action-area>a:not(.btn):not([href="javascript:;"]):active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -2837,6 +2899,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #st-action-area>a:not(.btn):not([href="javascript:;"]):focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -2869,6 +2932,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -2888,6 +2952,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #action-area a[onclick*="deleteTag"]:not(.btn):hover,
 #action-area a[onclick*="deleteTag"]:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -2895,6 +2960,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"]:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -3013,6 +3079,7 @@ div.odialog-shader-iframe {
 #odialog-container .modal-header,
 #odialog-container .title {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
@@ -3253,6 +3320,7 @@ div.odialog-shader-iframe {
 
 .thread-container .post .long .head .title {
 	--wght: 700;
+	font-weight: var(--wght);
 	font-family: var(--title-font);
 	font-size: 1.2em;
 	letter-spacing: 0.05em;
@@ -3273,6 +3341,7 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.options a,
 .post-container>.post>div.long>div.options a {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: flex;
 	flex-grow: 0;
 	justify-content: center;

@@ -245,6 +245,7 @@
 
 #side-bar .heading p {
 	--wght: calc(var(--ui-wght) + 300);
+	font-weight: var(--wght);
 	margin: 0;
 	color: rgb(var(--sideblock-heading-text-color));
 	font-family: var(--title-font);
@@ -313,6 +314,7 @@
 #side-bar div.menu-item a:any-link,
 #side-bar div.menu-item .text {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
@@ -357,6 +359,7 @@
 #side-bar div.menu-item a:hover,
 #side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -364,6 +367,7 @@
 
 #side-bar div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -525,6 +529,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 #side-bar div.collapsible-block div.collapsible-block-folded,
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link {
 	--wght: calc(var(--ui-wght) + 300);
+	font-weight: var(--wght);
 	display: flex;
 	position: relative;
 	align-items: flex-end;
@@ -563,11 +568,13 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 #side-bar a.collapsible-block-link:hover,
 #side-bar a.collapsible-block-link:active {
 	--wght: calc(var(--ui-hvr-wght) + 300);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 #side-bar a.collapsible-block-link:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 

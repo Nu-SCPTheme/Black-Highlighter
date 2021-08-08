@@ -161,6 +161,7 @@ body b *,
 body .bold,
 body .bold * {
 	--wght: 700;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -180,6 +181,7 @@ body .italic * {
 [style*="weight:1000"],
 [style*="weight:1000"] * {
 	--wght: 1000;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -188,6 +190,7 @@ body .italic * {
 [style*="weight:900"],
 [style*="weight:900"] * {
 	--wght: 900;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -196,6 +199,7 @@ body .italic * {
 [style*="weight:800"],
 [style*="weight:800"] * {
 	--wght: 800;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -204,6 +208,7 @@ body .italic * {
 [style*="weight:700"],
 [style*="weight:700"] * {
 	--wght: 700;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -212,6 +217,7 @@ body .italic * {
 [style*="weight:600"],
 [style*="weight:600"] * {
 	--wght: 600;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -220,6 +226,7 @@ body .italic * {
 [style*="weight:500"],
 [style*="weight:500"] * {
 	--wght: 500;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -228,6 +235,7 @@ body .italic * {
 [style*="weight:400"],
 [style*="weight:400"] * {
 	--wght: 400;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -236,6 +244,7 @@ body .italic * {
 [style*="weight:300"],
 [style*="weight:300"] * {
 	--wght: 300;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -244,6 +253,7 @@ body .italic * {
 [style*="weight:200"],
 [style*="weight:200"] * {
 	--wght: 200;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -252,6 +262,7 @@ body .italic * {
 [style*="weight:100"],
 [style*="weight:100"] * {
 	--wght: 100;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -387,6 +398,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -431,6 +443,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -450,6 +463,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -1278,6 +1292,7 @@ h6 {
 h1,
 h2 {
 	--wght: 700;
+	font-weight: var(--wght);
 }
 
 h3,
@@ -1285,6 +1300,7 @@ h4,
 h5,
 h6 {
 	--wght: 500;
+	font-weight: var(--wght);
 }
 
 h1 {

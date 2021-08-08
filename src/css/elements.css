@@ -77,6 +77,7 @@
 .yui-navset-top .yui-nav li a,
 .yui-navset-bottom .yui-nav li a {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -94,11 +95,13 @@
 .yui-navset .yui-nav a:active,
 .yui-navset .yui-nav a:focus {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--tabs-hover-txt));
 }
 
 .yui-navset .yui-nav a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--tabs-hover-txt));
 }
 
@@ -181,6 +184,7 @@
 
 .yui-navset .yui-nav .selected a {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-image: none;
 	color: rgb(var(--tabs-selected-txt)) !important; /* Overwriting Wikidot Inline-Styling */
 }
@@ -314,6 +318,7 @@ div.blockquote > :last-child,
 .footnotes-footer .title,
 .bibitems .title {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: inline-block;
 	width: min-content;
 	margin-top: -0.75em;
@@ -349,6 +354,7 @@ div.blockquote > :last-child,
 .bibitems .bibitem::after {
 	--MONO: 1;
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	font-family: var(--mono-font);
 }
 
@@ -385,12 +391,14 @@ div.blockquote > :last-child,
 .footnotes-footer a[href*="javascript"]:hover::before,
 .footnotes-footer a[href*="javascript"]:active::before {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	color: rgb(var(--footnotes-footer-num-hover-color));
 	
 }
 
 .footnotes-footer a[href*="javascript"]:focus-within::before {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	color: rgb(var(--footnotes-footer-num-hover-color));
 }
 	
@@ -476,6 +484,7 @@ div.blockquote > :last-child,
 	color: rgb(var(--hoverblock-header-txt));
 	font-family: var(--UI-font);
 	font-size: 0.96em;
+	font-weight: var(--wght);
 }
 	
 .hovertip .f-content {
@@ -551,6 +560,7 @@ div.blockquote > :last-child,
 	font-size: 0.9em;
 	letter-spacing: 0.016em;
 	line-height: 1.25;
+	font-weight: var(--wght);
 	text-align: center;
 }
 
@@ -632,6 +642,7 @@ div.blockquote > :last-child,
 	position: relative;
 	background: transparent;
 	color: rgb(var(--rating-module-text-color));
+	font-weight: var(--wght);
 }
 
 .page-rate-widget-box .rateup a,
@@ -1015,6 +1026,7 @@ div.blockquote > :last-child,
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--modal-header-txt));
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 	
 [id*="u-credit"] .modalbox > div:first-of-type h2 {
@@ -1158,6 +1170,7 @@ div.blockquote > :last-child,
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
@@ -1166,6 +1179,7 @@ div.blockquote > :last-child,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:hover,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg),1);
@@ -1177,6 +1191,7 @@ div.blockquote > :last-child,
 [id*="u-credit"] div.credit-back:focus-within::before,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg),1);
@@ -1206,6 +1221,7 @@ table.wiki-content-table th {
 	padding: 0.5em 1em;
 	background: rgb(var(--tables-header-bg));
 	color: rgb(var(--tables-header-txt));
+	font-weight: var(--wght);
 }
 
 table.wiki-content-table th,
@@ -1283,6 +1299,7 @@ table[style*="margin:0"] * {
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--toc-header-bg-color));
 	color: rgb(var(--toc-header-text-color));
+	font-weight: var(--wght);
 }
 
 #toc #toc-action-bar a[style*="display: none"] {
@@ -1330,12 +1347,14 @@ table[style*="margin:0"] * {
 #toc #toc-action-bar:active + .title {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-action-bar a:focus-within,
 #toc #toc-action-bar:focus-within + .title {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-action-bar a::before {
@@ -1400,6 +1419,7 @@ table[style*="margin:0"] * {
 	background-color: rgb(var(--toc-body-bg-color));
 	box-shadow: 0 -0.25rem 0 0 rgb(var(--toc-header-bg-color));
 	font-size: calc(var(--base-font-size) * 0.93333);
+	font-weight: var(--wght);
 	scrollbar-width: thin;
 }
 
@@ -1535,6 +1555,7 @@ table[style*="margin:0"] * {
 	transform: translateX(0.25rem);
 	color: rgb(var(--toc-body-link-hover-color));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-list a:focus-within {
@@ -1542,6 +1563,7 @@ table[style*="margin:0"] * {
 	transform: translateX(0.25rem);
 	color: rgb(var(--toc-body-link-hover-color));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-list a:hover::before,
@@ -1601,6 +1623,7 @@ table[style*="margin:0"] * {
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--swatch-text-secondary-color));
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 #page-content div.warning-top-box > p:first-of-type,
@@ -1625,6 +1648,7 @@ table[style*="margin:0"] * {
 	box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
 	color: rgb(var(--pager-text));
 	white-space: nowrap;
+	font-weight: var(--wght);
 }
 
 .pager span,
@@ -1653,6 +1677,7 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgb(var(--pager-selected-bg));
 	color: rgb(var(--pager-selected-link));
+	font-weight: var(--wght);
 }
 
 .pager .current::before {
@@ -1709,12 +1734,14 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--pager-link-hover));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 .pager a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--pager-link-hover));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 .pager a::after {
@@ -1865,6 +1892,7 @@ div.wiki-note:after {
 	--wght: 700;
 	font-size: 0.75em;
 	letter-spacing: 0.016em;
+	font-weight: var(--wght);
 }
 
 .browserupgrade {
@@ -1938,6 +1966,7 @@ div.keycap {
 	text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
 	clip-path: var(--clip-path);
+	font-weight: var(--wght);
 }
 
 div.tags {
@@ -2028,6 +2057,7 @@ div.block-left {
 	text-align: center;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 .content-panel .panel-body {
@@ -2040,6 +2070,7 @@ div.block-left {
 	font-family: var(--title-font);
 	font-size: 0.9em;
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 .content-panel .panel-footer {
@@ -2050,6 +2081,7 @@ div.block-left {
 	letter-spacing: 0.016em;
 	text-align: right;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
+	font-weight: var(--wght);
 }
 
 .content-panel .panel-footer,
@@ -2211,6 +2243,7 @@ body.print-body #print-options tr > td:first-of-type {
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 	
 body.print-body #print-options tr > td:last-of-type {
@@ -2244,6 +2277,7 @@ body.print-body #print-options a:any-link {
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
@@ -2255,6 +2289,7 @@ body.print-body #print-options a:active {
 	color: rgb(var(--ui-button-hover-txt));
 	text-decoration: none;
 	cursor: pointer;
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options a:focus-within {
@@ -2268,15 +2303,18 @@ body.print-body #print-options a:focus-within {
 
 body.print-body #print-options tr > td b a:any-link {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options tr > td b a:hover,
 body.print-body #print-options tr > td b a:active {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options tr > td b a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options a[onclick*="Georgia"] {
