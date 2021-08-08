@@ -1132,18 +1132,20 @@ div.mobile-top-bar {
 }
 
 #top-bar > .ct-theme-switch {
+	display: none; /* Hiding since BHL does not support this feature */
 	position: absolute;
-	top: 0.25rem;
-	right: 0.25rem;
+	top: 3.5em;
+	right: calc(3% - 0.25em);
 }
 
-#top-bar > .ct-theme-switch .lightbulb {
-	display: block;
-	width: 1.875rem;
-	height: 1.875rem;
-	font-size: 1.25rem;
-	line-height: 1.875;
-	text-align: center;
+#top-bar .ct-theme-switch a {
+	display: flex;
+    font-size: calc(var(--base-font-size) * 0.9);
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+	align-items: center;
+	justify-content: center;
 }
 
 #top-bar > .ct-theme-switch .lightbulb,
@@ -1573,13 +1575,13 @@ div.mobile-top-bar {
 	}
 
 	/* Sidebar Menu Button */
-	#header div[class*="top-bar"] > div.open-menu {
+	#header div.open-menu {
 		display: flex;
 		width: var(--topbar-height-on-mobile);
 		height: var(--topbar-height-on-mobile);
 	}
 
-	#header div[class*="top-bar"] > div.open-menu > p {
+	#header div.open-menu > p {
 		display: inline-flex;
 		align-content: stretch;
 		align-items: stretch;
@@ -1590,12 +1592,12 @@ div.mobile-top-bar {
 		font-size: 2.5em;
 	}
 
-	#header div[class*="top-bar"] > div.open-menu > p,
-	#header div[class*="top-bar"] > div.open-menu > p > a {
+	#header div.open-menu > p,
+	#header div.open-menu > p > a {
 		justify-content: center;
 	}
 
-	#header div[class*="top-bar"] > div.open-menu > p > a {
+	#header div.open-menu > p > a {
 		--wght: 700;
 		display: flex;
 		flex: 2 0 100%;
@@ -1608,12 +1610,5 @@ div.mobile-top-bar {
 		letter-spacing: 0.016em;
 		text-align: center;
 		text-decoration: none;
-	}
-}
-
-/* IE11 Only */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	#header {
-		background-position: left -14rem top 1.1875rem;
 	}
 }
