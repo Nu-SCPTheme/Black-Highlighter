@@ -342,6 +342,10 @@ div.blockquote > :last-child,
 }
 
 .footnotes-footer a[href*="javascript"]:any-link {
+	--MONO: 1;
+	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
+	font-family: var(--mono-font);
 	display: inline-flex;
 	position: relative;
 	min-width: 2ch;
@@ -349,17 +353,12 @@ div.blockquote > :last-child,
 	color: transparent;
 }
 
-.footnotes-footer a[href*="javascript"]:any-link,
 .footnotes-footer a[href*="javascript"]::before,
 .bibitems .bibitem::after {
 	--MONO: 1;
 	--wght: calc(var(--ui-wght) + 100);
 	font-weight: var(--wght);
 	font-family: var(--mono-font);
-}
-
-.footnotes-footer a[href*="javascript"]::before,
-.bibitems .bibitem::after {
 	display: inline-flex;
 	position: absolute;
 	z-index: 2;
