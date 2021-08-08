@@ -13,13 +13,13 @@
 	7.  =TABLES
 	8.  =TOC
 	9.  =WARNING BOX
-	10.  =LISTPAGES PAGER
+	10. =LISTPAGES PAGER
 	11. =WIKIDOT USER ICONS
-	12. =MISC SMALL ELEMENTS
-	13. =FRONT PAGE ELEMENTS
-		13.1 =CONTENT PANEL
-	14. =MOBILE ELEMENTS
-	15. =MYSTERY ELEMENTS
+	12. =AYERS' INFO MODULE
+	13. =MISC SMALL ELEMENTS
+	14. =FRONT PAGE ELEMENTS
+		14.1 =CONTENT PANEL
+	15. =MOBILE ELEMENTS
 	16. =PRINT FORMATTING
   =============== */
 
@@ -1831,6 +1831,22 @@ a.avatar-hover:hover {
 	z-index: 10;
 }
 
+/* ===Ayers' Info Collapsible=== */
+
+#page-title + #page-content > div.info-container {
+    margin-top: 1em;
+}
+
+.info-container .collapsible-block-link,
+.info-container:hover .collapsible-block-link,
+.info-container:active .collapsible-block-link {
+	line-height: 1.6;
+}
+
+.info-container:focus-within .collapsible-block-link {
+	line-height: 1.6;
+}
+
 /* ===MISC SMALL ELEMENTS=== */
 
 /* Wikidot [[note]]. Unsure why this exists. */
@@ -2172,19 +2188,6 @@ div.block-left {
 	#toc #toc-list {
 		max-width: var(--sidebar-width-on-mobile);
 	}
-}
-
-/* ===Mystery Elements===
-   ===Unsure what these are for=== */
-
-.info-container .collapsible-block-link,
-.info-container:hover .collapsible-block-link,
-.info-container:active .collapsible-block-link {
-	line-height: 1.6;
-}
-
-.info-container:focus-within .collapsible-block-link {
-	line-height: 1.6;
 }
 
 /* See https://scp-wiki.wikidot.com/component:preview */
