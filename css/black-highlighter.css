@@ -10345,7 +10345,7 @@ div.blockquote > :last-child,
 	color: rgb(var(--modal-body-text));
 }
 
-[id*="u-credit"] .modalbox {
+[id*="u-credit"] div.modalbox {
 	position: relative;
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
@@ -10356,13 +10356,13 @@ div.blockquote > :last-child,
 	padding: 0;
 	border: none;
 	border-radius: 0;
-	background: rgb(var(--modal-bg));
+	background: rgb(var(--modal-bg)) !important; /* Important to overwrite inline styling */
 	box-shadow: 
 		inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color),0.25),
 		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color),0.25);
 }
 
-[id*="u-credit"] .modalbox > div:first-of-type {
+[id*="u-credit"] div.modalbox > div:first-of-type {
 	--wght: 600;
 	display: flex;
 	justify-content: flex-start;
@@ -10376,7 +10376,7 @@ div.blockquote > :last-child,
 	font-weight: var(--wght);
 }
 
-[id*="u-credit"] .modalbox > div:first-of-type h2 {
+[id*="u-credit"] div.modalbox > div:first-of-type h2 {
 	margin: 0;
 	padding: 0;
 }
@@ -10494,16 +10494,6 @@ div.blockquote > :last-child,
 	cursor: pointer;
 }
 
-[id*="u-credit"] div.credit-back::before {
-	content: "Back";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
 [id*="u-credit"] div.credit-back::before,
 [id*="u-credit"] a[href="#u-credit-otherwise"] {
 	--wght: var(--ui-wght);
@@ -10511,6 +10501,8 @@ div.blockquote > :last-child,
 	align-items: center;
 	justify-content: center;
 	margin: 0;
+	padding: 0 0.5em;
+	width: auto;
 	overflow: hidden;
 	transition:
 		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -10527,6 +10519,16 @@ div.blockquote > :last-child,
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+}
+
+[id*="u-credit"] div.credit-back::before {
+	content: "Back";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
 }
 
 [id*="u-credit"] div.credit-back:hover::before,
