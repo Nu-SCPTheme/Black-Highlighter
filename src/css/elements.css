@@ -1619,6 +1619,7 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-wght);
 	display: grid;
 	grid-gap: 0;
+	gap: 0;
 	grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
 	margin: 0 1em;
 	box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
@@ -2192,11 +2193,13 @@ body.print-body #print-options {
 body.print-body #print-options tbody {
 	display: grid;
 	grid-gap: 0.25em;
+	gap: 0.25em;
 }
 	
 body.print-body #print-options tr {
 	display: grid;
 	grid-gap: 0.5em;
+	gap: 0.5em;
 	grid-template-columns: 10rem 1fr;
 }
 
