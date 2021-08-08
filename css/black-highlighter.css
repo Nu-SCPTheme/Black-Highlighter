@@ -124,18 +124,34 @@
 	/* ===BASE FONT SIZE & LINE HEIGHT=== */
 	--min-font-size: 0.8125rem; /* 13px */
 	--max-font-size: 0.9375rem; /* 15px */
+
+	/* Hiding for now due to mobile iOS breaking when clamp is used as a font-size
 	--base-font-size: 
 		clamp(
 			var(--min-font-size), 
 			2vw,
 			var(--max-font-size)
 		);
+	*/
+
+	--base-font-size: var(--max-font-size);
+	
 	--base-line-height: 1.5;
 
 	/* ===HEADER TITLE FONT SIZES=== */
 	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
 	--header-h2-font-size: var(--base-font-size);
+}
 
+/* Temporary fix until either Safari fixes itself or another solution reveals itself */
+
+@media only screen and (max-width: 56.25rem) {
+	:root {
+		--base-font-size: var(--min-font-size);
+	}
+}
+
+:root {
 /* ===VARIABLE FONT SETTINGS=== */
 	/* SETTING  |  ============== DESCRIPTION			|	FONT: 	RANGE 	 */
 	/* SETTING  |  ============== Weight				|	Body: 100 - 900  */
