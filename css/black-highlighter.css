@@ -1100,6 +1100,7 @@ body b *,
 body .bold,
 body .bold * {
 	--wght: 700;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1120,6 +1121,7 @@ body .italic * {
 [style*="weight:1000"],
 [style*="weight:1000"] * {
 	--wght: 1000;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1128,6 +1130,7 @@ body .italic * {
 [style*="weight:900"],
 [style*="weight:900"] * {
 	--wght: 900;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1136,6 +1139,7 @@ body .italic * {
 [style*="weight:800"],
 [style*="weight:800"] * {
 	--wght: 800;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1144,6 +1148,7 @@ body .italic * {
 [style*="weight:700"],
 [style*="weight:700"] * {
 	--wght: 700;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1152,6 +1157,7 @@ body .italic * {
 [style*="weight:600"],
 [style*="weight:600"] * {
 	--wght: 600;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1160,6 +1166,7 @@ body .italic * {
 [style*="weight:500"],
 [style*="weight:500"] * {
 	--wght: 500;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1168,6 +1175,7 @@ body .italic * {
 [style*="weight:400"],
 [style*="weight:400"] * {
 	--wght: 400;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1176,6 +1184,7 @@ body .italic * {
 [style*="weight:300"],
 [style*="weight:300"] * {
 	--wght: 300;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1184,6 +1193,7 @@ body .italic * {
 [style*="weight:200"],
 [style*="weight:200"] * {
 	--wght: 200;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1192,6 +1202,7 @@ body .italic * {
 [style*="weight:100"],
 [style*="weight:100"] * {
 	--wght: 100;
+	font-weight: var(--wght);
 	--mono-wght: calc(var(--wght) - 50);
 }
 
@@ -1336,6 +1347,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -1380,6 +1392,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -1399,6 +1412,7 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -2321,6 +2335,7 @@ h6 {
 h1,
 h2 {
 	--wght: 700;
+	font-weight: var(--wght);
 }
 
 h3,
@@ -2328,6 +2343,7 @@ h4,
 h5,
 h6 {
 	--wght: 500;
+	font-weight: var(--wght);
 }
 
 h1 {
@@ -2812,6 +2828,7 @@ div.dblock {
 #page-title,
 .meta-title {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	min-height: 1em;
@@ -3017,6 +3034,7 @@ div.page-watch-options {
 div.page-watch-options a:-webkit-any-link {
 	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
+	font-weight: var(--wght);
 	margin: -0.15em 0;
 	padding: 0.15em;
 	-webkit-transition:
@@ -3037,6 +3055,7 @@ div.page-watch-options a:-webkit-any-link {
 div.page-watch-options a:any-link {
 	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
+	font-weight: var(--wght);
 	margin: -0.15em 0;
 	padding: 0.15em;
 	transition:
@@ -3052,6 +3071,7 @@ div.page-watch-options a:any-link {
 div.page-watch-options a:hover,
 div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght) + 200);
+	font-weight: var(--wght);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
@@ -3059,6 +3079,7 @@ div.page-watch-options a:active {
 
 div.page-watch-options a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 200);
+	font-weight: var(--wght);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
@@ -3081,6 +3102,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags::before {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	content: "TAGS\0021b4";
 	position: absolute;
 	top: -2em;
@@ -3120,6 +3142,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags span a:-webkit-any-link:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
+	font-weight: var(--wght);
 	--link-color: var(--pagetags-text-color);
 	--hover-link-color: var(--pagetags-text-hover-color);
 	display: inline-flex;
@@ -3144,6 +3167,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags span a:any-link:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
+	font-weight: var(--wght);
 	--link-color: var(--pagetags-text-color);
 	--hover-link-color: var(--pagetags-text-hover-color);
 	display: inline-flex;
@@ -3224,6 +3248,7 @@ div.page-watch-options a:focus-within {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3234,6 +3259,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3287,6 +3313,7 @@ div#page-options-area-bottom {
 
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	--icon-size: clamp(1.5em, 5vmin, 2em);
 	display: flex;
 	flex-wrap: wrap;
@@ -3495,6 +3522,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #footer a:-webkit-any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -3517,6 +3545,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #footer a:any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -3561,6 +3590,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 #footer a:hover,
 #footer a:active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3571,6 +3601,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #footer a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3624,6 +3655,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #license-area a:-webkit-any-link {
 	--wght: calc(var(--ui-wght));
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -3660,6 +3692,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #license-area a:any-link {
 	--wght: calc(var(--ui-wght));
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -3717,6 +3750,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 #license-area a:hover,
 #license-area a:active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3726,6 +3760,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 
 #license-area a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3767,6 +3802,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 #action-area h3,
 #action-area h4 {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	min-height: 1em;
@@ -3839,6 +3875,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -3864,6 +3901,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 #action-area a.action-area-close:hover,
 #action-area a.action-area-close:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -3874,6 +3912,7 @@ div#action-area>a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -3952,6 +3991,7 @@ form#edit-page-form #edit-page-captcha {
 
 form#edit-page-form table.form:first-of-type td:first-of-type {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	grid-area: title-txt;
 	width: -webkit-max-content;
 	width: max-content;
@@ -3976,6 +4016,7 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 
 form#edit-page-form table.form:first-of-type:focus-within td:first-of-type {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	transform: translateY(-0.15625rem);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
@@ -3990,6 +4031,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	width: calc(100% - 2em);
 	margin: 0.5em 1rem;
 	padding: 0.25em;
@@ -4024,6 +4066,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-s
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -4032,6 +4075,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -4040,6 +4084,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within 
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -4632,6 +4677,7 @@ form#edit-page-form textarea {
 
 form#edit-page-form .edit-help-34 {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	grid-area: edit-help;
 	flex-wrap: wrap;
@@ -4702,6 +4748,7 @@ form#edit-page-form .edit-help-34>a::after {
 form#edit-page-form .edit-help-34>a:hover,
 form#edit-page-form .edit-help-34>a:active {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -4712,6 +4759,7 @@ form#edit-page-form .edit-help-34>a:active {
 
 form#edit-page-form .edit-help-34>a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
+	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -4759,6 +4807,7 @@ form#edit-page-form .change-textarea-size {
 
 form#edit-page-form .change-textarea-size a {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -4779,11 +4828,13 @@ form#edit-page-form .change-textarea-size a {
 form#edit-page-form .change-textarea-size a:hover,
 form#edit-page-form .change-textarea-size a:active {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	background-color: rgba(var(--swatch-primary));
 }
 
 form#edit-page-form .change-textarea-size a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	background-color: rgba(var(--swatch-primary));
 }
 
@@ -4791,6 +4842,7 @@ form#edit-page-form .change-textarea-size a:focus-within {
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	display: grid;
 	position: relative;
 	grid-area: descrip;
@@ -4839,6 +4891,7 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) textarea {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	z-index: 1;
 	width: calc(100% - 2rem);
 	height: 100%;
@@ -4944,6 +4997,7 @@ form#edit-page-form div.buttons {
 
 #action-area a[onclick*="PageRateModule"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -4971,6 +5025,7 @@ form#edit-page-form div.buttons {
 #action-area a[onclick*="PageRateModule"]:hover,
 #action-area a[onclick*="PageRateModule"]:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -4982,6 +5037,7 @@ form#edit-page-form div.buttons {
 
 #action-area a[onclick*="PageRateModule"]:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -4995,6 +5051,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area>div {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: grid;
 	grid-auto-rows: 1.5rem;
 	grid-row-gap: 0.25em;
@@ -5008,6 +5065,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area>div>span[style*="color"] {
 	--wght: 800;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	align-self: center;
@@ -5044,6 +5102,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area .printuser a {
 	--wght: 600;
+	font-weight: var(--wght);
 	font-family: var(--UI-font);
 	font-size: 0.8em;
 	white-space: nowrap;
@@ -5064,6 +5123,7 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td {
 
 form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(1) {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -5107,6 +5167,7 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(2)>input {
 
 #history-form-1>table>tbody>tr>td:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	width: -webkit-max-content;
@@ -5220,6 +5281,7 @@ table.page-history tr td {
 
 table.page-history td.optionstd a {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	justify-content: center;
@@ -5246,6 +5308,7 @@ table.page-history td.optionstd a {
 table.page-history td.optionstd a:hover,
 table.page-history td.optionstd a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -5257,6 +5320,7 @@ table.page-history td.optionstd a:active {
 
 table.page-history td.optionstd a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -5268,6 +5332,7 @@ table.page-history td.optionstd a:focus-within {
 
 table.page-history tr:nth-of-type(2) td:not(:nth-of-type(7))::before {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	position: absolute;
 	top: calc(-100% - 0.5em);
@@ -5378,6 +5443,7 @@ table.page-files tbody tr td {
 
 table.page-files th {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -5392,6 +5458,7 @@ table.page-files tr>td>a:-webkit-any-link:not(.btn) {
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -5433,6 +5500,7 @@ table.page-files tr>td>a:any-link:not(.btn) {
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -5467,6 +5535,7 @@ table.page-files tr>td>a:any-link:not(.btn) {
 table.page-files tr>td>a:not(.btn):hover,
 table.page-files tr>td>a:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -5475,6 +5544,7 @@ table.page-files tr>td>a:not(.btn):active {
 
 table.page-files tr>td>a:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -5508,6 +5578,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	
 #upload-userfile[type="file"]::file-selector-button {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -5534,6 +5605,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #upload-userfile[type="file"]::file-selector-button:hover,
 #upload-userfile[type="file"]::file-selector-button:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgb(var(--ui-button-hover-bg));
 	color: rgb(var(--ui-button-hover-txt));
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline));
@@ -5543,6 +5615,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"]::file-selector-button:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgb(var(--ui-button-hover-bg));
 	color: rgb(var(--ui-button-hover-txt));
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline));
@@ -5571,6 +5644,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -5599,6 +5673,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #upload-userfile[type="file"]:hover,
 #upload-userfile[type="file"]:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.25em rgb(var(--ui-button-hover-outline));
@@ -5609,6 +5684,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"]:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.25em rgb(var(--ui-button-hover-outline));
@@ -5649,6 +5725,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box::before {
 	--wght: 700;
+	font-weight: var(--wght);
 	content: "Site Tools";
 	display: flex;
 	align-items: center;
@@ -5686,6 +5763,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:-webkit-any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -5719,6 +5797,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -5746,6 +5825,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #site-tools-box ul.nav li a:hover,
 #site-tools-box ul.nav li a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -5757,6 +5837,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -5794,6 +5875,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box div.wanted-pages-module table tr:first-of-type th {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -5895,6 +5977,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -5933,6 +6016,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -5964,6 +6048,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #st-action-area>a:not(.btn):not([href="javascript:;"]):hover,
 #st-action-area>a:not(.btn):not([href="javascript:;"]):active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -5972,6 +6057,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #st-action-area>a:not(.btn):not([href="javascript:;"]):focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -6006,6 +6092,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"] {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -6039,6 +6126,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #action-area a[onclick*="deleteTag"]:not(.btn):hover,
 #action-area a[onclick*="deleteTag"]:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -6047,6 +6135,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"]:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -6171,6 +6260,7 @@ div.odialog-shader-iframe {
 #odialog-container .modal-header,
 #odialog-container .title {
 	--wght: 600;
+	font-weight: var(--wght);
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
@@ -6423,6 +6513,7 @@ div.odialog-shader-iframe {
 
 .thread-container .post .long .head .title {
 	--wght: 700;
+	font-weight: var(--wght);
 	font-family: var(--title-font);
 	font-size: 1.2em;
 	letter-spacing: 0.05em;
@@ -6443,6 +6534,7 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.options a,
 .post-container>.post>div.long>div.options a {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: flex;
 	flex-grow: 0;
 	justify-content: center;
@@ -6811,6 +6903,7 @@ div.wd-adunit {
 
 #side-bar .heading p {
 	--wght: calc(var(--ui-wght) + 300);
+	font-weight: var(--wght);
 	margin: 0;
 	color: rgb(var(--sideblock-heading-text-color));
 	font-family: var(--title-font);
@@ -6883,6 +6976,7 @@ div.wd-adunit {
 
 #side-bar div.menu-item a:-webkit-any-link {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
@@ -6910,6 +7004,7 @@ div.wd-adunit {
 #side-bar div.menu-item a:any-link,
 #side-bar div.menu-item .text {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
@@ -6954,6 +7049,7 @@ div.wd-adunit {
 #side-bar div.menu-item a:hover,
 #side-bar div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -6961,6 +7057,7 @@ div.wd-adunit {
 
 #side-bar div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	text-decoration: none;
@@ -7129,6 +7226,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 #side-bar div.collapsible-block div.collapsible-block-folded,
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link {
 	--wght: calc(var(--ui-wght) + 300);
+	font-weight: var(--wght);
 	display: flex;
 	position: relative;
 	align-items: flex-end;
@@ -7166,11 +7264,13 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 #side-bar a.collapsible-block-link:hover,
 #side-bar a.collapsible-block-link:active {
 	--wght: calc(var(--ui-hvr-wght) + 300);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 #side-bar a.collapsible-block-link:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -7509,6 +7609,7 @@ div#container-wrap {
 #header,
 #top-bar {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	max-width: var(--header-width-on-desktop,61.25rem);
 	/* 980px */
 	margin: 0 auto;
@@ -7531,6 +7632,7 @@ div#container-wrap {
 
 #header h1 a {
 	--wght: 900;
+	font-weight: var(--wght);
 	display: block;
 	z-index: 10;
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
@@ -7568,6 +7670,7 @@ div#container-wrap {
 
 #header h2 span {
 	--wght: 500;
+	font-weight: var(--wght);
 	display: block;
 	margin-top: calc(((var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) - var(--header-h2-font-size) + 0.675em));
 	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
@@ -7791,6 +7894,7 @@ div#container-wrap {
 
 #login-status {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	position: absolute;
 	z-index: 11;
@@ -7840,6 +7944,7 @@ div#container-wrap {
 
 #login-status span.printuser {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	margin-right: 0.5em;
 	color: rgb(var(--login-username-color));
 }
@@ -7850,6 +7955,7 @@ div#container-wrap {
 
 #login-status a#my-account {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -7873,6 +7979,7 @@ div#container-wrap {
 #login-status a#my-account:hover,
 #login-status a#my-account:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
@@ -7880,6 +7987,7 @@ div#container-wrap {
 
 #login-status a#my-account:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
@@ -7972,6 +8080,7 @@ div#container-wrap {
 #login-status #account-options a {
 	--box-shadow: rgba(var(--login-dropdown-border-color));
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	position: relative;
 	flex-grow: 1;
 	height: 100%;
@@ -7995,12 +8104,14 @@ div#container-wrap {
 #login-status #account-options li > a:hover,
 #login-status #account-options li > a:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--login-dropdown-text-hover-color));
 	text-decoration: none;
 }
 
 #login-status #account-options li > a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--login-dropdown-text-hover-color));
 	text-decoration: none;
 }
@@ -8083,6 +8194,7 @@ div.mobile-top-bar {
 
 #header div#top-bar {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: initial;
 	z-index: 50;
@@ -8132,6 +8244,7 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li > a {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	align-items: center;
@@ -8152,11 +8265,13 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li:hover > a,
 #header div[class*="top-bar"] > ul > li:active > a {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--topmenu-category-hover-color));
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > a {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--topmenu-category-hover-color));
 }
 
@@ -8247,11 +8362,13 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li:hover > a,
 #header div[class*="top-bar"] > ul > li:active > a {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	background-color: rgb(var(--topmenu-category-hover-bg));
 }
 
 #header div[class*="top-bar"] > ul > li:focus-within > a {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	background-color: rgb(var(--topmenu-category-hover-bg));
 }
 
@@ -8350,6 +8467,7 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li > ul li > a {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 
 	/* Text Positioning */
 	display: flex;
@@ -8400,11 +8518,13 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li > ul li:hover > a,
 #header div[class*="top-bar"] > ul > li > ul li:active > a {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--dropdown-links-hover-color));
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:focus-within > a {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--dropdown-links-hover-color));
 }
 
@@ -9159,6 +9279,7 @@ div.mobile-top-bar {
 
 	#header div.open-menu > p > a {
 		--wght: 700;
+		font-weight: var(--wght);
 		display: flex;
 		flex: 2 0 100%;
 		align-items: center;
@@ -9253,6 +9374,7 @@ div.mobile-top-bar {
 .yui-navset-top .yui-nav li a,
 .yui-navset-bottom .yui-nav li a {
 	--wght: var(--ui-wght);
+	font-weight: var(--wght);
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -9270,11 +9392,13 @@ div.mobile-top-bar {
 .yui-navset .yui-nav a:active,
 .yui-navset .yui-nav a:focus {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--tabs-hover-txt));
 }
 
 .yui-navset .yui-nav a:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	color: rgb(var(--tabs-hover-txt));
 }
 
@@ -9365,6 +9489,7 @@ div.mobile-top-bar {
 
 .yui-navset .yui-nav .selected a {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	background-image: none;
 	color: rgb(var(--tabs-selected-txt)) !important; /* Overwriting Wikidot Inline-Styling */
 }
@@ -9496,6 +9621,7 @@ div.blockquote > :last-child,
 .footnotes-footer .title,
 .bibitems .title {
 	--wght: 700;
+	font-weight: var(--wght);
 	display: inline-block;
 	width: -webkit-min-content;
 	width: min-content;
@@ -9538,6 +9664,7 @@ div.blockquote > :last-child,
 .footnotes-footer a[href*="javascript"]:-webkit-any-link {
 	--MONO: 1;
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	font-family: var(--mono-font);
 }
 
@@ -9546,6 +9673,7 @@ div.blockquote > :last-child,
 .bibitems .bibitem::after {
 	--MONO: 1;
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 	font-family: var(--mono-font);
 }
 
@@ -9582,12 +9710,14 @@ div.blockquote > :last-child,
 .footnotes-footer a[href*="javascript"]:hover::before,
 .footnotes-footer a[href*="javascript"]:active::before {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	color: rgb(var(--footnotes-footer-num-hover-color));
 	
 }
 
 .footnotes-footer a[href*="javascript"]:focus-within::before {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 	color: rgb(var(--footnotes-footer-num-hover-color));
 }
 
@@ -9677,6 +9807,7 @@ div.blockquote > :last-child,
 	color: rgb(var(--hoverblock-header-txt));
 	font-family: var(--UI-font);
 	font-size: 0.96em;
+	font-weight: var(--wght);
 }
 
 .hovertip .f-content {
@@ -9753,6 +9884,7 @@ div.blockquote > :last-child,
 	font-size: 0.9em;
 	letter-spacing: 0.016em;
 	line-height: 1.25;
+	font-weight: var(--wght);
 	text-align: center;
 }
 
@@ -9835,6 +9967,7 @@ div.blockquote > :last-child,
 	position: relative;
 	background: transparent;
 	color: rgb(var(--rating-module-text-color));
+	font-weight: var(--wght);
 }
 
 .page-rate-widget-box .rateup a,
@@ -10240,6 +10373,7 @@ div.blockquote > :last-child,
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--modal-header-txt));
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 [id*="u-credit"] .modalbox > div:first-of-type h2 {
@@ -10391,6 +10525,7 @@ div.blockquote > :last-child,
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
@@ -10399,6 +10534,7 @@ div.blockquote > :last-child,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:hover,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:active {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg),1);
@@ -10410,6 +10546,7 @@ div.blockquote > :last-child,
 [id*="u-credit"] div.credit-back:focus-within::before,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:focus-within {
 	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg),1);
@@ -10439,6 +10576,7 @@ table.wiki-content-table th {
 	padding: 0.5em 1em;
 	background: rgb(var(--tables-header-bg));
 	color: rgb(var(--tables-header-txt));
+	font-weight: var(--wght);
 }
 
 table.wiki-content-table th,
@@ -10517,6 +10655,7 @@ table[style*="margin:0"] * {
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--toc-header-bg-color));
 	color: rgb(var(--toc-header-text-color));
+	font-weight: var(--wght);
 }
 
 #toc #toc-action-bar a[style*="display: none"] {
@@ -10564,12 +10703,14 @@ table[style*="margin:0"] * {
 #toc #toc-action-bar:active + .title {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-action-bar a:focus-within,
 #toc #toc-action-bar:focus-within + .title {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-action-bar a::before {
@@ -10639,6 +10780,7 @@ table[style*="margin:0"] * {
 	background-color: rgb(var(--toc-body-bg-color));
 	box-shadow: 0 -0.25rem 0 0 rgb(var(--toc-header-bg-color));
 	font-size: calc(var(--base-font-size) * 0.93333);
+	font-weight: var(--wght);
 	scrollbar-width: thin;
 }
 
@@ -10788,6 +10930,7 @@ table[style*="margin:0"] * {
 	transform: translateX(0.25rem);
 	color: rgb(var(--toc-body-link-hover-color));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-list a:focus-within {
@@ -10795,6 +10938,7 @@ table[style*="margin:0"] * {
 	transform: translateX(0.25rem);
 	color: rgb(var(--toc-body-link-hover-color));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 #toc #toc-list a:hover::before,
@@ -10855,6 +10999,7 @@ table[style*="margin:0"] * {
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--swatch-text-secondary-color));
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 #page-content div.warning-top-box > p:first-of-type,
@@ -10880,6 +11025,7 @@ table[style*="margin:0"] * {
 	box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
 	color: rgb(var(--pager-text));
 	white-space: nowrap;
+	font-weight: var(--wght);
 }
 
 .pager span,
@@ -10908,6 +11054,7 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgb(var(--pager-selected-bg));
 	color: rgb(var(--pager-selected-link));
+	font-weight: var(--wght);
 }
 
 .pager .current::before {
@@ -10970,12 +11117,14 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--pager-link-hover));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 .pager a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--pager-link-hover));
 	text-decoration: none;
+	font-weight: var(--wght);
 }
 
 .pager a::after {
@@ -11136,6 +11285,7 @@ div.wiki-note:after {
 	--wght: 700;
 	font-size: 0.75em;
 	letter-spacing: 0.016em;
+	font-weight: var(--wght);
 }
 
 .browserupgrade {
@@ -11215,6 +11365,7 @@ div.keycap {
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
 	-webkit-clip-path: var(--clip-path);
 	        clip-path: var(--clip-path);
+	font-weight: var(--wght);
 }
 
 div.tags {
@@ -11308,6 +11459,7 @@ div.block-left {
 	text-align: center;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 .content-panel .panel-body {
@@ -11320,6 +11472,7 @@ div.block-left {
 	font-family: var(--title-font);
 	font-size: 0.9em;
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 .content-panel .panel-footer {
@@ -11330,6 +11483,7 @@ div.block-left {
 	letter-spacing: 0.016em;
 	text-align: right;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
+	font-weight: var(--wght);
 }
 
 .content-panel .panel-footer,
@@ -11495,6 +11649,7 @@ body.print-body #print-options tr > td:first-of-type {
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-transform: uppercase;
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options tr > td:last-of-type {
@@ -11534,6 +11689,7 @@ body.print-body #print-options a:-webkit-any-link {
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
@@ -11558,6 +11714,7 @@ body.print-body #print-options a:any-link {
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
@@ -11569,6 +11726,7 @@ body.print-body #print-options a:active {
 	color: rgb(var(--ui-button-hover-txt));
 	text-decoration: none;
 	cursor: pointer;
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options a:focus-within {
@@ -11582,19 +11740,23 @@ body.print-body #print-options a:focus-within {
 
 body.print-body #print-options tr > td b a:-webkit-any-link {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options tr > td b a:any-link {
 	--wght: calc(var(--ui-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options tr > td b a:hover,
 body.print-body #print-options tr > td b a:active {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options tr > td b a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+	font-weight: var(--wght);
 }
 
 body.print-body #print-options a[onclick*="Georgia"] {
@@ -11725,6 +11887,7 @@ body#translations {
 
 #translations .interwiki__title p {
 	--wght: 900;
+	font-weight: var(--wght);
 	display: block;
 	height: 1.5625rem;
 	padding-right: 1rem;
