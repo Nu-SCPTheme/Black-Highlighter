@@ -981,7 +981,6 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	*::before,
 	*::after {
 		font-variation-settings: 
-			"wght" var(--wght), 
 			"ital" var(--ital, 0),
 			"slnt" var(--slnt, 0), 
 			"CASL" var(--CASL, 0),
@@ -1111,6 +1110,7 @@ body em *,
 body .italic,
 body .italic * {
 	--ital: 1;
+	--slnt: -15;
 }
 
 /* Attribute Selectors for font-weight and font-style */
@@ -1200,6 +1200,7 @@ body .italic * {
 [style*="oblique"],
 [style*="oblique"] * {
 	--ital: 1;
+	--slnt: -15;
 }
 
 /* ===HTML5 MEDIA ITEMS=== */
