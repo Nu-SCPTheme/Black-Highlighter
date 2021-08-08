@@ -495,6 +495,11 @@
 }
 
 /* Interwiki Styling specifically not targetting CN Branch */
+html:not(:lang(cn)) div.scpnet-interwiki-wrapper,
+html:not(:lang(cn)) div.scpnet-interwiki-wrapper * {
+	max-width: var(--sidebar-width-on-desktop);
+}
+
 html:not(:lang(cn)) div.scpnet-interwiki-wrapper div.list-pages-item {
 	display: flex;
 	align-items: flex-end;
@@ -753,6 +758,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 	#side-bar {
 		display: block;
 		position: fixed;
+		padding-left: 0.25em;
 		z-index: 10;
 		top: 0;
 		left: calc(var(--sidebar-width-on-mobile) * -1);
@@ -760,6 +766,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		max-width: calc(80vw + (var(--base-font-size) * 0.5));
 		height: 100%;
 		overflow-y: auto;
+		direction: initial;
 		transition: left 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 	}
 
@@ -774,6 +781,7 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 
 	#side-bar .side-block {
 		margin-top: 0.25rem;
+		direction: initial;
 	}
 
 	#side-bar div.menu-item a:first-of-type {
@@ -840,5 +848,10 @@ html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
 		opacity: 1;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		pointer-events: auto;
+	}
+
+	#side-bar div.scpnet-interwiki-wrapper,
+	#side-bar div.scpnet-interwiki-wrapper * {
+		max-width: var(--sidebar-width-on-mobile);
 	}
 }
