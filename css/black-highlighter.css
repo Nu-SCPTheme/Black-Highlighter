@@ -184,9 +184,16 @@
 	/* ========================== Access All Alternates	|	Any: 	0 OR 1	 */
 	--aalt: 0;
 	/* ========================== Stylistic Sets		|	Any: 	0 OR 1	 */
+	/* ========================== SS 1 | Open Digits	|	Inter: 	0 OR 1	 */
 	--ss01: 1;
-	--ss02: 1;
+	/* ========================== SS 2 | Disambiguation	|	Inter: 	0 OR 1	 */
+	--ss02: 0;
+	/* ========================== SS 3 | Curved R		|	Inter: 	0 OR 1	 */
 	--ss03: 1;
+	/* ========================== SS 4 | SS2 w/o zero	|	Inter: 	0 OR 1	 */
+	--ss04: 1;
+	/* ========================== Slashed Zero			|	Inter: 	0 OR 1	 */
+	--zero: 1;
 	
 /* ===STANDARD THEME COLORS=== */
 	/* white */
@@ -1006,8 +1013,10 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 			"calt" var(--calt, 1), 
 			"aalt" var(--aalt, 0), 
 			"ss01" var(--ss01, 1),
-			"ss02" var(--ss02, 1), 
-			"ss03" var(--ss03, 1);
+			"ss02" var(--ss02, 0), 
+			"ss03" var(--ss03, 1),
+			"ss04" var(--ss04, 1),
+			"zero" var(--zero, 1);
 	}
 }
 
