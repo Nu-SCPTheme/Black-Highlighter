@@ -1664,6 +1664,7 @@ input[type="radio"]:checked::before {
 #edit-page-form.data-form {
     padding: 0;
     background-color: transparent;
+	font-size: 0.8125rem;
     font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
 }
 
@@ -3241,6 +3242,7 @@ div#page-options-area-bottom {
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
 	font-weight: var(--wght);
+	--icon-size: 1.5em;
 	--icon-size: clamp(1.5em, 5vmin, 2em);
 	display: flex;
 	flex-wrap: wrap;
@@ -3806,6 +3808,7 @@ form#edit-page-form:not(.data-form) {
 		-0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 		0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 		0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
+	font-size: 0.8125rem;
 	font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
 }
 
@@ -3955,6 +3958,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible
 /* ===EDITOR TOOLBAR=== */
 
 form#edit-page-form .wd-editor-toolbar-panel {
+	--icon-size: 1.5em;
 	--icon-size: clamp(1.5em, 5.75vw, calc((var(--body-width-on-desktop) - 6em)/22));
 	display: grid;
 	position: relative;
@@ -10128,6 +10132,7 @@ div.blockquote > :last-child,
 	width: 1.25em;
 	height: 1.25em;
 	margin: 0;
+	font-size: 1.25em;
 	font-size: clamp(1.25em, 2vw, 1.5em);
 }
 
