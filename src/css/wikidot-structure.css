@@ -3094,13 +3094,16 @@ div.odialog-shader-iframe {
 
 #odialog-container .modal-header,
 #odialog-container .title {
-	--wght: 600;
+	--wght: 800;
+	font-family: var(--header-font);
 	font-weight: var(--wght);
+	font-size: 1.5em;
+	line-height: 1ex;
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
 	margin: 0;
-	padding: 0.5em 1.25rem;
+	padding: 1.5ex 1.25rem;
 	background-color: rgb(var(--modal-header-bg));
 	background-image: linear-gradient(125deg,
 			rgba(var(--modal-header-stripe), 0.75) 25%,
