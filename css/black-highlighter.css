@@ -6458,6 +6458,11 @@ div.odialog-shader-iframe {
 		grid-template-columns: 1fr;
 	}
 
+	/* Temporarily hiding page options hovertips in the hope that it might fix some mobile chrome issues */
+	#odialog-hovertips > div[id*="hovertip"] {
+		display: none !important;
+	}
+
 }
 
 /* Ad Styling */
