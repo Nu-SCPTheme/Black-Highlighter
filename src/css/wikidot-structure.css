@@ -3017,6 +3017,51 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 }
 
 /* ===WATCHERS/LOCK/RENAME/DELETE/SOURCE=== */
+#action-area a + h1 + h2 ~ ul li {
+	text-align: left;
+}
+
+#action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div {
+	text-align: left;
+	grid-template-columns: 5em 1fr;
+}
+
+#action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div a {
+	--wght: var(--ui-wght);
+	font-weight: var(--wght);
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	padding: 0 1em;
+	margin-right: 0 !important;
+	transition:
+		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: transparent;
+	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
+	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
+}
+
+#action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:hover,
+#action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:active {
+	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: underline rgb(var(--swatch-primary)) 0;
+}
+
+#action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:focus-within {
+	--wght: var(--ui-hvr-wght);
+	font-weight: var(--wght);
+	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	color: rgb(var(--swatch-text-secondary-color));
+	text-decoration: underline rgb(var(--swatch-primary)) 0;
+}
+
 #action-area p+ul[style*="list-style: none"] {
 	display: grid;
 	grid-auto-flow: row;
