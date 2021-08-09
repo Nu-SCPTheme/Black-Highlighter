@@ -7017,19 +7017,19 @@ div.wd-adunit {
 
 /* Interwiki Styling specifically not targetting CN Branch */
 
-html:not(:lang(cn)) div.scpnet-interwiki-wrapper,
-html:not(:lang(cn)) div.scpnet-interwiki-wrapper * {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)),
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) * {
 	max-width: var(--sidebar-width-on-desktop);
 }
 
-html:not(:lang(cn)) div.scpnet-interwiki-wrapper div.list-pages-item {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) div.list-pages-item {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
 	width: 100%;
 }
 
-html:not(:lang(cn)) div.scpnet-interwiki-wrapper p {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) p {
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -7038,12 +7038,46 @@ html:not(:lang(cn)) div.scpnet-interwiki-wrapper p {
 	overflow: hidden;
 }
 
-html:not(:lang(cn)) iframe.scpnet-interwiki-frame {
+#side-bar iframe.scpnet-interwiki-frame:not(:lang(cn)) {
 	width: 90%;
 	margin: 0 auto;
 	overflow: hidden;
-	-webkit-filter: grayscale(1);
-	        filter: grayscale(1);
+	position: relative;
+}
+
+/* Coloring to (mostly) match sidebar */
+
+@supports(mix-blend-mode:hue) {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+	}
+
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before {
+		background-color: rgb(var(--swatch-menubg-color));
+		z-index: 3;
+		mix-blend-mode: darken;
+	}
+
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before {
+		background-color: rgb(var(--swatch-primary));
+		z-index: 2;
+		mix-blend-mode: color;
+	}
+
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after {
+		background-color: rgb(var(--swatch-menubg-color));
+		z-index: 1;
+		mix-blend-mode:overlay;
+		transition: background-color 500ms cubic-bezier(.4,0,.2,1);
+	}
 }
 
 /* Collapsibles in the sidebar */
