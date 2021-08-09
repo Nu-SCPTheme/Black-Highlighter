@@ -2498,13 +2498,15 @@ table.page-files tr>td>a:visited:not(.btn) {
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
 	text-align: center;
 	box-decoration-break: clone;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 table.page-files tr>td>a:not(.btn):hover,
 table.page-files tr>td>a:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
 	font-weight: var(--wght);
-	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
@@ -2512,7 +2514,7 @@ table.page-files tr>td>a:not(.btn):active {
 table.page-files tr>td>a:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
 	font-weight: var(--wght);
-	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
