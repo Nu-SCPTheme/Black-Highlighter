@@ -5421,13 +5421,17 @@ table.page-files tr>td>a:visited:not(.btn) {
 	text-align: center;
 	-webkit-box-decoration-break: clone;
 	        box-decoration-break: clone;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
 }
 
 table.page-files tr>td>a:not(.btn):hover,
 table.page-files tr>td>a:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
 	font-weight: var(--wght);
-	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
 	        text-decoration: underline rgb(var(--swatch-primary)) 0;
@@ -5436,7 +5440,7 @@ table.page-files tr>td>a:not(.btn):active {
 table.page-files tr>td>a:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
 	font-weight: var(--wght);
-	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
+	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
 	        text-decoration: underline rgb(var(--swatch-primary)) 0;
