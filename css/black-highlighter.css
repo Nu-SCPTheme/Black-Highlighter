@@ -2667,7 +2667,7 @@ div.dblock {
 
 /* ===MOBILE FORMATTING=== */
 
-@media screen and (max-width: 56.25rem) {
+@media only screen and (max-width: 56.25rem) {
 	body {
 		font-size: var(--min-font-size);
 		font-size: var(--base-font-size);
@@ -4047,7 +4047,7 @@ form#edit-page-form .wd-editor-toolbar-panel {
 	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-tertiary-color));
 }
 
-@media only screen and (max-width: 480px), (orientation: portrait) {
+@media only screen and (max-width: 30rem), (orientation: portrait) {
 	form#edit-page-form .wd-editor-toolbar-panel {
 		grid-template-areas:
 			"header-h1 bold-txt italic-txt underline-txt strike-txt super-txt sub-txt raw-txt teletype-txt . ordered-list unordered-list increment-list decrement-list"
@@ -6467,7 +6467,7 @@ div.odialog-shader-iframe {
 
 /* ===MOBILE FORMATTING=== */
 
-@media screen and (max-width: 56.25rem) {
+@media only screen and (max-width: 56.25rem) {
 	#content-wrap {
 		grid-template-areas:
 			"content content content";
@@ -9780,6 +9780,13 @@ div.blockquote > :last-child,
 		0 0 0 0.0625rem rgba(var(--swatch-tertiary-color),1), 
 		-0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color),1), 
 		 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color),0.75);
+}
+
+.image-block,
+.scp-image-block,
+.image-block *,
+.scp-image-block * {
+	border: none;
 }
 
 .scp-image-block.block-right {
