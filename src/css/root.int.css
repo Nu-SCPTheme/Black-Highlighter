@@ -167,14 +167,27 @@
 	--header-subtitle: "Branca Italiana - SCP Foundation";
 }
 
-side-bar:lang(it) div.menu-item {
+#side-bar:lang(it) div.menu-item {
 	height: auto;
 }
 
+#side-bar:lang(it) .side-block.green + div {
+	display: contents;
+}
+
 #side-bar:lang(it) .side-block.blue {
-	margin: 0.5rem 0.5rem 0 0;
+	grid-auto-flow: column;
+	justify-content: center;
+	grid-gap: 0.75em;
+	margin: .5rem .5rem 0 0;
 	padding: 0.5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
+	direction: ltr;
+	width: var(--sidebar-width-on-mobile);
+}
+
+#side-bar:lang(it) .side-block.blue br {
+	display: none;
 }
 
 #side-bar:lang(it) .side-block.blue a {
