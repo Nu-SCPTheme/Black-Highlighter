@@ -17,6 +17,7 @@
 	11. =SPANISH BRANCH
 	12. =GERMAN BRANCH
 	13. =CZECH BRANCH
+	14. =FRENCH BRANCH
 */
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
@@ -115,4 +116,30 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(cs) {
 	flex-basis: 6rem;
+}
+
+/* ===FRENCH BRANCH=== */
+#main-content:lang(fr) .page-tags::before {
+	content: "étiquettes\0021b4";
+	text-transform: uppercase;
+}
+
+form#edit-page-form:lang(fr) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "Courte Description des Modifications:";
+}
+
+table.page-history:lang(fr) tr:nth-of-type(2) td:nth-of-type(1)::before {
+	content: "rév.";
+}
+
+table.page-history:lang(fr) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "drapeaux";
+}
+
+table.page-history:lang(fr) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "par";
+}
+
+#site-tools-box:lang(fr)::before {
+	content: "Outils du Site";
 }

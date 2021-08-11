@@ -1,7 +1,7 @@
-/* INT SIDEBAR STYLING
+/* INT ELEMENTS STYLING
    ============================= */
 
-/* Styling specific to Int Branches' Headers
+/* Styling specific to Int Branches' Elements
 
 /* ===DIRECTORY===
 	1.  =SIMPLIFIED CHINESE BRANCH
@@ -33,10 +33,6 @@
 /* ===PORTUGESE BRANCH=== */
 
 /* ===RUSSIAN BRANCH=== */
-#top-bar:lang(ru) .list-pages-item,
-#top-bar:lang(ru) .list-pages-item .top-bar {
-	height: 100%;
-}
 
 /* ===THAI BRANCH=== */
 
@@ -55,3 +51,11 @@
 /* ===CZECH BRANCH=== */
 
 /* ===FRENCH BRANCH=== */
+[id*="u-credit"]:lang(fr) div.credit-back::before {
+	content: "Retour";
+}
+
+#toc:lang(fr) #toc-action-bar a::after {
+	content: "Sommaire";
+}
+
