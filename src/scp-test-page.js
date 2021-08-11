@@ -187,6 +187,7 @@ $(function () {
           }
           const newBody = doc.getElementsByTagName("body")[0];
           const iframesReplace = document.getElementsByTagName("iframe");
+          const [htmlTag] = document.getElementsByTagName('html');
 
           bhlMinDetect = String(newHeadContents).indexOf(
             "black-highlighter.min.css"
@@ -198,6 +199,8 @@ $(function () {
             .appendChild(newHead)
             .after("\n");
           document.getElementsByTagName("body")[0].appendChild(newBody);
+          
+          htmlTag.setAttribute('lang', language);
 
           $(iframesReplace).each(function (idx, el) {
             el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`;
