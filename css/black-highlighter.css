@@ -488,6 +488,7 @@
 		--twitch-icon-color: 100, 65, 165;
 		--discord-icon-color: 88, 101, 242; /* BLURPLE */
 		--github-icon-color: 25, 23, 23;
+		--youtube-icon-color: 255, 0, 0;
 		--social-icon-hover-color: var(--swatch-primary);
 
 		/* ===SIDEBLOCK MENU=== */
@@ -8201,6 +8202,107 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 }
 
 /* ===KOREAN BRANCH=== */
+
+#side-bar:lang(ko) {
+	--youtube-icon-color: 255, 0, 0;
+	--naver-icon-color: 25, 206, 96;
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] + div + div  {
+	margin-top: 1rem;
+	grid-auto-flow: row;
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] {
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    width: var(--sidebar-width-on-mobile);
+    margin: .5rem 0.5rem 0 0;
+    padding: .5em !important;
+    background-color: rgba(var(--sidebar-media-bg-color)) !important;
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] > div {
+	display: contents;
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a {
+	position: relative;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
+	-webkit-mask-image: var(--social-logo-mask);
+	        mask-image: var(--social-logo-mask);
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	        mask-size: contain;
+	-webkit-mask-position: center center;
+	        mask-position: center center;
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a:hover::before,
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a img {
+	width: 1.6875rem;
+	height: 1.6875rem;
+	opacity: 0;
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a[href*="twitter"] {
+	--social-logo-mask: var(--twitter-mask);
+	--social-color: var(--twitter-icon-color);
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a[href*="youtube"] {
+	--social-logo-mask: var(--youtube-mask);
+	--social-color: var(--youtube-icon-color);
+}
+
+#side-bar:lang(ko) .side-block[style*="E5E5FF"] a[href*="naver"] {
+	--social-logo-mask: var(--naver-mask);
+	--social-color: var(--naver-icon-color);
+}
 
 /* ===POLISH BRANCH=== */
 
