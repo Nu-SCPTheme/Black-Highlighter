@@ -734,12 +734,100 @@
 
 /* ===UKRAINIAN BRANCH=== */
 /*Normalizing Unique Sideblock Class*/
+#side-bar:lang(uk) {
+	--telegram-icon-color: 0, 136, 204;
+}
+
 #side-bar:lang(uk) > * {
 	direction: ltr;
 }
 
 #side-bar:lang(uk) hr {
 	margin-bottom: 0;
+}
+
+#side-bar:lang(uk) .side-block.side-links {
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    width: var(--sidebar-width-on-mobile);
+    margin: .5rem 0.5rem 0 0;
+    padding: .5em !important;
+    background-color: rgba(var(--sidebar-media-bg-color)) !important;
+}
+
+#side-bar:lang(uk) .side-block.side-links > div {
+	display: contents;
+}
+
+#side-bar:lang(uk) .side-block.side-links a {
+	position: relative;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
+	mask-image: var(--social-logo-mask);
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position: center center;
+}
+
+#side-bar:lang(uk) .side-block.side-links a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	clip-path: var(--clip-path);
+}
+
+#side-bar:lang(uk) .side-block.side-links a:hover::before,
+#side-bar:lang(uk) .side-block.side-links a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(uk) .side-block.side-links a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(uk) .side-block.side-links a img {
+	width: 1.6875rem;
+	height: 1.6875rem;
+	opacity: 0;
+}
+
+#side-bar:lang(uk) .side-block.side-links a[href*="twitter"] {
+	--social-logo-mask: var(--twitter-mask);
+	--social-color: var(--twitter-icon-color);
+}
+
+#side-bar:lang(uk) .side-block.side-links a[href*="discord"] {
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
+}
+
+#side-bar:lang(uk) .side-block.side-links a[href*="t.me"] {
+	--social-logo-mask: var(--telegram-mask);
+	--social-color: var(--telegram-icon-color);
 }
 
 #side-bar:lang(uk) div.side-block:not(.side-links) div.menu-item {
