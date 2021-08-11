@@ -472,9 +472,9 @@
 	--sidebar-media-bg-color: var(--swatch-primary-darker), 0.125;
 
 		/* ===SOCIAL MEDIA ICONS=== */
+		--discord-icon-color: 88, 101, 242; /* BLURPLE */
 		--facebook-icon-color: 59, 89, 152;
-		--twitter-icon-color: 29, 161, 242;
-		--reddit-icon-color: 225, 69, 0;
+		--github-icon-color: 25, 23, 23;
 		--instagram-icon-color: 240, 148, 51;
 		--instagram-icon-gradient: 
 			linear-gradient(
@@ -485,10 +485,12 @@
 				rgb(204, 35, 102) 75%,
 				rgb(188, 24, 136) 100%
 			);
+		--reddit-icon-color: 225, 69, 0;
+		--sandbox-icon-color: 35, 140, 120;
 		--twitch-icon-color: 100, 65, 165;
-		--discord-icon-color: 88, 101, 242; /* BLURPLE */
-		--github-icon-color: 25, 23, 23;
+		--twitter-icon-color: 29, 161, 242;
 		--youtube-icon-color: 255, 0, 0;
+		
 		--social-icon-hover-color: var(--swatch-primary);
 
 		/* ===SIDEBLOCK MENU=== */
@@ -982,6 +984,8 @@
 	--naver-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='naver_logo' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 2215 2080' xml:space='preserve'%3E%3Cpath d='M2090 1212.1c4.9-40 7.5-80.8 7.5-122.1 0-410-249.3-761.8-604.6-912.1L1434.5 0h-654l-58.4 177.9C366.8 328.2 117.5 680 117.5 1090c0 41.4 2.6 82.1 7.5 122.1L0 1351.8l327 566.4 183.5-38.4c166 125.7 372.8 200.2 597 200.2s431-74.5 597-200.2l183.5 38.4 327-566.4-125-139.7zM1107.5 1881c-441.8 0-800-358.2-800-800s358.2-800 800-800 800 358.2 800 800-358.2 800-800 800z'/%3E%3Cpath d='M1267.7 1112.6 934.1 633.2H657.5v895.6h289.8v-479.3l333.6 479.3h276.6V633.2h-289.8z'/%3E%3C/svg%3E%0A");
 
 	--reddit-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Reddit_Logo' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 2215 2080' xml:space='preserve'%3E%3Cpath d='M1318.4 1444.1c-46.5 47.8-148.4 64.1-220.1 64.1-71.7 0-172.3-16.4-220.1-64.1-11.3-11.3-28.9-11.3-40.2 0-11.3 11.3-11.3 28.9 0 40.2 74.2 74.2 217.6 80.5 260.3 80.5 41.5 0 184.9-5 260.3-80.5 10.1-11.3 10.1-28.9 0-40.2-11.3-11.3-28.9-11.3-40.2 0z'/%3E%3Cpath d='M2090 1212.1c4.9-40 7.5-80.8 7.5-122.1 0-410-249.3-761.8-604.6-912.1L1434.5 0h-654l-58.4 177.9C366.8 328.2 117.5 680 117.5 1090c0 41.4 2.6 82.1 7.5 122.1L0 1351.8l327 566.4 183.5-38.4c166 125.7 372.8 200.2 597 200.2s431-74.5 597-200.2l183.5 38.4 327-566.4-125-139.7zm-289.9-127.7c0 62.9-37.7 117-90.6 140.9 2.5 15.4 3.8 30.9 3.8 46.5 0 237.7-275.4 428.9-615 428.9s-615-192.4-615-428.9c0-16.4 1.3-31.4 3.8-46.5-15.9-7.2-30.5-17.1-43-29.2-61.1-58.8-62.9-155.9-4.1-217 58.8-61.1 155.9-62.9 217-4.1 106.9-76.7 254.1-125.8 417.6-130.8l78-367.2c1-7.2 5.2-13.7 11.3-17.6 5-3.8 12.6-5 20.1-3.8l255.3 54.1c17.8-35.9 53.8-59.2 93.8-60.7 60.4-2.3 111.2 44.8 113.5 105.1 2.3 60.4-44.8 111.2-105.1 113.5-60.4 2.3-111.2-44.8-113.5-105.1l-228.9-49.1-70.4 329.5c161 6.3 305.6 55.3 411.3 130.8 28.8-28 67.4-43.5 107.5-43.4 84.5.4 152.9 69.4 152.6 154.1z'/%3E%3Cpath d='M964.9 1193.8v-.2c0-60.4-49.1-109.4-109.5-109.3-60.4 0-109.4 49.1-109.3 109.5 0 60.4 49 109.4 109.4 109.4 60.5 0 109.4-49 109.4-109.4zm373.6-108.1h-.2c-60.4 0-109.4 49.1-109.3 109.5 0 60.4 49.1 109.4 109.5 109.3 60.4 0 109.3-49 109.3-109.3.1-60.5-48.9-109.5-109.3-109.5z'/%3E%3C/svg%3E");
+
+	--sandbox-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='sandbox_logo' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 2215 2080' xml:space='preserve'%3E%3Cpath d='M2090 1212.1c4.9-40 7.5-80.8 7.5-122.1 0-410-249.3-761.8-604.6-912.1L1434.5 0h-654l-58.4 177.9C366.8 328.2 117.5 680 117.5 1090c0 41.4 2.6 82.1 7.5 122.1L0 1351.8l327 566.4 183.5-38.4c166 125.7 372.8 200.2 597 200.2s431-74.5 597-200.2l183.5 38.4 327-566.4-125-139.7zM1107.5 1881c-441.8 0-800-358.2-800-800s358.2-800 800-800 800 358.2 800 800-358.2 800-800 800z'/%3E%3Cpath d='m504.1 1518.1 386.6 131.1 820.2-131.1zm252.3-55.9h423c12.4-8 24.9-16.3 37.3-25.2 99.5-71.2 166-150.9 207.7-210.7-89.3-42.4-178.6-84.7-267.8-127.1l247.8-363 125.6 55c16.5 7.2 35.7 2.4 46.9-11.7L1620 725c16.4-20.8 8.2-51.5-16.4-61.3l-372.8-148.1c-15.5-6.2-33.3-1.9-44.3 10.6l-42.6 48.5c-17.6 20-10.8 51.4 13.6 62.2l130.5 58.2-237.5 353.7c-88-41.7-176-83.5-264-125.2-23.6 89.4-46.3 212.3-44.5 359 .8 65.3 6.3 125.4 14.4 179.6z'/%3E%3C/svg%3E");
 
 	--twitch-mask: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Twitch_Logo' x='0' y='0' baseProfile='tiny' overflow='visible' version='1.2' viewBox='0 0 2215 2080' xml:space='preserve'%3E%3Cpath d='m1035.5 1510 175-175h200l200-200V585h-800v750h225v175zm325-750h100v300h-100V760zm-275 0h100v300h-100V760z'/%3E%3Cpath d='M2090 1212.1c4.9-40 7.5-80.8 7.5-122.1 0-410-249.3-761.8-604.6-912.1L1434.5 0h-654l-58.4 177.9C366.8 328.2 117.5 680 117.5 1090c0 41.4 2.6 82.1 7.5 122.1L0 1351.8l327 566.4 183.5-38.4c166 125.7 372.8 200.2 597 200.2s431-74.5 597-200.2l183.5 38.4 327-566.4-125-139.7zm-379.5-27.1-450 450h-200l-250 250v-250h-300V735l250-250h950v700z'/%3E%3C/svg%3E");
 
@@ -7208,7 +7212,7 @@ div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) >
 	background-clip: padding-box;
 	background-color: rgba(var(--sidebar-links-bg-color));
 	color: rgb(var(--sidebar-links-text));
-	font-size: calc(var(--base-font-size) * 0.93333);
+	font-size: calc(var(--base-font-size) * (14/15));
 	letter-spacing: 0.04em;
 	line-height: 1.5;
 }
@@ -7230,7 +7234,7 @@ div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) >
 	background-clip: padding-box;
 	background-color: rgba(var(--sidebar-links-bg-color));
 	color: rgb(var(--sidebar-links-text));
-	font-size: calc(var(--base-font-size) * 0.93333);
+	font-size: calc(var(--base-font-size) * (14/15));
 	letter-spacing: 0.04em;
 	line-height: 1.5;
 	cursor: default;
@@ -8359,10 +8363,122 @@ div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) >
 
 #side-bar:lang(pl) div.menu-item a[href*="scp-series"]:only-of-type {
 	justify-content: flex-start;
-	padding: 0 0 0 calc(var(--base-font-size)*.93333);
+	padding: 0 0 0 calc(var(--base-font-size) * (14/15));
 }
 
 /* ===PORTUGESE BRANCH=== */
+
+#side-bar:lang(pt-br) div.menu-item a[href*="series"] {
+	justify-content: center;
+}
+
+#side-bar:lang(pt-br) div.side-block[style*="#e7e5e8"] + div[style*="center"] {
+	display: contents;
+}
+
+#side-bar:lang(pt-br) div.side-block[style*="#e7e5e8"] + div[style*="center"] {
+	display: contents;
+}
+
+#side-bar:lang(pt-br) .side-block.side-links {
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    width: var(--sidebar-width-on-mobile);
+    margin: .5rem 0.5rem 0 0;
+    padding: .5em !important;
+    background-color: rgba(var(--sidebar-media-bg-color)) !important;
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a {
+	position: relative;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
+	-webkit-mask-image: var(--social-logo-mask);
+	        mask-image: var(--social-logo-mask);
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	        mask-size: contain;
+	-webkit-mask-position: center center;
+	        mask-position: center center;
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a:hover::before,
+#side-bar:lang(pt-br) .side-block.side-links a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a img {
+	width: 1.6875rem;
+	height: 1.6875rem;
+	opacity: 0;
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a[href*="twitter"] {
+	--social-logo-mask: var(--twitter-mask);
+	--social-color: var(--twitter-icon-color);
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a[href*="chat"] {
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a[href*="youtube"] {
+	--social-logo-mask: var(--youtube-mask);
+	--social-color: var(--youtube-icon-color);
+}
+
+#side-bar:lang(pt-br) .side-block.side-links a[href*="scpsandboxbr"] {
+	--social-logo-mask: var(--sandbox-mask);
+	--social-color: var(--sandbox-icon-color);
+}
+
+#side-bar:lang(pt-br) .side-block span[style*="font-size"] {
+	display: contents;
+}
+
+#side-bar:lang(pt-br) .side-block span[style*="font-size"] a {
+	font-size: calc(var(--base-font-size)*0.8);
+}
 
 /* ===RUSSIAN BRANCH=== */
 
@@ -11719,7 +11835,7 @@ table[style*="margin:0"] * {
 	overflow-y: auto;
 	background-color: rgb(var(--toc-body-bg-color));
 	box-shadow: 0 -0.25rem 0 0 rgb(var(--toc-header-bg-color));
-	font-size: calc(var(--base-font-size) * 0.93333);
+	font-size: calc(var(--base-font-size) * (14/15));
 	font-weight: var(--wght);
 	scrollbar-width: thin;
 }
