@@ -10,6 +10,7 @@ DIRECTORIES := \
 	dist/img/ \
 	dist/img/page-toolbar-icons \
 	dist/img/text-editor-icons \
+	dist/img/social-icons \
 	dist/stable/styles/
 
 $(DIRECTORIES):
