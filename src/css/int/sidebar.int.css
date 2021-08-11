@@ -626,6 +626,108 @@
 }
 
 /* ===RUSSIAN BRANCH=== */
+#side-bar:lang(ru) {
+    
+}
+ /*Normalizing Unique Sideblock Class*/
+#side-bar:lang(ru) #u-become-member {
+    padding: inherit;
+    border: inherit;
+    border-radius: inherit;
+    box-shadow: inherit;
+    background-color: inherit;
+    margin-bottom: inherit;
+}
+
+#side-bar:lang(ru) #u-become-member {
+    margin: .5rem .5rem 0 0;
+    border: 0;
+    background: rgb(var(--sideblock-bg-color));
+    direction: ltr;
+    display: grid;
+    grid-template-rows: repeat(auto-fit,minmax(1.3125rem,1fr));
+    justify-content: stretch;
+    box-shadow: 0 0.25rem rgb(var(--swatch-primary-darkest))
+}
+
+#side-bar:lang(ru) #u-become-member div.menu-item a {
+    padding: 0;
+    flex-grow: 2;
+    min-width: 100%;
+    justify-content: center;
+}
+
+#side-bar:lang(ru) hr {
+	margin-bottom: 0;
+}
+
+#side-bar:lang(ru) div.side-block:not(.sns) div.menu-item {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#side-bar:lang(ru) div.menu-item a:only-of-type {
+	grid-row: 1;
+	grid-column: 1/ span 2;
+	justify-content: flex-start;
+}
+
+#side-bar:lang(ru) div.menu-item a[href="/news"] {
+    justify-content: center;
+    padding: 0;
+}
+
+#side-bar:lang(ru) div.menu-item a[href*="scp-series"] {
+    padding: 0 0 0 calc(var(--base-font-size)*(14/15));
+}
+
+#side-bar:lang(ru) div.menu-item a[href*="scp-series"] + span,
+#side-bar:lang(ru) div.menu-item a[href*="scp-list"] + span{
+    padding: 0 0 0 calc(var(--base-font-size)/2);
+}
+
+#side-bar:lang(ru) div.menu-item span {
+	grid-row: 1;
+	grid-column: 2;
+	z-index: 2;
+	transition:
+		border-color 150ms cubic-bezier(.4,0,.2,1),
+		background-color 150ms cubic-bezier(.4,0,.2,1),
+		color 150ms cubic-bezier(.4,0,.2,1),
+		font-weight 200ms cubic-bezier(.4,0,.2,1),
+		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+}
+
+#side-bar:lang(ru) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:lang(ru) div.menu-item a:only-of-type:active ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar:lang(ru) div.menu-item a:only-of-type:focus-within ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar:lang(ru) > hr + .side-block {
+    grid-template-rows: unset;
+}
+
+#side-bar:lang(ru) > hr + .side-block h5 {
+    display: flex;
+    justify-content: center;
+}
+
+#side-bar:lang(ru) > hr + .side-block .collapsible-block-content {
+    border-right: 0 solid transparent;
+    text-align: center;
+}
+
+#side-bar:lang(ru) > hr + .side-block > div:last-of-type {
+    padding: 0 0 0 calc(var(--base-font-size) * (14/15));
+}
 
 /* ===THAI BRANCH=== */
 
