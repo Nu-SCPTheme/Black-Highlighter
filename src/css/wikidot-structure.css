@@ -500,7 +500,8 @@ div[id*="page-options-bottom"] {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	width: min(90vw, var(--body-width-on-desktop));
+	max-width: min(90vw, var(--body-width-on-desktop));
+	width: 100%;
 	font-family: var(--UI-font);
 	font-size: var(--base-font-size);
 	text-align: left;

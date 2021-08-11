@@ -122,6 +122,11 @@
 	--mono-font: Recursive, Consolas, monaco, monospace;
 }
 
+:root:lang(ru) {
+	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15) * 19));
+	--body-width-on-desktop: 75rem;
+}
+
 /* ===THAI BRANCH=== */
 :root:lang(th) {
 	/* Header */
@@ -161,8 +166,8 @@
 /* ===UKRAINIAN BRANCH=== */
 :root:lang(uk) {
 	/* Header */
-	--header-title: "SCP Foundation";
-	--header-subtitle: "Ukrainian branch";
+	--header-title: "Фонд SCP.";
+	--header-subtitle: "Охороняти. Утримувати. Захищати.";
 
 	/* Typefaces */
 	--body-font: Inter, Arimo, Charcoal, Geneva, "Helvetica Neue", Helvetica,
@@ -174,6 +179,11 @@
 		"ITC Franklin Gothic", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 	--title-font: var(--header-font);
 	--mono-font: Recursive, Consolas, monaco, monospace;
+}
+
+:root:lang(uk) {
+	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15) * 19));
+	--body-width-on-desktop: 75rem;
 }
 
 /* ===FRENCH BRANCH=== */

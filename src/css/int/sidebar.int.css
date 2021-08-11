@@ -627,9 +627,7 @@
 }
 
 /* ===RUSSIAN BRANCH=== */
-#side-bar:lang(ru) {
-    
-}
+
  /*Normalizing Unique Sideblock Class*/
 #side-bar:lang(ru) #u-become-member {
     padding: inherit;
@@ -735,6 +733,104 @@
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
 /* ===UKRAINIAN BRANCH=== */
+/*Normalizing Unique Sideblock Class*/
+#side-bar:lang(uk) > * {
+	direction: ltr;
+}
+
+#side-bar:lang(uk) hr {
+	margin-bottom: 0;
+}
+
+#side-bar:lang(uk) div.side-block:not(.side-links) div.menu-item {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#side-bar:lang(uk) div.menu-item a:only-of-type {
+	grid-row: 1;
+	grid-column: 1/ span 2;
+	justify-content: flex-start;
+}
+
+#side-bar:lang(uk) div.menu-item a[href="/news"],
+#side-bar:lang(uk) div.menu-item a[href="/faq"]{
+    justify-content: center;
+    padding: 0;
+}
+
+#side-bar:lang(uk) div.menu-item a[href*="scp-series"] {
+    padding: 0 0 0 calc(var(--base-font-size)*(14/15));
+}
+
+#side-bar:lang(uk) div.menu-item a[href*="scp-series"] + span,
+#side-bar:lang(uk) div.menu-item a[href*="scp-list"] + span {
+	display: flex;
+    padding: 0 0 0 calc(var(--base-font-size)/2);
+}
+
+#side-bar:lang(uk) div.menu-item span {
+	grid-row: 1;
+	grid-column: 2;
+	z-index: 2;
+	transition:
+		border-color 150ms cubic-bezier(.4,0,.2,1),
+		background-color 150ms cubic-bezier(.4,0,.2,1),
+		color 150ms cubic-bezier(.4,0,.2,1),
+		font-weight 200ms cubic-bezier(.4,0,.2,1),
+		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+}
+
+#side-bar:lang(uk) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:lang(uk) div.menu-item a:only-of-type:active ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar:lang(uk) div.menu-item a:only-of-type:focus-within ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar:lang(uk) > hr + .side-block {
+    grid-template-rows: unset;
+}
+
+#side-bar:lang(uk) > h3 {
+    display: flex;
+    justify-content: center;
+	margin-top: 0.5rem;
+}
+
+#side-bar:lang(uk) > h2 {
+    display: flex;
+    justify-content: center;
+	margin-top: 0.5rem;
+	text-align: center;
+	font-size: 1.25em;
+}
+
+#side-bar:lang(uk) div.pages-tag-cloud-box {
+	overflow: visible;
+	text-align: center;
+}
+
+#side-bar:lang(uk) > div[style*="80%"] > * {
+	padding: 0 0 0 calc(var(--base-font-size)*(14/15));
+}
+
+#side-bar:lang(uk) > div[style*="15px"] {
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	gap: 0.5rem;
+} 
+
+#side-bar:lang(uk) > div[style*="15px"] br {
+	display: none;
+}
 
 /* ===FRENCH BRANCH=== */
 

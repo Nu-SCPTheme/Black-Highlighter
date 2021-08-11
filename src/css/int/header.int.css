@@ -38,6 +38,16 @@
 	height: 100%;
 }
 
+@media only screen and (max-width: 56.25rem) {
+	#header:lang(ru) div[class*="top-bar"] > ul {
+		height: var(--topbar-height-on-mobile);
+	}
+
+	#header:lang(ru) div[class*="top-bar"] > ul > li > a {
+		font-size: 1.5em;
+	}
+}
+
 /* ===THAI BRANCH=== */
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
