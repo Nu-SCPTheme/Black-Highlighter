@@ -401,7 +401,6 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -424,6 +423,7 @@ input.text::-webkit-scrollbar-thumb {
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
@@ -446,12 +446,12 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -466,12 +466,12 @@ input.text::-webkit-scrollbar-thumb {
 *:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
 *:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }

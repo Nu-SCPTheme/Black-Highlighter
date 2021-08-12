@@ -83,10 +83,24 @@
 /* ===SPANISH BRANCH=== */
 
 /* ===GERMAN BRANCH=== */
+[id*="u-credit"]:lang(de) div.credit-back::before {
+	content: "Zurück";
+}
+
+#toc:lang(de) #toc-action-bar a::after {
+	content: "Inhalt";
+}
 
 /* ===GREEK BRANCH=== */
 
 /* ===CZECH BRANCH=== */
+[id*="u-credit"]:lang(cs) div.credit-back::before {
+	content: "Zpět";
+}
+
+#toc:lang(cs) #toc-action-bar a::after {
+	content: "Obsah";
+}
 
 /* ===FRENCH BRANCH=== */
 [id*="u-credit"]:lang(fr) div.credit-back::before {

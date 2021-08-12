@@ -77,7 +77,6 @@
 .yui-navset-top .yui-nav li a,
 .yui-navset-bottom .yui-nav li a {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -88,6 +87,7 @@
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	vertical-align: bottom;
 }
 
@@ -95,14 +95,14 @@
 .yui-navset .yui-nav a:active,
 .yui-navset .yui-nav a:focus {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	color: rgb(var(--tabs-hover-txt));
+	font-weight: var(--wght);
 }
 
 .yui-navset .yui-nav a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	color: rgb(var(--tabs-hover-txt));
+	font-weight: var(--wght);
 }
 
 .yui-navset .yui-nav a::before {
@@ -184,9 +184,9 @@
 
 .yui-navset .yui-nav .selected a {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	background-image: none;
 	color: rgb(var(--tabs-selected-txt)) !important; /* Overwriting Wikidot Inline-Styling */
+	font-weight: var(--wght);
 }
 
 .yui-navset .yui-nav .selected a::before,
@@ -318,7 +318,6 @@ div.blockquote > :last-child,
 .footnotes-footer .title,
 .bibitems .title {
 	--wght: 700;
-	font-weight: var(--wght);
 	display: inline-block;
 	width: fit-content;
 	margin-top: -0.75em;
@@ -326,6 +325,7 @@ div.blockquote > :last-child,
 	background-color: rgb(var(--footnotes-footer-title-bg-color));
 	color: rgb(var(--footnotes-footer-title-text-color));
 	font-size: 1.25em;
+	font-weight: var(--wght);
 }
 
 .footnotes-footer .footnote-footer {
@@ -345,21 +345,19 @@ div.blockquote > :last-child,
 .footnotes-footer a[href*="javascript"]:visited {
 	--MONO: 1;
 	--wght: calc(var(--ui-wght) + 100);
-	font-weight: var(--wght);
-	font-family: var(--mono-font);
 	display: inline-flex;
 	position: relative;
 	min-width: 2ch;
 	margin: 0 0 0 -3ch;
 	color: transparent;
+	font-family: var(--mono-font);
+	font-weight: var(--wght);
 }
 
 .footnotes-footer a[href*="javascript"]::before,
 .bibitems .bibitem::after {
 	--MONO: 1;
 	--wght: calc(var(--ui-wght) + 100);
-	font-weight: var(--wght);
-	font-family: var(--mono-font);
 	display: inline-flex;
 	position: absolute;
 	z-index: 2;
@@ -367,6 +365,8 @@ div.blockquote > :last-child,
 	right: -25%;
 	width: 100%;
 	background-color: rgb(var(--footnotes-footer-bg-color));
+	font-family: var(--mono-font);
+	font-weight: var(--wght);
 }
 	
 .footnotes-footer a[href*="javascript"]::before {
@@ -391,15 +391,15 @@ div.blockquote > :last-child,
 .footnotes-footer a[href*="javascript"]:hover::before,
 .footnotes-footer a[href*="javascript"]:active::before {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	font-weight: var(--wght);
 	color: rgb(var(--footnotes-footer-num-hover-color));
+	font-weight: var(--wght);
 	
 }
 
 .footnotes-footer a[href*="javascript"]:focus-within::before {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	font-weight: var(--wght);
 	color: rgb(var(--footnotes-footer-num-hover-color));
+	font-weight: var(--wght);
 }
 	
 .bibitems .bibitem {
@@ -569,9 +569,9 @@ div.blockquote > :last-child,
 	background-color: rgb(var(--swatch-secondary-color));
 	box-shadow: inset 0 0.0625rem 0 0 rgb(var(--swatch-tertiary-color),0.75);
 	font-size: 0.9em;
+	font-weight: var(--wght);
 	letter-spacing: 0.016em;
 	line-height: 1.25;
-	font-weight: var(--wght);
 	text-align: center;
 }
 
@@ -1025,8 +1025,8 @@ div.blockquote > :last-child,
 	background-color: rgb(var(--modal-header-bg));
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--modal-header-txt));
-	text-transform: uppercase;
 	font-weight: var(--wght);
+	text-transform: uppercase;
 }
 	
 [id*="u-credit"] div.modalbox > div:first-of-type h2 {
@@ -1146,9 +1146,9 @@ div.blockquote > :last-child,
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	width: auto;
 	margin: 0;
 	padding: 0 0.5em;
-	width: auto;
 	overflow: hidden;
 	transition:
 		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1183,24 +1183,24 @@ div.blockquote > :last-child,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:hover,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 [id*="u-credit"] div.credit-back:focus-within::before,
 [id*="u-credit"] a[href="#u-credit-otherwise"]:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -1350,15 +1350,15 @@ table[style*="margin:0"] * {
 #toc #toc-action-bar:hover + .title,
 #toc #toc-action-bar:active + .title {
 	--wght: calc(var(--ui-hvr-wght) + 200);
-	text-decoration: none;
 	font-weight: var(--wght);
+	text-decoration: none;
 }
 
 #toc #toc-action-bar a:focus-within,
 #toc #toc-action-bar:focus-within + .title {
 	--wght: calc(var(--ui-hvr-wght) + 200);
-	text-decoration: none;
 	font-weight: var(--wght);
+	text-decoration: none;
 }
 
 #toc #toc-action-bar a::before {
@@ -1558,16 +1558,16 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-hvr-wght);
 	transform: translateX(0.25rem);
 	color: rgb(var(--toc-body-link-hover-color));
-	text-decoration: none;
 	font-weight: var(--wght);
+	text-decoration: none;
 }
 
 #toc #toc-list a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	transform: translateX(0.25rem);
 	color: rgb(var(--toc-body-link-hover-color));
-	text-decoration: none;
 	font-weight: var(--wght);
+	text-decoration: none;
 }
 
 #toc #toc-list a:hover::before,
@@ -1626,8 +1626,8 @@ table[style*="margin:0"] * {
 		transparent 100%);
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--swatch-text-secondary-color));
-	text-transform: uppercase;
 	font-weight: var(--wght);
+	text-transform: uppercase;
 }
 
 #page-content div.warning-top-box > p:first-of-type,
@@ -1646,13 +1646,13 @@ table[style*="margin:0"] * {
 	--wght: var(--ui-wght);
 	display: grid;
 	grid-gap: 0;
-	gap: 0;
 	grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
 	margin: 0 1em;
 	box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
 	color: rgb(var(--pager-text));
-	white-space: nowrap;
 	font-weight: var(--wght);
+	white-space: nowrap;
+	gap: 0;
 }
 
 .pager span,
@@ -1738,15 +1738,15 @@ table[style*="margin:0"] * {
 .pager a:active {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--pager-link-hover));
-	text-decoration: none;
 	font-weight: var(--wght);
+	text-decoration: none;
 }
 
 .pager a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--pager-link-hover));
-	text-decoration: none;
 	font-weight: var(--wght);
+	text-decoration: none;
 }
 
 .pager a::after {
@@ -1913,8 +1913,8 @@ div.wiki-note:after {
 .footer-wikiwalk-nav {
 	--wght: 700;
 	font-size: 0.75em;
-	letter-spacing: 0.016em;
 	font-weight: var(--wght);
+	letter-spacing: 0.016em;
 }
 
 .browserupgrade {
@@ -1984,11 +1984,11 @@ div.keycap {
 	background: rgb(var(--swatch-tertiary-color));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-size: 0.6875rem;
+	font-weight: var(--wght);
 	line-height: 0.8125;
 	text-decoration: none;
 	text-shadow: 0.0625rem 0.0625rem .0625rem rgb(var(--swatch-alternate-color));
 	clip-path: var(--clip-path);
-	font-weight: var(--wght);
 }
 
 div.tags {
@@ -2076,10 +2076,10 @@ div.block-left {
 	--text-shadow: rgba(var(--swatch-menutxt-dark-color, 12, 12, 12), 0.35);
 	padding: 0.313em 0.625em;
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	font-weight: var(--wght);
 	text-align: center;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
 	text-transform: uppercase;
-	font-weight: var(--wght);
 }
 
 .content-panel .panel-body {
@@ -2091,8 +2091,8 @@ div.block-left {
 	--wght: 700;
 	font-family: var(--title-font);
 	font-size: 0.9em;
-	text-transform: uppercase;
 	font-weight: var(--wght);
+	text-transform: uppercase;
 }
 
 .content-panel .panel-footer {
@@ -2100,10 +2100,10 @@ div.block-left {
 	--wght: 700;
 	padding: 0.0625rem 0.625rem;
 	font-size: 0.8em;
+	font-weight: var(--wght);
 	letter-spacing: 0.016em;
 	text-align: right;
 	text-shadow: 0.0625rem 0.0625rem 0.125rem var(--text-shadow);
-	font-weight: var(--wght);
 }
 
 .content-panel .panel-footer,
@@ -2251,8 +2251,8 @@ body.print-body #print-options tr > td:first-of-type {
 	justify-content: center;
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
-	text-transform: uppercase;
 	font-weight: var(--wght);
+	text-transform: uppercase;
 }
 	
 body.print-body #print-options tr > td:last-of-type {
@@ -2297,9 +2297,9 @@ body.print-body #print-options a:active {
 	background-color: rgba(var(--ui-button-hover-bg),1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
-	font-weight: var(--wght);
 }
 
 body.print-body #print-options a:focus-within {

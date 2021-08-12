@@ -66,7 +66,7 @@
 	position: initial;
 	grid-area: content-wrap;
 	grid-gap: 0.5rem;
-	gap: 0.5rem;
+	grid-gap: 0.5rem;
 	grid-template-areas: "side-bar . content .";
 	grid-template-columns:
 		/* Sidebar Width */
@@ -82,7 +82,7 @@
 	min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
 	margin: 0 auto;
 	padding: 0;
-	grid-gap: 0.5rem;
+	gap: 0.5rem;
 	gap: 0.5rem;
 }
 
@@ -122,7 +122,6 @@
 #page-title,
 .meta-title {
 	--wght: 700;
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	min-height: 1em;
@@ -132,6 +131,7 @@
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.5em;
+	font-weight: var(--wght);
 	line-height: 1;
 	text-align: left;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
@@ -294,7 +294,6 @@ div.page-watch-options a,
 div.page-watch-options a:visited {
 	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
-	font-weight: var(--wght);
 	margin: -0.15em 0;
 	padding: 0.15em;
 	transition:
@@ -303,23 +302,24 @@ div.page-watch-options a:visited {
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
+	font-weight: var(--wght);
 	box-decoration-break: clone;
 }
 
 div.page-watch-options a:hover,
 div.page-watch-options a:active {
 	--wght: calc(var(--ui-hvr-wght) + 200);
-	font-weight: var(--wght);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 div.page-watch-options a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 200);
-	font-weight: var(--wght);
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -340,7 +340,6 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags::before {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	content: "TAGS\0021b4";
 	position: absolute;
 	top: -2em;
@@ -350,6 +349,7 @@ div.page-watch-options a:focus-within {
 	background-color: rgb(var(--pagetags-title-bg));
 	color: rgb(var(--pagetags-title-text));
 	font-size: 0.8em;
+	font-weight: var(--wght);
 }
 
 #main-content .page-tags span {
@@ -380,9 +380,6 @@ div.page-watch-options a:focus-within {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]),
 #main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
-	font-weight: var(--wght);
-	--link-color: var(--pagetags-text-color);
-	--hover-link-color: var(--pagetags-text-hover-color);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -396,7 +393,10 @@ div.page-watch-options a:focus-within {
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	line-height: 1;
+	--link-color: var(--pagetags-text-color);
+	--hover-link-color: var(--pagetags-text-hover-color);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):not(:last-child),
@@ -430,23 +430,23 @@ div.page-watch-options a:focus-within {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):hover,
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):active {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):focus-within {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -493,28 +493,28 @@ div#page-options-area-bottom {
 
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
-	--icon-size: 1.5em;
-	--icon-size: clamp(1.5em, 5vmin, 2em);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	max-width: min(90vw, var(--body-width-on-desktop));
 	width: 100%;
+	max-width: min(90vw, var(--body-width-on-desktop));
 	font-family: var(--UI-font);
 	font-size: var(--base-font-size);
+	font-weight: var(--wght);
 	text-align: left;
 	white-space: nowrap;
+	--icon-size: 1.5em;
+	--icon-size: clamp(1.5em, 5vmin, 2em);
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
 	--button-padding: calc(var(--icon-size) / 8);
 	flex-basis: 5rem;
 	height: 1.5em;
+	margin: 0 0.5ch 1ch 0.5ch;
 	padding: var(--button-padding);
 	padding-left: calc(var(--icon-size) + 0.5em);
-	margin: 0 0.5ch 1ch 0.5ch;
 	box-shadow:
 		0 0 0 0 rgb(var(--ui-button-hover-outline)),
 		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
@@ -696,7 +696,6 @@ div[id*="page-options-bottom"]>a#delete-button {
 #footer a,
 #footer a:visited {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -710,6 +709,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
+	font-weight: var(--wght);
 	line-height: 1;
 }
 
@@ -738,23 +738,23 @@ div[id*="page-options-bottom"]>a#delete-button {
 #footer a:hover,
 #footer a:active {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 #footer a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -804,7 +804,6 @@ div[id*="page-options-bottom"]>a#delete-button {
 #license-area a,
 #license-area a:visited {
 	--wght: calc(var(--ui-wght));
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -818,6 +817,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	line-height: 1;
 	text-decoration: underline 0.125em rgb(var(--swatch-primary));
 }
@@ -847,21 +847,21 @@ div[id*="page-options-bottom"]>a#delete-button {
 #license-area a:hover,
 #license-area a:active {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 #license-area a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -899,7 +899,6 @@ div[id*="page-options-bottom"]>a#delete-button {
 #action-area h3,
 #action-area h4 {
 	--wght: 700;
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	min-height: 1em;
@@ -909,6 +908,7 @@ div[id*="page-options-bottom"]>a#delete-button {
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.25em;
+	font-weight: var(--wght);
 	line-height: 1;
 	text-align: left;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
@@ -971,7 +971,6 @@ div#action-area>a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -991,28 +990,29 @@ div#action-area>a.btn-danger[href="javascript:;"],
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 #action-area a.action-area-close:hover,
 #action-area a.action-area-close:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 #action-area a.action-area-close:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -1087,7 +1087,6 @@ form#edit-page-form #edit-page-captcha {
 
 form#edit-page-form table.form:first-of-type td:first-of-type {
 	--wght: calc(var(--ui-wght) + 100);
-	font-weight: var(--wght);
 	grid-area: title-txt;
 	width: max-content;
 	margin: calc(-0.75em + 0.0625rem) 1rem -0.75em 1rem;
@@ -1105,18 +1104,19 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-general));
 	font-size: 0.8em;
+	font-weight: var(--wght);
 	text-transform: uppercase;
 	will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type:focus-within td:first-of-type {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	font-weight: var(--wght);
 	transform: translateY(-0.15625rem);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-background));
+	font-weight: var(--wght);
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type {
@@ -1126,7 +1126,6 @@ form#edit-page-form table.form:first-of-type td:last-of-type {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	width: calc(100% - 2em);
 	margin: 0.5em 1rem;
 	padding: 0.25em;
@@ -1139,6 +1138,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	outline: 0 solid rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	font-size: 1.2em !important;
+	font-weight: var(--wght);
 	/* Overwrite Wikidot Inline Styling */
 	will-change: box-shadow, background-color, font-weight, font-variation-settings;
 }
@@ -1153,29 +1153,29 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-s
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
 	box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
+	font-weight: var(--wght);
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
 	box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
+	font-weight: var(--wght);
 }
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
 	box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
+	font-weight: var(--wght);
 }
 
 /* ===EDITOR TOOLBAR=== */
@@ -1728,7 +1728,6 @@ form#edit-page-form textarea {
 /* ===EDITOR HELP LINKS=== */
 form#edit-page-form .edit-help-34 {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: flex;
 	grid-area: edit-help;
 	flex-wrap: wrap;
@@ -1739,6 +1738,7 @@ form#edit-page-form .edit-help-34 {
 	padding: 0.125em 0;
 	background-color: rgb(var(--swatch-tertiary-color), 0.05);
 	font-size: 0.7em;
+	font-weight: var(--wght);
 	line-height: 1.25;
 	text-transform: capitalize;
 	white-space: nowrap;
@@ -1796,23 +1796,23 @@ form#edit-page-form .edit-help-34>a::after {
 form#edit-page-form .edit-help-34>a:hover,
 form#edit-page-form .edit-help-34>a:active {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
 form#edit-page-form .edit-help-34>a:focus-within {
 	--wght: calc(var(--ui-hvr-wght));
-	font-weight: var(--wght);
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
+	font-weight: var(--wght);
 	text-decoration: none;
 }
 
@@ -1854,7 +1854,6 @@ form#edit-page-form .change-textarea-size {
 
 form#edit-page-form .change-textarea-size a {
 	--wght: calc(var(--ui-wght) + 100);
-	font-weight: var(--wght);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -1870,25 +1869,25 @@ form#edit-page-form .change-textarea-size a {
 	background-color: rgba(var(--swatch-primary-darker), 0.4);
 	box-shadow: none;
 	color: rgba(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 }
 
 form#edit-page-form .change-textarea-size a:hover,
 form#edit-page-form .change-textarea-size a:active {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	font-weight: var(--wght);
 	background-color: rgba(var(--swatch-primary));
+	font-weight: var(--wght);
 }
 
 form#edit-page-form .change-textarea-size a:focus-within {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	font-weight: var(--wght);
 	background-color: rgba(var(--swatch-primary));
+	font-weight: var(--wght);
 }
 
 /* ===EDITOR DESCRIPTION BOX=== */
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	display: grid;
 	position: relative;
 	grid-area: descrip;
@@ -1900,6 +1899,7 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 	background-color: rgba(var(--swatch-background), 1);
 	box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 	color: transparent;
+	font-weight: var(--wght);
 }
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
@@ -1937,7 +1937,6 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1) textarea {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	z-index: 1;
 	width: calc(100% - 2rem);
 	height: 100%;
@@ -1950,6 +1949,7 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 	outline: 0 solid rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-menutxt-general-color));
+	font-weight: var(--wght);
 	resize: none;
 	will-change: box-shadow, background-color;
 }
@@ -2028,7 +2028,6 @@ form#edit-page-form div.buttons {
 /* ===WHO RATED AREA=== */
 #action-area a[onclick*="PageRateModule"] {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2050,30 +2049,31 @@ form#edit-page-form div.buttons {
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 #action-area a[onclick*="PageRateModule"]:hover,
 #action-area a[onclick*="PageRateModule"]:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 #action-area a[onclick*="PageRateModule"]:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -2082,11 +2082,11 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area>div {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: grid;
 	grid-auto-rows: 1.5rem;
 	grid-row-gap: 0.25em;
 	grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr) 1em);
+	font-weight: var(--wght);
 	line-height: 1;
 }
 
@@ -2096,7 +2096,6 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area>div>span[style*="color"] {
 	--wght: 800;
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	align-self: center;
@@ -2106,6 +2105,7 @@ form#edit-page-form div.buttons {
 	border-radius: 50%;
 	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color));
 	color: rgb(var(--swatch-text-tertiary-color)) !important;
+	font-weight: var(--wght);
 	text-align: left;
 }
 
@@ -2133,9 +2133,9 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area .printuser a {
 	--wght: 600;
-	font-weight: var(--wght);
 	font-family: var(--UI-font);
 	font-size: 0.8em;
+	font-weight: var(--wght);
 	white-space: nowrap;
 }
 
@@ -2153,7 +2153,6 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td {
 
 form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(1) {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -2163,6 +2162,7 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(1) {
 	background-color: rgb(var(--swatch-primary-darkest));
 	color: rgb(var(--swatch-background));
 	font-size: 0.8em;
+	font-weight: var(--wght);
 }
 
 form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(1)::after {
@@ -2195,7 +2195,6 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(2)>input {
 
 #history-form-1>table>tbody>tr>td:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	width: max-content;
@@ -2204,6 +2203,7 @@ form[onsubmit*="PageTagsModule"] table>tbody>tr>td:nth-child(2)>input {
 	background-color: rgb(var(--swatch-primary-darkest));
 	color: rgb(var(--swatch-background));
 	font-size: 0.8em;
+	font-weight: var(--wght);
 }
 
 #history-form-1>table>tbody>tr:nth-child(2) {
@@ -2308,7 +2308,6 @@ table.page-history tr td {
 
 table.page-history td.optionstd a {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	justify-content: center;
@@ -2329,37 +2328,37 @@ table.page-history td.optionstd a {
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 table.page-history td.optionstd a:hover,
 table.page-history td.optionstd a:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 table.page-history td.optionstd a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 table.page-history tr:nth-of-type(2) td:not(:nth-of-type(7))::before {
 	--wght: 600;
-	font-weight: var(--wght);
 	display: flex;
 	position: absolute;
 	top: calc(-100% - 0.5em);
@@ -2371,6 +2370,7 @@ table.page-history tr:nth-of-type(2) td:not(:nth-of-type(7))::before {
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	text-transform: uppercase;
 }
 
@@ -2469,7 +2469,6 @@ table.page-files tbody tr td {
 
 table.page-files th {
 	--wght: 600;
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2477,6 +2476,7 @@ table.page-files th {
 	height: 100%;
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-transform: uppercase;
 }
 
@@ -2485,7 +2485,6 @@ table.page-files tr>td>a:visited:not(.btn) {
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -2497,27 +2496,28 @@ table.page-files tr>td>a:visited:not(.btn) {
 		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
-	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
+	font-weight: var(--wght);
 	text-align: center;
-	box-decoration-break: clone;
+	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
 	word-break: break-word;
 	hyphens: auto;
+	box-decoration-break: clone;
 }
 
 table.page-files tr>td>a:not(.btn):hover,
 table.page-files tr>td>a:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
 table.page-files tr>td>a:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
@@ -2604,7 +2604,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"] {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2626,6 +2625,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	cursor: pointer;
 	will-change: border-color, color, background-color, font-weight, font-variation-settings;
 }
@@ -2633,22 +2633,22 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #upload-userfile[type="file"]:hover,
 #upload-userfile[type="file"]:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.25em rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 #upload-userfile[type="file"]:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	background-color: rgb(var(--ui-button-hover-bg));
 	box-shadow: 0 0 0 0.25em rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -2684,7 +2684,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box::before {
 	--wght: 700;
-	font-weight: var(--wght);
 	content: "Site Tools";
 	display: flex;
 	align-items: center;
@@ -2697,6 +2696,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--title-font);
 	font-size: 1.1875em;
+	font-weight: var(--wght);
 	line-height: 1;
 	text-align: left;
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
@@ -2722,7 +2722,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #site-tools-box ul.nav li a,
 #site-tools-box ul.nav li a:visited {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2744,30 +2743,31 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
 #site-tools-box ul.nav li a:hover,
 #site-tools-box ul.nav li a:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 #site-tools-box ul.nav li a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -2799,12 +2799,12 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box div.wanted-pages-module table tr:first-of-type th {
 	--wght: 600;
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-transform: uppercase;
 }
 
@@ -2898,7 +2898,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -2910,23 +2909,24 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
 #st-action-area>a:not(.btn):not([href="javascript:;"]):hover,
 #st-action-area>a:not(.btn):not([href="javascript:;"]):active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
 #st-action-area>a:not(.btn):not([href="javascript:;"]):focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
@@ -2957,7 +2957,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"] {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -2971,23 +2970,24 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
 #action-area a[onclick*="deleteTag"]:not(.btn):hover,
 #action-area a[onclick*="deleteTag"]:not(.btn):active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
 #action-area a[onclick*="deleteTag"]:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
@@ -3024,18 +3024,17 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 }
 
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div {
-	text-align: left;
 	grid-template-columns: 5em 1fr;
+	text-align: left;
 }
 
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div a {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
 	display: inline-flex;
 	align-items: center;
 	width: fit-content;
-	padding: 0 1em;
 	margin-right: 0 !important;
+	padding: 0 1em;
 	transition:
 		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -3044,23 +3043,24 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:hover,
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:active {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:focus-within {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
+	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
@@ -3149,10 +3149,6 @@ div.odialog-shader-iframe {
 #odialog-container .modal-header,
 #odialog-container .title {
 	--wght: 800;
-	font-family: var(--header-font);
-	font-weight: var(--wght);
-	font-size: 1.5em;
-	line-height: 1ex;
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
@@ -3169,6 +3165,10 @@ div.odialog-shader-iframe {
 			transparent 100%);
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--modal-header-txt));
+	font-family: var(--header-font);
+	font-size: 1.5em;
+	font-weight: var(--wght);
+	line-height: 1ex;
 	text-transform: uppercase;
 }
 
@@ -3254,9 +3254,9 @@ div.odialog-shader-iframe {
 	margin-top: 0.6rem;
 	animation: loading 1.2s linear infinite;
 	border-top: 0.3rem solid rgb(var(--modal-header-stripe));
+	border-right: 0.3rem solid transparent;
 	border-bottom: 0.3rem solid rgb(var(--modal-header-stripe));
 	border-left: 0.3rem solid transparent;
-	border-right: 0.3rem solid transparent;
 	border-radius: 50%;
 }
 
@@ -3378,9 +3378,9 @@ div.odialog-shader-iframe {
 
 .thread-container .post .long .head .title {
 	--wght: 700;
-	font-weight: var(--wght);
 	font-family: var(--title-font);
 	font-size: 1.2em;
+	font-weight: var(--wght);
 	letter-spacing: 0.05em;
 }
 
@@ -3399,7 +3399,6 @@ div.odialog-shader-iframe {
 #page-content>div.forum-thread-box>div.options a,
 .post-container>.post>div.long>div.options a {
 	--wght: 700;
-	font-weight: var(--wght);
 	display: flex;
 	flex-grow: 0;
 	justify-content: center;
@@ -3412,6 +3411,7 @@ div.odialog-shader-iframe {
 	border-radius: 0.25rem;
 	background-color: rgba(var(--swatch-secondary-color), 0.25);
 	color: rgb(var(--swatch-primary-darkest));
+	font-weight: var(--wght);
 	letter-spacing: 0.016em;
 }
 
@@ -3445,9 +3445,9 @@ div.odialog-shader-iframe {
 	#content-wrap {
 		grid-template-areas:
 			"content content content";
+		justify-content: center;
 		min-height: calc(100vh - calc(var(--final-header-height-on-mobile)));
 		margin: calc(var(--topbar-height-on-mobile) - 0.125rem) auto 0 !important;
-		justify-content: center;
 	}
 
 	#page-content {
