@@ -6813,6 +6813,34 @@ div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) >
 
 /* ===JAPANESE BRANCH=== */
 
+form#edit-page-form:lang(ja) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "変更の要旨";
+}
+
+table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "フラグ";
+}
+
+table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "アクション";
+}
+
+table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "編集者";
+}
+
+table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "日付";
+}
+
+#site-tools-box:lang(ja)::before {
+	content: "サイトツール";
+}
+
+#main-content:lang(ja) .page-tags::before {
+	content: "タグ\0021b4";
+}
+
 /* ===KOREAN BRANCH=== */
 
 #main-content:lang(ko) .page-tags::before {
@@ -9802,7 +9830,7 @@ div#container-wrap {
 	text-decoration: none;
 }
 
-#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"] {
+#login-status #account-options li > a[href*="/messages"] {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -9812,7 +9840,7 @@ div#container-wrap {
 	font-size: 0;
 }
 
-#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status #account-options li > a[href*="/messages"]::after {
 	content: "Messages";
 	position: absolute;
 	left: 50%;
@@ -11009,7 +11037,7 @@ div.mobile-top-bar {
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 
-#login-status:lang(cn) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(cn) #account-options li > a[href*="/messages"]::after {
 	content: "消息";
 }
 
@@ -11017,21 +11045,25 @@ div.mobile-top-bar {
 
 /* ===JAPANESE BRANCH=== */
 
+#login-status:lang(ja) #account-options li > a[href*="/messages"]::after {
+	content: "メッセージ";
+}
+
 /* ===KOREAN BRANCH=== */
 
-#login-status:lang(ko) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(ko) #account-options li > a[href*="/messages"]::after {
 	content: "메시지";
 }
 
 /* ===POLISH BRANCH=== */
 
-#login-status:lang(po) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(po) #account-options li > a[href*="/messages"]::after {
 	content: "Wiadomości";
 }
 
 /* ===PORTUGESE BRANCH=== */
 
-#login-status:lang(pt-br) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(pt-br) #account-options li > a[href*="/messages"]::after {
 	content: "Mensagens";
 }
 
@@ -11056,7 +11088,7 @@ div.mobile-top-bar {
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
-#login-status:lang(zh-tr) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(zh-tr) #account-options li > a[href*="/messages"]::after {
 	content: "訊息";
 }
 
@@ -13667,6 +13699,14 @@ body.print-body #main-content .page-tags span {
 /* ===ITALIAN BRANCH=== */
 
 /* ===JAPANESE BRANCH=== */
+
+[id*="u-credit"]:lang(ja) div.credit-back::before {
+	content: "閉じる";
+}
+
+#toc:lang(ja) #toc-action-bar a::after {
+	content: "目次";
+}
 
 /* ===KOREAN BRANCH=== */
 
