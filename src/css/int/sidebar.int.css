@@ -113,6 +113,297 @@
 /* ===FRENCH BRANCH=== */
 
 /* ===GERMAN BRANCH=== */
+#side-bar:lang(de) *:not(.scpnet-interwiki-wrapper) {
+	height: auto;
+}
+
+#side-bar:lang(de) div.side-block {
+	display: grid;
+	grid-auto-rows: minmax(0, auto);
+	grid-template-rows: unset;
+	flex-basis: 100%;
+}
+
+#side-bar:lang(de) div.side-block:not(.svg-icons) div.menu-item {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#side-bar:lang(de) div.side-bar-container {
+	display: contents;
+}
+
+#side-bar:lang(de) div.menu-item p {
+	display: contents;
+}
+
+#side-bar:lang(de) div.menu-item a:only-of-type {
+	grid-column: 1/ span 2;
+	grid-row: 1;
+	justify-content: flex-start;
+}
+
+#side-bar:lang(de) div.menu-item a {
+	grid-row: 1;
+}
+
+#side-bar:lang(de) div.menu-item span {
+	z-index: 2;
+	grid-column: 2;
+	grid-row: 1;
+	justify-content: flex-end;
+	padding-right: 1em;
+	transition:
+		padding-right 150ms cubic-bezier(.4,0,.2,1),
+		border-color 150ms cubic-bezier(.4,0,.2,1),
+		background-color 150ms cubic-bezier(.4,0,.2,1),
+		color 150ms cubic-bezier(.4,0,.2,1),
+		font-weight 200ms cubic-bezier(.4,0,.2,1),
+		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+}
+
+#side-bar:lang(de) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:lang(de) div.menu-item a:only-of-type:active ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar:lang(de) div.menu-item a:only-of-type:focus-within ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar:lang(de) .collapsible-block + .collapsible-block {
+	margin-top: -1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+#side-bar:lang(de) .collapsible-block + .collapsible-block a.collapsible-block-link {
+	width: calc(100% - (var(--base-font-size)*(7.5/15)));
+	padding: 0 0 0 calc(var(--base-font-size)*(7.5/15));
+}
+
+#side-bar:lang(de) .collapsible-block + .collapsible-block a.collapsible-block-link::before {
+	display: none;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block {
+	display: grid;
+	min-height: 1.5rem;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block + .menu-item.expandable {
+	margin-top: -1.5rem;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div.collapsible-block-folded {
+	margin-top: -1.5rem;
+	box-shadow: unset;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div.collapsible-block-unfolded {
+	margin-bottom: 1.5rem;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div,
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div a {
+	min-height: 1.5rem;
+	background-color: transparent;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div a {
+	width: 100%;
+	max-height: 1.5rem;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div a::before {
+	filter: unset;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block .collapsible-block-link {
+	top: unset;
+}
+
+#side-bar:lang(de) .collapsible-block-folded .collapsible-block-link::before, 
+#side-bar:lang(de) .colmod-link-top a:first-child::before {
+	--text-shadow-color: var(--swatch-primary-darkest);
+	content: "+";
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	background-image: unset;
+	color: rgba(var(--sidebar-bg-color),1);
+	-webkit-text-fill-color: rgba(var(--sidebar-bg-color),1);
+	-webkit-text-stroke: 0.0625rem rgb(var(--text-shadow-color));
+}
+
+@supports not (-webkit-text-stroke:initial) {
+	#side-bar:lang(de) .collapsible-block-folded .collapsible-block-link::before, 
+	#side-bar:lang(de) .colmod-link-top a:first-child::before {
+		text-shadow: 
+			rgb(var(--text-outline-color)) 0.0625rem 0rem 0rem, 
+			rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0rem, 
+			rgb(var(--text-outline-color)) -0.026rem 0.0568rem 0rem, 
+			rgb(var(--text-outline-color)) -0.0619rem 0.0088rem 0rem, 
+			rgb(var(--text-outline-color)) -0.0409rem -0.0473rem 0rem, 
+			rgb(var(--text-outline-color)) 0.0177rem -0.0599rem 0rem, 
+			rgb(var(--text-outline-color)) 0.06rem -0.0175rem 0rem;
+	}
+}
+
+#side-bar:lang(de) div.menu-item.expandable:hover + div.collapsible-block a.collapsible-block-link::before {
+	--text-outline-color: rgba(var(--sidebar-bg-color),1);
+}
+
+#side-bar:lang(de) div.side-block > div.menu-item.expandable > p > a:only-of-type {
+	clip-path: polygon(-15% 0,100% 0,calc(100% - 1em) 100%,0 100%);
+}
+
+#side-bar:lang(de) div.side-block > div.menu-item.expandable > p > span {
+	padding-right: 0;
+}
+
+#side-bar:lang(de) div.side-block > div.menu-item.expandable:hover > p > span,
+#side-bar:lang(de) div.side-block > div.menu-item.expandable:active > p > span {
+	padding-right: 1.25em;
+}
+
+#side-bar:lang(de) .menu-item.expandable + .collapsible-block .menu-item {
+	margin: 0;
+	padding: 0;
+	border-left: none;
+}
+
+#side-bar:lang(de) .collapsible-block-content {
+	border-right: var(--base-font-size) solid rgba(var(--sidebar-border-color));
+}
+
+#side-bar:lang(de) .collapsible-block-content div.menu-item {
+	max-width: 100%;
+}
+
+#side-bar:lang(de) div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
+	align-items: center;
+	margin: 0 0 0 calc(var(--base-font-size) * (1/3));
+	padding: 0 0 0 calc(var(--base-font-size) * (2/3));
+	border-left: 0.0625rem dashed rgb(var(--swatch-primary-darkest));
+}
+
+#side-bar:lang(de) .side-block.svg-icons {
+	margin: 0.5rem 0.5rem 0.5rem 0;
+	padding: 0.5rem !important;
+	background-color: rgba(var(--sidebar-media-bg-color)) !important;
+}
+
+#side-bar:lang(de) .side-block.svg-icons > p {
+	display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(auto-fit,minmax(1.3125rem,1fr));
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#side-bar:lang(de) .side-block.svg-icons a {
+	position: relative;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
+	background-image: unset;
+	mask-image: var(--social-logo-mask);
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position: center center;
+}
+
+#side-bar:lang(de) .side-block.svg-icons a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	clip-path: var(--clip-path);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a:hover::before,
+#side-bar:lang(de) .side-block.svg-icons a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a img {
+	width: 1.6875rem;
+	height: 1.6875rem;
+	opacity: 0;
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="chat"] {
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="youtube"] {
+	--social-logo-mask: var(--youtube-mask);
+	--social-color: var(--youtube-icon-color);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="facebook"] {
+	--social-logo-mask: var(--facebook-mask);
+	--social-color: var(--facebook-icon-color);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="twitter"] {
+	--social-logo-mask: var(--twitter-mask);
+	--social-color: var(--twitter-icon-color);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="deviantart"] {
+	--social-logo-mask: var(--deviantart-mask);
+	--social-color: var(--deviantart-icon-color);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="instagram"] {
+	--social-logo-mask: var(--instagram-mask);
+	--social-color: var(--instagram-icon-color);
+	background-image: var(--instagram-icon-gradient);
+	background-size: contain;
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="reddit"] {
+	--social-logo-mask: var(--reddit-mask);
+	--social-color: var(--reddit-icon-color);
+}
+
+#side-bar:lang(de) .side-block.svg-icons a[href*="sandbox"] {
+	--social-logo-mask: var(--sandbox-mask);
+	--social-color: var(--sandbox-icon-color);
+}
 
 /* ===GREEK BRANCH=== */
 
