@@ -6791,6 +6791,34 @@ div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) >
 	content: "태그\0021b4";
 }
 
+form#edit-page-form:lang(ko) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "수정에 대한 짤막한 설명";
+}
+
+table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(1)::before {
+	content: "수정";
+}
+
+table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "유형";
+}
+
+table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "활동";
+}
+
+table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "편집자";
+}
+
+table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "날짜";
+}
+
+#site-tools-box:lang(ko)::before {
+	content: "사이트 도구";
+}
+
 /* ===POLISH BRANCH=== */
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pl) {
@@ -6802,6 +6830,34 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pl) {
 	flex-basis: 6rem;
+}
+
+form#edit-page-form:lang(pt-br) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "Krótki Opis Zmian:";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(1)::before {
+	content: "wersja";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "flagi";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "opcje";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "przez";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "Data";
+}
+
+#site-tools-box:lang(pt-br)::before {
+	content: "Narzędzia Witryny";
 }
 
 /* ===PORTUGESE BRANCH=== */
@@ -6861,7 +6917,7 @@ table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(6)::before {
 			1fr;
 	}
 
-	#content-wrap:lang(uk) {
+	#content-wrap:lang(ru) {
 		margin: 0 !important; /* Overwriting branch's !important */
 		padding: 0 !important; /* Overwriting branch's !important */
 	}
@@ -10899,9 +10955,21 @@ div.mobile-top-bar {
 
 /* ===KOREAN BRANCH=== */
 
+#login-status:lang(ko) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+	content: "메시지";
+}
+
 /* ===POLISH BRANCH=== */
 
+#login-status:lang(po) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+	content: "Wiadomości";
+}
+
 /* ===PORTUGESE BRANCH=== */
+
+#login-status:lang(pt-br) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+	content: "Mensagens";
+}
 
 /* ===RUSSIAN BRANCH=== */
 
@@ -10925,8 +10993,6 @@ div.mobile-top-bar {
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
 /* ===UKRAINIAN BRANCH=== */
-
-/* ===FRENCH BRANCH=== */
 
 /* ===SPANISH BRANCH=== */
 
@@ -13530,7 +13596,23 @@ body.print-body #main-content .page-tags span {
 
 /* ===KOREAN BRANCH=== */
 
+[id*="u-credit"]:lang(ko) div.credit-back::before {
+	content: "뒤로";
+}
+
+#toc:lang(ko) #toc-action-bar a::after {
+	content: "목차";
+}
+
 /* ===POLISH BRANCH=== */
+
+[id*="u-credit"]:lang(po) div.credit-back::before {
+	content: "Powrót";
+}
+
+#toc:lang(po) #toc-action-bar a::after {
+	content: "Spis Treści";
+}
 
 /* ===PORTUGESE BRANCH=== */
 
