@@ -364,20 +364,22 @@ div#container-wrap {
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in {
 	margin: 0 1em;
-	background-color: rgba(var(--swatch-primary-darker), 1);
-	color: rgb(var(--swatch-text-secondary-color));
+	background-color: rgb(var(--ui-button-bg));
+	color: rgb(var(--ui-button-txt));
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:hover,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:active,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:hover,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:active {
-	background-color: rgba(var(--swatch-primary), 1);
+	background-color: rgba(var(--ui-button-hover-bg), 1);
+	color: rgb(var(--ui-button-hover-txt));
 }
 
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:focus-within,
 #login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:focus-within {
-	background-color: rgba(var(--swatch-primary), 1);
+	background-color: rgba(var(--ui-button-hover-bg), 1);
+	color: rgb(var(--ui-button-hover-txt));
 }
 
 #login-status span.printuser {
