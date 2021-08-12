@@ -11,7 +11,7 @@
 /* Traditional Chinese Support */ 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 /* Korean Language Support */ 
-@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 /* Thai Language Support */ 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* International Monospace Support */ 
@@ -790,14 +790,14 @@
 	--header-subtitle: "확보, 격리, 보호";
 
 	/* Fonts */
-	--body-font: Inter, "Gothic A1", "Apple SD Gothic Neo", "NanumBarunGothic",
+	--body-font: Inter, NanumBarunCatsi, "Apple SD Gothic Neo", "NanumBarunGothic",
 		"맑은 고딕", "Malgun Gothic", "굴림", "Gulim", "돋움", "Dotum",
 		"Helvetica Neue", "Helvetica", Arial, sans-serif;
 	--UI-font: PTRootUI, "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic",
 		Roboto, Noto, "Noto Sans CJK KR", sans-serif;
 	--header-font: var(--body-font);
 	--title-font: var(--body-font);
-	--mono-font: Recursive, "IBM Plex Mono", "Gothic A1", "Apple SD Gothic Neo",
+	--mono-font: "Nanum Gothic Coding", Recursive, "IBM Plex Mono", "Apple SD Gothic Neo",
 		"NanumBarunGothic", "맑은 고딕", "Malgun Gothic", "굴림", "Gulim",
 		"돋움", "Dotum", "Helvetica Neue", "Helvetica", Arial, monospace;
 }
@@ -6815,6 +6815,34 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pt-br) {
 	flex-basis: 6rem;
+}
+
+form#edit-page-form:lang(pt-br) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "Resumo das Mudanças:";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(1)::before {
+	content: "Revisão";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "Marcações";
+}
+
+table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "Ações";
+}
+
+table.page-history:lang(pt-b) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "Por";
+}
+
+table.page-history:lang(pt-b) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "Data";
+}
+
+#site-tools-box:lang(pt-b)::before {
+	content: "Ferramentas do Site";
 }
 
 /* ===RUSSIAN BRANCH=== */
@@ -13505,6 +13533,14 @@ body.print-body #main-content .page-tags span {
 /* ===POLISH BRANCH=== */
 
 /* ===PORTUGESE BRANCH=== */
+
+[id*="u-credit"]:lang(pt-br) div.credit-back::before {
+	content: "Voltar";
+}
+
+#toc:lang(pt-br) #toc-action-bar a::after {
+	content: "Índice";
+}
 
 /* ===RUSSIAN BRANCH=== */
 
