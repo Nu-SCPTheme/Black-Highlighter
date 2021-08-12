@@ -27,8 +27,22 @@
 /* ===JAPANESE BRANCH=== */
 
 /* ===KOREAN BRANCH=== */
+[id*="u-credit"]:lang(ko) div.credit-back::before {
+	content: "뒤로";
+}
+
+#toc:lang(ko) #toc-action-bar a::after {
+	content: "목차";
+}
 
 /* ===POLISH BRANCH=== */
+[id*="u-credit"]:lang(po) div.credit-back::before {
+	content: "Powrót";
+}
+
+#toc:lang(po) #toc-action-bar a::after {
+	content: "Spis Treści";
+}
 
 /* ===PORTUGESE BRANCH=== */
 [id*="u-credit"]:lang(pt-br) div.credit-back::before {
