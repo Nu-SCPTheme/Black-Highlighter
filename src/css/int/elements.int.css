@@ -4,30 +4,51 @@
 /* Styling specific to Int Branches' Elements
 
 /* ===DIRECTORY===
-	1.  =SIMPLIFIED CHINESE BRANCH
-	2.  =ITALIAN BRANCH
-	3.  =JAPANESE BRANCH
-	4.  =KOREAN BRANCH
-	5.  =POLISH BRANCH
-	6.  =PORTUGESE BRANCH
-	7.  =RUSSIAN BRANCH
-	8.  =THAI BRANCH
-	9.  =TRADITIONAL CHINESE BRANCH
-	10. =UKRAINIAN BRANCH
-	11. =SPANISH BRANCH
-	12. =GERMAN BRANCH
-	13. =CZECH BRANCH
-	14. =FRENCH BRANCH
+	1.  =CZECH BRANCH
+	2.  =FRENCH BRANCH
+	3.  =GERMAN BRANCH
+	4.  =GREEK BRANCH
+	5.  =ITALIAN BRANCH
+	6.  =JAPANESE BRANCH
+	7.  =KOREAN BRANCH
+	8.  =POLISH BRANCH
+	9.  =PORTUGESE BRANCH
+	10. =RUSSIAN BRANCH
+	11. =SIMPLIFIED CHINESE BRANCH
+	12. =SPANISH BRANCH
+	13. =THAI BRANCH
+	14. =TRADITIONAL CHINESE BRANCH
+	15. =UKRAINIAN BRANCH	
 */
 
-/* ===SIMPLIFIED CHINESE BRANCH=== */
-[id*="u-credit"]:lang(cn) div.credit-back::before {
-	content: "返回";
+/* ===CZECH BRANCH=== */
+[id*="u-credit"]:lang(cs) div.credit-back::before {
+	content: "Zpět";
 }
 
-#toc:lang(cn) #toc-action-bar a::after {
-	content: "目录";
+#toc:lang(cs) #toc-action-bar a::after {
+	content: "Obsah";
 }
+
+/* ===FRENCH BRANCH=== */
+[id*="u-credit"]:lang(fr) div.credit-back::before {
+	content: "Retour";
+}
+
+#toc:lang(fr) #toc-action-bar a::after {
+	content: "Sommaire";
+}
+
+/* ===GERMAN BRANCH=== */
+[id*="u-credit"]:lang(de) div.credit-back::before {
+	content: "Zurück";
+}
+
+#toc:lang(de) #toc-action-bar a::after {
+	content: "Inhalt";
+}
+
+/* ===GREEK BRANCH=== */
 
 /* ===ITALIAN BRANCH=== */
 
@@ -69,6 +90,17 @@
 
 /* ===RUSSIAN BRANCH=== */
 
+/* ===SIMPLIFIED CHINESE BRANCH=== */
+[id*="u-credit"]:lang(cn) div.credit-back::before {
+	content: "返回";
+}
+
+#toc:lang(cn) #toc-action-bar a::after {
+	content: "目录";
+}
+
+/* ===SPANISH BRANCH=== */
+
 /* ===THAI BRANCH=== */
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
@@ -77,37 +109,3 @@
 }
 
 /* ===UKRAINIAN BRANCH=== */
-
-/* ===FRENCH BRANCH=== */
-
-/* ===SPANISH BRANCH=== */
-
-/* ===GERMAN BRANCH=== */
-[id*="u-credit"]:lang(de) div.credit-back::before {
-	content: "Zurück";
-}
-
-#toc:lang(de) #toc-action-bar a::after {
-	content: "Inhalt";
-}
-
-/* ===GREEK BRANCH=== */
-
-/* ===CZECH BRANCH=== */
-[id*="u-credit"]:lang(cs) div.credit-back::before {
-	content: "Zpět";
-}
-
-#toc:lang(cs) #toc-action-bar a::after {
-	content: "Obsah";
-}
-
-/* ===FRENCH BRANCH=== */
-[id*="u-credit"]:lang(fr) div.credit-back::before {
-	content: "Retour";
-}
-
-#toc:lang(fr) #toc-action-bar a::after {
-	content: "Sommaire";
-}
-

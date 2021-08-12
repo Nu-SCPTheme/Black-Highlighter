@@ -4,26 +4,33 @@
 /* Styling specific to Int Branches' Headers
 
 /* ===DIRECTORY===
-	1.  =SIMPLIFIED CHINESE BRANCH
-	2.  =ITALIAN BRANCH
-	3.  =JAPANESE BRANCH
-	4.  =KOREAN BRANCH
-	5.  =POLISH BRANCH
-	6.  =PORTUGESE BRANCH
-	7.  =RUSSIAN BRANCH
-	8.  =THAI BRANCH
-	9.  =TRADITIONAL CHINESE BRANCH
-	10. =UKRAINIAN BRANCH
-	11. =SPANISH BRANCH
-	12. =GERMAN BRANCH
-	13. =CZECH BRANCH
-	14. =FRENCH BRANCH
+	1.  =CZECH BRANCH
+	2.  =FRENCH BRANCH
+	3.  =GERMAN BRANCH
+	4.  =GREEK BRANCH
+	5.  =ITALIAN BRANCH
+	6.  =JAPANESE BRANCH
+	7.  =KOREAN BRANCH
+	8.  =POLISH BRANCH
+	9.  =PORTUGESE BRANCH
+	10. =RUSSIAN BRANCH
+	11. =SIMPLIFIED CHINESE BRANCH
+	12. =SPANISH BRANCH
+	13. =THAI BRANCH
+	14. =TRADITIONAL CHINESE BRANCH
+	15. =UKRAINIAN BRANCH	
 */
 
-/* ===SIMPLIFIED CHINESE BRANCH=== */
-#login-status:lang(cn) #account-options li > a[href*="/messages"]::after {
-	content: "消息";
+/* ===CZECH BRANCH=== */
+#login-status:lang(cs) #account-options li > a[href*="/messages"]::after {
+	content: "Zprávy";
 }
+
+/* ===FRENCH BRANCH=== */
+
+/* ===GERMAN BRANCH=== */
+
+/* ===GREEK BRANCH=== */
 
 /* ===ITALIAN BRANCH=== */
 
@@ -63,6 +70,13 @@
 	}
 }
 
+/* ===SIMPLIFIED CHINESE BRANCH=== */
+#login-status:lang(cn) #account-options li > a[href*="/messages"]::after {
+	content: "消息";
+}
+
+/* ===SPANISH BRANCH=== */
+
 /* ===THAI BRANCH=== */
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
@@ -71,16 +85,3 @@
 }
 
 /* ===UKRAINIAN BRANCH=== */
-
-/* ===SPANISH BRANCH=== */
-
-/* ===GERMAN BRANCH=== */
-
-/* ===GREEK BRANCH=== */
-
-/* ===CZECH BRANCH=== */
-#login-status:lang(cs) #account-options li > a[href*="/messages"]::after {
-	content: "Zprávy";
-}
-
-/* ===FRENCH BRANCH=== */

@@ -4,91 +4,45 @@
 /* Styling specific to Int Branches' Sidebars
 
 /* ===DIRECTORY===
-	1.  =SIMPLIFIED CHINESE BRANCH
-	2.  =ITALIAN BRANCH
-	3.  =JAPANESE BRANCH
-	4.  =KOREAN BRANCH
-	5.  =POLISH BRANCH
-	6.  =PORTUGESE BRANCH
-	7.  =RUSSIAN BRANCH
-	8.  =THAI BRANCH
-	9.  =TRADITIONAL CHINESE BRANCH
-	10. =UKRAINIAN BRANCH
-	11. =SPANISH BRANCH
-	12. =GERMAN BRANCH
-	13. =CZECH BRANCH
-	14. =FRENCH BRANCH
+	1.  =CZECH BRANCH
+	2.  =FRENCH BRANCH
+	3.  =GERMAN BRANCH
+	4.  =GREEK BRANCH
+	5.  =ITALIAN BRANCH
+	6.  =JAPANESE BRANCH
+	7.  =KOREAN BRANCH
+	8.  =POLISH BRANCH
+	9.  =PORTUGESE BRANCH
+	10. =RUSSIAN BRANCH
+	11. =SIMPLIFIED CHINESE BRANCH
+	12. =SPANISH BRANCH
+	13. =THAI BRANCH
+	14. =TRADITIONAL CHINESE BRANCH
+	15. =UKRAINIAN BRANCH	
 */
 
-/* ===SIMPLIFIED CHINESE BRANCH=== */
-#side-bar:lang(cn) {
-	--bilibili-icon-color: 0,161,214;
-	display: grid;
-	grid-template-columns: 5rem 1fr;
+/* ===CZECH BRANCH=== */
+#side-bar:lang(cs) div.menu-item {
+	height: auto;
 }
 
-#side-bar:lang(cn) .heading {
-	margin: 0;
+#side-bar:lang(cs) .side-block.blue {
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5rem !important;
+	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(cn) div.side-block {
-	grid-column: span 2;
-}
-
-#side-bar:lang(cn) div.side-block.media {
-	grid-column: 1/ span 1;
-	flex-basis: 3.6875rem;
-}
-
-#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] {
-	grid-column: 2/ span 1;
-	flex-basis: calc(var(--sidebar-width-on-desktop) - 3.6875rem);
-}
-
-#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] > div {
-	grid-auto-flow: row;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto auto;
-}
-
-#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] > div a {
-	padding: 0.5em;
-}
-
-#side-bar:lang(cn) div.side-block.media div.menu-item {
-	display: contents;
-}
-
-#side-bar:lang(cn) div.side-block.media .heading {
-	align-items: center;
-	justify-content: center;
-	padding-left: 0;
-}
-
-#side-bar:lang(cn) div.side-block.media .menu-item div {
-	align-items: center;
-	border: none;
-}
-
-#side-bar:lang(cn) div.side-block.media a,
-#side-bar:lang(cn) div.side-block.media a:visited {
+#side-bar:lang(cs) .side-block.blue a {
 	position: relative;
-	justify-content: center;
-	width: 1.6875rem;
-	height: 1.6875rem;
-	margin: 0;
-	padding: 0;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
-	font-size: var(--base-font-size);
-	line-height: 1;
 	mask-image: var(--social-logo-mask);
 	mask-repeat: no-repeat;
 	mask-size: contain;
 	mask-position: center center;
 }
 
-#side-bar:lang(cn) div.side-block.media a::before {
+#side-bar:lang(cs) .side-block.blue a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -99,7 +53,6 @@
 	content: " ";
 	position: absolute;
 	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,8 +61,8 @@
 	clip-path: var(--clip-path);
 }
 
-#side-bar:lang(cn) div.side-block.media a:hover::before,
-#side-bar:lang(cn) div.side-block.media a:active::before {
+#side-bar:lang(cs) .side-block.blue a:hover::before,
+#side-bar:lang(cs) .side-block.blue a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -119,7 +72,7 @@
 		);
 }
 
-#side-bar:lang(cn) div.side-block.media a:focus-within::before {
+#side-bar:lang(cs) .side-block.blue a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -129,16 +82,39 @@
 		);
 }
 
-#side-bar:lang(cn) div.side-block.media a img {
+#side-bar:lang(cs) .side-block.blue a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(cn) div.side-block.media a[href*="bilibili"] {
-	--social-logo-mask: var(--bilibili-mask);
-	--social-color: var(--bilibili-icon-color);
+#side-bar:lang(cs) .side-block.blue a[href*="facebook"] {
+	--social-logo-mask: var(--facebook-mask);
+	--social-color: var(--facebook-icon-color);
 }
+
+#side-bar:lang(cs) .side-block.blue a[href*="instagram"] {
+	--social-logo-mask: var(--instagram-mask);
+	--social-color: var(--instagram-icon-color);
+	background-image: var(--instagram-icon-gradient);
+	background-size: contain;
+}
+
+#side-bar:lang(cs) .side-block.blue a[href*="discord"] {
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
+}
+
+#side-bar:lang(cs) .side-block.blue a[href*="github"] {
+	--social-logo-mask: var(--github-mask);
+	--social-color: var(--github-icon-color);
+}
+
+/* ===FRENCH BRANCH=== */
+
+/* ===GERMAN BRANCH=== */
+
+/* ===GREEK BRANCH=== */
 
 /* ===ITALIAN BRANCH=== */
 #side-bar:lang(it) div.menu-item {
@@ -728,6 +704,128 @@
     padding: 0 0 0 calc(var(--base-font-size) * (14/15));
 }
 
+/* ===SIMPLIFIED CHINESE BRANCH=== */
+#side-bar:lang(cn) {
+	--bilibili-icon-color: 0,161,214;
+	display: grid;
+	grid-template-columns: 5rem 1fr;
+}
+
+#side-bar:lang(cn) .heading {
+	margin: 0;
+}
+
+#side-bar:lang(cn) div.side-block {
+	grid-column: span 2;
+}
+
+#side-bar:lang(cn) div.side-block.media {
+	grid-column: 1/ span 1;
+	flex-basis: 3.6875rem;
+}
+
+#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] {
+	grid-column: 2/ span 1;
+	flex-basis: calc(var(--sidebar-width-on-desktop) - 3.6875rem);
+}
+
+#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] > div {
+	grid-auto-flow: row;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+}
+
+#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] > div a {
+	padding: 0.5em;
+}
+
+#side-bar:lang(cn) div.side-block.media div.menu-item {
+	display: contents;
+}
+
+#side-bar:lang(cn) div.side-block.media .heading {
+	align-items: center;
+	justify-content: center;
+	padding-left: 0;
+}
+
+#side-bar:lang(cn) div.side-block.media .menu-item div {
+	align-items: center;
+	border: none;
+}
+
+#side-bar:lang(cn) div.side-block.media a,
+#side-bar:lang(cn) div.side-block.media a:visited {
+	position: relative;
+	justify-content: center;
+	width: 1.6875rem;
+	height: 1.6875rem;
+	margin: 0;
+	padding: 0;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
+	font-size: var(--base-font-size);
+	line-height: 1;
+	mask-image: var(--social-logo-mask);
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position: center center;
+}
+
+#side-bar:lang(cn) div.side-block.media a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	clip-path: var(--clip-path);
+}
+
+#side-bar:lang(cn) div.side-block.media a:hover::before,
+#side-bar:lang(cn) div.side-block.media a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(cn) div.side-block.media a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:lang(cn) div.side-block.media a img {
+	width: 1.6875rem;
+	height: 1.6875rem;
+	opacity: 0;
+}
+
+#side-bar:lang(cn) div.side-block.media a[href*="bilibili"] {
+	--social-logo-mask: var(--bilibili-mask);
+	--social-color: var(--bilibili-icon-color);
+}
+
+/* ===SPANISH BRANCH=== */
+
 /* ===THAI BRANCH=== */
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
@@ -1022,102 +1120,3 @@
 #side-bar:lang(uk) > div[style*="15px"] br {
 	display: none;
 }
-
-/* ===FRENCH BRANCH=== */
-
-/* ===SPANISH BRANCH=== */
-
-/* ===GERMAN BRANCH=== */
-
-/* ===GREEK BRANCH=== */
-
-/* ===CZECH BRANCH=== */
-#side-bar:lang(cs) div.menu-item {
-	height: auto;
-}
-
-#side-bar:lang(cs) .side-block.blue {
-	margin: 0.5rem 0.5rem 0 0;
-	padding: 0.5rem !important;
-	background-color: rgba(var(--sidebar-media-bg-color)) !important;
-}
-
-#side-bar:lang(cs) .side-block.blue a {
-	position: relative;
-	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--social-color));
-	mask-image: var(--social-logo-mask);
-	mask-repeat: no-repeat;
-	mask-size: contain;
-	mask-position: center center;
-}
-
-#side-bar:lang(cs) .side-block.blue a::before {
-	--clip-path: 
-		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
-			0 100%
-		);
-	content: " ";
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--social-icon-hover-color));
-	pointer-events: none;
-	clip-path: var(--clip-path);
-}
-
-#side-bar:lang(cs) .side-block.blue a:hover::before,
-#side-bar:lang(cs) .side-block.blue a:active::before {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#side-bar:lang(cs) .side-block.blue a:focus-within::before {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#side-bar:lang(cs) .side-block.blue a img {
-	width: 1.6875rem;
-	height: 1.6875rem;
-	opacity: 0;
-}
-
-#side-bar:lang(cs) .side-block.blue a[href*="facebook"] {
-	--social-logo-mask: var(--facebook-mask);
-	--social-color: var(--facebook-icon-color);
-}
-
-#side-bar:lang(cs) .side-block.blue a[href*="instagram"] {
-	--social-logo-mask: var(--instagram-mask);
-	--social-color: var(--instagram-icon-color);
-	background-image: var(--instagram-icon-gradient);
-	background-size: contain;
-}
-
-#side-bar:lang(cs) .side-block.blue a[href*="discord"] {
-	--social-logo-mask: var(--discord-mask);
-	--social-color: var(--discord-icon-color);
-}
-
-#side-bar:lang(cs) .side-block.blue a[href*="github"] {
-	--social-logo-mask: var(--github-mask);
-	--social-color: var(--github-icon-color);
-}
-
-/* ===FRENCH BRANCH=== */
