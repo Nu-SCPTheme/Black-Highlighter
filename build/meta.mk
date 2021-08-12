@@ -7,6 +7,7 @@ BUILD_SOURCES := \
 DIRECTORIES := \
 	dist/css/min/ \
 	dist/fonts/ \
+	dist/fonts/int \
 	dist/img/ \
 	dist/img/page-toolbar-icons \
 	dist/img/text-editor-icons \

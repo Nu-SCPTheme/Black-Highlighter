@@ -21,7 +21,7 @@ include build/scp-test.mk
 css: dist/css/min/ $(CSS_OUTPUTS)
 images: dist/img/ $(IMAGE_COPY_OUTPUTS) $(IMAGE_OPTIMIZE_OUTPUTS)
 files: $(FILES_OUTPUTS)
-fonts: dist/fonts/ $(FONTS_OUTPUTS)
+fonts: dist/fonts/ $(FONTS_COPY_OUTPUTS)
 scp-test: $(SCP_TEST_OUTPUTS)
 legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 
