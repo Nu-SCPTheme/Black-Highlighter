@@ -286,10 +286,10 @@
 
 #side-bar:lang(de) div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
 	align-items: center;
+	width: calc(100% - var(--base-font-size));
 	margin: 0 0 0 calc(var(--base-font-size) * (1/3));
 	padding: 0 0 0 calc(var(--base-font-size) * (2/3));
 	border-left: 0.0625rem dashed rgb(var(--swatch-primary-darkest));
-	width: calc(100% - var(--base-font-size));
 }
 
 #side-bar:lang(de) .side-block.svg-icons {
