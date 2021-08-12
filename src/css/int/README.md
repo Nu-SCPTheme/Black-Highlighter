@@ -1,6 +1,10 @@
 # LOCALIZATION CREDITS
 
+Czech Localization by [Chamik](http://www.wikidot.com/user:info/chamik)
+
 French Localization by [DrJohannes](https://www.wikidot.com/user:info/drjohannes)
+
+German Localization by [Dr Alice](http://www.wikidot.com/user:info/dr-alice)
 
 Japanese Localization by [Nanigashi Sato](https://www.wikidot.com/user:info/nanigashi-sato)
 
