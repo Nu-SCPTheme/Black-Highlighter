@@ -3253,9 +3253,11 @@ div.odialog-shader-iframe {
 	margin: -0.9rem auto;
 	margin-top: 0.6rem;
 	animation: loading 1.2s linear infinite;
-	border: 0.3rem solid;
+	border-top: 0.3rem solid rgb(var(--modal-header-stripe));
+	border-bottom: 0.3rem solid rgb(var(--modal-header-stripe));
+	border-left: 0.3rem solid transparent;
+	border-right: 0.3rem solid transparent;
 	border-radius: 50%;
-	border-color: rgb(var(--modal-header-stripe)) transparent;
 }
 
 #odialog-container .owindow.osuccess {
