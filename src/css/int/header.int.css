@@ -21,26 +21,29 @@
 */
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
-#login-status:lang(cn) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(cn) #account-options li > a[href*="/messages"]::after {
 	content: "消息";
 }
 
 /* ===ITALIAN BRANCH=== */
 
 /* ===JAPANESE BRANCH=== */
+#login-status:lang(ja) #account-options li > a[href*="/messages"]::after {
+	content: "メッセージ";
+}
 
 /* ===KOREAN BRANCH=== */
-#login-status:lang(ko) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(ko) #account-options li > a[href*="/messages"]::after {
 	content: "메시지";
 }
 
 /* ===POLISH BRANCH=== */
-#login-status:lang(po) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(po) #account-options li > a[href*="/messages"]::after {
 	content: "Wiadomości";
 }
 
 /* ===PORTUGESE BRANCH=== */
-#login-status:lang(pt-br) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(pt-br) #account-options li > a[href*="/messages"]::after {
 	content: "Mensagens";
 }
 
@@ -63,7 +66,7 @@
 /* ===THAI BRANCH=== */
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
-#login-status:lang(zh-tr) #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status:lang(zh-tr) #account-options li > a[href*="/messages"]::after {
 	content: "訊息";
 }
 

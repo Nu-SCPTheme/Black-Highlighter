@@ -537,7 +537,7 @@ div#container-wrap {
 	text-decoration: none;
 }
 
-#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"] {
+#login-status #account-options li > a[href*="/messages"] {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -547,7 +547,7 @@ div#container-wrap {
 	font-size: 0;
 }
 	
-#login-status #account-options li > a[href="https://www.wikidot.com/account/messages"]::after {
+#login-status #account-options li > a[href*="/messages"]::after {
 	content: "Messages";
 	position: absolute;
 	left: 50%;
