@@ -1,4 +1,4 @@
-#LOCALIZATION CREDITS
+# LOCALIZATION CREDITS
 
 Chinese Localization by (Sekai_s)[http://www.wikidot.com/user:info/sekai-s]
 
