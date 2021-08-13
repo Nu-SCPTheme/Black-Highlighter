@@ -1801,6 +1801,10 @@ span.printuser {
 	margin-right: 0;
 }
 
+#main-content span.printuser {
+	align-items: baseline;
+}
+
 span.printuser a:first-of-type,
 span.printuser.deleted img {
 	display: inline-block;
@@ -1814,7 +1818,7 @@ span.printuser.deleted img {
 }
 
 span.printuser img.small {
-	width: calc(100% - 0.5625em);
+	width: calc(100% - 0.05625em);
 	padding: 0 0 0 0.5625em;
 	background-position: left center;
 	background-size: cover;
