@@ -1801,13 +1801,15 @@ span.printuser {
 	margin-right: 0;
 }
 
-span.printuser a:first-of-type {
+span.printuser a:first-of-type,
+span.printuser.deleted img {
 	display: inline-block;
 	height: 1em;
 	margin: 0 0.125rem 0 0;
 }
 
-span.printuser.avatarhover a:first-of-type {
+span.printuser.avatarhover a:first-of-type,
+span.printuser.deleted img {
 	width: 1.75em;
 }
 
@@ -1825,6 +1827,10 @@ span.printuser img.small::before {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
+}
+
+span.printuser.deleted img {
+	width: min-content;
 }
 
 a.avatar-hover, 
