@@ -5305,7 +5305,8 @@ form#edit-page-form div.buttons {
 	background: rgb(var(--swatch-tertiary-color));
 }
 
-#who-rated-page-area .printuser a {
+#who-rated-page-area .printuser a,
+#who-rated-page-area .printuser.deleted {
 	--wght: 600;
 	font-family: var(--UI-font);
 	font-size: 0.8em;
@@ -7739,14 +7740,10 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	display: none;
 }
 
-#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]
+#side-bar div.menu-item:first-of-type a[href="/"]
 {
 	justify-content: center;
-}
-
-#side-bar div.menu-item a[href="https://scp-wiki.wikidot.com/"]::before
-{
-	width: 200%;
+	padding: 0;
 }
 
 /* Search box specific styling */
@@ -13430,13 +13427,15 @@ span.printuser {
 	margin-right: 0;
 }
 
-span.printuser a:first-of-type {
+span.printuser a:first-of-type,
+span.printuser.deleted img {
 	display: inline-block;
 	height: 1em;
 	margin: 0 0.125rem 0 0;
 }
 
-span.printuser.avatarhover a:first-of-type {
+span.printuser.avatarhover a:first-of-type,
+span.printuser.deleted img {
 	width: 1.75em;
 }
 
@@ -13454,6 +13453,12 @@ span.printuser img.small::before {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
+}
+
+span.printuser.deleted img {
+	width: -webkit-min-content;
+	width: -moz-min-content;
+	width: min-content;
 }
 
 a.avatar-hover, 
