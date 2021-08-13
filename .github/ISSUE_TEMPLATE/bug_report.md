@@ -1,7 +1,7 @@
 ---
 name: Bug report
-about: Report an issue
-title: "[bug] "
+about: Report a problem
+title: 
 labels: bug
 assignees: Woedenaz
 
@@ -19,8 +19,8 @@ It is not possible to debug the styling without being able to see the page in qu
 **Device information:** (fill in as appropriate)  
  - Device: [e.g. iPhone 12]
  - OS: [e.g. Windows 10, iOS 8.1]
- - Browser [e.g. Chrome, Safari]
- - Version [e.g. Firefox 91]
+ - Browser: [e.g. Chrome, Safari]
+ - Version: [e.g. Firefox 91]
 
 **Additional context:**  
 Add any other information about the problem here.
