@@ -1,7 +1,7 @@
 ---
-name: Feature request
-about: Suggest an idea for the theme
-title: "[feature] "
+name: Feature Request
+about: Make a suggestion for something new
+title: 
 labels: feature-request
 assignees: Woedenaz
 
