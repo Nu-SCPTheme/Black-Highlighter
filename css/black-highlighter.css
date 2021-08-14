@@ -12685,9 +12685,7 @@ div.blockquote > :last-child,
 [id*="u-credit"] .credit.first,
 [id*="u-credit"] .credit.otherwise {
 	display: grid;
-	width: -webkit-max-content;
-	width: -moz-max-content;
-	width: max-content;
+	width: auto;
 	height: -webkit-max-content;
 	height: -moz-max-content;
 	height: max-content;
@@ -12801,11 +12799,12 @@ div.blockquote > :last-child,
 [id*="u-credit"] div.credit-back::before,
 [id*="u-credit"] a[href="#u-credit-otherwise"] {
 	--wght: var(--ui-wght);
-	display: inline-flex;
+	display: flex;
+	z-index: 1;
 	align-items: center;
 	justify-content: center;
 	width: auto;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0 0.5em;
 	overflow: hidden;
 	transition:
@@ -12861,15 +12860,19 @@ div.blockquote > :last-child,
 	text-decoration: none;
 }
 
-/* ===TABLES=== */
-
-table.wiki-content-table * {
-	--min-font-size: 0.8125rem; /* 12px */
+[id*="u-credit"] .page-rate-widget-box {
 	margin: 0;
-	padding: 0;
 }
 
-table.wiki-content-table {
+/* ===TABLES=== */
+
+#page-content table.wiki-content-table *,
+#page-content div.b-tables table.wiki-content-table * {
+	--min-font-size: 0.8125rem; /* 12px */
+}
+
+#page-content table.wiki-content-table,
+#page-content div.b-tables table.wiki-content-table{
 	display: table;
 	margin: 0.5em auto;
 	border-spacing: 0;
@@ -12877,7 +12880,8 @@ table.wiki-content-table {
 	color: rgb(var(--tables-body-txt));
 }
 
-table.wiki-content-table th {
+#page-content table.wiki-content-table th,
+#page-content div.b-tables table.wiki-content-table th {
 	--wght: calc(var(--ui-wght) + 200);
 	padding: 0.5em 1em;
 	background: rgb(var(--tables-header-bg));
@@ -12885,17 +12889,21 @@ table.wiki-content-table th {
 	font-weight: var(--wght);
 }
 
-table.wiki-content-table th,
-table.wiki-content-table td {
+#page-content table.wiki-content-table th,
+#page-content table.wiki-content-table td,
+#page-content div.b-tables table.wiki-content-table th,
+#page-content div.b-tables table.wiki-content-table td {
 	/* Override's border on wikidot's default layout */
 	border: 0.0625rem solid rgb(var(--tables-border)) !important;
 }
 
-table.wiki-content-table tr {
+#page-content table.wiki-content-table tr,
+#page-content div.b-tables table.wiki-content-table tr {
 	border: none !important;
 }
 
-table.wiki-content-table td {
+#page-content table.wiki-content-table td,
+#page-content div.b-tables table.wiki-content-table td {
 	padding: 0.5em;
 }
 
@@ -14318,59 +14326,5 @@ body.print-body #main-content .page-tags span {
 }
 
 /* ===UKRAINIAN BRANCH=== */
-
-/* most of this is copied from the sidebar */
-
-body#translations {
-	background: rgb(var(--swatch-menubg-color));
-}
-
-#translations .interwiki__title {
-	min-height: 1.5625rem;
-	background: var(--gradient-sidemenu-header);
-}
-
-#translations .interwiki__title p {
-	--wght: 900;
-	display: block;
-	height: 1.5625rem;
-	padding-right: 1rem;
-	color: rgb(var(--swatch-text-secondary-color));
-	font-size: calc(0.875rem * 0.95);
-	font-weight: var(--wght);
-	letter-spacing: 0.2rem;
-	line-height: 1.5625;
-	text-align: right;
-	text-shadow: none;
-	text-transform: uppercase;
-}
-
-#translations .interwiki__entry {
-	display: flex;
-	flex-direction: row;
-	flex-shrink: 2;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: flex-end;
-	min-height: calc(2rem - var(--sidebar-internal-border-thickness));
-	margin: 0;
-	border-bottom: var(--sidebar-internal-border-thickness) solid rgba(var(--swatch-border-color), 0.08);
-	font-size: 0;
-	text-align: right;
-}
-
-#translations .interwiki__entry a {
-	display: block;
-	height: calc(2rem - var(--sidebar-internal-border-thickness));
-	margin: 0;
-	padding: 0 0.6em;
-	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-clip: padding-box;
-	background-color: rgba(var(--swatch-menubg-hover-color), 0);
-	color: rgb(var(--swatch-text-tertiary-color));
-	font-size: calc(var(--base-font-size) * (14 / 15));
-	letter-spacing: 0.04em;
-	line-height: calc(2em - var(--sidebar-internal-border-thickness));
-}
 
 }
