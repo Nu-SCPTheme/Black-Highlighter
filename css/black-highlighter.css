@@ -12085,18 +12085,21 @@ div.blockquote > :last-child,
 	width: 100%;
 }
 
+.image-block.block-right,
 .scp-image-block.block-right {
 	margin: 0 0 1em 2em;
 	float: right;
 	clear: right;
 }
 
+.image-block.block-left,
 .scp-image-block.block-left {
 	margin: 0 2em 1em 0;
 	float: left;
 	clear: left;
 }
 
+.image-block.block-center,
 .scp-image-block.block-center {
 	margin-right: auto;
 	margin-left: auto;
@@ -12110,14 +12113,17 @@ div.blockquote > :last-child,
 
 /* Overwriting img width set by Image Block component as it's is already placed on the parent div */
 
+.image-block img[style*="width:"],
 .scp-image-block img[style*="width:"] {
 	width: 100% !important;
 }
 
+.image-caption,
 .scp-image-caption {
 	min-width: 100%;
 }
 
+.image-block .image-caption,
 .scp-image-block .scp-image-caption {
 	--wght: 600;
 	box-sizing: border-box;
@@ -12131,6 +12137,7 @@ div.blockquote > :last-child,
 	text-align: center;
 }
 
+.image-block .image-caption > p,
 .scp-image-block .scp-image-caption > p {
 	margin: 0;
 	padding: 0;
@@ -13805,11 +13812,14 @@ div.block-left {
 		max-width: 90vw !important;
 	}
 
+	.image-block.block-right,
+	.image-block.block-left,
 	.scp-image-block.block-right,
 	.scp-image-block.block-left {
 		max-width: 40vw !important;
 	}
 
+	.image-block img[style*="width:"],
 	.scp-image-block img[style*="width:"] {
 		width: 100% !important;
 	}
