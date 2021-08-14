@@ -1043,7 +1043,7 @@ div.blockquote > :last-child,
 [id*="u-credit"] .credit.first,
 [id*="u-credit"] .credit.otherwise {
 	display: grid;
-	width: max-content;
+	width: auto;
 	height: max-content;
 	margin: 0 1rem;
 	padding: 0;
@@ -1149,11 +1149,12 @@ div.blockquote > :last-child,
 [id*="u-credit"] div.credit-back::before,
 [id*="u-credit"] a[href="#u-credit-otherwise"] {
 	--wght: var(--ui-wght);
-	display: inline-flex;
+	display: flex;
+	z-index: 1;
 	align-items: center;
 	justify-content: center;
 	width: auto;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0 0.5em;
 	overflow: hidden;
 	transition:
@@ -1210,15 +1211,19 @@ div.blockquote > :last-child,
 	text-decoration: none;
 }
 
-/* ===TABLES=== */
-
-table.wiki-content-table * {
-	--min-font-size: 0.8125rem; /* 12px */
+[id*="u-credit"] .page-rate-widget-box {
 	margin: 0;
-	padding: 0;
 }
 
-table.wiki-content-table {
+/* ===TABLES=== */
+
+#page-content table.wiki-content-table *,
+#page-content div.b-tables table.wiki-content-table * {
+	--min-font-size: 0.8125rem; /* 12px */
+}
+
+#page-content table.wiki-content-table,
+#page-content div.b-tables table.wiki-content-table{
 	display: table;
 	margin: 0.5em auto;
 	border-spacing: 0;
@@ -1226,7 +1231,8 @@ table.wiki-content-table {
 	color: rgb(var(--tables-body-txt));
 }
 
-table.wiki-content-table th {
+#page-content table.wiki-content-table th,
+#page-content div.b-tables table.wiki-content-table th {
 	--wght: calc(var(--ui-wght) + 200);
 	padding: 0.5em 1em;
 	background: rgb(var(--tables-header-bg));
@@ -1234,17 +1240,21 @@ table.wiki-content-table th {
 	font-weight: var(--wght);
 }
 
-table.wiki-content-table th,
-table.wiki-content-table td {
+#page-content table.wiki-content-table th,
+#page-content table.wiki-content-table td,
+#page-content div.b-tables table.wiki-content-table th,
+#page-content div.b-tables table.wiki-content-table td {
 	/* Override's border on wikidot's default layout */
 	border: 0.0625rem solid rgb(var(--tables-border)) !important;
 }
 
-table.wiki-content-table tr {
+#page-content table.wiki-content-table tr,
+#page-content div.b-tables table.wiki-content-table tr {
 	border: none !important;
 }
 
-table.wiki-content-table td {
+#page-content table.wiki-content-table td,
+#page-content div.b-tables table.wiki-content-table td {
 	padding: 0.5em;
 }
 
