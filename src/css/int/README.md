@@ -18,4 +18,6 @@ Portugese Localization by [slashannemoo](https://www.wikidot.com/user:info/slash
 
 Simplified Chinese Localization by [Sekai_s](https://www.wikidot.com/user:info/sekai-s)
 
+Spanish Localization by [morhadow](https://www.wikidot.com/user:info/morhadow)
+
 Traditional Chinese Localization by [viken-k](https://www.wikidot.com/user:info/viken-k)
