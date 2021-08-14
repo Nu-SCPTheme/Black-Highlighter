@@ -6957,6 +6957,34 @@ div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) >
 	flex-basis: 6rem;
 }
 
+form#edit-page-form:lang(it) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "Breve descrizione delle modifiche:";
+}
+
+table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "segnalazioni";
+}
+
+table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "azioni";
+}
+
+table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "da";
+}
+
+table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "data";
+}
+
+#site-tools-box:lang(it)::before {
+	content: "Strumenti del Sito";
+}
+
+#main-content:lang(it) .page-tags::before {
+	content: "TAG\0021b4";
+}
+
 /* ===JAPANESE BRANCH=== */
 
 form#edit-page-form:lang(ja) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
@@ -11474,6 +11502,10 @@ div.mobile-top-bar {
 
 /* ===ITALIAN BRANCH=== */
 
+#login-status:lang(it) #account-options li > a[href*="/messages"]::after {
+	content: "Messaggi";
+}
+
 /* ===JAPANESE BRANCH=== */
 
 #login-status:lang(ja) #account-options li > a[href*="/messages"]::after {
@@ -14174,6 +14206,14 @@ body.print-body #main-content .page-tags span {
 /* ===GREEK BRANCH=== */
 
 /* ===ITALIAN BRANCH=== */
+
+[id*="u-credit"]:lang(it) div.credit-back::before {
+	content: "Indietro";
+}
+
+#toc:lang(it) #toc-action-bar a::after {
+	content: "Indice dei contenuti";
+}
 
 /* ===JAPANESE BRANCH=== */
 
