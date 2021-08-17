@@ -163,16 +163,17 @@
 #breadcrumbs,
 .pseudocrumbs {
 	display: flex;
+	flex-wrap: wrap;
 	position: relative;
 	grid-area: breadcrumbs;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	width: fit-content;
 	margin: -1em 0 1em;
 	padding: 0 0.75em 0 0;
 	font-family: var(--UI-font);
 	font-size: 0.85em;
-	line-height: 1;
+	line-height: 2;
 }
 
 #breadcrumbs a,
