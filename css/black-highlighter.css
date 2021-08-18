@@ -12167,16 +12167,16 @@ div.blockquote > :last-child,
 	margin-left: auto;
 }
 
-.image-block img,
-.scp-image-block img {
+.image-block img.image,
+.scp-image-block img.image {
 	min-width: 100%;
 	border: 0;
 }
 
 /* Overwriting img width set by Image Block component as it's is already placed on the parent div */
 
-.image-block img[style*="width:"],
-.scp-image-block img[style*="width:"] {
+.image-block img.image[style*="width:"],
+.scp-image-block img.image[style*="width:"] {
 	width: 100% !important;
 }
 
@@ -13657,7 +13657,7 @@ div.sexy-box {
 	background: rgb(var(--swatch-background, 252, 252, 252));
 }
 
-div.sexy-box div.image-container img {
+div.sexy-box div.image-container img.image {
 	margin: 0.3125rem;
 	padding: 0.125rem;
 	border: 0.0625rem solid rgba(var(--swatch-border-color, 12, 12, 12), 0.5);
@@ -13893,8 +13893,8 @@ div.block-left {
 		max-width: 40vw !important;
 	}
 
-	.image-block img[style*="width:"],
-	.scp-image-block img[style*="width:"] {
+	.image-block img.image[style*="width:"],
+	.scp-image-block img.image[style*="width:"] {
 		width: 100% !important;
 	}
 
