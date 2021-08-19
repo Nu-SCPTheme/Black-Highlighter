@@ -8140,6 +8140,20 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	font-size: calc(var(--base-font-size) * 0.7);
 }
 
+/* Common Theme Colors */
+
+#side-bar div.side-block.yellow {
+	background-color: rgba(255, 255, 229, 0.15);
+}
+
+#side-bar div.side-block.green {
+	background-color: rgba(229, 255, 229, 0.15);
+}
+
+#side-bar:not(:lang(en)) .side-block > .collapsible-block .collapsible-block-folded {
+	background: none !important;
+}
+
 /* ===MOBILE SIDEBAR=== */
 
 @media only screen and (max-width: 56.25rem) {
@@ -8383,6 +8397,11 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 #side-bar:lang(de) div.side-block:not(.svg-icons) div.menu-item {
 	display: grid;
 	grid-template-columns: 50% 50%;
+}
+
+#side-bar:lang(de) .side-links.svg-icons a {
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 #side-bar:lang(de) div.side-bar-container {
