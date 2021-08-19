@@ -814,6 +814,19 @@
 	font-size: calc(var(--base-font-size) * 0.7);
 }
 
+/* Common Theme Colors */
+#side-bar div.side-block.yellow {
+	background-color: rgba(255, 255, 229, 0.15);
+}
+
+#side-bar div.side-block.green {
+	background-color: rgba(229, 255, 229, 0.15);
+}
+
+#side-bar:not(:lang(en)) .side-block > .collapsible-block .collapsible-block-folded {
+	background: none !important;
+}
+
 /* ===MOBILE SIDEBAR=== */
 @media only screen and (max-width: 56.25rem) {
 	#side-bar {
