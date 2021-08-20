@@ -426,6 +426,7 @@
 	--login-line-divider-color: var(--swatch-text-secondary-color);
 	--login-username-color: var(--swatch-text-secondary-color);
 	--login-myaccount-color: var(--swatch-text-secondary-color);
+	--login-myaccount-hover-color: var(--login-myaccount-color);
 	--login-myaccount-underline-color: var(--swatch-primary-darkest);
 	--login-myaccount-hover-bg-color: var(--swatch-primary-darkest);
 	--login-arrow-color: var(--search-icon-color);
@@ -3155,9 +3156,9 @@ div.dblock {
 #breadcrumbs,
 .pseudocrumbs {
 	display: flex;
-	flex-wrap: wrap;
 	position: relative;
 	grid-area: breadcrumbs;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
 	width: -webkit-fit-content;
@@ -10190,6 +10191,7 @@ div#container-wrap {
 #login-status a#my-account:active {
 	--wght: var(--ui-hvr-wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
+	color: rgb(var(--login-myaccount-hover-color));
 	font-weight: var(--wght);
 	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
@@ -10198,6 +10200,7 @@ div#container-wrap {
 #login-status a#my-account:focus-within {
 	--wght: var(--ui-hvr-wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
+	color: rgb(var(--login-myaccount-hover-color));
 	font-weight: var(--wght);
 	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
@@ -14260,6 +14263,11 @@ body.print-body #main-content .page-tags span {
 
 #toc:lang(de) #toc-action-bar a::after {
 	content: "Inhalt";
+}
+
+:lang(de) .page-rate-widget-box,
+#page-content:lang(de) .rate-box-with-credit-button {
+	background-color: rgb(var(--rating-module-bg-color)) !important;
 }
 
 /* ===GREEK BRANCH=== */
