@@ -45,9 +45,3 @@ https://fonts.google.com/specimen/Gothic+A1
 https://fonts.google.com/specimen/Kanit
 
 [Open Font License](https://fonts.google.com/specimen/Kanit#license)
-
-## International Monospace Support
-### IBM Plex Mono 
-https://www.ibm.com/plex/
-
-[Open Font License](https://github.com/IBM/plex/blob/master/LICENSE.txt)
