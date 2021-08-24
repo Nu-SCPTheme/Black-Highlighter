@@ -1,21 +1,6 @@
 @charset "utf-8";
 
 @import "../fonts/fonts.css";
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
-
-/* Japanese Language Support */
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap");
-/* Chinese Language Support */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap)");
-/* Traditional Chinese Support */ 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
-/* Korean Language Support */ 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
-/* Thai Language Support */ 
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-/* International Monospace Support */ 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @supports(display: grid) {
 
@@ -111,7 +96,7 @@
 	--header-subtitle: "SECURE, CONTAIN, PROTECT";
 
 /* ===TYPEFACES=== */
-	--body-font: Inter, Arimo, Verdana, Geneva, "Helvetica Neue", "Helvetica",
+	--body-font: Inter, Verdana, Geneva, "Helvetica Neue", "Helvetica",
 		Arial, sans-serif;
 	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont,
 		"Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue",
@@ -788,7 +773,7 @@
 		"Noto Sans CJK JP", sans-serif;
 	--header-font: var(--body-font);
 	--title-font: var(--body-font);
-	--mono-font: Recursive, "IBM Plex Mono", "ヒラギノ角ゴ Pro W3",
+	--mono-font: Recursive, "ヒラギノ角ゴ Pro W3",
 		"Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック",
 		"MS PGothic", "ＭＳ ゴシック", "MS Gothic", "Noto Sans CJK JP",
 		TakaoPGothic, monospace;
@@ -807,7 +792,7 @@
 		Roboto, Noto, "Noto Sans CJK KR", sans-serif;
 	--header-font: var(--body-font);
 	--title-font: var(--body-font);
-	--mono-font: "Nanum Gothic Coding", Recursive, "IBM Plex Mono", "Apple SD Gothic Neo",
+	--mono-font: "Nanum Gothic Coding", Recursive, "Apple SD Gothic Neo",
 		"NanumBarunGothic", "맑은 고딕", "Malgun Gothic", "굴림", "Gulim",
 		"돋움", "Dotum", "Helvetica Neue", "Helvetica", Arial, monospace;
 }
@@ -836,7 +821,7 @@
 	--header-subtitle: "Russian Branch";
 
 	/* Typefaces */
-	--body-font: Inter, Arimo, Charcoal, Geneva, "Helvetica Neue", Helvetica,
+	--body-font: Inter, Charcoal, Geneva, "Helvetica Neue", Helvetica,
 		Arial, sans-serif;
 	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont,
 		"Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue",
@@ -891,7 +876,7 @@
 	--header-subtitle: "ควบคุม, กักกัน, ป้องกัน";
 
 	/* Typefaces */
-	--body-font: Inter, "Kanit", Arimo, -apple-system, system-ui,
+	--body-font: Inter, "Kanit", -apple-system, system-ui,
 		BlinkMacSystemFont, "Segoe UI", Verdana, Geneva, sans-serif;
 	--UI-font: PTRootUI, "Kanit", "Thonburi", "Leelawadee UI", "Cordia New",
 		Roboto, Noto, "Noto Sans Thai", sans-serif;
@@ -929,7 +914,7 @@
 	--header-subtitle: "Охороняти. Утримувати. Захищати.";
 
 	/* Typefaces */
-	--body-font: Inter, Arimo, Charcoal, Geneva, "Helvetica Neue", Helvetica,
+	--body-font: Inter, Charcoal, Geneva, "Helvetica Neue", Helvetica,
 		Arial, sans-serif;
 	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont,
 		"Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue",
@@ -5805,7 +5790,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	font-family: var(--UI-font);
 }
 
-#upload-userfile[type="file"]::file-selector-button {
+#upload-userfile[type="file"]::-moz-file-selector-button {
 	min-width: 5em;
 	height: 2em;
 	border: none;
@@ -12711,6 +12696,7 @@ div.blockquote > :last-child,
 	height: -webkit-max-content;
 	height: -moz-max-content;
 	height: max-content;
+	max-height: calc(50vh - 7.5em);
 	margin: 0 1rem;
 	padding: 0;
 	overflow-x: visible;
