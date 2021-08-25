@@ -8691,6 +8691,10 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 /* ===ITALIAN BRANCH=== */
 
+#side-bar:lang(it) div.side-bar-container {
+    display: contents;
+}
+
 #side-bar:lang(it) div.menu-item {
 	height: auto;
 }
@@ -8701,9 +8705,9 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 #side-bar:lang(it) .side-block.blue {
 	grid-auto-flow: column;
+	align-self: center;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
-	margin: .5rem -1rem 0 0;
 	padding: .5em !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 	direction: ltr;
