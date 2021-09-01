@@ -121,6 +121,37 @@ table.page-history:lang(de) tr:nth-of-type(2) td:nth-of-type(6)::before {
 }
 
 /* ===GREEK BRANCH=== */
+#main-content:lang(el) .page-tags::before {
+	content: "ΕΤΙΚΈΤΕΣ\0021b4";
+}
+
+form#edit-page-form:lang(el) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "Σύντομη περιγραφή των αλλαγών:";
+}
+
+table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(1)::before {
+	content: "ανα.";
+}
+
+table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "σημαίες";
+}
+
+table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "δράσεις";
+}
+
+table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "του";
+}
+
+table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "ημερομηνία";
+}
+
+#site-tools-box:lang(el)::before {
+	content: "Εργαλεία Ιστοσελίδας";
+}
 
 /* ===ITALIAN BRANCH=== */
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(it) {
