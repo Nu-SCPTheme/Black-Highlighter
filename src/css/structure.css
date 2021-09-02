@@ -1423,6 +1423,9 @@ a {
 }
 
 a:visited {
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--visited-link-color));
 	text-decoration: underline 0.09375em;
 	text-decoration-color: transparent;
@@ -1439,6 +1442,9 @@ a.newpage {
 
 a:hover,
 a:active {
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
 	text-decoration: underline 0.09375em;
@@ -1446,6 +1452,9 @@ a:active {
 }
 
 a:focus-within {
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
 	text-decoration: underline 0.09375em;
