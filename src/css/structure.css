@@ -1414,17 +1414,22 @@ ol {
 /* ===ANCHOR LINKS=== */
 
 a {
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		text-decoration-style 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
+	text-decoration: underline dotted 0.09375rem;
 }
 
 a:visited {
 	color: rgb(var(--visited-link-color));
+	text-decoration: underline dotted 0.09375rem;
 }
 
 a,
 a.newpage {
 	background: transparent;
-	text-decoration: none;
 }
 
 a.newpage {
