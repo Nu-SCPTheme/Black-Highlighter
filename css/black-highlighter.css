@@ -3097,7 +3097,7 @@ div.dblock {
 
 @supports (not (-webkit-hyphens:none)) and (not (-moz-appearance:none)) and (list-style-type:"*") {
 	@media only screen and (max-width: 56.25rem) {
-		#main-content * {
+		#main-content > * {
 			max-width: min(90vw,var(--body-width-on-desktop));
 		}
 	}
