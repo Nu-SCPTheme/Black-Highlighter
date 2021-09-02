@@ -1416,15 +1416,16 @@ ol {
 a {
 	transition: 
 		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration-style 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
-	text-decoration: underline dotted 0.09375rem;
+	text-decoration: underline 0.09375em;
+	text-decoration-color: transparent;
 }
 
 a:visited {
 	color: rgb(var(--visited-link-color));
-	text-decoration: underline dotted 0.09375rem;
+	text-decoration: underline 0.09375em;
+	text-decoration-color: transparent;
 }
 
 a,
@@ -1440,13 +1441,15 @@ a:hover,
 a:active {
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
-	text-decoration: underline;
+	text-decoration: underline 0.09375em;
+	text-decoration-color: currentColor;
 }
 
 a:focus-within {
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
-	text-decoration: underline;
+	text-decoration: underline 0.09375em;
+	text-decoration-color: currentColor;
 }
 
 /* BlACK BLOCK ELEMENT */
