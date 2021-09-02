@@ -2705,6 +2705,16 @@ a {
 }
 
 a:visited {
+	transition: 
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--visited-link-color));
 	-webkit-text-decoration: underline 0.09375em;
 	        text-decoration: underline 0.09375em;
@@ -2723,6 +2733,16 @@ a.newpage {
 
 a:hover,
 a:active {
+	transition: 
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
 	-webkit-text-decoration: underline 0.09375em;
@@ -2732,6 +2752,16 @@ a:active {
 }
 
 a:focus-within {
+	transition: 
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 
+		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
 	-webkit-text-decoration: underline 0.09375em;
