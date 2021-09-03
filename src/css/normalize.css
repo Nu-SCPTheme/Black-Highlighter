@@ -444,6 +444,7 @@ a {
 
 a,
 #side-bar a:visited,
+#interwiki a:visited,
 a:visited,
 a.newpage {
 	color: inherit;
@@ -797,12 +798,14 @@ sup,
 }
 
 #side-bar,
-#side-bar .side-block {
+#side-bar .side-block,
+#interwiki .side-block {
 	padding: inherit;
 	border: inherit;
 }
 
-#side-bar .side-block {
+#side-bar .side-block,
+#interwiki .side-block {
 	margin-bottom: inherit;
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
@@ -815,7 +818,8 @@ sup,
 	padding: inherit;
 }
 
-#side-bar .heading {
+#side-bar .heading,
+#interwiki .heading {
 	margin-top: inherit;
 	margin-bottom: inherit;
 	padding-left: inherit;
@@ -826,11 +830,14 @@ sup,
 }
 
 #side-bar p,
-#side-bar div.menu-item {
+#side-bar div.menu-item,
+#interwiki p,
+#interwiki div.menu-item {
 	margin: inherit;
 }
 
-#side-bar div.menu-item img {
+#side-bar div.menu-item img,
+#interwiki div.menu-item img {
 	position: inherit;
 	bottom: inherit;
 	width: inherit;
@@ -839,7 +846,8 @@ sup,
 	border: inherit;
 }
 
-#side-bar div.menu-item a {
+#side-bar div.menu-item a,
+#interwiki div.menu-item a {
 	font-weight: inherit;
 }
 
