@@ -2487,18 +2487,30 @@ pre [style*="oblique"] * {
 	--slnt: -15;
 }
 
+/* Unsetting Footnoteref styling on Common Theme */
+
+#main-content .footnoteref {
+	position: unset;
+	top: unset;
+	vertical-align: unset;
+}
+
 sub,
-sup {
+sup,
+#main-content sub,
+#main-content sup {
 	position: relative;
 	font-size: 0.75em;
 }
 
-sub {
+sub,
+#main-content sub {
 	bottom: -0.25em;
 	vertical-align: sub;
 }
 
-sup {
+sup,
+#main-content sup {
 	top: -0.25em;
 	vertical-align: super;
 }
