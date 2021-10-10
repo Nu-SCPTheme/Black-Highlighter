@@ -543,24 +543,29 @@
 	text-decoration: none;
 }
 
-/* Interwiki Styling specifically not targeting CN Branch, which already has a BHL interwiki */
+/* Interwiki styling for Interwikis that cannot style themselves. Also targets the SCP-CN Interwiki, which is stylable but does not currently have the interwiki-stylable class */
 #side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)),
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) * {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) *,
+#side-bar div.scpnet-interwiki-wrapper:not(.interwiki-stylable),
+#side-bar div.scpnet-interwiki-wrapper:not(.interwiki-stylable) * {
 	max-width: var(--sidebar-width-on-desktop);
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)),
+#side-bar div.scpnet-interwiki-wrapper:not(.interwiki-stylable) {
 	position: relative;
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) div.list-pages-item {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) div.list-pages-item,
+#side-bar div.scpnet-interwiki-wrapper:not(.interwiki-stylable) div.list-pages-item {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
 	width: 100%;
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) p {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) p,
+#side-bar div.scpnet-interwiki-wrapper:not(.interwiki-stylable) p {
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -569,7 +574,8 @@
 	overflow: hidden;
 }
 
-#side-bar iframe.scpnet-interwiki-frame:not(:lang(cn)) {
+#side-bar iframe.scpnet-interwiki-frame:not(:lang(cn)),
+#side-bar iframe.scpnet-interwiki-frame:not(.interwiki-stylable) {
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
@@ -580,7 +586,10 @@
 @supports(mix-blend-mode:hue) {
 	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before,
 	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after,
+	#side-bar .scpnet-interwiki-wrapper:not(.interwiki-stylable)::before,
+	#side-bar .scpnet-interwiki-wrapper:not(.interwiki-stylable) p::before,
+	#side-bar .scpnet-interwiki-wrapper:not(.interwiki-stylable) p::after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -590,19 +599,22 @@
 		pointer-events: none;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before,
+	#side-bar .scpnet-interwiki-wrapper:not(.interwiki-stylable)::before {
 		z-index: 3;
 		background-color: rgb(var(--swatch-menubg-color));
 		mix-blend-mode: darken;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before,
+	#side-bar .scpnet-interwiki-wrapper:not(.interwiki-stylable) p::before {
 		z-index: 2;
 		background-color: rgb(var(--swatch-primary));
 		mix-blend-mode: color;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after,
+	#side-bar .scpnet-interwiki-wrapper:not(.interwiki-stylable) p::after {
 		z-index: 1;
 		transition: background-color 500ms cubic-bezier(.4,0,.2,1);
 		background-color: rgb(var(--swatch-menubg-color));
