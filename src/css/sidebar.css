@@ -186,6 +186,11 @@
 	--social-color: var(--twitch-icon-color);
 }
 
+#side-bar .side-block.media a[href*="tiktok"] {
+	--social-logo-mask: var(--tiktok-mask);
+	--social-color: var(--tiktok-icon-color);
+}
+
 #side-bar .side-block.media a[href*="discord"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
@@ -448,16 +453,18 @@
 
 #side-bar div.menu-item.scp-series a,
 #side-bar div.menu-item.scp-tales a,
+#side-bar div.menu-item.small a:not([href*="shortest"]),
 #side-bar div.menu-item a[href*="scp-series"] {
 	justify-content: center;
 	width: auto;
-	padding: 0 0.5em;
+	padding: 0 0.25em;
 	text-indent: 0;
 	white-space: nowrap;
 }
 
-#side-bar div.menu-item.scp-series a,
-#side-bar div.menu-item.scp-tales a,
+#side-bar div.menu-item.scp-series a::before,
+#side-bar div.menu-item.scp-tales a::before,
+#side-bar div.menu-item.small a:not([href*="shortest"])::before,
 #side-bar div.menu-item a[href*="scp-series"]::before {
 	width: 250%;
 }
@@ -478,8 +485,8 @@
 	display: none;
 }
 
-#side-bar div.menu-item:first-of-type a[href="/"]
-{
+#side-bar div.menu-item:first-of-type a[href="/"],
+#side-bar div.menu-item:nth-of-type(2) a[href="/forum:start"] {
 	justify-content: center;
 	padding: 0;
 }
@@ -616,6 +623,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	margin-left: 0;
 	flex-grow: 2;
 	align-items: center;
 	justify-content: flex-start;
@@ -864,7 +872,8 @@
 
 	#side-bar .heading p,
 	#side-bar .side-block > .collapsible-block .collapsible-block-link {
-		letter-spacing: 0.1rem;
+		font-size: 0.75em;
+		letter-spacing: 0.1em;
 	}
 
 	#side-bar > div[style="background-color: #e5e5ff;"] > div.menu-item > div {
