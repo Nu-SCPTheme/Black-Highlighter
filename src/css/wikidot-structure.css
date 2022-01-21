@@ -2326,7 +2326,7 @@ table.page-history tr[id*="evision-row"] {
 	grid-template-areas:
 		"rev-num rev-radio rev-flags rev-actions rev-user rev-date"
 		"rev-com rev-com rev-com rev-com rev-com rev-com";
-	grid-template-columns: 2.5rem 4rem 3rem 6rem 1fr 1fr;
+	grid-template-columns: 2.5rem 2.5rem 3rem 4.625rem 1fr 1fr;
 	grid-template-rows: 2rem 1fr;
 	padding: 0 0 0.5em;
 }
@@ -2348,7 +2348,9 @@ table.page-history tr[id*="evision-row"] td:nth-of-type(3) {
 }
 
 table.page-history tr[id*="evision-row"] td:nth-of-type(4) {
-	grid-area: rev-actions;
+	display: grid;
+	grid-area: rev-actions;	
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 table.page-history tr[id*="evision-row"] td:nth-of-type(5) {
@@ -2395,7 +2397,7 @@ table.page-history td.optionstd a {
 	position: relative;
 	justify-content: center;
 	width: 1rem;
-	margin: 0 0.1em;
+	margin: 0 auto;
 	padding: 0.125rem;
 	overflow: hidden;
 	transition:
@@ -3539,6 +3541,16 @@ div.odialog-shader-iframe {
 
 	#page-options-bottom {
 		width: 100%;
+	}
+
+	table.page-history tr[id*="evision-row"] {
+		grid-template-areas:
+			"rev-num rev-radio rev-flags rev-actions rev-date rev-date"
+			"rev-com rev-com rev-com rev-com rev-user rev-user";
+	}
+
+	table.page-history tr:nth-of-type(2) td:nth-of-type(5):before {
+		display: none;
 	}
 
 	#footer {
