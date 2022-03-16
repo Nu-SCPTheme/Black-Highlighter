@@ -1,9 +1,9 @@
-const fs = require('fs').promises;
-const process2 = require('process');
+import { promises as fs } from 'fs';
+import * as process2 from 'process';
 
-const gifsicle = require('imagemin-gifsicle');
-const optipng = require('imagemin-optipng');
-const svgo = require('imagemin-svgo');
+import * as gifsicle from 'imagemin-gifsicle';
+import * as optipng from 'imagemin-optipng';
+import svgo from 'imagemin-svgo';
 
 async function process(minifier, inputPath, outputPath) {
 	const inputBuffer = await fs.readFile(inputPath);
