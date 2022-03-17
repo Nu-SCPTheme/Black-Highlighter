@@ -258,7 +258,8 @@
 /* ===SUB-BLOCK=== */
 #side-bar .side-block,
 #side-bar div[style*="center"],
-#side-bar div[style*="center"] > div {
+#side-bar div[style*="center"] > div,
+#interwiki .side-block {
 	display: grid;
 	grid-template-rows: repeat(auto-fit, minmax(1.3125rem, 1fr));
 }
@@ -270,7 +271,8 @@
 	width: 100%;
 }
 
-#side-bar .side-block {
+#side-bar .side-block,
+#interwiki .side-block {
 	margin: 0.5rem 0.5rem 0 0;
 	border: 0;
 	background: rgb(var(--sideblock-bg-color));
@@ -282,7 +284,8 @@
 }
 
 /* ===HEADING=== */
-#side-bar .heading {
+#side-bar .heading,
+#interwiki .heading {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-start;
@@ -291,11 +294,13 @@
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 }
 
-#side-bar .heading {
+#side-bar .heading,
+#interwiki .heading {
 	background-color: rgb(var(--sideblock-heading-bg-color));
 }
 
-#side-bar .heading p {
+#side-bar .heading p,
+#interwiki .heading p {
 	--wght: calc(var(--ui-wght) + 300);
 	margin: 0;
 	color: rgb(var(--sideblock-heading-text-color));
@@ -308,13 +313,16 @@
 	text-transform: uppercase;
 }
 
-#side-bar .heading p {
+#side-bar .heading p,
+#interwiki .heading p {
 	cursor: default;
 }
 
 /* ===MENU ITEMS=== */
 #side-bar div.menu-item,
-#side-bar div.menu-item > p {
+#side-bar div.menu-item > p,
+#interwiki div.menu-item,
+#interwiki div.menu-item > p {
 	display: flex;
 	flex-basis: 100%;
 	flex-flow: row wrap;
@@ -331,16 +339,21 @@
 }
 
 #side-bar div.menu-item p::before,
-#side-bar div.menu-item p::after {
+#side-bar div.menu-item p::after,
+#interwiki div.menu-item p::before,
+#interwiki div.menu-item p::after {
 	display: none;
 }
 
 #side-bar div.menu-item > span,
-#side-bar div.menu-item > p > span {
+#side-bar div.menu-item > p > span,
+#interwiki div.menu-item > span,
+#interwiki div.menu-item > p > span {
 	display: none;
 }
 
-#side-bar div.menu-item span:first-of-type {
+#side-bar div.menu-item span:first-of-type,
+#interwiki div.menu-item span:first-of-type {
 	padding: 0 0 0 calc((var(--base-font-size) * 1.5));
 }
 	/* ===SUB-TEXT=== */
@@ -356,7 +369,8 @@
 }
 
 	/* ===MAIN LINKS & TEXT=== */
-#side-bar div.menu-item a {
+#side-bar div.menu-item a,
+#interwiki div.menu-item a {
 	position: relative;
 	z-index: 2;
 	height: inherit;
@@ -364,7 +378,9 @@
 }
 
 #side-bar div.menu-item a,
-#side-bar div.menu-item a:visited {
+#side-bar div.menu-item a:visited,
+#interwiki div.menu-item a,
+#interwiki div.menu-item a:visited {
 	--wght: var(--ui-wght);
 	display: flex;
 	flex-grow: 2;
@@ -409,7 +425,8 @@
 	cursor: default;
 }
 
-#side-bar div.menu-item a:only-child {
+#side-bar div.menu-item a:only-child,
+#interwiki div.menu-item a:only-child {
 	flex-grow: 1;
 }
 
@@ -418,17 +435,21 @@
 	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
 }
 
-#side-bar div.menu-item > :last-child {
+#side-bar div.menu-item > :last-child,
+#interwiki div.menu-item > :last-child {
 	flex-grow: 2;
 }
 
-#side-bar div.menu-item a {
+#side-bar div.menu-item a,
+#interwiki div.menu-item a {
 	justify-content: flex-start;
 	padding: 0 0 0 calc(var(--base-font-size) * (14 / 15));
 }
 
 #side-bar div.menu-item a:hover,
-#side-bar div.menu-item a:active {
+#side-bar div.menu-item a:active,
+#interwiki div.menu-item a:hover,
+#interwiki div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
@@ -436,7 +457,8 @@
 	text-decoration: none;
 }
 
-#side-bar div.menu-item a:focus-within {
+#side-bar div.menu-item a:focus-within,
+#interwiki div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
@@ -446,7 +468,8 @@
 
 	/* ===MAIN LINKS HOVER BG BAR=== */
 	/* Menu Item Hover Color Bar */
-#side-bar div.menu-item a::before {
+#side-bar div.menu-item a::before,
+#interwiki div.menu-item a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -469,7 +492,9 @@
 }
 
 #side-bar div.menu-item a:hover::before,
-#side-bar div.menu-item a:active::before {
+#side-bar div.menu-item a:active::before,
+#interwiki div.menu-item a:hover::before,
+#interwiki div.menu-item a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -479,7 +504,8 @@
 		);
 }
 
-#side-bar div.menu-item a:focus-within::before {
+#side-bar div.menu-item a:focus-within::before,
+#interwiki div.menu-item a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -510,6 +536,7 @@
 }
 
 #side-bar div.menu-item img,
+#interwiki div.menu-item img,
 #side-bar div.menu-item br {
 	display: none;
 }
@@ -563,24 +590,24 @@
 	text-decoration: none;
 }
 
-/* Interwiki Styling specifically not targetting CN Branch */
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)),
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) * {
+/* Interwiki styling for Interwikis that cannot style themselves. Also targets the SCP-CN Interwiki, which is stylable but does not currently have the interwiki-stylable class */
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable),
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) * {
 	max-width: var(--sidebar-width-on-desktop);
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) {
 	position: relative;
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) div.list-pages-item {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) div.list-pages-item {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
 	width: 100%;
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) p {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p {
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -589,7 +616,7 @@
 	overflow: hidden;
 }
 
-#side-bar iframe.scpnet-interwiki-frame:not(:lang(cn)) {
+#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) iframe.scpnet-interwiki-frame {
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
@@ -598,9 +625,9 @@
 
 /* Coloring to (mostly) match sidebar */
 @supports(mix-blend-mode:hue) {
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -610,24 +637,29 @@
 		pointer-events: none;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn))::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before {
 		z-index: 3;
 		background-color: rgb(var(--swatch-menubg-color));
 		mix-blend-mode: darken;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before {
 		z-index: 2;
 		background-color: rgb(var(--swatch-primary));
 		mix-blend-mode: color;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)) p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
 		z-index: 1;
 		transition: background-color 500ms cubic-bezier(.4,0,.2,1);
 		background-color: rgb(var(--swatch-menubg-color));
 		mix-blend-mode:overlay;
 	}
+}
+
+/* Remove margin around stylable interwiki */
+#side-bar .interwiki-stylable p {
+	margin: 0;
 }
 
 /* Collapsibles in the sidebar */
