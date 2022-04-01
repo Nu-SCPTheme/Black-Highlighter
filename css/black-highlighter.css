@@ -8021,9 +8021,7 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 }
 
 #side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) {
-	position: relative;
-	width: auto;
-	margin: .5rem .5rem 0 0;	
+	position: relative;	
 }
 
 #side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) div.list-pages-item {
@@ -8086,7 +8084,12 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 /* Remove margin around stylable interwiki */
 
-#side-bar .interwiki-stylable p {
+#side-bar div.interwiki-stylable {
+	width: auto;
+	margin: 0;
+}
+
+#side-bar div.interwiki-stylable p {
 	margin: 0;
 }
 
