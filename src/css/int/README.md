@@ -23,3 +23,5 @@ Simplified Chinese Localization by [Sekai_s](https://www.wikidot.com/user:info/s
 Spanish Localization by [morhadow](https://www.wikidot.com/user:info/morhadow)
 
 Traditional Chinese Localization by [viken-k](https://www.wikidot.com/user:info/viken-k)
+
+Russian Localization by [MrNereof](https://www.wikidot.com/user:info/mrnereof)
