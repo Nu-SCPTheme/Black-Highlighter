@@ -1,8 +1,6 @@
 import { promises as fs } from 'fs';
 import * as process2 from 'process';
 
-import * as gifsicle from 'imagemin-gifsicle';
-import * as optipng from 'imagemin-optipng';
 import svgo from 'imagemin-svgo';
 
 async function process(minifier, inputPath, outputPath) {
@@ -19,12 +17,6 @@ function main() {
 
 	let minifier;
 	switch (fileType) {
-		case 'gif':
-			minifier = gifsicle({ interlaced: true });
-			break;
-		case 'png':
-			minifier = optipng({ optimizationLevel: 5 });
-			break;
 		case 'svg':
 			minifier = svgo({
 				plugins: [
