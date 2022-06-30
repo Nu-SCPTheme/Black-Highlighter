@@ -9,7 +9,7 @@
 
 A WiP new theme for the SCP Wiki utilizing more current CSS styling standards.
 
-See a preview overwriting Sigma-9 here: https://scp-wiki.wikidot.com/scp-4444
+See a preview overwriting Sigma-9 here: https://scp-wiki.wikidot.com/scp-4999
 
 See a preview without the Sigma-9 here: https://scptestwiki.wikidot.com/
 
