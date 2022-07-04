@@ -319,6 +319,7 @@
 
 /* ===STRUCTURAL SPACING ELEMENTS=== */
 	--body-width-on-desktop: 44.25rem;
+	--body-width-on-mobile: 100%;
 	--scrollbar-width: 1rem;
 
 	/* ===HEADER MEASUREMENTS=== */
@@ -6827,6 +6828,10 @@ div.odialog-shader-iframe {
 		margin: calc(var(--topbar-height-on-mobile) - 0.125rem) auto 0 !important;
 	}
 
+	#action-area-top {
+		width: var(--body-width-on-mobile);
+	}
+
 	#page-content {
 		min-height: calc(100vh - var(--final-header-height-on-mobile));
 	}
@@ -13000,9 +13005,8 @@ div.blockquote> :last-child,
 .page-rate-widget-box .rate-points {
 	display: flex;
 	padding: 0 0.5em;
-	/* !important is needed here to override styles loaded when Rate is clicked */
-	background-color: transparent !important;
-	color: rgb(var(--rating-module-text-color)) !important;
+	background-color: transparent;
+	color: rgb(var(--rating-module-text-color));
 	font-family: var(--UI-font);
 	font-size: 0.85em;
 	line-height: calc(var(--rating-module-height) * 1.25);
