@@ -756,9 +756,8 @@ div.blockquote> :last-child,
 .page-rate-widget-box .rate-points {
 	display: flex;
 	padding: 0 0.5em;
-	/* !important is needed here to override styles loaded when Rate is clicked */
-	background-color: transparent !important;
-	color: rgb(var(--rating-module-text-color)) !important;
+	background-color: transparent;
+	color: rgb(var(--rating-module-text-color));
 	font-family: var(--UI-font);
 	font-size: 0.85em;
 	line-height: calc(var(--rating-module-height) * 1.25);
