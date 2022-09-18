@@ -25,3 +25,5 @@ Spanish Localization by [morhadow](https://www.wikidot.com/user:info/morhadow)
 Traditional Chinese Localization by [viken-k](https://www.wikidot.com/user:info/viken-k)
 
 Russian Localization by [MrNereof](https://www.wikidot.com/user:info/mrnereof)
+
+Vietnamese Localization by [wolf20482](https://www.wikidot.com/user:info/wolf20482)
