@@ -18,7 +18,8 @@
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -213,4 +214,11 @@
 :root:lang(uk) {
 	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15) * 19));
 	--body-width-on-desktop: 75rem;
+}
+
+/* ===VIETNAMESE BRANCH=== */
+:root:lang(vi) {
+	/* Header */
+	--header-title: "Tổ Chức SCP";
+	--header-subtitle: "Quản thúc, Lưu trữ, Bảo vệ";
 }

@@ -18,7 +18,8 @@
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -101,3 +102,8 @@
 }
 
 /* ===UKRAINIAN BRANCH=== */
+
+/* ===VIETNAMESE BRANCH=== */
+#login-status:lang(vi) #account-options li > a[href*="/messages"]::after {
+	content: "Tin nhắn";
+}
