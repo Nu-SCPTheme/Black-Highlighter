@@ -726,7 +726,8 @@
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -936,6 +937,14 @@
 :root:lang(uk) {
 	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15) * 19));
 	--body-width-on-desktop: 75rem;
+}
+
+/* ===VIETNAMESE BRANCH=== */
+
+:root:lang(vi) {
+	/* Header */
+	--header-title: "Tổ Chức SCP";
+	--header-subtitle: "Quản thúc, Lưu trữ, Bảo vệ";
 }
 
 /* ENCODED SVGS
@@ -6920,7 +6929,8 @@ div.wd-adunit {
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -7391,6 +7401,40 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	height: auto;
 	line-height: 1;
 	white-space: normal;
+}
+
+/* ===VIETNAMESE BRANCH=== */
+
+#main-content:lang(vi) .page-tags::before {
+	content: "TAG\0021b4";
+}
+
+form#edit-page-form:lang(vi) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+	content: "Tóm tắt thay đổi:";
+}
+
+table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(1)::before {
+	content: "stt.";
+}
+
+table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(3)::before {
+	content: "nhãn";
+}
+
+table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(4)::before {
+	content: "t.chọn";
+}
+
+table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(5)::before {
+	content: "bởi";
+}
+
+table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
+	content: "ngày";
+}
+
+#site-tools-box:lang(vi)::before {
+	content: "Công Cụ Trang";
 }
 
 /* SIDEBAR
@@ -8473,7 +8517,8 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -10344,6 +10389,8 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	display: none;
 }
 
+/* ===VIETNAMESE BRANCH=== */
+
 /* HEADER
    ============================= */
 
@@ -12123,7 +12170,8 @@ div.mobile-top-bar {
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -12216,6 +12264,12 @@ div.mobile-top-bar {
 }
 
 /* ===UKRAINIAN BRANCH=== */
+
+/* ===VIETNAMESE BRANCH=== */
+
+#login-status:lang(vi) #account-options li > a[href*="/messages"]::after {
+	content: "Tin nhắn";
+}
 
 /* ELEMENTS
    ============================= */
@@ -14860,7 +14914,8 @@ body.print-body #main-content .page-tags span {
 	12. =SPANISH BRANCH
 	13. =THAI BRANCH
 	14. =TRADITIONAL CHINESE BRANCH
-	15. =UKRAINIAN BRANCH	
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
 */
 
 /* ===CZECH BRANCH=== */
@@ -14989,5 +15044,11 @@ body.print-body #main-content .page-tags span {
 }
 
 /* ===UKRAINIAN BRANCH=== */
+
+/* ===VIETNAMESE BRANCH=== */
+
+#toc:lang(vi) #toc-action-bar a::after {
+	content: "Mục Lục";
+}
 
 }
