@@ -110,16 +110,7 @@
 	--min-font-size: 0.8125rem; /* 13px */
 	--max-font-size: 0.9375rem; /* 15px */
 
-	/* Hiding for now due to mobile iOS breaking when clamp is used as a font-size
-	--base-font-size: 
-		clamp(
-			var(--min-font-size), 
-			2vw,
-			var(--max-font-size)
-		);
-	*/
-
-	--base-font-size: var(--max-font-size);
+	--base-font-size: max(var(--min-font-size), min(2vw, var(--max-font-size)));
 
 	--base-line-height: 1.5;
 
@@ -1873,7 +1864,7 @@ input[type="radio"]:checked::before {
 	padding: 0;
 	background-color: transparent;
 	font-size: 0.8125rem;
-	font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
+	font-size: max(0.8125rem, min(2.5vw, var(--base-font-size)));
 }
 
 #edit-page-form.data-form,
@@ -3548,7 +3539,7 @@ div[id*="page-options-bottom"] {
 	text-align: left;
 	white-space: nowrap;
 	--icon-size: 1.5em;
-	--icon-size: clamp(1.5em, 5vmin, 2em);
+	--icon-size: max(1.5em, min(5vmin, 2em));
 }
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
@@ -4109,7 +4100,7 @@ form#edit-page-form:not(.data-form) {
 		0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 		0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 	font-size: 0.8125rem;
-	font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
+	font-size: max(0.8125rem, min(2.5vw, var(--base-font-size)));
 }
 
 form#edit-page-form,
@@ -4332,7 +4323,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible
 
 form#edit-page-form .wd-editor-toolbar-panel {
 	--icon-size: 1.5em;
-	--icon-size: clamp(1.5em, 5.75vw, calc((var(--body-width-on-desktop) - 6em)/22));
+	--icon-size: max(1.5em, min(5.75vw, calc((var(--body-width-on-desktop) - 6em)/22)));
 	display: grid;
 	position: relative;
 	grid-area: toolbar;
@@ -13331,7 +13322,7 @@ div.page-rate-widget-box .rate-points {
 	height: 1.25em;
 	margin: 0;
 	font-size: 1.25em;
-	font-size: clamp(1.25em, 2vw, 1.5em);
+	font-size: max(1.5em, min(2vm, 1.5em));
 }
 
 [id*="u-credit"] .credit.first>p:first-of-type::after,
