@@ -649,7 +649,7 @@ input[type="radio"]:checked::before {
 	padding: 0;
 	background-color: transparent;
 	font-size: 0.8125rem;
-	font-size: clamp(0.8125rem, 2.5vw, var(--base-font-size));
+	font-size: max(0.8125rem, min(2.5vw, var(--base-font-size)));
 }
 
 

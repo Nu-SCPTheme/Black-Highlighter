@@ -104,16 +104,7 @@
 	--min-font-size: 0.8125rem; /* 13px */
 	--max-font-size: 0.9375rem; /* 15px */
 
-	/* Hiding for now due to mobile iOS breaking when clamp is used as a font-size
-	--base-font-size: 
-		clamp(
-			var(--min-font-size), 
-			2vw,
-			var(--max-font-size)
-		);
-	*/
-
-	--base-font-size: var(--max-font-size);
+	--base-font-size: max(var(--min-font-size), min(2vw, var(--max-font-size)));
 
 	--base-line-height: 1.5;
 

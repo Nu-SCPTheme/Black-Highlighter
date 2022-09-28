@@ -1079,7 +1079,7 @@ div.page-rate-widget-box .rate-points {
 	height: 1.25em;
 	margin: 0;
 	font-size: 1.25em;
-	font-size: clamp(1.25em, 2vw, 1.5em);
+	font-size: max(1.5em, min(2vm, 1.5em));
 }
 
 [id*="u-credit"] .credit.first>p:first-of-type::after,
