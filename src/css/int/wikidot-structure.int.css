@@ -413,6 +413,11 @@ table.page-history:lang(es) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 /* ===THAI BRANCH=== */
 
+/* Overwriting Thai Branch's !important on their Sigma-9 version */
+#page-content:lang(th) .page-rate-widget-box .rate-points {
+	background-color: transparent !important; 
+}
+
 /* ===TRADITIONAL CHINESE BRANCH=== */
 form#edit-page-form:lang(zh-tr) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "本次編輯的簡要說明";

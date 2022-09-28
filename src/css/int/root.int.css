@@ -96,6 +96,11 @@
 		"돋움", "Dotum", "Helvetica Neue", "Helvetica", Arial, monospace;
 }
 
+#side-bar:lang(ko) .side-block[style*=E5E5FF] a[href*=wikidot]{
+	--social-logo-mask:var(--discord-mask);
+	--social-color:var(--discord-icon-color)
+}
+
 /* ===POLISH BRANCH=== */
 :root:lang(pl) {
 	/* Header */
@@ -217,8 +222,9 @@
 }
 
 /* ===VIETNAMESE BRANCH=== */
+/* Removing this for now by request of the Vietnamese Branch
 :root:lang(vi) {
-	/* Header */
 	--header-title: "Tổ Chức SCP";
 	--header-subtitle: "Quản thúc, Lưu trữ, Bảo vệ";
 }
+*/

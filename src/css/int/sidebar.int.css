@@ -961,6 +961,7 @@
 #side-bar:lang(ru) div.menu-item a[href*="scp-series"] + span,
 #side-bar:lang(ru) div.menu-item a[href*="scp-list"] + span{
 	padding: 0 0 0 calc(var(--base-font-size)/2);
+	pointer-events: none;
 }
 
 #side-bar:lang(ru) div.menu-item span {
@@ -1240,6 +1241,10 @@
 /* ===THAI BRANCH=== */
 #side-bar:lang(th) br {
 	display: none;
+}
+
+#side-bar:lang(th) div.menu-item a {
+	font-weight: normal;
 }
 
 #side-bar:lang(th) div.menu-item {
@@ -1725,6 +1730,7 @@
 #side-bar:lang(uk) div.menu-item a[href*="scp-list"] + span {
 	display: flex;
 	padding: 0 0 0 calc(var(--base-font-size)/2);
+	pointer-events: none;
 }
 
 #side-bar:lang(uk) div.menu-item span {
@@ -1796,3 +1802,8 @@
 }
 
 /* ===VIETNAMESE BRANCH=== */
+
+#side-bar:lang(vi) .side-block.media a[href*="youtube"] {
+	--social-logo-mask: var(--youtube-mask);
+	--social-color: var(--youtube-icon-color);
+}
