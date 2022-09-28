@@ -3292,7 +3292,8 @@ div.dblock {
 }
 
 #page-options-container {
-	display: contents;
+	display: contents;	
+	grid-area: options-1; /* Fix for old Mobile Safari. Has no effect otherwise. */
 	font-family: var(--UI-font);
 }
 
