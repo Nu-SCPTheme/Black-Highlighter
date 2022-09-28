@@ -49,6 +49,7 @@
 		17.3 =SIDEBLOCK MENU
 		17.4 =MENU-ITEMS
 		17.5 =SIDEBAR COLLAPSIBLES
+		17.5 =INTERWIKI ELEMENTS
 	18. =FOOTER
 	19. =LICENSE AREA
 
@@ -513,6 +514,17 @@
 	--sidebar-collapsible-link-color: var(--sidebar-links-text);
 	--sidebar-collapsible-link-hover-bg: var(--sidebar-links-hover-bg-color);
 	--sidebar-collapsible-link-hover-color: var(--sidebar-links-hover-text-color);
+}
+
+		/* ===INTERWIKI ELEMENTS=== */
+#interwiki {
+	--base-font-size: var(--max-font-size);
+}
+
+@media only screen and (max-width: 14rem) {
+	#interwiki {
+		--base-font-size: var(--min-font-size);
+	}
 }
 
 	/* ===FOOTER=== */
