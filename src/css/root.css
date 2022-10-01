@@ -4,7 +4,6 @@
 /* Structural elements generally part of standard HTML spec as well as Wikidot's base structural elements */
 
 /* ===DIRECTORY===
-	1. =S-CSS-P INTEGRATION
 	2. =HEADER ELEMENTS
 	3. =TYPEFACES
 		3.1 =BASE FONT SIZE & LINE HEIGHT
@@ -76,30 +75,17 @@
   =============== */
 
 :root {
-/* ===S-CSS-P INTEGRATION=== */
-	/* If you're making a new CSS theme, please include the following three variables at minimum. */
-	--theme-base: "black-highlighter";
-	/* must be either "black-highlighter" or "sigma9" */
-	--theme-id: "black-highlighter";
-	/* set this to the URL of your theme's page - eg for "component:ar-theme", set it to "ar-theme" */
-	--theme-name: "Black Highlighter Theme";
-	/* set this to your theme's full name */
-
 /* ===HEADER ELEMENTS=== */
-	--logo-image: url("https://nu-scptheme.github.io/Black-Highlighter/img/logo.svg");
-	--header-title: "SCP Foundation";
-	--header-subtitle: "SECURE, CONTAIN, PROTECT";
+	--logo-image: url("https://mikukaneko.github.io/Black-Highlighter/img/logo.svg");
+	--header-title: "SCP財団";
+	--header-subtitle: "確保、収容、保護";
 
 /* ===TYPEFACES=== */
-	--body-font: Inter, Verdana, Geneva, "Helvetica Neue", "Helvetica",
-		Arial, sans-serif;
-	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont,
-		"Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue",
-		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--header-font: Inter, Franklin Gothic Medium, Franklin Gothic,
-		ITC Franklin Gothic, "Helvetica Neue", "Helvetica", Arial, sans-serif;
-	--title-font: var(--header-font);
-	--mono-font: Recursive, Consolas, monaco, monospace;
+	--body-font: Inter, "M Plus 1p", sans-serif;
+	--UI-font: PTRootUI, sans-serif;
+	--header-font: var(--body-font);
+	--title-font: var(--body-font);
+	--mono-font: Recursive, monospace;
 
 	/* ===BASE FONT SIZE & LINE HEIGHT=== */
 	--min-font-size: 0.8125rem; /* 13px */
