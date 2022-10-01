@@ -21,27 +21,3 @@ https://www.paratype.com/fonts/pt/pt-root-ui
 https://fonts.adobe.com/fonts/m-plus-1p
 
 [Open Font License](https://fonts.adobe.com/fonts/m-plus-1p#licensing-section)
-
-## Chinese Language Support
-### Noto Sans SC 
-https://fonts.google.com/specimen/Noto+Sans+SC
-
-[Open Font License](https://fonts.google.com/specimen/Noto+Sans+SC#license)
-
-## Traditional Chinese Support
-### Noto Sans TC
-https://fonts.google.com/specimen/Noto+Sans+TC
-
-[Open Font License](https://fonts.google.com/specimen/Noto+Sans+TC#license)
-
-## Korean Language Support
-### Gothic A1
-https://fonts.google.com/specimen/Gothic+A1
-
-[Open Font License](https://fonts.google.com/specimen/Gothic+A1#license)
-
-## Thai Language Support
-### Kanit
-https://fonts.google.com/specimen/Kanit
-
-[Open Font License](https://fonts.google.com/specimen/Kanit#license)
