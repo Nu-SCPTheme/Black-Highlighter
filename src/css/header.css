@@ -102,7 +102,7 @@ div#container-wrap {
 
 #header h1 a::before {
 	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
-	content: var(--header-title, "SCP Foundation");
+	content: var(--header-title, "SCP財団");
 	color: rgb(var(--swatch-headerh1-color));
 	text-shadow: none;
 }
@@ -136,7 +136,7 @@ div#container-wrap {
 }
 
 #header h2 span::before {
-	content: var(--header-subtitle, "SECURE, CONTAIN, PROTECT");
+	content: var(--header-subtitle, "確保、収容、保護");
 	color: rgb(var(--swatch-headerh2-color));
 	text-shadow: none;
 }
@@ -455,7 +455,7 @@ div#container-wrap {
 	z-index: 12;
 	top: 1.5rem;
 	right: 0;
-	width: 10em;
+	width: 15em;
 	margin: 0.25em 0 0 0;
 	padding: 0;
 	overflow: hidden;
@@ -557,7 +557,7 @@ div#container-wrap {
 }
 	
 #login-status #account-options li > a[href*="/messages"]::after {
-	content: "Messages";
+	content: "メッセージ";
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);

@@ -352,7 +352,7 @@ div.page-watch-options a:focus-within {
 
 #main-content .page-tags::before {
 	--wght: var(--ui-hvr-wght);
-	content: "TAGS\0021b4";
+	content: "タグ\0021b4";
 	position: absolute;
 	top: -2em;
 	left: 0;
@@ -522,7 +522,7 @@ div[id*="page-options-bottom"] {
 
 div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
 	--button-padding: calc(var(--icon-size) / 8);
-	flex-basis: 5rem;
+	flex-basis: 6rem;
 	height: 1.5em;
 	margin: 0 0.5ch 1ch 0.5ch;
 	padding: var(--button-padding);
@@ -1986,7 +1986,7 @@ form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(
 }
 
 form#edit-page-form .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
-	content: "Short Description of Changes:";
+	content: "変更の要約:";
 	position: absolute;
 	z-index: 2;
 	top: -1em;
@@ -2469,11 +2469,11 @@ table.page-history tr:nth-of-type(2) td:nth-of-type(2)::before {
 }
 
 table.page-history tr:nth-of-type(2) td:nth-of-type(3)::before {
-	content: "flags";
+	content: "フラグ";
 }
 
 table.page-history tr:nth-of-type(2) td:nth-of-type(4)::before {
-	content: "actions";
+	content: "アクション";
 }
 
 table.page-history tr:nth-of-type(2) td:nth-of-type(5)::before {
@@ -2481,7 +2481,7 @@ table.page-history tr:nth-of-type(2) td:nth-of-type(5)::before {
 }
 
 table.page-history tr:nth-of-type(2) td:nth-of-type(6)::before {
-	content: "date";
+	content: "日付";
 }
 
 div.inline-diff del {
