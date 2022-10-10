@@ -598,7 +598,7 @@ div.blockquote> :last-child,
 }
 
 .page-rate-widget-box,
-#page-content .rate-box-with-credit-button {
+#page-content .rate-box-with-credit-button .creditButton {
 	display: inline-flex;
 	height: var(--rating-module-height);
 	margin: 0 0 0.75rem 0;
@@ -609,14 +609,6 @@ div.blockquote> :last-child,
 	border-radius: 0;
 	background-color: rgb(var(--rating-module-bg-color));
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
-}
-
-/* Same rule as above, but specifically for the info module / credit button */
-.rate-box-with-credit-button .page-rate-widget-box {
-	border: none;
-	border-radius: 0;
-	background: none;
-	box-shadow: none;
 }
 
 .page-rate-widget-box .rate-points,
@@ -635,8 +627,7 @@ div.blockquote> :last-child,
 .page-rate-widget-box .ratedown a,
 .page-rate-widget-box .cancel a,
 /* Credit Button Rating Module Specific */
-.rate-box-with-credit-button>.creditButton,
-.rate-box-with-credit-button>.creditButton>p {
+.rate-box-with-credit-button>.creditButton>a {
 	display: block;
 	width: calc((var(--base-font-size) * (14 / 15)) * 1.5);
 	height: 100%;
@@ -868,10 +859,9 @@ div.page-rate-widget-box .rate-points {
 	border: 0;
 }
 
-/* Info module */
-/* These override the styles provided by the base Info Module so have been given a higher specificity with #page-content */
+/* Credit module */
 
-#page-content .creditRate {
+#page-content .creditModule {
 	margin-right: 0;
 	margin-bottom: 0;
 }
@@ -885,28 +875,16 @@ div.page-rate-widget-box .rate-points {
 	background: initial;
 }
 
-
-#page-content .rate-box-with-credit-button>.creditButton>p {
-	display: block;
-	position: relative;
-	margin: 0;
-	padding: 0;
-}
-
-#page-content .rate-box-with-credit-button>.creditButton>p,
-#page-content .rate-box-with-credit-button>.creditButton>p>a {
-	width: 100%;
-	height: 100%;
-}
-
-#page-content .rate-box-with-credit-button>.creditButton>p>a {
+#page-content .rate-box-with-credit-button>.creditButton>a {
 	display: flex;
 	margin-left: 0;
 	border-left: none;
 	background-color: transparent;
+	width: 100%;
+	height: 100%;
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a::after {
+#page-content .rate-box-with-credit-button>.creditButton>a::after {
 	--clip-path:
 		polygon(
 			0 100%,
@@ -925,12 +903,12 @@ div.page-rate-widget-box .rate-points {
 	clip-path: var(--clip-path);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a::after {
+#page-content .rate-box-with-credit-button>.creditButton>a::after {
 	background-color: rgba(var(--rating-module-text-color), 1);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a:hover::after,
-#page-content .rate-box-with-credit-button>.creditButton>p>a:active::after {
+#page-content .rate-box-with-credit-button>.creditButton>a:hover::after,
+#page-content .rate-box-with-credit-button>.creditButton>a:active::after {
 	--clip-path:
 		polygon(
 			0 100%,
@@ -940,7 +918,7 @@ div.page-rate-widget-box .rate-points {
 		);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a:focus-within::after {
+#page-content .rate-box-with-credit-button>.creditButton>a:focus-within::after {
 	--clip-path:
 		polygon(
 			0 100%,
@@ -950,7 +928,7 @@ div.page-rate-widget-box .rate-points {
 		);
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a::before {
+#page-content .rate-box-with-credit-button>.creditButton>a::before {
 	--mask-image: var(--credit-button-mask);
 	content: " ";
 	position: absolute;
@@ -968,12 +946,12 @@ div.page-rate-widget-box .rate-points {
 	mask-repeat: no-repeat;
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a:hover::before,
-#page-content .rate-box-with-credit-button>.creditButton>p>a:active::before {
+#page-content .rate-box-with-credit-button>.creditButton>a:hover::before,
+#page-content .rate-box-with-credit-button>.creditButton>a:active::before {
 	background-color: rgb(var(--rating-module-text-hover-color));
 }
 
-#page-content .rate-box-with-credit-button>.creditButton>p>a:focus-within::before {
+#page-content .rate-box-with-credit-button>.creditButton>a:focus-within::before {
 	background-color: rgb(var(--rating-module-text-hover-color));
 }
 
@@ -1049,7 +1027,6 @@ div.page-rate-widget-box .rate-points {
 	padding: 0;
 }
 
-[id*="u-credit"] .credit.first,
 [id*="u-credit"] .credit.otherwise {
 	display: grid;
 	width: auto;
@@ -1059,73 +1036,6 @@ div.page-rate-widget-box .rate-points {
 	padding: 0;
 	overflow-x: visible;
 	overflow-y: auto;
-}
-
-[id*="u-credit"] .credit.first>p:not(:first-of-type) {
-	width: 100%;
-	margin: 0;
-	padding: 1em 0 0 0;
-}
-
-[id*="u-credit"] .credit.first h1+p:not(:first-of-type) {
-	margin-top: 0;
-}
-
-[id*="u-credit"] .credit.first>p:first-of-type {
-	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
-	width: 1.25em;
-	height: 1.25em;
-	margin: 0;
-	font-size: 1.25em;
-	font-size: max(1.5em, min(2vm, 1.5em));
-}
-
-[id*="u-credit"] .credit.first>p:first-of-type::after,
-[id*="u-credit"] .credit.first>p:first-of-type::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
-[id*="u-credit"] .credit.first>p:first-of-type::before {
-	border-radius: 50%;
-	background-color: rgb(var(--modal-bg));
-}
-
-[id*="u-credit"] .credit.first>p:first-of-type::after {
-	--mask-image: var(--cancel-mask);
-	transform: rotate(0) scale(1);
-	transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--modal-header-bg));
-	mask-image: var(--mask-image);
-	mask-size: 0.75em;
-	mask-repeat: no-repeat;
-	mask-position: center;
-}
-
-[id*="u-credit"] .credit.first>p:hover:first-of-type::after,
-[id*="u-credit"] .credit.first>p:active:first-of-type::after {
-	transform: rotate(15deg) scale(1.1);
-}
-
-[id*="u-credit"] .credit.first>p:focus-within:first-of-type::after {
-	transform: rotate(15deg) scale(1.1);
-}
-
-[id*="u-credit"] .close-credits {
-	top: 0.3125em;
-	right: 0;
-	width: 1.25em;
-	height: 1.25em !important;
-	/* Overwrite inline styling */
-	transform: scale(1.5);
-	opacity: 0;
 }
 
 [id*="u-credit"] div.creditBottomRate {
@@ -1147,7 +1057,6 @@ div.page-rate-widget-box .rate-points {
 	padding: 0.25em;
 }
 
-[id*="u-credit"] div.credit-back p,
 [id*="u-credit"] div.credit-back iframe {
 	position: absolute;
 	top: 0;
@@ -1185,7 +1094,6 @@ div.page-rate-widget-box .rate-points {
 	font-weight: var(--wght);
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
-
 
 [id*="u-credit"] div.credit-back::before {
 	content: "クレジット";
@@ -1956,21 +1864,6 @@ div.wiki-note:after {
 	line-height: 1;
 }
 
-/* Wikiwalk Nav */
-.footer-wikiwalk-nav {
-	--wght: 700;
-	font-size: 0.75em;
-	font-weight: var(--wght);
-	letter-spacing: 0.016em;
-}
-
-.browserupgrade {
-	margin: 0.2em 0;
-	padding: 0.2em 0;
-	background: rgb(var(--swatch-secondary-color));
-	color: rgb(var(--swatch-text-tertiary-color));
-}
-
 /* Sexy Box (apparently) */
 div.sexy-box {
 	margin: 0.4375rem 0.25rem 0.75rem;
@@ -2213,6 +2106,14 @@ div.block-left {
 		width: 100% !important;
 	}
 
+	.image-block.scp-clear-true,
+	.scp-image-block.scp-clear-true {
+		float: none;
+		clear: both;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 	blockquote,
 	.blockquote,
 	div.blockquote,
@@ -2241,7 +2142,7 @@ div.block-left {
 	}
 }
 
-/* See https://scp-wiki.wikidot.com/component:preview */
+/* See http://scp-jp.wikidot.com/component:preview */
 #page-content>div.preview {
 	display: none;
 }
