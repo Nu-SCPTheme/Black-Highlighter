@@ -2810,6 +2810,15 @@ a:focus-within {
 	        text-decoration-color: currentColor;
 }
 
+/* Line-Through Link Coloring on Chrome/Safari */
+
+[style*="line-through"] a,
+[style*="line-through"] a:visited,
+[style*="line-through"] a:active {
+	-webkit-text-decoration-color: inherit;
+	        text-decoration-color: inherit;
+}
+
 /* BlACK BLOCK ELEMENT */
 
 .bblock,
