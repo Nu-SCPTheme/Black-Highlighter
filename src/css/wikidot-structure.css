@@ -567,10 +567,7 @@ div[id*="page-options-bottom"]>a::after {
 	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--ui-icon-color));
-	mask-image: var(--button-icon);
-	mask-size: calc(var(--icon-size) - 0.5em);
-	mask-position: center center;
-	mask-repeat: no-repeat;
+	mask: var(--button-icon) center center / calc(var(--icon-size) - 0.5em) no-repeat;
 }
 
 div[id*="page-options-bottom"]>a:hover::after,
@@ -1412,10 +1409,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::before {
 	width: 100%;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--editor-icon-color));
-	mask-image: var(--edit-menu-mask);
-	mask-size: calc(var(--icon-size) * 0.8);
-	mask-position: center center;
-	mask-repeat: no-repeat;
+	mask: var(--edit-menu-mask) center center / calc(var(--icon-size) * 0.8) no-repeat;
 }
 
 form#edit-page-form .wd-editor-toolbar-panel li:hover>a::before,

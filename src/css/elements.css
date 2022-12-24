@@ -799,9 +799,7 @@ div.page-rate-widget-box .rate-points {
 	height: 100%;
 	background-color: rgb(var(--rating-module-text-color));
 	pointer-events: none;
-	mask-size: calc(var(--rating-module-height) - 0.5em);
-	mask-position: center;
-	mask-repeat: no-repeat;
+	mask: center / calc(var(--rating-module-height) - 0.5em) no-repeat;
 }
 
 .page-rate-widget-box .rateup a::before {
@@ -962,10 +960,7 @@ div.page-rate-widget-box .rate-points {
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--rating-module-text-color));
 	pointer-events: none;
-	mask-image: var(--mask-image);
-	mask-size: calc(var(--rating-module-height) - 0.375em);
-	mask-position: center center;
-	mask-repeat: no-repeat;
+	mask: var(--mask-image) center center / calc(var(--rating-module-height) - 0.375em) no-repeat;
 }
 
 #page-content .rate-box-with-credit-button>.creditButton>p>a:hover::before,
@@ -1103,10 +1098,7 @@ div.page-rate-widget-box .rate-points {
 	transform: rotate(0) scale(1);
 	transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--modal-header-bg));
-	mask-image: var(--mask-image);
-	mask-size: 0.75em;
-	mask-repeat: no-repeat;
-	mask-position: center;
+	mask: var(--mask-image) center / 0.75em no-repeat;
 }
 
 [id*="u-credit"] .credit.first>p:hover:first-of-type::after,
@@ -1400,9 +1392,7 @@ table[style*="margin:0"] * {
 	width: 1em;
 	height: 1em;
 	background-color: rgb(var(--toc-header-text-color));
-	mask-image: var(--mask-image);
-	mask-repeat: no-repeat;
-	mask-position: center center;
+	mask: var(--mask-image) center center / no-repeat;
 }
 
 #toc #toc-action-bar a:hover::before,
@@ -1579,10 +1569,7 @@ table[style*="margin:0"] * {
 	opacity: 0;
 	background-color: rgb(var(--toc-body-hover-arrow-color));
 	pointer-events: none;
-	mask-size: 0.3625em 1em;
-	mask-image: var(--right-arrow-mask);
-	mask-repeat: no-repeat;
-	mask-position: center 0.25rem;
+	mask: var(--right-arrow-mask) center 0.25rem /  0.3625em 1em no-repeat;
 }
 
 #toc #toc-list a,

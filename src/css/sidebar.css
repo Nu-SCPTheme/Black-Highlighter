@@ -107,10 +107,7 @@
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
-	mask-image: var(--social-logo-mask);
-	mask-repeat: no-repeat;
-	mask-size: contain;
-	mask-position: center center;
+	mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
 #side-bar .side-block.media a::before,
@@ -205,9 +202,7 @@
 	top: 0.125rem;
 	left: 0.125rem;	
 	background-color: rgb(var(--social-color));
-	mask-image: var(--social-logo-mask);
-	mask-repeat: no-repeat;
-	mask-size: 90%;
+	mask: var(--social-logo-mask) / 90% no-repeat;
 }
 
 #side-bar .side-block.media a[href*="tiktok"]:hover::after,
@@ -744,10 +739,7 @@
 	transition: 
 		transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	mask-image: var(--down-arrow-mask);
-	mask-repeat: no-repeat;
-	mask-position: 50% 50%;
-	mask-size: 1em;
+	mask: var(--down-arrow-mask) 50% 50% / 1em no-repeat;
 }
 
 #side-bar div.collapsible-block div.collapsible-block-folded a.collapsible-block-link {
