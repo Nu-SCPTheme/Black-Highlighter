@@ -7608,8 +7608,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	top: 0.125rem;
 	left: 0.125rem;	
 	background-color: rgb(var(--social-color));
-	-webkit-mask: var(--social-logo-mask) / 90% no-repeat;
-	        mask: var(--social-logo-mask) / 90% no-repeat;
+	-webkit-mask: var(--social-logo-mask) 0 0/ 90% no-repeat;
+	        mask: var(--social-logo-mask) 0 0/ 90% no-repeat;
 }
 
 #side-bar .side-block.media a[href*="tiktok"]:hover::after,
@@ -10519,8 +10519,8 @@ div#container-wrap {
 	text-align: center;
 	cursor: pointer;
 	pointer-events: none;
-	-webkit-mask:var(--search-icon-mask) center center /  calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
-	        mask:var(--search-icon-mask) center center /  calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
+	-webkit-mask:var(--search-icon-mask) center center / calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
+	        mask:var(--search-icon-mask) center center / calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
 }
 
 #search-top-box:not(:focus-within):hover::before {
