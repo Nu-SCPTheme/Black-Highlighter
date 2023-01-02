@@ -13587,8 +13587,9 @@ table[style*="margin:0"] * {
 	width: 1em;
 	height: 1em;
 	background-color: rgb(var(--toc-header-text-color));
-	-webkit-mask: var(--mask-image) center center / no-repeat;
-	        mask: var(--mask-image) center center / no-repeat;
+	-webkit-mask: var(--mask-image) center center / 100% no-repeat;
+	        mask: var(--mask-image) center center / 100% no-repeat;
+
 }
 
 #toc #toc-action-bar a:hover::before,
