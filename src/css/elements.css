@@ -1219,6 +1219,73 @@ div.page-rate-widget-box .rate-points {
 	margin: 0;
 }
 
+/* Credit module */
+
+#page-content .creditRate.creditModule .rate-bfox-with-credit-button {
+	border: none;
+	box-shadow: none;
+	height: inherit;
+	overflow: inherit;
+}
+
+#page-content .creditRate.creditModule .rate-box-with-credit-button>.page-rate-widget-box {
+	background-color: rgb(var(--rating-module-bg-color));
+	border: 0.0625rem solid rgba(var(--swatch-border-color),.15);
+	border-bottom-width: 0;
+	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
+}
+
+#page-content div.page-rate-widget-box .rate-points,
+#action-area div.page-rate-widget-box .rate-points {
+	font-family: var(--UI-font);
+	font-size: .85em;
+	font-weight: inherit;
+}
+
+#page-content .page-rate-widget-box span,
+#action-area .page-rate-widget-box span {
+	box-sizing: inherit;
+	height: inherit;
+}
+
+#page-content .page-rate-widget-box .cancel,
+#action-area .page-rate-widget-box .cancel {
+	padding: 0;
+}
+
+#page-content .page-rate-widget-box .rateup a,
+#page-content .page-rate-widget-box .ratedown a,
+#action-area .page-rate-widget-box .rateup a,
+#action-area .page-rate-widget-box .ratedown a {
+	box-sizing: inherit;
+	display: block;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: var(--wght);
+	height: 100%;
+	padding: 0;
+}
+
+#page-content .page-rate-widget-box .cancel a,
+#action-area .page-rate-widget-box .cancel a {
+	color: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: var(--wght);
+	height: 100%;
+	padding: 0;
+}
+
+#page-content .page-rate-widget-box .rateup a::before,
+#page-content .page-rate-widget-box .ratedown a::before,
+#page-content .page-rate-widget-box .cancel a::before,
+#action-area .page-rate-widget-box .rateup a::before,
+#action-area .page-rate-widget-box .ratedown a::before
+#action-area .page-rate-widget-box .cancel a::before {
+	content: " ";
+	font-size: inherit;
+}
+
 /* ===TABLES=== */
 
 #page-content table.wiki-content-table *,
