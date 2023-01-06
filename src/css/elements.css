@@ -1241,9 +1241,10 @@ div.page-rate-widget-box .rate-points {
 
 #page-content div.page-rate-widget-box .rate-points,
 #action-area div.page-rate-widget-box .rate-points {
+	display: flex;
 	font-family: var(--UI-font);
 	font-size: .85em;
-	font-weight: inherit;
+	font-weight: var(--wght);
 }
 
 #page-content .page-rate-widget-box span,
@@ -1308,6 +1309,10 @@ div.page-rate-widget-box .rate-points {
 #page-content .creditRate.creditModule .rate-box-with-credit-button .creditButton a {
 	display: flex;
 	background-color: transparent;
+	color: rgb(var(--rating-module-text-color));
+	font-size: inherit;
+	width: 100%;
+	height: 100%;
 }
 
 #page-content .creditRate.creditModule .rate-box-with-credit-button .creditButton a::after {
