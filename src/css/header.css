@@ -228,10 +228,7 @@ div#container-wrap {
 	text-align: center;
 	cursor: pointer;
 	pointer-events: none;
-	mask-size: calc(var(--search-height) / 2) calc(var(--search-height) / 2);
-	mask-position: center center;
-	mask-repeat: no-repeat;
-	mask-image: var(--search-icon-mask);
+	mask:var(--search-icon-mask) center center / calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
 }
 
 #search-top-box:not(:focus-within):hover::before {
@@ -1111,9 +1108,7 @@ div.mobile-top-bar {
 	background-color: rgb(var(--topmenu-category-color)) !important;
 	background-image: initial;
 	color: transparent !important;
-	mask-repeat: no-repeat;
-	mask-size: 1em 1em;
-	mask-position: center center;
+	mask: center center / 1em 1em no-repeat;
 }
 
 #top-bar ul li:focus-within .homebutton,
@@ -1123,9 +1118,7 @@ div.mobile-top-bar {
 	background-color: rgb(var(--topmenu-category-color)) !important;
 	background-image: initial;
 	color: transparent !important;
-	mask-repeat: no-repeat;
-	mask-size: 1em 1em;
-	mask-position: center center;
+	mask: center center / 1em 1em no-repeat;
 }
 
 #top-bar ul li .homebutton {
@@ -1397,10 +1390,7 @@ div.mobile-top-bar {
 		background-color: rgba(var(--login-mobile-icon-color),0);
 		cursor: pointer;
 		pointer-events: all;
-		mask-image: var(--user-account-mask);
-		mask-size: calc(var(--account-height) - 0.5em);
-		mask-position: center right;
-		mask-repeat: no-repeat;
+		mask: var(--user-account-mask) center right / calc(var(--account-height) - 0.5em) no-repeat;
 	}
 		
 	#login-status::before {

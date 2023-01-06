@@ -1562,9 +1562,8 @@ table[style*="margin:0"] * {
 	width: 1em;
 	height: 1em;
 	background-color: rgb(var(--toc-header-text-color));
-	mask-image: var(--mask-image);
-	mask-repeat: no-repeat;
-	mask-position: center center;
+	mask: var(--mask-image) center center / 100% no-repeat;
+
 }
 
 #toc #toc-action-bar a:hover::before,
@@ -1741,10 +1740,7 @@ table[style*="margin:0"] * {
 	opacity: 0;
 	background-color: rgb(var(--toc-body-hover-arrow-color));
 	pointer-events: none;
-	mask-size: 0.3625em 1em;
-	mask-image: var(--right-arrow-mask);
-	mask-repeat: no-repeat;
-	mask-position: center 0.25rem;
+	mask: var(--right-arrow-mask) center 0.25rem /  0.3625em 1em no-repeat;
 }
 
 #toc #toc-list a,
