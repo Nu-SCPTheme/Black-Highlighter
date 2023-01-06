@@ -1389,11 +1389,17 @@ div.page-rate-widget-box .rate-points {
 }
 
 .creditRate.creditModule ~ [id*="u-credit"] .modalcontainer {
+	display: block;
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
 	height: fit-content;
+	margin: auto;
 	min-width: inherit;
-	width: inherit;
+	top: 0;
+	transform: unset;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 }
 
 .creditRate.creditModule ~ [id*=u-credit] div.modalbox {
@@ -1412,6 +1418,11 @@ div.page-rate-widget-box .rate-points {
 
 .creditRate.creditModule ~ [id*=u-credit] .modalbox .credit {
 	margin: 0 1rem;
+}
+
+.creditRate.creditModule ~ [id*=u-credit] .modalbox .credit.otherwise {
+	height: max-content;
+	overflow-y: auto;
 }
 
 .creditRate.creditModule ~ [id*=u-credit] div.creditBottomRate {
