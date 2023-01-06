@@ -1382,6 +1382,12 @@ div.page-rate-widget-box .rate-points {
 	background-color: rgb(var(--rating-module-text-hover-color));
 }
 
+[id*=u-credit] .creditBottomRate,
+[id*=u-credit] .modalbox > .Dendo,
+[id*=u-credit] .modalbox-ratemodule {
+	position: static;
+}
+
 .creditRate.creditModule ~ [id*="u-credit"] .modalcontainer {
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
@@ -1394,6 +1400,10 @@ div.page-rate-widget-box .rate-points {
 	aspect-ratio: 16 / 9;
 	max-width: 25rem !important;
 	min-height: inherit;
+}
+
+.creditRate.creditModule ~ [id*=u-credit] div.modalbox::after {
+	display: none;
 }
 
 .creditRate.creditModule ~ [id*=u-credit] .modalbox .modalbox-title  {
