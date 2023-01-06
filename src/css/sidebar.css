@@ -93,6 +93,10 @@
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
+#side-bar .side-block.sns div.menu-item {
+	box-shadow: inherit;
+}
+
 /* Social Media Icons */
 #side-bar .side-block.sns a {
 	position: relative;
@@ -327,8 +331,8 @@
 	flex-grow: 1;
 }
 
-#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
-#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
+#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block):not([style]),
+#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block):not([style]) {
 	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
 }
 
