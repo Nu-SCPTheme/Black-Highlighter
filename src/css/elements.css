@@ -1437,7 +1437,8 @@ div.page-rate-widget-box .rate-points {
 }
 
 /* Heritage Rating Module For JP */
-.creditRate.creditModule .heritage-rating-module {
+.creditRate.creditModule .heritage-rating-module,
+[id*="u-credit"] .Dendo .heritage-rating-module {
 	border-radius: 0;
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 	display: inline-block;
@@ -1446,15 +1447,35 @@ div.page-rate-widget-box .rate-points {
 	vertical-align: inherit;
 }
 
-.creditRate.creditModule .heritage-rating-module .heritage-emblem {
+.creditRate.creditModule .heritage-rating-module .heritage-emblem,
+[id*="u-credit"] .Dendo .heritage-rating-module .heritage-emblem {
 	height: 1rem;
 	margin-right: 0.25rem;
 	position: static;
 	width: 1rem;
 }
 
-.creditRate.creditModule .heritage-rating-module .page-rate-widget-box {
+.creditRate.creditModule .heritage-rating-module .page-rate-widget-box,
+[id*="u-credit"] .Dendo .heritage-rating-module .page-rate-widget-box {
 	border: unset;
+}
+
+.creditRate.creditModule .heritage-rating-module ~ .creditButton {
+	padding: inherit;
+}
+
+.creditRate.creditModule ~ [id*="u-credit"] .modalbox.heritage {
+	border: rgb(var(--swatch-primary-darker)) solid 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.creditRate.creditModule ~ [id*="u-credit"] .modalbox.heritage .modalbox-title {
+	background: linear-gradient(to bottom, rgba(var(--swatch-primary-darker), 1), rgba(var(--swatch-primary-darker), 0.7));
+	justify-content: center;
+}
+
+.creditRate.creditModule ~ [id*="u-credit"] .modalbox .modalbox-title.heritage h2::before {
+	display: none;
 }
 
 /* ===TABLES=== */
