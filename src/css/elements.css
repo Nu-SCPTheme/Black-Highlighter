@@ -1178,9 +1178,8 @@ div.page-rate-widget-box .rate-points {
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
-
 [id*="u-credit"] div.credit-back::before {
-	content: "Back";
+	content: "戻る";
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1381,6 +1380,17 @@ div.page-rate-widget-box .rate-points {
 
 #page-content .creditRate.creditModule .rate-box-with-credit-button .creditButton a:focus-within::before {
 	background-color: rgb(var(--rating-module-text-hover-color));
+}
+
+[id*="u-credit"] {
+	-webkit-animation: unset;
+	-moz-animation: unset;
+	animation: unset;
+	transition: opacity 0.5s linear;c
+}
+
+[id*="u-credit"]:target {
+	opacity: 1;
 }
 
 /* ===TABLES=== */
