@@ -15,6 +15,7 @@
 		4.4 =SIGMA-9 OVERWRITES
 	5. =COMMON THEME COMPATABILITY
 	6. =MOBILE SIDEBAR
+	7. =LOCALIZATION FOR JP
   =============== */
 
 /* ===MAIN BLOCK=== */
@@ -82,30 +83,36 @@
 }
 
 /* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
-#side-bar div[style*="#fff0f0"] {
+#side-bar div[style*="#f0fff6"] {
+	background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
+}
+
+#side-bar div[style*="#e7e5e8"] {
+	background-color: rgba(var(--swatch-primary-darkest), 0.3) !important;
+}
+
+#side-bar div[style*="#fff0f0"],
+#side-bar .side-block.resources {
 	background-color: rgba(var(--sidebar-resources-bg-color)) !important;
 }
 
 #side-bar div[style*="#e5e5ff"],
-#side-bar .side-block.sns {
+#side-bar .side-block.media {
 	margin: 0.5rem 0.5rem 0 0;
 	padding: 0.5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar .side-block.sns div.menu-item {
-	box-shadow: inherit;
-}
-
 /* Social Media Icons */
-#side-bar .side-block.sns a {
+#side-bar .side-block.media a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
 	mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar .side-block.sns a::before {
+#side-bar .side-block.media a::before,
+#side-bar .side-block.media a[href*="tiktok"]::after {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -124,8 +131,8 @@
 	clip-path: var(--clip-path);
 }
 
-#side-bar .side-block.sns a:hover::before,
-#side-bar .side-block.sns a:active::before {
+#side-bar .side-block.media a:hover::before,
+#side-bar .side-block.media a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -135,7 +142,7 @@
 		);
 }
 
-#side-bar .side-block.sns a:focus-within::before {
+#side-bar .side-block.media a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -145,18 +152,82 @@
 		);
 }
 
-#side-bar .side-block.sns a img {
+#side-bar .side-block.media a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar .side-block.sns a[href*="twitter"] {
+#side-bar .side-block.media a[href*="facebook"] {
+	--social-logo-mask: var(--facebook-mask);
+	--social-color: var(--facebook-icon-color);
+}
+
+#side-bar .side-block.media a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar .side-block.sns a[href*="discord"] {
+#side-bar .side-block.media a[href*="reddit"] {
+	--social-logo-mask: var(--reddit-mask);
+	--social-color: var(--reddit-icon-color);
+}
+
+#side-bar .side-block.media a[href*="instagram"] {
+	--social-logo-mask: var(--instagram-mask);
+	--social-color: var(--instagram-icon-color);
+	background-image: var(--instagram-icon-gradient);
+	background-size: contain;
+}
+
+#side-bar .side-block.media a[href*="twitch"] {
+	--social-logo-mask: var(--twitch-mask);
+	--social-color: var(--twitch-icon-color);
+}
+
+#side-bar .side-block.media a[href*="tiktok"] {
+	--social-logo-mask: var(--tiktok-mask);
+	--social-color: var(--tiktok-icon-color);
+	background-image: var(--tiktok-icon-gradient);
+	background-size: contain;
+}
+
+#side-bar .side-block.media a[href*="tiktok"]::after {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+	top: 0.125rem;
+	left: 0.125rem;	
+	background-color: rgb(var(--social-color));
+	mask: var(--social-logo-mask) 0 0/ 90% no-repeat;
+}
+
+#side-bar .side-block.media a[href*="tiktok"]:hover::after,
+#side-bar .side-block.media a[href*="tiktok"]:active::after {
+	--clip-path: 
+	polygon(
+		0 0, 
+		0 0, 
+		0 100%, 
+		0 100%
+	);
+}
+
+#side-bar .side-block.media a[href*="tiktok"]:focus-within::after {
+	--clip-path: 
+	polygon(
+		0 0, 
+		0 0, 
+		0 100%, 
+		0 100%
+	);
+}
+
+#side-bar .side-block.media a[href*="discord"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
@@ -164,6 +235,20 @@
 /*Forcing default sidebar coloring on any INT branches that still use Background Color*/
 #side-bar .side-block[style*="background-color"] {
 	background-color: rgba(var(--dark-accent), 0.15) !important;
+}
+
+/* Chinese Specific Styling */
+
+#side-bar div[style*="#f0f0f0"] {
+	background-color: transparent !important;
+}
+
+#side-bar div[style*="#f0f0f0"] div[style*="center"] {
+	align-items: center;
+}
+
+#side-bar div[style*="#f0f0f0"] div[style*="center"] img {
+	margin: 0 !important;
 }
 
 /* ===SUB-BLOCK=== */
@@ -263,10 +348,6 @@
 	display: none;
 }
 
-#side-bar div.menu-item > span[style="text-decoration: line-through;"] {
-	display: inline;
-}
-
 #side-bar div.menu-item span:first-of-type,
 #interwiki div.menu-item span:first-of-type {
 	padding: 0 0 0 calc(var(--base-font-size) * 1.5);
@@ -323,13 +404,36 @@
 	line-height: 1.5;
 }
 
+#side-bar div.menu-item .text {
+	--wght: var(--ui-wght);
+	display: flex;
+	flex-grow: 2;
+	justify-content: flex-start;
+	height: 1.5rem;
+	margin: 0;
+	padding: 0 0.6em;
+	transition: 
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-clip: padding-box;
+	background-color: rgba(var(--sidebar-links-bg-color));
+	color: rgb(var(--sidebar-links-text));
+	font-size: calc(var(--base-font-size) * (14/15));
+	font-weight: var(--wght);
+	letter-spacing: 0.04em;
+	line-height: 1.5;
+	cursor: default;
+}
+
 #side-bar div.menu-item a:only-child,
 #interwiki div.menu-item a:only-child {
 	flex-grow: 1;
 }
 
-#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block):not([style]),
-#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block):not([style]) {
+#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
+#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
 	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
 }
 
@@ -414,6 +518,10 @@
 }
 
 /* ===SCP & TALES SERIES==*/
+
+#side-bar div.menu-item.scp-series a,
+#side-bar div.menu-item.scp-tales a,
+#side-bar div.menu-item.small a:not([href*="shortest"]),
 #side-bar div.menu-item a[href*="scp-series"] {
 	justify-content: center;
 	width: auto;
@@ -422,6 +530,9 @@
 	white-space: nowrap;
 }
 
+#side-bar div.menu-item.scp-series a::before,
+#side-bar div.menu-item.scp-tales a::before,
+#side-bar div.menu-item.small a:not([href*="shortest"])::before,
 #side-bar div.menu-item a[href*="scp-series"]::before {
 	width: 250%;
 }
@@ -481,24 +592,24 @@
 	text-decoration: none;
 }
 
-/* Interwiki styling for Interwikis that cannot style themselves. */
-#side-bar div.scpnet-interwiki-wrapper,
-#side-bar div.scpnet-interwiki-wrapper * {
+/* Interwiki styling for Interwikis that cannot style themselves. Also targets the SCP-CN Interwiki, which is stylable but does not currently have the interwiki-stylable class */
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable),
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) * {
 	max-width: var(--sidebar-width-on-desktop);
 }
 
-#side-bar div.scpnet-interwiki-wrapper {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) {
 	position: relative;	
 }
 
-#side-bar div.scpnet-interwiki-wrapper div.list-pages-item {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) div.list-pages-item {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
 	width: 100%;
 }
 
-#side-bar div.scpnet-interwiki-wrapper p {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p {
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -507,7 +618,7 @@
 	overflow: hidden;
 }
 
-#side-bar .scpnet-interwiki-wrapper iframe.scpnet-interwiki-frame {
+#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) iframe.scpnet-interwiki-frame {
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
@@ -516,9 +627,9 @@
 
 /* Coloring to (mostly) match sidebar */
 @supports(mix-blend-mode:hue) {
-	#side-bar .scpnet-interwiki-wrapper::before,
-	#side-bar .scpnet-interwiki-wrapper p::before,
-	#side-bar .scpnet-interwiki-wrapper p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -528,19 +639,19 @@
 		pointer-events: none;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before {
 		z-index: 3;
 		background-color: rgb(var(--swatch-menubg-color));
 		mix-blend-mode: darken;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper p::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before {
 		z-index: 2;
 		background-color: rgb(var(--swatch-primary));
 		mix-blend-mode: color;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
 		z-index: 1;
 		transition: background-color 500ms cubic-bezier(.4,0,.2,1);
 		background-color: rgb(var(--swatch-menubg-color));
@@ -727,8 +838,75 @@
 #side-bar div.collapsible-block-content div.menu-item a:focus-within {
 	color: rgb(var(--sidebar-collapsible-link-hover-color));
 }
-/* Common Theme Colors */¥
-#side-bar .side-block > .collapsible-block .collapsible-block-folded {
+
+/* ===COMMON THEME COMPATABILITY=== */
+#side-bar div.menu-item.expandable {
+	max-width: calc(100% - (var(--base-font-size) * (14 / 15)));
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block {
+	background: none;
+}
+
+#side-bar .menu-item.expandable + .collapsible-block .collapsible-block-folded,
+#side-bar .menu-item.expandable + .collapsible-block .collapsible-block-unfolded-link {
+	min-height: 0;
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link {
+	display: flex;
+	top: calc((1.5rem - var(--sidebar-internal-border-thickness)) * -1);
+	justify-content: flex-end;
+	height: calc(1.5rem - (var(--sidebar-internal-border-thickness) * 5));
+	padding-right: 0;
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::before {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	align-content: center;
+	justify-content: center;
+	height: 100%;
+	text-shadow: none;
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-link::after {
+	display: none;
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:hover,
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:active {
+	background-color: transparent;
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:focus-within {
+	background-color: transparent;
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item p {
+	height: 1.25rem;
+	min-height: 1.25rem;
+	padding: 0;
+	font-size: calc(var(--base-font-size) * 0.7);
+}
+
+#side-bar div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
+	padding: 0;
+	font-size: calc(var(--base-font-size) * 0.7);
+}
+
+/* Common Theme Colors */
+#side-bar div.side-block.yellow {
+	background-color: rgba(255, 255, 229, 0.15);
+}
+
+#side-bar div.side-block.green {
+	background-color: rgba(229, 255, 229, 0.15);
+}
+
+#side-bar:not(:lang(en)) .side-block > .collapsible-block .collapsible-block-folded {
 	background: none !important;
 }
 
@@ -830,9 +1008,178 @@
 		pointer-events: auto;
 	}
 
-	#side-bar div.scpnet-interwiki-wrapper,
-	#side-bar div.scpnet-interwiki-wrapper * {
+	#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)),
+	#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) * {
 		max-width: var(--sidebar-width-on-mobile);
 		margin-left: 0;
 	}
+}
+
+/* LOCALIZATION FOR JP */
+#side-bar hr {
+	margin-bottom: 0;
+}
+
+#side-bar div.side-block:not(.sns) div.menu-item {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#side-bar div.menu-item a:only-of-type {
+	grid-column: 1/ span 2;
+	grid-row: 1;
+	justify-content: flex-start;
+}
+
+#side-bar div.menu-item span {
+	z-index: 2;
+	grid-column: 2;
+	grid-row: 1;
+	transition:
+		border-color 150ms cubic-bezier(.4,0,.2,1),
+		background-color 150ms cubic-bezier(.4,0,.2,1),
+		color 150ms cubic-bezier(.4,0,.2,1),
+		font-weight 200ms cubic-bezier(.4,0,.2,1),
+		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+}
+
+#side-bar div.menu-item a:only-of-type:hover ~ span,
+#side-bar div.menu-item a:only-of-type:active ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar div.menu-item a:only-of-type:focus-within ~ span {
+	--wght: var(--ui-hvr-wght);
+	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+	color: rgb(var(--sidebar-links-hover-text-color));
+}
+
+#side-bar div.menu-item a[href*="sandbox2"],
+#side-bar div.menu-item span[style*="line-through"] a {
+	text-indent: 1em;
+}
+
+#side-bar div.menu-item a[href*="sandbox2"]::after,
+#side-bar div.menu-item span[style*="line-through"] a::after {
+	content: "|";
+	position: absolute;
+	left: 0;
+	transition:
+		color 150ms cubic-bezier(.4,0,.2,1),
+		font-weight 200ms cubic-bezier(.4,0,.2,1),
+		font-variation-settings 200ms cubic-bezier(.4,0,.2,1);
+	color: rgba(var(--sidebar-links-text),0.25)
+}
+
+#side-bar div.menu-item a[href*="sandbox2"]:hover::after,
+#side-bar div.menu-item a[href*="sandbox2"]:active::after,
+#side-bar div.menu-item span[style*="line-through"] a:hover::after,
+#side-bar div.menu-item span[style*="line-through"] a:active::after {
+	color: rgba(var(--sidebar-links-hover-text),0.25);
+}
+
+#side-bar div.menu-item span[style*="line-through"] {
+	display: contents;
+}
+
+#side-bar div.menu-item span[style*="line-through"] a {
+	text-decoration: line-through;
+}
+
+#side-bar .side-block.sns {
+	grid-auto-flow: column;
+	justify-content: space-evenly;
+	width: var(--sidebar-width-on-mobile);
+	margin: .5rem 0.5rem 0 0;
+	padding: .5em !important;
+	background-color: rgba(var(--sidebar-media-bg-color)) !important;
+	direction: ltr;
+}
+
+#side-bar .side-block.sns > div,
+#side-bar .side-block.sns > div > div {
+	display: contents !important;
+}
+
+#side-bar .side-block.sns a {
+	position: relative;
+	width: 1.6875rem;
+	height: 1.6875rem;
+	margin: 0;
+	padding: 0;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: none;
+	background-color: rgb(var(--social-color));
+	mask: var(--social-logo-mask) center center / contain no-repeat;
+}
+
+#side-bar .side-block.sns a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	clip-path: var(--clip-path);
+}
+
+#side-bar .side-block.sns a:hover::before,
+#side-bar .side-block.sns a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar .side-block.sns a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar .side-block.sns a img {
+	width: 1.6875rem;
+	height: 1.6875rem;
+	opacity: 0;
+}
+
+#side-bar .side-block.sns a[href*="discord"] {
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
+}
+
+#side-bar .side-block.sns a[href*="twitter"] {
+	--social-logo-mask: var(--twitter-mask);
+	--social-color: var(--twitter-icon-color);
+}
+
+#side-bar .side-block[style*="fff0f0"] div.menu-item:last-of-type {
+	grid-template-columns: repeat(3, calc(100% / 3));
+}
+
+#side-bar .side-block[style*="fff0f0"] div.menu-item:last-of-type a {
+	grid-row: 1;
+}
+
+#side-bar div.scpnet-interwiki-wrapper {
+	margin-top: 1em;
 }
