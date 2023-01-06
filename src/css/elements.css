@@ -1382,15 +1382,30 @@ div.page-rate-widget-box .rate-points {
 	background-color: rgb(var(--rating-module-text-hover-color));
 }
 
-[id*="u-credit"] {
-	-webkit-animation: unset;
-	-moz-animation: unset;
-	animation: unset;
-	transition: opacity 0.5s linear;
+.creditRate.creditModule ~ [id*="u-credit"] .modalcontainer {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	min-width: inherit;
+	width: inherit;
 }
 
-[id*="u-credit"]:target {
-	opacity: 1;
+.creditRate.creditModule ~ [id*=u-credit] div.modalbox {
+	aspect-ratio: 16 / 9;
+	max-width: 25rem;
+	min-height: inherit;
+}
+
+.creditRate.creditModule ~ [id*=u-credit] .modalbox .modalbox-title  {
+	border-radius: 0;
+}
+
+.creditRate.creditModule ~ [id*=u-credit] .modalbox .credit {
+	margin: 0 1rem;
+}
+
+.creditRate.creditModule ~ [id*=u-credit] div.creditBottomRate {
+	box-shadow: unset;
 }
 
 /* ===TABLES=== */
