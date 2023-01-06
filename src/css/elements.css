@@ -1222,9 +1222,13 @@ div.page-rate-widget-box .rate-points {
 /* Credit module */
 
 #page-content .creditRate.creditModule .rate-box-with-credit-button {
+	align-items: inherit;
 	border: none;
+	flex-direction: inherit;
+	justify-content: inherit;
 	box-shadow: none;
 	height: inherit;
+	min-width: inherit;
 	overflow: inherit;
 }
 
@@ -1280,7 +1284,7 @@ div.page-rate-widget-box .rate-points {
 #page-content .page-rate-widget-box .ratedown a::before,
 #page-content .page-rate-widget-box .cancel a::before,
 #action-area .page-rate-widget-box .rateup a::before,
-#action-area .page-rate-widget-box .ratedown a::before
+#action-area .page-rate-widget-box .ratedown a::before,
 #action-area .page-rate-widget-box .cancel a::before {
 	content: " ";
 	font-size: inherit;
