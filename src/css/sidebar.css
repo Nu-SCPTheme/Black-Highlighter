@@ -592,73 +592,6 @@
 	text-decoration: none;
 }
 
-/* Interwiki styling for Interwikis that cannot style themselves. Also targets the SCP-CN Interwiki, which is stylable but does not currently have the interwiki-stylable class */
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable),
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) * {
-	max-width: var(--sidebar-width-on-desktop);
-}
-
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) {
-	position: relative;	
-}
-
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) div.list-pages-item {
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-end;
-	width: 100%;
-}
-
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 2rem;
-	overflow: hidden;
-}
-
-#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) iframe.scpnet-interwiki-frame {
-	position: relative;
-	width: 90%;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-/* Coloring to (mostly) match sidebar */
-@supports(mix-blend-mode:hue) {
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-	}
-
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before {
-		z-index: 3;
-		background-color: rgb(var(--swatch-menubg-color));
-		mix-blend-mode: darken;
-	}
-
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before {
-		z-index: 2;
-		background-color: rgb(var(--swatch-primary));
-		mix-blend-mode: color;
-	}
-
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
-		z-index: 1;
-		transition: background-color 500ms cubic-bezier(.4,0,.2,1);
-		background-color: rgb(var(--swatch-menubg-color));
-		mix-blend-mode:overlay;
-	}
-}
-
 /* Remove margin around stylable interwiki */
 #side-bar div.interwiki-stylable {
 	width: auto;
@@ -1006,12 +939,6 @@
 		opacity: 1;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		pointer-events: auto;
-	}
-
-	#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)),
-	#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)) * {
-		max-width: var(--sidebar-width-on-mobile);
-		margin-left: 0;
 	}
 }
 
