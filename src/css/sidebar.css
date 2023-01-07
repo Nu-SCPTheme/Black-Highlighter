@@ -593,13 +593,11 @@
 }
 
 /* Remove margin around stylable interwiki */
-#side-bar div.interwiki-stylable,
-#side-bar div.scpnet-interwiki-wrapper {
+#side-bar div.interwiki-stylable {
 	width: auto;
 	margin: 0;
 }
-#side-bar div.interwiki-stylable p,
-#side-bar div.scpnet-interwiki-wrapper p {
+#side-bar div.interwiki-stylable p {
 	margin: 0;
 }
 
@@ -941,6 +939,12 @@
 		opacity: 1;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		pointer-events: auto;
+	}
+
+	#side-bar div.scpnet-interwiki-wrapper,
+	#side-bar div.scpnet-interwiki-wrapper * {
+		max-width: var(--sidebar-width-on-mobile);
+		margin-left: 0;
 	}
 }
 
