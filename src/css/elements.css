@@ -1180,7 +1180,7 @@ div.page-rate-widget-box .rate-points {
 }
 
 [id*="u-credit"] div.credit-back::before {
-	content: "クレジット";
+	content: "戻る";
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1432,6 +1432,10 @@ div.page-rate-widget-box .rate-points {
 	overflow-y: auto;
 }
 
+.creditRate.creditModule ~ [id*="u-credit"] div.credit-back::before {
+	content: "クレジット";
+}
+
 .creditRate.creditModule ~ [id*=u-credit] div.creditBottomRate {
 	box-shadow: unset;
 }
@@ -1526,6 +1530,10 @@ div.page-rate-widget-box .rate-points {
 #page-content table.wiki-content-table td,
 #page-content div.b-tables table.wiki-content-table td {
 	padding: 0.5em;
+}
+
+.translation-box-stylesheet {
+	display: none;
 }
 
 /* Nested Collapsible Block Fix */
@@ -2207,6 +2215,21 @@ div.wiki-note:after {
 .unmargined>p {
 	margin: 0;
 	line-height: 1;
+}
+
+/* Wikiwalk Nav */
+.footer-wikiwalk-nav {
+	--wght: 700;
+	font-size: 0.75em;
+	font-weight: var(--wght);
+	letter-spacing: 0.016em;
+}
+
+.browserupgrade {
+	margin: 0.2em 0;
+	padding: 0.2em 0;
+	background: rgb(var(--swatch-secondary-color));
+	color: rgb(var(--swatch-text-tertiary-color));
 }
 
 /* Sexy Box (apparently) */
