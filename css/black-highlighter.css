@@ -3115,7 +3115,7 @@ div.dblock {
 		calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2);
 	width: calc(100vw - (100vw - 100%));
 	height: auto;
-	min-height: calc(100vh - calc(var(--final-header-height-on-desktop)));
+	min-height: calc(100vh - var(--final-header-height-on-desktop));
 	margin: 0 auto;
 	padding: 0;
 	gap: 0.5rem;
@@ -6780,7 +6780,7 @@ div.odialog-shader-iframe {
 		grid-template-areas:
 			"content content content";
 		justify-content: center;
-		min-height: calc(100vh - calc(var(--final-header-height-on-mobile)));
+		min-height: calc(100vh - var(--final-header-height-on-mobile));
 		margin: calc(var(--topbar-height-on-mobile) - 0.125rem) auto 0 !important;
 	}
 
@@ -7900,7 +7900,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	z-index: -1;
 	top: 0;
 	left: calc(var(--base-font-size) * (14 / 15) * -1);
-	width: calc(100% + calc(var(--base-font-size) * (14 / 15)));
+	width: calc(100% + (var(--base-font-size) * (14 / 15)));
 	height: 100%;
 	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -9935,7 +9935,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	z-index: -1;
 	top: 0;
 	left: calc(var(--base-font-size) * (14 / 15) * -1);
-	width: calc(100% + calc(var(--base-font-size) * (14 / 15)));
+	width: calc(100% + (var(--base-font-size) * (14 / 15)));
 	height: 100%;
 	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
