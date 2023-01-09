@@ -2,7 +2,7 @@
 
 [![Travis CI Build Status](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter.svg?branch=master)](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter)
 
-    [2019-2021 Wikidot Theme]
+    [2019-2023 Wikidot Theme]
     Designed by Woedenaz, Croquembouche, & djkaktus
     Built by Woedenaz, Croquembouche, aismallard & rounderhouse (for some reason)
 
