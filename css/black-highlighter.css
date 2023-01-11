@@ -7728,7 +7728,9 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 #side-bar div.menu-item,
 #side-bar div.menu-item > p,
 #interwiki div.menu-item,
-#interwiki div.menu-item > p {
+#interwiki div.menu-item > p,
+#side-bar div.menu-item.small,
+#side-bar div.menu-item.small > p {
 	display: flex;
 	flex-basis: 100%;
 	flex-flow: row wrap;
@@ -7790,11 +7792,13 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 #interwiki div.menu-item a {
 	font-family: var(--UI-font,var(--header-font));
-	font-size: calc(var(--base-font-size)*.93333);
+	font-size: calc(var(--base-font-size) * (14/15));
 }
 
 #side-bar div.menu-item a,
 #side-bar div.menu-item a:visited,
+#side-bar div.menu-item.small a,
+#side-bar div.menu-item.small a:visited,
 #interwiki div.menu-item a,
 #interwiki div.menu-item a:visited {
 	--wght: var(--ui-wght);
@@ -7803,7 +7807,6 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	justify-content: flex-start;
 	height: 1.5rem;
 	margin: 0;
-	padding: 0 0.6em;
 	transition: 
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -7816,6 +7819,17 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	font-weight: var(--wght);
 	letter-spacing: 0.04em;
 	line-height: 1.5;
+}
+
+#side-bar div.menu-item.small a {
+	height: 1.25rem;
+	font-size: calc(var(--base-font-size) * 0.825);
+}
+
+/* Center Forum link if it right next to Main link */
+
+#side-bar div.menu-item > a[href="/"] + a[href="/forum:start"]:last-child {
+	justify-content: center;
 }
 
 #side-bar div.menu-item .text {
@@ -7864,6 +7878,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 #side-bar div.menu-item a:hover,
 #side-bar div.menu-item a:active,
+#side-bar div.menu-item.small a:hover,
+#side-bar div.menu-item.small a:active,
 #interwiki div.menu-item a:hover,
 #interwiki div.menu-item a:active {
 	--wght: var(--ui-hvr-wght);
@@ -7874,6 +7890,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 }
 
 #side-bar div.menu-item a:focus-within,
+#side-bar div.menu-item.small a:focus-within,
 #interwiki div.menu-item a:focus-within {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
@@ -9362,7 +9379,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 }
 
 #side-bar:lang(pt-br) .side-block span[style*="font-size"] a {
-	font-size: calc(var(--base-font-size)*0.8);
+	font-size: calc(var(--base-font-size) * 0.8);
 }
 
 /* ===RUSSIAN BRANCH=== */
