@@ -2,7 +2,7 @@
 
 [![Travis CI Build Status](https://travis-ci.org/MikuKaneko/Black-Highlighter.svg?branch=master)](https://travis-ci.org/MikuKaneko/Black-Highlighter)
 
-    [2019-2021 Wikidot Theme]
+    [2019-2023 Wikidot Theme]
     Designed by Woedenaz, Croquembouche, & djkaktus
     Built by Woedenaz, Croquembouche, aismallard & rounderhouse (for some reason)
     Edited for SCP財団 by MikuKaneko, ukwhatn, Rokurokubi, 7happy7, C-take
