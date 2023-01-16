@@ -735,7 +735,7 @@
 
 /* ===CZECH BRANCH=== */
 
-:root:lang(cs) {
+:root:where(:lang(cs)) {
 	/* Header */
 	--header-title: "SCP Nadace";
 	--header-subtitle: "Česká Větev SCP Nadace";
@@ -743,7 +743,7 @@
 
 /* ===FRENCH BRANCH=== */
 
-:root:lang(fr) {
+:root:where(:lang(fr)) {
 	/* header */
 	--header-title: "Fondation SCP";
 	--header-subtitle: "Sécuriser, Contenir, Protéger";
@@ -751,7 +751,7 @@
 
 /* ===GERMAN BRANCH=== */
 
-:root:lang(de) {
+:root:where(:lang(de)) {
 	/* Header */
 	--header-title: "SCP Foundation";
 	--header-subtitle: "auf Deutsch";
@@ -759,7 +759,7 @@
 
 /* ===GREEK BRANCH=== */
 
-:root:lang(el) {
+:root:where(:lang(el)) {
 	/* Header */
 	--header-title: "Το Ίδρυμα SCP";
 	--header-subtitle: "Ελληνόφωνος κλάδος";
@@ -767,7 +767,7 @@
 
 /* ===ITALIAN BRANCH=== */
 
-:root:lang(it) {
+:root:where(:lang(it)) {
 	/* Header */
 	--header-title: "Fondazione SCP";
 	--header-subtitle: "Branca Italiana - SCP Foundation";
@@ -775,7 +775,7 @@
 
 /* ===JAPANESE BRANCH=== */
 
-:root:lang(ja) {
+:root:where(:lang(ja)) {
 	/* Header */
 	--header-title: "SCP財団";
 	--header-subtitle: "確保、収容、保護";
@@ -798,7 +798,7 @@
 
 /* ===KOREAN BRANCH=== */
 
-:root:lang(ko) {
+:root:where(:lang(ko)) {
 	/* Header */
 	--header-title: "SCP 재단";
 	--header-subtitle: "확보, 격리, 보호";
@@ -814,14 +814,9 @@
 		"돋움", "Dotum", "Helvetica Neue", "Helvetica", Arial, monospace;
 }
 
-#side-bar:lang(ko) .side-block[style*=E5E5FF] a[href*=wikidot]{
-	--social-logo-mask:var(--discord-mask);
-	--social-color:var(--discord-icon-color)
-}
-
 /* ===POLISH BRANCH=== */
 
-:root:lang(pl) {
+:root:where(:lang(pl)) {
 	/* Header */
 	--header-title: "Fundacja SCP";
 	--header-subtitle: "Polska Filia SCP";
@@ -829,7 +824,7 @@
 
 /* ===PORTUGESE BRANCH=== */
 
-:root:lang(pt-br) {
+:root:where(:lang(pt-br)) {
 	/* Header */
 	--header-title: "Fundação SCP";
 	--header-subtitle: "Filial Lusófona";
@@ -837,7 +832,7 @@
 
 /* ===RUSSIAN BRANCH=== */
 
-:root:lang(ru) {
+:root:where(:lang(ru)) {
 	/* Header */
 	--header-title: "SCP Foundation";
 	--header-subtitle: "Russian Branch";
@@ -856,7 +851,7 @@
 
 /* ===SPANISH BRANCH=== */
 
-:root:lang(es) {
+:root:where(:lang(es)) {
 	/* Header */
 	--header-title: "La Fundación SCP";
 	--header-subtitle: "Rama Hispanohablante";
@@ -864,7 +859,7 @@
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 
-:root:lang(cn) {
+:root:where(:lang(cn)) {
 	--theme-base: "黑色标记笔";
 	--theme-id: "黑色标记笔";
 	--theme-name: "黑色标记笔";
@@ -887,7 +882,7 @@
 
 /* ===THAI BRANCH=== */
 
-:root:lang(th) {
+:root:where(:lang(th)) {
 	/* Header */
 	--header-title: "สถาบัน SCP";
 	--header-subtitle: "ควบคุม, กักกัน, ป้องกัน";
@@ -904,7 +899,7 @@
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
-:root:lang(zh) {
+:root:where(:lang(zh)) {
 	/* Header */
 	--header-title: "SCP基金會";
 	--header-subtitle: "控制，收容，保護";
@@ -925,7 +920,7 @@
 
 /* ===UKRAINIAN BRANCH=== */
 
-:root:lang(uk) {
+:root:where(:lang(uk)) {
 	/* Header */
 	--header-title: "Фонд SCP.";
 	--header-subtitle: "Охороняти. Утримувати. Захищати.";
@@ -942,7 +937,7 @@
 	--mono-font: Recursive, Consolas, monaco, monospace;
 }
 
-:root:lang(uk) {
+:root:where(:lang(uk)) {
 	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15) * 19));
 	--body-width-on-desktop: 75rem;
 }
@@ -950,7 +945,7 @@
 /* ===VIETNAMESE BRANCH=== */
 
 /* Removing this for now by request of the Vietnamese Branch
-:root:lang(vi) {
+:root:where(:lang(vi)) {
 	--header-title: "Tổ Chức SCP";
 	--header-subtitle: "Quản thúc, Lưu trữ, Bảo vệ";
 }
@@ -6887,71 +6882,71 @@ div.wd-adunit {
 
 /* ===CZECH BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(cs) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(cs)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	height: auto;
 	line-height: 1;
 	white-space: normal;
 }
 
-div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(cs) {
+div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(cs)) {
 	flex-basis: 6rem;
 }
 
-form#edit-page-form:lang(cs) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(cs)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Krátký popis změn:";
 }
 
-table.page-history:lang(cs) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(cs)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "změny";
 }
 
-table.page-history:lang(cs) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(cs)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "akce";
 }
 
-table.page-history:lang(cs) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(cs)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "od";
 }
 
-table.page-history:lang(cs) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(cs)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "datum";
 }
 
-#site-tools-box:lang(cs)::before {
+#site-tools-box:where(:lang(cs))::before {
 	content: "Nástroje stránky";
 }
 
 /* ===FRENCH BRANCH=== */
 
-#main-content:lang(fr) .page-tags::before {
+#main-content:where(:lang(fr)) .page-tags::before {
 	content: "étiquettes\0021b4";
 	text-transform: uppercase;
 }
 
-form#edit-page-form:lang(fr) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(fr)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Courte Description des Modifications:";
 }
 
-table.page-history:lang(fr) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(fr)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "rév.";
 }
 
-table.page-history:lang(fr) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(fr)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "drapeaux";
 }
 
-table.page-history:lang(fr) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(fr)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "par";
 }
 
-#site-tools-box:lang(fr)::before {
+#site-tools-box:where(:lang(fr))::before {
 	content: "Outils du Site";
 }
 
 /* ===GERMAN BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(de) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(de)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	flex-basis: max-content;
 	height: auto;
@@ -6959,258 +6954,258 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	white-space: normal;
 }
 
-div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(de) {
+div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(de)) {
 	flex-basis: 6rem;
 }
 
-form#edit-page-form:lang(de) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(de)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Kurze Beschreibung der Änderungen:";
 }
 
-table.page-history:lang(de) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(de)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "markierungen";
 }
 
-table.page-history:lang(de) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(de)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "aktionen";
 }
 
-table.page-history:lang(de) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(de)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "durch";
 }
 
-table.page-history:lang(de) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(de)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "datum";
 }
 
-#site-tools-box:lang(de)::before {
+#site-tools-box:where(:lang(de))::before {
 	content: "Site-Werkzeuge";
 }
 
 /* ===GREEK BRANCH=== */
 
-#main-content:lang(el) .page-tags::before {
+#main-content:where(:lang(el)) .page-tags::before {
 	content: "ΕΤΙΚΈΤΕΣ\0021b4";
 }
 
-form#edit-page-form:lang(el) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(el)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Σύντομη περιγραφή των αλλαγών:";
 }
 
-table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(el)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "ανα.";
 }
 
-table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(el)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "σημαίες";
 }
 
-table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(el)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "δράσεις";
 }
 
-table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(el)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "του";
 }
 
-table.page-history:lang(el) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(el)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "ημερομηνία";
 }
 
-#site-tools-box:lang(el)::before {
+#site-tools-box:where(:lang(el))::before {
 	content: "Εργαλεία Ιστοσελίδας";
 }
 
 /* ===ITALIAN BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(it) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(it)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	height: auto;
 	line-height: 1;
 	white-space: normal;
 }
 
-div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(it) {
+div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(it)) {
 	flex-basis: 6rem;
 }
 
-form#edit-page-form:lang(it) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(it)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Breve descrizione delle modifiche:";
 }
 
-table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(it)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "segnalazioni";
 }
 
-table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(it)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "azioni";
 }
 
-table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(it)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "da";
 }
 
-table.page-history:lang(it) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(it)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "data";
 }
 
-#site-tools-box:lang(it)::before {
+#site-tools-box:where(:lang(it))::before {
 	content: "Strumenti del Sito";
 }
 
-#main-content:lang(it) .page-tags::before {
+#main-content:where(:lang(it)) .page-tags::before {
 	content: "TAG\0021b4";
 }
 
 /* ===JAPANESE BRANCH=== */
 
-form#edit-page-form:lang(ja) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(ja)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "変更の要旨";
 }
 
-table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(ja)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "フラグ";
 }
 
-table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(ja)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "アクション";
 }
 
-table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(ja)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "編集者";
 }
 
-table.page-history:lang(ja) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(ja)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "日付";
 }
 
-#site-tools-box:lang(ja)::before {
+#site-tools-box:where(:lang(ja))::before {
 	content: "サイトツール";
 }
 
-#main-content:lang(ja) .page-tags::before {
+#main-content:where(:lang(ja)) .page-tags::before {
 	content: "タグ\0021b4";
 }
 
 /* ===KOREAN BRANCH=== */
 
-#main-content:lang(ko) .page-tags::before {
+#main-content:where(:lang(ko)) .page-tags::before {
 	content: "태그\0021b4";
 }
 
-form#edit-page-form:lang(ko) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(ko)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "수정에 대한 짤막한 설명";
 }
 
-table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(ko)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "수정";
 }
 
-table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(ko)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "유형";
 }
 
-table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(ko)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "활동";
 }
 
-table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(ko)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "편집자";
 }
 
-table.page-history:lang(ko) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(ko)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "날짜";
 }
 
-#site-tools-box:lang(ko)::before {
+#site-tools-box:where(:lang(ko))::before {
 	content: "사이트 도구";
 }
 
 /* ===POLISH BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pl) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(pl)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	height: auto;
 	line-height: 1;
 	white-space: normal;
 }
 
-div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pl) {
+div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(pl)) {
 	flex-basis: 6rem;
 }
 
-form#edit-page-form:lang(pt-br) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(pl)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Krótki Opis Zmian:";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(pl)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "wersja";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(pl)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "flagi";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(pl)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "opcje";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(pl)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "przez";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(pl)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "Data";
 }
 
-#site-tools-box:lang(pt-br)::before {
+#site-tools-box:where(:lang(pl))::before {
 	content: "Narzędzia Witryny";
 }
 
 /* ===PORTUGESE BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pt-br) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(pt-br)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	height: auto;
 	line-height: 1;
 	white-space: normal;
 }
 
-div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(pt-br) {
+div#page-options-bottom-2:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(pt-br)) {
 	flex-basis: 6rem;
 }
 
-form#edit-page-form:lang(pt-br) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(pt-br)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Resumo das Mudanças:";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(pt-br)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "Revisão";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(pt-br)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "Marcações";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(pt-br)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "Ações";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(pt-br)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "Por";
 }
 
-table.page-history:lang(pt-br) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(pt-br)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "Data";
 }
 
-#site-tools-box:lang(pt-br)::before {
+#site-tools-box:where(:lang(pt-br))::before {
 	content: "Ferramentas do Site";
 }
 
 /* ===RUSSIAN BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(ru) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(ru)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	flex-basis: 6rem;
 	height: auto;
@@ -7220,37 +7215,37 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 
-form#edit-page-form:lang(cn) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(cn)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "简要修改说明";
 }
 
-table.page-history:lang(cn) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(cn)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "版本";
 }
 
-table.page-history:lang(cn) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(cn)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "标记";
 }
 
-table.page-history:lang(cn) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(cn)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "操作";
 }
 
-table.page-history:lang(cn) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(cn)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "更新者";
 }
 
-table.page-history:lang(cn) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(cn)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "日期";
 }
 
-#site-tools-box:lang(cn)::before {
+#site-tools-box:where(:lang(cn))::before {
 	content: "网站工具";
 }
 
 /* ===SPANISH BRANCH=== */
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(es) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(es)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	flex-basis: 6rem;
 	height: auto;
@@ -7258,31 +7253,31 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 	white-space: normal;
 }
 
-#main-content:lang(es) .page-tags::before {
+#main-content:where(:lang(es)) .page-tags::before {
 	content: "Etiquetas\0021b4";
 }
 
-form#edit-page-form:lang(es) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(es)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Breve descripción de los cambios:";
 }
 
-table.page-history:lang(es) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(es)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "marcas";
 }
 
-table.page-history:lang(es) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(es)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "acciones";
 }
 
-table.page-history:lang(es) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(es)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "por";
 }
 
-table.page-history:lang(es) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(es)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "fecha";
 }
 
-#site-tools-box:lang(es)::before {
+#site-tools-box:where(:lang(es))::before {
 	content: "Herramientas del Sitio";
 }
 
@@ -7290,52 +7285,52 @@ table.page-history:lang(es) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 /* Overwriting Thai Branch's !important on their Sigma-9 version */
 
-#page-content:lang(th) .page-rate-widget-box .rate-points {
+#page-content:where(:lang(th)) .page-rate-widget-box .rate-points {
 	background-color: transparent !important; 
 }
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
-form#edit-page-form:lang(zh-tr) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(zh-tr)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "本次編輯的簡要說明";
 }
 
-table.page-history:lang(zh-tr) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(zh-tr)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "修訂版本";
 }
 
-table.page-history:lang(zh-tr) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(zh-tr)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "標記";
 }
 
-table.page-history:lang(zh-tr) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(zh-tr)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "動作";
 }
 
-table.page-history:lang(zh-tr) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(zh-tr)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "由";
 }
 
-table.page-history:lang(zh-tr) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(zh-tr)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "日期";
 }
 
-#site-tools-box:lang(zh-tr)::before {
+#site-tools-box:where(:lang(zh-tr))::before {
 	content: "網站工具";
 }
 
-#main-content:lang(zh-tr) .page-tags::before {
+#main-content:where(:lang(zh-tr)) .page-tags::before {
 	content: "標籤\0021b4";
 }
 
 /* ===UKRAINIAN BRANCH=== */
 
 @media only screen and (min-width: 56.25rem) {
-	#container:lang(uk) {
+	#container:where(:lang(uk)) {
 		width: calc((99vw - (99vw - 99%)));
 	}
 
-	#content-wrap:lang(uk) {
+	#content-wrap:where(:lang(uk)) {
 		grid-template-areas: "side-bar content";
 		grid-template-columns:
 			/* Sidebar Width */
@@ -7343,17 +7338,17 @@ table.page-history:lang(zh-tr) tr:nth-of-type(2) td:nth-of-type(6)::before {
 			1fr;
 	}
 
-	#content-wrap:lang(uk) {
+	#content-wrap:where(:lang(uk)) {
 		margin: 0 !important; /* Overwriting branch's !important */
 		padding: 0 !important; /* Overwriting branch's !important */
 	}
 }
 
-#main-content:lang(uk) .page-tags::before {
+#main-content:where(:lang(uk)) .page-tags::before {
 	content: "Теґи\0021b4";
 }
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:lang(uk) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:where(:lang(uk)) {
 	--button-padding: calc(var(--icon-size)/4) calc(var(--icon-size)/8);
 	flex-basis: 6rem;
 	height: auto;
@@ -7363,35 +7358,35 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 
 /* ===VIETNAMESE BRANCH=== */
 
-#main-content:lang(vi) .page-tags::before {
+#main-content:where(:lang(vi)) .page-tags::before {
 	content: "TAG\0021b4";
 }
 
-form#edit-page-form:lang(vi) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
+form#edit-page-form:where(:lang(vi)) .edit-page-bottomtable tr>td:nth-of-type(1)>div:nth-of-type(1)::before {
 	content: "Tóm tắt thay đổi:";
 }
 
-table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(1)::before {
+table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(1)::before {
 	content: "stt.";
 }
 
-table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(3)::before {
+table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(3)::before {
 	content: "nhãn";
 }
 
-table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(4)::before {
+table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(4)::before {
 	content: "t.chọn";
 }
 
-table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(5)::before {
+table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(5)::before {
 	content: "bởi";
 }
 
-table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
+table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	content: "ngày";
 }
 
-#site-tools-box:lang(vi)::before {
+#site-tools-box:where(:lang(vi))::before {
 	content: "Công Cụ Trang";
 }
 
@@ -8490,17 +8485,17 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 /* ===CZECH BRANCH=== */
 
-#side-bar:lang(cs) div.menu-item {
+#side-bar:where(:lang(cs)) div.menu-item {
 	height: auto;
 }
 
-#side-bar:lang(cs) .side-block.blue {
+#side-bar:where(:lang(cs)) .side-block.blue {
 	margin: 0.5rem 0.5rem 0 0;
 	padding: 0.5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(cs) .side-block.blue a {
+#side-bar:where(:lang(cs)) .side-block.blue a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
@@ -8508,7 +8503,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(cs) .side-block.blue a::before {
+#side-bar:where(:lang(cs)) .side-block.blue a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -8530,8 +8525,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(cs) .side-block.blue a:hover::before,
-#side-bar:lang(cs) .side-block.blue a:active::before {
+#side-bar:where(:lang(cs)) .side-block.blue a:hover::before,
+#side-bar:where(:lang(cs)) .side-block.blue a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -8541,7 +8536,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(cs) .side-block.blue a:focus-within::before {
+#side-bar:where(:lang(cs)) .side-block.blue a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -8551,78 +8546,166 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(cs) .side-block.blue a img {
+#side-bar:where(:lang(cs)) .side-block.blue a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(cs) .side-block.blue a[href*="facebook"] {
+#side-bar:where(:lang(cs)) .side-block.blue a[href*="facebook"] {
 	--social-logo-mask: var(--facebook-mask);
 	--social-color: var(--facebook-icon-color);
 }
 
-#side-bar:lang(cs) .side-block.blue a[href*="instagram"] {
+#side-bar:where(:lang(cs)) .side-block.blue a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
 
-#side-bar:lang(cs) .side-block.blue a[href*="discord"] {
+#side-bar:where(:lang(cs)) .side-block.blue a[href*="discord"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(cs) .side-block.blue a[href*="github"] {
+#side-bar:where(:lang(cs)) .side-block.blue a[href*="github"] {
 	--social-logo-mask: var(--github-mask);
 	--social-color: var(--github-icon-color);
 }
 
 /* ===FRENCH BRANCH=== */
 
+#side-bar:where(:lang(fr)) .side-block.media {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;	
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5rem !important;	
+	-moz-column-gap: 0.5rem;	
+	     column-gap: 0.5rem;
+	background-color: rgba(var(--sidebar-media-bg-color)) !important;
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.heading {
+	flex-basis: 100%;
+	flex-grow: 2;	
+	align-content: flex-start;
+	padding-left: 0;
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item {
+	flex-basis: 1.6875rem;
+	flex-grow: 0;
+	flex-shrink: 1;	
+	width: 1.6875rem;
+	margin-top: 0.5rem;
+	box-shadow: unset;	
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item p {
+	display: contents;
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item a {	
+	position: relative;
+	margin: 0;
+	padding: 0;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-color));
+	-webkit-mask: var(--social-logo-mask) center center / contain no-repeat;
+	        mask: var(--social-logo-mask) center center / contain no-repeat;	
+	color: transparent;
+	font-size: 0;
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item a::before {
+	--clip-path: 
+		polygon(
+			0 0, 
+			0 0, 
+			0 100%, 
+			0 100%
+		);
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgb(var(--social-icon-hover-color));
+	pointer-events: none;
+	-webkit-clip-path: var(--clip-path);
+	        clip-path: var(--clip-path);
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item a:hover::before,
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item a:active::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item a:focus-within::before {
+	--clip-path: 
+		polygon(
+			-15% 0, 
+			115% 0, 
+			100% 100%, 
+			0 100%
+		);
+}
+
 /* ===GERMAN BRANCH=== */
 
-#side-bar:lang(de) *:not(.scpnet-interwiki-wrapper) {
+#side-bar:where(:lang(de)) *:not(.scpnet-interwiki-wrapper) {
 	height: auto;
 }
 
-#side-bar:lang(de) div.side-block {
+#side-bar:where(:lang(de)) div.side-block {
 	display: grid;
 	grid-auto-rows: minmax(0, auto);
 	grid-template-rows: unset;
 	flex-basis: 100%;
 }
 
-#side-bar:lang(de) div.side-block:not(.svg-icons) div.menu-item {
+#side-bar:where(:lang(de)) div.side-block:not(.svg-icons) div.menu-item {
 	display: grid;
 	grid-template-columns: 50% 50%;
 }
 
-#side-bar:lang(de) .side-links.svg-icons a {
+#side-bar:where(:lang(de)) .side-links.svg-icons a {
 	width: 1.25rem;
 	height: 1.25rem;
 }
 
-#side-bar:lang(de) div.side-bar-container {
+#side-bar:where(:lang(de)) div.side-bar-container {
 	display: contents;
 }
 
-#side-bar:lang(de) div.menu-item p {
+#side-bar:where(:lang(de)) div.menu-item p {
 	display: contents;
 }
 
-#side-bar:lang(de) div.menu-item a:only-of-type {
+#side-bar:where(:lang(de)) div.menu-item a:only-of-type {
 	grid-column: 1/ span 2;
 	grid-row: 1;
 	justify-content: flex-start;
 }
 
-#side-bar:lang(de) div.menu-item a {
+#side-bar:where(:lang(de)) div.menu-item a {
 	grid-row: 1;
 }
 
-#side-bar:lang(de) div.menu-item span {
+#side-bar:where(:lang(de)) div.menu-item span {
 	z-index: 2;
 	grid-column: 2;
 	grid-row: 1;
@@ -8637,73 +8720,73 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
 }
 
-#side-bar:lang(de) div.menu-item a:only-of-type:hover ~ span,
-#side-bar:lang(de) div.menu-item a:only-of-type:active ~ span {
+#side-bar:where(:lang(de)) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:where(:lang(de)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(de) div.menu-item a:only-of-type:focus-within ~ span {
+#side-bar:where(:lang(de)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(de) .collapsible-block + .collapsible-block {
+#side-bar:where(:lang(de)) .collapsible-block + .collapsible-block {
 	margin-top: -1.5rem;
 	margin-bottom: 0.5rem;
 }
 
-#side-bar:lang(de) .collapsible-block + .collapsible-block a.collapsible-block-link {
+#side-bar:where(:lang(de)) .collapsible-block + .collapsible-block a.collapsible-block-link {
 	width: calc(100% - (var(--base-font-size)*(7.5/15)));
 	padding: 0 0 0 calc(var(--base-font-size)*(7.5/15));
 }
 
-#side-bar:lang(de) .collapsible-block + .collapsible-block a.collapsible-block-link::before {
+#side-bar:where(:lang(de)) .collapsible-block + .collapsible-block a.collapsible-block-link::before {
 	display: none;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block {
 	display: grid;
 	min-height: 1.5rem;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block + .menu-item.expandable {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block + .menu-item.expandable {
 	margin-top: -1.5rem;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div.collapsible-block-folded {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block > div.collapsible-block-folded {
 	margin-top: -1.5rem;
 	box-shadow: unset;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div.collapsible-block-unfolded {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block > div.collapsible-block-unfolded {
 	margin-bottom: 1.5rem;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div,
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div a {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block > div,
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block > div a {
 	min-height: 1.5rem;
 	background-color: transparent;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div a {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block > div a {
 	width: 100%;
 	max-height: 1.5rem;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block > div a::before {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block > div a::before {
 	-webkit-filter: unset;
 	        filter: unset;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block .collapsible-block-link {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block .collapsible-block-link {
 	top: unset;
 }
 
-#side-bar:lang(de) .collapsible-block-folded .collapsible-block-link::before, 
-#side-bar:lang(de) .colmod-link-top a:first-child::before {
+#side-bar:where(:lang(de)) .collapsible-block-folded .collapsible-block-link::before, 
+#side-bar:where(:lang(de)) .colmod-link-top a:first-child::before {
 	--text-shadow-color: var(--swatch-primary-darkest);
 	content: "+";
 	display: grid;
@@ -8716,8 +8799,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 }
 
 @supports not (-webkit-text-stroke:initial) {
-	#side-bar:lang(de) .collapsible-block-folded .collapsible-block-link::before, 
-	#side-bar:lang(de) .colmod-link-top a:first-child::before {
+	#side-bar:where(:lang(de)) .collapsible-block-folded .collapsible-block-link::before, 
+	#side-bar:where(:lang(de)) .colmod-link-top a:first-child::before {
 		text-shadow: 
 			rgb(var(--text-outline-color)) 0.0625rem 0rem 0rem, 
 			rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0rem, 
@@ -8729,39 +8812,39 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	}
 }
 
-#side-bar:lang(de) div.menu-item.expandable:hover + div.collapsible-block a.collapsible-block-link::before {
+#side-bar:where(:lang(de)) div.menu-item.expandable:hover + div.collapsible-block a.collapsible-block-link::before {
 	--text-outline-color: rgba(var(--sidebar-bg-color),1);
 }
 
-#side-bar:lang(de) div.side-block > div.menu-item.expandable > p > a:only-of-type {
+#side-bar:where(:lang(de)) div.side-block > div.menu-item.expandable > p > a:only-of-type {
 	-webkit-clip-path: polygon(-15% 0,100% 0,calc(100% - 1em) 100%,0 100%);
 	        clip-path: polygon(-15% 0,100% 0,calc(100% - 1em) 100%,0 100%);
 }
 
-#side-bar:lang(de) div.side-block > div.menu-item.expandable > p > span {
+#side-bar:where(:lang(de)) div.side-block > div.menu-item.expandable > p > span {
 	padding-right: 0;
 }
 
-#side-bar:lang(de) div.side-block > div.menu-item.expandable:hover > p > span,
-#side-bar:lang(de) div.side-block > div.menu-item.expandable:active > p > span {
+#side-bar:where(:lang(de)) div.side-block > div.menu-item.expandable:hover > p > span,
+#side-bar:where(:lang(de)) div.side-block > div.menu-item.expandable:active > p > span {
 	padding-right: 1.25em;
 }
 
-#side-bar:lang(de) .menu-item.expandable + .collapsible-block .menu-item {
+#side-bar:where(:lang(de)) .menu-item.expandable + .collapsible-block .menu-item {
 	margin: 0;
 	padding: 0;
 	border-left: none;
 }
 
-#side-bar:lang(de) .collapsible-block-content {
+#side-bar:where(:lang(de)) .collapsible-block-content {
 	border-right: var(--base-font-size) solid rgba(var(--sidebar-border-color));
 }
 
-#side-bar:lang(de) .collapsible-block-content div.menu-item {
+#side-bar:where(:lang(de)) .collapsible-block-content div.menu-item {
 	max-width: 100%;
 }
 
-#side-bar:lang(de) div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
+#side-bar:where(:lang(de)) div.menu-item.expandable + .collapsible-block .collapsible-block-content .menu-item a {
 	align-items: center;
 	width: calc(100% - var(--base-font-size));
 	margin: 0 0 0 calc(var(--base-font-size) * (1/3));
@@ -8769,13 +8852,13 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	border-left: 0.0625rem dashed rgb(var(--swatch-primary-darkest));
 }
 
-#side-bar:lang(de) .side-block.svg-icons {
+#side-bar:where(:lang(de)) .side-block.svg-icons {
 	margin: 0.5rem 0.5rem 0.5rem 0;
 	padding: 0.5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(de) .side-block.svg-icons > p {
+#side-bar:where(:lang(de)) .side-block.svg-icons > p {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-rows: repeat(auto-fit,minmax(1.3125rem,1fr));
@@ -8783,7 +8866,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	width: 100%;
 }
 
-#side-bar:lang(de) .side-block.svg-icons a {
+#side-bar:where(:lang(de)) .side-block.svg-icons a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
@@ -8792,7 +8875,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(de) .side-block.svg-icons a::before {
+#side-bar:where(:lang(de)) .side-block.svg-icons a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -8815,8 +8898,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a:hover::before,
-#side-bar:lang(de) .side-block.svg-icons a:active::before {
+#side-bar:where(:lang(de)) .side-block.svg-icons a:hover::before,
+#side-bar:where(:lang(de)) .side-block.svg-icons a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -8826,7 +8909,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a:focus-within::before {
+#side-bar:where(:lang(de)) .side-block.svg-icons a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -8836,50 +8919,50 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a img {
+#side-bar:where(:lang(de)) .side-block.svg-icons a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="chat"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="chat"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="youtube"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="youtube"] {
 	--social-logo-mask: var(--youtube-mask);
 	--social-color: var(--youtube-icon-color);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="facebook"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="facebook"] {
 	--social-logo-mask: var(--facebook-mask);
 	--social-color: var(--facebook-icon-color);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="twitter"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="deviantart"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="deviantart"] {
 	--social-logo-mask: var(--deviantart-mask);
 	--social-color: var(--deviantart-icon-color);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="instagram"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="reddit"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="reddit"] {
 	--social-logo-mask: var(--reddit-mask);
 	--social-color: var(--reddit-icon-color);
 }
 
-#side-bar:lang(de) .side-block.svg-icons a[href*="sandbox"] {
+#side-bar:where(:lang(de)) .side-block.svg-icons a[href*="sandbox"] {
 	--social-logo-mask: var(--sandbox-mask);
 	--social-color: var(--sandbox-icon-color);
 }
@@ -8888,19 +8971,23 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 /* ===ITALIAN BRANCH=== */
 
-#side-bar:lang(it) div.side-bar-container {
+#side-bar:where(:lang(it)) {
+	--telegram-icon-color: 0, 136, 204;
+}
+
+#side-bar:where(:lang(it)) div.side-bar-container {
     display: contents;
 }
 
-#side-bar:lang(it) div.menu-item {
+#side-bar:where(:lang(it)) div.menu-item {
 	height: auto;
 }
 
-#side-bar:lang(it) .side-block.green + div {
+#side-bar:where(:lang(it)) .side-block.green + div {
 	display: contents;
 }
 
-#side-bar:lang(it) .side-block.blue {
+#side-bar:where(:lang(it)) .side-block.media {
 	grid-auto-flow: column;
 	align-self: center;
 	justify-content: space-evenly;
@@ -8910,11 +8997,11 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	direction: ltr;
 }
 
-#side-bar:lang(it) .side-block.blue br {
+#side-bar:where(:lang(it)) .side-block.media br {
 	display: none;
 }
 
-#side-bar:lang(it) .side-block.blue a {
+#side-bar:where(:lang(it)) .side-block.media a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
@@ -8922,7 +9009,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(it) .side-block.blue a::before {
+#side-bar:where(:lang(it)) .side-block.media a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -8944,8 +9031,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(it) .side-block.blue a:hover::before,
-#side-bar:lang(it) .side-block.blue a:active::before {
+#side-bar:where(:lang(it)) .side-block.media a:hover::before,
+#side-bar:where(:lang(it)) .side-block.media a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -8955,7 +9042,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(it) .side-block.blue a:focus-within::before {
+#side-bar:where(:lang(it)) .side-block.media a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -8965,57 +9052,62 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(it) .side-block.blue a img {
+#side-bar:where(:lang(it)) .side-block.media a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(it) .side-block.blue a[href*="facebook"] {
+#side-bar:where(:lang(it)) .side-block.media a[href*="facebook"] {
 	--social-logo-mask: var(--facebook-mask);
 	--social-color: var(--facebook-icon-color);
 }
 
-#side-bar:lang(it) .side-block.blue a[href*="twitter"] {
+#side-bar:where(:lang(it)) .side-block.media a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(it) .side-block.blue a[href*="instagram"] {
+#side-bar:where(:lang(it)) .side-block.media a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
 
-#side-bar:lang(it) .side-block.blue a[href*="chat"] {
+#side-bar:where(:lang(it)) .side-block.media a[href*="chat"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(it) .side-block.blue a[href*="reddit"] {
+#side-bar:where(:lang(it)) .side-block.media a[href*="reddit"] {
 	--social-logo-mask: var(--reddit-mask);
 	--social-color: var(--reddit-icon-color);
 }
 
+#side-bar:where(:lang(it)) .side-block.media a[href*="t.me"] {
+	--social-logo-mask: var(--telegram-mask);
+	--social-color: var(--telegram-icon-color);
+}
+
 /* ===JAPANESE BRANCH=== */
 
-#side-bar:lang(ja) hr {
+#side-bar:where(:lang(ja)) hr {
 	margin-bottom: 0;
 }
 
-#side-bar:lang(ja) div.side-block:not(.sns) div.menu-item {
+#side-bar:where(:lang(ja)) div.side-block:not(.sns) div.menu-item {
 	display: grid;
 	grid-template-columns: 50% 50%;
 }
 
-#side-bar:lang(ja) div.menu-item a:only-of-type {
+#side-bar:where(:lang(ja)) div.menu-item a:only-of-type {
 	grid-column: 1/ span 2;
 	grid-row: 1;
 	justify-content: flex-start;
 }
 
-#side-bar:lang(ja) div.menu-item span {
+#side-bar:where(:lang(ja)) div.menu-item span {
 	z-index: 2;
 	grid-column: 2;
 	grid-row: 1;
@@ -9027,26 +9119,26 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
 }
 
-#side-bar:lang(ja) div.menu-item a:only-of-type:hover ~ span,
-#side-bar:lang(ja) div.menu-item a:only-of-type:active ~ span {
+#side-bar:where(:lang(ja)) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:where(:lang(ja)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(ja) div.menu-item a:only-of-type:focus-within ~ span {
+#side-bar:where(:lang(ja)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(ja) div.menu-item a[href*="sandbox2"],
-#side-bar:lang(ja) div.menu-item span[style*="line-through"] a {
+#side-bar:where(:lang(ja)) div.menu-item a[href*="sandbox2"],
+#side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a {
 	text-indent: 1em;
 }
 
-#side-bar:lang(ja) div.menu-item a[href*="sandbox2"]::after,
-#side-bar:lang(ja) div.menu-item span[style*="line-through"] a::after {
+#side-bar:where(:lang(ja)) div.menu-item a[href*="sandbox2"]::after,
+#side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a::after {
 	content: "|";
 	position: absolute;
 	left: 0;
@@ -9057,22 +9149,22 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	color: rgba(var(--sidebar-links-text),0.25)
 }
 
-#side-bar:lang(ja) div.menu-item a[href*="sandbox2"]:hover::after,
-#side-bar:lang(ja) div.menu-item a[href*="sandbox2"]:active::after,
-#side-bar:lang(ja) div.menu-item span[style*="line-through"] a:hover::after,
-#side-bar:lang(ja) div.menu-item span[style*="line-through"] a:active::after {
+#side-bar:where(:lang(ja)) div.menu-item a[href*="sandbox2"]:hover::after,
+#side-bar:where(:lang(ja)) div.menu-item a[href*="sandbox2"]:active::after,
+#side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a:hover::after,
+#side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a:active::after {
 	color: rgba(var(--sidebar-links-hover-text),0.25);
 }
 
-#side-bar:lang(ja) div.menu-item span[style*="line-through"] {
+#side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] {
 	display: contents;
 }
 
-#side-bar:lang(ja) div.menu-item span[style*="line-through"] a {
+#side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a {
 	text-decoration: line-through;
 }
 
-#side-bar:lang(ja) .side-block.sns {
+#side-bar:where(:lang(ja)) .side-block.sns {
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
@@ -9082,12 +9174,12 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	direction: ltr;
 }
 
-#side-bar:lang(ja) .side-block.sns > div,
-#side-bar:lang(ja) .side-block.sns > div > div {
+#side-bar:where(:lang(ja)) .side-block.sns > div,
+#side-bar:where(:lang(ja)) .side-block.sns > div > div {
 	display: contents !important;
 }
 
-#side-bar:lang(ja) .side-block.sns a {
+#side-bar:where(:lang(ja)) .side-block.sns a {
 	position: relative;
 	width: 1.6875rem;
 	height: 1.6875rem;
@@ -9100,7 +9192,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(ja) .side-block.sns a::before {
+#side-bar:where(:lang(ja)) .side-block.sns a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9123,8 +9215,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(ja) .side-block.sns a:hover::before,
-#side-bar:lang(ja) .side-block.sns a:active::before {
+#side-bar:where(:lang(ja)) .side-block.sns a:hover::before,
+#side-bar:where(:lang(ja)) .side-block.sns a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9134,7 +9226,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(ja) .side-block.sns a:focus-within::before {
+#side-bar:where(:lang(ja)) .side-block.sns a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9144,47 +9236,47 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(ja) .side-block.sns a img {
+#side-bar:where(:lang(ja)) .side-block.sns a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(ja) .side-block.sns a[href*="discord"] {
+#side-bar:where(:lang(ja)) .side-block.sns a[href*="discord"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(ja) .side-block.sns a[href*="twitter"] {
+#side-bar:where(:lang(ja)) .side-block.sns a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(ja) .side-block[style*="fff0f0"] div.menu-item:last-of-type {
+#side-bar:where(:lang(ja)) .side-block[style*="fff0f0"] div.menu-item:last-of-type {
 	grid-template-columns: repeat(3, calc(100% / 3));
 }
 
-#side-bar:lang(ja) .side-block[style*="fff0f0"] div.menu-item:last-of-type a {
+#side-bar:where(:lang(ja)) .side-block[style*="fff0f0"] div.menu-item:last-of-type a {
 	grid-row: 1;
 }
 
-#side-bar:lang(ja) div.scpnet-interwiki-wrapper {
+#side-bar:where(:lang(ja)) div.scpnet-interwiki-wrapper {
 	margin-top: 1em;
 }
 
 /* ===KOREAN BRANCH=== */
 
-#side-bar:lang(ko) {
+#side-bar:where(:lang(ko)) {
 	--youtube-icon-color: 255, 0, 0;
 	--naver-icon-color: 25, 206, 96;
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] + div + div  {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] + div + div  {
 	grid-auto-flow: row;
 	margin-top: 1rem;
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] {
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
@@ -9193,11 +9285,11 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] > div {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] > div {
 	display: contents;
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
@@ -9205,7 +9297,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a::before {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9227,8 +9319,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a:hover::before,
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a:active::before {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a:hover::before,
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9238,7 +9330,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a:focus-within::before {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9248,49 +9340,59 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a img {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a[href*="twitter"] {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a[href*="wikidot"] {
+	--social-logo-mask:var(--discord-mask);
+	--social-color:var(--discord-icon-color)
+}
+
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a[href*="youtube"] {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a[href*="youtube"] {
 	--social-logo-mask: var(--youtube-mask);
 	--social-color: var(--youtube-icon-color);
 }
 
-#side-bar:lang(ko) .side-block[style*="E5E5FF"] a[href*="naver"] {
+#side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a[href*="naver"] {
 	--social-logo-mask: var(--naver-mask);
 	--social-color: var(--naver-icon-color);
 }
 
 /* ===POLISH BRANCH=== */
 
-#side-bar:lang(pl) div.menu-item a[href*="scp-series"]:only-of-type {
+#side-bar:where(:lang(pl)) div.menu-item a[href*="scp-series"]:only-of-type {
 	justify-content: flex-start;
 	padding: 0 0 0 calc(var(--base-font-size) * (14/15));
 }
 
+#side-bar:where(:lang(pl)) .side-block.media a[href*="chat"] {
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
+}
+
 /* ===PORTUGESE BRANCH=== */
 
-#side-bar:lang(pt-br) div.menu-item a[href*="series"] {
+#side-bar:where(:lang(pt-br)) div.menu-item a[href*="series"] {
 	justify-content: center;
 }
 
-#side-bar:lang(pt-br) div.side-block[style*="#e7e5e8"] + div[style*="center"] {
+#side-bar:where(:lang(pt-br)) div.side-block[style*="#e7e5e8"] + div[style*="center"] {
 	display: contents;
 }
 
-#side-bar:lang(pt-br) div.side-block[style*="#e7e5e8"] + div[style*="center"] {
+#side-bar:where(:lang(pt-br)) div.side-block[style*="#e7e5e8"] + div[style*="center"] {
 	display: contents;
 }
 
-#side-bar:lang(pt-br) .side-block.side-links {
+#side-bar:where(:lang(pt-br)) .side-block.side-links {
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
@@ -9299,7 +9401,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(pt-br) .side-block.side-links a {
+#side-bar:where(:lang(pt-br)) .side-block.side-links a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
@@ -9307,7 +9409,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(pt-br) .side-block.side-links a::before {
+#side-bar:where(:lang(pt-br)) .side-block.side-links a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9329,8 +9431,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(pt-br) .side-block.side-links a:hover::before,
-#side-bar:lang(pt-br) .side-block.side-links a:active::before {
+#side-bar:where(:lang(pt-br)) .side-block.side-links a:hover::before,
+#side-bar:where(:lang(pt-br)) .side-block.side-links a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9340,7 +9442,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(pt-br) .side-block.side-links a:focus-within::before {
+#side-bar:where(:lang(pt-br)) .side-block.side-links a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9350,37 +9452,37 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(pt-br) .side-block.side-links a img {
+#side-bar:where(:lang(pt-br)) .side-block.side-links a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(pt-br) .side-block.media a[href*="twitter"] {
+#side-bar:where(:lang(pt-br)) .side-block.media a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(pt-br) .side-block.media a[href*="chat"] {
+#side-bar:where(:lang(pt-br)) .side-block.media a[href*="chat"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(pt-br) .side-block.media a[href*="youtube"] {
+#side-bar:where(:lang(pt-br)) .side-block.media a[href*="youtube"] {
 	--social-logo-mask: var(--youtube-mask);
 	--social-color: var(--youtube-icon-color);
 }
 
-#side-bar:lang(pt-br) .side-block.media a[href*="scpsandboxbr"] {
+#side-bar:where(:lang(pt-br)) .side-block.media a[href*="scpsandboxbr"] {
 	--social-logo-mask: var(--sandbox-mask);
 	--social-color: var(--sandbox-icon-color);
 }
 
-#side-bar:lang(pt-br) .side-block span[style*="font-size"] {
+#side-bar:where(:lang(pt-br)) .side-block span[style*="font-size"] {
 	display: contents;
 }
 
-#side-bar:lang(pt-br) .side-block span[style*="font-size"] a {
+#side-bar:where(:lang(pt-br)) .side-block span[style*="font-size"] a {
 	font-size: calc(var(--base-font-size) * 0.8);
 }
 
@@ -9388,7 +9490,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 /*Normalizing Unique Sideblock Class*/
 
-#side-bar:lang(ru) #u-become-member {
+#side-bar:where(:lang(ru)) #u-become-member {
 	margin-bottom: inherit;
 	padding: inherit;
 	border: inherit;
@@ -9397,7 +9499,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	box-shadow: inherit;
 }
 
-#side-bar:lang(ru) #u-become-member {
+#side-bar:where(:lang(ru)) #u-become-member {
 	display: grid;
 	grid-template-rows: repeat(auto-fit,minmax(1.3125rem,1fr));
 	justify-content: stretch;
@@ -9408,44 +9510,44 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	direction: ltr
 }
 
-#side-bar:lang(ru) #u-become-member div.menu-item a {
+#side-bar:where(:lang(ru)) #u-become-member div.menu-item a {
 	flex-grow: 2;
 	justify-content: center;
 	min-width: 100%;
 	padding: 0;
 }
 
-#side-bar:lang(ru) hr {
+#side-bar:where(:lang(ru)) hr {
 	margin-bottom: 0;
 }
 
-#side-bar:lang(ru) div.side-block:not(.sns) div.menu-item {
+#side-bar:where(:lang(ru)) div.side-block:not(.sns) div.menu-item {
 	display: grid;
 	grid-template-columns: 50% 50%;
 }
 
-#side-bar:lang(ru) div.menu-item a:only-of-type {
+#side-bar:where(:lang(ru)) div.menu-item a:only-of-type {
 	grid-column: 1/ span 2;
 	grid-row: 1;
 	justify-content: flex-start;
 }
 
-#side-bar:lang(ru) div.menu-item a[href="/news"] {
+#side-bar:where(:lang(ru)) div.menu-item a[href="/news"] {
 	justify-content: center;
 	padding: 0;
 }
 
-#side-bar:lang(ru) div.menu-item a[href*="scp-series"] {
+#side-bar:where(:lang(ru)) div.menu-item a[href*="scp-series"] {
 	padding: 0 0 0 calc(var(--base-font-size)*(14/15));
 }
 
-#side-bar:lang(ru) div.menu-item a[href*="scp-series"] + span,
-#side-bar:lang(ru) div.menu-item a[href*="scp-list"] + span{
+#side-bar:where(:lang(ru)) div.menu-item a[href*="scp-series"] + span,
+#side-bar:where(:lang(ru)) div.menu-item a[href*="scp-list"] + span{
 	padding: 0 0 0 calc(var(--base-font-size)/2);
 	pointer-events: none;
 }
 
-#side-bar:lang(ru) div.menu-item span {
+#side-bar:where(:lang(ru)) div.menu-item span {
 	z-index: 2;
 	grid-column: 2;
 	grid-row: 1;
@@ -9457,90 +9559,90 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
 }
 
-#side-bar:lang(ru) div.menu-item a:only-of-type:hover ~ span,
-#side-bar:lang(ru) div.menu-item a:only-of-type:active ~ span {
+#side-bar:where(:lang(ru)) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:where(:lang(ru)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(ru) div.menu-item a:only-of-type:focus-within ~ span {
+#side-bar:where(:lang(ru)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(ru) > hr + .side-block {
+#side-bar:where(:lang(ru)) > hr + .side-block {
 	grid-template-rows: unset;
 }
 
-#side-bar:lang(ru) > hr + .side-block h5 {
+#side-bar:where(:lang(ru)) > hr + .side-block h5 {
 	display: flex;
 	justify-content: center;
 }
 
-#side-bar:lang(ru) > hr + .side-block .collapsible-block-content {
+#side-bar:where(:lang(ru)) > hr + .side-block .collapsible-block-content {
 	border-right: 0 solid transparent;
 	text-align: center;
 }
 
-#side-bar:lang(ru) > hr + .side-block > div:last-of-type {
+#side-bar:where(:lang(ru)) > hr + .side-block > div:last-of-type {
 	padding: 0 0 0 calc(var(--base-font-size) * (14/15));
 }
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 
-#side-bar:lang(cn) {
+#side-bar:where(:lang(cn)) {
 	--bilibili-icon-color: 0,161,214;
 	display: grid;
 	grid-template-columns: 5rem 1fr;
 }
 
-#side-bar:lang(cn) .heading {
+#side-bar:where(:lang(cn)) .heading:not(:first-child) {
 	margin: 0;
 }
 
-#side-bar:lang(cn) div.side-block {
+#side-bar:where(:lang(cn)) div.side-block {
 	grid-column: span 2;
 }
 
-#side-bar:lang(cn) div.side-block.media {
+#side-bar:where(:lang(cn)) div.side-block.media {
 	grid-column: 1/ span 1;
 	flex-basis: 3.6875rem;
 }
 
-#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] {
+#side-bar:where(:lang(cn)) div.side-block.media + div[style*="#f0f0f0"] {
 	grid-column: 2/ span 1;
 	flex-basis: calc(var(--sidebar-width-on-desktop) - 3.6875rem);
 }
 
-#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] > div {
+#side-bar:where(:lang(cn)) div.side-block.media + div[style*="#f0f0f0"] > div {
 	grid-auto-flow: row;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto auto;
 }
 
-#side-bar:lang(cn) div.side-block.media + div[style*="#f0f0f0"] > div a {
+#side-bar:where(:lang(cn)) div.side-block.media + div[style*="#f0f0f0"] > div a {
 	padding: 0.5em;
 }
 
-#side-bar:lang(cn) div.side-block.media div.menu-item {
+#side-bar:where(:lang(cn)) div.side-block.media div.menu-item {
 	display: contents;
 }
 
-#side-bar:lang(cn) div.side-block.media .heading {
+#side-bar:where(:lang(cn)) div.side-block.media .heading {
 	align-items: center;
 	justify-content: center;
 	padding-left: 0;
 }
 
-#side-bar:lang(cn) div.side-block.media .menu-item div {
+#side-bar:where(:lang(cn)) div.side-block.media .menu-item div {
 	align-items: center;
 	border: none;
 }
 
-#side-bar:lang(cn) div.side-block.media a,
-#side-bar:lang(cn) div.side-block.media a:visited {
+#side-bar:where(:lang(cn)) div.side-block.media a,
+#side-bar:where(:lang(cn)) div.side-block.media a:visited {
 	position: relative;
 	justify-content: center;
 	width: 1.6875rem;
@@ -9555,7 +9657,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(cn) div.side-block.media a::before {
+#side-bar:where(:lang(cn)) div.side-block.media a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9578,8 +9680,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(cn) div.side-block.media a:hover::before,
-#side-bar:lang(cn) div.side-block.media a:active::before {
+#side-bar:where(:lang(cn)) div.side-block.media a:hover::before,
+#side-bar:where(:lang(cn)) div.side-block.media a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9589,7 +9691,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(cn) div.side-block.media a:focus-within::before {
+#side-bar:where(:lang(cn)) div.side-block.media a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9599,26 +9701,26 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(cn) div.side-block.media a img {
+#side-bar:where(:lang(cn)) div.side-block.media a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(cn) div.side-block.media a[href*="bilibili"] {
+#side-bar:where(:lang(cn)) div.side-block.media a[href*="bilibili"] {
 	--social-logo-mask: var(--bilibili-mask);
 	--social-color: var(--bilibili-icon-color);
 }
 
 /* ===SPANISH BRANCH=== */
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] {
+#side-bar:where(:lang(es)) .side-block.media {
 	margin: .5rem .5rem 0 0;
 	padding: .5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] > div {
+#side-bar:where(:lang(es)) .side-block.media > div {
 	display: grid !important;
 	grid-auto-flow: column;
 	justify-content: space-evenly !important;
@@ -9626,11 +9728,11 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	box-shadow: unset;
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] > div > div {
+#side-bar:where(:lang(es)) .side-block.media > div > div {
 	display: contents;
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a {
+#side-bar:where(:lang(es)) .side-block.media a {
 	position: relative;
 	justify-content: center;
 	width: 1.6875rem;
@@ -9645,7 +9747,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a::before {
+#side-bar:where(:lang(es)) .side-block.media a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9668,8 +9770,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a:hover::before,
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a:active::before {
+#side-bar:where(:lang(es)) .side-block.media a:hover::before,
+#side-bar:where(:lang(es)) .side-block.media a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9679,7 +9781,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a:focus-within::before {
+#side-bar:where(:lang(es)) .side-block.media a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9689,61 +9791,61 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a img {
+#side-bar:where(:lang(es)) .side-block.media a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a[href*="facebook"] {
+#side-bar:where(:lang(es)) .side-block.media a[href*="facebook"] {
 	--social-logo-mask: var(--facebook-mask);
 	--social-color: var(--facebook-icon-color);
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a[href*="twitter"] {
+#side-bar:where(:lang(es)) .side-block.media a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a[href*="chat"] {
+#side-bar:where(:lang(es)) .side-block.media a[href*="chat"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(es) .side-block[style*="e5e5ff"] a[href*="instagram"] {
+#side-bar:where(:lang(es)) .side-block.media a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
 
-#side-bar:lang(es) .side-block[style*="fff0f0"] + .side-block > div:nth-child(1) a,
-#side-bar:lang(es) .side-block[style*="fff0f0"] + .side-block > div:nth-child(3) a {
+#side-bar:where(:lang(es)) .side-block[style*="fff0f0"] + .side-block > div:nth-child(1) a,
+#side-bar:where(:lang(es)) .side-block[style*="fff0f0"] + .side-block > div:nth-child(3) a {
 	justify-content: center;
 	padding: 0;
 }
 
 /* ===THAI BRANCH=== */
 
-#side-bar:lang(th) br {
+#side-bar:where(:lang(th)) br {
 	display: none;
 }
 
-#side-bar:lang(th) div.menu-item a {
+#side-bar:where(:lang(th)) div.menu-item a {
 	font-weight: normal;
 }
 
-#side-bar:lang(th) div.menu-item {
+#side-bar:where(:lang(th)) div.menu-item {
 	height: auto;
 }
 
-#side-bar:lang(th) .side-block div.new-page-box form {
+#side-bar:where(:lang(th)) .side-block div.new-page-box form {
 	display: grid;
 	padding: 0;
 }
 
-#side-bar:lang(th) .side-block div.new-page-box input.button,
-#side-bar:lang(th) .side-block div.new-page-box input.text {
+#side-bar:where(:lang(th)) .side-block div.new-page-box input.button,
+#side-bar:where(:lang(th)) .side-block div.new-page-box input.text {
 	width: 100%;
 	margin: 0 !important;
 	padding: 0 0.25rem;
@@ -9752,14 +9854,14 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	justify-self: center;
 }
 
-#side-bar:lang(th) div.menu-item input.text {
+#side-bar:where(:lang(th)) div.menu-item input.text {
 	height: 2rem !important;
 	background-color: rgba(var(--swatch-tertiary-color), 0.25) !important;
 	font-family: var(--body-font);
 	cursor: text;
 }
 
-#side-bar:lang(th) .side-block div.new-page-box input.button {
+#side-bar:where(:lang(th)) .side-block div.new-page-box input.button {
 	justify-content: center;
 	margin-top: 0.5rem !important;
 	padding: 0 0.25rem;
@@ -9767,16 +9869,16 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	cursor: pointer;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) > div {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) > div {
 	display: contents;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) {
 	grid-template-columns: repeat(6, 1fr);
 	padding: 0 0.5rem;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) > div > *:not(script):not(br) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) > div > *:not(script):not(br) {
 	display: inline-flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -9784,23 +9886,23 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	padding: 0.25rem 0;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) :nth-child(1),
-#side-bar:lang(th) .side-block:nth-child(3) :nth-child(3),
-#side-bar:lang(th) .side-block:nth-child(3) :nth-child(5) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) :nth-child(1),
+#side-bar:where(:lang(th)) .side-block:nth-child(3) :nth-child(3),
+#side-bar:where(:lang(th)) .side-block:nth-child(3) :nth-child(5) {
 	grid-column: span 6;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) :nth-child(7) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) :nth-child(7) {
 	grid-column: span 4;
 	justify-self: flex-end;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) :nth-child(8) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) :nth-child(8) {
 	grid-column: span 2;
 	justify-self: flex-start;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a:nth-child(n+10) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10) {
 	position: relative;
 	justify-content: center;
 	width: 1.6875rem;
@@ -9815,7 +9917,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a:nth-child(n+10)::before {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10)::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9838,8 +9940,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a:nth-child(n+10):hover::before,
-#side-bar:lang(th) .side-block:nth-child(3) a:nth-child(n+10):active::before {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10):hover::before,
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10):active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9849,7 +9951,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a:nth-child(n+10):focus-within::before {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10):focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9859,49 +9961,49 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a:nth-child(n+10) img {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10) img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a[href*="facebook"] {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a[href*="facebook"] {
 	--social-logo-mask: var(--facebook-mask);
 	--social-color: var(--facebook-icon-color);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a[href*="twitter"] {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a[href*="chat"] {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a[href*="chat"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a[href*="deviantart"] {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a[href*="deviantart"] {
 	--social-logo-mask: var(--deviantart-mask);
 	--social-color: var(--deviantart-icon-color);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a[href*="steam"] {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a[href*="steam"] {
 	--social-logo-mask: var(--steam-mask);
 	--social-color: var(--steam-icon-color);
 }
 
-#side-bar:lang(th) .side-block:nth-child(3) a[href*="sandbox"] {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) a[href*="sandbox"] {
 	--social-logo-mask: var(--sandbox-mask);
 	--social-color: var(--sandbox-icon-color);
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) {
 	grid-gap: 0.25em;
 	grid-template-rows: 1.5rem 1.5rem 1fr;
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type,
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:visited {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type,
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:visited {
 	--wght: var(--ui-wght);
 	display: flex;
 	position: relative;
@@ -9924,8 +10026,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	line-height: 1.5;
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:hover,
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:active {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:hover,
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:active {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
@@ -9933,7 +10035,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	text-decoration: none;
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:focus-within {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:focus-within {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
@@ -9941,7 +10043,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	text-decoration: none;
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type::before {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -9966,8 +10068,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:hover::before,
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:active::before {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:hover::before,
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9977,7 +10079,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) a:first-of-type:focus-within::before {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -9987,48 +10089,50 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) p {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) p {
 	display: grid;
 	margin-right: 0;
 }
 
-#side-bar:lang(th) .side-block:nth-child(4) p iframe {
+#side-bar:where(:lang(th)) .side-block:nth-child(4) p iframe {
 	width: 100%;
 	justify-self: center;
 }
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
-#side-bar:lang(zh) {
+#side-bar:where(:lang(zh)) {
 	--plurk-icon-color: 255, 87, 77;
 }
 
-#side-bar:lang(zh) .menu-item {
+#side-bar:where(:lang(zh)) .menu-item {
 	height: auto;
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] {
+#side-bar:where(:lang(zh)) .side-block.social-media-list {
+	display: grid !important;
+	grid-auto-flow: column;
+	justify-content: space-evenly !important;
 	margin: .5rem .5rem 0 0;
 	padding: .5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] > div {
-	display: grid !important;
-	grid-auto-flow: column;
-	justify-content: space-evenly !important;
-	width: 100%;
+#side-bar:where(:lang(zh)) .side-block.social-media-list > div {
+	display: contents !important;	
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a {
 	position: relative;
+	width: 1.6875rem;
+	height: 1.6875rem;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
 	-webkit-mask: var(--social-logo-mask) center center / contain no-repeat;
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a::before {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -10050,8 +10154,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a:hover::before,
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a:active::before {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a:hover::before,
+#side-bar:where(:lang(zh)) .side-block.social-media-list a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -10061,7 +10165,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a:focus-within::before {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -10071,28 +10175,28 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a img {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a[href*="chat"] {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a[href*="chat"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a[href*="plurk"] {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a[href*="plurk"] {
 	--social-logo-mask: var(--plurk-mask);
 	--social-color: var(--plurk-icon-color);
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a[href*="twitter"] {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(zh) .side-block[style*="ADD8E6"] a[href*="instagram"] {
+#side-bar:where(:lang(zh)) .side-block.social-media-list a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
 	background-image: var(--instagram-icon-gradient);
@@ -10103,19 +10207,19 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 
 /*Normalizing Unique Sideblock Class*/
 
-#side-bar:lang(uk) {
+#side-bar:where(:lang(uk)) {
 	--telegram-icon-color: 0, 136, 204;
 }
 
-#side-bar:lang(uk) > * {
+#side-bar:where(:lang(uk)) > * {
 	direction: ltr;
 }
 
-#side-bar:lang(uk) hr {
+#side-bar:where(:lang(uk)) hr {
 	margin-bottom: 0;
 }
 
-#side-bar:lang(uk) .side-block.side-links {
+#side-bar:where(:lang(uk)) .side-block.side-links {
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
@@ -10124,11 +10228,11 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
-#side-bar:lang(uk) .side-block.side-links > div {
+#side-bar:where(:lang(uk)) .side-block.side-links > div {
 	display: contents;
 }
 
-#side-bar:lang(uk) .side-block.side-links a {
+#side-bar:where(:lang(uk)) .side-block.side-links a {
 	position: relative;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
@@ -10136,7 +10240,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        mask: var(--social-logo-mask) center center / contain no-repeat;
 }
 
-#side-bar:lang(uk) .side-block.side-links a::before {
+#side-bar:where(:lang(uk)) .side-block.side-links a::before {
 	--clip-path: 
 		polygon(
 			0 0, 
@@ -10158,8 +10262,8 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	        clip-path: var(--clip-path);
 }
 
-#side-bar:lang(uk) .side-block.side-links a:hover::before,
-#side-bar:lang(uk) .side-block.side-links a:active::before {
+#side-bar:where(:lang(uk)) .side-block.side-links a:hover::before,
+#side-bar:where(:lang(uk)) .side-block.side-links a:active::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -10169,7 +10273,7 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(uk) .side-block.side-links a:focus-within::before {
+#side-bar:where(:lang(uk)) .side-block.side-links a:focus-within::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -10179,56 +10283,56 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		);
 }
 
-#side-bar:lang(uk) .side-block.side-links a img {
+#side-bar:where(:lang(uk)) .side-block.side-links a img {
 	width: 1.6875rem;
 	height: 1.6875rem;
 	opacity: 0;
 }
 
-#side-bar:lang(uk) .side-block.side-links a[href*="twitter"] {
+#side-bar:where(:lang(uk)) .side-block.side-links a[href*="twitter"] {
 	--social-logo-mask: var(--twitter-mask);
 	--social-color: var(--twitter-icon-color);
 }
 
-#side-bar:lang(uk) .side-block.side-links a[href*="discord"] {
+#side-bar:where(:lang(uk)) .side-block.side-links a[href*="discord"] {
 	--social-logo-mask: var(--discord-mask);
 	--social-color: var(--discord-icon-color);
 }
 
-#side-bar:lang(uk) .side-block.side-links a[href*="t.me"] {
+#side-bar:where(:lang(uk)) .side-block.side-links a[href*="t.me"] {
 	--social-logo-mask: var(--telegram-mask);
 	--social-color: var(--telegram-icon-color);
 }
 
-#side-bar:lang(uk) div.side-block:not(.side-links) div.menu-item {
+#side-bar:where(:lang(uk)) div.side-block:not(.side-links) div.menu-item {
 	display: grid;
 	grid-template-columns: 50% 50%;
 }
 
-#side-bar:lang(uk) div.menu-item a:only-of-type {
+#side-bar:where(:lang(uk)) div.menu-item a:only-of-type {
 	grid-column: 1/ span 2;
 	grid-row: 1;
 	justify-content: flex-start;
 }
 
-#side-bar:lang(uk) div.menu-item a[href="/news"],
-#side-bar:lang(uk) div.menu-item a[href="/faq"]{
+#side-bar:where(:lang(uk)) div.menu-item a[href="/news"],
+#side-bar:where(:lang(uk)) div.menu-item a[href="/faq"]{
 	justify-content: center;
 	padding: 0;
 }
 
-#side-bar:lang(uk) div.menu-item a[href*="scp-series"] {
+#side-bar:where(:lang(uk)) div.menu-item a[href*="scp-series"] {
 	padding: 0 0 0 calc(var(--base-font-size)*(14/15));
 }
 
-#side-bar:lang(uk) div.menu-item a[href*="scp-series"] + span,
-#side-bar:lang(uk) div.menu-item a[href*="scp-list"] + span {
+#side-bar:where(:lang(uk)) div.menu-item a[href*="scp-series"] + span,
+#side-bar:where(:lang(uk)) div.menu-item a[href*="scp-list"] + span {
 	display: flex;
 	padding: 0 0 0 calc(var(--base-font-size)/2);
 	pointer-events: none;
 }
 
-#side-bar:lang(uk) div.menu-item span {
+#side-bar:where(:lang(uk)) div.menu-item span {
 	z-index: 2;
 	grid-column: 2;
 	grid-row: 1;
@@ -10240,35 +10344,35 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
 }
 
-#side-bar:lang(uk) div.menu-item a:only-of-type:hover ~ span,
-#side-bar:lang(uk) div.menu-item a:only-of-type:active ~ span {
+#side-bar:where(:lang(uk)) div.menu-item a:only-of-type:hover ~ span,
+#side-bar:where(:lang(uk)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(uk) div.menu-item a:only-of-type:focus-within ~ span {
+#side-bar:where(:lang(uk)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
 	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
-#side-bar:lang(uk) > hr + .side-block {
+#side-bar:where(:lang(uk)) > hr + .side-block {
 	grid-template-rows: unset;
 }
 
-#side-bar:lang(uk) div.menu-item a[href*="system:recent-changes"] {
+#side-bar:where(:lang(uk)) div.menu-item a[href*="system:recent-changes"] {
 	grid-column: 2;
 	grid-row: 1;
 }
 
-#side-bar:lang(uk) > h3 {
+#side-bar:where(:lang(uk)) > h3 {
 	display: flex;
 	justify-content: center;
 	margin-top: 0.5rem;
 }
 
-#side-bar:lang(uk) > h2 {
+#side-bar:where(:lang(uk)) > h2 {
 	display: flex;
 	justify-content: center;
 	margin-top: 0.5rem;
@@ -10276,31 +10380,44 @@ table.page-history:lang(vi) tr:nth-of-type(2) td:nth-of-type(6)::before {
 	text-align: center;
 }
 
-#side-bar:lang(uk) div.pages-tag-cloud-box {
+#side-bar:where(:lang(uk)) div.pages-tag-cloud-box {
 	overflow: visible;
 	text-align: center;
 }
 
-#side-bar:lang(uk) > div[style*="80%"] > * {
+#side-bar:where(:lang(uk)) > div[style*="80%"] > * {
 	padding: 0 0 0 calc(var(--base-font-size)*(14/15));
 }
 
-#side-bar:lang(uk) > div[style*="15px"] {
+#side-bar:where(:lang(uk)) > div[style*="15px"] {
 	display: grid;
 	justify-content: center;
 	text-align: center;
 	gap: 0.5rem;
 }
 
-#side-bar:lang(uk) > div[style*="15px"] br {
+#side-bar:where(:lang(uk)) > div[style*="15px"] br {
 	display: none;
 }
 
 /* ===VIETNAMESE BRANCH=== */
 
-#side-bar:lang(vi) .side-block.media a[href*="youtube"] {
+#side-bar:where(:lang(vi)) img[src*="LK22yZY.png"] {
+	color: transparent;
+	pointer-events: none;
+}
+
+#side-bar:where(:lang(vi)) .side-block.media a {
+	width: 1.6875rem;
+}
+
+#side-bar:where(:lang(vi)) .side-block.media a[href*="youtube"] {
 	--social-logo-mask: var(--youtube-mask);
 	--social-color: var(--youtube-icon-color);
+}
+
+#side-bar:where(:lang(vi)) div.collapsible-block a.collapsible-block-link::after {
+	display: none;
 }
 
 /* HEADER
@@ -12068,7 +12185,7 @@ div.mobile-top-bar {
 
 /* ===CZECH BRANCH=== */
 
-#login-status:lang(cs) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(cs)) #account-options li > a[href*="/messages"]::after {
 	content: "Zprávy";
 }
 
@@ -12077,73 +12194,73 @@ div.mobile-top-bar {
 /* ===GERMAN BRANCH=== */
 
 @media only screen and (max-width:56.25rem) {
-	#header:lang(de) div.open-menu {
+	#header:where(:lang(de)) div.open-menu {
 		background-image: var(--gradient-topmenu-mobile);
 	}
 }
 
 /* ===GREEK BRANCH=== */
 
-#login-status:lang(el) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(el)) #account-options li > a[href*="/messages"]::after {
 	content: "Μηνύματα";
 }
 
 /* ===ITALIAN BRANCH=== */
 
-#login-status:lang(it) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(it)) #account-options li > a[href*="/messages"]::after {
 	content: "Messaggi";
 }
 
 /* ===JAPANESE BRANCH=== */
 
-#login-status:lang(ja) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(ja)) #account-options li > a[href*="/messages"]::after {
 	content: "メッセージ";
 }
 
 /* ===KOREAN BRANCH=== */
 
-#login-status:lang(ko) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(ko)) #account-options li > a[href*="/messages"]::after {
 	content: "메시지";
 }
 
 /* ===POLISH BRANCH=== */
 
-#login-status:lang(po) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(po)) #account-options li > a[href*="/messages"]::after {
 	content: "Wiadomości";
 }
 
 /* ===PORTUGESE BRANCH=== */
 
-#login-status:lang(pt-br) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(pt-br)) #account-options li > a[href*="/messages"]::after {
 	content: "Mensagens";
 }
 
 /* ===RUSSIAN BRANCH=== */
 
-#top-bar:lang(ru) .list-pages-item,
-#top-bar:lang(ru) .list-pages-item .top-bar {
+#top-bar:where(:lang(ru)) .list-pages-item,
+#top-bar:where(:lang(ru)) .list-pages-item .top-bar {
 	height: 100%;
 }
 
 @media only screen and (max-width: 56.25rem) {
-	#header:lang(ru) div[class*="top-bar"] > ul {
+	#header:where(:lang(ru)) div[class*="top-bar"] > ul {
 		height: var(--topbar-height-on-mobile);
 	}
 
-	#header:lang(ru) div[class*="top-bar"] > ul > li > a {
+	#header:where(:lang(ru)) div[class*="top-bar"] > ul > li > a {
 		font-size: 1.5em;
 	}
 }
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 
-#login-status:lang(cn) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(cn)) #account-options li > a[href*="/messages"]::after {
 	content: "消息";
 }
 
 /* ===SPANISH BRANCH=== */
 
-#login-status:lang(es) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(es)) #account-options li > a[href*="/messages"]::after {
 	content: "Mensajes";
 }
 
@@ -12151,7 +12268,7 @@ div.mobile-top-bar {
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
-#login-status:lang(zh-tr) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(zh-tr)) #account-options li > a[href*="/messages"]::after {
 	content: "訊息";
 }
 
@@ -12159,7 +12276,7 @@ div.mobile-top-bar {
 
 /* ===VIETNAMESE BRANCH=== */
 
-#login-status:lang(vi) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(vi)) #account-options li > a[href*="/messages"]::after {
 	content: "Tin nhắn";
 }
 
@@ -14783,96 +14900,96 @@ body.print-body #main-content .page-tags span {
 
 /* ===CZECH BRANCH=== */
 
-[id*="u-credit"]:lang(cs) div.credit-back::before {
+[id*="u-credit"]:where(:lang(cs)) div.credit-back::before {
 	content: "Zpět";
 }
 
-#toc:lang(cs) #toc-action-bar a::after {
+#toc:where(:lang(cs)) #toc-action-bar a::after {
 	content: "Obsah";
 }
 
 /* ===FRENCH BRANCH=== */
 
-[id*="u-credit"]:lang(fr) div.credit-back::before {
+[id*="u-credit"]:where(:lang(fr)) div.credit-back::before {
 	content: "Retour";
 }
 
-#toc:lang(fr) #toc-action-bar a::after {
+#toc:where(:lang(fr)) #toc-action-bar a::after {
 	content: "Sommaire";
 }
 
 /* ===GERMAN BRANCH=== */
 
-[id*="u-credit"]:lang(de) div.credit-back::before {
+[id*="u-credit"]:where(:lang(de)) div.credit-back::before {
 	content: "Zurück";
 }
 
-#toc:lang(de) #toc-action-bar a::after {
+#toc:where(:lang(de)) #toc-action-bar a::after {
 	content: "Inhalt";
 }
 
-:lang(de) .page-rate-widget-box,
-#page-content:lang(de) .rate-box-with-credit-button {
+:where(:lang(de)) .page-rate-widget-box,
+#page-content:where(:lang(de)) .rate-box-with-credit-button {
 	background-color: rgb(var(--rating-module-bg-color)) !important;
 }
 
 /* ===GREEK BRANCH=== */
 
-[id*="u-credit"]:lang(el) div.credit-back::before {
+[id*="u-credit"]:where(:lang(el)) div.credit-back::before {
 	content: "Πίσω";
 }
 
-#toc:lang(el) #toc-action-bar a::after {
+#toc:where(:lang(el)) #toc-action-bar a::after {
 	content: "Πίνακας περιεχομένων";
 }
 
 /* ===ITALIAN BRANCH=== */
 
-[id*="u-credit"]:lang(it) div.credit-back::before {
+[id*="u-credit"]:where(:lang(it)) div.credit-back::before {
 	content: "Indietro";
 }
 
-#toc:lang(it) #toc-action-bar a::after {
+#toc:where(:lang(it)) #toc-action-bar a::after {
 	content: "Indice dei contenuti";
 }
 
 /* ===JAPANESE BRANCH=== */
 
-[id*="u-credit"]:lang(ja) div.credit-back::before {
+[id*="u-credit"]:where(:lang(ja)) div.credit-back::before {
 	content: "閉じる";
 }
 
-#toc:lang(ja) #toc-action-bar a::after {
+#toc:where(:lang(ja)) #toc-action-bar a::after {
 	content: "目次";
 }
 
 /* ===KOREAN BRANCH=== */
 
-[id*="u-credit"]:lang(ko) div.credit-back::before {
+[id*="u-credit"]:where(:lang(ko)) div.credit-back::before {
 	content: "뒤로";
 }
 
-#toc:lang(ko) #toc-action-bar a::after {
+#toc:where(:lang(ko)) #toc-action-bar a::after {
 	content: "목차";
 }
 
 /* ===POLISH BRANCH=== */
 
-[id*="u-credit"]:lang(po) div.credit-back::before {
+[id*="u-credit"]:where(:lang(po)) div.credit-back::before {
 	content: "Powrót";
 }
 
-#toc:lang(po) #toc-action-bar a::after {
+#toc:where(:lang(po)) #toc-action-bar a::after {
 	content: "Spis Treści";
 }
 
 /* ===PORTUGESE BRANCH=== */
 
-[id*="u-credit"]:lang(pt-br) div.credit-back::before {
+[id*="u-credit"]:where(:lang(pt-br)) div.credit-back::before {
 	content: "Voltar";
 }
 
-#toc:lang(pt-br) #toc-action-bar a::after {
+#toc:where(:lang(pt-br)) #toc-action-bar a::after {
 	content: "Índice";
 }
 
@@ -14880,21 +14997,21 @@ body.print-body #main-content .page-tags span {
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 
-[id*="u-credit"]:lang(cn) div.credit-back::before {
+[id*="u-credit"]:where(:lang(cn)) div.credit-back::before {
 	content: "返回";
 }
 
-#toc:lang(cn) #toc-action-bar a::after {
+#toc:where(:lang(cn)) #toc-action-bar a::after {
 	content: "目录";
 }
 
 /* ===SPANISH BRANCH=== */
 
-[id*="u-credit"]:lang(es) div.credit-back::before {
+[id*="u-credit"]:where(:lang(es)) div.credit-back::before {
 	content: "Volver";
 }
 
-#toc:lang(es) #toc-action-bar a::after {
+#toc:where(:lang(es)) #toc-action-bar a::after {
 	content: "Tabla de Contenidos";
 }
 
@@ -14902,7 +15019,7 @@ body.print-body #main-content .page-tags span {
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
 
-[id*="u-credit"]:lang(zh-tr) div.credit-back::before {
+[id*="u-credit"]:where(:lang(zh-tr)) div.credit-back::before {
 	content: "返回";
 }
 
@@ -14910,7 +15027,7 @@ body.print-body #main-content .page-tags span {
 
 /* ===VIETNAMESE BRANCH=== */
 
-#toc:lang(vi) #toc-action-bar a::after {
+#toc:where(:lang(vi)) #toc-action-bar a::after {
 	content: "Mục Lục";
 }
 
