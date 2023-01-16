@@ -7431,7 +7431,6 @@ table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before 
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0.4);
-	background-attachment: local, local, scroll, fixed;
 	background-color: rgba(var(--sidebar-bg-color), 1);
 	color: rgb(var(--sidebar-links-text));
 	font-family: var(--UI-font, var(--header-font));
@@ -8241,11 +8240,16 @@ table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before 
 	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
 }
 
+#side-bar .collapsible-block-unfolded-link {
+	border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
+}
+
 /* create a gap next to the collapsible contents */
 
-#side-bar .collapsible-block-content {
+#side-bar div.collapsible-block-content {
 	box-sizing: border-box;
 	border-right: 2rem solid rgba(var(--sidebar-border-color));
+	background-color: rgb(var(--sidebar-collapsible-body-bg));
 }
 
 /* hide the last border within the collapsible */
@@ -8254,12 +8258,8 @@ table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before 
 	border-bottom: none;
 }
 
-#side-bar .collapsible-block-unfolded-link {
-	border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
-}
-
-#side-bar div.collapsible-block-content {
-	background-color: rgb(var(--sidebar-collapsible-body-bg));
+#side-bar div.collapsible-block-content br {
+	display: none;
 }
 
 #side-bar div.collapsible-block-content div.menu-item a::before {
@@ -8484,6 +8484,11 @@ table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before 
 */
 
 /* ===CZECH BRANCH=== */
+
+#side-bar div.menu-item:first-of-type a[href="http://www.scp-wiki.net/"] {
+	justify-content: center;
+	padding: 0;
+}
 
 #side-bar:where(:lang(cs)) div.menu-item {
 	height: auto;
@@ -10573,8 +10578,6 @@ div#container-wrap {
 
 /* ===SEARCH BOX=== */
 
-/* Mobile Search Box by 7happy7 */
-
 #search-top-box-input,
 #navi-bar,
 #navi-bar-shadow {
@@ -10584,17 +10587,95 @@ div#container-wrap {
 #search-top-box {
 	display: flex;
 	position: absolute;
-	z-index: 12;
 	top: 1.5em;
 	right: calc(3% - 0.25em);
 	align-items: center;
 	justify-content: center;
-	width: auto;
+	width: var(--search-height);
 	height: var(--search-height);
 	transform: translateY(-50%);
-	font-size: calc(var(--base-font-size) * (13 / 15));
+	transition:
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: box-shadow;
+	box-shadow: 0 0 0 0 rgb(var(--search-focus-outline-color));
+	color: transparent;
+	font-size: calc(var(--base-font-size) * (13 / 15));		
 }
 
+#search-top-box:hover,
+#search-top-box:active {
+	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));	
+}
+
+#search-top-box,
+#search-top-box * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#search-top-box form[id="search-top-box-form"] input[type="text"]  {
+	display: none;
+}
+
+#search-top-box::after,
+#search-top-box input[type="submit"] {
+	width: var(--search-height);
+	height: var(--search-height);
+	transition:
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		-webkit-clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: none;
+	will-change: background-color, clip-path;
+	cursor: pointer;
+}
+
+#search-top-box::after {
+	--clip-path: polygon(100% 0,100% 0,100% 100%,100% 100%);
+	content: " ";	
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;		
+	-webkit-clip-path: var(--clip-path);		
+	        clip-path: var(--clip-path);
+	background-color: rgb(var(--search-icon-focus-bg-color),0);	
+	pointer-events: none;
+}
+
+#search-top-box:hover::after,
+#search-top-box:active::after {
+	--clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+	background-color: rgb(var(--search-icon-focus-bg-color));	
+}
+
+#search-top-box input[type="submit"] {
+	background-color: rgb(var(--search-icon-color));
+	color: transparent;
+	-webkit-mask:var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem ) / 2) calc((var(--search-height) + 0.25rem ) / 2) no-repeat;
+	        mask:var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem ) / 2) calc((var(--search-height) + 0.25rem ) / 2) no-repeat;
+}
+
+#search-top-box:hover input[type="submit"],
+#search-top-box:active input[type="submit"] {
+	background-color: rgb(var(--search-icon-hover-color));
+}
+
+/* Mobile Search Box by 7happy7 */
+
+/*==============================================================
+ Currently commented out due to Wikidot's search not functioning
+ ===============================================================
 #search-top-box,
 #search-top-box * {
 	box-sizing: border-box;
@@ -10655,8 +10736,7 @@ div#container-wrap {
 	text-align: center;
 	cursor: pointer;
 	pointer-events: none;
-	-webkit-mask:var(--search-icon-mask) center center / calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
-	        mask:var(--search-icon-mask) center center / calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
+	mask:var(--search-icon-mask) center center / calc(var(--search-height) / 2) calc(var(--search-height) / 2) no-repeat;
 }
 
 #search-top-box:not(:focus-within):hover::before {
@@ -10678,8 +10758,7 @@ div#container-wrap {
 	z-index: 13;
 	background-color: rgb(var(--search-icon-focus-bg-color));
 	pointer-events: none;
-	-webkit-clip-path: var(--clip-path);
-	        clip-path: var(--clip-path);
+	clip-path: var(--clip-path);
 }
 
 #search-top-box:not(:focus-within)::after {
@@ -10709,9 +10788,7 @@ div#container-wrap {
 #search-top-box form[id="search-top-box-form"] input {
 	position: relative;
 	top: 0;
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
+	appearance: none;
 }
 
 #search-top-box form[id="search-top-box-form"] input[type="text"] {
@@ -10763,6 +10840,11 @@ div#container-wrap {
 	pointer-events: none;
 }
 
+#search-top-box:focus-within ~ #login-status {
+	opacity: 0;
+}
+*/
+
 /* ===LOGIN BOX=== */
 
 #login-status {
@@ -10784,10 +10866,6 @@ div#container-wrap {
 	font-size: 0.9em;
 	font-weight: var(--wght);
 	white-space: nowrap;
-}
-
-#search-top-box:focus-within ~ #login-status {
-	opacity: 0;
 }
 
 #login-status span.printuser a:first-of-type {
@@ -10919,6 +10997,16 @@ div#container-wrap {
 /* Without this, touchscreen doesn't work */
 
 @media (pointer: coarse) {
+	#login-status #account-topbutton:hover + #account-options,
+	#login-status #account-options:hover {
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+/* Support for Safari */
+
+@supports (-webkit-hyphens:none) {
 	#login-status #account-topbutton:hover + #account-options,
 	#login-status #account-options:hover {
 		opacity: 1;
