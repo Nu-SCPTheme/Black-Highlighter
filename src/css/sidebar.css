@@ -38,7 +38,6 @@
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0.4);
-	background-attachment: local, local, scroll, fixed;
 	background-color: rgba(var(--sidebar-bg-color), 1);
 	color: rgb(var(--sidebar-links-text));
 	font-family: var(--UI-font, var(--header-font));
@@ -820,10 +819,15 @@
 	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
 }
 
+#side-bar .collapsible-block-unfolded-link {
+	border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
+}
+
 /* create a gap next to the collapsible contents */
-#side-bar .collapsible-block-content {
+#side-bar div.collapsible-block-content {
 	box-sizing: border-box;
 	border-right: 2rem solid rgba(var(--sidebar-border-color));
+	background-color: rgb(var(--sidebar-collapsible-body-bg));
 }
 
 /* hide the last border within the collapsible */
@@ -831,12 +835,8 @@
 	border-bottom: none;
 }
 
-#side-bar .collapsible-block-unfolded-link {
-	border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
-}
-
-#side-bar div.collapsible-block-content {
-	background-color: rgb(var(--sidebar-collapsible-body-bg));
+#side-bar div.collapsible-block-content br {
+	display: none;
 }
 
 #side-bar div.collapsible-block-content div.menu-item a::before {
