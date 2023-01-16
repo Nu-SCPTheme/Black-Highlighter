@@ -23,7 +23,7 @@
 */
 
 /* ===CZECH BRANCH=== */
-#login-status:lang(cs) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(cs)) #account-options li > a[href*="/messages"]::after {
 	content: "Zprávy";
 }
 
@@ -32,64 +32,64 @@
 /* ===GERMAN BRANCH=== */
 
 @media only screen and (max-width:56.25rem) {
-	#header:lang(de) div.open-menu {
+	#header:where(:lang(de)) div.open-menu {
 		background-image: var(--gradient-topmenu-mobile);
 	}
 }
 
 /* ===GREEK BRANCH=== */
-#login-status:lang(el) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(el)) #account-options li > a[href*="/messages"]::after {
 	content: "Μηνύματα";
 }
 
 /* ===ITALIAN BRANCH=== */
-#login-status:lang(it) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(it)) #account-options li > a[href*="/messages"]::after {
 	content: "Messaggi";
 }
 
 /* ===JAPANESE BRANCH=== */
-#login-status:lang(ja) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(ja)) #account-options li > a[href*="/messages"]::after {
 	content: "メッセージ";
 }
 
 /* ===KOREAN BRANCH=== */
-#login-status:lang(ko) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(ko)) #account-options li > a[href*="/messages"]::after {
 	content: "메시지";
 }
 
 /* ===POLISH BRANCH=== */
-#login-status:lang(po) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(po)) #account-options li > a[href*="/messages"]::after {
 	content: "Wiadomości";
 }
 
 /* ===PORTUGESE BRANCH=== */
-#login-status:lang(pt-br) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(pt-br)) #account-options li > a[href*="/messages"]::after {
 	content: "Mensagens";
 }
 
 /* ===RUSSIAN BRANCH=== */
-#top-bar:lang(ru) .list-pages-item,
-#top-bar:lang(ru) .list-pages-item .top-bar {
+#top-bar:where(:lang(ru)) .list-pages-item,
+#top-bar:where(:lang(ru)) .list-pages-item .top-bar {
 	height: 100%;
 }
 
 @media only screen and (max-width: 56.25rem) {
-	#header:lang(ru) div[class*="top-bar"] > ul {
+	#header:where(:lang(ru)) div[class*="top-bar"] > ul {
 		height: var(--topbar-height-on-mobile);
 	}
 
-	#header:lang(ru) div[class*="top-bar"] > ul > li > a {
+	#header:where(:lang(ru)) div[class*="top-bar"] > ul > li > a {
 		font-size: 1.5em;
 	}
 }
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
-#login-status:lang(cn) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(cn)) #account-options li > a[href*="/messages"]::after {
 	content: "消息";
 }
 
 /* ===SPANISH BRANCH=== */
-#login-status:lang(es) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(es)) #account-options li > a[href*="/messages"]::after {
 	content: "Mensajes";
 }
 
@@ -97,13 +97,13 @@
 /* ===THAI BRANCH=== */
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
-#login-status:lang(zh-tr) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(zh-tr)) #account-options li > a[href*="/messages"]::after {
 	content: "訊息";
 }
 
 /* ===UKRAINIAN BRANCH=== */
 
 /* ===VIETNAMESE BRANCH=== */
-#login-status:lang(vi) #account-options li > a[href*="/messages"]::after {
+#login-status:where(:lang(vi)) #account-options li > a[href*="/messages"]::after {
 	content: "Tin nhắn";
 }

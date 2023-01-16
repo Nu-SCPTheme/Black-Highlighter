@@ -62,8 +62,12 @@ $(function () {
         return "scp-ukrainian";
       case "pt":
         return "scp-pt-br";
+      case "cs":
+        return "scp-cs";
       case "zh-tr":
         return "scp-zh-tr";
+      case "vn":
+          return "scp-vn";
       default:
         return null;
     }

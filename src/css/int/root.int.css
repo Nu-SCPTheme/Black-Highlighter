@@ -23,42 +23,42 @@
 */
 
 /* ===CZECH BRANCH=== */
-:root:lang(cs) {
+:root:where(:lang(cs)) {
 	/* Header */
 	--header-title: "SCP Nadace";
 	--header-subtitle: "Česká Větev SCP Nadace";
 }
 
 /* ===FRENCH BRANCH=== */
-:root:lang(fr) {
+:root:where(:lang(fr)) {
 	/* header */
 	--header-title: "Fondation SCP";
 	--header-subtitle: "Sécuriser, Contenir, Protéger";
 }
 
 /* ===GERMAN BRANCH=== */
-:root:lang(de) {
+:root:where(:lang(de)) {
 	/* Header */
 	--header-title: "SCP Foundation";
 	--header-subtitle: "auf Deutsch";
 }
 
 /* ===GREEK BRANCH=== */
-:root:lang(el) {
+:root:where(:lang(el)) {
 	/* Header */
 	--header-title: "Το Ίδρυμα SCP";
 	--header-subtitle: "Ελληνόφωνος κλάδος";
 }
 
 /* ===ITALIAN BRANCH=== */
-:root:lang(it) {
+:root:where(:lang(it)) {
 	/* Header */
 	--header-title: "Fondazione SCP";
 	--header-subtitle: "Branca Italiana - SCP Foundation";
 }
 
 /* ===JAPANESE BRANCH=== */
-:root:lang(ja) {
+:root:where(:lang(ja)) {
 	/* Header */
 	--header-title: "SCP財団";
 	--header-subtitle: "確保、収容、保護";
@@ -80,7 +80,7 @@
 }
 
 /* ===KOREAN BRANCH=== */
-:root:lang(ko) {
+:root:where(:lang(ko)) {
 	/* Header */
 	--header-title: "SCP 재단";
 	--header-subtitle: "확보, 격리, 보호";
@@ -96,27 +96,22 @@
 		"돋움", "Dotum", "Helvetica Neue", "Helvetica", Arial, monospace;
 }
 
-#side-bar:lang(ko) .side-block[style*=E5E5FF] a[href*=wikidot]{
-	--social-logo-mask:var(--discord-mask);
-	--social-color:var(--discord-icon-color)
-}
-
 /* ===POLISH BRANCH=== */
-:root:lang(pl) {
+:root:where(:lang(pl)) {
 	/* Header */
 	--header-title: "Fundacja SCP";
 	--header-subtitle: "Polska Filia SCP";
 }
 
 /* ===PORTUGESE BRANCH=== */
-:root:lang(pt-br) {
+:root:where(:lang(pt-br)) {
 	/* Header */
 	--header-title: "Fundação SCP";
 	--header-subtitle: "Filial Lusófona";
 }
 
 /* ===RUSSIAN BRANCH=== */
-:root:lang(ru) {
+:root:where(:lang(ru)) {
 	/* Header */
 	--header-title: "SCP Foundation";
 	--header-subtitle: "Russian Branch";
@@ -134,14 +129,14 @@
 }
 
 /* ===SPANISH BRANCH=== */
-:root:lang(es) {
+:root:where(:lang(es)) {
 	/* Header */
 	--header-title: "La Fundación SCP";
 	--header-subtitle: "Rama Hispanohablante";
 }
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
-:root:lang(cn) {
+:root:where(:lang(cn)) {
 	--theme-base: "黑色标记笔";
 	--theme-id: "黑色标记笔";
 	--theme-name: "黑色标记笔";
@@ -163,7 +158,7 @@
 }
 
 /* ===THAI BRANCH=== */
-:root:lang(th) {
+:root:where(:lang(th)) {
 	/* Header */
 	--header-title: "สถาบัน SCP";
 	--header-subtitle: "ควบคุม, กักกัน, ป้องกัน";
@@ -179,7 +174,7 @@
 }
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
-:root:lang(zh) {
+:root:where(:lang(zh)) {
 	/* Header */
 	--header-title: "SCP基金會";
 	--header-subtitle: "控制，收容，保護";
@@ -199,7 +194,7 @@
 }
 
 /* ===UKRAINIAN BRANCH=== */
-:root:lang(uk) {
+:root:where(:lang(uk)) {
 	/* Header */
 	--header-title: "Фонд SCP.";
 	--header-subtitle: "Охороняти. Утримувати. Захищати.";
@@ -216,14 +211,14 @@
 	--mono-font: Recursive, Consolas, monaco, monospace;
 }
 
-:root:lang(uk) {
+:root:where(:lang(uk)) {
 	--sidebar-width-on-desktop: calc((var(--base-font-size) * (14/15) * 19));
 	--body-width-on-desktop: 75rem;
 }
 
 /* ===VIETNAMESE BRANCH=== */
 /* Removing this for now by request of the Vietnamese Branch
-:root:lang(vi) {
+:root:where(:lang(vi)) {
 	--header-title: "Tổ Chức SCP";
 	--header-subtitle: "Quản thúc, Lưu trữ, Bảo vệ";
 }
