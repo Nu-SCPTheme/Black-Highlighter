@@ -1,6 +1,6 @@
 # Black Highlighter
 
-[![Travis CI Build Status](https://travis-ci.org/MikuKaneko/Black-Highlighter.svg?branch=master)](https://travis-ci.org/MikuKaneko/Black-Highlighter)
+[![Travis CI Build Status](https://travis-ci.org/SCP-JP/Black-Highlighter.svg?branch=master)](https://travis-ci.org/MikuKaneko/Black-Highlighter)
 
     [2019-2023 Wikidot Theme]
     Designed by Woedenaz, Croquembouche, & djkaktus
