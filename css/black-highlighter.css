@@ -7444,6 +7444,12 @@ table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before 
 	justify-self: start;
 }
 
+/* Firefox left padding for scrollbar */
+
+_:-moz-read-write, :root #side-bar {
+	padding: 0 0 0 0.5rem;
+}
+
 /* Hover Scrollbar Behavior */
 
 #side-bar:hover,
