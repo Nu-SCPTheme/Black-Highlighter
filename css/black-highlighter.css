@@ -7444,11 +7444,11 @@ table.page-history:where(:lang(vi)) tr:nth-of-type(2) td:nth-of-type(6)::before 
 	justify-self: start;
 }
 
-/* Firefox left padding for scrollbar */
+/* Firefox left padding for scrollbar but not on OSX */
 
-_:-moz-read-write, :root #side-bar {
+@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) { #side-bar {
 	padding: 0 0 0 0.5rem;
-}
+} }
 
 /* Hover Scrollbar Behavior */
 
@@ -7700,15 +7700,15 @@ _:-moz-read-write, :root #side-bar {
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 }
 
-/* Firefox left padding for scrollbar */
+/* Firefox left padding for scrollbar but not on OSX */
 
-_:-moz-read-write, :root #side-bar .heading {
+@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) { #side-bar .heading {
 	padding-left: 0;
-}
+} }
 
-_:-moz-read-write, :root #interwiki .heading {
+@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) { #interwiki .heading {
 	padding-left: 0;
-}
+} }
 
 #side-bar .heading p,
 #interwiki .heading p {
