@@ -110,7 +110,7 @@
 	--base-line-height: 1.5;
 
 	/* ===HEADER TITLE FONT SIZES=== */
-	--header-h1-font-size: calc(var(--base-font-size) * 2.65);
+	--header-h1-font-size: calc(var(--base-font-size) * (40 / 15));
 	
 	--header-h2-font-size: var(--base-font-size);
 }
@@ -330,14 +330,14 @@
 	--sidebar-width-on-desktop: 
 		min(
 			calc(
-				(var(--base-font-size) * (14 / 15)) * 19
+				var(--base-font-size) * (266 / 15)
 			),
 			calc(
 				(100vw - var(--body-width-on-desktop))
 			)
 		);
 	--sidebar-width-on-mobile: calc(
-		(var(--base-font-size) * (14 / 15)) * 17
+		var(--base-font-size) * (238 / 15)
 	);
 	--sidebar-internal-border-thickness: 0.125rem;
 }
