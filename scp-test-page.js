@@ -14,11 +14,13 @@ $(function () {
       switch (resp) {
         case "OK":
           return (styleSheets = [
+            "./fonts/fonts.css",
             "./css/normalize.css",
             "./css/black-highlighter.css",
           ]);
         default:
           return (styleSheets = [
+            "/Black-Highlighter/fonts/fonts.css",
             "/Black-Highlighter/css/normalize.css",
             "/Black-Highlighter/css/black-highlighter.css",
           ]);
@@ -68,6 +70,48 @@ $(function () {
         return "scp-zh-tr";
       case "vn":
           return "scp-vn";
+      default:
+        return null;
+    }
+  };
+
+  //Convert branch language code to wiki name
+  const getLanguagePage = (name) => {
+    switch (name) {
+      case "int":
+        return "en";
+      case "en":
+        return "en";
+      case "ru":
+        return "ru";
+      case "ko":
+        return "ko";
+      case "cn":
+        return "cn";
+      case "fr":
+        return "fr";
+      case "pl":
+        return "pl";
+      case "es":
+        return "es";
+      case "th":
+        return "th";
+      case "jp":
+        return "ja";
+      case "de":
+        return "de";
+      case "it":
+        return "it";
+      case "ua":
+        return "uk";
+      case "pt":
+        return "pt-br";
+      case "cs":
+        return "cs";
+      case "zh-tr":
+        return "zh-tr";
+      case "vn":
+          return "vi";
       default:
         return null;
     }
@@ -164,6 +208,13 @@ $(function () {
     siteURL = siteName;
   }
 
+  //Get wiki language
+  let siteLang = getLanguagePage(siteName);
+  if (siteLang === null) {
+    //Fallback, use the parameter as the actual wiki slug
+    siteLang = siteName;
+  }
+
   //Use codetabs.com to pull source of page & Apply to local page
   const getNewElems = async () => {
     try {
@@ -204,7 +255,7 @@ $(function () {
             .after("\n");
           document.getElementsByTagName("body")[0].appendChild(newBody);
           
-          htmlTag.setAttribute('lang', language);
+          htmlTag.setAttribute('lang', siteLang);
 
           $(iframesReplace).each(function (idx, el) {
             el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`;
