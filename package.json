@@ -9,6 +9,7 @@
     "url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
   },
   "devDependencies": {
+    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
     "eslint-config-prettier": "^8.6.0",
@@ -18,6 +19,7 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^7.8.3",
     "prettier": "2.8.3",
     "stylelint": "^14.16.1",
     "stylelint-config-property-sort-order-smacss": "^9.0.0",
@@ -27,8 +29,8 @@
   "scripts": {
     "build": "make",
     "postcss": "node node_modules/postcss-cli/index.js",
-    "styles": "node build/styles.js",
-    "optimize": "node build/optimize.mjs"
+    "optimize": "node build/optimize.mjs",
+    "watch": "postcss --config build/postcss.config.js src/css/black-highlighter.css -o dist/css/black-highlighter.css --watch | postcss --config buildpostcss.config.js src/css/normalize.css -o dist/css/normalize.css --watch"
   },
   "browserslist": [
     "Chrome >= 58,  ChromeAndroid >= 58,  Android >= 58,  Firefox >= 54,  FirefoxAndroid >= 54, Safari >= 10.1,  iOS >= 10.3,  Opera >= 44,  OperaMobile >= 59,  UCAndroid >= 12.12,  Samsung >= 6.2,  QQAndroid >= 10.4,  Kaios >= 2.5, Edge >= 16"
