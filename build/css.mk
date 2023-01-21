@@ -6,24 +6,14 @@ CSS_OUTPUTS := \
 
 # CSS rules
 dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $(CSS_SOURCES) node_modules
-	npm run postcss -- --config build/css-merge -o $@ $<
-	cat \
-		src/css/black-highlighter-wrap-begin.css \
-		$@ \
-		src/css/black-highlighter-wrap-close.css \
-			> $@_
-	mv $@_ $@
+	npm run postcss -- --config build -o $@ $<
 
 dist/css/min/black-highlighter.min.css: dist/css/black-highlighter.css node_modules
-	npm run postcss -- --config build/css-minify -o $@ $<
+	npm run postcss -- --no-map --use cssnano -o $@ $<
 	build/sed.sh 's|\.\./fonts/fonts\.css|../../fonts/fonts.css|' $@
 
-dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES) src/css/normalize-wrap-begin.css src/css/normalize-wrap-close.css
-	cat \
-		src/css/normalize-wrap-begin.css \
-		$< \
-		src/css/normalize-wrap-close.css \
-			> $@
+dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES)
+	cp $< $@
 
 dist/css/min/normalize.min.css: dist/css/normalize.css node_modules
-	npm run postcss -- --config build/css-minify -o $@ $<
+	npm run postcss -- --no-map --use cssnano -o $@ $<

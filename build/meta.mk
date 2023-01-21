@@ -1,6 +1,6 @@
 # Variables
 BUILD_SOURCES := \
-	$(wildcard build/**/*) \
+	$(wildcard build/*) \
 	cssnano.config.js
 
 # Directory creation

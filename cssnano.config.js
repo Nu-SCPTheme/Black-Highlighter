@@ -9,4 +9,5 @@ module.exports = defaultPreset({
   },
   normalizeCharset: false,
   reduceIdents: false,
+  calc: false,
 });
