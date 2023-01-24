@@ -10,7 +10,7 @@ dist/css/black-highlighter.css: src/css/black-highlighter.css $(BUILD_SOURCES) $
 
 dist/css/min/black-highlighter.min.css: dist/css/black-highlighter.css node_modules
 	npm run postcss -- --no-map --use cssnano -o $@ $<
-	build/sed.sh 's|\.\./fonts/fonts\.css|../../fonts/fonts.css|' $@
+	build/sed.sh 's|\.\./fonts|../../fonts|g' $@
 
 dist/css/normalize.css: src/css/normalize.css $(BUILD_SOURCES)
 	cp $< $@
