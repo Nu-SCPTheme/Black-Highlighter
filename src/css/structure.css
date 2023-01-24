@@ -427,44 +427,15 @@ input.text::-webkit-scrollbar-thumb {
 	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 }
 
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > button:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > button:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > button:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > button:active,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:hover,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:active {
-	--wght: var(--ui-hvr-wght);
-	border-color: transparent;
-	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgb(var(--ui-button-hover-bg));
-	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
-	color: rgb(var(--ui-button-hover-txt));
-	font-weight: var(--wght);
-	text-decoration: none;
-	cursor: pointer;
-}
-
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > button:focus-within,
-*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:focus-within {
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .owindow .button-bar a:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .button:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > div.buttons input:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > input.button:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > button:is(:hover, :active, :focus-within),
+*:not(.page-rate-widget-box):not(#search-top-box-form) > .btn:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -854,7 +825,7 @@ input[type="radio"]:checked::before {
 }
 
 #edit-page-form.data-form .form-row span.form-value select {
-	border-radius: 0 0.25rem 0.25rem 0.25rem;    
+	border-radius: 0 0.25rem 0.25rem 0.25rem;
 }
 
 /* ===CHECKBOX & RADIO DATAFORM STYLING=== */
@@ -1039,7 +1010,7 @@ input[type="radio"]:checked::before {
 	height:2em;
 	margin: 0;
 	padding: 0;
-	line-height: 0;    
+	line-height: 0;
 	cursor: pointer;
 }
 
@@ -1452,18 +1423,7 @@ a.newpage {
 	color: rgb(var(--newpage-color));
 }
 
-a:hover,
-a:active {
-	transition: 
-		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: transparent;
-	color: rgb(var(--hover-link-color));
-	text-decoration: underline 0.09375em;
-	text-decoration-color: currentColor;
-}
-
-a:focus-within {
+a:is(:hover, :active, :focus-within) {
 	transition: 
 		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1476,8 +1436,7 @@ a:focus-within {
 /* Line-Through Link Coloring on Chrome/Safari */
 
 [style*="line-through"] a,
-[style*="line-through"] a:visited,
-[style*="line-through"] a:active {
+[style*="line-through"] a:is(:visited, :active) {
 	text-decoration-color: inherit;
 }
 
@@ -1498,25 +1457,12 @@ div.dblock {
 	display: inline-block;
 }
 
-.dblock:hover,
-.dblock:active {
+.dblock:is(:hover, :active, :focus-within) {
 	background-color: rgba(var(--swatch-menubg-black-color),0);
 	text-decoration: none;
 }
 
-.dblock:focus-within {
-	background-color: rgb(var(--swatch-menubg-black-color),0);
-	text-decoration: none;
-}
-
-.bblock:hover,
-.bblock:active {
-	background-color: rgb(var(--swatch-menubg-black-color));
-	color: rgb(var(--swatch-primary-darkest));
-	text-decoration: none;
-}
-
-.bblock:focus-within {
+.bblock:is(:hover, :active, :focus-within) {
 	background-color: rgb(var(--swatch-menubg-black-color));
 	color: rgb(var(--swatch-primary-darkest));
 	text-decoration: none;

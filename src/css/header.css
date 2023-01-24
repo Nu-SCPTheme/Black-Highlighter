@@ -172,8 +172,7 @@ div#container-wrap {
 	font-size: calc(var(--base-font-size) * (13 / 15));		
 }
 
-#search-top-box:hover,
-#search-top-box:active {
+#search-top-box:is(:hover, :active) {
 	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));	
 }
 
@@ -184,7 +183,7 @@ div#container-wrap {
 	padding: 0;
 }
 
-#search-top-box form[id="search-top-box-form"] input[type="text"]  {
+#search-top-box form[id="search-top-box-form"] input[type="text"] {
 	display: none;
 }
 
@@ -213,8 +212,7 @@ div#container-wrap {
 	pointer-events: none;
 }
 
-#search-top-box:hover::after,
-#search-top-box:active::after {
+#search-top-box:is(:hover, :active)::after {
 	--clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
 	background-color: rgb(var(--search-icon-focus-bg-color));	
 }
@@ -225,8 +223,7 @@ div#container-wrap {
 	mask:var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem ) / 2) calc((var(--search-height) + 0.25rem ) / 2) no-repeat;
 }
 
-#search-top-box:hover input[type="submit"],
-#search-top-box:active input[type="submit"] {
+#search-top-box:is(:hover, :active) input[type="submit"] {
 	background-color: rgb(var(--search-icon-hover-color));
 }
 
@@ -437,16 +434,8 @@ div#container-wrap {
 	color: rgb(var(--ui-button-txt));
 }
 
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:hover,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:active,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:hover,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:active {
-	background-color: rgba(var(--ui-button-hover-bg), 1);
-	color: rgb(var(--ui-button-hover-txt));
-}
-
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:focus-within,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:focus-within {
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:is(:hover, :active, :focus-within),
+#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:is(:hover, :active, :focus-within) {
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
@@ -477,16 +466,7 @@ div#container-wrap {
 	text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0.125em;
 }
 
-#login-status a#my-account:hover,
-#login-status a#my-account:active {
-	--wght: var(--ui-hvr-wght);
-	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
-	color: rgb(var(--login-myaccount-hover-color));
-	font-weight: var(--wght);
-	text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
-}
-
-#login-status a#my-account:focus-within {
+#login-status a#my-account:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 	color: rgb(var(--login-myaccount-hover-color));
@@ -615,15 +595,7 @@ div#container-wrap {
 	color: rgb(var(--login-dropdown-text-color));
 }
 
-#login-status #account-options li > a:hover,
-#login-status #account-options li > a:active {
-	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--login-dropdown-text-hover-color));
-	font-weight: var(--wght);
-	text-decoration: none;
-}
-
-#login-status #account-options li > a:focus-within {
+#login-status #account-options li > a:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--login-dropdown-text-hover-color));
 	font-weight: var(--wght);
@@ -669,22 +641,11 @@ div#container-wrap {
 	clip-path: var(--clip-path);
 }
 
-#login-status #account-options li > a:hover::before,
-#login-status #account-options li > a:active::before {
+#login-status #account-options li > a:is(:hover, :active, :focus-within)::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
 			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#login-status #account-options li > a:focus-within::before {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0,
 			100% 100%, 
 			0 100%
 		);
@@ -772,14 +733,7 @@ div.mobile-top-bar {
 	white-space: normal;
 }
 
-#header div[class*="top-bar"] > ul > li:hover > a,
-#header div[class*="top-bar"] > ul > li:active > a {
-	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--topmenu-category-hover-color));
-	font-weight: var(--wght);
-}
-
-#header div[class*="top-bar"] > ul > li:focus-within > a {
+#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--topmenu-category-hover-color));
 	font-weight: var(--wght);
@@ -822,8 +776,7 @@ div.mobile-top-bar {
 	bottom: 0;
 }
 
-#header div[class*="top-bar"] > ul > li:hover > a::before,
-#header div[class*="top-bar"] > ul > li:active > a::before {
+#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -833,7 +786,7 @@ div.mobile-top-bar {
 		);
 }
 
-#header div[class*="top-bar"] > ul > li:focus-within > a::before {
+#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a::after {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -843,35 +796,7 @@ div.mobile-top-bar {
 		);
 }
 
-#header div[class*="top-bar"] > ul > li:hover > a::after,
-#header div[class*="top-bar"] > ul > li:active > a::after {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#header div[class*="top-bar"] > ul > li:focus-within > a::after {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#header div[class*="top-bar"] > ul > li:hover > a,
-#header div[class*="top-bar"] > ul > li:active > a {
-	--wght: calc(var(--ui-hvr-wght) + 200);
-	background-color: rgb(var(--topmenu-category-hover-bg));
-	font-weight: var(--wght);
-}
-
-#header div[class*="top-bar"] > ul > li:focus-within > a {
+#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 	background-color: rgb(var(--topmenu-category-hover-bg));
 	font-weight: var(--wght);
@@ -896,13 +821,8 @@ div.mobile-top-bar {
 
 /* any li after ul */
 
-#header div[class*="top-bar"] > ul li:hover,
-#header div[class*="top-bar"] > ul li:active {
+#header div[class*="top-bar"] > ul li:is(:hover, :active, :focus-within) {
 	/* Adding a slight bg colour change before the :before obscures it */
-	background-color: rgba(var(--dark-accent), 0.05);
-}
-
-#header div[class*="top-bar"] > ul li:focus-within {
 	background-color: rgba(var(--dark-accent), 0.05);
 }
 
@@ -914,12 +834,7 @@ div.mobile-top-bar {
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#header div[class*="top-bar"] li:hover a,
-#header div[class*="top-bar"] li:active a {
-	text-decoration: none;
-}
-
-#header div[class*="top-bar"] li a:focus-within {
+#header div[class*="top-bar"] li:is(:hover, :active, :focus-within) a {
 	text-decoration: none;
 }
 
@@ -949,13 +864,7 @@ div.mobile-top-bar {
 	pointer-events: none;
 }
 
-#header div[class*="top-bar"] > ul > li:hover > ul,
-#header div[class*="top-bar"] > ul > li:active > ul {
-	opacity: 1;
-	pointer-events: all;
-}
-
-#header div[class*="top-bar"] > ul > li:focus-within > ul {
+#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -1015,31 +924,13 @@ div.mobile-top-bar {
 	clip-path: var(--clip-path);
 }
 
-#header div[class*="top-bar"] > ul > li > ul li:hover > a,
-#header div[class*="top-bar"] > ul > li > ul li:active > a {
+#header div[class*="top-bar"] > ul > li > ul li:is(:hover, :active, :focus-within) > a {
 	--wght: var(--ui-hvr-wght);
 	color: rgb(var(--dropdown-links-hover-color));
 	font-weight: var(--wght);
 }
 
-#header div[class*="top-bar"] > ul > li > ul li:focus-within > a {
-	--wght: var(--ui-hvr-wght);
-	color: rgb(var(--dropdown-links-hover-color));
-	font-weight: var(--wght);
-}
-
-#header div[class*="top-bar"] > ul > li > ul li:hover > a::before,
-#header div[class*="top-bar"] > ul > li > ul li:active > a::before {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#header div[class*="top-bar"] > ul > li > ul li:focus-within > a::before {
+#header div[class*="top-bar"] > ul > li > ul li:is(:hover, :active, :focus-within) > a::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -1097,21 +988,13 @@ div.mobile-top-bar {
 	pointer-events: none;
 }
 
-#header div[class*="top-bar"] > ul > li > ul > li:hover ul,
-#header div[class*="top-bar"] > ul > li > ul > li:active ul,
-#header div[class*="top-bar"] > ul > li > ul > li:hover ul:hover,
-#header div[class*="top-bar"] > ul > li > ul > li:active ul:active {
+#header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul
+#header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul:is(:hover, :active, :focus-within) {
 	opacity: 1;
 	pointer-events: all;
 }
 
-#header div[class*="top-bar"] > ul > li > ul > li:focus-within ul,
-#header div[class*="top-bar"] > ul > li > ul > li:focus-within ul:focus-within {
-	opacity: 1;
-	pointer-events: all;
-}
-
-/*  ul > li > ul li > ul */
+/* ul > li > ul li > ul */
 /* Prevent flyout menus from disappearing when moving to them diagonally */
 
 #header div[class*="top-bar"] > ul > li > ul li > ul::before {
@@ -1161,14 +1044,10 @@ div.mobile-top-bar {
 			transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	#header div[class*="top-bar"] ul > li:hover > ul,
-	#header div[class*="top-bar"] ul > li:active > ul {
+	#header div[class*="top-bar"] ul > li:is(:hover, :active, :focus-within) > ul {
 		backdrop-filter: blur(0.125rem);
 	}
 
-	#header div[class*="top-bar"] ul > li:focus-within > ul {
-		backdrop-filter: blur(0.125rem);
-	}
 }
 
 /* ===COMMON THEME COMPATABILITY=== */
@@ -1186,21 +1065,11 @@ div.mobile-top-bar {
 }
 
 #top-bar ul li .homebutton,
-#top-bar ul li:hover .homebutton,
+#top-bar ul li:is(:hover, :focus-within) .homebutton,
 #top-bar ul li .lightbulb .lightbulb-mask,
-#top-bar ul li:hover .lightbulb .lightbulb-mask,
+#top-bar ul li:is(:hover, :focus-within) .lightbulb .lightbulb-mask,
 #top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:hover .lightbulb .lightbulb-mask {
-	width: 100%;
-	background-color: rgb(var(--topmenu-category-color)) !important;
-	background-image: initial;
-	color: transparent !important;
-	mask: center center / 1em 1em no-repeat;
-}
-
-#top-bar ul li:focus-within .homebutton,
-#top-bar ul li:focus-within .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:focus-within .lightbulb .lightbulb-mask {
+#top-bar > .ct-theme-switch:is(:hover, :focus-within) .lightbulb .lightbulb-mask {
 	width: 100%;
 	background-color: rgb(var(--topmenu-category-color)) !important;
 	background-image: initial;
@@ -1212,12 +1081,7 @@ div.mobile-top-bar {
 	mask-image: var(--homebutton-mask);
 }
 
-#top-bar ul li:hover .homebutton,
-#top-bar ul li:active .homebutton {
-	mask-image: var(--homebutton-mask);
-}
-
-#top-bar ul li:focus-within .homebutton {
+#top-bar ul li:is(:hover, :active, :focus-within) .homebutton {
 	mask-image: var(--homebutton-mask);
 }
 
@@ -1227,15 +1091,8 @@ div.mobile-top-bar {
 	mask-image: var(--lightbulb-mask);
 }
 
-#top-bar ul li:hover .lightbulb .lightbulb-mask,
-#top-bar ul li:active .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:hover .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:active .lightbulb .lightbulb-mask {
-	mask-image: var(--lightbulb-mask);
-}
-
-#top-bar ul li:focus-within .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:focus-within .lightbulb .lightbulb-mask {
+#top-bar ul li:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask
+#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask {
 	mask-image: var(--lightbulb-mask);
 }
 
@@ -1250,22 +1107,14 @@ div.mobile-top-bar {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    font-size: calc(var(--base-font-size) * (13 / 15));
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	font-size: calc(var(--base-font-size) * (13 / 15));
 }
 
 #top-bar > .ct-theme-switch .lightbulb,
-#top-bar > .ct-theme-switch:hover .lightbulb,
-#top-bar > .ct-theme-switch:active .lightbulb {
-	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
-	border-radius: 1.0625rem;
-	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
-		inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
-}
-
-#top-bar > .ct-theme-switch:focus-within .lightbulb {
+#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb {
 	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
 	border-radius: 1.0625rem;
 	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
@@ -1276,22 +1125,12 @@ div.mobile-top-bar {
 	background: rgb(var(--swatch-menubg-medium-dark-color));
 }
 
-#top-bar > .ct-theme-switch:hover .lightbulb,
-#top-bar > .ct-theme-switch:active .lightbulb {
-	background: rgb(var(--swatch-menubg-black-color));
-}
-
-#top-bar > .ct-theme-switch:focus-within .lightbulb {
+#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb {
 	background: rgb(var(--swatch-menubg-black-color));
 }
 
 #top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:hover .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:active .lightbulb .lightbulb-mask {
-	background-color: rgb(var(--swatch-text-secondary-color)) !important;
-}
-
-#top-bar > .ct-theme-switch:focus-within .lightbulb .lightbulb-mask {
+#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask {
 	background-color: rgb(var(--swatch-text-secondary-color)) !important;
 }
 
@@ -1388,25 +1227,13 @@ div.mobile-top-bar {
 		user-select: none;
 	}
 
-	#login-status:hover,
-	#login-status:active {
+	#login-status:is(:hover, :active, :focus-within), {
 		color: rgb(var(--login-line-divider-color));
 		pointer-events: all;
 		user-select: initial;
 	}
 
-	#login-status:focus-within {
-		color: rgb(var(--login-line-divider-color));
-		pointer-events: all;
-		user-select: initial;
-	}
-
-	#login-status:hover #account-options,
-	#login-status:active #account-options {
-		pointer-events: all;
-	}
-
-	#login-status:focus-within #account-options {
+	#login-status:is(:hover, :active, :focus-within) #account-options {
 		pointer-events: all;
 	}
 
@@ -1428,20 +1255,7 @@ div.mobile-top-bar {
 		clip-path: var(--clip-path);
 	}
 
-	#login-status:hover > *:not(#account-topbutton):not([href*="account/messages"]),
-	#login-status:active > *:not(#account-topbutton):not([href*="account/messages"]) {
-		--clip-path: 
-			polygon(
-				0 0, 
-				100% 0, 
-				100% 100%, 
-				0 100%
-			);
-		opacity: 1;
-		clip-path: var(--clip-path);
-	}
-
-	#login-status:focus-within > *:not(#account-topbutton):not([href*="account/messages"]) {
+	#login-status:is(:hover, :active, :focus-within) > *:not(#account-topbutton):not([href*="account/messages"]) {
 		--clip-path: 
 			polygon(
 				0 0, 
@@ -1489,17 +1303,8 @@ div.mobile-top-bar {
 		background-color: rgba(var(--login-mobile-icon-hover-color),1);
 	}
 
-	#login-status:hover::before,
-	#login-status:hover::after,
-	#login-status:active::before,
-	#login-status:active::after {
-		background-color: rgba(var(--login-mobile-icon-hover-bg-color),0);
-		cursor: auto;
-		pointer-events: none;
-	}
-
-	#login-status:focus-within::before,
-	#login-status:focus-within::after {
+	#login-status:is(:hover, :active, :focus-within)::before,
+	#login-status:is(:hover, :active, :focus-within)::after {
 		background-color: rgba(var(--login-mobile-icon-hover-bg-color),0);
 		cursor: auto;
 		pointer-events: none;
@@ -1511,20 +1316,7 @@ div.mobile-top-bar {
 		clip-path: var(--clip-path);
 	}
 
-	#login-status:hover #account-topbutton,
-	#login-status:active #account-topbutton {
-		--clip-path: 
-		polygon(
-			30% 35%, 
-			70% 35%, 
-			50% 60%, 
-			50% 60%
-		);
-		background-color: rgb(var(--login-arrow-color));
-		clip-path: var(--clip-path);
-	}
-
-	#login-status:focus-within #account-topbutton {
+	#login-status:is(:hover, :active, :focus-within) #account-topbutton {
 		--clip-path: 
 		polygon(
 			30% 35%, 
@@ -1614,15 +1406,8 @@ div.mobile-top-bar {
 		transform: translate(-50%, 0);
 	}
 
-	#header div[class*="top-bar"] > ul > li:hover > ul,
-	#header div[class*="top-bar"] > ul > li:active > ul,
-	#header div[class*="top-bar"] > ul > li > ul:hover,
-	#header div[class*="top-bar"] > ul > li > ul:active {
-		transform: translate(-50%, 0);
-	}
-
-	#header div[class*="top-bar"] > ul > li:focus-within > ul,
-	#header div[class*="top-bar"] > ul > li > ul:focus-within {
+	#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul,
+	#header div[class*="top-bar"] > ul > li > ul:is(:hover, :active, :focus-within) {
 		transform: translate(-50%, 0);
 	}
 

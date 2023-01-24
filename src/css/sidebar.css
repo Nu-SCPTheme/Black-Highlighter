@@ -56,15 +56,7 @@
 } }
 
 /* Hover Scrollbar Behavior */
-#side-bar:hover,
-#side-bar:active {
-	scrollbar-color: 
-		rgb(var(--swatch-primary-darker), 1) /* Thumb */
-		rgb(var(--swatch-menubg-color), 1); /* Track */
-	border-color: rgba(var(--swatch-primary-darker), 1);
-}
-
-#side-bar:focus-within {
+#side-bar:is(:hover, :active, :focus-within) {
 	scrollbar-color: 
 		rgb(var(--swatch-primary-darker), 1) /* Thumb */
 		rgb(var(--swatch-menubg-color), 1); /* Track */
@@ -134,18 +126,7 @@
 	clip-path: var(--clip-path);
 }
 
-#side-bar .side-block.media a:hover::before,
-#side-bar .side-block.media a:active::before {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#side-bar .side-block.media a:focus-within::before {
+#side-bar .side-block.media a:is(:hover, :active, :focus-within)::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -209,18 +190,7 @@
 	mask: var(--social-logo-mask) 0 0/ 90% no-repeat;
 }
 
-#side-bar .side-block.media a[href*="tiktok"]:hover::after,
-#side-bar .side-block.media a[href*="tiktok"]:active::after {
-	--clip-path: 
-	polygon(
-		0 0, 
-		0 0, 
-		0 100%, 
-		0 100%
-	);
-}
-
-#side-bar .side-block.media a[href*="tiktok"]:focus-within::after {
+#side-bar .side-block.media a[href*="tiktok"]:is(:hover, :active, :focus-within)::after {
 	--clip-path: 
 	polygon(
 		0 0, 
@@ -468,26 +438,14 @@
 
 #side-bar div.menu-item a,
 #interwiki div.menu-item a {
+	align-items: center;
 	justify-content: flex-start;
 	padding: 0 0 0 calc(var(--base-font-size) * (13 / 15));
 }
 
-#side-bar div.menu-item a:hover,
-#side-bar div.menu-item a:active,
-#side-bar div.menu-item.small a:hover,
-#side-bar div.menu-item.small a:active,
-#interwiki div.menu-item a:hover,
-#interwiki div.menu-item a:active {
-	--wght: var(--ui-hvr-wght);
-	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
-	color: rgb(var(--sidebar-links-hover-text-color));
-	font-weight: var(--wght);
-	text-decoration: none;
-}
-
-#side-bar div.menu-item a:focus-within,
-#side-bar div.menu-item.small a:focus-within,
-#interwiki div.menu-item a:focus-within {
+#side-bar div.menu-item a:is(:hover, :active, :focus-within),
+#side-bar div.menu-item.small a:is(:hover, :active, :focus-within),
+#interwiki div.menu-item a:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
@@ -520,21 +478,8 @@
 	clip-path: var(--clip-path);
 }
 
-#side-bar div.menu-item a:hover::before,
-#side-bar div.menu-item a:active::before,
-#interwiki div.menu-item a:hover::before,
-#interwiki div.menu-item a:active::before {
-	--clip-path: 
-		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
-			0 100%
-		);
-}
-
-#side-bar div.menu-item a:focus-within::before,
-#interwiki div.menu-item a:focus-within::before {
+#side-bar div.menu-item a:is(:hover, :active, :focus-within)::before,
+#interwiki div.menu-item a:is(:hover, :active, :focus-within)::before {
 	--clip-path: 
 		polygon(
 			-15% 0, 
@@ -550,7 +495,7 @@
 #side-bar div.menu-item.scp-tales a,
 #side-bar div.menu-item.small a:not([href*="shortest"]),
 #side-bar div.menu-item a[href*="scp-series"] {
-	justify-content: center;
+	justify-content: center;	
 	width: auto;
 	padding: 0 0.25em;
 	text-indent: 0;
@@ -607,14 +552,7 @@
 	line-height: 1.85;
 }
 
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:hover,
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:active,
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus {
-	background-color: rgba(var(-sidebar-bg-color), 0.15);
-	text-decoration: none;
-}
-
-#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:focus-within {
+#___gcse_0 > div > form > table > tbody > tr > td.gsc-search-button > button:is(:hover, :active, :focus, :focus-within) {
 	background-color: rgba(var(-sidebar-bg-color), 0.15);
 	text-decoration: none;
 }
@@ -743,15 +681,8 @@
 }
 
 
-#side-bar a.collapsible-block-link:hover,
-#side-bar a.collapsible-block-link:active {
+#side-bar a.collapsible-block-link:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght) + 300);
-	font-weight: var(--wght);
-	text-decoration: none;
-}
-
-#side-bar a.collapsible-block-link:focus-within {
-	--wght: var(--ui-hvr-wght);
 	font-weight: var(--wght);
 	text-decoration: none;
 }
@@ -775,13 +706,7 @@
 	color: rgb(var(--sidebar-collapsible-fld-link-color));
 }
 
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:hover,
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:active {
-	background: rgba(var(--sidebar-collapsible-fld-link-hover-bg));
-	color: rgb(var(--sidebar-collapsible-fld-link-hover-color));
-}
-
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:focus-within {
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:is(:hover, :active, :focus-within) {
 	background: rgba(var(--sidebar-collapsible-fld-link-hover-bg));
 	color: rgb(var(--sidebar-collapsible-fld-link-hover-color));
 }
@@ -790,12 +715,7 @@
 	background: rgba(var(--sidebar-collapsible-fld-arrow-color));
 }
 
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:hover:after,
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:active:after {
-	background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
-}
-
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:focus-within:after {
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:is(:hover, :active, :focus-within):after {
 	background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
 }
 
@@ -804,13 +724,7 @@
 	color: rgb(var(--sidebar-collapsible-ufld-link-color));
 }
 
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:hover,
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:active {
-	background: rgba(var(--sidebar-collapsible-ufld-link-hover-bg));
-	color: rgb(var(--sidebar-collapsible-ufld-link-hover-color));
-}
-
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:focus-within {
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:is(:hover, :active, :focus-within) {
 	background: rgba(var(--sidebar-collapsible-ufld-link-hover-bg));
 	color: rgb(var(--sidebar-collapsible-ufld-link-hover-color));
 }
@@ -820,12 +734,7 @@
 	background: rgba(var(--sidebar-collapsible-ufld-arrow-color));
 }
 
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:hover:after,
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:active:after {
-	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
-}
-
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:focus-within:after {
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:is(:hover, :active, :focus-within):after {
 	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
 }
 
@@ -858,12 +767,7 @@
 	color: rgb(var(--sidebar-collapsible-link-color));
 }
 
-#side-bar div.collapsible-block-content div.menu-item a:hover,
-#side-bar div.collapsible-block-content div.menu-item a:active {
-	color: rgb(var(--sidebar-collapsible-link-hover-color));
-}
-
-#side-bar div.collapsible-block-content div.menu-item a:focus-within {
+#side-bar div.collapsible-block-content div.menu-item a:is(:hover, :active, :focus-within) {
 	color: rgb(var(--sidebar-collapsible-link-hover-color));
 }
 
@@ -904,12 +808,7 @@
 	display: none;
 }
 
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:hover,
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:active {
-	background-color: transparent;
-}
-
-#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:focus-within {
+#side-bar div.menu-item.expandable + .collapsible-block a.collapsible-block-link:is(:hover, :active, :focus-within) {
 	background-color: transparent;
 }
 
