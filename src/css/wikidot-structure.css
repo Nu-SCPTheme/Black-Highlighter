@@ -50,7 +50,7 @@
 		"content-wrap"
 		"footer"
 		"license";
-	grid-template-rows: auto;
+	grid-template-columns: auto;
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -65,7 +65,6 @@
 	display: grid;
 	position: initial;
 	grid-area: content-wrap;
-	grid-gap: 0.5rem;
 	grid-gap: 0.5rem;
 	grid-template-areas: "side-bar . content .";
 	grid-template-columns:
@@ -82,7 +81,6 @@
 	min-height: calc(100vh - var(--final-header-height-on-desktop));
 	margin: 0 auto;
 	padding: 0;
-	gap: 0.5rem;
 	gap: 0.5rem;
 }
 
@@ -117,7 +115,7 @@
 @supports (not (-webkit-hyphens:none)) and (not (-moz-appearance:none)) and (list-style-type:"*") {
 	@media only screen and (max-width: 56.25rem) {
 		#main-content > * {
-			max-width: min(90vw,var(--body-width-on-desktop));
+			max-width: min(90vw, var(--body-width-on-desktop));
 		}
 	}
 }
@@ -131,10 +129,11 @@
 #page-title,
 .meta-title {
 	--wght: 700;
+
 	display: flex;
 	align-items: center;
 	min-height: 1em;
-	margin: 0.5em 0 1em 0;
+	margin: 0.5em 0 1em;
 	padding: 0;
 	border: none;
 	color: rgb(var(--swatch-text-general));
@@ -147,7 +146,6 @@
 }
 
 @media only screen and (min-width: 56.25rem) {
-
 	#page-title,
 	.meta-title {
 		font-size: 2em;
@@ -220,20 +218,20 @@
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background: transparent;
 	box-shadow:
-		0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary),1),
-		0.25rem 0.0625rem 0 0 rgba(var(--background-gradient-color),0.7),
-		0.25rem 0.0625rem 0 0 rgba(var(--swatch-background),1),
-		0.3125rem 0.0625rem 0 0 rgba(var(--swatch-primary),1);
+		0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1),
+		0.25rem 0.0625rem 0 0 rgba(var(--background-gradient-color), 0.7),
+		0.25rem 0.0625rem 0 0 rgba(var(--swatch-background), 1),
+		0.3125rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1);
 }
 
 #breadcrumbs a:is(:hover, :active, :focus-within)::before,
 .pseudocrumbs a:is(:hover, :active, :focus-within)::before {
 	background-color: rgb(var(--swatch-primary));
 	box-shadow:
-		0 0 0 0.25rem rgba(var(--swatch-primary),1),
-		0 0 0 0 rgba(var(--background-gradient-color),0),
-		0 0 0 0 rgba(var(--swatch-background),0),
-		0 0 0 0 rgba(var(--swatch-primary),0);
+		0 0 0 0.25rem rgba(var(--swatch-primary), 1),
+		0 0 0 0 rgba(var(--background-gradient-color), 0),
+		0 0 0 0 rgba(var(--swatch-background), 0),
+		0 0 0 0 rgba(var(--swatch-primary), 0);
 }
 
 /* ===PAGE-CONTENT=== */
@@ -253,7 +251,7 @@
 }
 
 #page-options-container {
-	display: contents;	
+	display: contents;
 	grid-area: options-1; /* Fix for old Mobile Safari. Has no effect otherwise. */
 	font-family: var(--UI-font);
 }
@@ -278,13 +276,14 @@ div.page-watch-options {
 	margin-top: 1em;
 	overflow: visible;
 	font-size: 0.85em;
-	line-height: 1
+	line-height: 1;
 }
 
 div.page-watch-options a,
 div.page-watch-options a:visited {
 	--hover-link-color: var(--swatch-text-secondary-color);
 	--wght: calc(var(--ui-wght) + 200);
+
 	margin: -0.15em 0;
 	padding: 0.15em;
 	transition:
@@ -300,6 +299,7 @@ div.page-watch-options a:visited {
 
 div.page-watch-options a:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght) + 200);
+
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: var(--wght);
@@ -312,8 +312,8 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 	position: relative;
 	grid-area: page-tags;
 	width: 100%;
-	margin: 0.2rem 0 0 0;
-	padding: 0.2rem 0 0 0;
+	margin: 0.2rem 0 0;
+	padding: 0.2rem 0 0;
 	box-shadow: 0 -0.125rem 0 0 rgb(var(--pagetags-title-bg));
 	font-family: var(--UI-font);
 	font-size: 0.9em;
@@ -322,6 +322,7 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 
 #main-content .page-tags::before {
 	--wght: var(--ui-hvr-wght);
+
 	content: "TAGS\0021b4";
 	position: absolute;
 	top: -2em;
@@ -342,10 +343,10 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 			calc(100% - 0.0625rem) 100%,
 			0 100%
 		);
+
 	display: flex;
 	position: relative;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	justify-content: space-between;
 	width: auto;
 	height: 100%;
@@ -362,6 +363,7 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]),
 #main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
+
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -377,12 +379,13 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	font-weight: var(--wght);
 	line-height: 1;
+
 	--link-color: var(--pagetags-text-color);
 	--hover-link-color: var(--pagetags-text-hover-color);
 }
 
-#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):not(:last-child),
-#main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"]):not(:last-child) {
+#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"], :last-child),
+#main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"], :last-child) {
 	border-right: 0.0625rem dotted rgba(var(--pagetags-text-color), 0.5);
 }
 
@@ -395,6 +398,7 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -411,6 +415,7 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
+
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -452,6 +457,7 @@ div#page-options-area-bottom {
 
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -463,15 +469,17 @@ div[id*="page-options-bottom"] {
 	font-weight: var(--wght);
 	text-align: left;
 	white-space: nowrap;
+
 	--icon-size: 1.5em;
 	--icon-size: max(1.5em, min(5vmin, 2em));
 }
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
 	--button-padding: calc(var(--icon-size) / 8);
+
 	flex-basis: 5rem;
 	height: 1.5em;
-	margin: 0 0.5ch 1ch 0.5ch;
+	margin: 0 0.5ch 1ch;
 	padding: var(--button-padding);
 	padding-left: calc(var(--icon-size) + 0.5em);
 	box-shadow:
@@ -481,12 +489,12 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-fo
 }
 
 @media only screen and (max-width: 56.25rem) {
-	div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
+	div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
 		--button-padding: calc(var(--icon-size) / 4);
 	}
 }
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:is(:hover, :active, :focus-within) {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) > a.btn:is(:hover, :active, :focus-within) {
 	box-shadow:
 		0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
 		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
@@ -503,9 +511,8 @@ div[id*="page-options-bottom"] > a::after {
 	left: 0;
 	width: var(--icon-size);
 	height: var(--icon-size);
-	transform: translateY(-50%);
-	transition:
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	translate: 0 -50%;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--ui-icon-color));
 	mask: var(--button-icon) center center / calc(var(--icon-size) - 0.5em) no-repeat;
 }
@@ -597,6 +604,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	--link-color: var(--footer-link-color);
 	--visited-link-color: var(--footer-link-color);
 	--hover-link-color: var(--footer-link-hover-color);
+
 	display: flex !important;
 	box-sizing: border-box;
 	grid-area: footer;
@@ -640,6 +648,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #footer a,
 #footer a:visited {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -665,6 +674,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -681,6 +691,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 
 #footer a:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
+
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -700,12 +711,12 @@ div[id*="page-options-bottom"] > a#delete-button {
 		);
 }
 
-
 /* ===LICENSE BOX=== */
 #license-area {
 	--link-color: var(--license-link-color);
 	--visited-link-color: var(--license-link-color);
 	--hover-link-color: var(--license-link-hover-color);
+
 	display: flex;
 	position: relative;
 	box-sizing: border-box;
@@ -725,6 +736,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 #license-area a,
 #license-area a:visited {
 	--wght: calc(var(--ui-wght));
+
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
@@ -751,6 +763,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -767,6 +780,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 
 #license-area a:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
+
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -785,7 +799,6 @@ div[id*="page-options-bottom"] > a#delete-button {
 		);
 }
 
-
 /* ===ACTION AREA=== */
 #action-area {
 	grid-area: action-area-btm;
@@ -798,10 +811,11 @@ div[id*="page-options-bottom"] > a#delete-button {
 #action-area h3,
 #action-area h4 {
 	--wght: 700;
+
 	display: flex;
 	align-items: center;
 	min-height: 1em;
-	margin: 0.5em 0 0.25em 0;
+	margin: 0.5em 0 0.25em;
 	padding: 0;
 	border: none;
 	color: rgb(var(--swatch-text-general));
@@ -870,6 +884,7 @@ div#action-area > a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -895,6 +910,7 @@ div#action-area > a.btn-danger[href="javascript:;"],
 
 #action-area a.action-area-close:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
@@ -941,7 +957,7 @@ form#edit-page-form *:not(#edit-page-textarea) {
 	max-width: var(--body-width-on-desktop);
 }
 
-form#edit-page-form *:not(input):not(textarea) {
+form#edit-page-form *:not(input, textarea) {
 	font-family: var(--UI-font);
 }
 
@@ -974,16 +990,17 @@ form#edit-page-form #edit-page-captcha {
 
 form#edit-page-form table.form:first-of-type td:first-of-type {
 	--wght: calc(var(--ui-wght) + 100);
+
 	grid-area: title-txt;
 	width: max-content;
 	margin: calc(-0.75em + 0.0625rem) 1rem -0.75em 1rem;
 	padding: 0 0.25em;
-	transform: translateY(0);
+	translate: 0 0;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		translate 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -993,12 +1010,13 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	font-size: 0.8em;
 	font-weight: var(--wght);
 	text-transform: uppercase;
-	will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	transform: translateY(-0.15625rem);
+
+	translate: 0 -0.15625rem;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
@@ -1025,6 +1043,7 @@ form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type 
 
 form#edit-page-form #page-templates {
 	--wght: var(--ui-wght);
+
 	padding: 0.25rem;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1034,7 +1053,8 @@ form#edit-page-form #page-templates {
 	border: none;
 	border-radius: 0.25rem;
 	outline: 0 solid rgb(var(--swatch-primary));
-	box-shadow: inset 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color),0.3625);
+	box-shadow: inset 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color), 0.3625);
+
 	/* Overwrite Wikidot Inline Styling */
 	will-change: box-shadow, background-color, font-weight, font-variation-settings;
 }
@@ -1045,6 +1065,7 @@ form#edit-page-form #page-templates option {
 
 form#edit-page-form #page-templates:focus {
 	--wght: var(--ui-hvr-wght);
+
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1053,6 +1074,7 @@ form#edit-page-form #page-templates:focus {
 
 form#edit-page-form #page-templates:focus-visible {
 	--wght: var(--ui-hvr-wght);
+
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1061,6 +1083,7 @@ form#edit-page-form #page-templates:focus-visible {
 
 form#edit-page-form #page-templates:focus-within {
 	--wght: var(--ui-hvr-wght);
+
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1069,10 +1092,11 @@ form#edit-page-form #page-templates:focus-within {
 
 form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type {
 	--wght: calc(var(--ui-hvr-wght) + 100);
-	transform: translateY(-.15625rem);
+
+	translate: 0 -0.15625rem;
 	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgba(var(--swatch-primary),1);
-	box-shadow: 0 0 0 .15625rem rgb(var(--swatch-primary));
+	background-color: rgba(var(--swatch-primary), 1);
+	box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-background));
 	font-weight: var(--wght);
 }
@@ -1084,6 +1108,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input {
 	--wght: var(--ui-wght);
+
 	width: calc(100% - 2em);
 	margin: 0.5em 1rem;
 	padding: 0.25em;
@@ -1097,6 +1122,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 	font-size: 1.2em !important;
 	font-weight: var(--wght);
+
 	/* Overwrite Wikidot Inline Styling */
 	will-change: box-shadow, background-color, font-weight, font-variation-settings;
 }
@@ -1111,6 +1137,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-s
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 	--wght: var(--ui-hvr-wght);
+
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1120,6 +1147,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
 	--wght: var(--ui-hvr-wght);
+
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1129,6 +1157,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within 
 
 form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
 	--wght: var(--ui-hvr-wght);
+
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1141,6 +1170,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible
 form#edit-page-form .wd-editor-toolbar-panel {
 	--icon-size: 1.5em;
 	--icon-size: max(1.5em, min(5.75vw, calc((var(--body-width-on-desktop) - 6em) / 22)));
+
 	display: grid;
 	position: relative;
 	grid-area: toolbar;
@@ -1164,7 +1194,7 @@ form#edit-page-form .wd-editor-toolbar-panel {
 }
 
 @media only screen and (max-width: 30rem),
-(orientation: portrait) {
+	(orientation: portrait) {
 	form#edit-page-form .wd-editor-toolbar-panel {
 		grid-template-areas:
 			"header-h1 bold-txt italic-txt underline-txt strike-txt super-txt sub-txt raw-txt teletype-txt . ordered-list unordered-list increment-list decrement-list"
@@ -1200,6 +1230,7 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
 			0 100%,
 			0 100%
 		);
+
 	display: grid;
 	top: 0;
 	left: var(--icon-size);
@@ -1228,6 +1259,7 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :
 			100% 100%,
 			0 100%
 		);
+
 	left: var(--icon-size);
 	padding-left: 0.125em;
 	transition:
@@ -1282,6 +1314,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 			0 100%,
 			0 100%
 		);
+
 	z-index: 0;
 	width: 100%;
 	height: 100%;
@@ -1363,7 +1396,7 @@ form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7) {
-	grid-area: code-block
+	grid-area: code-block;
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8) {
@@ -1442,14 +1475,13 @@ form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of
 	grid-area: bib-cite;
 }
 
-/* ===TOOLBAR ICONS ===*/
+/* ===TOOLBAR ICONS === */
 form#edit-page-form .wd-editor-toolbar-panel a.weditor-h1::before {
 	--edit-menu-mask: var(--h1-mask);
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a.weditor-h2::before {
 	--edit-menu-mask: var(--h2-mask);
-
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a.weditor-h3::before {
@@ -1613,7 +1645,7 @@ form#edit-page-form .wd-editor-toolbar-panel a.weditor-bibcite::before {
 }
 
 /* ===EDITOR TEXTAREA=== */
-form#edit-page-form #wd-editor-toolbar-panel+div {
+form#edit-page-form #wd-editor-toolbar-panel + div {
 	position: relative;
 	grid-area: editbox;
 	padding: 0.125em 0;
@@ -1647,6 +1679,7 @@ form#edit-page-form textarea {
 /* ===EDITOR HELP LINKS=== */
 form#edit-page-form .edit-help-34 {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	grid-area: edit-help;
 	flex-wrap: wrap;
@@ -1691,6 +1724,7 @@ form#edit-page-form .edit-help-34 > a::after {
 			100% 100%,
 			100% 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -1706,6 +1740,7 @@ form#edit-page-form .edit-help-34 > a::after {
 
 form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
+
 	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1725,7 +1760,6 @@ form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus-within)::after 
 		);
 }
 
-
 /* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
 form#edit-page-form .change-textarea-size {
 	display: grid;
@@ -1743,6 +1777,7 @@ form#edit-page-form .change-textarea-size {
 
 form#edit-page-form .change-textarea-size a {
 	--wght: calc(var(--ui-wght) + 100);
+
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -1763,14 +1798,15 @@ form#edit-page-form .change-textarea-size a {
 
 form#edit-page-form .change-textarea-size a:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght) + 100);
+
 	background-color: rgba(var(--swatch-primary));
 	font-weight: var(--wght);
 }
 
-
 /* ===EDITOR DESCRIPTION BOX=== */
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
+
 	display: grid;
 	position: relative;
 	grid-area: descrip;
@@ -1792,7 +1828,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	top: -1em;
 	left: 1rem;
 	padding: 0.15625em;
-	transform: translateY(0);
+	translate: 0 0;
 	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1807,7 +1843,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 }
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
-	transform: translateY(-0.25em);
+	translate: 0 -0.25em;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
@@ -1820,6 +1856,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea {
 	--wght: var(--ui-wght);
+
 	z-index: 1;
 	width: calc(100% - 2rem);
 	height: 100%;
@@ -1857,7 +1894,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 
 table.form td div.sub,
 form div.sub {
-	color: rgb(var(--swatch-menutxt-general-color),0.5);
+	color: rgb(var(--swatch-menutxt-general-color), 0.5);
 }
 
 /* ===DESCRIPTION CHAR COUNT=== */
@@ -1911,6 +1948,7 @@ form#edit-page-form div.buttons {
 /* ===WHO RATED AREA=== */
 #action-area a[onclick*="PageRateModule"] {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -1938,6 +1976,7 @@ form#edit-page-form div.buttons {
 
 #action-area a[onclick*="PageRateModule"]:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	border-color: transparent;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -1952,6 +1991,7 @@ form#edit-page-form div.buttons {
 
 #who-rated-page-area > div {
 	--wght: var(--ui-wght);
+
 	display: grid;
 	grid-auto-rows: 1.5rem;
 	grid-row-gap: 0.25em;
@@ -1964,8 +2004,9 @@ form#edit-page-form div.buttons {
 	display: none;
 }
 
-#who-rated-page-area > div>span[style*="color"] {
+#who-rated-page-area > div > span[style*="color"] {
 	--wght: 800;
+
 	display: flex;
 	align-items: center;
 	align-self: center;
@@ -1979,7 +2020,7 @@ form#edit-page-form div.buttons {
 	text-align: left;
 }
 
-#who-rated-page-area > div>span[style*="color"]::after {
+#who-rated-page-area > div > span[style*="color"]::after {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
@@ -2004,6 +2045,7 @@ form#edit-page-form div.buttons {
 #who-rated-page-area .printuser a,
 #who-rated-page-area .printuser.deleted {
 	--wght: 600;
+
 	font-family: var(--UI-font);
 	font-size: 0.8em;
 	font-weight: var(--wght);
@@ -2024,6 +2066,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr > td {
 
 form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(1) {
 	--wght: var(--ui-hvr-wght);
+
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -2066,6 +2109,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(2) > input {
 
 #history-form-1 > table > tbody > tr > td:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
+
 	display: flex;
 	align-items: center;
 	width: max-content;
@@ -2102,7 +2146,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(2) > input {
 }
 
 #history-form-1 > table > tbody > tr:nth-child(1) > td:nth-of-type(2) input {
-	margin-left: 50%
+	margin-left: 50%;
 }
 
 table.page-history {
@@ -2111,11 +2155,10 @@ table.page-history {
 
 table.page-history tr[id*="evision-row"] {
 	display: grid;
-	grid-template-areas:
-		"rev-num rev-radio rev-flags rev-actions rev-user rev-date"
-		"rev-com rev-com rev-com rev-com rev-com rev-com";
-	grid-template-columns: 2.5rem 2.5rem 3rem 4.625rem 1fr 1fr;
-	grid-template-rows: 2rem 1fr;
+	grid-template:
+		"rev-num rev-radio rev-flags rev-actions rev-user rev-date" 2rem
+		"rev-com rev-com rev-com rev-com rev-com rev-com" 1fr
+		/ 2.5rem 2.5rem 3rem 4.625rem 1fr 1fr;
 	padding: 0 0 0.5em;
 }
 
@@ -2137,7 +2180,7 @@ table.page-history tr[id*="evision-row"] td:nth-of-type(3) {
 
 table.page-history tr[id*="evision-row"] td:nth-of-type(4) {
 	display: grid;
-	grid-area: rev-actions;	
+	grid-area: rev-actions;
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -2148,12 +2191,14 @@ table.page-history tr[id*="evision-row"] td:nth-of-type(5) {
 table.page-history tr[id*="evision-row"] td:nth-of-type(6) {
 	grid-area: rev-date;
 	padding: 0 !important;
+
 	/* Overwriting Wikidot Inline-Styling */
 }
 
 table.page-history tr td:nth-of-type(7) {
 	grid-area: rev-com;
 	width: calc(100% - 2em) !important;
+
 	/* Overwriting Wikidot Inline-Styling */
 	padding: 0 1em;
 }
@@ -2176,11 +2221,13 @@ table.page-history tr td {
 	align-items: center;
 	justify-content: center;
 	width: 100% !important;
+
 	/* Overwriting Wikidot Inline-Styling */
 }
 
 table.page-history td.optionstd a {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	position: relative;
 	justify-content: center;
@@ -2207,6 +2254,7 @@ table.page-history td.optionstd a {
 
 table.page-history td.optionstd a:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -2219,6 +2267,7 @@ table.page-history td.optionstd a:is(:hover, :active, :focus-within) {
 
 table.page-history tr:nth-of-type(2) td:not(:nth-of-type(7))::before {
 	--wght: 600;
+
 	display: flex;
 	position: absolute;
 	top: calc(-100% - 0.5em);
@@ -2305,17 +2354,17 @@ table.page-files tr[id*="file-options"] {
 }
 
 table.page-files tr[id*="file-row"]:nth-of-type(odd),
-table.page-files tr[id*="file-row"]:nth-of-type(odd)+table.page-files tr[id*="file-options"],
-table.page-files tr[id*="file-row"]:nth-of-type(odd)+.highlight {
+table.page-files tr[id*="file-row"]:nth-of-type(odd) + table.page-files tr[id*="file-options"],
+table.page-files tr[id*="file-row"]:nth-of-type(odd) + .highlight {
 	background-color: rgba(var(--swatch-tertiary-color), 0.2);
 }
 
-table.page-files tr[id*="file-options"]~tr[id*="file-row"]:nth-of-type(odd),
-table.page-files tr[id*="file-row"]:nth-of-type(even)+.highlight {
+table.page-files tr[id*="file-options"] ~ tr[id*="file-row"]:nth-of-type(odd),
+table.page-files tr[id*="file-row"]:nth-of-type(even) + .highlight {
 	background-color: transparent;
 }
 
-table.page-files tr[id*="file-options"]~tr[id*="file-row"]:nth-of-type(even) {
+table.page-files tr[id*="file-options"] ~ tr[id*="file-row"]:nth-of-type(even) {
 	background-color: rgba(var(--swatch-tertiary-color), 0.2);
 }
 
@@ -2329,6 +2378,7 @@ table.page-files tbody tr td {
 
 table.page-files th {
 	--wght: 600;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2345,6 +2395,7 @@ table.page-files tr > td > a:visited:not(.btn) {
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -2366,13 +2417,14 @@ table.page-files tr > td > a:visited:not(.btn) {
 
 table.page-files tr > td > a:not(.btn):is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
-table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
+table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
 	margin: 0 0.5em;
 }
 
@@ -2395,7 +2447,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #upload-userfile[type="file"]::file-selector-button {
 	--wght: var(--ui-wght);
-	font-weight: var(--wght);
+
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2411,26 +2463,29 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--ui-button-hover-outline), 0.05);
 	border-radius: 0;
-	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgb(var(--ui-button-bg));
+	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
+	font-weight: var(--wght);
 	cursor: pointer;
 }
 
 #upload-userfile[type="file"]::file-selector-button:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
-	font-weight: var(--wght);
+
 	background-color: rgb(var(--ui-button-hover-bg));
-	color: rgb(var(--ui-button-hover-txt));
 	box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline));
+	color: rgb(var(--ui-button-hover-txt));
+	font-weight: var(--wght);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 #upload-userfile[type="file"] {
 	padding: 0 !important;
+
 	/* Overwriting Wikidot Inline-Styling */
 	cursor: pointer;
 }
@@ -2454,12 +2509,13 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box::before {
 	--wght: 700;
+
 	content: "Site Tools";
 	display: flex;
 	align-items: center;
 	width: max-content;
 	min-height: 1em;
-	margin: -1.25em 0 0.25em 0;
+	margin: -1.25em 0 0.25em;
 	padding: 0 0.5em 0 0;
 	border: none;
 	background-color: rgb(var(--swatch-background));
@@ -2492,6 +2548,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 #site-tools-box ul.nav li a,
 #site-tools-box ul.nav li a:visited {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	position: relative;
 	z-index: 2;
@@ -2519,6 +2576,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box ul.nav li a:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	border-color: transparent;
 	outline: 0 solid rgb(var(--ui-button-hover-outline));
 	background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -2556,6 +2614,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #site-tools-box div.wanted-pages-module table tr:first-of-type th {
 	--wght: 600;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2570,7 +2629,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 }
 
 #site-tools-box div.wanted-pages-module table tr br {
-	display: none
+	display: none;
 }
 
 #site-tools-box div.wanted-pages-module table tr a {
@@ -2621,15 +2680,15 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 }
 
-#st-action-area>span,
+#st-action-area > span,
 #st-action-area > a:not([href="javascript:;"]) {
 	display: flex;
 	width: fit-content;
 	padding: 0.125rem 0;
 }
 
-#st-action-area>span:not(:first-of-type),
-#st-action-area > a:not(:first-of-type):not([href="javascript:;"]) {
+#st-action-area > span:not(:first-of-type),
+#st-action-area > a:not(:first-of-type, [href="javascript:;"]) {
 	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-primary), 0.25);
 }
 
@@ -2639,14 +2698,14 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	text-align: right;
 }
 
-#st-action-area>span {
+#st-action-area > span {
 	padding-left: 0.125em;
 	color: rgb(var(--swatch-text-tertiary-color), 0.6) !important;
 	text-align: left;
 	hyphens: auto;
 }
 
-#st-action-area>span:nth-of-type(even) {
+#st-action-area > span:nth-of-type(even) {
 	background-color: rgb(var(--swatch-tertiary-color), 0.05);
 }
 
@@ -2655,6 +2714,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	--link-color: var(--swatch-text-general);
 	--visited-link-color: var(--swatch-text-general);
 	--wght: var(--ui-wght);
+
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
@@ -2670,8 +2730,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
-#st-action-area > a:not(.btn):not([href="javascript:;"]):is(:hover, :active, :focus-within) {
+#st-action-area > a:not(.btn, [href="javascript:;"]):is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: var(--wght);
@@ -2682,12 +2743,12 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	justify-content: flex-end;
 }
 
-#st-action-area *:not(span)+a:nth-of-type(4n-1):not([href="javascript:;"]),
-#st-action-area *:not(span)+a:nth-of-type(4n-4):not([href="javascript:;"]) {
+#st-action-area *:not(span) + a:nth-of-type(4n-1):not([href="javascript:;"]),
+#st-action-area *:not(span) + a:nth-of-type(4n-4):not([href="javascript:;"]) {
 	background-color: rgb(var(--swatch-tertiary-color), 0.1);
 }
 
-#st-action-area span~a:nth-of-type(n):not([href="javascript:;"]) {
+#st-action-area span ~ a:nth-of-type(n):not([href="javascript:;"]) {
 	background-color: transparent;
 }
 
@@ -2705,6 +2766,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"] {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -2724,6 +2786,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a[onclick*="deleteTag"]:not(.btn):is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: var(--wght);
@@ -2769,6 +2832,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div a {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	align-items: center;
 	width: fit-content;
@@ -2788,13 +2852,14 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div a:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: var(--wght);
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
-#action-area p+ul[style*="list-style: none"] {
+#action-area p + ul[style*="list-style: none"] {
 	display: grid;
 	grid-auto-flow: row;
 	grid-gap: 1em;
@@ -2804,7 +2869,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 #action-area > form:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) {
 	display: flex;
-	justify-content: center
+	justify-content: center;
 }
 
 #action-area form[onsubmit*="RenamePage"] table {
@@ -2831,7 +2896,6 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	flex-grow: 2;
 }
 
-
 #action-area form[onsubmit*="RenamePage"] tbody,
 #action-area form[onsubmit*="RenamePage"] tr {
 	display: contents;
@@ -2839,7 +2903,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 
 /* ===PAGE SOURCE=== */
 .page-source {
-	margin: 1em 0 0 0;
+	margin: 1em 0 0;
 	text-align: left;
 	word-break: break-word;
 	hyphens: auto;
@@ -2863,11 +2927,11 @@ div.odialog-shader-iframe {
 #odialog-container div.owindow {
 	display: grid;
 	position: fixed;
+
+	/* Overwrite Wikidot Inline-Styling */
 	top: 50% !important;
-	/* Overwrite Wikidot Inline-Styling */
 	left: 50% !important;
-	/* Overwrite Wikidot Inline-Styling */
-	transform: translateY(-50%) translateX(-50%);
+	translate: -50% -50%;
 	border: none;
 	background-color: rgb(var(--modal-bg));
 	box-shadow:
@@ -2879,20 +2943,24 @@ div.odialog-shader-iframe {
 #odialog-container .modal-header,
 #odialog-container .title {
 	--wght: 800;
+
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
 	margin: 0;
 	padding: 1.5ex 1.25rem;
 	background-color: rgb(var(--modal-header-bg));
-	background-image: linear-gradient(125deg,
+	background-image:
+		linear-gradient(
+			125deg,
 			rgba(var(--modal-header-stripe), 0.75) 25%,
 			transparent 25%,
 			transparent 50%,
 			rgba(var(--modal-header-stripe), 0.75) 50%,
 			rgba(var(--modal-header-stripe), 0.75) 75%,
 			transparent 75%,
-			transparent 100%);
+			transparent 100%
+		);
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--modal-header-txt));
 	font-family: var(--header-font);
@@ -2932,31 +3000,31 @@ div.odialog-shader-iframe {
 	margin: 1em 1rem 0 0;
 }
 
-#odialog-container .modal-body h1+p,
-#odialog-container .content h1+p {
+#odialog-container .modal-body h1 + p,
+#odialog-container .content h1 + p {
 	margin-top: 0;
 }
 
 #odialog-container .modal-footer {
 	width: 100%;
-	margin: 1rem 0 1em 0;
+	margin: 1rem 0 1em;
 	padding: 1rem 1rem 0 0;
 	box-shadow: 0 -0.0625rem 0 0 rgba(var(--modal-header-stripe), 0.2);
 }
 
-#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn,
-#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box, #search-top-box-form) > a.btn,
+#odialog-container .owindow *:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
 	background-color: rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 }
 
-#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:not(:last-of-type),
-#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:not(:last-of-type) {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:not(:last-of-type),
+#odialog-container .owindow *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:not(:last-of-type) {
 	margin-right: 0.5em;
 }
 
-#odialog-container .title.modal-header *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:is(:hover, :active, :focus-within),
-#odialog-container .owindow *:not(.page-rate-widget-box):not(#search-top-box-form) > a.btn:is(:hover, :active, :focus-within) {
+#odialog-container .title.modal-header *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:is(:hover, :active, :focus-within),
+#odialog-container .owindow *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:is(:hover, :active, :focus-within) {
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
@@ -2988,11 +3056,11 @@ div.odialog-shader-iframe {
 
 @keyframes loading {
 	0% {
-		transform: rotate(0deg);
+		rotate: 0deg;
 	}
 
 	100% {
-		transform: rotate(360deg);
+		rotate: 360deg;
 	}
 }
 
@@ -3003,8 +3071,8 @@ div.odialog-shader-iframe {
 	width: fit-content;
 	height: fit-content;
 	margin: 1em 0 0.25em 0.25rem;
-	padding: 0 !important; /*Overwriting inline styling */
-	background-color: transparent!important; /*Overwriting inline styling */
+	padding: 0 !important; /* Overwriting inline styling */
+	background-color: transparent !important; /* Overwriting inline styling */
 	box-shadow: 0 0 0 0.25rem rgb(var(--swatch-primary-darkest));
 }
 
@@ -3037,7 +3105,7 @@ div.odialog-shader-iframe {
 #odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table td.active::after {
 	content: "";
 	flex-grow: 1;
-	margin: auto 1em auto;
+	margin: auto 1em;
 	border-bottom: thin solid rgb(var(--swatch-primary));
 }
 
@@ -3058,7 +3126,7 @@ div.odialog-shader-iframe {
 
 #odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table + div > div > a {
 	width: 100%;
-	background-color: rgba(var(--swatch-primary),0.125);
+	background-color: rgba(var(--swatch-primary), 0.125);
 }
 
 /* ===FORUM=== */
@@ -3067,9 +3135,11 @@ div.odialog-shader-iframe {
 	--box-shadow-2: rgba(var(--swatch-menubg-black-color), 0.8);
 	--box-shadow-3: rgba(var(--swatch-menubg-color), 0.25);
 	--box-shadow-4: rgba(var(--swatch-menubg-black-color), 0.1);
+
 	padding: 0.5em 1em;
 	border-radius: 0.625rem;
-	box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
+	box-shadow:
+		0 0.0625rem 0.3125rem var(--box-shadow-1),
 		inset 0 0.0625rem 0 var(--box-shadow-2),
 		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
 		inset 0 -0.9375rem 1.875rem var(--box-shadow-4);
@@ -3083,12 +3153,15 @@ div.odialog-shader-iframe {
 
 .thread-container .post .head {
 	--box-shadow: rgba(var(--swatch-menubg-black-color), 0.15);
+
 	padding: 0.5em 1em;
 	border-radius: 0.3125rem 0.3125rem 0 0;
 	background:
-		linear-gradient(to right,
+		linear-gradient(
+			to right,
 			rgba(var(--swatch-secondary-color)),
-			rgba(var(--swatch-tertiary-color))),
+			rgba(var(--swatch-tertiary-color))
+		),
 		rgba(var(--swatch-secondary-color));
 	box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
 	background-blend-mode: screen;
@@ -3100,6 +3173,7 @@ div.odialog-shader-iframe {
 
 .thread-container .post .long .head .title {
 	--wght: 700;
+
 	font-family: var(--title-font);
 	font-size: 1.2em;
 	font-weight: var(--wght);
@@ -3121,6 +3195,7 @@ div.odialog-shader-iframe {
 #page-content > div.forum-thread-box > div.options a,
 .post-container > .post > div.long > div.options a {
 	--wght: 700;
+
 	display: flex;
 	flex-grow: 0;
 	justify-content: center;
@@ -3162,8 +3237,7 @@ div.odialog-shader-iframe {
 
 @media only screen and (max-width: 56.25rem) {
 	#content-wrap {
-		grid-template-areas:
-			"content content content";
+		grid-template-areas: "content content content";
 		justify-content: center;
 		min-height: calc(100vh - var(--final-header-height-on-mobile));
 		margin: calc(var(--topbar-height-on-mobile) - 0.125rem) auto 0 !important;
@@ -3187,7 +3261,7 @@ div.odialog-shader-iframe {
 			"rev-com rev-com rev-com rev-com rev-user rev-user";
 	}
 
-	table.page-history tr:nth-of-type(2) td:nth-of-type(5):before {
+	table.page-history tr:nth-of-type(2) td:nth-of-type(5)::before {
 		display: none;
 	}
 
@@ -3211,7 +3285,7 @@ div.odialog-shader-iframe {
 	}
 
 	#odialog-container .modal-body .table,
-	#odialog-container .modal-body .table~div {
+	#odialog-container .modal-body .table ~ div {
 		float: left;
 	}
 
@@ -3236,7 +3310,6 @@ div.odialog-shader-iframe {
 	#odialog-hovertips > div[id*="hovertip"] {
 		display: none !important;
 	}
-
 }
 
 /* Ad Styling */

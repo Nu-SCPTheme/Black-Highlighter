@@ -46,13 +46,14 @@
 }
 
 #side-bar:where(:lang(cs)) .side-block.blue a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -66,21 +67,21 @@
 
 #side-bar:where(:lang(cs)) .side-block.blue a:hover::before,
 #side-bar:where(:lang(cs)) .side-block.blue a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(cs)) .side-block.blue a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -99,6 +100,7 @@
 #side-bar:where(:lang(cs)) .side-block.blue a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
+
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
@@ -116,54 +118,51 @@
 /* ===FRENCH BRANCH=== */
 #side-bar:where(:lang(fr)) .side-block.media {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;	
+	flex-flow: row wrap;
+	justify-content: flex-start;
 	margin: 0.5rem 0.5rem 0 0;
-	padding: 0.5rem !important;	
+	padding: 0.5rem !important;
 	column-gap: 0.5rem;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
 #side-bar:where(:lang(fr)) .side-block.media div.heading {
-	flex-basis: 100%;
-	flex-grow: 2;	
+	flex: 2 0 100%;
 	align-content: flex-start;
 	padding-left: 0;
 }
 
 #side-bar:where(:lang(fr)) .side-block.media div.menu-item {
-	flex-basis: 1.6875rem;
-	flex-grow: 0;
-	flex-shrink: 1;	
+	flex: 0 1 1.6875rem;
 	width: 1.6875rem;
 	margin-top: 0.5rem;
-	box-shadow: unset;	
+	box-shadow: unset;
 }
 
 #side-bar:where(:lang(fr)) .side-block.media div.menu-item p {
 	display: contents;
 }
 
-#side-bar:where(:lang(fr)) .side-block.media div.menu-item a {	
+#side-bar:where(:lang(fr)) .side-block.media div.menu-item a {
 	position: relative;
 	margin: 0;
 	padding: 0;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--social-color));
-	mask: var(--social-logo-mask) center center / contain no-repeat;	
+	mask: var(--social-logo-mask) center center / contain no-repeat;
 	color: transparent;
 	font-size: 0;
 }
 
 #side-bar:where(:lang(fr)) .side-block.media div.menu-item a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -178,21 +177,21 @@
 
 #side-bar:where(:lang(fr)) .side-block.media div.menu-item a:hover::before,
 #side-bar:where(:lang(fr)) .side-block.media div.menu-item a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(fr)) .side-block.media div.menu-item a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -244,24 +243,26 @@
 	justify-content: flex-end;
 	padding-right: 1em;
 	transition:
-		padding-right 150ms cubic-bezier(.4,0,.2,1),
-		border-color 150ms cubic-bezier(.4,0,.2,1),
-		background-color 150ms cubic-bezier(.4,0,.2,1),
-		color 150ms cubic-bezier(.4,0,.2,1),
-		font-weight 200ms cubic-bezier(.4,0,.2,1),
-		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+		padding-right 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #side-bar:where(:lang(de)) div.menu-item a:only-of-type:hover ~ span,
 #side-bar:where(:lang(de)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
 #side-bar:where(:lang(de)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
@@ -316,39 +317,40 @@
 	top: unset;
 }
 
-#side-bar:where(:lang(de)) .collapsible-block-folded .collapsible-block-link::before, 
+#side-bar:where(:lang(de)) .collapsible-block-folded .collapsible-block-link::before,
 #side-bar:where(:lang(de)) .colmod-link-top a:first-child::before {
 	--text-shadow-color: var(--swatch-primary-darkest);
+
 	content: "+";
 	display: grid;
 	align-items: center;
 	justify-content: center;
 	background-image: unset;
-	color: rgba(var(--sidebar-bg-color),1);
-	-webkit-text-fill-color: rgba(var(--sidebar-bg-color),1);
+	color: rgba(var(--sidebar-bg-color), 1);
+	-webkit-text-fill-color: rgba(var(--sidebar-bg-color), 1);
 	-webkit-text-stroke: 0.0625rem rgb(var(--text-shadow-color));
 }
 
 @supports not (-webkit-text-stroke:initial) {
-	#side-bar:where(:lang(de)) .collapsible-block-folded .collapsible-block-link::before, 
+	#side-bar:where(:lang(de)) .collapsible-block-folded .collapsible-block-link::before,
 	#side-bar:where(:lang(de)) .colmod-link-top a:first-child::before {
-		text-shadow: 
-			rgb(var(--text-outline-color)) 0.0625rem 0rem 0rem, 
-			rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0rem, 
-			rgb(var(--text-outline-color)) -0.026rem 0.0568rem 0rem, 
-			rgb(var(--text-outline-color)) -0.0619rem 0.0088rem 0rem, 
-			rgb(var(--text-outline-color)) -0.0409rem -0.0473rem 0rem, 
-			rgb(var(--text-outline-color)) 0.0177rem -0.0599rem 0rem, 
-			rgb(var(--text-outline-color)) 0.06rem -0.0175rem 0rem;
+		text-shadow:
+			rgb(var(--text-outline-color)) 0.0625rem 0 0,
+			rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0,
+			rgb(var(--text-outline-color)) -0.026rem 0.0568rem 0,
+			rgb(var(--text-outline-color)) -0.0619rem 0.0088rem 0,
+			rgb(var(--text-outline-color)) -0.0409rem -0.0473rem 0,
+			rgb(var(--text-outline-color)) 0.0177rem -0.0599rem 0,
+			rgb(var(--text-outline-color)) 0.06rem -0.0175rem 0;
 	}
 }
 
 #side-bar:where(:lang(de)) div.menu-item.expandable:hover + div.collapsible-block a.collapsible-block-link::before {
-	--text-outline-color: rgba(var(--sidebar-bg-color),1);
+	--text-outline-color: rgba(var(--sidebar-bg-color), 1);
 }
 
 #side-bar:where(:lang(de)) div.side-block > div.menu-item.expandable > p > a:only-of-type {
-	clip-path: polygon(-15% 0,100% 0,calc(100% - 1em) 100%,0 100%);
+	clip-path: polygon(-15% 0, 100% 0, calc(100% - 1em) 100%, 0 100%);
 }
 
 #side-bar:where(:lang(de)) div.side-block > div.menu-item.expandable > p > span {
@@ -391,7 +393,7 @@
 #side-bar:where(:lang(de)) .side-block.svg-icons > p {
 	display: grid;
 	grid-auto-flow: column;
-	grid-template-rows: repeat(auto-fit,minmax(1.3125rem,1fr));
+	grid-template-rows: repeat(auto-fit, minmax(1.3125rem, 1fr));
 	justify-content: space-evenly;
 	width: 100%;
 }
@@ -405,13 +407,14 @@
 }
 
 #side-bar:where(:lang(de)) .side-block.svg-icons a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -426,21 +429,21 @@
 
 #side-bar:where(:lang(de)) .side-block.svg-icons a:hover::before,
 #side-bar:where(:lang(de)) .side-block.svg-icons a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(de)) .side-block.svg-icons a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -479,6 +482,7 @@
 #side-bar:where(:lang(de)) .side-block.svg-icons a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
+
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
@@ -517,7 +521,7 @@
 	align-self: center;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
-	padding: .5em !important;
+	padding: 0.5em !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 	direction: ltr;
 }
@@ -534,13 +538,14 @@
 }
 
 #side-bar:where(:lang(it)) .side-block.media a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -554,21 +559,21 @@
 
 #side-bar:where(:lang(it)) .side-block.media a:hover::before,
 #side-bar:where(:lang(it)) .side-block.media a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(it)) .side-block.media a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -592,6 +597,7 @@
 #side-bar:where(:lang(it)) .side-block.media a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
+
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
@@ -632,23 +638,25 @@
 	grid-column: 2;
 	grid-row: 1;
 	transition:
-		border-color 150ms cubic-bezier(.4,0,.2,1),
-		background-color 150ms cubic-bezier(.4,0,.2,1),
-		color 150ms cubic-bezier(.4,0,.2,1),
-		font-weight 200ms cubic-bezier(.4,0,.2,1),
-		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #side-bar:where(:lang(ja)) div.menu-item a:only-of-type:hover ~ span,
 #side-bar:where(:lang(ja)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
 #side-bar:where(:lang(ja)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
@@ -663,17 +671,17 @@
 	position: absolute;
 	left: 0;
 	transition:
-		color 150ms cubic-bezier(.4,0,.2,1),
-		font-weight 200ms cubic-bezier(.4,0,.2,1),
-		font-variation-settings 200ms cubic-bezier(.4,0,.2,1);
-	color: rgba(var(--sidebar-links-text),0.25)
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	color: rgba(var(--sidebar-links-text), 0.25);
 }
 
 #side-bar:where(:lang(ja)) div.menu-item a[href*="sandbox2"]:hover::after,
 #side-bar:where(:lang(ja)) div.menu-item a[href*="sandbox2"]:active::after,
 #side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a:hover::after,
 #side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] a:active::after {
-	color: rgba(var(--sidebar-links-hover-text),0.25);
+	color: rgba(var(--sidebar-links-hover-text), 0.25);
 }
 
 #side-bar:where(:lang(ja)) div.menu-item span[style*="line-through"] {
@@ -688,8 +696,8 @@
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
-	margin: .5rem 0.5rem 0 0;
-	padding: .5em !important;
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5em !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 	direction: ltr;
 }
@@ -712,13 +720,14 @@
 }
 
 #side-bar:where(:lang(ja)) .side-block.sns a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -733,21 +742,21 @@
 
 #side-bar:where(:lang(ja)) .side-block.sns a:hover::before,
 #side-bar:where(:lang(ja)) .side-block.sns a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(ja)) .side-block.sns a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -795,8 +804,8 @@
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
-	margin: .5rem 0.5rem 0 0;
-	padding: .5em !important;
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5em !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
@@ -812,13 +821,14 @@
 }
 
 #side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -832,21 +842,21 @@
 
 #side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a:hover::before,
 #side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -858,8 +868,8 @@
 }
 
 #side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a[href*="wikidot"] {
-	--social-logo-mask:var(--discord-mask);
-	--social-color:var(--discord-icon-color)
+	--social-logo-mask: var(--discord-mask);
+	--social-color: var(--discord-icon-color);
 }
 
 #side-bar:where(:lang(ko)) .side-block[style*="E5E5FF"] a[href*="twitter"] {
@@ -906,8 +916,8 @@
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
-	margin: .5rem 0.5rem 0 0;
-	padding: .5em !important;
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5em !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
@@ -919,13 +929,14 @@
 }
 
 #side-bar:where(:lang(pt-br)) .side-block.side-links a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -939,21 +950,21 @@
 
 #side-bar:where(:lang(pt-br)) .side-block.side-links a:hover::before,
 #side-bar:where(:lang(pt-br)) .side-block.side-links a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(pt-br)) .side-block.side-links a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -994,7 +1005,7 @@
 
 /* ===RUSSIAN BRANCH=== */
 
- /*Normalizing Unique Sideblock Class*/
+/* Normalizing Unique Sideblock Class */
 #side-bar:where(:lang(ru)) #u-become-member {
 	margin-bottom: inherit;
 	padding: inherit;
@@ -1006,13 +1017,13 @@
 
 #side-bar:where(:lang(ru)) #u-become-member {
 	display: grid;
-	grid-template-rows: repeat(auto-fit,minmax(1.3125rem,1fr));
+	grid-template-rows: repeat(auto-fit, minmax(1.3125rem, 1fr));
 	justify-content: stretch;
-	margin: .5rem .5rem 0 0;
+	margin: 0.5rem 0.5rem 0 0;
 	border: 0;
 	background: rgb(var(--sideblock-bg-color));
 	box-shadow: 0 0.25rem rgb(var(--swatch-primary-darkest));
-	direction: ltr
+	direction: ltr;
 }
 
 #side-bar:where(:lang(ru)) #u-become-member div.menu-item a {
@@ -1043,11 +1054,11 @@
 }
 
 #side-bar:where(:lang(ru)) div.menu-item a[href*="scp-series"] {
-	padding: 0 0 0 calc(var(--base-font-size)*(14 / 15));
+	padding: 0 0 0 calc(var(--base-font-size) *(14 / 15));
 }
 
 #side-bar:where(:lang(ru)) div.menu-item a[href*="scp-series"] + span,
-#side-bar:where(:lang(ru)) div.menu-item a[href*="scp-list"] + span{
+#side-bar:where(:lang(ru)) div.menu-item a[href*="scp-list"] + span {
 	padding: 0 0 0 calc(var(--base-font-size) / 2);
 	pointer-events: none;
 }
@@ -1057,23 +1068,25 @@
 	grid-column: 2;
 	grid-row: 1;
 	transition:
-		border-color 150ms cubic-bezier(.4,0,.2,1),
-		background-color 150ms cubic-bezier(.4,0,.2,1),
-		color 150ms cubic-bezier(.4,0,.2,1),
-		font-weight 200ms cubic-bezier(.4,0,.2,1),
-		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #side-bar:where(:lang(ru)) div.menu-item a:only-of-type:hover ~ span,
 #side-bar:where(:lang(ru)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
 #side-bar:where(:lang(ru)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
@@ -1097,7 +1110,8 @@
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
 #side-bar:where(:lang(cn)) {
-	--bilibili-icon-color: 0,161,214;
+	--bilibili-icon-color: 0, 161, 214;
+
 	display: grid;
 	grid-template-columns: 5rem 1fr;
 }
@@ -1161,13 +1175,14 @@
 }
 
 #side-bar:where(:lang(cn)) div.side-block.media a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -1182,21 +1197,21 @@
 
 #side-bar:where(:lang(cn)) div.side-block.media a:hover::before,
 #side-bar:where(:lang(cn)) div.side-block.media a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(cn)) div.side-block.media a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -1214,8 +1229,8 @@
 
 /* ===SPANISH BRANCH=== */
 #side-bar:where(:lang(es)) .side-block.media {
-	margin: .5rem .5rem 0 0;
-	padding: .5rem !important;
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
@@ -1246,13 +1261,14 @@
 }
 
 #side-bar:where(:lang(es)) .side-block.media a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -1267,21 +1283,21 @@
 
 #side-bar:where(:lang(es)) .side-block.media a:hover::before,
 #side-bar:where(:lang(es)) .side-block.media a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(es)) .side-block.media a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -1310,6 +1326,7 @@
 #side-bar:where(:lang(es)) .side-block.media a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
+
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
@@ -1337,7 +1354,7 @@
 	display: grid;
 	padding: 0;
 }
- 
+
 #side-bar:where(:lang(th)) .side-block div.new-page-box input.button,
 #side-bar:where(:lang(th)) .side-block div.new-page-box input.text {
 	width: 100%;
@@ -1347,14 +1364,14 @@
 	font-size: calc(var(--base-font-size) * 1.1);
 	justify-self: center;
 }
- 
+
 #side-bar:where(:lang(th)) div.menu-item input.text {
 	height: 2rem !important;
 	background-color: rgba(var(--swatch-tertiary-color), 0.25) !important;
 	font-family: var(--body-font);
 	cursor: text;
 }
- 
+
 #side-bar:where(:lang(th)) .side-block div.new-page-box input.button {
 	justify-content: center;
 	margin-top: 0.5rem !important;
@@ -1362,7 +1379,7 @@
 	box-shadow: 0 0 0 0.125rem rgba(var(--swatch-primary), 1);
 	cursor: pointer;
 }
- 
+
 #side-bar:where(:lang(th)) .side-block:nth-child(3) > div {
 	display: contents;
 }
@@ -1372,7 +1389,7 @@
 	padding: 0 0.5rem;
 }
 
-#side-bar:where(:lang(th)) .side-block:nth-child(3) > div > *:not(script):not(br) {
+#side-bar:where(:lang(th)) .side-block:nth-child(3) > div > *:not(script, br) {
 	display: inline-flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -1394,7 +1411,7 @@
 #side-bar:where(:lang(th)) .side-block:nth-child(3) :nth-child(8) {
 	grid-column: span 2;
 	justify-self: flex-start;
-} 
+}
 
 #side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10) {
 	position: relative;
@@ -1411,13 +1428,14 @@
 }
 
 #side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10)::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -1432,21 +1450,21 @@
 
 #side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10):hover::before,
 #side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10):active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(th)) .side-block:nth-child(3) a:nth-child(n+10):focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -1495,6 +1513,7 @@
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type,
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:visited {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	position: relative;
 	flex-grow: 2;
@@ -1502,7 +1521,7 @@
 	height: 1.5rem;
 	margin: 0;
 	padding: 0 0 0 calc(var(--base-font-size) * (14 / 15));
-	transition: 
+	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1519,6 +1538,7 @@
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:hover,
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:active {
 	--wght: var(--ui-hvr-wght);
+
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	font-weight: var(--wght);
@@ -1527,6 +1547,7 @@
 
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:focus-within {
 	--wght: var(--ui-hvr-wght);
+
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	font-weight: var(--wght);
@@ -1534,13 +1555,14 @@
 }
 
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -1557,21 +1579,21 @@
 
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:hover::before,
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(th)) .side-block:nth-child(4) a:first-of-type:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -1599,13 +1621,13 @@
 	display: grid !important;
 	grid-auto-flow: column;
 	justify-content: space-evenly !important;
-	margin: .5rem .5rem 0 0;
-	padding: .5rem !important;
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5rem !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
 #side-bar:where(:lang(zh)) .side-block.social-media-list > div {
-	display: contents !important;	
+	display: contents !important;
 }
 
 #side-bar:where(:lang(zh)) .side-block.social-media-list a {
@@ -1618,13 +1640,14 @@
 }
 
 #side-bar:where(:lang(zh)) .side-block.social-media-list a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -1638,21 +1661,21 @@
 
 #side-bar:where(:lang(zh)) .side-block.social-media-list a:hover::before,
 #side-bar:where(:lang(zh)) .side-block.social-media-list a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(zh)) .side-block.social-media-list a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -1681,12 +1704,14 @@
 #side-bar:where(:lang(zh)) .side-block.social-media-list a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
+
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
 
 /* ===UKRAINIAN BRANCH=== */
-/*Normalizing Unique Sideblock Class*/
+
+/* Normalizing Unique Sideblock Class */
 #side-bar:where(:lang(uk)) {
 	--telegram-icon-color: 0, 136, 204;
 }
@@ -1703,8 +1728,8 @@
 	grid-auto-flow: column;
 	justify-content: space-evenly;
 	width: var(--sidebar-width-on-mobile);
-	margin: .5rem 0.5rem 0 0;
-	padding: .5em !important;
+	margin: 0.5rem 0.5rem 0 0;
+	padding: 0.5em !important;
 	background-color: rgba(var(--sidebar-media-bg-color)) !important;
 }
 
@@ -1720,13 +1745,14 @@
 }
 
 #side-bar:where(:lang(uk)) .side-block.side-links a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -1740,21 +1766,21 @@
 
 #side-bar:where(:lang(uk)) .side-block.side-links a:hover::before,
 #side-bar:where(:lang(uk)) .side-block.side-links a:active::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #side-bar:where(:lang(uk)) .side-block.side-links a:focus-within::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -1792,13 +1818,13 @@
 }
 
 #side-bar:where(:lang(uk)) div.menu-item a[href="/news"],
-#side-bar:where(:lang(uk)) div.menu-item a[href="/faq"]{
+#side-bar:where(:lang(uk)) div.menu-item a[href="/faq"] {
 	justify-content: center;
 	padding: 0;
 }
 
 #side-bar:where(:lang(uk)) div.menu-item a[href*="scp-series"] {
-	padding: 0 0 0 calc(var(--base-font-size)*(14 / 15));
+	padding: 0 0 0 calc(var(--base-font-size) *(14 / 15));
 }
 
 #side-bar:where(:lang(uk)) div.menu-item a[href*="scp-series"] + span,
@@ -1813,23 +1839,25 @@
 	grid-column: 2;
 	grid-row: 1;
 	transition:
-		border-color 150ms cubic-bezier(.4,0,.2,1),
-		background-color 150ms cubic-bezier(.4,0,.2,1),
-		color 150ms cubic-bezier(.4,0,.2,1),
-		font-weight 200ms cubic-bezier(.4,0,.2,1),
-		font-variation-settings 200ms cubic-bezier(.4,0,.2,1)
+		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #side-bar:where(:lang(uk)) div.menu-item a:only-of-type:hover ~ span,
 #side-bar:where(:lang(uk)) div.menu-item a:only-of-type:active ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
 #side-bar:where(:lang(uk)) div.menu-item a:only-of-type:focus-within ~ span {
 	--wght: var(--ui-hvr-wght);
-	border-color: rgb(var(--sidebar-links-hover-text-color),0.15);
+
+	border-color: rgb(var(--sidebar-links-hover-text-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 }
 
@@ -1862,7 +1890,7 @@
 }
 
 #side-bar:where(:lang(uk)) > div[style*="80%"] > * {
-	padding: 0 0 0 calc(var(--base-font-size)*(14 / 15));
+	padding: 0 0 0 calc(var(--base-font-size) *(14 / 15));
 }
 
 #side-bar:where(:lang(uk)) > div[style*="15px"] {

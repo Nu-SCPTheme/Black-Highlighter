@@ -14,13 +14,11 @@ $(function () {
       switch (resp) {
         case "OK":
           return (styleSheets = [
-            "./fonts/fonts.css",
             "./css/normalize.css",
             "./css/black-highlighter.css",
           ]);
         default:
           return (styleSheets = [
-            "/Black-Highlighter/fonts/fonts.css",
             "/Black-Highlighter/css/normalize.css",
             "/Black-Highlighter/css/black-highlighter.css",
           ]);

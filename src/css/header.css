@@ -16,6 +16,7 @@
 
 #header {
 	--topbar-height: var(--topbar-height-on-desktop);
+
 	position: relative;
 	z-index: 10;
 	grid-area: header;
@@ -30,13 +31,13 @@
 
 /* Body Background Image: Includes header image, subtle gradient that extends into the content, and page background color */
 body {
-	background-image: 
-		var(--gradient-header), 
+	background-image:
+		var(--gradient-header),
 		var(--gradient-topmenu),
 		var(--gradient-background);
-	/* 120px, 150px */
 	background-repeat: repeat-x;
-	background-size: var(--header-background-image-size),
+	background-size:
+		var(--header-background-image-size),
 		100% var(--final-header-height-on-desktop),
 		100% var(--background-gradient-distance);
 }
@@ -63,7 +64,9 @@ div#container-wrap {
 #header,
 #top-bar {
 	--wght: var(--ui-wght);
-	max-width: var(--header-width-on-desktop,61.25rem);
+
+	max-width: var(--header-width-on-desktop, 61.25rem);
+
 	/* 980px */
 	margin: 0 auto;
 	font-weight: var(--wght);
@@ -75,7 +78,7 @@ div#container-wrap {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
+	text-rendering: optimizelegibility;
 }
 
 #header h1 {
@@ -86,6 +89,7 @@ div#container-wrap {
 
 #header h1 a {
 	--wght: 900;
+
 	display: block;
 	z-index: 10;
 	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
@@ -102,6 +106,7 @@ div#container-wrap {
 
 #header h1 a::before {
 	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
+
 	content: var(--header-title, "SCP Foundation");
 	color: rgb(var(--swatch-headerh1-color));
 	text-shadow: none;
@@ -124,6 +129,7 @@ div#container-wrap {
 
 #header h2 span {
 	--wght: 500;
+
 	display: block;
 	margin-top: calc(((var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) - var(--header-h2-font-size) + 0.675em));
 	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
@@ -163,17 +169,16 @@ div#container-wrap {
 	justify-content: center;
 	width: var(--search-height);
 	height: var(--search-height);
-	transform: translateY(-50%);
-	transition:
-		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	translate: 0 -50%;
+	transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	will-change: box-shadow;
 	box-shadow: 0 0 0 0 rgb(var(--search-focus-outline-color));
 	color: transparent;
-	font-size: calc(var(--base-font-size) * (13 / 15));		
+	font-size: calc(var(--base-font-size) * (13 / 15));
 }
 
 #search-top-box:is(:hover, :active) {
-	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));	
+	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));
 }
 
 #search-top-box,
@@ -201,26 +206,28 @@ div#container-wrap {
 }
 
 #search-top-box::after {
-	--clip-path: polygon(100% 0,100% 0,100% 100%,100% 100%);
-	content: " ";	
+	--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+	content: " ";
 	position: absolute;
 	z-index: -1;
 	top: 0;
-	right: 0;		
+	right: 0;
 	clip-path: var(--clip-path);
-	background-color: rgb(var(--search-icon-focus-bg-color),0);	
+	background-color: rgba(var(--search-icon-focus-bg-color), 0);
 	pointer-events: none;
 }
 
 #search-top-box:is(:hover, :active)::after {
-	--clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
-	background-color: rgb(var(--search-icon-focus-bg-color));	
+	--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+	background-color: rgb(var(--search-icon-focus-bg-color));
 }
 
 #search-top-box input[type="submit"] {
 	background-color: rgb(var(--search-icon-color));
 	color: transparent;
-	mask:var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem ) / 2) calc((var(--search-height) + 0.25rem ) / 2) no-repeat;
+	mask: var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem ) / 2) calc((var(--search-height) + 0.25rem ) / 2) no-repeat;
 }
 
 #search-top-box:is(:hover, :active) input[type="submit"] {
@@ -228,7 +235,8 @@ div#container-wrap {
 }
 
 /* Mobile Search Box by 7happy7 */
-/*==============================================================
+
+/* ==============================================================
  Currently commented out due to Wikidot's search not functioning
  ===============================================================
 #search-top-box,
@@ -256,7 +264,7 @@ div#container-wrap {
 #search-top-box:focus-within *::after {
 	margin: 0;
 	padding: 0;
-	transition: 
+	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -303,10 +311,10 @@ div#container-wrap {
 }
 
 #search-top-box::after {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			100% 0, 
+			0 0,
+			100% 0,
 			100% 100%,
 			0 100%
 		);
@@ -317,11 +325,11 @@ div#container-wrap {
 }
 
 #search-top-box:not(:focus-within)::after {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			100% 0, 
-			100% 0, 
-			100% 100%, 
+			100% 0,
+			100% 0,
+			100% 100%,
 			100% 100%
 		);
 	background-color: rgb(var(--search-icon-focus-bg-color),0);
@@ -403,18 +411,18 @@ div#container-wrap {
 /* ===LOGIN BOX=== */
 #login-status {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	position: absolute;
 	z-index: 11;
 	top: 1.5em;
-	right: calc(3% + var(--search-height) - 0.25em);;
+	right: calc(3% + var(--search-height) - 0.25em);
 	align-items: center;
 	justify-content: center;
 	height: 2em;
 	margin: 0 0 0 0.5em;
-	transform: translateY(-50%);
-	transition: 
-		opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	translate: 0 -50%;
+	transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--login-line-divider-color));
 	font-family: var(--UI-font);
 	font-size: 0.9em;
@@ -427,21 +435,21 @@ div#container-wrap {
 }
 
 /* Not Logged In Styling */
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account,
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in {
+#login-status:not(.page-rate-widget-box, #search-top-box-form) > a:is(.login-status-create-account, .login-status-sign-in) {
 	margin: 0 1em;
 	background-color: rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 }
 
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-create-account:is(:hover, :active, :focus-within),
-#login-status:not(.page-rate-widget-box):not(#search-top-box-form) > a.login-status-sign-in:is(:hover, :active, :focus-within) {
-	background-color: rgba(var(--ui-button-hover-bg), 1);
+#login-status:not(.page-rate-widget-box, #search-top-box-form) > a:is(.login-status-create-account, .login-status-sign-in):is(:hover, :active),
+#login-status:not(.page-rate-widget-box, #search-top-box-form):is(:focus-within) > a:is(.login-status-create-account, .login-status-sign-in) {
+	background-color: rgb(var(--ui-button-hover-bg) 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
 
 #login-status span.printuser {
 	--wght: var(--ui-wght);
+
 	margin-right: 0.5em;
 	color: rgb(var(--login-username-color));
 	font-weight: var(--wght);
@@ -453,10 +461,11 @@ div#container-wrap {
 
 #login-status a#my-account {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
-	transition: 
+	transition:
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
@@ -468,6 +477,7 @@ div#container-wrap {
 
 #login-status a#my-account:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 	color: rgb(var(--login-myaccount-hover-color));
 	font-weight: var(--wght);
@@ -481,18 +491,19 @@ div#container-wrap {
 	margin: 0;
 	padding: 0;
 	background-color: transparent;
-	color: transparent;	
+	color: transparent;
 }
 
 @media only screen and (min-width: 56.25rem) {
 	#login-status #account-topbutton::before {
-		--clip-path: 
+		--clip-path:
 			polygon(
-				30% 35%, 
-				70% 35%, 
-				50% 60%, 
+				30% 35%,
+				70% 35%,
+				50% 60%,
 				50% 60%
 			);
+
 		content: " ";
 		position: absolute;
 		width: 100%;
@@ -510,7 +521,7 @@ div#container-wrap {
 	top: 1.5rem;
 	right: 0;
 	width: 10em;
-	margin: 0.25em 0 0 0;
+	margin: 0.25em 0 0;
 	padding: 0;
 	overflow: hidden;
 	transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -520,9 +531,8 @@ div#container-wrap {
 	pointer-events: none;
 }
 
-#login-status #account-topbutton:focus + #account-options,
-#login-status #account-topbutton:active + #account-options,
-#login-status #account-options:focus-within {
+#login-status #account-topbutton:is(:focus, :active):focus,
+#login-status #account-options:is(:focus-within) {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -550,7 +560,7 @@ div#container-wrap {
 	margin: 0;
 	padding: 0;
 }
-	
+
 #login-status #account-options ul {
 	display: grid;
 	grid-auto-rows: 2em;
@@ -577,12 +587,13 @@ div#container-wrap {
 #login-status #account-options a {
 	--box-shadow: rgba(var(--login-dropdown-border-color));
 	--wght: var(--ui-wght);
+
 	position: relative;
 	flex-grow: 1;
 	height: 100%;
 	max-height: 2em;
 	padding: 0 0.25em;
-	transition: 
+	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -595,8 +606,9 @@ div#container-wrap {
 	color: rgb(var(--login-dropdown-text-color));
 }
 
-#login-status #account-options li > a:is(:hover, :active, :focus-within) {
+#login-status #account-options is(li, li:focus-within) > a:is(:hover, :active) {
 	--wght: var(--ui-hvr-wght);
+
 	color: rgb(var(--login-dropdown-text-hover-color));
 	font-weight: var(--wght);
 	text-decoration: none;
@@ -611,24 +623,25 @@ div#container-wrap {
 	min-height: 100%;
 	font-size: 0;
 }
-	
+
 #login-status #account-options li > a[href*="/messages"]::after {
 	content: "Messages";
 	position: absolute;
 	left: 50%;
-	transform: translateX(-50%);
+	translate: -50% 0;
 	font-size: calc(var(--base-font-size) * (11 / 15));
 	pointer-events: none;
 }
 
-#login-status #account-options li > a::before {	
-	--clip-path: 
+#login-status #account-options li > a::before {
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -642,16 +655,17 @@ div#container-wrap {
 }
 
 #login-status #account-options li > a:is(:hover, :active, :focus-within)::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 /* ===TOP BAR=== */
+
 /* Hide Mobile Top Bar on Desktop */
 
 div.mobile-top-bar {
@@ -665,6 +679,7 @@ div.mobile-top-bar {
 
 #header div#top-bar {
 	--wght: var(--ui-wght);
+
 	display: inline-flex;
 	position: initial;
 	z-index: 50;
@@ -683,11 +698,10 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul {
 	display: flex;
 	z-index: 20;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-flow: row nowrap;
 	justify-content: space-around;
 	width: 90vw;
-	max-width: var(--header-width-on-desktop,61.25rem);
+	max-width: var(--header-width-on-desktop, 61.25rem);
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -701,8 +715,7 @@ div.mobile-top-bar {
 #header div[class*="top-bar"] > ul > li {
 	display: inline-flex;
 	position: relative;
-	flex-grow: 2;
-	flex-shrink: 2;
+	flex: 2 2;
 	width: auto;
 	margin: 0;
 	padding: 0;
@@ -715,6 +728,7 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li > a {
 	--wght: calc(var(--ui-wght) + 200);
+
 	display: inline-flex;
 	position: relative;
 	align-items: center;
@@ -735,6 +749,7 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a {
 	--wght: var(--ui-hvr-wght);
+
 	color: rgb(var(--topmenu-category-hover-color));
 	font-weight: var(--wght);
 }
@@ -751,53 +766,56 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"] > ul > li > a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
 			0 0,
-			0 0, 
-			0 100%, 
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	clip-path: var(--clip-path);
 	top: 0;
 	left: 0;
 }
 
 #header div[class*="top-bar"] > ul > li > a::after {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			100% 0, 
-			100% 0, 
-			100% 100%, 
+			100% 0,
+			100% 0,
+			100% 100%,
 			100% 100%
 		);
+
 	clip-path: var(--clip-path);
 	right: 0;
 	bottom: 0;
 }
 
 #header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a::after {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
 #header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a {
 	--wght: calc(var(--ui-hvr-wght) + 200);
+
 	background-color: rgb(var(--topmenu-category-hover-bg));
 	font-weight: var(--wght);
 }
@@ -813,9 +831,7 @@ div.mobile-top-bar {
 	margin: 0;
 	padding: 0;
 	border-collapse: collapse;
-	transition: 
-		opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), 
-		transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 0;
 }
 
@@ -829,7 +845,7 @@ div.mobile-top-bar {
 /* any a after li */
 
 #header div[class*="top-bar"] li a {
-	transition: 
+	transition:
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -839,26 +855,27 @@ div.mobile-top-bar {
 }
 
 /* DROPDOWN MENU */
+
 /* ul > li > ul */
 
 #header div[class*="top-bar"] > ul > li > ul {
 	--box-shadow: rgba(var(--dropdown-border-color));
+
 	display: flex;
 	visibility: visible;
 	position: absolute;
 	z-index: 20;
 	left: 0;
 	box-sizing: border-box;
-	flex-direction: column;
-	flex-wrap: nowrap;
+	flex-flow: column nowrap;
 	align-self: flex-start;
 	width: auto;
 	min-width: 100%;
-	max-width: var(--header-width-on-desktop,61.25rem);
+	max-width: var(--header-width-on-desktop, 61.25rem);
 	margin-top: var(--topbar-height-on-desktop);
 	border-top: none;
 	background: rgba(var(--dropdown-bg-color));
-	box-shadow: 
+	box-shadow:
 		0 0.125rem 0.375rem var(--box-shadow),
 		inset 0 0 0 0.0625rem var(--box-shadow);
 	pointer-events: none;
@@ -875,6 +892,7 @@ div.mobile-top-bar {
 }
 
 /* any li > a after top-bar > ul > li > ul */
+
 /* Background diagonal hover color on dropdown links */
 
 #header div[class*="top-bar"] > ul > li > ul li > a {
@@ -889,12 +907,12 @@ div.mobile-top-bar {
 	height: 100%;
 	padding: 0 1em;
 	overflow: hidden;
-	transition: 
+	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0rem solid rgba(0, 0, 0, 0);
+	border: 0 solid rgba(0, 0, 0, 0);
 	background: rgba(var(--dropdown-links-bg-color));
 	color: rgb(var(--dropdown-links-color));
 	font-size: calc(var(--base-font-size) * (13 / 15));
@@ -904,13 +922,14 @@ div.mobile-top-bar {
 }
 
 #header div[class*="top-bar"] > ul > li > ul li > a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -926,16 +945,17 @@ div.mobile-top-bar {
 
 #header div[class*="top-bar"] > ul > li > ul li:is(:hover, :active, :focus-within) > a {
 	--wght: var(--ui-hvr-wght);
+
 	color: rgb(var(--dropdown-links-hover-color));
 	font-weight: var(--wght);
 }
 
 #header div[class*="top-bar"] > ul > li > ul li:is(:hover, :active, :focus-within) > a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -949,23 +969,22 @@ div.mobile-top-bar {
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;
-
 	width: 100%;
 	height: 2rem;
 	margin: 0;
 	padding: 0;
-
 	overflow: visible;
 	border-collapse: collapse;
 	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
 	word-break: normal;
-	
+
 	/* Prevent splitting in half onto the next column */
 	break-inside: avoid;
 }
 
 /* ul > li > ul > li > ul */
+
 /* Flyout Nested Menus */
 
 #header div[class*="top-bar"] > ul > li > ul > li ul {
@@ -975,12 +994,11 @@ div.mobile-top-bar {
 	top: 0;
 	left: calc(100% - 0.0625rem);
 	box-sizing: content-box;
-	flex-direction: column;
-	flex-wrap: nowrap;
+	flex-flow: column nowrap;
 	width: auto;
 	height: auto;
 	margin: 0;
-	transition: 
+	transition:
 		opacity 80ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
 	opacity: 0;
@@ -988,23 +1006,25 @@ div.mobile-top-bar {
 	pointer-events: none;
 }
 
-#header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul
+#header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul,
 #header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul:is(:hover, :active, :focus-within) {
 	opacity: 1;
 	pointer-events: all;
 }
 
 /* ul > li > ul li > ul */
+
 /* Prevent flyout menus from disappearing when moving to them diagonally */
 
 #header div[class*="top-bar"] > ul > li > ul li > ul::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			100% 0, 
-			100% 100%, 
+			0 0,
+			100% 0,
+			100% 100%,
 			0 0
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: 5;
@@ -1038,16 +1058,14 @@ div.mobile-top-bar {
 @supports (backdrop-filter: blur(1rem)) {
 	#header div[class*="top-bar"] ul > li > ul {
 		backdrop-filter: blur(0);
-		transition: 
+		transition:
 			backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
-			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), 
-			transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	#header div[class*="top-bar"] ul > li:is(:hover, :active, :focus-within) > ul {
 		backdrop-filter: blur(0.125rem);
 	}
-
 }
 
 /* ===COMMON THEME COMPATABILITY=== */
@@ -1087,11 +1105,10 @@ div.mobile-top-bar {
 
 #top-bar ul li .lightbulb .lightbulb-mask,
 #top-bar > .ct-theme-switch .lightbulb .lightbulb-mask {
-	
 	mask-image: var(--lightbulb-mask);
 }
 
-#top-bar ul li:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask
+#top-bar ul li:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask,
 #top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask {
 	mask-image: var(--lightbulb-mask);
 }
@@ -1117,7 +1134,8 @@ div.mobile-top-bar {
 #top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb {
 	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
 	border-radius: 1.0625rem;
-	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
+	box-shadow:
+		0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
 		inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
 }
 
@@ -1159,12 +1177,13 @@ div.mobile-top-bar {
 
 	/* ***MAIN*** */
 	:root {
-		--header-h1-font-size: calc(1.15rem + (2.405 - 1.15) * ((var(--header-width-on-mobile,100vw) - 18.75rem) / (48 - 18.75)));
+		--header-h1-font-size: calc(1.15rem + (2.405 - 1.15) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75)));
 		--header-h2-font-size: calc(0.5rem + (0.945 - 0.5) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75)));
 	}
 
 	body {
-		background-size: 100% var(--header-height-on-mobile),
+		background-size:
+			100% var(--header-height-on-mobile),
 			100% var(--final-header-height-on-mobile),
 			100% var(--background-gradient-distance);
 	}
@@ -1176,6 +1195,7 @@ div.mobile-top-bar {
 	#header {
 		--size: calc(var(--final-header-height-on-mobile) - 0.875rem);
 		--y-offset: 1.5rem;
+
 		position: sticky;
 		top: calc(var(--header-height-on-mobile) * -1);
 		width: var(--header-width-on-mobile, 100vw);
@@ -1183,8 +1203,8 @@ div.mobile-top-bar {
 		margin: 0;
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
-		background-position: 
-			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) 
+		background-position:
+			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size))
 			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
 	}
@@ -1237,39 +1257,41 @@ div.mobile-top-bar {
 		pointer-events: all;
 	}
 
-	#login-status > *:not(#account-topbutton):not([href*="account/messages"]) {
-		--clip-path: 
+	#login-status > *:not(#account-topbutton, [href*="account/messages"]) {
+		--clip-path:
 			polygon(
-				100% 0, 
-				100% 0, 
-				100% 100%, 
+				100% 0,
+				100% 0,
+				100% 100%,
 				100% 100%
 			);
-		transition: 
+
+		transition:
 			box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
-		opacity: 0;		
+		opacity: 0;
 		clip-path: var(--clip-path);
 	}
 
-	#login-status:is(:hover, :active, :focus-within) > *:not(#account-topbutton):not([href*="account/messages"]) {
-		--clip-path: 
+	#login-status:is(:hover, :active, :focus-within) > *:not(#account-topbutton, [href*="account/messages"]) {
+		--clip-path:
 			polygon(
-				0 0, 
-				100% 0, 
-				100% 100%, 
+				0 0,
+				100% 0,
+				100% 100%,
 				0 100%
 			);
+
 		opacity: 1;
 		clip-path: var(--clip-path);
 	}
 
 	#login-status #account-topbutton {
 		margin-left: 0;
-		transition: 
+		transition:
 			clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
 			background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		background-color: transparent;
@@ -1288,42 +1310,44 @@ div.mobile-top-bar {
 		width: 100%;
 		height: 100%;
 		transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		background-color: rgba(var(--login-mobile-icon-color),0);
+		background-color: rgba(var(--login-mobile-icon-color), 0);
 		cursor: pointer;
 		pointer-events: all;
 		mask: var(--user-account-mask) center right / calc(var(--account-height) - 0.5em) no-repeat;
 	}
-		
+
 	#login-status::before {
 		z-index: 2;
-		background-color: rgba(var(--login-mobile-icon-color),1);
+		background-color: rgba(var(--login-mobile-icon-color), 1);
 	}
 
 	#login-status:hover::before {
-		background-color: rgba(var(--login-mobile-icon-hover-color),1);
+		background-color: rgba(var(--login-mobile-icon-hover-color), 1);
 	}
 
 	#login-status:is(:hover, :active, :focus-within)::before,
 	#login-status:is(:hover, :active, :focus-within)::after {
-		background-color: rgba(var(--login-mobile-icon-hover-bg-color),0);
+		background-color: rgba(var(--login-mobile-icon-hover-bg-color), 0);
 		cursor: auto;
 		pointer-events: none;
 	}
 
 	#login-status #account-topbutton {
 		--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-		background-color: rgba(var(--login-arrow-color),0);
+
+		background-color: rgba(var(--login-arrow-color), 0);
 		clip-path: var(--clip-path);
 	}
 
 	#login-status:is(:hover, :active, :focus-within) #account-topbutton {
-		--clip-path: 
-		polygon(
-			30% 35%, 
-			70% 35%, 
-			50% 60%, 
-			50% 60%
-		);
+		--clip-path:
+			polygon(
+				30% 35%,
+				70% 35%,
+				50% 60%,
+				50% 60%
+			);
+
 		background-color: rgb(var(--login-arrow-color));
 		clip-path: var(--clip-path);
 	}
@@ -1358,21 +1382,22 @@ div.mobile-top-bar {
 		align-items: center;
 		width: var(--header-width-on-mobile, 100vw);
 		margin: 0;
-		padding: 0;		
-		background: var(
-			--gradient-topmenu-mobile,
-			linear-gradient(
-				to bottom,
-				rgba(var(--swatch-topmenu-border-color), 1) 0,
-				rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-				rgba(var(--swatch-topmenu-bg-color), 1)
+		padding: 0;
+		background:
+			var(
+				--gradient-topmenu-mobile,
+				linear-gradient(
+					to bottom,
+					rgba(var(--swatch-topmenu-border-color), 1) 0,
+					rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
+					rgba(var(--swatch-topmenu-bg-color), 1)
 					calc(var(--topbar-height-on-mobile) - 0.125rem),
-				rgba(var(--swatch-topmenu-bg-color), 1)
+					rgba(var(--swatch-topmenu-bg-color), 1)
 					calc(var(--topbar-height-on-mobile) - 0.125rem),
-				rgba(var(--swatch-topmenu-border-color), 1)
+					rgba(var(--swatch-topmenu-border-color), 1)
 					var(--topbar-height-on-mobile)
-			)
-		);
+				)
+			);
 	}
 
 	/* ul */
@@ -1395,6 +1420,7 @@ div.mobile-top-bar {
 	}
 
 	/* DROPDOWN MENU */
+
 	/* ul > li > ul */
 
 	#header div[class*="top-bar"] > ul > li > ul {
@@ -1403,12 +1429,12 @@ div.mobile-top-bar {
 		grid-template-columns: repeat(2, 50%);
 		max-height: calc(100vh - 8rem);
 		margin-top: var(--topbar-height-on-mobile);
-		transform: translate(-50%, 0);
+		translate: -50% 0;
 	}
 
 	#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul,
 	#header div[class*="top-bar"] > ul > li > ul:is(:hover, :active, :focus-within) {
-		transform: translate(-50%, 0);
+		translate: -50% 0;
 	}
 
 	#header div[class*="top-bar"] > ul:first-of-type > li:last-of-type > ul {
@@ -1426,28 +1452,30 @@ div.mobile-top-bar {
 	}
 
 	#header div[class*="top-bar"] > ul > li ul > li:nth-last-of-type(2):nth-of-type(even) {
-		box-shadow: 
+		box-shadow:
 			inset 0 0 0 0.0625rem var(--box-shadow),
 			0 0.0625rem 0 0 var(--box-shadow);
 	}
-	
+
 	#header div[class*="top-bar"] > ul > li ul > li:last-of-type:nth-of-type(odd) {
-		box-shadow: 
+		box-shadow:
 			inset 0 0 0 0.0625rem var(--box-shadow),
 			0.0625rem 0 0 0 var(--box-shadow);
-	}	
+	}
 
 	/* ul > li > ul li > a */
 
 	#header div[class*="top-bar"] > ul > li > ul li > a {
 		--min-font-size: 1rem;
 		--max-font-size: 1rem;
+
 		font-size: var(--base-font-size);
 		line-height: 1;
 		white-space: inherit;
 	}
 
 	/* ul > li > ul > li ul */
+
 	/* Mobile Nested Menus */
 
 	#header div[class*="top-bar"] > ul > li > ul > li ul {
@@ -1488,10 +1516,12 @@ div.mobile-top-bar {
 
 	#header div.open-menu > p > a {
 		--wght: 700;
+
 		display: flex;
 		flex: 2 0 100%;
 		align-items: center;
 		justify-content: center;
+
 		/* Overriding Wikidot's Default Styling */
 		border: none !important;
 		background-color: transparent !important;

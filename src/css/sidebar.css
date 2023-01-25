@@ -32,7 +32,7 @@
 	padding: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
-	transition: 
+	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		scrollbar-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -44,22 +44,27 @@
 	direction: rtl;
 	scrollbar-width: thin;
 	overscroll-behavior: contain;
-	scrollbar-color: 
-		rgba(var(--swatch-primary-darker), 0.1) /* Thumb */
-		rgba(var(--swatch-tertiary-color), 0.05); /* Track */
+	scrollbar-color:
+		/* Thumb */
+		rgba(var(--swatch-primary-darker), 0.1)
+		/* Track */
+		rgba(var(--swatch-tertiary-color), 0.05);
 	justify-self: start;
 }
 
 /* Firefox left padding for scrollbar but not on OSX */
-@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) { #side-bar {
-	padding: 0 0 0 0.5rem;
-} }
+@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) {
+	#side-bar {
+		padding: 0 0 0 0.5rem;
+	}
+}
 
 /* Hover Scrollbar Behavior */
 #side-bar:is(:hover, :active, :focus-within) {
-	scrollbar-color: 
+	scrollbar-color:
 		rgb(var(--swatch-primary-darker), 1) /* Thumb */
 		rgb(var(--swatch-menubg-color), 1); /* Track */
+
 	border-color: rgba(var(--swatch-primary-darker), 1);
 }
 
@@ -108,13 +113,14 @@
 
 #side-bar .side-block.media a::before,
 #side-bar .side-block.media a[href*="tiktok"]::after {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -127,11 +133,11 @@
 }
 
 #side-bar .side-block.media a:is(:hover, :active, :focus-within)::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
@@ -160,6 +166,7 @@
 #side-bar .side-block.media a[href*="instagram"] {
 	--social-logo-mask: var(--instagram-mask);
 	--social-color: var(--instagram-icon-color);
+
 	background-image: var(--instagram-icon-gradient);
 	background-size: contain;
 }
@@ -172,32 +179,34 @@
 #side-bar .side-block.media a[href*="tiktok"] {
 	--social-logo-mask: var(--tiktok-mask);
 	--social-color: var(--tiktok-icon-color);
+
 	background-image: var(--tiktok-icon-gradient);
 	background-size: contain;
 }
 
 #side-bar .side-block.media a[href*="tiktok"]::after {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
+
 	top: 0.125rem;
-	left: 0.125rem;	
+	left: 0.125rem;
 	background-color: rgb(var(--social-color));
 	mask: var(--social-logo-mask) 0 0/ 90% no-repeat;
 }
 
 #side-bar .side-block.media a[href*="tiktok"]:is(:hover, :active, :focus-within)::after {
-	--clip-path: 
-	polygon(
-		0 0, 
-		0 0, 
-		0 100%, 
-		0 100%
-	);
+	--clip-path:
+		polygon(
+			0 0,
+			0 0,
+			0 100%,
+			0 100%
+		);
 }
 
 #side-bar .side-block.media a[href*="discord"] {
@@ -205,7 +214,7 @@
 	--social-color: var(--discord-icon-color);
 }
 
-/*Forcing default sidebar coloring on any INT branches that still use Background Color*/
+/* Forcing default sidebar coloring on any INT branches that still use Background Color */
 #side-bar .side-block[style*="background-color"] {
 	background-color: rgba(var(--dark-accent), 0.15) !important;
 }
@@ -259,23 +268,28 @@
 	align-items: flex-end;
 	justify-content: flex-start;
 	min-height: 1.5rem;
-	margin: 0 0 0.25rem 0;
+	margin: 0 0 0.25rem;
 	background-color: rgb(var(--sideblock-heading-bg-color));
 	box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 }
 
 /* Firefox left padding for scrollbar but not on OSX */
-@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) { #side-bar .heading {
-	padding-left: 0;
-} }
+@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) {
+	#side-bar .heading {
+		padding-left: 0;
+	}
+}
 
-@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) { #interwiki .heading {
-	padding-left: 0;
-} }
+@supports (-moz-appearance:none) and (background-attachment:local) and (not (-moz-osx-font-smoothing:auto)) {
+	#interwiki .heading {
+		padding-left: 0;
+	}
+}
 
 #side-bar .heading p,
 #interwiki .heading p {
 	--wght: calc(var(--ui-wght) + 300);
+
 	margin: 0;
 	color: rgb(var(--sideblock-heading-text-color));
 	font-family: var(--title-font);
@@ -300,17 +314,15 @@
 #side-bar div.menu-item.small,
 #side-bar div.menu-item.small > p {
 	display: flex;
-	flex-basis: 100%;
+	flex: 0 0 100%;
 	flex-flow: row wrap;
-	flex-shrink: 0;
 	align-items: center;
 	justify-content: flex-start;
 	height: 1.5rem;
 	min-height: 1.5rem;
 	margin: 0;
 	padding: 0;
-	box-shadow: 
-		inset 0 calc(var(--sidebar-internal-border-thickness) * -1) 0 0 rgba(var(--sidebar-border-color));
+	box-shadow: inset 0 calc(var(--sidebar-internal-border-thickness) * -1) 0 0 rgba(var(--sidebar-border-color));
 	font-size: 0;
 }
 
@@ -333,8 +345,9 @@
 	padding: 0 0 0 calc(var(--base-font-size) * (21 / 15));
 }
 
-	/* ===SUB-TEXT=== */
-	/* Sub-Text Styling for select Int Branches */
+/* ===SUB-TEXT=== */
+
+/* Sub-Text Styling for select Int Branches */
 #side-bar div.menu-item .sub-text {
 	display: inline-flex;
 	min-width: 35%;
@@ -345,7 +358,7 @@
 	text-align: left;
 }
 
-	/* ===MAIN LINKS & TEXT=== */
+/* ===MAIN LINKS & TEXT=== */
 #side-bar div.menu-item a,
 #interwiki div.menu-item a {
 	position: relative;
@@ -356,7 +369,7 @@
 }
 
 #interwiki div.menu-item a {
-	font-family: var(--UI-font,var(--header-font));
+	font-family: var(--UI-font, var(--header-font));
 	font-size: calc(var(--base-font-size) * (13 / 15));
 }
 
@@ -367,12 +380,13 @@
 #interwiki div.menu-item a,
 #interwiki div.menu-item a:visited {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
 	height: 1.5rem;
 	margin: 0;
-	transition: 
+	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -391,7 +405,7 @@
 	font-size: calc(var(--base-font-size) * (11 / 15));
 }
 
-	/* Center Forum link if it right next to Main link */
+/* Center Forum link if it right next to Main link */
 #side-bar div.menu-item > a[href="/"] + a[href="/forum:start"]:last-child {
 	flex-basis: 15%;
 	justify-content: center;
@@ -400,13 +414,14 @@
 
 #side-bar div.menu-item .text {
 	--wght: var(--ui-wght);
+
 	display: flex;
 	flex-grow: 2;
 	justify-content: flex-start;
 	height: 1.5rem;
 	margin: 0;
 	padding: 0 0.6em;
-	transition: 
+	transition:
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -426,8 +441,8 @@
 	flex-grow: 1;
 }
 
-#side-bar div.menu-item > div:not(:nth-child(2)):not(.collapsible-block),
-#side-bar div.menu-item > span:not(:nth-child(2)):not(.collapsible-block) {
+#side-bar div.menu-item > div:not(:nth-child(2), .collapsible-block),
+#side-bar div.menu-item > span:not(:nth-child(2), .collapsible-block) {
 	border-left: 0.125rem solid rgba(var(--sidebar-border-color));
 }
 
@@ -447,23 +462,26 @@
 #side-bar div.menu-item.small a:is(:hover, :active, :focus-within),
 #interwiki div.menu-item a:is(:hover, :active, :focus-within) {
 	--wght: var(--ui-hvr-wght);
+
 	background-color: rgba(var(--sidebar-links-hover-bg-color), 0.15);
 	color: rgb(var(--sidebar-links-hover-text-color));
 	font-weight: var(--wght);
 	text-decoration: none;
 }
 
-	/* ===MAIN LINKS HOVER BG BAR=== */
-	/* Menu Item Hover Color Bar */
+/* ===MAIN LINKS HOVER BG BAR=== */
+
+/* Menu Item Hover Color Bar */
 #side-bar div.menu-item a::before,
 #interwiki div.menu-item a::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			0 0, 
-			0 0, 
-			0 100%, 
+			0 0,
+			0 0,
+			0 100%,
 			0 100%
 		);
+
 	content: " ";
 	position: absolute;
 	z-index: -1;
@@ -480,22 +498,22 @@
 
 #side-bar div.menu-item a:is(:hover, :active, :focus-within)::before,
 #interwiki div.menu-item a:is(:hover, :active, :focus-within)::before {
-	--clip-path: 
+	--clip-path:
 		polygon(
-			-15% 0, 
-			115% 0, 
-			100% 100%, 
+			-15% 0,
+			115% 0,
+			100% 100%,
 			0 100%
 		);
 }
 
-/* ===SCP & TALES SERIES==*/
+/* ===SCP & TALES SERIES== */
 
 #side-bar div.menu-item.scp-series a,
 #side-bar div.menu-item.scp-tales a,
 #side-bar div.menu-item.small a:not([href*="shortest"]),
 #side-bar div.menu-item a[href*="scp-series"] {
-	justify-content: center;	
+	justify-content: center;
 	width: auto;
 	padding: 0 0.25em;
 	text-indent: 0;
@@ -558,23 +576,23 @@
 }
 
 /* Interwiki styling for Interwikis that cannot style themselves. Also targets the SCP-CN Interwiki, which is stylable but does not currently have the interwiki-stylable class */
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable),
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) * {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable),
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) * {
 	max-width: var(--sidebar-width-on-desktop);
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) {
-	position: relative;	
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) {
+	position: relative;
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) div.list-pages-item {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) div.list-pages-item {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
 	width: 100%;
 }
 
-#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p {
+#side-bar div.scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) p {
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -583,7 +601,7 @@
 	overflow: hidden;
 }
 
-#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) iframe.scpnet-interwiki-frame {
+#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) iframe.scpnet-interwiki-frame {
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
@@ -591,10 +609,10 @@
 }
 
 /* Coloring to (mostly) match sidebar */
-@supports(mix-blend-mode:hue) {
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before,
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
+@supports (mix-blend-mode:hue) {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable)::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) p::before,
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) p::after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -604,23 +622,23 @@
 		pointer-events: none;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable)::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable)::before {
 		z-index: 3;
 		background-color: rgb(var(--swatch-menubg-color));
 		mix-blend-mode: darken;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::before {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) p::before {
 		z-index: 2;
 		background-color: rgb(var(--swatch-primary));
 		mix-blend-mode: color;
 	}
 
-	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn)):not(.interwiki-stylable) p::after {
+	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) p::after {
 		z-index: 1;
-		transition: background-color 500ms cubic-bezier(.4,0,.2,1);
+		transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 		background-color: rgb(var(--swatch-menubg-color));
-		mix-blend-mode:overlay;
+		mix-blend-mode: overlay;
 	}
 }
 
@@ -629,6 +647,7 @@
 	width: auto;
 	margin: 0;
 }
+
 #side-bar div.interwiki-stylable p {
 	margin: 0;
 }
@@ -644,6 +663,7 @@
 #side-bar div.collapsible-block div.collapsible-block-folded,
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link {
 	--wght: calc(var(--ui-wght) + 300);
+
 	display: flex;
 	position: relative;
 	align-items: flex-end;
@@ -659,20 +679,20 @@
 	line-height: 1.15;
 	text-indent: 0.25rem;
 	text-transform: uppercase;
-}	
+}
 
 #side-bar div.collapsible-block a.collapsible-block-link {
 	display: flex;
 	position: absolute;
 	top: 0;
-	left: 0;	
-	flex-grow: 2;	
+	left: 0;
+	flex-grow: 2;
 	align-items: center;
 	justify-content: flex-start;
 	width: 100%;
 	height: 100%;
 	margin-left: 0;
-	transition: 
+	transition:
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -680,9 +700,9 @@
 	color: rgb(var(--sidebar-collapsible-link-color));
 }
 
-
 #side-bar a.collapsible-block-link:is(:hover, :active, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght) + 300);
+
 	font-weight: var(--wght);
 	text-decoration: none;
 }
@@ -695,9 +715,7 @@
 	right: 0;
 	width: 2rem;
 	height: 100%;
-	transition: 
-		transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	mask: var(--down-arrow-mask) 50% 50% / 1em no-repeat;
 }
 
@@ -715,7 +733,7 @@
 	background: rgba(var(--sidebar-collapsible-fld-arrow-color));
 }
 
-#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:is(:hover, :active, :focus-within):after {
+#side-bar div.collapsible-block div.collapsible-block-folded > a.collapsible-block-link:is(:hover, :active, :focus-within)::after {
 	background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
 }
 
@@ -730,11 +748,11 @@
 }
 
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link::after {
-	transform: rotate(180deg);
+	rotate: 180deg;
 	background: rgba(var(--sidebar-collapsible-ufld-arrow-color));
 }
 
-#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:is(:hover, :active, :focus-within):after {
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link a.collapsible-block-link:is(:hover, :active, :focus-within)::after {
 	background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
 }
 
@@ -854,7 +872,7 @@
 		direction: initial;
 	}
 
-	#side-bar:after {
+	#side-bar::after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -903,6 +921,7 @@
 	#skrollr-body:target #side-bar,
 	#side-bar:target {
 		--box-shadow: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+
 		display: block;
 		z-index: 10;
 		left: 0;

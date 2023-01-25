@@ -1,3 +1,10 @@
+/* ===Disabled Stylelint Properties=== */
+/* stylelint-disable
+	unit-disallowed-list,
+	comment-empty-line-before,
+	font-family-no-duplicate-names
+*/
+
 @charset "utf-8";
 
 /*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
@@ -14,7 +21,7 @@
 :where(html) {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
-	-webkit-tap-highlight-color: transparent; /* 3*/
+	-webkit-tap-highlight-color: transparent; /* 3 */
 }
 
 /* Sections */
@@ -24,7 +31,7 @@
  * Remove the margin in all browsers.
  */
 
- :where(body) {
+:where(body) {
 	margin: 0;
 }
 
@@ -42,7 +49,7 @@
 :where(h1, h2, h3, h4, h5, h6) {
 	margin: 0;
 	font-size: inherit;
-	font-weight: inherit;	
+	font-weight: inherit;
 }
 
 /* Lists (enumeration) */
@@ -79,7 +86,7 @@
 	margin: 0;
 	clear: both;
 	overflow: visible; /* 2 */
-	border-top-width: 1px;		
+	border-top-width: 1px;
 	color: inherit;
 }
 
@@ -107,7 +114,7 @@
 :where(a) {
 	background-color: transparent;
 	color: inherit;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 /**
@@ -153,7 +160,7 @@
 :where(sub,sup) {
 	position: relative;
 	font-size: 75%;
-	line-height: 0;	
+	line-height: 0;
 	vertical-align: baseline;
 }
 
@@ -203,7 +210,7 @@
  * Correct cursors for clickable elements.
  */
 
- :where(button, [type="button"], [type="reset"], [type="submit"]) {
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
 	cursor: pointer;
 }
 
@@ -215,7 +222,7 @@
  * Improve outlines for Firefox and unify style with input elements & buttons.
  */
 
- :where(:-moz-focusring) {
+:where(:-moz-focusring) {
 	outline: auto;
 }
 
@@ -238,7 +245,7 @@
 :where(fieldset) {
 	min-width: 0;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 :where(legend) {
@@ -346,7 +353,7 @@ textarea {
 
 :where(table) {
 	border-collapse: collapse;
-	border-color: inherit; /* 1 */	
+	border-color: inherit; /* 1 */
 }
 
 :where(caption) {
@@ -369,7 +376,6 @@ textarea {
 #content-wrap {
 	position: inherit;
 	max-width: inherit;
-	height: inherit;
 	height: inherit;
 	min-height: inherit;
 	margin: inherit;
@@ -397,8 +403,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-h7 {
+h6 {
 	margin: inherit;
 	padding: inherit;
 	letter-spacing: inherit;
@@ -496,7 +501,6 @@ sup,
 	z-index: inherit;
 	height: inherit;
 	padding-bottom: inherit;
-
 	background: inherit;
 }
 
@@ -561,7 +565,6 @@ sup,
 #login-status {
 	position: inherit;
 	z-index: inherit;
-	z-index: inherit;
 	top: inherit;
 	right: inherit;
 	overflow: inherit;
@@ -576,7 +579,7 @@ sup,
 	color: inherit;
 }
 
-#login-status>a>strong {
+#login-status > a > strong {
 	-webkit-animation-name: inherit;
 	-webkit-animation-duration: inherit;
 	-webkit-animation-timing-function: inherit;
@@ -677,7 +680,6 @@ sup,
 #top-bar {
 	position: inherit;
 	z-index: inherit;
-	z-index: inherit;
 	top: inherit;
 	height: inherit;
 	padding: inherit;
@@ -769,7 +771,7 @@ sup,
 	right: inherit;
 }
 
-#top-bar ul>li>ul {
+#top-bar ul > li > ul {
 	*margin-top: inherit;
 }
 
@@ -1072,7 +1074,7 @@ div.sexy-box div.image-container img {
 	min-height: inherit;
 }
 
-.unmargined>p {
+.unmargined > p {
 	margin: inherit;
 	line-height: inherit;
 }
@@ -1084,7 +1086,6 @@ div.sexy-box div.image-container img {
 	border-radius: inherit;
 	background-color: inherit;
 	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
 	box-shadow: inherit;
 }
 
@@ -1115,8 +1116,8 @@ div.sexy-box div.image-container img {
 	text-shadow: inherit;
 }
 
-.content-panel .panel-heading>p,
-.content-panel .panel-footer>p {
+.content-panel .panel-heading > p,
+.content-panel .panel-footer > p {
 	margin: inherit;
 }
 
@@ -1302,11 +1303,11 @@ div.page-rate-widget-box .rate-points {
 	text-align: inherit;
 }
 
-.scp-image-block>p {
+.scp-image-block > p {
 	margin: inherit;
 }
 
-.scp-image-block .scp-image-caption>p {
+.scp-image-block .scp-image-caption > p {
 	margin: inherit;
 	padding: inherit;
 }
@@ -1387,15 +1388,15 @@ rt,
 	text-decoration: inherit;
 }
 
-.tags:before {
+.tags::before {
 	padding: inherit;
 	border-width: inherit;
 	border-style: inherit;
 	border-color: inherit;
 }
 
-.tags:before,
-.tags:after {
+.tags::before,
+.tags::after {
 	content: inherit;
 	position: inherit;
 	top: inherit;
@@ -1405,7 +1406,7 @@ rt,
 	float: inherit;
 }
 
-.tags:after {
+.tags::after {
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
 	background: inherit;
@@ -1443,7 +1444,7 @@ rt,
 	text-emphasis-style: inherit;
 }
 
-@document url-prefix() {
+@document url-prefix("") {
 	.emph {
 		padding: inherit;
 		background-clip: inherit;
@@ -1452,7 +1453,6 @@ rt,
 		background-repeat: inherit;
 		-webkit-background-size: inherit inherit;
 		background-size: inherit;
-
 		font-family: inherit;
 		font-style: inherit;
 		font-weight: inherit;
@@ -1460,7 +1460,7 @@ rt,
 }
 
 @media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
+	(-ms-high-contrast: none) {
 	.emph {
 		padding: inherit;
 		background-clip: inherit;
@@ -1469,21 +1469,10 @@ rt,
 		background-repeat: inherit;
 		-webkit-background-size: inherit inherit;
 		background-size: inherit;
-
 		font-family: inherit;
 		font-style: inherit;
 		font-weight: inherit;
 	}
-}
-
-@-ms-viewport {
-	width: inherit;
-	zoom: inherit;
-}
-
-@-o-viewport {
-	width: inherit;
-	zoom: inherit;
 }
 
 @viewport {
@@ -1493,11 +1482,8 @@ rt,
 
 ::-webkit-scrollbar {
 	width: inherit;
-
 	height: inherit;
-
 	border: inherit;
-	border-round: inherit;
 }
 
 ::-webkit-scrollbar-track,
@@ -1541,7 +1527,7 @@ table.form th {
 	}
 
 	.modal-body .table,
-	.modal-body .table~div,
+	.modal-body .table ~ div,
 	.owindow .button-bar {
 		float: inherit;
 	}
@@ -1733,7 +1719,6 @@ table.form th {
 }
 
 @media (min-width: 581px) and (max-width: 767px) {
-
 	#search-top-box-input,
 	#side-bar {
 		width: inherit;
@@ -1844,7 +1829,7 @@ table.form th {
 	}
 
 	.modal-body .table,
-	.modal-body .table~div,
+	.modal-body .table ~ div,
 	.owindow .button-bar {
 		float: inherit;
 	}
@@ -1854,7 +1839,7 @@ table.form th {
 		float: inherit;
 	}
 
-	.owindow div .btn-primary~div {
+	.owindow div .btn-primary ~ div {
 		width: inherit;
 	}
 
@@ -1913,7 +1898,7 @@ table.form th {
 	}
 
 	#side-bar,
-	#side-bar:after {
+	#side-bar::after {
 		position: inherit;
 		top: inherit;
 		width: inherit;
@@ -1921,7 +1906,7 @@ table.form th {
 		background-color: inherit;
 	}
 
-	#side-bar:after {
+	#side-bar::after {
 		content: inherit;
 	}
 
@@ -1934,7 +1919,7 @@ table.form th {
 		border: inherit;
 	}
 
-	#side-bar:target+#main-content {
+	#side-bar:target + #main-content {
 		left: inherit;
 	}
 
