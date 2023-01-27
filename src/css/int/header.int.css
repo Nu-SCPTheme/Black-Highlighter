@@ -31,7 +31,7 @@
 
 /* ===GERMAN BRANCH=== */
 
-@media only screen and (max-width: 56.25rem) {
+@media (--viewport-tablet) {
 	#header:where(:lang(de)) div.open-menu {
 		background-image: var(--gradient-topmenu-mobile);
 	}
@@ -73,7 +73,7 @@
 	height: 100%;
 }
 
-@media only screen and (max-width: 56.25rem) {
+@media (--viewport-tablet) {
 	#header:where(:lang(ru)) div[class*="top-bar"] > ul {
 		height: var(--topbar-height-on-mobile);
 	}

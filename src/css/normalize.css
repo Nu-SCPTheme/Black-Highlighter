@@ -130,7 +130,7 @@
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-:where(b,strong) {
+:where(b, strong) {
 	font-weight: bolder;
 }
 
@@ -157,7 +157,7 @@
  * all browsers.
  */
 
-:where(sub,sup) {
+:where(sub, sup) {
 	position: relative;
 	font-size: 75%;
 	line-height: 0;
@@ -214,7 +214,12 @@
 	cursor: pointer;
 }
 
-:where(button:disabled, [type="button"]:disabled, [type="reset"]:disabled, [type="submit"]:disabled) {
+:where(
+		button:disabled,
+		[type="button"]:disabled,
+		[type="reset"]:disabled,
+		[type="submit"]:disabled
+	) {
 	cursor: default;
 }
 
@@ -272,7 +277,10 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-:where([type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button) {
+:where(
+		[type="number"]::-webkit-inner-spin-button,
+		[type="number"]::-webkit-outer-spin-button
+	) {
 	height: auto;
 }
 
@@ -1459,8 +1467,7 @@ rt,
 	}
 }
 
-@media screen and (-ms-high-contrast: active),
-	(-ms-high-contrast: none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.emph {
 		padding: inherit;
 		background-clip: inherit;
@@ -1940,3 +1947,10 @@ table.form th {
 		width: inherit;
 	}
 }
+
+/* ===Re-Enabling Stylelint Properties=== */
+/* stylelint-enable
+	unit-disallowed-list,
+	comment-empty-line-before,
+	font-family-no-duplicate-names
+*/

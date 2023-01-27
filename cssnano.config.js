@@ -4,13 +4,12 @@ const defaultPreset =
     autoprefixer: true,
     calc: false,
     colormin: false,
-    cssDeclarationSorter: false,
+    cssDeclarationSorter: true,
     discardComments: {
       removeAll: true,
     },
-    normalizeWhitespace: false,
+    normalizeWhitespace: true,
     mergeRules: false,
-    reduceIdents: true,
   });
 
 module.exports = defaultPreset;

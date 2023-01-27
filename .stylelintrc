@@ -1,28 +1,22 @@
 {
 	"extends": [
-		"stylelint-config-standard", 
-		"stylelint-config-property-sort-order-smacss"
+		"stylelint-config-property-sort-order-smacss",
+		"stylelint-prettier/recommended"
 	],
 	"rules": {
 		"alpha-value-notation": "number",
 		"color-function-notation": null,
 		"color-no-hex": true,
-		"comment-empty-line-before": [
-			"always", {
-				"except": ["first-nested"],
-				"ignoreComments": ["=="]
-			}
-		],
 		"custom-property-pattern": null,
+		"declaration-block-no-duplicate-custom-properties": null,
 		"declaration-block-no-duplicate-properties": [
 			true,
 			{ "ignore": ["consecutive-duplicates-with-different-values"] }
 		],
-		"declaration-colon-newline-after": "always-multi-line",
-		"indentation": "tab",
+		"declaration-colon-newline-after": null,
+		"indentation": null,
 		"max-line-length": null,
-		"no-descending-specificity": null,
-		"declaration-block-no-duplicate-custom-properties": null,
+		"no-descending-specificity": null,		
 		"no-duplicate-selectors": null,
 		"property-no-vendor-prefix": null,
 		"number-max-precision": null,
@@ -30,7 +24,7 @@
 		"selector-id-pattern": null,
 		"selector-not-notation": "complex",
 		"unit-disallowed-list": ["px"],
-		"value-list-comma-newline-after": "always-multi-line",
+		"value-list-comma-newline-after": null,
 		"value-keyword-case": null
 	}
 }

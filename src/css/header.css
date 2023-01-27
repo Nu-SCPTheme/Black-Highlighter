@@ -31,13 +31,10 @@
 
 /* Body Background Image: Includes header image, subtle gradient that extends into the content, and page background color */
 body {
-	background-image:
-		var(--gradient-header),
-		var(--gradient-topmenu),
+	background-image: var(--gradient-header), var(--gradient-topmenu),
 		var(--gradient-background);
 	background-repeat: repeat-x;
-	background-size:
-		var(--header-background-image-size),
+	background-size: var(--header-background-image-size),
 		100% var(--final-header-height-on-desktop),
 		100% var(--background-gradient-distance);
 }
@@ -59,6 +56,14 @@ div#container-wrap {
 	--search-width: calc(var(--base-font-size) * 15);
 	--search-height: calc(var(--base-font-size) * (27 / 15));
 	--account-height: var(--search-height);
+
+	&:is(h1, h2) {
+		position: absolute;
+		margin: 0;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizelegibility;
+	}
 }
 
 #header,
@@ -72,8 +77,7 @@ div#container-wrap {
 	font-weight: var(--wght);
 }
 
-#header h1,
-#header h2 {
+#header :is(h1, h2) {
 	position: absolute;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
@@ -85,66 +89,71 @@ div#container-wrap {
 	position: absolute;
 	height: 100%;
 	max-height: var(--header-height-on-desktop);
-}
 
-#header h1 a {
-	--wght: 900;
+	& a {
+		--wght: 900;
 
-	display: block;
-	z-index: 10;
-	margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
-	margin-left: calc(var(--header-height-on-desktop) - 0.75rem);
-	padding: 1.875rem 0 0;
-	color: rgb(var(--swatch-headerh1-color));
-	font-family: var(--header-font);
-	font-size: var(--header-h1-font-size);
-	font-weight: var(--wght);
-	line-height: 0;
-	text-decoration: none;
-	text-shadow: none;
-}
+		display: block;
+		z-index: 10;
+		margin-top: calc(((var(--header-height-on-desktop) / 2)) - 0.85em);
+		margin-left: calc(var(--header-height-on-desktop) - 0.75rem);
+		padding: 1.875rem 0 0;
+		color: rgb(var(--swatch-headerh1-color));
+		font-family: var(--header-font);
+		font-size: var(--header-h1-font-size);
+		font-weight: var(--wght);
+		line-height: 0;
+		text-decoration: none;
+		text-shadow: none;
 
-#header h1 a::before {
-	--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
+		&::before {
+			--text-shadow: rgb(var(--swatch-text-dark, 12, 12, 12));
 
-	content: var(--header-title, "SCP Foundation");
-	color: rgb(var(--swatch-headerh1-color));
-	text-shadow: none;
-}
+			content: var(--header-title, "SCP Foundation");
+			color: rgb(var(--swatch-headerh1-color));
+			text-shadow: none;
+		}
 
-#header h1 a > span {
-	display: inline-table;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: calc(100% - 2rem);
-	height: calc(var(--header-height-on-desktop) - var(--topbar-height));
-	color: transparent;
-	pointer-events: none;
+		& > span {
+			display: inline-table;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% - 2rem);
+			height: calc(var(--header-height-on-desktop) - var(--topbar-height));
+			color: transparent;
+			pointer-events: none;
+		}
+	}
 }
 
 #header h2 {
 	pointer-events: none;
-}
 
-#header h2 span {
-	--wght: 500;
+	& span {
+		--wght: 500;
 
-	display: block;
-	margin-top: calc(((var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) - var(--header-h2-font-size) + 0.675em));
-	margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
-	color: transparent;
-	font-family: var(--title-font);
-	font-size: var(--header-h2-font-size);
-	font-weight: var(--wght);
-	line-height: 1;
-	text-shadow: none;
-}
+		display: block;
+		margin-top: calc(
+			(
+				(var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) -
+					var(--header-h2-font-size) + 0.675em
+			)
+		);
+		margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
+		color: transparent;
+		font-family: var(--title-font);
+		font-size: var(--header-h2-font-size);
+		font-weight: var(--wght);
+		line-height: 1;
+		text-shadow: none;
 
-#header h2 span::before {
-	content: var(--header-subtitle, "SECURE, CONTAIN, PROTECT");
-	color: rgb(var(--swatch-headerh2-color));
-	text-shadow: none;
+		&::before {
+			content: var(--header-subtitle, "SECURE, CONTAIN, PROTECT");
+			color: rgb(var(--swatch-headerh2-color));
+			text-shadow: none;
+		}
+	}
 }
 
 #header-extra-div-1,
@@ -175,10 +184,53 @@ div#container-wrap {
 	box-shadow: 0 0 0 0 rgb(var(--search-focus-outline-color));
 	color: transparent;
 	font-size: calc(var(--base-font-size) * (13 / 15));
-}
 
-#search-top-box:is(:hover, :active) {
-	box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));
+	&::after,
+	&input[type="submit"] {
+		width: var(--search-height);
+		height: var(--search-height);
+		transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+			clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+			box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		border: none;
+		will-change: background-color, clip-path;
+		cursor: pointer;
+	}
+
+	&::after {
+		--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		clip-path: var(--clip-path);
+		background-color: rgba(var(--search-icon-focus-bg-color), 0);
+		pointer-events: none;
+	}
+
+	& input[type="submit"] {
+		background-color: rgb(var(--search-icon-color));
+		color: transparent;
+		mask: var(--search-icon-mask) 0.375rem 0.3125rem /
+			calc((var(--search-height) + 0.25rem) / 2)
+			calc((var(--search-height) + 0.25rem) / 2) no-repeat;
+	}
+
+	&:is(:hover, :active) {
+		box-shadow: 0 0 0 0.125rem rgb(var(--search-focus-outline-color));
+
+		&::after {
+			--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+			background-color: rgb(var(--search-icon-focus-bg-color));
+		}
+
+		& input[type="submit"] {
+			background-color: rgb(var(--search-icon-hover-color));
+		}
+	}
 }
 
 #search-top-box,
@@ -190,48 +242,6 @@ div#container-wrap {
 
 #search-top-box form[id="search-top-box-form"] input[type="text"] {
 	display: none;
-}
-
-#search-top-box::after,
-#search-top-box input[type="submit"] {
-	width: var(--search-height);
-	height: var(--search-height);
-	transition:
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: none;
-	will-change: background-color, clip-path;
-	cursor: pointer;
-}
-
-#search-top-box::after {
-	--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-
-	content: " ";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	right: 0;
-	clip-path: var(--clip-path);
-	background-color: rgba(var(--search-icon-focus-bg-color), 0);
-	pointer-events: none;
-}
-
-#search-top-box:is(:hover, :active)::after {
-	--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-	background-color: rgb(var(--search-icon-focus-bg-color));
-}
-
-#search-top-box input[type="submit"] {
-	background-color: rgb(var(--search-icon-color));
-	color: transparent;
-	mask: var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem ) / 2) calc((var(--search-height) + 0.25rem ) / 2) no-repeat;
-}
-
-#search-top-box:is(:hover, :active) input[type="submit"] {
-	background-color: rgb(var(--search-icon-hover-color));
 }
 
 /* Mobile Search Box by 7happy7 */
@@ -428,81 +438,84 @@ div#container-wrap {
 	font-size: 0.9em;
 	font-weight: var(--wght);
 	white-space: nowrap;
-}
 
-#login-status span.printuser a:first-of-type {
-	width: 1.75em;
+	& span.printuser a:first-of-type {
+		width: 1.75em;
+	}
+
+	& span.printuser {
+		--wght: var(--ui-wght);
+
+		margin-right: 0.5em;
+		color: rgb(var(--login-username-color));
+		font-weight: var(--wght);
+	}
+
+	& a {
+		&[href*="account/messages"] {
+			color: rgb(var(--login-myaccount-color));
+		}
+
+		&#my-account {
+			--wght: var(--ui-wght);
+
+			display: flex;
+			align-items: center;
+			padding: 0 0.5em;
+			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+				text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			background-color: transparent;
+			box-shadow: inset 0 0 0 0 rgb(var(--login-myaccount-hover-bg-color));
+			color: rgb(var(--login-myaccount-color));
+			font-weight: var(--wght);
+			text-decoration: underline rgb(var(--login-myaccount-underline-color))
+				0.125em;
+
+			&:is(:hover, :active, :focus) {
+				--wght: var(--ui-hvr-wght);
+
+				box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
+				color: rgb(var(--login-myaccount-hover-color));
+				font-weight: var(--wght);
+				text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+			}
+		}
+	}
+
+	& #account-topbutton {
+		position: relative;
+		width: var(--account-height);
+		height: var(--account-height);
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		color: transparent;
+	}
 }
 
 /* Not Logged In Styling */
-#login-status:not(.page-rate-widget-box, #search-top-box-form) > a:is(.login-status-create-account, .login-status-sign-in) {
+#login-status:not(.page-rate-widget-box, #search-top-box-form)
+	> a:is(.login-status-create-account, .login-status-sign-in) {
 	margin: 0 1em;
 	background-color: rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 }
 
-#login-status:not(.page-rate-widget-box, #search-top-box-form) > a:is(.login-status-create-account, .login-status-sign-in):is(:hover, :active),
-#login-status:not(.page-rate-widget-box, #search-top-box-form):is(:focus-within) > a:is(.login-status-create-account, .login-status-sign-in) {
-	background-color: rgb(var(--ui-button-hover-bg) 1);
+#login-status:not(.page-rate-widget-box, #search-top-box-form)
+	> a:is(.login-status-create-account, .login-status-sign-in):is(
+		:hover,
+		:active,
+		:focus
+	),
+#login-status:not(.page-rate-widget-box, #search-top-box-form):is(:focus-within)
+	> a:is(.login-status-create-account, .login-status-sign-in) {
+	background-color: rgb(var(--ui-button-hover-bg), 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
 
-#login-status span.printuser {
-	--wght: var(--ui-wght);
-
-	margin-right: 0.5em;
-	color: rgb(var(--login-username-color));
-	font-weight: var(--wght);
-}
-
-#login-status a[href*="account/messages"] {
-	color: rgb(var(--login-myaccount-color));
-}
-
-#login-status a#my-account {
-	--wght: var(--ui-wght);
-
-	display: flex;
-	align-items: center;
-	padding: 0 0.5em;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: transparent;
-	box-shadow: inset 0 0 0 0 rgb(var(--login-myaccount-hover-bg-color));
-	color: rgb(var(--login-myaccount-color));
-	font-weight: var(--wght);
-	text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0.125em;
-}
-
-#login-status a#my-account:is(:hover, :active, :focus-within) {
-	--wght: var(--ui-hvr-wght);
-
-	box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
-	color: rgb(var(--login-myaccount-hover-color));
-	font-weight: var(--wght);
-	text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
-}
-
-#login-status #account-topbutton {
-	position: relative;
-	width: var(--account-height);
-	height: var(--account-height);
-	margin: 0;
-	padding: 0;
-	background-color: transparent;
-	color: transparent;
-}
-
-@media only screen and (min-width: 56.25rem) {
+@media (--viewport-desktop) {
 	#login-status #account-topbutton::before {
-		--clip-path:
-			polygon(
-				30% 35%,
-				70% 35%,
-				50% 60%,
-				50% 60%
-			);
+		--clip-path: polygon(30% 35%, 70% 35%, 50% 60%, 50% 60%);
 
 		content: " ";
 		position: absolute;
@@ -548,7 +561,7 @@ div#container-wrap {
 }
 
 /* Support for Safari */
-@supports (-webkit-hyphens:none) {
+@supports (-webkit-hyphens: none) {
 	#login-status #account-topbutton:hover + #account-options,
 	#login-status #account-options:hover {
 		opacity: 1;
@@ -593,8 +606,7 @@ div#container-wrap {
 	height: 100%;
 	max-height: 2em;
 	padding: 0 0.25em;
-	transition:
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0 0 0 0.0625rem var(--login-dropdown-border-color);
@@ -606,7 +618,10 @@ div#container-wrap {
 	color: rgb(var(--login-dropdown-text-color));
 }
 
-#login-status #account-options is(li, li:focus-within) > a:is(:hover, :active) {
+#login-status
+	#account-options
+	:is(li, li:focus-within)
+	> a:is(:hover, :active) {
 	--wght: var(--ui-hvr-wght);
 
 	color: rgb(var(--login-dropdown-text-hover-color));
@@ -634,13 +649,7 @@ div#container-wrap {
 }
 
 #login-status #account-options li > a::before {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 	content: " ";
 	position: absolute;
@@ -654,14 +663,11 @@ div#container-wrap {
 	clip-path: var(--clip-path);
 }
 
-#login-status #account-options li > a:is(:hover, :active, :focus-within)::before {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
+#login-status
+	#account-options
+	li
+	> a:is(:hover, :active, :focus-within)::before {
+	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 /* ===TOP BAR=== */
@@ -681,7 +687,7 @@ div.mobile-top-bar {
 	--wght: var(--ui-wght);
 
 	display: inline-flex;
-	position: initial;
+	position: static;
 	z-index: 50;
 	flex-wrap: nowrap;
 	width: 100%;
@@ -695,376 +701,335 @@ div.mobile-top-bar {
 
 /* ul */
 
-#header div[class*="top-bar"] > ul {
-	display: flex;
-	z-index: 20;
-	flex-flow: row nowrap;
-	justify-content: space-around;
-	width: 90vw;
-	max-width: var(--header-width-on-desktop, 61.25rem);
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	letter-spacing: 0.0625rem;
-	line-height: 0;
-	text-align: center;
-}
+#header div[class*="top-bar"] {
+	& > ul {
+		display: flex;
+		z-index: 20;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		width: 90vw;
+		max-width: var(--header-width-on-desktop, 61.25rem);
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		letter-spacing: 0.0625rem;
+		line-height: 0;
+		text-align: center;
 
-/* ul > li */
+		/* any li after ul */
+		& li {
+			&:is(:hover, :active, :focus-within) {
+				/* Adding a slight bg colour change before the :before obscures it */
+				background-color: rgba(var(--dark-accent), 0.05);
+			}
+		}
 
-#header div[class*="top-bar"] > ul > li {
-	display: inline-flex;
-	position: relative;
-	flex: 2 2;
-	width: auto;
-	margin: 0;
-	padding: 0;
-	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	list-style: outside none none;
-	cursor: pointer;
-}
+		/* ul > li */
+		& > li {
+			display: inline-flex;
+			position: relative;
+			flex: 2 2;
+			width: auto;
+			margin: 0;
+			padding: 0;
+			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			list-style: outside none none;
+			cursor: pointer;
 
-/* ul > li > a */
+			& > a {
+				--wght: calc(var(--ui-wght) + 200);
 
-#header div[class*="top-bar"] > ul > li > a {
-	--wght: calc(var(--ui-wght) + 200);
+				display: inline-flex;
+				position: relative;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: calc(100% - 0.6em);
+				padding: 0.3em;
+				overflow: hidden;
+				transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				border: none;
+				background-color: transparent;
+				color: rgb(var(--topmenu-category-color));
+				font-weight: var(--wght);
+				line-height: 1;
+				text-decoration: none;
+				white-space: normal;
 
-	display: inline-flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: calc(100% - 0.6em);
-	padding: 0.3em;
-	overflow: hidden;
-	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: none;
-	background-color: transparent;
-	color: rgb(var(--topmenu-category-color));
-	font-weight: var(--wght);
-	line-height: 1;
-	text-decoration: none;
-	white-space: normal;
-}
+				/* Sliding top/bottom borders on top-bar links */
+				&::before,
+				&::after {
+					content: " ";
+					position: absolute;
+					width: 100%;
+					height: calc(0.0625rem * 3);
+					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					background-color: rgb(var(--topmenu-hover-border-color));
+					clip-path: var(--clip-path);
+				}
 
-#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a {
-	--wght: var(--ui-hvr-wght);
+				&::before {
+					--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
-	color: rgb(var(--topmenu-category-hover-color));
-	font-weight: var(--wght);
-}
+					top: 0;
+					left: 0;
+				}
 
-/* Sliding top/bottom borders on top-bar links */
-#header div[class*="top-bar"] > ul > li > a::before,
-#header div[class*="top-bar"] > ul > li > a::after {
-	content: " ";
-	position: absolute;
-	width: 100%;
-	height: calc(0.0625rem * 3);
-	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--topmenu-hover-border-color));
-}
+				&::after {
+					--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
-#header div[class*="top-bar"] > ul > li > a::before {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+					right: 0;
+					bottom: 0;
+				}
+			}
 
-	clip-path: var(--clip-path);
-	top: 0;
-	left: 0;
-}
+			&:is(:hover, :active, :focus-within) {
+				& > a {
+					--wght: calc(var(--ui-hvr-wght) + 200);
 
-#header div[class*="top-bar"] > ul > li > a::after {
-	--clip-path:
-		polygon(
-			100% 0,
-			100% 0,
-			100% 100%,
-			100% 100%
-		);
+					background-color: rgb(var(--topmenu-category-hover-bg));
+					color: rgb(var(--topmenu-category-hover-color));
+					font-weight: var(--wght);
 
-	clip-path: var(--clip-path);
-	right: 0;
-	bottom: 0;
-}
+					&::before {
+						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+					}
 
-#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a::before {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
-}
+					&::after {
+						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+					}
+				}
 
-#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a::after {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
-}
+				& > ul {
+					opacity: 1;
+					pointer-events: all;
 
-#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > a {
-	--wght: calc(var(--ui-hvr-wght) + 200);
+					/* Backdrop Filter Blur Support */
+					@supports (backdrop-filter: blur(1rem)) {
+						backdrop-filter: blur(0.125rem);
+					}
+				}
+			}
 
-	background-color: rgb(var(--topmenu-category-hover-bg));
-	font-weight: var(--wght);
-}
+			/* DROPDOWN MENU */
+			/* ul > li ul > li */
+			& ul {
+				& > li {
+					display: flex;
+					visibility: visible;
+					position: relative;
+					box-sizing: border-box;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					height: 2rem;
+					margin: 0;
+					padding: 0;
+					overflow: visible;
+					border-collapse: collapse;
+					transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+					box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
+					word-break: normal;
 
-/* any ul after li */
+					/* Prevent splitting in half onto the next column */
+					break-inside: avoid;
 
-#header div[class*="top-bar"] li ul {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	border-collapse: collapse;
-	transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	opacity: 0;
-}
+					/* ul > li > ul li > ul */
 
-/* any li after ul */
+					/* Prevent flyout menus from disappearing when moving to them diagonally */
+					& > ul {
+						&::before {
+							--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
 
-#header div[class*="top-bar"] > ul li:is(:hover, :active, :focus-within) {
-	/* Adding a slight bg colour change before the :before obscures it */
-	background-color: rgba(var(--dark-accent), 0.05);
-}
+							content: " ";
+							position: absolute;
+							z-index: 5;
+							top: 2rem;
+							right: 100%;
+							width: 50%;
+							height: calc(100% - 2rem);
+							clip-path: var(--clip-path);
+						}
+					}
+				}
+			}
 
-/* any a after li */
+			& > ul {
+				--box-shadow: rgba(var(--dropdown-border-color));
 
-#header div[class*="top-bar"] li a {
-	transition:
-		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+				display: flex;
+				visibility: visible;
+				position: absolute;
+				z-index: 20;
+				left: 0;
+				box-sizing: border-box;
+				flex-flow: column nowrap;
+				align-self: flex-start;
+				width: auto;
+				min-width: 100%;
+				max-width: var(--header-width-on-desktop, 61.25rem);
+				margin-top: var(--topbar-height-on-desktop);
+				border-top: none;
+				background: rgba(var(--dropdown-bg-color));
+				box-shadow: 0 0.125rem 0.375rem var(--box-shadow),
+					inset 0 0 0 0.0625rem var(--box-shadow);
+				pointer-events: none;
 
-#header div[class*="top-bar"] li:is(:hover, :active, :focus-within) a {
-	text-decoration: none;
-}
+				/* any li > a after top-bar > ul > li > ul */
 
-/* DROPDOWN MENU */
+				/* Background diagonal hover color on dropdown links */
+				& li {
+					& > a {
+						--wght: var(--ui-wght);
 
-/* ul > li > ul */
+						/* Text Positioning */
+						display: flex;
+						position: relative;
+						align-items: center;
+						justify-content: center;
+						width: 100%;
+						height: 100%;
+						padding: 0 1em;
+						overflow: hidden;
+						transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+							color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+							font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+							font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						border: 0 solid rgba(0, 0, 0, 0);
+						background: rgba(var(--dropdown-links-bg-color));
+						color: rgb(var(--dropdown-links-color));
+						font-size: calc(var(--base-font-size) * (13 / 15));
+						font-weight: var(--wght);
+						text-align: center;
+						white-space: nowrap;
 
-#header div[class*="top-bar"] > ul > li > ul {
-	--box-shadow: rgba(var(--dropdown-border-color));
+						&::before {
+							--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
-	display: flex;
-	visibility: visible;
-	position: absolute;
-	z-index: 20;
-	left: 0;
-	box-sizing: border-box;
-	flex-flow: column nowrap;
-	align-self: flex-start;
-	width: auto;
-	min-width: 100%;
-	max-width: var(--header-width-on-desktop, 61.25rem);
-	margin-top: var(--topbar-height-on-desktop);
-	border-top: none;
-	background: rgba(var(--dropdown-bg-color));
-	box-shadow:
-		0 0.125rem 0.375rem var(--box-shadow),
-		inset 0 0 0 0.0625rem var(--box-shadow);
-	pointer-events: none;
-}
+							content: " ";
+							position: absolute;
+							z-index: -1;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+							opacity: 1;
+							background-color: rgb(var(--dropdown-links-hover-bg-color));
+							pointer-events: none;
+							clip-path: var(--clip-path);
+						}
+					}
 
-#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul {
-	opacity: 1;
-	pointer-events: all;
-}
+					&:is(:hover, :active, :focus-within) {
+						& > a {
+							--wght: var(--ui-hvr-wght);
 
-#header div[class*="top-bar"] > ul:first-of-type > li:last-of-type > ul {
-	right: 0;
-	left: auto;
-}
+							color: rgb(var(--dropdown-links-hover-color));
+							font-weight: var(--wght);
 
-/* any li > a after top-bar > ul > li > ul */
+							&::before {
+								--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+							}
+						}
+					}
+				}
 
-/* Background diagonal hover color on dropdown links */
+				/* ul > li > ul > li ul */
 
-#header div[class*="top-bar"] > ul > li > ul li > a {
-	--wght: var(--ui-wght);
+				/* Flyout Nested Menus */
+				& > li {
+					& ul {
+						display: flex;
+						position: absolute;
+						z-index: 5;
+						top: 0;
+						left: calc(100% - 0.0625rem);
+						box-sizing: content-box;
+						flex-flow: column nowrap;
+						width: auto;
+						height: auto;
+						margin: 0;
+						transition: opacity 80ms cubic-bezier(0.4, 0, 0.2, 1),
+							background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+						opacity: 0;
+						background-color: rgba(var(--dropdown-bg-color));
+						pointer-events: none;
+					}
 
-	/* Text Positioning */
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	padding: 0 1em;
-	overflow: hidden;
-	transition:
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0 solid rgba(0, 0, 0, 0);
-	background: rgba(var(--dropdown-links-bg-color));
-	color: rgb(var(--dropdown-links-color));
-	font-size: calc(var(--base-font-size) * (13 / 15));
-	font-weight: var(--wght);
-	text-align: center;
-	white-space: nowrap;
-}
+					&:is(:hover, :active, :focus-within) {
+						& ul,
+						& ul:is(:hover, :active, :focus-within) {
+							opacity: 1;
+							pointer-events: all;
+						}
+					}
 
-#header div[class*="top-bar"] > ul > li > ul li > a::before {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+					/* Images in Dropdown Menu Support */
+					& > img {
+						position: initial;
+						padding: 0 0.25rem;
+						padding-left: 0;
+					}
 
-	content: " ";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	opacity: 1;
-	background-color: rgb(var(--dropdown-links-hover-bg-color));
-	pointer-events: none;
-	clip-path: var(--clip-path);
-}
+					& a {
+						&.topbar-link-w-img {
+							justify-content: start;
+							padding-left: 2.5rem;
+							text-align: left;
 
-#header div[class*="top-bar"] > ul > li > ul li:is(:hover, :active, :focus-within) > a {
-	--wght: var(--ui-hvr-wght);
+							& img {
+								position: absolute;
+								left: 0;
+							}
+						}
+					}
+				}
 
-	color: rgb(var(--dropdown-links-hover-color));
-	font-weight: var(--wght);
-}
+				/* Backdrop Filter Blur Support */
+				@supports (backdrop-filter: blur(1rem)) {
+					backdrop-filter: blur(0);
+					transition: backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
+						opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				}
+			}
+		}
 
-#header div[class*="top-bar"] > ul > li > ul li:is(:hover, :active, :focus-within) > a::before {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
-}
-
-/* ul > li ul > li */
-
-#header div[class*="top-bar"] > ul > li ul > li {
-	display: flex;
-	visibility: visible;
-	position: relative;
-	box-sizing: border-box;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 2rem;
-	margin: 0;
-	padding: 0;
-	overflow: visible;
-	border-collapse: collapse;
-	transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
-	word-break: normal;
-
-	/* Prevent splitting in half onto the next column */
-	break-inside: avoid;
-}
-
-/* ul > li > ul > li > ul */
-
-/* Flyout Nested Menus */
-
-#header div[class*="top-bar"] > ul > li > ul > li ul {
-	display: flex;
-	position: absolute;
-	z-index: 5;
-	top: 0;
-	left: calc(100% - 0.0625rem);
-	box-sizing: content-box;
-	flex-flow: column nowrap;
-	width: auto;
-	height: auto;
-	margin: 0;
-	transition:
-		opacity 80ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-	opacity: 0;
-	background-color: rgba(var(--dropdown-bg-color));
-	pointer-events: none;
-}
-
-#header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul,
-#header div[class*="top-bar"] > ul > li > ul > li:is(:hover, :active, :focus-within) ul:is(:hover, :active, :focus-within) {
-	opacity: 1;
-	pointer-events: all;
-}
-
-/* ul > li > ul li > ul */
-
-/* Prevent flyout menus from disappearing when moving to them diagonally */
-
-#header div[class*="top-bar"] > ul > li > ul li > ul::before {
-	--clip-path:
-		polygon(
-			0 0,
-			100% 0,
-			100% 100%,
-			0 0
-		);
-
-	content: " ";
-	position: absolute;
-	z-index: 5;
-	top: 2rem;
-	right: 100%;
-	width: 50%;
-	height: calc(100% - 2rem);
-	clip-path: var(--clip-path);
-}
-
-/* Images in Dropdown Menu Support */
-#header div[class*="top-bar"] > ul > li > ul > li > img {
-	position: initial;
-	padding: 0 0.25rem;
-	padding-left: 0;
-}
-
-#header div[class*="top-bar"] > ul > li > ul > li > a.topbar-link-w-img {
-	justify-content: start;
-	padding-left: 2.5rem;
-	text-align: left;
-}
-
-#header div[class*="top-bar"] > ul > li > ul > li > a.topbar-link-w-img img {
-	position: abslute;
-	left: 0;
-}
-
-/* Backdrop Filter Blur Support */
-
-@supports (backdrop-filter: blur(1rem)) {
-	#header div[class*="top-bar"] ul > li > ul {
-		backdrop-filter: blur(0);
-		transition:
-			backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
-			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		&:first-of-type {
+			& > li {
+				&:last-of-type {
+					& > ul {
+						right: 0;
+						left: auto;
+					}
+				}
+			}
+		}
 	}
 
-	#header div[class*="top-bar"] ul > li:is(:hover, :active, :focus-within) > ul {
-		backdrop-filter: blur(0.125rem);
+	& li {
+		/* any ul after li */
+		& ul {
+			display: flex;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			border-collapse: collapse;
+			transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			opacity: 0;
+		}
+
+		/* any a after li */
+		& a {
+			transition: font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+				font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		&:is(:hover, :active, :focus-within) a {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -1087,7 +1052,10 @@ div.mobile-top-bar {
 #top-bar ul li .lightbulb .lightbulb-mask,
 #top-bar ul li:is(:hover, :focus-within) .lightbulb .lightbulb-mask,
 #top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:is(:hover, :focus-within) .lightbulb .lightbulb-mask {
+#top-bar
+	> .ct-theme-switch:is(:hover, :focus-within)
+	.lightbulb
+	.lightbulb-mask {
 	width: 100%;
 	background-color: rgb(var(--topmenu-category-color)) !important;
 	background-image: initial;
@@ -1109,7 +1077,10 @@ div.mobile-top-bar {
 }
 
 #top-bar ul li:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask {
+#top-bar
+	> .ct-theme-switch:is(:hover, :active, :focus-within)
+	.lightbulb
+	.lightbulb-mask {
 	mask-image: var(--lightbulb-mask);
 }
 
@@ -1134,8 +1105,7 @@ div.mobile-top-bar {
 #top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb {
 	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
 	border-radius: 1.0625rem;
-	box-shadow:
-		0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
+	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
 		inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
 }
 
@@ -1148,12 +1118,15 @@ div.mobile-top-bar {
 }
 
 #top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask {
+#top-bar
+	> .ct-theme-switch:is(:hover, :active, :focus-within)
+	.lightbulb
+	.lightbulb-mask {
 	background-color: rgb(var(--swatch-text-secondary-color)) !important;
 }
 
 /* ===MOBILE HEADER=== */
-@media only screen and (max-width: 56.25rem) {
+@media (--viewport-tablet) {
 	/* ===MOBILE DIRECTORY===
 		1. *MAIN
 		2. *LOGIN/SEARCH BOX
@@ -1177,13 +1150,18 @@ div.mobile-top-bar {
 
 	/* ***MAIN*** */
 	:root {
-		--header-h1-font-size: calc(1.15rem + (2.405 - 1.15) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75)));
-		--header-h2-font-size: calc(0.5rem + (0.945 - 0.5) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75)));
+		--header-h1-font-size: calc(
+			1.15rem + (2.405 - 1.15) *
+				((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
+		);
+		--header-h2-font-size: calc(
+			0.5rem + (0.945 - 0.5) *
+				((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
+		);
 	}
 
 	body {
-		background-size:
-			100% var(--header-height-on-mobile),
+		background-size: 100% var(--header-height-on-mobile),
 			100% var(--final-header-height-on-mobile),
 			100% var(--background-gradient-distance);
 	}
@@ -1203,9 +1181,13 @@ div.mobile-top-bar {
 		margin: 0;
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
-		background-position:
-			calc((var(--header-height-on-mobile) - 0.75rem) - var(--size))
-			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
+		background-position: calc(
+				(var(--header-height-on-mobile) - 0.75rem) - var(--size)
+			)
+			calc(
+				((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) /
+					2
+			);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
 	}
 
@@ -1228,7 +1210,12 @@ div.mobile-top-bar {
 	}
 
 	#header h2 span {
-		margin-top: calc(((var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) + 0.5rem));
+		margin-top: calc(
+			(
+				(var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) +
+					0.5rem
+			)
+		);
 		line-height: 1;
 	}
 
@@ -1247,7 +1234,7 @@ div.mobile-top-bar {
 		user-select: none;
 	}
 
-	#login-status:is(:hover, :active, :focus-within), {
+	#login-status:is(:hover, :active, :focus-within) {
 		color: rgb(var(--login-line-divider-color));
 		pointer-events: all;
 		user-select: initial;
@@ -1258,16 +1245,9 @@ div.mobile-top-bar {
 	}
 
 	#login-status > *:not(#account-topbutton, [href*="account/messages"]) {
-		--clip-path:
-			polygon(
-				100% 0,
-				100% 0,
-				100% 100%,
-				100% 100%
-			);
+		--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
-		transition:
-			box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 			clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1276,14 +1256,9 @@ div.mobile-top-bar {
 		clip-path: var(--clip-path);
 	}
 
-	#login-status:is(:hover, :active, :focus-within) > *:not(#account-topbutton, [href*="account/messages"]) {
-		--clip-path:
-			polygon(
-				0 0,
-				100% 0,
-				100% 100%,
-				0 100%
-			);
+	#login-status:is(:hover, :active, :focus-within)
+		> *:not(#account-topbutton, [href*="account/messages"]) {
+		--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
 		opacity: 1;
 		clip-path: var(--clip-path);
@@ -1291,8 +1266,7 @@ div.mobile-top-bar {
 
 	#login-status #account-topbutton {
 		margin-left: 0;
-		transition:
-			clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		transition: clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
 			background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		background-color: transparent;
 		pointer-events: all;
@@ -1313,7 +1287,8 @@ div.mobile-top-bar {
 		background-color: rgba(var(--login-mobile-icon-color), 0);
 		cursor: pointer;
 		pointer-events: all;
-		mask: var(--user-account-mask) center right / calc(var(--account-height) - 0.5em) no-repeat;
+		mask: var(--user-account-mask) center right /
+			calc(var(--account-height) - 0.5em) no-repeat;
 	}
 
 	#login-status::before {
@@ -1340,13 +1315,7 @@ div.mobile-top-bar {
 	}
 
 	#login-status:is(:hover, :active, :focus-within) #account-topbutton {
-		--clip-path:
-			polygon(
-				30% 35%,
-				70% 35%,
-				50% 60%,
-				50% 60%
-			);
+		--clip-path: polygon(30% 35%, 70% 35%, 50% 60%, 50% 60%);
 
 		background-color: rgb(var(--login-arrow-color));
 		clip-path: var(--clip-path);
@@ -1383,21 +1352,20 @@ div.mobile-top-bar {
 		width: var(--header-width-on-mobile, 100vw);
 		margin: 0;
 		padding: 0;
-		background:
-			var(
-				--gradient-topmenu-mobile,
-				linear-gradient(
-					to bottom,
-					rgba(var(--swatch-topmenu-border-color), 1) 0,
-					rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-					rgba(var(--swatch-topmenu-bg-color), 1)
+		background: var(
+			--gradient-topmenu-mobile,
+			linear-gradient(
+				to bottom,
+				rgba(var(--swatch-topmenu-border-color), 1) 0,
+				rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
+				rgba(var(--swatch-topmenu-bg-color), 1)
 					calc(var(--topbar-height-on-mobile) - 0.125rem),
-					rgba(var(--swatch-topmenu-bg-color), 1)
+				rgba(var(--swatch-topmenu-bg-color), 1)
 					calc(var(--topbar-height-on-mobile) - 0.125rem),
-					rgba(var(--swatch-topmenu-border-color), 1)
+				rgba(var(--swatch-topmenu-border-color), 1)
 					var(--topbar-height-on-mobile)
-				)
-			);
+			)
+		);
 	}
 
 	/* ul */
@@ -1432,8 +1400,16 @@ div.mobile-top-bar {
 		translate: -50% 0;
 	}
 
-	#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul,
-	#header div[class*="top-bar"] > ul > li > ul:is(:hover, :active, :focus-within) {
+	#header
+		div[class*="top-bar"]
+		> ul
+		> li:is(:hover, :active, :focus-within)
+		> ul,
+	#header
+		div[class*="top-bar"]
+		> ul
+		> li
+		> ul:is(:hover, :active, :focus-within) {
 		translate: -50% 0;
 	}
 
@@ -1451,15 +1427,23 @@ div.mobile-top-bar {
 		text-align: center;
 	}
 
-	#header div[class*="top-bar"] > ul > li ul > li:nth-last-of-type(2):nth-of-type(even) {
-		box-shadow:
-			inset 0 0 0 0.0625rem var(--box-shadow),
+	#header
+		div[class*="top-bar"]
+		> ul
+		> li
+		ul
+		> li:nth-last-of-type(2):nth-of-type(even) {
+		box-shadow: inset 0 0 0 0.0625rem var(--box-shadow),
 			0 0.0625rem 0 0 var(--box-shadow);
 	}
 
-	#header div[class*="top-bar"] > ul > li ul > li:last-of-type:nth-of-type(odd) {
-		box-shadow:
-			inset 0 0 0 0.0625rem var(--box-shadow),
+	#header
+		div[class*="top-bar"]
+		> ul
+		> li
+		ul
+		> li:last-of-type:nth-of-type(odd) {
+		box-shadow: inset 0 0 0 0.0625rem var(--box-shadow),
 			0.0625rem 0 0 0 var(--box-shadow);
 	}
 

@@ -1,7 +1,7 @@
-import { promises as fs } from 'fs';
-import * as process2 from 'process';
+import { promises as fs } from "fs";
+import * as process2 from "process";
 
-import svgo from 'imagemin-svgo';
+import svgo from "imagemin-svgo";
 
 async function process(minifier, inputPath, outputPath) {
 	const inputBuffer = await fs.readFile(inputPath);
@@ -17,19 +17,19 @@ function main() {
 
 	let minifier;
 	switch (fileType) {
-		case 'svg':
+		case "svg":
 			minifier = svgo({
 				plugins: [
-					{ name: 'removeDoctype',active: false},
-					{ name: 'removeViewBox', active: false },
-					{ name: 'removeXMLProcInst', active: false },
-					{ name: 'collapseGroups' },
-					{ name: 'convertPathData' },
-					{ name: 'removeUselessStrokeAndFill' },
-					{ name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
-					{ name: 'mergePaths' },
-					{ name: 'sortAttrs' },
-					{ name: 'convertShapeToPath' },
+					{ name: "removeDoctype",active: false},
+					{ name: "removeViewBox", active: false },
+					{ name: "removeXMLProcInst", active: false },
+					{ name: "collapseGroups" },
+					{ name: "convertPathData" },
+					{ name: "removeUselessStrokeAndFill" },
+					{ name: "cleanupNumericValues", params: { floatPrecision: 2 } },
+					{ name: "mergePaths" },
+					{ name: "sortAttrs" },
+					{ name: "convertShapeToPath" },
 				],
 			});
 			break;

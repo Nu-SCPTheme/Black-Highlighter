@@ -68,6 +68,8 @@ $(function () {
         return "scp-zh-tr";
       case "vn":
           return "scp-vn";
+      case "nuttest":
+        return "scptestwiki";
       default:
         return null;
     }
@@ -110,6 +112,8 @@ $(function () {
         return "zh-tr";
       case "vn":
           return "vi";
+      case "nuttest":
+        return "en";
       default:
         return null;
     }
@@ -129,7 +133,7 @@ $(function () {
         // text/html parsing is natively supported
         return;
       }
-    } catch (ex) {}
+    } catch (ex) {console.error(`Polyfill for DOMParser Error: ${ex}`);}
 
     DOMParser_proto.parseFromString = function (markup, type) {
       if (/^\s*text\/html\s*(?:;|$)/i.test(type)) {
@@ -222,8 +226,8 @@ $(function () {
         )}`,
         type: "GET",
         success: function (data) {
-          const href = `href=\"https://${siteURL}.wikidot.com/`;
-          const src = `src=\"https://${siteURL}.wikidot.com/`;
+          const href = `href="https://${siteURL}.wikidot.com/`;
+          const src = `src="https://${siteURL}.wikidot.com/`;
           const dp = new DOMParser();
           let doc = dp.parseFromString(
             data
@@ -240,7 +244,7 @@ $(function () {
           }
           const newBody = doc.getElementsByTagName("body")[0];
           const iframesReplace = document.getElementsByTagName("iframe");
-          const [htmlTag] = document.getElementsByTagName('html');
+          const [htmlTag] = document.getElementsByTagName("html");
 
           bhlMinDetect = String(newHeadContents).indexOf(
             "black-highlighter.min.css"
@@ -253,7 +257,7 @@ $(function () {
             .after("\n");
           document.getElementsByTagName("body")[0].appendChild(newBody);
           
-          htmlTag.setAttribute('lang', siteLang);
+          htmlTag.setAttribute("lang", siteLang);
 
           $(iframesReplace).each(function (idx, el) {
             el.src = `https://api.codetabs.com/v1/proxy/?quest=${el.src}`;
@@ -275,7 +279,7 @@ $(function () {
       let lTime = 500;
       let sTime = 500;
       let bTime = 2000;
-      $(links).each(function (idx, el) {
+      $(links).each(function (idx) {
         setTimeout(function () {
           let link = document.createElement("link");
           const lHref = links[idx].getAttribute("href");
@@ -294,7 +298,7 @@ $(function () {
         }, lTime);
         lTime += 500;
       });
-      $(scripts).each(function (idx, el) {
+      $(scripts).each(function (idx) {
         setTimeout(function () {
           let script = document.createElement("script");
           const pSrc = scripts[idx].getAttribute("src");
@@ -314,7 +318,7 @@ $(function () {
         }, sTime);
         sTime += 500;
       });
-      $(bScripts).each(function (idx, el) {
+      $(bScripts).each(function (idx) {
         setTimeout(function () {
           let script = document.createElement("script");
           const bSrc = bScripts[idx].getAttribute("src");

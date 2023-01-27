@@ -71,11 +71,24 @@
 		/* Sidebar Width */
 		var(--sidebar-width-on-desktop)
 		/* Space Between Sidebar and Content Width */
-		calc((((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) - (var(--sidebar-width-on-desktop)) * 3) / 2)
+		calc(
+			(
+					((100vw - (100vw - 100%)) - var(--body-width-on-desktop)) -
+						(var(--sidebar-width-on-desktop)) * 3
+				) / 2
+		)
 		/* Content Width */
 		1fr
 		/* Space Between Content and Scrollbar Width */
-		calc(((100vw - (100vw - 100%)) - (var(--body-width-on-desktop) + (var(--sidebar-width-on-desktop)))) / 2);
+		calc(
+			(
+					(100vw - (100vw - 100%)) -
+						(
+							var(--body-width-on-desktop) +
+								(var(--sidebar-width-on-desktop))
+						)
+				) / 2
+		);
 	width: calc(100vw - (100vw - 100%));
 	height: auto;
 	min-height: calc(100vh - var(--final-header-height-on-desktop));
@@ -112,8 +125,9 @@
 }
 
 /* Mobile Chrome Width Fix */
-@supports (not (-webkit-hyphens:none)) and (not (-moz-appearance:none)) and (list-style-type:"*") {
-	@media only screen and (max-width: 56.25rem) {
+@supports (not (-webkit-hyphens: none)) and (not (-moz-appearance: none)) and
+	(list-style-type: "*") {
+	@media (--viewport-tablet) {
 		#main-content > * {
 			max-width: min(90vw, var(--body-width-on-desktop));
 		}
@@ -145,7 +159,7 @@
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 }
 
-@media only screen and (min-width: 56.25rem) {
+@media (--viewport-desktop) {
 	#page-title,
 	.meta-title {
 		font-size: 2em;
@@ -167,8 +181,7 @@
 
 /* ===BREADCRUMBS=== */
 
-#breadcrumbs,
-.pseudocrumbs {
+:is(#breadcrumbs, .pseudocrumbs) {
 	display: flex;
 	position: relative;
 	grid-area: breadcrumbs;
@@ -183,10 +196,8 @@
 	line-height: 2;
 }
 
-#breadcrumbs a,
-.pseudocrumbs a,
-#breadcrumbs a:visited,
-.pseudocrumbs a:visited {
+:is(#breadcrumbs, .pseudocrumbs) a,
+:is(#breadcrumbs, .pseudocrumbs) a:visited {
 	display: flex;
 	position: relative;
 	z-index: 2;
@@ -195,16 +206,13 @@
 	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#breadcrumbs a:is(:hover, :active, :focus-within),
-.pseudocrumbs a:is(:hover, :active, :focus-within) {
+:is(#breadcrumbs, .pseudocrumbs) a:is(:hover, :active, :focus, :focus-within) {
 	color: rgb(var(--swatch-text-secondary-color));
 	text-decoration: none;
 }
 
-#breadcrumbs a::before,
-.pseudocrumbs a::before,
-#breadcrumbs a:visited::before,
-.pseudocrumbs a:visited::before {
+:is(#breadcrumbs, .pseudocrumbs) a::before,
+:is(#breadcrumbs, .pseudocrumbs) a:visited::before {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -213,22 +221,19 @@
 	width: 100%;
 	height: 100%;
 	transform: skew(-25deg);
-	transition:
-		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background: transparent;
-	box-shadow:
-		0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1),
+	box-shadow: 0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1),
 		0.25rem 0.0625rem 0 0 rgba(var(--background-gradient-color), 0.7),
 		0.25rem 0.0625rem 0 0 rgba(var(--swatch-background), 1),
 		0.3125rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1);
 }
 
-#breadcrumbs a:is(:hover, :active, :focus-within)::before,
-.pseudocrumbs a:is(:hover, :active, :focus-within)::before {
+:is(#breadcrumbs, .pseudocrumbs)
+	a:is(:hover, :active, :focus, :focus-within)::before {
 	background-color: rgb(var(--swatch-primary));
-	box-shadow:
-		0 0 0 0.25rem rgba(var(--swatch-primary), 1),
+	box-shadow: 0 0 0 0.25rem rgba(var(--swatch-primary), 1),
 		0 0 0 0 rgba(var(--background-gradient-color), 0),
 		0 0 0 0 rgba(var(--swatch-background), 0),
 		0 0 0 0 rgba(var(--swatch-primary), 0);
@@ -286,8 +291,7 @@ div.page-watch-options a:visited {
 
 	margin: -0.15em 0;
 	padding: 0.15em;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -297,7 +301,7 @@ div.page-watch-options a:visited {
 	text-decoration: underline dotted 0.09375rem;
 }
 
-div.page-watch-options a:is(:hover, :active, :focus-within) {
+div.page-watch-options a:is(:hover, :active, :focus, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght) + 200);
 
 	box-shadow: inset -30vw 0 0 0 rgb(var(--swatch-primary));
@@ -336,13 +340,12 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 }
 
 #main-content .page-tags span {
-	--clip-path:
-		polygon(
-			0 0,
-			calc(100% - 0.0625rem) 0,
-			calc(100% - 0.0625rem) 100%,
-			0 100%
-		);
+	--clip-path: polygon(
+		0 0,
+		calc(100% - 0.0625rem) 0,
+		calc(100% - 0.0625rem) 100%,
+		0 100%
+	);
 
 	display: flex;
 	position: relative;
@@ -363,6 +366,8 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]),
 #main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"]) {
 	--wght: calc(var(--ui-wght));
+	--link-color: var(--pagetags-text-color);
+	--hover-link-color: var(--pagetags-text-hover-color);
 
 	display: inline-flex;
 	position: relative;
@@ -373,31 +378,30 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 	margin: 0.2em -0.2em 0.2em 0.2em;
 	padding: 0.1em 0.4em 0.1em 0.3em;
 	overflow: hidden;
-	transition:
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	font-weight: var(--wght);
 	line-height: 1;
-
-	--link-color: var(--pagetags-text-color);
-	--hover-link-color: var(--pagetags-text-hover-color);
 }
 
-#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"], :last-child),
-#main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"], :last-child) {
+#main-content
+	.page-tags
+	span
+	a:not([href^="/system:page-tags/tag/_"], :last-child),
+#main-content
+	.page-tags
+	span
+	a:visited:not([href^="/system:page-tags/tag/_"], :last-child) {
 	border-right: 0.0625rem dotted rgba(var(--pagetags-text-color), 0.5);
 }
 
 #main-content .page-tags span a:not([href^="/system:page-tags/tag/_"])::before,
-#main-content .page-tags span a:visited:not([href^="/system:page-tags/tag/_"])::before {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+#main-content
+	.page-tags
+	span
+	a:visited:not([href^="/system:page-tags/tag/_"])::before {
+	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 	content: " ";
 	position: absolute;
@@ -413,11 +417,18 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 	clip-path: var(--clip-path);
 }
 
-#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):is(:hover, :active, :focus-within) {
+#main-content
+	.page-tags
+	span
+	a:not([href^="/system:page-tags/tag/_"]):is(
+		:hover,
+		:active,
+		:focus,
+		:focus-within
+	) {
 	--wght: calc(var(--ui-hvr-wght));
 
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -425,14 +436,16 @@ div.page-watch-options a:is(:hover, :active, :focus-within) {
 	text-decoration: none;
 }
 
-#main-content .page-tags span a:not([href^="/system:page-tags/tag/_"]):is(:hover, :active, :focus-within)::before {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
+#main-content
+	.page-tags
+	span
+	a:not([href^="/system:page-tags/tag/_"]):is(
+		:hover,
+		:active,
+		:focus,
+		:focus-within
+	)::before {
+	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 /* Hiding Hidden Tags */
@@ -457,6 +470,8 @@ div#page-options-area-bottom {
 
 div[id*="page-options-bottom"] {
 	--wght: var(--ui-wght);
+	--icon-size: 1.5em;
+	--icon-size: max(1.5em, min(5vmin, 2em));
 
 	display: flex;
 	flex-wrap: wrap;
@@ -469,12 +484,10 @@ div[id*="page-options-bottom"] {
 	font-weight: var(--wght);
 	text-align: left;
 	white-space: nowrap;
-
-	--icon-size: 1.5em;
-	--icon-size: max(1.5em, min(5vmin, 2em));
 }
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
+div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn {
 	--button-padding: calc(var(--icon-size) / 8);
 
 	flex-basis: 5rem;
@@ -482,21 +495,29 @@ div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) 
 	margin: 0 0.5ch 1ch;
 	padding: var(--button-padding);
 	padding-left: calc(var(--icon-size) + 0.5em);
-	box-shadow:
-		0 0 0 0 rgb(var(--ui-button-hover-outline)),
+	box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline)),
 		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
 	line-height: 1.5;
 }
 
-@media only screen and (max-width: 56.25rem) {
-	div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
+@media (--viewport-tablet) {
+	div[id*="page-options-bottom"]:not(
+			.page-rate-widget-box,
+			#search-top-box-form
+		)
+		> a.btn {
 		--button-padding: calc(var(--icon-size) / 4);
 	}
 }
 
-div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form) > a.btn:is(:hover, :active, :focus-within) {
-	box-shadow:
-		0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
+div[id*="page-options-bottom"]:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn:is(:hover, :active, :focus),
+div[id*="page-options-bottom"]:not(
+		.page-rate-widget-box,
+		#search-top-box-form
+	):is(:focus-within)
+	> a.btn {
+	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
 		inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
 }
 
@@ -514,10 +535,12 @@ div[id*="page-options-bottom"] > a::after {
 	translate: 0 -50%;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--ui-icon-color));
-	mask: var(--button-icon) center center / calc(var(--icon-size) - 0.5em) no-repeat;
+	mask: var(--button-icon) center center / calc(var(--icon-size) - 0.5em)
+		no-repeat;
 }
 
-div[id*="page-options-bottom"] > a:is(:hover, :active, :focus-within)::after {
+div[id*="page-options-bottom"]
+	> a:is(:hover, :active, :focus, :focus-within)::after {
 	background-color: rgb(var(--ui-icon-hover-color));
 }
 
@@ -657,8 +680,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	margin: 0.2em;
 	padding: 0.2em;
 	overflow: hidden;
-	transition:
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
@@ -667,13 +689,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 }
 
 #footer a::before {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 	content: " ";
 	position: absolute;
@@ -689,11 +705,10 @@ div[id*="page-options-bottom"] > a#delete-button {
 	clip-path: var(--clip-path);
 }
 
-#footer a:is(:hover, :active, :focus-within) {
+#footer a:is(:hover, :active, :focus, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
 
-	transition:
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--hover-link-color));
@@ -701,14 +716,8 @@ div[id*="page-options-bottom"] > a#delete-button {
 	text-decoration: none;
 }
 
-#footer a:is(:hover, :active, :focus-within)::before {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
+#footer a:is(:hover, :active, :focus, :focus-within)::before {
+	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 /* ===LICENSE BOX=== */
@@ -745,8 +754,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	margin: 0.2em;
 	padding: 0.2em;
 	overflow: hidden;
-	transition:
-		text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: text-decoration 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -756,13 +764,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 }
 
 #license-area a::before {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 	content: " ";
 	position: absolute;
@@ -778,25 +780,18 @@ div[id*="page-options-bottom"] > a#delete-button {
 	clip-path: var(--clip-path);
 }
 
-#license-area a:is(:hover, :active, :focus-within) {
+#license-area a:is(:hover, :active, :focus, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
 
-	transition:
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	font-weight: var(--wght);
 	text-decoration: none;
 }
 
-#license-area a:is(:hover, :active, :focus-within)::before {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
+#license-area a:is(:hover, :active, :focus, :focus-within)::before {
+	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 /* ===ACTION AREA=== */
@@ -843,7 +838,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 	font-size: 1em;
 }
 
-@media only screen and (min-width: 56.25rem) {
+@media (--viewport-desktop) {
 	#action-area h1 {
 		font-size: 1.5375em;
 	}
@@ -892,8 +887,7 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	min-width: 5em;
 	padding: 0.25em;
 	overflow: hidden;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -905,10 +899,11 @@ div#action-area > a.btn-danger[href="javascript:;"],
 	color: rgb(var(--swatch-text-tertiary-color));
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
-	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, font-weight,
+		font-variation-settings;
 }
 
-#action-area a.action-area-close:is(:hover, :active, :focus-within) {
+#action-area a.action-area-close:is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -939,8 +934,7 @@ form#edit-page-form:not(.data-form) {
 	grid-template-columns: repeat(6, 1fr);
 	padding: 0;
 	background-color: transparent;
-	box-shadow:
-		-0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
+	box-shadow: -0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 		0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 		0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 	font-size: 0.8125rem;
@@ -996,8 +990,7 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	margin: calc(-0.75em + 0.0625rem) 1rem -0.75em 1rem;
 	padding: 0 0.25em;
 	translate: 0 0;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		translate 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1010,7 +1003,8 @@ form#edit-page-form table.form:first-of-type td:first-of-type {
 	font-size: 0.8em;
 	font-weight: var(--wght);
 	text-transform: uppercase;
-	will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, translate, font-weight,
+		font-variation-settings;
 }
 
 form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type {
@@ -1025,28 +1019,36 @@ form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type {
 }
 
 /* Template Dropdown Styling */
-form#edit-page-form table.form:first-of-type tr:not(:only-of-type):first-of-type > td:last-of-type {
-	grid-column: 1/span 5;
+form#edit-page-form
+	table.form:first-of-type
+	tr:not(:only-of-type):first-of-type
+	> td:last-of-type {
+	grid-column: 1 / span 5;
 }
 
-form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:last-of-type {
+form#edit-page-form
+	table.form:first-of-type
+	tr:not(:only-of-type):last-of-type
+	> td:last-of-type {
 	display: grid;
-	grid-column: 6/span 1;
+	grid-column: 6 / span 1;
 	align-items: center;
 	justify-content: center;
 	padding: 0 1em 0 0;
 }
 
-form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:first-of-type {
-	grid-column: 6/span 1;
+form#edit-page-form
+	table.form:first-of-type
+	tr:not(:only-of-type):last-of-type
+	> td:first-of-type {
+	grid-column: 6 / span 1;
 }
 
 form#edit-page-form #page-templates {
 	--wght: var(--ui-wght);
 
 	padding: 0.25rem;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1056,7 +1058,8 @@ form#edit-page-form #page-templates {
 	box-shadow: inset 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color), 0.3625);
 
 	/* Overwrite Wikidot Inline Styling */
-	will-change: box-shadow, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, background-color, font-weight,
+		font-variation-settings;
 }
 
 form#edit-page-form #page-templates option {
@@ -1112,8 +1115,7 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	width: calc(100% - 2em);
 	margin: 0.5em 1rem;
 	padding: 0.25em;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1124,14 +1126,21 @@ form#edit-page-form table.form:first-of-type td:last-of-type input {
 	font-weight: var(--wght);
 
 	/* Overwrite Wikidot Inline Styling */
-	will-change: box-shadow, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, background-color, font-weight,
+		font-variation-settings;
 }
 
-form#edit-page-form table.form:first-of-type td:last-of-type input:not(:placeholder-shown) {
+form#edit-page-form
+	table.form:first-of-type
+	td:last-of-type
+	input:not(:placeholder-shown) {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 }
 
-form#edit-page-form table.form:first-of-type td:last-of-type input:placeholder-shown {
+form#edit-page-form
+	table.form:first-of-type
+	td:last-of-type
+	input:placeholder-shown {
 	background-color: rgba(var(--swatch-primary-darker), 0.2);
 }
 
@@ -1145,7 +1154,10 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus {
 	font-weight: var(--wght);
 }
 
-form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within {
+form#edit-page-form
+	table.form:first-of-type
+	td:last-of-type
+	input:focus-within {
 	--wght: var(--ui-hvr-wght);
 
 	border: none;
@@ -1155,7 +1167,10 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-within 
 	font-weight: var(--wght);
 }
 
-form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible {
+form#edit-page-form
+	table.form:first-of-type
+	td:last-of-type
+	input:focus-visible {
 	--wght: var(--ui-hvr-wght);
 
 	border: none;
@@ -1169,7 +1184,10 @@ form#edit-page-form table.form:first-of-type td:last-of-type input:focus-visible
 
 form#edit-page-form .wd-editor-toolbar-panel {
 	--icon-size: 1.5em;
-	--icon-size: max(1.5em, min(5.75vw, calc((var(--body-width-on-desktop) - 6em) / 22)));
+	--icon-size: max(
+		1.5em,
+		min(5.75vw, calc((var(--body-width-on-desktop) - 6em) / 22))
+	);
 
 	display: grid;
 	position: relative;
@@ -1193,8 +1211,7 @@ form#edit-page-form .wd-editor-toolbar-panel {
 	box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-tertiary-color));
 }
 
-@media only screen and (max-width: 30rem),
-	(orientation: portrait) {
+@media (--viewport-mobile), (orientation: portrait) {
 	form#edit-page-form .wd-editor-toolbar-panel {
 		grid-template-areas:
 			"header-h1 bold-txt italic-txt underline-txt strike-txt super-txt sub-txt raw-txt teletype-txt . ordered-list unordered-list increment-list decrement-list"
@@ -1223,13 +1240,7 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li {
 }
 
 form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 	display: grid;
 	top: 0;
@@ -1240,8 +1251,7 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
 	height: var(--icon-size);
 	padding-left: 0;
 	overflow: hidden;
-	transition:
-		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
 		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 	border: none;
@@ -1251,19 +1261,17 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
 	clip-path: var(--clip-path);
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :focus-within, .sfhover) > ul {
-	--clip-path:
-		polygon(
-			0 0,
-			100% 0,
-			100% 100%,
-			0 100%
-		);
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div
+	> ul
+	> li:is(:hover, :active, :focus-within, .sfhover)
+	> ul {
+	--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
 	left: var(--icon-size);
 	padding-left: 0.125em;
-	transition:
-		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
 		box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
 		padding-left 100ms cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
@@ -1299,21 +1307,19 @@ form#edit-page-form .wd-editor-toolbar-panel a::before {
 	width: 100%;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--editor-icon-color));
-	mask: var(--edit-menu-mask) center center / calc(var(--icon-size) * 0.8) no-repeat;
+	mask: var(--edit-menu-mask) center center / calc(var(--icon-size) * 0.8)
+		no-repeat;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::before {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	li:is(:hover, :active, :focus-within)
+	> a::before {
 	background-color: rgb(var(--editor-icon-hover-color));
 }
 
 form#edit-page-form .wd-editor-toolbar-panel a::after {
-	--clip-path:
-		polygon(
-			0 0,
-			0 0,
-			0 100%,
-			0 100%
-		);
+	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 	z-index: 0;
 	width: 100%;
@@ -1325,153 +1331,290 @@ form#edit-page-form .wd-editor-toolbar-panel a::after {
 	clip-path: var(--clip-path);
 }
 
-form#edit-page-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::after {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	li:is(:hover, :active, :focus-within)
+	> a::after {
+	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(1) {
 	grid-area: header-h1;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(2) {
 	grid-area: bold-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(3) {
 	grid-area: italic-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(4) {
 	grid-area: underline-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(5) {
 	grid-area: strike-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(6) {
 	grid-area: teletype-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(7) {
 	grid-area: quote-block;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(8) {
 	grid-area: super-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(9) {
 	grid-area: sub-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(1)
+	> ul
+	> li:nth-of-type(10) {
 	grid-area: raw-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(1) {
 	grid-area: hr-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(2) {
 	grid-area: div-block;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(3) {
 	grid-area: clear-all-fl;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(4) {
 	grid-area: create-table;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(5) {
 	grid-area: create-toc;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(7) {
 	grid-area: code-block;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(8) {
 	grid-area: code-wizard;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(10) {
 	grid-area: url-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(11) {
 	grid-area: url-wizard;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(12) {
 	grid-area: page-link-txt;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(13) {
 	grid-area: page-link-wizard;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(15) {
 	grid-area: image-block;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(16) {
 	grid-area: image-wizard;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(2)
+	> ul
+	> li:nth-of-type(18) {
 	grid-area: html-block;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(1) {
 	grid-area: ordered-list;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(2) {
 	grid-area: unordered-list;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(3) {
 	grid-area: increment-list;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(4) {
 	grid-area: decrement-list;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(5) {
 	grid-area: definition-list;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(6) {
 	grid-area: create-footnote;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(8) {
 	grid-area: math-block;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(9) {
 	grid-area: math-inline;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(10) {
 	grid-area: equation-ref;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(12) {
 	grid-area: bibliography;
 }
 
-form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13) {
+form#edit-page-form
+	.wd-editor-toolbar-panel
+	div:nth-of-type(3)
+	> ul
+	> li:nth-of-type(13) {
 	grid-area: bib-cite;
 }
 
@@ -1649,8 +1792,7 @@ form#edit-page-form #wd-editor-toolbar-panel + div {
 	position: relative;
 	grid-area: editbox;
 	padding: 0.125em 0;
-	box-shadow:
-		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.25),
+	box-shadow: inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.25),
 		inset 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.25);
 }
 
@@ -1709,7 +1851,9 @@ form#edit-page-form .edit-help-34 > a:nth-of-type(1) {
 }
 
 form#edit-page-form .edit-help-34 > a:nth-of-type(2)::before,
-form#edit-page-form .edit-help-34 > a:nth-of-type(2):is(:hover, :active, :focus-within)::before {
+form#edit-page-form
+	.edit-help-34
+	> a:nth-of-type(2):is(:hover, :active, :focus, :focus-within)::before {
 	content: " | ";
 	position: absolute;
 	left: -1em;
@@ -1717,13 +1861,7 @@ form#edit-page-form .edit-help-34 > a:nth-of-type(2):is(:hover, :active, :focus-
 }
 
 form#edit-page-form .edit-help-34 > a::after {
-	--clip-path:
-		polygon(
-			100% 0,
-			100% 0,
-			100% 100%,
-			100% 100%
-		);
+	--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
 	content: " ";
 	position: absolute;
@@ -1738,11 +1876,12 @@ form#edit-page-form .edit-help-34 > a::after {
 	clip-path: var(--clip-path);
 }
 
-form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus-within) {
+form#edit-page-form
+	.edit-help-34
+	> a:is(:hover, :active, :focus, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght));
 
-	transition:
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--swatch-background));
@@ -1750,14 +1889,10 @@ form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus-within) {
 	text-decoration: none;
 }
 
-form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus-within)::after {
-	--clip-path:
-		polygon(
-			-15% 0,
-			115% 0,
-			100% 100%,
-			0 100%
-		);
+form#edit-page-form
+	.edit-help-34
+	> a:is(:hover, :active, :focus, :focus-within)::after {
+	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 }
 
 /* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
@@ -1784,8 +1919,7 @@ form#edit-page-form .change-textarea-size a {
 	width: 1.125em;
 	height: 1.125em;
 	padding: 0;
-	transition:
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1796,7 +1930,9 @@ form#edit-page-form .change-textarea-size a {
 	font-weight: var(--wght);
 }
 
-form#edit-page-form .change-textarea-size a:is(:hover, :active, :focus-within) {
+form#edit-page-form
+	.change-textarea-size
+	a:is(:hover, :active, :focus, :focus-within) {
 	--wght: calc(var(--ui-hvr-wght) + 100);
 
 	background-color: rgba(var(--swatch-primary));
@@ -1804,7 +1940,11 @@ form#edit-page-form .change-textarea-size a:is(:hover, :active, :focus-within) {
 }
 
 /* ===EDITOR DESCRIPTION BOX=== */
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1) {
 	--wght: var(--ui-hvr-wght);
 
 	display: grid;
@@ -1821,7 +1961,11 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	font-weight: var(--wght);
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1)::before {
 	content: "Short Description of Changes:";
 	position: absolute;
 	z-index: 2;
@@ -1829,8 +1973,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	left: 1rem;
 	padding: 0.15625em;
 	translate: 0 0;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -1842,7 +1985,11 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	will-change: box-shadow, color, background-color;
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1):focus-within::before {
 	translate: 0 -0.25em;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-primary), 1);
@@ -1850,11 +1997,21 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	color: rgb(var(--swatch-background));
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1)
+	br {
 	display: none;
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1)
+	textarea {
 	--wght: var(--ui-wght);
 
 	z-index: 1;
@@ -1863,8 +2020,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	min-height: 7em;
 	margin: -1.325em auto 0;
 	padding: 0.75em 0.5em 0.5em;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -1874,17 +2030,32 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 	will-change: box-shadow, background-color;
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown) {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1)
+	textarea:not(:placeholder-shown) {
 	background-color: rgba(var(--swatch-primary-darker), 0.05);
 	color: rgb(var(--swatch-menutxt-general-color));
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1)
+	textarea:placeholder-shown {
 	background-color: rgba(var(--swatch-primary-darker), 0.4);
 	color: rgb(var(--swatch-menutxt-general-color));
 }
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea {
+form#edit-page-form
+	.edit-page-bottomtable
+	tr
+	> td:nth-of-type(1)
+	> div:nth-of-type(1):focus-within
+	textarea {
 	border: none;
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgba(var(--swatch-secondary-color), 0);
@@ -1957,8 +2128,7 @@ form#edit-page-form div.buttons {
 	margin: 0;
 	padding: 0.25em;
 	overflow: hidden;
-	transition:
-		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1971,10 +2141,12 @@ form#edit-page-form div.buttons {
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
-	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+	will-change: border-color, box-shadow, color, background-color, font-weight,
+		font-variation-settings;
 }
 
-#action-area a[onclick*="PageRateModule"]:is(:hover, :active, :focus-within) {
+#action-area
+	a[onclick*="PageRateModule"]:is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	border-color: transparent;
@@ -2162,7 +2334,7 @@ table.page-history tr[id*="evision-row"] {
 	padding: 0 0 0.5em;
 }
 
-table.page-history tr:nth-child(n+3) {
+table.page-history tr:nth-child(n + 3) {
 	padding: 0.5em 0;
 }
 
@@ -2235,8 +2407,7 @@ table.page-history td.optionstd a {
 	margin: 0 auto;
 	padding: 0.125rem;
 	overflow: hidden;
-	transition:
-		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2249,10 +2420,11 @@ table.page-history td.optionstd a {
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
-	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+	will-change: border-color, box-shadow, color, background-color, font-weight,
+		font-variation-settings;
 }
 
-table.page-history td.optionstd a:is(:hover, :active, :focus-within) {
+table.page-history td.optionstd a:is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	border-color: transparent;
@@ -2354,7 +2526,10 @@ table.page-files tr[id*="file-options"] {
 }
 
 table.page-files tr[id*="file-row"]:nth-of-type(odd),
-table.page-files tr[id*="file-row"]:nth-of-type(odd) + table.page-files tr[id*="file-options"],
+table.page-files
+	tr[id*="file-row"]:nth-of-type(odd)
+	+ table.page-files
+	tr[id*="file-options"],
 table.page-files tr[id*="file-row"]:nth-of-type(odd) + .highlight {
 	background-color: rgba(var(--swatch-tertiary-color), 0.2);
 }
@@ -2399,8 +2574,7 @@ table.page-files tr > td > a:visited:not(.btn) {
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
-	transition:
-		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2415,7 +2589,10 @@ table.page-files tr > td > a:visited:not(.btn) {
 	box-decoration-break: clone;
 }
 
-table.page-files tr > td > a:not(.btn):is(:hover, :active, :focus-within) {
+table.page-files
+	tr
+	> td
+	> a:not(.btn):is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	box-shadow: inset 0 -5em 0 0 rgb(var(--swatch-primary));
@@ -2424,7 +2601,11 @@ table.page-files tr > td > a:not(.btn):is(:hover, :active, :focus-within) {
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
-table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
+table.page-files
+	tbody
+	tr
+	td:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn {
 	margin: 0 0.5em;
 }
 
@@ -2456,8 +2637,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	margin: -0.0625rem 0.5rem -0.0625rem -0.0625rem;
 	padding: 0.25em;
 	overflow: hidden;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2472,7 +2652,12 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	cursor: pointer;
 }
 
-#upload-userfile[type="file"]::file-selector-button:is(:hover, :active, :focus-within) {
+#upload-userfile[type="file"]::file-selector-button:is(
+		:hover,
+		:active,
+		:focus,
+		:focus-within
+	) {
 	--wght: var(--ui-hvr-wght);
 
 	background-color: rgb(var(--ui-button-hover-bg));
@@ -2528,7 +2713,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 }
 
-@media only screen and (min-width: 56.25rem) {
+@media (--viewport-desktop) {
 	#site-tools-box::before {
 		font-size: 1.5375em;
 	}
@@ -2557,8 +2742,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	margin: 0;
 	padding: 0.25em;
 	overflow: hidden;
-	transition:
-		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2571,10 +2755,11 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
-	will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, font-weight,
+		font-variation-settings;
 }
 
-#site-tools-box ul.nav li a:is(:hover, :active, :focus-within) {
+#site-tools-box ul.nav li a:is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	border-color: transparent;
@@ -2673,8 +2858,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	clear: both;
 	border: none;
 	background-color: rgb(var(--swatch-secondary-color));
-	box-shadow:
-		inset 0.25rem 0 0 0 rgba(var(--swatch-primary), 1),
+	box-shadow: inset 0.25rem 0 0 0 rgba(var(--swatch-primary), 1),
 		-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
 		inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
@@ -2718,8 +2902,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	display: flex;
 	align-items: center;
 	padding: 0 0.5em;
-	transition:
-		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2730,7 +2913,13 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
-#st-action-area > a:not(.btn, [href="javascript:;"]):is(:hover, :active, :focus-within) {
+#st-action-area
+	> a:not(.btn, [href="javascript:;"]):is(
+		:hover,
+		:active,
+		:focus,
+		:focus-within
+	) {
 	--wght: var(--ui-hvr-wght);
 
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
@@ -2739,7 +2928,9 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 
-#st-action-area div:not(.wanted-pages-module) a:nth-of-type(n):not([href="javascript:;"]) {
+#st-action-area
+	div:not(.wanted-pages-module)
+	a:nth-of-type(n):not([href="javascript:;"]) {
 	justify-content: flex-end;
 }
 
@@ -2772,8 +2963,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	width: 100%;
 	padding: 0 1em 0 0.6em;
 	padding: 0 1em;
-	transition:
-		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2784,7 +2974,13 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
-#action-area a[onclick*="deleteTag"]:not(.btn):is(:hover, :active, :focus-within) {
+#action-area
+	a[onclick*="deleteTag"]:not(.btn):is(
+		:hover,
+		:active,
+		:focus,
+		:focus-within
+	) {
 	--wght: var(--ui-hvr-wght);
 
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
@@ -2838,8 +3034,7 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	width: fit-content;
 	margin-right: 0 !important;
 	padding: 0 1em;
-	transition:
-		color 160ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: color 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -2850,7 +3045,14 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 
-#action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] > div a:is(:hover, :active, :focus-within) {
+#action-area
+	a
+	+ h1
+	+ p
+	+ h2
+	~ div[style="padding-left:3em;"]
+	> div
+	a:is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
@@ -2864,10 +3066,17 @@ table.page-files tbody tr td:not(.page-rate-widget-box, #search-top-box-form) > 
 	grid-auto-flow: row;
 	grid-gap: 1em;
 	gap: 1em;
-	grid-template-columns: repeat(auto-fill, minmax(calc(var(--body-width-on-desktop) / 4), 1fr));
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(calc(var(--body-width-on-desktop) / 4), 1fr)
+	);
 }
 
-#action-area > form:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) {
+#action-area
+	> form:nth-child(4)
+	> table:nth-child(1)
+	> tbody:nth-child(1)
+	> tr:nth-child(1) {
 	display: flex;
 	justify-content: center;
 }
@@ -2934,8 +3143,7 @@ div.odialog-shader-iframe {
 	translate: -50% -50%;
 	border: none;
 	background-color: rgb(var(--modal-bg));
-	box-shadow:
-		inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color), 0.25),
+	box-shadow: inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color), 0.25),
 		0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color), 0.25);
 	color: rgb(var(--modal-body-text));
 }
@@ -2950,17 +3158,16 @@ div.odialog-shader-iframe {
 	margin: 0;
 	padding: 1.5ex 1.25rem;
 	background-color: rgb(var(--modal-header-bg));
-	background-image:
-		linear-gradient(
-			125deg,
-			rgba(var(--modal-header-stripe), 0.75) 25%,
-			transparent 25%,
-			transparent 50%,
-			rgba(var(--modal-header-stripe), 0.75) 50%,
-			rgba(var(--modal-header-stripe), 0.75) 75%,
-			transparent 75%,
-			transparent 100%
-		);
+	background-image: linear-gradient(
+		125deg,
+		rgba(var(--modal-header-stripe), 0.75) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(var(--modal-header-stripe), 0.75) 50%,
+		rgba(var(--modal-header-stripe), 0.75) 75%,
+		transparent 75%,
+		transparent 100%
+	);
 	background-size: 3rem 4.35rem;
 	color: rgb(var(--modal-header-txt));
 	font-family: var(--header-font);
@@ -3012,19 +3219,37 @@ div.odialog-shader-iframe {
 	box-shadow: 0 -0.0625rem 0 0 rgba(var(--modal-header-stripe), 0.2);
 }
 
-#odialog-container .title.modal-header *:not(.page-rate-widget-box, #search-top-box-form) > a.btn,
-#odialog-container .owindow *:not(.page-rate-widget-box, #search-top-box-form) > a.btn {
+#odialog-container
+	.title.modal-header
+	*:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn,
+#odialog-container
+	.owindow
+	*:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn {
 	background-color: rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 }
 
-#odialog-container .title.modal-header *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:not(:last-of-type),
-#odialog-container .owindow *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:not(:last-of-type) {
+#odialog-container
+	.title.modal-header
+	*:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn:not(:last-of-type),
+#odialog-container
+	.owindow
+	*:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn:not(:last-of-type) {
 	margin-right: 0.5em;
 }
 
-#odialog-container .title.modal-header *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:is(:hover, :active, :focus-within),
-#odialog-container .owindow *:not(.page-rate-widget-box, #search-top-box-form) > a.btn:is(:hover, :active, :focus-within) {
+#odialog-container
+	.title.modal-header
+	*:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn:is(:hover, :active, :focus, :focus-within),
+#odialog-container
+	.owindow
+	*:not(.page-rate-widget-box, #search-top-box-form)
+	> a.btn:is(:hover, :active, :focus, :focus-within) {
 	background-color: rgba(var(--ui-button-hover-bg), 1);
 	color: rgb(var(--ui-button-hover-txt));
 }
@@ -3065,7 +3290,10 @@ div.odialog-shader-iframe {
 }
 
 /* User Screen Styling */
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child {
 	grid-column: 1;
 	grid-row: 1;
 	width: fit-content;
@@ -3076,40 +3304,73 @@ div.odialog-shader-iframe {
 	box-shadow: 0 0 0 0.25rem rgb(var(--swatch-primary-darkest));
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child + h1 {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	+ h1 {
 	display: inline-flex;
-	grid-column: 1/ span 2;
+	grid-column: 1 / span 2;
 	grid-row: 1;
 	align-self: center;
 	width: calc(100% - 7.5rem);
 	margin-left: 7.5rem;
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table tbody,
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table tr {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	tbody,
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	tr {
 	display: contents;
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table {
 	display: grid;
-	grid-column: 1/ span 2;
+	grid-column: 1 / span 2;
 	grid-template-columns: 1fr 1fr;
 	margin-top: 0.25rem;
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table td.active {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	td.active {
 	display: flex;
 	align-items: center;
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table td.active::after {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	td.active::after {
 	content: "";
 	flex-grow: 1;
 	margin: auto 1em;
 	border-bottom: thin solid rgb(var(--swatch-primary));
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table + div {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	+ div {
 	display: grid;
 	grid-column: span 2;
 	grid-template-columns: repeat(3, 1fr);
@@ -3118,13 +3379,26 @@ div.odialog-shader-iframe {
 	justify-self: flex-end;
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table + div > div {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	+ div
+	> div {
 	grid-column: 3;
 	grid-row: 2;
 	margin-top: 0.5em;
 }
 
-#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"]:first-child ~ table + div > div > a {
+#odialog-container
+	.owindow
+	> div.modal-body
+	> img[style*="padding: 2px 8px;"]:first-child
+	~ table
+	+ div
+	> div
+	> a {
 	width: 100%;
 	background-color: rgba(var(--swatch-primary), 0.125);
 }
@@ -3138,8 +3412,7 @@ div.odialog-shader-iframe {
 
 	padding: 0.5em 1em;
 	border-radius: 0.625rem;
-	box-shadow:
-		0 0.0625rem 0.3125rem var(--box-shadow-1),
+	box-shadow: 0 0.0625rem 0.3125rem var(--box-shadow-1),
 		inset 0 0.0625rem 0 var(--box-shadow-2),
 		inset 0 0.625rem 0.3125rem var(--box-shadow-3),
 		inset 0 -0.9375rem 1.875rem var(--box-shadow-4);
@@ -3156,8 +3429,7 @@ div.odialog-shader-iframe {
 
 	padding: 0.5em 1em;
 	border-radius: 0.3125rem 0.3125rem 0 0;
-	background:
-		linear-gradient(
+	background: linear-gradient(
 			to right,
 			rgba(var(--swatch-secondary-color)),
 			rgba(var(--swatch-tertiary-color))
@@ -3201,8 +3473,7 @@ div.odialog-shader-iframe {
 	justify-content: center;
 	margin: 0.1rem;
 	padding: 0.25em;
-	transition:
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
 	border-radius: 0.25rem;
@@ -3212,17 +3483,16 @@ div.odialog-shader-iframe {
 	letter-spacing: 0.016em;
 }
 
-#page-content > div.forum-thread-box > div.new-post > a:is(:hover, :active, :focus-within),
-#page-content > div.forum-thread-box > div.options > a:is(:hover, :active, :focus-within),
-.post-container > .post > div.long > div.options a:is(:hover, :active, :focus-within) {
-	background-color: rgba(var(--swatch-alternate-color), 1);
-	color: rgb(var(--swatch-primary-darker));
-	text-decoration: none;
-}
-
-#page-content > div.forum-thread-box > div.new-post > a:focus-within,
-#page-content > div.forum-thread-box > div.options > a:focus-within,
-.post-container > .post > div.long > div.options a:focus-within {
+#page-content
+	> div.forum-thread-box
+	> div:is(.new-post, .options)
+	> a:is(:hover, :active, :focus),
+#page-content
+	> div.forum-thread-box
+	> div:is(.new-post, .options):is(:focus-within)
+	> a,
+.post-container > .post > div.long > div.options a:is(:hover, :active, :focus),
+.post-container > .post > div.long > div.options:is(:focus-within) a {
 	background-color: rgba(var(--swatch-alternate-color), 1);
 	color: rgb(var(--swatch-primary-darker));
 	text-decoration: none;
@@ -3235,7 +3505,7 @@ div.odialog-shader-iframe {
 
 /* ===MOBILE FORMATTING=== */
 
-@media only screen and (max-width: 56.25rem) {
+@media (--viewport-tablet) {
 	#content-wrap {
 		grid-template-areas: "content content content";
 		justify-content: center;
@@ -3293,16 +3563,27 @@ div.odialog-shader-iframe {
 		float: right;
 	}
 
-	#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] {
+	#odialog-container
+		.owindow
+		> div.modal-body
+		> img[style*="padding: 2px 8px;"] {
 		width: 3.25rem;
 	}
 
-	#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] + h1 {
+	#odialog-container
+		.owindow
+		> div.modal-body
+		> img[style*="padding: 2px 8px;"]
+		+ h1 {
 		width: calc(100% - 5rem);
 		margin-left: 4.25rem;
 	}
 
-	#odialog-container .owindow > div.modal-body > img[style*="padding: 2px 8px;"] ~ table {
+	#odialog-container
+		.owindow
+		> div.modal-body
+		> img[style*="padding: 2px 8px;"]
+		~ table {
 		grid-template-columns: 1fr;
 	}
 

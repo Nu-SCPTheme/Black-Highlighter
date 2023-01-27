@@ -48,12 +48,8 @@
 	*,
 	*::before,
 	*::after {
-		font-variation-settings:
-			"ital" var(--ital, 0),
-			"slnt" var(--slnt, 0),
-			"CASL" var(--CASL, 0),
-			"CRSV" var(--CRSV, 0),
-			"MONO" var(--MONO, 0),
+		font-variation-settings: "ital" var(--ital, 0), "slnt" var(--slnt, 0),
+			"CASL" var(--CASL, 0), "CRSV" var(--CRSV, 0), "MONO" var(--MONO, 0),
 			"FLAR" var(--FLAR, 0);
 	}
 }
@@ -62,23 +58,12 @@
 	*,
 	*::before,
 	*::after {
-		font-feature-settings:
-			"lnum" var(--lnum, 1),
-			"pnum" var(--pnum, 1),
-			"kern" var(--kern, 1),
-			"cpsp" var(--cpsp, 1),
-			"liga" var(--liga, 1),
-			"case" var(--case, 1),
-			"clig" var(--clig, 1),
-			"dlig" var(--dlig, 0),
-			"calt" var(--calt, 1),
-			"aalt" var(--aalt, 0),
-			"ss01" var(--ss01, 1),
-			"ss02" var(--ss02, 0),
-			"ss03" var(--ss03, 1),
-			"ss04" var(--ss04, 1),
-			"zero" var(--zero, 1),
-			"cv11" var(--cv11, 0);
+		font-feature-settings: "lnum" var(--lnum, 1), "pnum" var(--pnum, 1),
+			"kern" var(--kern, 1), "cpsp" var(--cpsp, 1), "liga" var(--liga, 1),
+			"case" var(--case, 1), "clig" var(--clig, 1), "dlig" var(--dlig, 0),
+			"calt" var(--calt, 1), "aalt" var(--aalt, 0), "ss01" var(--ss01, 1),
+			"ss02" var(--ss02, 0), "ss03" var(--ss03, 1), "ss04" var(--ss04, 1),
+			"zero" var(--zero, 1), "cv11" var(--cv11, 0);
 	}
 }
 
@@ -94,8 +79,7 @@ body {
 	padding: 0;
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
-	scrollbar-color:
-		rgba(var(--swatch-tertiary-color), 1) /* Thumb */
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 1) /* Thumb */
 		rgba(var(--swatch-secondary-color), 1); /* Track */
 }
 
@@ -134,7 +118,7 @@ body {
 }
 
 /* Setting mobile body font size to 14px/0.875rem) */
-@media only screen and (max-width: 20rem) {
+@media (--viewport-mobile) {
 	body {
 		font-size: calc(var(--base-font-size) * (14 / 15));
 	}
@@ -165,10 +149,9 @@ body b *,
 body .bold,
 body .bold * {
 	--wght: 700;
+	--mono-wght: calc(var(--wght) - 50);
 
 	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 body i,
@@ -182,15 +165,18 @@ body .italic * {
 }
 
 /* Attribute Selectors for font-weight and font-style */
+[style*="weight:"],
+[style*="weight:"] * {
+	--mono-wght: calc(var(--wght) - 50);
+
+	font-weight: var(--wght);
+}
+
 [style*="weight: 1000"],
 [style*="weight: 1000"] *,
 [style*="weight:1000"],
 [style*="weight:1000"] * {
 	--wght: 1000;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 900"],
@@ -198,10 +184,6 @@ body .italic * {
 [style*="weight:900"],
 [style*="weight:900"] * {
 	--wght: 900;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 800"],
@@ -209,10 +191,9 @@ body .italic * {
 [style*="weight:800"],
 [style*="weight:800"] * {
 	--wght: 800;
+	--mono-wght: calc(var(--wght) - 50);
 
 	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 700"],
@@ -220,10 +201,6 @@ body .italic * {
 [style*="weight:700"],
 [style*="weight:700"] * {
 	--wght: 700;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 600"],
@@ -231,10 +208,6 @@ body .italic * {
 [style*="weight:600"],
 [style*="weight:600"] * {
 	--wght: 600;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 500"],
@@ -242,10 +215,6 @@ body .italic * {
 [style*="weight:500"],
 [style*="weight:500"] * {
 	--wght: 500;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 400"],
@@ -253,10 +222,6 @@ body .italic * {
 [style*="weight:400"],
 [style*="weight:400"] * {
 	--wght: 400;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 300"],
@@ -264,10 +229,6 @@ body .italic * {
 [style*="weight:300"],
 [style*="weight:300"] * {
 	--wght: 300;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 200"],
@@ -275,10 +236,6 @@ body .italic * {
 [style*="weight:200"],
 [style*="weight:200"] * {
 	--wght: 200;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="weight: 100"],
@@ -286,10 +243,6 @@ body .italic * {
 [style*="weight:100"],
 [style*="weight:100"] * {
 	--wght: 100;
-
-	font-weight: var(--wght);
-
-	--mono-wght: calc(var(--wght) - 50);
 }
 
 [style*="italic"],
@@ -364,16 +317,14 @@ input.text,
 input.checkbox,
 div.note,
 #lock-info {
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
 	font-family: var(--body-font);
-	scrollbar-color:
-		rgba(var(--swatch-tertiary-color), 0.6)
+	scrollbar-color: rgba(var(--swatch-tertiary-color), 0.6)
 		rgba(var(--swatch-tertiary-color), 0.1);
 	will-change: box-shadow, color, background-color;
 }
@@ -433,8 +384,7 @@ input.text::-webkit-scrollbar-thumb {
 	margin: 0;
 	padding: 0.25em;
 	overflow: hidden;
-	transition:
-		border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -447,18 +397,32 @@ input.text::-webkit-scrollbar-thumb {
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
-	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+	will-change: border-color, box-shadow, color, background-color, font-weight,
+		font-variation-settings;
 }
 
-*:not(.page-rate-widget-box, #search-top-box-form) > .owindow .button-bar a:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > div.buttons input:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > input.button:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > button:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > .button:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > div.buttons input:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > input.button:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > button:is(:hover, :active, :focus-within),
-*:not(.page-rate-widget-box, #search-top-box-form) > .btn:is(:hover, :active, :focus-within) {
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> .owindow
+	.button-bar
+	a:is(:hover, :active, :focus, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> div.buttons
+	input:is(:hover, :active, :focus, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> input.button:is(:hover, :active, :focus :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> button:is(:hover, :active, :focus, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> .button:is(:hover, :active, :focus, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> div.buttons
+	input:is(:hover, :focus, :active, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> input.button:is(:hover, :active, :focus, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> button:is(:hover, :active, :focus, :focus-within),
+*:not(.page-rate-widget-box, #search-top-box-form)
+	> .btn:is(:hover, :active, :focus, :focus-within) {
 	--wght: var(--ui-hvr-wght);
 
 	border-color: transparent;
@@ -477,8 +441,7 @@ input[type="checkbox"] {
 	position: relative;
 	width: 1em;
 	height: 1em;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgb(var(--swatch-tertiary-color));
 	outline: 0 solid rgb(var(--swatch-primary));
@@ -490,13 +453,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before,
 input[type="checkbox"]::after {
-	--clip-path:
-		polygon(
-			0 0,
-			100% 0,
-			100% 0,
-			0 0
-		);
+	--clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
 	content: " ";
 	display: inline-block;
@@ -515,8 +472,7 @@ input[type="checkbox"]::before {
 	left: 40%;
 	height: 150%;
 	rotate: -135deg;
-	transition:
-		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+	transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
 		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -526,8 +482,7 @@ input[type="checkbox"]::after {
 	left: 5%;
 	height: 50%;
 	rotate: -45deg;
-	transition:
-		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
+	transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
 		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms,
 		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 }
@@ -540,28 +495,20 @@ input[type="checkbox"]:checked {
 
 input[type="checkbox"]:checked::before,
 input[type="checkbox"]:checked::after {
-	--clip-path:
-		polygon(
-			0 0,
-			100% 0,
-			100% 100%,
-			0 100%
-		);
+	--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
 	background-color: rgba(var(--swatch-primary), 1);
 	box-shadow: 0 0 0 0.05em rgb(var(--swatch-secondary-color));
 }
 
 input[type="checkbox"]:checked::before {
-	transition:
-		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
+	transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
 		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms,
 		clip-path 159ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 }
 
 input[type="checkbox"]:checked::after {
-	transition:
-		background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
+	transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms,
 		box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -623,8 +570,7 @@ input[type="radio"]:checked {
 	transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background: rgb(var(--swatch-background));
-	box-shadow:
-		0 0 0 0.0625rem rgb(var(--swatch-primary)),
+	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-primary)),
 		inset 0 0 0 0.0625rem rgb(var(--swatch-primary));
 }
 
@@ -690,8 +636,7 @@ input[type="radio"]:checked::before {
 
 	margin: 0;
 	padding: 0.125em 0.5em;
-	transition:
-		padding 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: padding 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		translate 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -701,7 +646,8 @@ input[type="radio"]:checked::before {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 	color: rgb(var(--swatch-text-general));
 	text-transform: uppercase;
-	will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
+	will-change: box-shadow, color, background-color, translate, font-weight,
+		font-variation-settings;
 }
 
 #edit-page-form.data-form .form-row .form-labels span::before {
@@ -712,17 +658,16 @@ input[type="radio"]:checked::before {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition:
-		background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-image 50ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgba(var(--swatch-background), 1);
-	background-image:
-		linear-gradient(
-			to bottom,
-			rgba(var(--background-gradient-color), 1),
-			rgba(var(--background-gradient-color), 0) var(--background-gradient-distance),
-			rgba(var(--background-gradient-color), 0) 100%
-		);
+	background-image: linear-gradient(
+		to bottom,
+		rgba(var(--background-gradient-color), 1),
+		rgba(var(--background-gradient-color), 0)
+			var(--background-gradient-distance),
+		rgba(var(--background-gradient-color), 0) 100%
+	);
 	pointer-events: none;
 	background-position-y: top;
 }
@@ -733,24 +678,22 @@ input[type="radio"]:checked::before {
 	padding-left: 0.5rem;
 	outline: 0 solid rgb(var(--swatch-primary));
 	color: rgb(var(--swatch-background));
-	clip-path:
-		polygon(
-			0 0,
-			calc(100% + 0.125rem) 0,
-			calc(100% + 0.125rem) calc(100% + 0.125rem),
-			0 calc(100% + 0.125rem)
-		);
+	clip-path: polygon(
+		0 0,
+		calc(100% + 0.125rem) 0,
+		calc(100% + 0.125rem) calc(100% + 0.125rem),
+		0 calc(100% + 0.125rem)
+	);
 }
 
 #edit-page-form.data-form .form-row:focus-within .form-labels span::before {
 	background-color: rgba(var(--swatch-primary), 1);
-	background-image:
-		linear-gradient(
-			to bottom,
-			rgba(var(--background-gradient-color), 0) 0,
-			rgba(var(--background-gradient-color), 0)
+	background-image: linear-gradient(
+		to bottom,
+		rgba(var(--background-gradient-color), 0) 0,
+		rgba(var(--background-gradient-color), 0)
 			var(--background-gradient-distance)
-		);
+	);
 	clip-path: unset;
 }
 
@@ -766,7 +709,10 @@ input[type="radio"]:checked::before {
 }
 
 #edit-page-form.data-form .form-row span.field-select-long *:not(.text-danger),
-#edit-page-form.data-form .form-row div.dataform-pagepath-chooser *:not(.text-danger) {
+#edit-page-form.data-form
+	.form-row
+	div.dataform-pagepath-chooser
+	*:not(.text-danger) {
 	flex-grow: 1;
 	width: 100%;
 }
@@ -792,8 +738,7 @@ input[type="radio"]:checked::before {
 	--wght: var(--ui-wght);
 
 	padding: 0.25rem;
-	transition:
-		box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -803,7 +748,8 @@ input[type="radio"]:checked::before {
 	font-size: 1.2em !important;
 
 	/* Overwrite Wikidot Inline Styling */
-	will-change: box-shadow, background-color, font-weight, font-variation-settings;
+	will-change: box-shadow, background-color, font-weight,
+		font-variation-settings;
 }
 
 #edit-page-form.data-form .form-row input[type="text"],
@@ -830,9 +776,15 @@ input[type="radio"]:checked::before {
 
 #edit-page-form.data-form .form-row input[type="text"]:focus-visible,
 #edit-page-form.data-form .form-row textarea:focus-visible,
-#edit-page-form.data-form .form-row td.form-values input.form-control:focus-visible,
+#edit-page-form.data-form
+	.form-row
+	td.form-values
+	input.form-control:focus-visible,
 #edit-page-form.data-form .form-row span.field-select-long select:focus-visible,
-#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus-visible {
+#edit-page-form.data-form
+	.form-row
+	div.dataform-pagepath-chooser
+	select:focus-visible {
 	--wght: var(--ui-hvr-wght);
 
 	border: none;
@@ -843,9 +795,15 @@ input[type="radio"]:checked::before {
 
 #edit-page-form.data-form .form-row:focus-within input[type="text"],
 #edit-page-form.data-form .form-row:focus-within textarea,
-#edit-page-form.data-form .form-row:focus-within td.form-values input.form-control,
+#edit-page-form.data-form
+	.form-row:focus-within
+	td.form-values
+	input.form-control,
 #edit-page-form.data-form .form-row:focus-within span.field-select-long select,
-#edit-page-form.data-form .form-row:focus-within div.dataform-pagepath-chooser select {
+#edit-page-form.data-form
+	.form-row:focus-within
+	div.dataform-pagepath-chooser
+	select {
 	--wght: var(--ui-hvr-wght);
 
 	border: none;
@@ -882,7 +840,11 @@ input[type="radio"]:checked::before {
 	transition: translate 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#edit-page-form.data-form .form-row span.field-checkbox input:checked + span.text-danger {
+#edit-page-form.data-form
+	.form-row
+	span.field-checkbox
+	input:checked
+	+ span.text-danger {
 	translate: 0.25em;
 }
 
@@ -902,14 +864,24 @@ input[type="radio"]:checked::before {
 }
 
 /* ===SELECT & PAGE SELECT STYLING=== */
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span select {
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span
+	select {
 	grid-column: 2;
 	grid-row: 1;
 	flex-grow: 2;
 	margin-bottom: 0.5em;
 }
 
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span {
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span
+	span {
 	display: grid;
 	position: relative;
 	grid-column: 2;
@@ -921,11 +893,29 @@ input[type="radio"]:checked::before {
 }
 
 #edit-page-form.data-form .form-row span.field-select-long::after,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after,
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span::after,
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span
+	span::after,
 #edit-page-form.data-form .form-row span.field-select-long::before,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before {
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span::before,
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span
+	span::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -936,21 +926,34 @@ input[type="radio"]:checked::before {
 }
 
 #edit-page-form.data-form .form-row span.field-select-long::before,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before {
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span::before,
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span
+	span::before {
 	border-radius: 0 0.25rem 0.25rem 0;
 	background-color: rgb(var(--swatch-primary));
 }
 
 #edit-page-form.data-form .form-row span.field-select-long::after,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after {
-	--clip-path:
-		polygon(
-			35% 40%,
-			65% 40%,
-			50% 65%
-		);
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span::after,
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]
+	> span
+	span::after {
+	--clip-path: polygon(35% 40%, 65% 40%, 50% 65%);
 
 	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-secondary-color));
@@ -958,14 +961,18 @@ input[type="radio"]:checked::before {
 }
 
 #edit-page-form.data-form .form-row span.field-select-long:focus-within::after,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span::after,
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span span::after {
-	--clip-path:
-		polygon(
-			40% 50%,
-			60% 30%,
-			60% 70%
-		);
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]:focus-within
+	> span::after,
+#edit-page-form.data-form
+	.form-row
+	span.field-pagepage
+	div[class*="dataform-pagepath"]:focus-within
+	> span
+	span::after {
+	--clip-path: polygon(40% 50%, 60% 30%, 60% 70%);
 
 	background-color: rgb(var(--swatch-secondary-color));
 	clip-path: var(--clip-path);
@@ -1072,8 +1079,7 @@ input[type="radio"]:checked::before {
 	grid-row: 1;
 	width: 1em;
 	height: 1em;
-	transition:
-		height 200ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: height 200ms cubic-bezier(0.4, 0, 0.2, 1),
 		width 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border-radius: 0.25em;
 	background-color: rgb(var(--swatch-secondary-color));
@@ -1091,24 +1097,14 @@ input[type="radio"]:checked::before {
 }
 
 #ui-datepicker-div.ui-datepicker .ui-datepicker-prev {
-	--clip-path:
-		polygon(
-			40% 50%,
-			60% 30%,
-			60% 70%
-		);
+	--clip-path: polygon(40% 50%, 60% 30%, 60% 70%);
 
 	left: unset;
 	grid-area: cal-prev;
 }
 
 #ui-datepicker-div.ui-datepicker .ui-datepicker-next {
-	--clip-path:
-		polygon(
-			60% 50%,
-			40% 30%,
-			40% 70%
-		);
+	--clip-path: polygon(60% 50%, 40% 30%, 40% 70%);
 
 	right: unset;
 	grid-area: cal-next;
@@ -1116,24 +1112,14 @@ input[type="radio"]:checked::before {
 
 #ui-datepicker-div.ui-datepicker .ui-datepicker-prev:hover,
 #ui-datepicker-div.ui-datepicker .ui-datepicker-prev-hover {
-	--clip-path:
-		polygon(
-			30% 50%,
-			60% 20%,
-			60% 80%
-		);
+	--clip-path: polygon(30% 50%, 60% 20%, 60% 80%);
 
 	left: unset;
 }
 
 #ui-datepicker-div.ui-datepicker .ui-datepicker-next:hover,
 #ui-datepicker-div.ui-datepicker .ui-datepicker-next-hover {
-	--clip-path:
-		polygon(
-			70% 50%,
-			40% 20%,
-			40% 80%
-		);
+	--clip-path: polygon(70% 50%, 40% 20%, 40% 80%);
 
 	right: unset;
 }
@@ -1220,11 +1206,8 @@ pre * {
 	max-width: 90vw;
 	font-family: var(--mono-font);
 	white-space: pre;
-	font-variation-settings:
-		"wght" var(--mono-wght),
-		"CASL" var(--CASL),
-		"CRSV" var(--CRSV),
-		"MONO" var(--MONO);
+	font-variation-settings: "wght" var(--mono-wght), "CASL" var(--CASL),
+		"CRSV" var(--CRSV), "MONO" var(--MONO);
 }
 
 pre i,
@@ -1287,11 +1270,8 @@ tt * {
 	--MONO: 1;
 
 	font-family: var(--mono-font);
-	font-variation-settings:
-		"wght" var(--mono-wght),
-		"CASL" var(--CASL),
-		"CRSV" var(--CRSV),
-		"MONO" var(--MONO);
+	font-variation-settings: "wght" var(--mono-wght), "CASL" var(--CASL),
+		"CRSV" var(--CRSV), "MONO" var(--MONO);
 }
 
 tt i,
@@ -1362,7 +1342,7 @@ h6 {
 	font-size: 1em;
 }
 
-@media only screen and (min-width: 56.25rem) {
+@media (--viewport-desktop) {
 	h1 {
 		font-size: 2em;
 	}
@@ -1390,12 +1370,11 @@ h6 {
 
 /* ===LISTS=== */
 ul {
+	padding-left: 1em;
 	list-style: inside;
 }
 
 ol {
-	margin-left: 0;
-	padding-left: 0;
 	list-style: outside none;
 }
 
@@ -1450,20 +1429,21 @@ ol {
 }
 
 #page-content .heirarch ol ol ol ol > li::before {
-	content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4);
+	content: counter(step1) "." counter(step2) "." counter(step3) "."
+		counter(step4);
 	counter-increment: step4;
 }
 
 #page-content .heirarch ol ol ol ol ol > li::before {
-	content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4) "." counter(step5);
+	content: counter(step1) "." counter(step2) "." counter(step3) "."
+		counter(step4) "." counter(step5);
 	counter-increment: step5;
 }
 
 /* ===ANCHOR LINKS=== */
 
 a {
-	transition:
-		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--link-color));
 	text-decoration: underline 0.09375em;
@@ -1471,8 +1451,7 @@ a {
 }
 
 a:visited {
-	transition:
-		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: rgb(var(--visited-link-color));
 	text-decoration: underline 0.09375em;
@@ -1488,9 +1467,8 @@ a.newpage {
 	color: rgb(var(--newpage-color));
 }
 
-a:is(:hover, :active, :focus-within) {
-	transition:
-		text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+a:is(:hover, :active, :focus, :focus-within) {
+	transition: text-decoration-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: transparent;
 	color: rgb(var(--hover-link-color));
@@ -1509,8 +1487,7 @@ a:is(:hover, :active, :focus-within) {
 .bblock,
 .dblock {
 	display: inline;
-	transition:
-		background-color 2000ms cubic-bezier(0.4, 0, 0.2, 1),
+	transition: background-color 2000ms cubic-bezier(0.4, 0, 0.2, 1),
 		color 2000ms cubic-bezier(0.4, 0, 0.2, 1);
 	background-color: rgb(var(--swatch-menubg-black-color));
 	color: rgb(var(--swatch-text-dark));
@@ -1522,12 +1499,12 @@ div.dblock {
 	display: inline-block;
 }
 
-.dblock:is(:hover, :active, :focus-within) {
+.dblock:is(:hover, :active, :focus, :focus-within) {
 	background-color: rgba(var(--swatch-menubg-black-color), 0);
 	text-decoration: none;
 }
 
-.bblock:is(:hover, :active, :focus-within) {
+.bblock:is(:hover, :active, :focus, :focus-within) {
 	background-color: rgb(var(--swatch-menubg-black-color));
 	color: rgb(var(--swatch-primary-darkest));
 	text-decoration: none;
@@ -1561,12 +1538,8 @@ div.dblock {
 
 .code,
 .code * {
-	font-variation-settings:
-		"wght" var(--mono-wght),
-		"slnt" var(--slnt),
-		"CASL" var(--CASL),
-		"CRSV" var(--CRSV),
-		"MONO" var(--MONO);
+	font-variation-settings: "wght" var(--mono-wght), "slnt" var(--slnt),
+		"CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
 }
 
 .code i,
@@ -1625,7 +1598,7 @@ rt {
 
 /* ===MOBILE FORMATTING=== */
 
-@media only screen and (max-width: 56.25rem) {
+@media (--viewport-tablet) {
 	body {
 		font-size: var(--min-font-size);
 		font-size: var(--base-font-size);
@@ -1689,14 +1662,13 @@ rt {
 
 @keyframes lift-in {
 	from {
-		box-shadow:
-			0 0 0 0 rgba(var(--swatch-alternate-color), 0.25),
+		box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25),
 			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
 
 	to {
-		box-shadow:
-			0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-alternate-color), 0.25),
+		box-shadow: 0.25rem 0.125rem 0.5rem 0
+				rgba(var(--swatch-alternate-color), 0.25),
 			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
 }
