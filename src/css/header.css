@@ -31,11 +31,9 @@
 
 /* Body Background Image: Includes header image, subtle gradient that extends into the content, and page background color */
 body {
-	background-image: var(--gradient-header), var(--gradient-topmenu),
-		var(--gradient-background);
+	background-image: var(--gradient-header), var(--gradient-topmenu), var(--gradient-background);
 	background-repeat: repeat-x;
-	background-size: var(--header-background-image-size),
-		100% var(--final-header-height-on-desktop),
+	background-size: var(--header-background-image-size), 100% var(--final-header-height-on-desktop),
 		100% var(--background-gradient-distance);
 }
 
@@ -57,7 +55,7 @@ div#container-wrap {
 	--search-height: calc(var(--base-font-size) * (27 / 15));
 	--account-height: var(--search-height);
 
-	&:is(h1, h2) {
+	& :is(h1, h2) {
 		position: absolute;
 		margin: 0;
 		-webkit-font-smoothing: antialiased;
@@ -114,11 +112,10 @@ div#container-wrap {
 			text-shadow: none;
 		}
 
-		& > span {
+		> span {
 			display: inline-table;
 			position: absolute;
-			top: 0;
-			left: 0;
+			inset: 0 auto auto 0;
 			width: calc(100% - 2rem);
 			height: calc(var(--header-height-on-desktop) - var(--topbar-height));
 			color: transparent;
@@ -135,10 +132,7 @@ div#container-wrap {
 
 		display: block;
 		margin-top: calc(
-			(
-				(var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) -
-					var(--header-h2-font-size) + 0.675em
-			)
+			((var(--header-height-on-desktop) / 2) + (var(--header-h1-font-size) / 2) - var(--header-h2-font-size) + 0.675em)
 		);
 		margin-left: calc(var(--header-height-on-desktop) - 0.5rem);
 		color: transparent;
@@ -172,8 +166,7 @@ div#container-wrap {
 #search-top-box {
 	display: flex;
 	position: absolute;
-	top: 1.5em;
-	right: calc(3% - 0.25em);
+	inset: 1.5em calc(3% - 0.25em) auto auto;
 	align-items: center;
 	justify-content: center;
 	width: var(--search-height);
@@ -186,11 +179,10 @@ div#container-wrap {
 	font-size: calc(var(--base-font-size) * (13 / 15));
 
 	&::after,
-	&input[type="submit"] {
+	& input[type="submit"] {
 		width: var(--search-height);
 		height: var(--search-height);
-		transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-			clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
 			box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		border: none;
 		will-change: background-color, clip-path;
@@ -203,8 +195,7 @@ div#container-wrap {
 		content: " ";
 		position: absolute;
 		z-index: -1;
-		top: 0;
-		right: 0;
+		inset: 0 0 auto auto;
 		clip-path: var(--clip-path);
 		background-color: rgba(var(--search-icon-focus-bg-color), 0);
 		pointer-events: none;
@@ -213,8 +204,7 @@ div#container-wrap {
 	& input[type="submit"] {
 		background-color: rgb(var(--search-icon-color));
 		color: transparent;
-		mask: var(--search-icon-mask) 0.375rem 0.3125rem /
-			calc((var(--search-height) + 0.25rem) / 2)
+		mask: var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem) / 2)
 			calc((var(--search-height) + 0.25rem) / 2) no-repeat;
 	}
 
@@ -296,8 +286,7 @@ div#container-wrap {
 #search-top-box::after {
 	content: " ";
 	position: absolute;
-	top: 0;
-	right: 0;
+	inset: 0 0 auto auto;
 	width: var(--search-height);
 	height: 100%;
 }
@@ -425,8 +414,7 @@ div#container-wrap {
 	display: flex;
 	position: absolute;
 	z-index: 11;
-	top: 1.5em;
-	right: calc(3% + var(--search-height) - 0.25em);
+	inset: 1.5em calc(3% + var(--search-height) - 0.25em) auto auto;
 	align-items: center;
 	justify-content: center;
 	height: 2em;
@@ -452,24 +440,22 @@ div#container-wrap {
 	}
 
 	& a {
-		&[href*="account/messages"] {
+		[href*="account/messages"] {
 			color: rgb(var(--login-myaccount-color));
 		}
 
-		&#my-account {
+		#my-account {
 			--wght: var(--ui-wght);
 
 			display: flex;
 			align-items: center;
 			padding: 0 0.5em;
-			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-				text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
 			background-color: transparent;
 			box-shadow: inset 0 0 0 0 rgb(var(--login-myaccount-hover-bg-color));
 			color: rgb(var(--login-myaccount-color));
 			font-weight: var(--wght);
-			text-decoration: underline rgb(var(--login-myaccount-underline-color))
-				0.125em;
+			text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0.125em;
 
 			&:is(:hover, :active, :focus) {
 				--wght: var(--ui-hvr-wght);
@@ -482,7 +468,7 @@ div#container-wrap {
 		}
 	}
 
-	& #account-topbutton {
+	#account-topbutton {
 		position: relative;
 		width: var(--account-height);
 		height: var(--account-height);
@@ -490,545 +476,534 @@ div#container-wrap {
 		padding: 0;
 		background-color: transparent;
 		color: transparent;
+
+		@media (--viewport-desktop) {
+			&::before {
+				--clip-path: polygon(30% 35%, 70% 35%, 50% 60%, 50% 60%);
+
+				content: " ";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
+				background-color: rgb(var(--login-arrow-color));
+				clip-path: var(--clip-path);
+			}
+		}
 	}
-}
 
-/* Not Logged In Styling */
-#login-status:not(.page-rate-widget-box, #search-top-box-form)
-	> a:is(.login-status-create-account, .login-status-sign-in) {
-	margin: 0 1em;
-	background-color: rgb(var(--ui-button-bg));
-	color: rgb(var(--ui-button-txt));
-}
+	/* Not Logged In Styling */
+	&:not(.page-rate-widget-box, #search-top-box-form) {
+		> a {
+			&:is(.login-status-create-account, .login-status-sign-in) {
+				margin: 0 1em;
+				background-color: rgb(var(--ui-button-bg));
+				color: rgb(var(--ui-button-txt));
 
-#login-status:not(.page-rate-widget-box, #search-top-box-form)
-	> a:is(.login-status-create-account, .login-status-sign-in):is(
-		:hover,
-		:active,
-		:focus
-	),
-#login-status:not(.page-rate-widget-box, #search-top-box-form):is(:focus-within)
-	> a:is(.login-status-create-account, .login-status-sign-in) {
-	background-color: rgb(var(--ui-button-hover-bg), 1);
-	color: rgb(var(--ui-button-hover-txt));
-}
+				&:is(:hover, :active, :focus, :focus-within) {
+					background-color: rgb(var(--ui-button-hover-bg), 1);
+					color: rgb(var(--ui-button-hover-txt));
+				}
+			}
+		}
+	}
 
-@media (--viewport-desktop) {
-	#login-status #account-topbutton::before {
-		--clip-path: polygon(30% 35%, 70% 35%, 50% 60%, 50% 60%);
-
-		content: " ";
+	#account-options {
+		display: block !important;
 		position: absolute;
-		width: 100%;
-		height: 100%;
-		transition: clip-path 100ms cubic-bezier(0.4, 0, 0.2, 1);
-		background-color: rgb(var(--login-arrow-color));
-		clip-path: var(--clip-path);
+		z-index: 12;
+		inset: 1.5rem 0 auto auto;
+		width: 10em;
+		margin: 0.25em 0 0;
+		padding: 0;
+		overflow: hidden;
+		transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 0;
+		background-color: rgb(var(--login-dropdown-bg-color));
+		background-image: var(--login-dropdown-bg-image);
+		pointer-events: none;
+
+		& * {
+			margin: 0;
+			padding: 0;
+		}
+
+		& ul {
+			display: grid;
+			grid-auto-rows: 2em;
+			grid-template-columns: 1fr 1fr;
+			flex-grow: 1;
+			align-items: center;
+			justify-content: center;
+			font-size: 0.85em;
+
+			& li {
+				position: relative;
+
+				&,
+				& a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					height: 100%;
+				}
+
+				& > a {
+					&::before {
+						--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+						content: " ";
+						position: absolute;
+						z-index: -1;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						background-color: rgb(var(--login-dropdown-bg-hover-color));
+						pointer-events: none;
+						clip-path: var(--clip-path);
+					}
+
+					&,
+					&:visted {
+						color: rgb(var(--login-dropdown-text-color));
+					}
+
+					&[href*="/messages"] {
+						position: absolute;
+						inset: 0 auto auto 0;
+						width: 100%;
+						height: 100%;
+						min-height: 100%;
+						font-size: 0;
+
+						&::after {
+							content: "Messages";
+							position: absolute;
+							left: 50%;
+							translate: -50% 0;
+							font-size: calc(var(--base-font-size) * (11 / 15));
+							pointer-events: none;
+						}
+					}
+
+					&:is(:hover, :active, :focus-within)::before {
+						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+					}
+				}
+
+				&,
+				&:focus:within {
+					> a {
+						&:is(:hover, :active) {
+							--wght: var(--ui-hvr-wght);
+
+							color: rgb(var(--login-dropdown-text-hover-color));
+							font-weight: var(--wght);
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+
+		& a {
+			--box-shadow: rgba(var(--login-dropdown-border-color));
+			--wght: var(--ui-wght);
+
+			position: relative;
+			flex-grow: 1;
+			height: 100%;
+			max-height: 2em;
+			padding: 0 0.25em;
+			transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 150ms cubic-bezier(0.4, 0, 0.2, 1),
+				font-variation-settings 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: inset 0 0 0 0.0625rem var(--login-dropdown-border-color);
+			font-weight: var(--wght);
+		}
 	}
-}
 
-#login-status #account-options {
-	display: block !important;
-	position: absolute;
-	z-index: 12;
-	top: 1.5rem;
-	right: 0;
-	width: 10em;
-	margin: 0.25em 0 0;
-	padding: 0;
-	overflow: hidden;
-	transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	opacity: 0;
-	background-color: rgb(var(--login-dropdown-bg-color));
-	background-image: var(--login-dropdown-bg-image);
-	pointer-events: none;
-}
-
-#login-status #account-topbutton:is(:focus, :active):focus,
-#login-status #account-options:is(:focus-within) {
-	opacity: 1;
-	pointer-events: all;
-}
-
-/* Without this, touchscreen doesn't work */
-
-@media (pointer: coarse) {
-	#login-status #account-topbutton:hover + #account-options,
-	#login-status #account-options:hover {
+	#account-topbutton:is(:focus, :active):focus,
+	#account-options:is(:focus-within) {
 		opacity: 1;
 		pointer-events: all;
 	}
-}
 
-/* Support for Safari */
-@supports (-webkit-hyphens: none) {
-	#login-status #account-topbutton:hover + #account-options,
-	#login-status #account-options:hover {
-		opacity: 1;
-		pointer-events: all;
+	/* Without this, touchscreen doesn't work */
+
+	@media (pointer: coarse) {
+		#account-topbutton:hover + #account-options,
+		#account-options:hover {
+			opacity: 1;
+			pointer-events: all;
+		}
 	}
-}
 
-#login-status #account-options * {
-	margin: 0;
-	padding: 0;
-}
-
-#login-status #account-options ul {
-	display: grid;
-	grid-auto-rows: 2em;
-	grid-template-columns: 1fr 1fr;
-	flex-grow: 1;
-	align-items: center;
-	justify-content: center;
-	font-size: 0.85em;
-}
-
-#login-status #account-options ul li {
-	position: relative;
-}
-
-#login-status #account-options ul li,
-#login-status #account-options ul li a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-}
-
-#login-status #account-options a {
-	--box-shadow: rgba(var(--login-dropdown-border-color));
-	--wght: var(--ui-wght);
-
-	position: relative;
-	flex-grow: 1;
-	height: 100%;
-	max-height: 2em;
-	padding: 0 0.25em;
-	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-variation-settings 150ms cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: inset 0 0 0 0.0625rem var(--login-dropdown-border-color);
-	font-weight: var(--wght);
-}
-
-#login-status #account-options li > a,
-#login-status #account-options li > a:visited {
-	color: rgb(var(--login-dropdown-text-color));
-}
-
-#login-status
-	#account-options
-	:is(li, li:focus-within)
-	> a:is(:hover, :active) {
-	--wght: var(--ui-hvr-wght);
-
-	color: rgb(var(--login-dropdown-text-hover-color));
-	font-weight: var(--wght);
-	text-decoration: none;
-}
-
-#login-status #account-options li > a[href*="/messages"] {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	font-size: 0;
-}
-
-#login-status #account-options li > a[href*="/messages"]::after {
-	content: "Messages";
-	position: absolute;
-	left: 50%;
-	translate: -50% 0;
-	font-size: calc(var(--base-font-size) * (11 / 15));
-	pointer-events: none;
-}
-
-#login-status #account-options li > a::before {
-	--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-
-	content: " ";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	background-color: rgb(var(--login-dropdown-bg-hover-color));
-	pointer-events: none;
-	clip-path: var(--clip-path);
-}
-
-#login-status
-	#account-options
-	li
-	> a:is(:hover, :active, :focus-within)::before {
-	--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+	/* Support for Safari */
+	@supports (-webkit-hyphens: none) {
+		#account-topbutton:hover + #account-options,
+		#account-options:hover {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
 }
 
 /* ===TOP BAR=== */
 
 /* Hide Mobile Top Bar on Desktop */
 
-div.mobile-top-bar {
-	display: none;
-	position: relative;
-	z-index: 9999;
-	bottom: 0;
-	left: 1rem;
-	filter: unset;
-}
+#header {
+	& div.mobile-top-bar {
+		display: none;
+		position: relative;
+		z-index: 9999;
+		bottom: 0;
+		left: 1rem;
+		filter: unset;
+	}
 
-#header div#top-bar {
-	--wght: var(--ui-wght);
+	& div#top-bar {
+		--wght: var(--ui-wght);
 
-	display: inline-flex;
-	position: static;
-	z-index: 50;
-	flex-wrap: nowrap;
-	width: 100%;
-	height: var(--topbar-height-on-desktop);
-	margin: var(--header-height-on-desktop) 0 1.75rem 0;
-	padding: 0;
-	font-family: var(--UI-font, var(--header-font));
-	font-size: calc(var(--base-font-size) * (13 / 15));
-	font-weight: var(--wght);
-}
-
-/* ul */
-
-#header div[class*="top-bar"] {
-	& > ul {
-		display: flex;
-		z-index: 20;
-		flex-flow: row nowrap;
-		justify-content: space-around;
-		width: 90vw;
-		max-width: var(--header-width-on-desktop, 61.25rem);
-		height: 100%;
-		margin: 0;
+		display: inline-flex;
+		position: static;
+		z-index: 50;
+		flex-wrap: nowrap;
+		width: 100%;
+		height: var(--topbar-height-on-desktop);
+		margin: var(--header-height-on-desktop) 0 1.75rem 0;
 		padding: 0;
-		letter-spacing: 0.0625rem;
-		line-height: 0;
-		text-align: center;
+		font-family: var(--UI-font, var(--header-font));
+		font-size: calc(var(--base-font-size) * (13 / 15));
+		font-weight: var(--wght);
 
-		/* any li after ul */
-		& li {
-			&:is(:hover, :active, :focus-within) {
-				/* Adding a slight bg colour change before the :before obscures it */
-				background-color: rgba(var(--dark-accent), 0.05);
-			}
-		}
+		& div[class*="top-bar"] {
+			> ul {
+				display: flex;
+				z-index: 20;
+				flex-flow: row nowrap;
+				justify-content: space-around;
+				width: 90vw;
+				max-width: var(--header-width-on-desktop, 61.25rem);
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				letter-spacing: 0.0625rem;
+				line-height: 0;
+				text-align: center;
 
-		/* ul > li */
-		& > li {
-			display: inline-flex;
-			position: relative;
-			flex: 2 2;
-			width: auto;
-			margin: 0;
-			padding: 0;
-			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-			list-style: outside none none;
-			cursor: pointer;
-
-			& > a {
-				--wght: calc(var(--ui-wght) + 200);
-
-				display: inline-flex;
-				position: relative;
-				align-items: center;
-				justify-content: center;
-				width: 100%;
-				height: calc(100% - 0.6em);
-				padding: 0.3em;
-				overflow: hidden;
-				transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-				border: none;
-				background-color: transparent;
-				color: rgb(var(--topmenu-category-color));
-				font-weight: var(--wght);
-				line-height: 1;
-				text-decoration: none;
-				white-space: normal;
-
-				/* Sliding top/bottom borders on top-bar links */
-				&::before,
-				&::after {
-					content: " ";
-					position: absolute;
-					width: 100%;
-					height: calc(0.0625rem * 3);
-					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-					background-color: rgb(var(--topmenu-hover-border-color));
-					clip-path: var(--clip-path);
-				}
-
-				&::before {
-					--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-
-					top: 0;
-					left: 0;
-				}
-
-				&::after {
-					--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-
-					right: 0;
-					bottom: 0;
-				}
-			}
-
-			&:is(:hover, :active, :focus-within) {
-				& > a {
-					--wght: calc(var(--ui-hvr-wght) + 200);
-
-					background-color: rgb(var(--topmenu-category-hover-bg));
-					color: rgb(var(--topmenu-category-hover-color));
-					font-weight: var(--wght);
-
-					&::before {
-						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-					}
-
-					&::after {
-						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+				& li {
+					&:is(:hover, :active, :focus-within) {
+						/* any li after ul */
+						/* Adding a slight bg colour change before the :before obscures it */
+						background-color: rgba(var(--dark-accent), 0.05);
 					}
 				}
 
-				& > ul {
-					opacity: 1;
-					pointer-events: all;
-
-					/* Backdrop Filter Blur Support */
-					@supports (backdrop-filter: blur(1rem)) {
-						backdrop-filter: blur(0.125rem);
-					}
-				}
-			}
-
-			/* DROPDOWN MENU */
-			/* ul > li ul > li */
-			& ul {
-				& > li {
-					display: flex;
-					visibility: visible;
+				> li {
+					/* ul > li */
+					display: inline-flex;
 					position: relative;
-					box-sizing: border-box;
-					align-items: center;
-					justify-content: center;
-					width: 100%;
-					height: 2rem;
+					flex: 2 2;
+					width: auto;
 					margin: 0;
 					padding: 0;
-					overflow: visible;
-					border-collapse: collapse;
-					transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-					box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
-					word-break: normal;
+					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					list-style: outside none none;
+					cursor: pointer;
 
-					/* Prevent splitting in half onto the next column */
-					break-inside: avoid;
+					> a {
+						--wght: calc(var(--ui-wght) + 200);
 
-					/* ul > li > ul li > ul */
-
-					/* Prevent flyout menus from disappearing when moving to them diagonally */
-					& > ul {
-						&::before {
-							--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
-
-							content: " ";
-							position: absolute;
-							z-index: 5;
-							top: 2rem;
-							right: 100%;
-							width: 50%;
-							height: calc(100% - 2rem);
-							clip-path: var(--clip-path);
-						}
-					}
-				}
-			}
-
-			& > ul {
-				--box-shadow: rgba(var(--dropdown-border-color));
-
-				display: flex;
-				visibility: visible;
-				position: absolute;
-				z-index: 20;
-				left: 0;
-				box-sizing: border-box;
-				flex-flow: column nowrap;
-				align-self: flex-start;
-				width: auto;
-				min-width: 100%;
-				max-width: var(--header-width-on-desktop, 61.25rem);
-				margin-top: var(--topbar-height-on-desktop);
-				border-top: none;
-				background: rgba(var(--dropdown-bg-color));
-				box-shadow: 0 0.125rem 0.375rem var(--box-shadow),
-					inset 0 0 0 0.0625rem var(--box-shadow);
-				pointer-events: none;
-
-				/* any li > a after top-bar > ul > li > ul */
-
-				/* Background diagonal hover color on dropdown links */
-				& li {
-					& > a {
-						--wght: var(--ui-wght);
-
-						/* Text Positioning */
-						display: flex;
+						display: inline-flex;
 						position: relative;
 						align-items: center;
 						justify-content: center;
 						width: 100%;
-						height: 100%;
-						padding: 0 1em;
+						height: calc(100% - 0.6em);
+						padding: 0.3em;
 						overflow: hidden;
-						transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-							color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-							font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-							font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-						border: 0 solid rgba(0, 0, 0, 0);
-						background: rgba(var(--dropdown-links-bg-color));
-						color: rgb(var(--dropdown-links-color));
-						font-size: calc(var(--base-font-size) * (13 / 15));
+						transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+						border: none;
+						background-color: transparent;
+						color: rgb(var(--topmenu-category-color));
 						font-weight: var(--wght);
-						text-align: center;
-						white-space: nowrap;
+						line-height: 1;
+						text-decoration: none;
+						white-space: normal;
+
+						&::before,
+						&::after {
+							/* Sliding top/bottom borders on top-bar links */
+							content: " ";
+							position: absolute;
+							width: 100%;
+							height: calc(0.0625rem * 3);
+							transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+							background-color: rgb(var(--topmenu-hover-border-color));
+							clip-path: var(--clip-path);
+						}
 
 						&::before {
 							--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
-							content: " ";
-							position: absolute;
-							z-index: -1;
-							top: 0;
-							width: 100%;
-							height: 100%;
-							transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-							opacity: 1;
-							background-color: rgb(var(--dropdown-links-hover-bg-color));
-							pointer-events: none;
-							clip-path: var(--clip-path);
+							inset: 0 auto auto 0;
+						}
+
+						&::after {
+							--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+							inset: auto 0 0 auto;
 						}
 					}
 
 					&:is(:hover, :active, :focus-within) {
-						& > a {
-							--wght: var(--ui-hvr-wght);
+						> a {
+							--wght: calc(var(--ui-hvr-wght) + 200);
 
-							color: rgb(var(--dropdown-links-hover-color));
+							background-color: rgb(var(--topmenu-category-hover-bg));
+							color: rgb(var(--topmenu-category-hover-color));
 							font-weight: var(--wght);
 
 							&::before {
 								--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 							}
+
+							&::after {
+								--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+							}
+						}
+
+						> ul {
+							opacity: 1;
+							pointer-events: all;
+
+							@supports (backdrop-filter: blur(1rem)) {
+								/* Backdrop Filter Blur Support */
+								backdrop-filter: blur(0.125rem);
+							}
+						}
+					}
+
+					& ul {
+						> li {
+							/* DROPDOWN MENU */
+
+							/* ul > li ul > li */
+
+							display: flex;
+							visibility: visible;
+							position: relative;
+							box-sizing: border-box;
+							align-items: center;
+							justify-content: center;
+							width: 100%;
+							height: 2rem;
+							margin: 0;
+							padding: 0;
+							overflow: visible;
+							border-collapse: collapse;
+							transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+							box-shadow: inset 0 0 0 0.0625rem var(--box-shadow);
+							word-break: normal;
+
+							/* Prevent splitting in half onto the next column */
+							break-inside: avoid;
+
+							> ul {
+								&::before {
+									/* ul > li > ul li > ul */
+
+									/* Prevent flyout menus from disappearing when moving to them diagonally */
+									--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+
+									content: " ";
+									position: absolute;
+									z-index: 5;
+									inset: 2rem 100% auto auto;
+									width: 50%;
+									height: calc(100% - 2rem);
+									clip-path: var(--clip-path);
+								}
+							}
+						}
+					}
+
+					> ul {
+						--box-shadow: rgba(var(--dropdown-border-color));
+
+						display: flex;
+						visibility: visible;
+						position: absolute;
+						z-index: 20;
+						left: 0;
+						box-sizing: border-box;
+						flex-flow: column nowrap;
+						align-self: flex-start;
+						width: auto;
+						min-width: 100%;
+						max-width: var(--header-width-on-desktop, 61.25rem);
+						margin-top: var(--topbar-height-on-desktop);
+						border-top: none;
+						background: rgba(var(--dropdown-bg-color));
+						box-shadow: 0 0.125rem 0.375rem var(--box-shadow), inset 0 0 0 0.0625rem var(--box-shadow);
+						pointer-events: none;
+
+						& li {
+							> a {
+								/* any li > a after top-bar > ul > li > ul */
+
+								/* Background diagonal hover color on dropdown links */
+								--wght: var(--ui-wght);
+
+								/* Text Positioning */
+								display: flex;
+								position: relative;
+								align-items: center;
+								justify-content: center;
+								width: 100%;
+								height: 100%;
+								padding: 0 1em;
+								overflow: hidden;
+								transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+									color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+									font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+								border: 0 solid rgba(0, 0, 0, 0);
+								background: rgba(var(--dropdown-links-bg-color));
+								color: rgb(var(--dropdown-links-color));
+								font-size: calc(var(--base-font-size) * (13 / 15));
+								font-weight: var(--wght);
+								text-align: center;
+								white-space: nowrap;
+
+								&::before {
+									--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+									content: " ";
+									position: absolute;
+									z-index: -1;
+									top: 0;
+									width: 100%;
+									height: 100%;
+									transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+									opacity: 1;
+									background-color: rgb(var(--dropdown-links-hover-bg-color));
+									pointer-events: none;
+									clip-path: var(--clip-path);
+								}
+							}
+
+							&:is(:hover, :active, :focus-within) {
+								> a {
+									--wght: var(--ui-hvr-wght);
+
+									color: rgb(var(--dropdown-links-hover-color));
+									font-weight: var(--wght);
+
+									&::before {
+										--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+									}
+								}
+							}
+						}
+
+						> li {
+							& ul {
+								/* ul > li > ul > li ul */
+
+								/* Flyout Nested Menus */
+								display: flex;
+								position: absolute;
+								z-index: 5;
+								inset: 0 auto auto calc(100% - 0.0625rem);
+								box-sizing: content-box;
+								flex-flow: column nowrap;
+								width: auto;
+								height: auto;
+								margin: 0;
+								transition: opacity 80ms cubic-bezier(0.4, 0, 0.2, 1),
+									background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+								opacity: 0;
+								background-color: rgba(var(--dropdown-bg-color));
+								pointer-events: none;
+							}
+
+							&:is(:hover, :active, :focus-within) {
+								& ul,
+								& ul:is(:hover, :active, :focus-within) {
+									opacity: 1;
+									pointer-events: all;
+								}
+							}
+
+							> img {
+								/* Images in Dropdown Menu Support */
+								position: initial;
+								padding: 0 0.25rem;
+								padding-left: 0;
+							}
+
+							& a {
+								.topbar-link-w-img {
+									justify-content: start;
+									padding-left: 2.5rem;
+									text-align: left;
+
+									& img {
+										position: absolute;
+										left: 0;
+									}
+								}
+							}
+						}
+
+						@supports (backdrop-filter: blur(1rem)) {
+							/* Backdrop Filter Blur Support */
+							backdrop-filter: blur(0);
+							transition: backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1), opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
 						}
 					}
 				}
 
-				/* ul > li > ul > li ul */
-
-				/* Flyout Nested Menus */
-				& > li {
-					& ul {
-						display: flex;
-						position: absolute;
-						z-index: 5;
-						top: 0;
-						left: calc(100% - 0.0625rem);
-						box-sizing: content-box;
-						flex-flow: column nowrap;
-						width: auto;
-						height: auto;
-						margin: 0;
-						transition: opacity 80ms cubic-bezier(0.4, 0, 0.2, 1),
-							background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
-						opacity: 0;
-						background-color: rgba(var(--dropdown-bg-color));
-						pointer-events: none;
-					}
-
-					&:is(:hover, :active, :focus-within) {
-						& ul,
-						& ul:is(:hover, :active, :focus-within) {
-							opacity: 1;
-							pointer-events: all;
-						}
-					}
-
-					/* Images in Dropdown Menu Support */
-					& > img {
-						position: initial;
-						padding: 0 0.25rem;
-						padding-left: 0;
-					}
-
-					& a {
-						&.topbar-link-w-img {
-							justify-content: start;
-							padding-left: 2.5rem;
-							text-align: left;
-
-							& img {
-								position: absolute;
-								left: 0;
+				&:first-of-type {
+					> li {
+						&:last-of-type {
+							> ul {
+								right: 0;
+								left: auto;
 							}
 						}
 					}
 				}
+			}
 
-				/* Backdrop Filter Blur Support */
-				@supports (backdrop-filter: blur(1rem)) {
-					backdrop-filter: blur(0);
-					transition: backdrop-filter 200ms cubic-bezier(0.4, 0, 0.2, 1),
-						opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			& li {
+				& ul {
+					/* any ul after li */
+					display: flex;
+					position: relative;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					margin: 0;
+					padding: 0;
+					border-collapse: collapse;
+					transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					opacity: 0;
+				}
+
+				& a {
+					/* any a after li */
+					transition: font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+						font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				}
+
+				&:is(:hover, :active, :focus-within) a {
+					text-decoration: none;
 				}
 			}
-		}
-
-		&:first-of-type {
-			& > li {
-				&:last-of-type {
-					& > ul {
-						right: 0;
-						left: auto;
-					}
-				}
-			}
-		}
-	}
-
-	& li {
-		/* any ul after li */
-		& ul {
-			display: flex;
-			position: relative;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			margin: 0;
-			padding: 0;
-			border-collapse: collapse;
-			transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
-			opacity: 0;
-		}
-
-		/* any a after li */
-		& a {
-			transition: font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-				font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-		&:is(:hover, :active, :focus-within) a {
-			text-decoration: none;
 		}
 	}
 }
@@ -1038,91 +1013,88 @@ div.mobile-top-bar {
 	top: initial;
 }
 
-#top-bar ul li.homebutton-li,
-#top-bar ul li.inline-switch {
-	max-width: var(--topbar-height-on-desktop);
-}
+#top-bar {
+	& ul li,
+	> .ct-theme-switch {
+		&,
+		&:is(:hover, :active, :focus, :focus-within) {
+			.home-button {
+				mask-image: var(--homebutton-mask);
+				background-color: rgb(var(--topmenu-category-color)) !important;
+			}
 
-#top-bar ul li a.homebutton {
-	background-image: initial;
-}
+			.lightbulb {
+				.lightbulb-mask {
+					mask-image: var(--lightbulb-mask);
+				}
+			}
 
-#top-bar ul li .homebutton,
-#top-bar ul li:is(:hover, :focus-within) .homebutton,
-#top-bar ul li .lightbulb .lightbulb-mask,
-#top-bar ul li:is(:hover, :focus-within) .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
-#top-bar
-	> .ct-theme-switch:is(:hover, :focus-within)
-	.lightbulb
-	.lightbulb-mask {
-	width: 100%;
-	background-color: rgb(var(--topmenu-category-color)) !important;
-	background-image: initial;
-	color: transparent !important;
-	mask: center center / 1em 1em no-repeat;
-}
+			.homebutton,
+			.lightbulb .lightbulb-mask {
+				width: 100%;
+				background-image: initial;
+				color: transparent !important;
+				mask: center center / 1em 1em no-repeat;
+			}
+		}
+	}
 
-#top-bar ul li .homebutton {
-	mask-image: var(--homebutton-mask);
-}
+	& ul li {
+		&:is(.homebutton-li, .inline-switch) {
+			max-width: var(--topbar-height-on-desktop);
+		}
 
-#top-bar ul li:is(:hover, :active, :focus-within) .homebutton {
-	mask-image: var(--homebutton-mask);
-}
+		& a {
+			&.homebutton {
+				background-image: initial;
+			}
+		}
 
-#top-bar ul li .lightbulb .lightbulb-mask,
-#top-bar > .ct-theme-switch .lightbulb .lightbulb-mask {
-	mask-image: var(--lightbulb-mask);
-}
+		.lightbulb {
+			border: 0.125rem solid rgb(var(--swatch-tertiary-color));
+			border-radius: 1.0625rem;
+			box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1), inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
 
-#top-bar ul li:is(:hover, :active, :focus-within) .lightbulb .lightbulb-mask,
-#top-bar
-	> .ct-theme-switch:is(:hover, :active, :focus-within)
-	.lightbulb
-	.lightbulb-mask {
-	mask-image: var(--lightbulb-mask);
-}
+			.lightbulb-mask {
+				background-color: rgb(var(--topmenu-category-color)) !important;
+			}
+		}
+	}
 
-#top-bar > .ct-theme-switch {
-	display: none; /* Hiding since BHL does not support this feature */
-	position: absolute;
-	top: 3.5em;
-	right: calc(3% - 0.25em);
-}
+	> .ct-theme-switch {
+		display: none; /* Hiding since BHL does not support this feature */
+		position: absolute;
+		inset: 3.5em calc(3% - 0.25em) auto auto;
 
-#top-bar .ct-theme-switch a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 2em;
-	height: 2em;
-	border-radius: 50%;
-	font-size: calc(var(--base-font-size) * (13 / 15));
-}
+		& a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2em;
+			height: 2em;
+			border-radius: 50%;
+			font-size: calc(var(--base-font-size) * (13 / 15));
+		}
 
-#top-bar > .ct-theme-switch .lightbulb,
-#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb {
-	border: 0.125rem solid rgb(var(--swatch-tertiary-color));
-	border-radius: 1.0625rem;
-	box-shadow: 0 0 0.3125rem 0.3125rem rgba(0, 0, 0, 0.1),
-		inset 0 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.3);
-}
+		.lightbulb {
+			background: rgb(var(--swatch-menubg-medium-dark-color));
+		}
 
-#top-bar > .ct-theme-switch .lightbulb {
-	background: rgb(var(--swatch-menubg-medium-dark-color));
-}
+		&:is(:hover, :active, :focus, :focus-within) {
+			.lightbulb {
+				background: rgb(var(--swatch-menubg-black-color));
+			}
+		}
 
-#top-bar > .ct-theme-switch:is(:hover, :active, :focus-within) .lightbulb {
-	background: rgb(var(--swatch-menubg-black-color));
-}
-
-#top-bar > .ct-theme-switch .lightbulb .lightbulb-mask,
-#top-bar
-	> .ct-theme-switch:is(:hover, :active, :focus-within)
-	.lightbulb
-	.lightbulb-mask {
-	background-color: rgb(var(--swatch-text-secondary-color)) !important;
+		&,
+		&:is(:hover, :active, :focus, :focus-within) {
+			.lightbulb {
+				.lightbulb-mask {
+					background-color: rgb(var(--swatch-text-secondary-color)) !important;
+				}
+			}
+		}
+	}
 }
 
 /* ===MOBILE HEADER=== */
@@ -1151,18 +1123,15 @@ div.mobile-top-bar {
 	/* ***MAIN*** */
 	:root {
 		--header-h1-font-size: calc(
-			1.15rem + (2.405 - 1.15) *
-				((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
+			1.15rem + (2.405 - 1.15) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
 		);
 		--header-h2-font-size: calc(
-			0.5rem + (0.945 - 0.5) *
-				((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
+			0.5rem + (0.945 - 0.5) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75))
 		);
 	}
 
 	body {
-		background-size: 100% var(--header-height-on-mobile),
-			100% var(--final-header-height-on-mobile),
+		background-size: 100% var(--header-height-on-mobile), 100% var(--final-header-height-on-mobile),
 			100% var(--background-gradient-distance);
 	}
 
@@ -1181,14 +1150,28 @@ div.mobile-top-bar {
 		margin: 0;
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
-		background-position: calc(
-				(var(--header-height-on-mobile) - 0.75rem) - var(--size)
-			)
-			calc(
-				((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) /
-					2
-			);
+		background-position: calc((var(--header-height-on-mobile) - 0.75rem) - var(--size))
+			calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
 		background-size: var(--size), 100% var(--header-height-on-mobile);
+
+		& h1 {
+			max-height: var(--header-height-on-mobile);
+
+			& a {
+				margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1.345rem);
+			}
+
+			& span {
+				height: var(--header-height-on-mobile);
+			}
+		}
+
+		& h2 {
+			& span {
+				margin-top: calc(((var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) + 0.5rem));
+				line-height: 1;
+			}
+		}
 	}
 
 	#header,
@@ -1197,282 +1180,219 @@ div.mobile-top-bar {
 		max-width: 100%;
 	}
 
-	#header h1 {
-		max-height: var(--header-height-on-mobile);
-	}
-
-	#header h1 a {
-		margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1.345rem);
-	}
-
-	#header > h1 > a > span {
-		height: var(--header-height-on-mobile);
-	}
-
-	#header h2 span {
-		margin-top: calc(
-			(
-				(var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) +
-					0.5rem
-			)
-		);
-		line-height: 1;
-	}
-
 	/* ***LOGIN/SEARCH BOX*** */
 	#search-top-box {
-		top: 2em;
-		right: 3%;
+		inset: 2em 3% auto auto;
 	}
 
 	#login-status {
-		top: 2em;
-		right: calc(3% + var(--account-height) + 0.25em);
+		inset: 2em calc(3% + var(--account-height) + 0.25em) auto auto;
 		transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 		color: transparent;
 		pointer-events: none;
 		user-select: none;
-	}
 
-	#login-status:is(:hover, :active, :focus-within) {
-		color: rgb(var(--login-line-divider-color));
-		pointer-events: all;
-		user-select: initial;
-	}
+		&:is(:hover, :active, :focus-within) {
+			color: rgb(var(--login-line-divider-color));
+			pointer-events: all;
+			user-select: initial;
 
-	#login-status:is(:hover, :active, :focus-within) #account-options {
-		pointer-events: all;
-	}
+			#account-options {
+				pointer-events: all;
+			}
 
-	#login-status > *:not(#account-topbutton, [href*="account/messages"]) {
-		--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+			#account-topbutton {
+				--clip-path: polygon(30% 35%, 70% 35%, 50% 60%, 50% 60%);
 
-		transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-			text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
-			color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-			clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
-			opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
-		opacity: 0;
-		clip-path: var(--clip-path);
-	}
+				background-color: rgb(var(--login-arrow-color));
+				clip-path: var(--clip-path);
+			}
 
-	#login-status:is(:hover, :active, :focus-within)
+			> *:not(#account-topbutton, [href*="account/messages"]) {
+				--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+				clip-path: var(--clip-path);
+				opacity: 1;
+			}
+
+			&::before,
+			&::after {
+				background-color: rgba(var(--login-mobile-icon-hover-bg-color), 0);
+				cursor: auto;
+				pointer-events: none;
+			}
+		}
+
+		&:hover {
+			#account-topbutton {
+				background-color: rgb(var(--login-arrow-color));
+			}
+		}
+
 		> *:not(#account-topbutton, [href*="account/messages"]) {
-		--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+			clip-path: var(--clip-path);
+			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
+				color 200ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
+				opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			opacity: 0;
+		}
 
-		opacity: 1;
-		clip-path: var(--clip-path);
-	}
+		#account-topbutton {
+			--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
-	#login-status #account-topbutton {
-		margin-left: 0;
-		transition: clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1),
-			background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		background-color: transparent;
-		pointer-events: all;
-	}
+			margin-left: 0;
+			transition: clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			background-color: rgba(var(--login-arrow-color), 0);
+			pointer-events: all;
+			clip-path: var(--clip-path);
+		}
 
-	#login-status:hover #account-topbutton {
-		background-color: rgb(var(--login-arrow-color));
-	}
+		#account-options {
+			margin: 0;
+		}
 
-	#login-status::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		background-color: rgba(var(--login-mobile-icon-color), 0);
-		cursor: pointer;
-		pointer-events: all;
-		mask: var(--user-account-mask) center right /
-			calc(var(--account-height) - 0.5em) no-repeat;
-	}
+		& a[href*="account/messages"] {
+			color: rgb(var(--login-myaccount-color));
+			pointer-events: all;
+		}
 
-	#login-status::before {
-		z-index: 2;
-		background-color: rgba(var(--login-mobile-icon-color), 1);
-	}
-
-	#login-status:hover::before {
-		background-color: rgba(var(--login-mobile-icon-hover-color), 1);
-	}
-
-	#login-status:is(:hover, :active, :focus-within)::before,
-	#login-status:is(:hover, :active, :focus-within)::after {
-		background-color: rgba(var(--login-mobile-icon-hover-bg-color), 0);
-		cursor: auto;
-		pointer-events: none;
-	}
-
-	#login-status #account-topbutton {
-		--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-		background-color: rgba(var(--login-arrow-color), 0);
-		clip-path: var(--clip-path);
-	}
-
-	#login-status:is(:hover, :active, :focus-within) #account-topbutton {
-		--clip-path: polygon(30% 35%, 70% 35%, 50% 60%, 50% 60%);
-
-		background-color: rgb(var(--login-arrow-color));
-		clip-path: var(--clip-path);
-	}
-
-	#login-status #account-options {
-		margin: 0;
-	}
-
-	#login-status a[href*="account/messages"] {
-		color: rgb(var(--login-myaccount-color));
-		pointer-events: all;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 2;
+			inset: 0 auto auto 0;
+			width: 100%;
+			height: 100%;
+			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			background-color: rgba(var(--login-mobile-icon-color), 1);
+			cursor: pointer;
+			pointer-events: all;
+			mask: var(--user-account-mask) center right / calc(var(--account-height) - 0.5em) no-repeat;
+		}
 	}
 
 	/* ***TOP BAR*** */
 
-	#header div#top-bar {
-		height: var(--topbar-height-on-mobile);
-		margin: calc(var(--header-height-on-mobile)) 0 1.75rem 0;
-	}
+	#header {
+		& div#top-bar {
+			height: var(--topbar-height-on-mobile);
+			margin: calc(var(--header-height-on-mobile)) 0 1.75rem 0;
+		}
 
-	#header div.top-bar {
-		display: none;
-	}
+		& div.top-bar {
+			display: none;
+		}
 
-	div.mobile-top-bar {
-		display: flex;
-		position: static;
-		z-index: 9999;
-		top: 0;
-		right: 0;
-		left: 0;
-		align-items: center;
-		width: var(--header-width-on-mobile, 100vw);
-		margin: 0;
-		padding: 0;
-		background: var(
-			--gradient-topmenu-mobile,
-			linear-gradient(
-				to bottom,
-				rgba(var(--swatch-topmenu-border-color), 1) 0,
-				rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-				rgba(var(--swatch-topmenu-bg-color), 1)
-					calc(var(--topbar-height-on-mobile) - 0.125rem),
-				rgba(var(--swatch-topmenu-bg-color), 1)
-					calc(var(--topbar-height-on-mobile) - 0.125rem),
-				rgba(var(--swatch-topmenu-border-color), 1)
-					var(--topbar-height-on-mobile)
-			)
-		);
+		& div.mobile-top-bar {
+			display: flex;
+			position: static;
+			z-index: 9999;
+			inset: 0 0 auto 0;
+			align-items: center;
+			width: var(--header-width-on-mobile, 100vw);
+			margin: 0;
+			padding: 0;
+			background: var(
+				--gradient-topmenu-mobile,
+				linear-gradient(
+					to bottom,
+					rgba(var(--swatch-topmenu-border-color), 1) 0,
+					rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
+					rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+					rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+					rgba(var(--swatch-topmenu-border-color), 1) var(--topbar-height-on-mobile)
+				)
+			);
+		}
 	}
 
 	/* ul */
 
-	#header div[class*="top-bar"] > ul {
-		width: calc(100% - var(--topbar-height-on-mobile));
-	}
+	#header {
+		& div[class*="top-bar"] {
+			> ul {
+				width: calc(100% - var(--topbar-height-on-mobile));
 
-	/* ul > li */
+				> li {
+					position: inherit;
 
-	#header div[class*="top-bar"] > ul > li {
-		position: inherit;
-	}
+					> a {
+						background: none;
+						font-size: 1.25em;
+					}
 
-	/* ul > li > a */
+					> ul {
+						/* DROPDOWN MENU */
 
-	#header div[class*="top-bar"] > ul > li > a {
-		background: none;
-		font-size: 1.25em;
-	}
+						display: grid;
+						left: 50%;
+						grid-template-columns: repeat(2, 50%);
+						max-height: calc(100vh - 8rem);
+						margin-top: var(--topbar-height-on-mobile);
+						translate: -50% 0;
 
-	/* DROPDOWN MENU */
+						> li {
+							& ul {
+								top: 100%;
+								width: 90%;
+							}
 
-	/* ul > li > ul */
+							&:nth-of-type(odd) ul {
+								left: 10%;
+							}
 
-	#header div[class*="top-bar"] > ul > li > ul {
-		display: grid;
-		left: 50%;
-		grid-template-columns: repeat(2, 50%);
-		max-height: calc(100vh - 8rem);
-		margin-top: var(--topbar-height-on-mobile);
-		translate: -50% 0;
-	}
+							&:nth-of-type(even) ul {
+								left: 0%;
+							}
+						}
 
-	#header
-		div[class*="top-bar"]
-		> ul
-		> li:is(:hover, :active, :focus-within)
-		> ul,
-	#header
-		div[class*="top-bar"]
-		> ul
-		> li
-		> ul:is(:hover, :active, :focus-within) {
-		translate: -50% 0;
-	}
+						& li {
+							> a {
+								--min-font-size: 1rem;
+								--max-font-size: 1rem;
 
-	#header div[class*="top-bar"] > ul:first-of-type > li:last-of-type > ul {
-		right: 0;
-		left: 50%;
-	}
+								font-size: var(--base-font-size);
+								line-height: 1;
+								white-space: inherit;
+							}
+						}
 
-	/* ul > li ul > li */
+						&:is(:hover, :active, :focus-within) {
+							translate: -50% 0;
+						}
+					}
 
-	#header div[class*="top-bar"] > ul > li ul > li {
-		max-width: calc(80vw + 0.0625rem);
-		height: var(--topbar-height-on-mobile);
-		max-height: calc((100vh - 15rem) / 10);
-		text-align: center;
-	}
+					& ul {
+						> li {
+							max-width: calc(80vw + 0.0625rem);
+							height: var(--topbar-height-on-mobile);
+							max-height: calc((100vh - 15rem) / 10);
+							text-align: center;
 
-	#header
-		div[class*="top-bar"]
-		> ul
-		> li
-		ul
-		> li:nth-last-of-type(2):nth-of-type(even) {
-		box-shadow: inset 0 0 0 0.0625rem var(--box-shadow),
-			0 0.0625rem 0 0 var(--box-shadow);
-	}
+							&:nth-last-of-type(2):nth-of-type(even) {
+								box-shadow: inset 0 0 0 0.0625rem var(--box-shadow), 0 0.0625rem 0 0 var(--box-shadow);
+							}
 
-	#header
-		div[class*="top-bar"]
-		> ul
-		> li
-		ul
-		> li:last-of-type:nth-of-type(odd) {
-		box-shadow: inset 0 0 0 0.0625rem var(--box-shadow),
-			0.0625rem 0 0 0 var(--box-shadow);
-	}
+							&:last-of-type:nth-of-type(odd) {
+								box-shadow: inset 0 0 0 0.0625rem var(--box-shadow), 0.0625rem 0 0 0 var(--box-shadow);
+							}
+						}
+					}
 
-	/* ul > li > ul li > a */
+					&:is(:hover, :active, :focus-within) {
+						> ul {
+							translate: -50% 0;
+						}
+					}
+				}
 
-	#header div[class*="top-bar"] > ul > li > ul li > a {
-		--min-font-size: 1rem;
-		--max-font-size: 1rem;
-
-		font-size: var(--base-font-size);
-		line-height: 1;
-		white-space: inherit;
-	}
-
-	/* ul > li > ul > li ul */
-
-	/* Mobile Nested Menus */
-
-	#header div[class*="top-bar"] > ul > li > ul > li ul {
-		top: 100%;
-		width: 90%;
-	}
-
-	#header div[class*="top-bar"] > ul > li > ul > li:nth-of-type(odd) ul {
-		left: 10%;
-	}
-
-	#header div[class*="top-bar"] > ul > li > ul > li:nth-of-type(even) ul {
-		left: 0%;
+				&:first-of-type > li:last-of-type > ul {
+					right: 0;
+					left: 50%;
+				}
+			}
+		}
 	}
 
 	/* Sidebar Menu Button */
@@ -1480,39 +1400,39 @@ div.mobile-top-bar {
 		display: flex;
 		width: var(--topbar-height-on-mobile);
 		height: var(--topbar-height-on-mobile);
-	}
 
-	#header div.open-menu > p {
-		display: inline-flex;
-		align-content: stretch;
-		align-items: stretch;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		font-size: 2.5em;
-	}
+		> p {
+			display: inline-flex;
+			align-content: stretch;
+			align-items: stretch;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-size: 2.5em;
 
-	#header div.open-menu > p,
-	#header div.open-menu > p > a {
-		justify-content: center;
-	}
+			> a {
+				--wght: 700;
 
-	#header div.open-menu > p > a {
-		--wght: 700;
+				display: flex;
+				flex: 2 0 100%;
+				align-items: center;
+				justify-content: center;
 
-		display: flex;
-		flex: 2 0 100%;
-		align-items: center;
-		justify-content: center;
+				/* Overriding Wikidot's Default Styling */
+				border: none !important;
+				background-color: transparent !important;
+				color: rgb(var(--mobile-topmenu-sidebar-button-color)) !important;
+				font-weight: var(--wght);
+				letter-spacing: 0.016em;
+				text-align: center;
+				text-decoration: none;
+			}
+		}
 
-		/* Overriding Wikidot's Default Styling */
-		border: none !important;
-		background-color: transparent !important;
-		color: rgb(var(--mobile-topmenu-sidebar-button-color)) !important;
-		font-weight: var(--wght);
-		letter-spacing: 0.016em;
-		text-align: center;
-		text-decoration: none;
+		> p,
+		> a {
+			justify-content: center;
+		}
 	}
 }

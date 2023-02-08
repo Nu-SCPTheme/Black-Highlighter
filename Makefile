@@ -28,3 +28,6 @@ legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 # Utility rules
 clean:
 	rm -rf dist
+
+rebuildCSS:
+	rm -rf dist/css | make css
