@@ -5,15 +5,16 @@ module.exports = (ctx) => {
 	const path = require("path");
 	const stylelint = require("stylelint");
 	const postcssImport = require("postcss-import");
-	//const postcssURL = require("postcss-url");
 	const reporter = require("postcss-reporter");
 	const mqPacker = require("@hail2u/css-mqpacker");
 	const lightningcss = require("postcss-lightningcss");
 	const browserslist = require("../package.json").browserslist;
 
+	const nodeEnv = ctx.env;
+
 	const stylelintOptions = {
 		configFile: path.join(__dirname, "../.stylelintrc"),
-		fix: process.env.NODE_ENV === "production" ? false : true
+		fix: nodeEnv === "development" ? true : false
 	};
 
 	const lightningcssOptions = ({
@@ -21,8 +22,13 @@ module.exports = (ctx) => {
 		browsers: browserslist,
 		lightningcssOptions: {
 			projectRoot: ctx.file.dirname,
-			inputSourceMap: path.join(ctx.file.dirname, process.env.NODE_ENV === "production" ? "/black-highlighter.css.map" : "/min/black-highlighter.min.css.map"),
-			minify: process.env.NODE_ENV === "production" ? true : false,
+			inputSourceMap:
+				path.join(
+					ctx.file.dirname,
+					nodeEnv === "production" ?
+						"/black-highlighter.css.map" :
+						"/min/black-highlighter.min.css.map"),
+			minify: nodeEnv === "development" ? false : true,
 			sourceMap: false,
 			errorRecovery: false,
 			drafts: {
@@ -31,8 +37,12 @@ module.exports = (ctx) => {
 			},
 			visitor: {
 				Url(url) {
-					process.env.NODE_ENV === "production" ? [url.url = "../" + url.url] : [url.url];
-					return url;
+					nodeEnv === "development" || !url.url.includes("../") ? [
+						url.url
+					] : [
+						url.url = "../" + url.url
+					];
+				return url;
 				}
 			}
 		}
@@ -45,22 +55,37 @@ module.exports = (ctx) => {
 		clearMessages: true
 	};
 
-	return {
-		map: { inline: false },
-		plugins:
-			process.env.NODE_ENV === "production" ? [
+	let plugins = [];
+
+	switch(nodeEnv) {
+		case "watching":
+			plugins = [
+				lightningcss(lightningcssOptions),
+				reporter(reporterOptions)
+			];
+			break;
+		case "production":
+			plugins = [
 				postcssImport,
 				lightningcss(lightningcssOptions),
-				//postcssURL(postcssURLOptions),
-				//mqPacker,
+				mqPacker,
 				reporter(reporterOptions)
-			] : [
+			];
+			break;
+		case "development":
+			plugins = [
 				postcssImport,
 				lightningcss(lightningcssOptions),
 				stylelint(stylelintOptions),
-				//postcssURL(postcssURLOptions),
-				//mqPacker,
 				reporter(reporterOptions)
-			]
+			];
+			break;
+		default:
+			console.log("no plugins");
+	}
+
+	return {
+		map: { inline: false },
+		plugins: plugins
 	};
 };

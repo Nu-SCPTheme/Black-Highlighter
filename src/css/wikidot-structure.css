@@ -308,7 +308,7 @@ div.page-watch-options {
 
 	&::before {
 		--wght: var(--ui-hvr-wght);
-		content: "TAGS\0021b4";
+		content: var(--text-tags);
 		position: absolute;
 		inset: -2em auto auto 0;
 		height: 1.5em;
@@ -429,27 +429,31 @@ div[id*="page-options-bottom"] {
 	text-align: left;
 	white-space: nowrap;
 
-	> a {
-		&.btn {
-			--button-padding: calc(var(--icon-size) / 8);
-			flex-basis: 5rem;
-			height: 1.5em;
-			margin: 0 0.5ch 1ch;
-			padding: var(--button-padding);
-			padding-left: calc(var(--icon-size) + 0.5em);
-			box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline)), inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
-			line-height: 1.5;
+	&:not(.page-rate-widget-box, #search-top-box-form) {
+		> a {
+			&.btn {
+				--button-padding: calc(var(--icon-size) / 8);
+				flex-basis: 5rem;
+				height: 1.5em;
+				margin: 0 0.5ch 1ch;
+				padding: var(--button-padding);
+				padding-left: calc(var(--icon-size) + 0.5em);
+				box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline)), inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
+				line-height: 1.5;
 
-			&:is(:hover, :active, :focus, :focus-within) {
-				box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
-					inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
-			}
+				&:is(:hover, :active, :focus, :focus-within) {
+					box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
+						inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
+				}
 
-			@media (--viewport-tablet) {
-				--button-padding: calc(var(--icon-size) / 4);
+				@media (--viewport-tablet) {
+					--button-padding: calc(var(--icon-size) / 4);
+				}
 			}
 		}
+	}
 
+	> a {
 		> * {
 			text-indent: 0;
 		}
@@ -1514,217 +1518,217 @@ form#edit-page-form {
 			box-shadow: inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.25),
 				inset 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.25);
 		}
+	}
 
-		#edit-page-textarea {
-			min-width: 100%;
-			min-height: calc(var(--body-width-on-desktop) / 2);
-			padding: 0.75em 1em;
+	#edit-page-textarea {
+		min-width: 100%;
+		min-height: calc(var(--body-width-on-desktop) / 2);
+		padding: 0.75em 1em;
 
-			&:focus {
-				outline: 0 solid transparent;
+		&:focus {
+			outline: 0 solid transparent;
+		}
+	}
+
+	& textarea {
+		overflow-y: auto;
+		border: none;
+		outline: 0 solid transparent;
+		font-size: 0.9em;
+		line-height: 1.42;
+		text-align: left;
+		word-wrap: break-word;
+		white-space: pre-wrap;
+		tab-size: 4;
+	}
+
+	/* ===EDITOR HELP LINKS=== */
+	.edit-help-34 {
+		--wght: var(--ui-wght);
+		display: flex;
+		grid-area: edit-help;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		min-height: 1.125em;
+		margin: 0;
+		padding: 0.125em 0;
+		background-color: rgb(var(--swatch-tertiary-color), 0.05);
+		font-size: 0.7em;
+		font-weight: var(--wght);
+		line-height: 1.25;
+		text-transform: capitalize;
+		white-space: nowrap;
+
+		> a {
+			display: inline-flex;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			padding: 0 0.25em;
+
+			&::after {
+				--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+				content: " ";
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				opacity: 1;
+				background-color: rgb(var(--swatch-primary));
+				pointer-events: none;
+				clip-path: var(--clip-path);
 			}
+
+			&:nth-of-type(1) {
+				margin: 0 1.5em 0 0.5em;
+			}
+
+			&:nth-of-type(2) {
+				&::before,
+				&:is(:hover, :active, :focus, :focus-within)::before {
+					content: " | ";
+					position: absolute;
+					left: -1em;
+					color: rgb(var(--swatch-text-tertiary-color));
+				}
+			}
+
+			&:is(:hover, :active, :focus, :focus-within) {
+				--wght: calc(var(--ui-hvr-wght));
+				transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
+					font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				color: rgb(var(--swatch-background));
+				font-weight: var(--wght);
+				text-decoration: none;
+
+				&::after {
+					--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
+				}
+			}
+		}
+	}
+
+	/* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
+	.change-textarea-size {
+		display: grid;
+		grid-area: text-resize;
+		grid-auto-flow: column;
+		grid-gap: 0.25em;
+		align-items: center;
+		justify-content: flex-end;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: rgb(var(--swatch-tertiary-color), 0.15);
+		gap: 0.25em;
+
+		& a {
+			--wght: calc(var(--ui-wght) + 100);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.125em;
+			height: 1.125em;
+			padding: 0;
+			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+				font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			border: none;
+			background-color: rgba(var(--swatch-primary-darker), 0.4);
+			box-shadow: none;
+			color: rgba(var(--swatch-text-secondary-color));
+			font-weight: var(--wght);
+
+			&:is(:hover, :active, :focus, :focus-within) {
+				--wght: calc(var(--ui-hvr-wght) + 100);
+				background-color: rgba(var(--swatch-primary));
+				font-weight: var(--wght);
+			}
+		}
+	}
+
+	/* ===EDITOR DESCRIPTION BOX=== */
+	.edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
+		--wght: var(--ui-hvr-wght);
+		display: grid;
+		position: relative;
+		grid-area: descrip;
+		grid-template-rows: 1em 1fr;
+		align-items: center;
+		justify-content: stretch;
+		margin-top: 1.5rem;
+		padding-top: 0.75em;
+		background-color: rgba(var(--swatch-background), 1);
+		box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
+		color: transparent;
+		font-weight: var(--wght);
+
+		&::before {
+			content: var(--text-editor-desc);
+			position: absolute;
+			z-index: 2;
+			inset: -1em auto auto 1rem;
+			padding: 0.15625em;
+			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+				color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			outline: 0 solid rgb(var(--swatch-primary));
+			background-color: rgba(var(--swatch-background), 1);
+			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
+			color: rgb(var(--swatch-text-general));
+			font-size: 0.8em;
+			text-transform: uppercase;
+			translate: 0 0;
+			will-change: box-shadow, color, background-color;
+		}
+
+		& br {
+			display: none;
 		}
 
 		& textarea {
-			overflow-y: auto;
-			border: none;
-			outline: 0 solid transparent;
-			font-size: 0.9em;
-			line-height: 1.42;
-			text-align: left;
-			word-wrap: break-word;
-			white-space: pre-wrap;
-			tab-size: 4;
-		}
-
-		/* ===EDITOR HELP LINKS=== */
-		.edit-help-34 {
 			--wght: var(--ui-wght);
-			display: flex;
-			grid-area: edit-help;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-			min-height: 1.125em;
-			margin: 0;
-			padding: 0.125em 0;
-			background-color: rgb(var(--swatch-tertiary-color), 0.05);
-			font-size: 0.7em;
-			font-weight: var(--wght);
-			line-height: 1.25;
-			text-transform: capitalize;
-			white-space: nowrap;
-
-			> a {
-				display: inline-flex;
-				position: relative;
-				align-items: center;
-				justify-content: center;
-				padding: 0 0.25em;
-
-				&::after {
-					--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-					content: " ";
-					position: absolute;
-					z-index: -1;
-					top: 0;
-					width: 100%;
-					height: 100%;
-					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
-					opacity: 1;
-					background-color: rgb(var(--swatch-primary));
-					pointer-events: none;
-					clip-path: var(--clip-path);
-				}
-
-				&:nth-of-type(1) {
-					margin: 0 1.5em 0 0.5em;
-				}
-
-				&:nth-of-type(2) {
-					&::before,
-					&:is(:hover, :active, :focus, :focus-within)::before {
-						content: " | ";
-						position: absolute;
-						left: -1em;
-						color: rgb(var(--swatch-text-tertiary-color));
-					}
-				}
-
-				&:is(:hover, :active, :focus, :focus-within) {
-					--wght: calc(var(--ui-hvr-wght));
-					transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-						font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-					color: rgb(var(--swatch-background));
-					font-weight: var(--wght);
-					text-decoration: none;
-
-					&::after {
-						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
-					}
-				}
-			}
-		}
-
-		/* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
-		.change-textarea-size {
-			display: grid;
-			grid-area: text-resize;
-			grid-auto-flow: column;
-			grid-gap: 0.25em;
-			align-items: center;
-			justify-content: flex-end;
+			z-index: 1;
+			width: calc(100% - 2rem);
 			height: 100%;
-			margin: 0;
-			padding: 0;
-			background-color: rgb(var(--swatch-tertiary-color), 0.15);
-			gap: 0.25em;
+			min-height: 7em;
+			margin: -1.325em auto 0;
+			padding: 0.75em 0.5em 0.5em;
+			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			outline: 0 solid rgb(var(--swatch-primary));
+			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
+			color: rgb(var(--swatch-menutxt-general-color));
+			font-weight: var(--wght);
+			resize: none;
+			will-change: box-shadow, background-color;
 
-			& a {
-				--wght: calc(var(--ui-wght) + 100);
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				width: 1.125em;
-				height: 1.125em;
-				padding: 0;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-				border: none;
+			&:not(:placeholder-shown) {
+				background-color: rgba(var(--swatch-primary-darker), 0.05);
+				color: rgb(var(--swatch-menutxt-general-color));
+			}
+
+			&:placeholder-shown {
 				background-color: rgba(var(--swatch-primary-darker), 0.4);
-				box-shadow: none;
-				color: rgba(var(--swatch-text-secondary-color));
-				font-weight: var(--wght);
-
-				&:is(:hover, :active, :focus, :focus-within) {
-					--wght: calc(var(--ui-hvr-wght) + 100);
-					background-color: rgba(var(--swatch-primary));
-					font-weight: var(--wght);
-				}
+				color: rgb(var(--swatch-menutxt-general-color));
 			}
 		}
 
-		/* ===EDITOR DESCRIPTION BOX=== */
-		.edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
-			--wght: var(--ui-hvr-wght);
-			display: grid;
-			position: relative;
-			grid-area: descrip;
-			grid-template-rows: 1em 1fr;
-			align-items: center;
-			justify-content: stretch;
-			margin-top: 1.5rem;
-			padding-top: 0.75em;
-			background-color: rgba(var(--swatch-background), 1);
-			box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
-			color: transparent;
-			font-weight: var(--wght);
-
+		&:focus-within {
 			&::before {
-				content: "Short Description of Changes:";
-				position: absolute;
-				z-index: 2;
-				inset: -1em auto auto 1rem;
-				padding: 0.15625em;
-				transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 				outline: 0 solid rgb(var(--swatch-primary));
-				background-color: rgba(var(--swatch-background), 1);
-				box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
-				color: rgb(var(--swatch-text-general));
-				font-size: 0.8em;
-				text-transform: uppercase;
-				translate: 0 0;
-				will-change: box-shadow, color, background-color;
-			}
-
-			& br {
-				display: none;
+				background-color: rgba(var(--swatch-primary), 1);
+				box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
+				color: rgb(var(--swatch-background));
+				translate: 0 -0.25em;
 			}
 
 			& textarea {
-				--wght: var(--ui-wght);
-				z-index: 1;
-				width: calc(100% - 2rem);
-				height: 100%;
-				min-height: 7em;
-				margin: -1.325em auto 0;
-				padding: 0.75em 0.5em 0.5em;
-				transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				border: none;
 				outline: 0 solid rgb(var(--swatch-primary));
-				box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
+				background-color: rgba(var(--swatch-secondary-color), 0);
+				box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 				color: rgb(var(--swatch-menutxt-general-color));
-				font-weight: var(--wght);
-				resize: none;
-				will-change: box-shadow, background-color;
-
-				&:not(:placeholder-shown) {
-					background-color: rgba(var(--swatch-primary-darker), 0.05);
-					color: rgb(var(--swatch-menutxt-general-color));
-				}
-
-				&:placeholder-shown {
-					background-color: rgba(var(--swatch-primary-darker), 0.4);
-					color: rgb(var(--swatch-menutxt-general-color));
-				}
-			}
-
-			&:focus-within {
-				&::before {
-					outline: 0 solid rgb(var(--swatch-primary));
-					background-color: rgba(var(--swatch-primary), 1);
-					box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
-					color: rgb(var(--swatch-background));
-					translate: 0 -0.25em;
-				}
-
-				& textarea {
-					border: none;
-					outline: 0 solid rgb(var(--swatch-primary));
-					background-color: rgba(var(--swatch-secondary-color), 0);
-					box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
-					color: rgb(var(--swatch-menutxt-general-color));
-				}
 			}
 		}
 	}
@@ -2085,7 +2089,7 @@ table.page-history {
 				}
 
 				&:nth-of-type(1)::before {
-					content: "rev.";
+					content: var(--text-pagehistory-rev);
 				}
 
 				&:nth-of-type(2)::before {
@@ -2093,19 +2097,19 @@ table.page-history {
 				}
 
 				&:nth-of-type(3)::before {
-					content: "flags";
+					content: var(--text-pagehistory-flags);
 				}
 
 				&:nth-of-type(4)::before {
-					content: "actions";
+					content: var(--text-pagehistory-actions);
 				}
 
 				&:nth-of-type(5)::before {
-					content: "by";
+					content: var(--text-pagehistory-by);
 				}
 
 				&:nth-of-type(6)::before {
-					content: "date";
+					content: var(--text-pagehistory-date);
 				}
 			}
 		}
@@ -2336,7 +2340,7 @@ table.page-files {
 
 	&::before {
 		--wght: 700;
-		content: "Site Tools";
+		content: var(--text-sitetools);
 		display: flex;
 		align-items: center;
 		width: max-content;

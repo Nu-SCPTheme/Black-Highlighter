@@ -16,9 +16,6 @@ dist/img/social-icons/%: src/img/social-icons/%
 	build/install.sh 644 $< $@
 
 # Images to optimize
-dist/img/%.gif: src/img/%.gif node_modules
-	npm run optimize -- gif $< $@
-
 dist/img/%.png: src/img/%.png node_modules
 	npm run optimize -- png $< $@
 

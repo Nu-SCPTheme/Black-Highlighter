@@ -263,6 +263,7 @@
 		width: fit-content;
 		inset: -0.75em auto;
 		margin-block: 0;
+		margin-inline: 0;
 		padding: 0 0.5em;
 		background-color: rgb(var(--footnotes-footer-title-bg-color));
 		color: rgb(var(--footnotes-footer-title-text-color));
@@ -512,7 +513,7 @@
 	--rating-module-height: 1.3125em;
 }
 
-.page-rate-widget-box,
+div.page-rate-widget-box,
 #page-content .rate-box-with-credit-button {
 	display: inline-flex;
 	height: var(--rating-module-height);
@@ -526,7 +527,7 @@
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 }
 
-.page-rate-widget-box {
+div.page-rate-widget-box {
 	:is(.rate-points, .rateup, .ratedown, .cancel) {
 		display: block;
 		margin: 0 0.125rem 0 0;
@@ -543,6 +544,11 @@
 			line-height: var(--rating-module-height);
 			text-align: center;
 			text-transform: uppercase;
+
+			&,
+			&:is(:hover, :active, :focus) {
+				color: transparent;
+			}
 		}
 
 		& a {
@@ -574,12 +580,7 @@
 				mask: center / calc(var(--rating-module-height) - 0.5em) no-repeat;
 			}
 
-			&,
 			&:is(:hover, :active, :focus) {
-				color: transparent;
-			}
-
-			:is(:hover, :active, :focus) {
 				text-decoration: none;
 
 				&::before {
@@ -607,7 +608,6 @@
 
 		position: relative;
 		background: transparent;
-		color: rgb(var(--rating-module-text-color));
 		font-weight: var(--wght);
 	}
 
@@ -936,11 +936,12 @@
 	}
 
 	.close-credits {
-		inset: 0.3125em 0 auto auto;
+		inset: 0 0 auto 0.5em;
 		width: 1.25em;
 		height: 1.25em !important; /* Overwrite inline styling */
 		scale: 1.5;
-		opacity: 0;
+		opacity: 1;
+		filter: opacity(0);
 	}
 
 	& div.creditBottomRate {
@@ -1011,7 +1012,7 @@
 		}
 
 		&::before {
-			content: "Back";
+			content: var(--text-creditview-back);
 			position: absolute;
 			inset: 0 auto auto 0;
 			width: 100%;
@@ -1142,7 +1143,7 @@ table[style*="margin:0"] * {
 			}
 
 			&::after {
-				content: "Table of Contents";
+				content: var(--text-tableofcontents);
 				position: absolute;
 				left: 100%;
 				transition: font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
