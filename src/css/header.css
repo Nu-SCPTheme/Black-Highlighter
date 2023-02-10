@@ -427,16 +427,16 @@ div#container-wrap {
 	font-weight: var(--wght);
 	white-space: nowrap;
 
-	& span.printuser a:first-of-type {
-		width: 1.75em;
-	}
-
 	& span.printuser {
 		--wght: var(--ui-wght);
 
-		margin-right: 0.5em;
+		margin-right: 0.5ch;
 		color: rgb(var(--login-username-color));
 		font-weight: var(--wght);
+
+		& a:first-of-type {
+			margin-right: 0.5ch;
+		}
 	}
 
 	& a {
@@ -444,7 +444,7 @@ div#container-wrap {
 			color: rgb(var(--login-myaccount-color));
 		}
 
-		#my-account {
+		&#my-account {
 			--wght: var(--ui-wght);
 
 			display: flex;
@@ -457,13 +457,13 @@ div#container-wrap {
 			font-weight: var(--wght);
 			text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0.125em;
 
-			&:is(:hover, :active, :focus) {
+			&:is(:hover, :active, :focus, :focus-within) {
 				--wght: var(--ui-hvr-wght);
 
 				box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 				color: rgb(var(--login-myaccount-hover-color));
 				font-weight: var(--wght);
-				text-decoration: underline rgba(var(--login-myaccount-underline-color)), 0;
+				text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 			}
 		}
 	}
@@ -499,6 +499,7 @@ div#container-wrap {
 				margin: 0 1em;
 				background-color: rgb(var(--ui-button-bg));
 				color: rgb(var(--ui-button-txt));
+				text-decoration: none;
 
 				&:is(:hover, :active, :focus, :focus-within) {
 					background-color: rgba(var(--ui-button-hover-bg), 1);
@@ -624,7 +625,7 @@ div#container-wrap {
 		}
 	}
 
-	#account-topbutton:is(:focus, :active):focus,
+	#account-topbutton:is(:focus, :active) + #account-options,
 	#account-options:is(:focus-within) {
 		opacity: 1;
 		pointer-events: all;

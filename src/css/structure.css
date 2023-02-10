@@ -367,6 +367,7 @@ textarea {
 		color: rgb(var(--ui-button-txt));
 		font-family: var(--UI-font);
 		font-weight: var(--wght);
+		text-decoration: none;
 		will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
 
 		&:is(:hover, :active, :focus, :focus-within) {
@@ -539,10 +540,6 @@ input[type="radio"] {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-	}
-
-	& div.do-not-notify {
-		padding: 0 0 1em;
 	}
 
 	& div.buttons {
@@ -1380,12 +1377,11 @@ a {
 }
 
 /* ===CODE FORMATTING=== */
-.code {
+.code,
+.page-source {
 	padding: 1em;
-	border-width: 0.0625rem;
-	border-style: dashed;
-	border-color: rgba(var(--swatch-border-color), 0.25);
-	background-color: rgb(var(--swatch-secondary-color, 244, 244, 244));
+	border: 0.0625rem dashed rgba(var(--swatch-border-color), 0.25);
+	background-color: rgb(var(--swatch-secondary-color));
 	word-break: break-word;
 	hyphens: auto;
 
@@ -1430,6 +1426,7 @@ a {
 ruby {
 	display: inline-table;
 	height: 1em;
+	margin-block: 1ex 0;
 	line-height: 1;
 	text-align: center;
 	vertical-align: text-bottom;
