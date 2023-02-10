@@ -463,7 +463,7 @@ div#container-wrap {
 				box-shadow: inset 0 -2em 0 0 rgb(var(--login-myaccount-hover-bg-color));
 				color: rgb(var(--login-myaccount-hover-color));
 				font-weight: var(--wght);
-				text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+				text-decoration: underline rgba(var(--login-myaccount-underline-color)), 0;
 			}
 		}
 	}
@@ -501,7 +501,7 @@ div#container-wrap {
 				color: rgb(var(--ui-button-txt));
 
 				&:is(:hover, :active, :focus, :focus-within) {
-					background-color: rgb(var(--ui-button-hover-bg), 1);
+					background-color: rgba(var(--ui-button-hover-bg), 1);
 					color: rgb(var(--ui-button-hover-txt));
 				}
 			}
@@ -566,7 +566,7 @@ div#container-wrap {
 					}
 
 					&,
-					&:visted {
+					&:visited {
 						color: rgb(var(--login-dropdown-text-color));
 					}
 

@@ -54,7 +54,7 @@
 
 	/* Hover Scrollbar Behavior */
 	&:is(:hover, :active, :focus-within) {
-		scrollbar-color: rgb(var(--swatch-primary-darker), 1) /* Thumb */ rgb(var(--swatch-menubg-color), 1); /* Track */
+		scrollbar-color: rgba(var(--swatch-primary-darker), 1) /* Thumb */ rgba(var(--swatch-menubg-color), 1); /* Track */
 
 		border-color: rgba(var(--swatch-primary-darker), 1);
 	}
@@ -770,7 +770,7 @@
 					}
 
 					&,
-					&:visted {
+					&:visited {
 						color: rgb(var(--sidebar-collapsible-link-color));
 					}
 
