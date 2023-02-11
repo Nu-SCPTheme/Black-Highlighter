@@ -362,7 +362,8 @@
 /* ===HOVER BLOCKS=== */
 
 .hovertip {
-	width: min(50%, fit-content) !important;
+	z-index: 100;
+	width: fit-content !important; /* Overwriting JS-injected inline styling */
 	max-width: calc(var(--body-width-on-desktop) - 2rem);
 	animation: fade-in 200ms cubic-bezier(0.4, 0, 0.2, 1) 100ms 1 alternate forwards;
 	border: none !important; /* Overwriting JS-injected inline styling */
@@ -954,51 +955,7 @@ div.page-rate-widget-box {
 
 	& div.credit-back,
 	& a[href="#u-credit-otherwise"] {
-		position: relative;
-		width: 50%;
-		min-width: 5em;
-		height: 2em;
-		margin: 1em auto;
-		padding: 0.25em;
-
-		&::before {
-			--wght: var(--ui-wght);
-
-			display: flex;
-			z-index: 1;
-			align-items: center;
-			justify-content: center;
-			width: auto;
-			margin: 0 auto;
-			padding: 0 0.5em;
-			overflow: hidden;
-			transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-				color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-				font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-			border: 0.0625rem solid rgba(var(--ui-button-hover-outline), 0.05);
-			outline: 0 solid rgb(var(--ui-button-hover-outline));
-			background-color: rgb(var(--ui-button-bg));
-			box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
-			color: rgb(var(--ui-button-txt));
-			font-family: var(--UI-font);
-			font-weight: var(--wght);
-			text-decoration: none;
-			will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
-		}
-
-		&:is(:hover, :active, :focus-within) {
-			&::before {
-				--wght: var(--ui-hvr-wght);
-
-				border-color: transparent;
-				outline: 0 solid rgb(var(--ui-button-hover-outline));
-				background-color: rgba(var(--ui-button-hover-bg), 1);
-				box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
-				color: rgb(var(--ui-button-hover-txt));
-				font-weight: var(--wght);
-				text-decoration: none;
-			}
-		}
+		@mixin bhl-btn 5em;
 	}
 
 	& div.credit-back {
@@ -2077,7 +2034,8 @@ body.print-body {
 					font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 				border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 				background-color: rgb(var(--ui-button-bg));
-				box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
+				box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+					inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-bg));
 				color: rgb(var(--ui-button-txt));
 				font-family: var(--UI-font);
 				font-weight: var(--wght);
@@ -2089,7 +2047,10 @@ body.print-body {
 				--wght: var(--ui-hvr-wght);
 
 				background-color: rgba(var(--ui-button-hover-bg), 1);
-				box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+				box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
+					inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+					inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0),
+					0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 				color: rgb(var(--ui-button-hover-txt));
 				font-weight: var(--wght);
 				text-decoration: none;
@@ -2207,7 +2168,8 @@ body.print-body #print-options a:visited {
 		font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 	background-color: rgb(var(--ui-button-bg));
-	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
+	box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-bg));
 	color: rgb(var(--ui-button-txt));
 	font-family: var(--UI-font);
 	font-weight: var(--wght);
@@ -2219,7 +2181,9 @@ body.print-body #print-options a:is(:hover, :active, :focus) {
 	--wght: var(--ui-hvr-wght);
 
 	background-color: rgba(var(--ui-button-hover-bg), 1);
-	box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+	box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
+		inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0), 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 	color: rgb(var(--ui-button-hover-txt));
 	font-weight: var(--wght);
 	text-decoration: none;

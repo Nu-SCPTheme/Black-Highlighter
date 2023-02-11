@@ -243,6 +243,7 @@
 #page-options-container {
 	display: contents;
 	grid-area: options-1; /* Fix for old Mobile Safari. Has no effect otherwise. */
+	margin-block-start: 0;
 	font-family: var(--UI-font);
 }
 
@@ -255,6 +256,7 @@ div#page-info {
 	text-align: right;
 
 	.odate {
+		display: inline;
 		font-size: 0.85em;
 	}
 }
@@ -267,6 +269,7 @@ div.page-watch-options {
 	overflow: visible;
 	font-size: 0.85em;
 	line-height: 1;
+	text-align: right;
 
 	& a {
 		&,
@@ -438,11 +441,16 @@ div[id*="page-options-bottom"] {
 				margin: 0 0.5ch 1ch;
 				padding: var(--button-padding);
 				padding-left: calc(var(--icon-size) + 0.5em);
-				box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline)), inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
+				box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+					inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-hover-outline)),
+					inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-bg));
 				line-height: 1.5;
 
 				&:is(:hover, :active, :focus, :focus-within) {
-					box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
+					box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
+						inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+						inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0),
+						0 0 0 0.125rem rgb(var(--ui-button-hover-outline)),
 						inset var(--icon-size) 0 0 0 rgb(var(--ui-icon-hover-bg));
 				}
 
@@ -790,12 +798,13 @@ div[id*="page-options-bottom"] {
 	}
 
 	> div:not([style*="center"]):first-of-type {
-		padding-top: 2rem;
+		padding-top: 0;
 		border: none;
 	}
 
 	& a.action-area-close {
 		--wght: var(--ui-wght);
+
 		display: inline-flex;
 		position: relative;
 		z-index: 2;
@@ -810,18 +819,22 @@ div[id*="page-options-bottom"] {
 		border: 0.0625rem solid rgba(var(--swatch-border-color), 0.15);
 		outline: 0 solid rgb(var(--swatch-primary));
 		background-color: rgba(var(--swatch-primary-darker), 0.05);
-		box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
-		color: rgb(var(--swatch-text-tertiary-color));
+		box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+			inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-bg));
+		color: rgb(var(--ui-button-txt));
 		font-family: var(--UI-font);
 		font-weight: var(--wght);
 		will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
 
 		&:is(:hover, :active, :focus, :focus-within) {
 			--wght: var(--ui-hvr-wght);
+
 			outline: 0 solid rgb(var(--swatch-primary));
-			background-color: rgba(var(--swatch-primary), 1);
-			box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
-			color: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+			background-color: rgb(var(--ui-button-hover-bg));
+			box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
+				inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+				inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0), 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+			color: rgb(var(--ui-button-hover-txt));
 			font-weight: var(--wght);
 			text-decoration: none;
 			cursor: pointer;
@@ -833,6 +846,7 @@ div[id*="page-options-bottom"] {
 form#edit-page-form {
 	&:not(.data-form) {
 		display: grid;
+		position: relative;
 		grid-template-areas:
 			"pageid . captcha-1 captcha-1 captcha-2 captcha-2"
 			"title-txt title-txt . . . ."
@@ -847,6 +861,7 @@ form#edit-page-form {
 			"captcha-3 captcha-3 captcha-3 captcha-3 captcha-3 captcha-3"
 			"editbuttons editbuttons editbuttons editbuttons editbuttons editbuttons";
 		grid-template-columns: repeat(6, 1fr);
+		margin-block: 3ex;
 		padding: 0;
 		background-color: transparent;
 		box-shadow: -0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
@@ -903,9 +918,12 @@ form#edit-page-form {
 			& td {
 				&:first-of-type {
 					--wght: calc(var(--ui-wght) + 100);
+
+					position: absolute;
 					grid-area: title-txt;
 					width: max-content;
-					margin: calc(-0.75em + 0.0625rem) 1rem -0.75em 1rem;
+					margin-block: 0;
+					margin-inline: 1ex;
 					padding: 0 0.25em;
 					transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
 						background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), translate 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -919,6 +937,7 @@ form#edit-page-form {
 					text-transform: uppercase;
 					translate: 0 0;
 					will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
+					inset: -0.75rem auto auto 0.75rem;
 				}
 				&:last-of-type {
 					grid-area: title-box;
@@ -926,8 +945,8 @@ form#edit-page-form {
 
 					& input {
 						--wght: var(--ui-wght);
-						width: calc(100% - 2em);
-						margin: 0.5em 1rem;
+						width: calc(100% - 2rem);
+						margin: 0.5rem 1rem;
 						padding: 0.25em;
 						transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
 							background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -954,7 +973,7 @@ form#edit-page-form {
 							border: none;
 							outline: 0 solid rgb(var(--swatch-primary));
 							background-color: rgba(var(--swatch-secondary-color), 0);
-							box-shadow: 0 0 0 0.125em rgb(var(--swatch-primary));
+							box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 							font-weight: var(--wght);
 						}
 					}
@@ -969,7 +988,7 @@ form#edit-page-form {
 					box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 					color: rgb(var(--swatch-background));
 					font-weight: var(--wght);
-					translate: 0 -0.15625rem;
+					translate: -0.125rem -0.125rem;
 				}
 			}
 
@@ -1798,39 +1817,7 @@ form#edit-page-form {
 
 /* ===WHO RATED AREA=== */
 #action-area a[onclick*="PageRateModule"] {
-	--wght: var(--ui-wght);
-	display: inline-flex;
-	position: relative;
-	z-index: 2;
-	justify-content: center;
-	min-width: 5em;
-	margin: 0;
-	padding: 0.25em;
-	overflow: hidden;
-	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0.0625rem solid rgba(var(--ui-button-hover-outline), 0.05);
-	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgb(var(--ui-button-bg));
-	box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
-	color: rgb(var(--ui-button-txt));
-	font-family: var(--UI-font);
-	font-weight: var(--wght);
-	text-decoration: none;
-	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
-
-	&:is(:hover, :active, :focus, :focus-within) {
-		--wght: var(--ui-hvr-wght);
-		border-color: transparent;
-		outline: 0 solid rgb(var(--swatch-primary));
-		background-color: rgba(var(--ui-button-hover-bg), 1);
-		box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
-		color: rgb(var(--ui-button-hover-txt));
-		font-weight: var(--wght);
-		text-decoration: none;
-		cursor: pointer;
-	}
+	@mixin bhl-btn 5em;
 }
 
 /* RATING LIST COLUMNS */
@@ -1898,26 +1885,42 @@ form#edit-page-form {
 
 /* ===PAGE TAGS ACTION=== */
 form[onsubmit*="PageTagsModule"] table > tbody > tr {
-	display: grid;
-	grid-template-rows: 1.5rem 1fr;
-	align-items: stretch;
-	justify-content: stretch;
+	display: flex;
+	position: relative;
 
 	> td {
+		flex-grow: 2;
 		text-align: left;
 
+		&,
+		& * {
+			box-sizing: border-box;
+		}
+
 		&:nth-child(1) {
-			--wght: var(--ui-hvr-wght);
+			--wght: calc(var(--ui-wght) + 100);
+
 			display: flex;
+			position: absolute;
 			align-items: center;
 			justify-content: flex-start;
 			width: max-content;
-			height: 1.5em;
-			padding: 0.25em;
-			background-color: rgb(var(--swatch-primary-darkest));
-			color: rgb(var(--swatch-background));
+			margin-block: 0;
+			margin-inline: 1ex;
+			padding: 0 0.25em;
+			transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+				background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+				font-weight 0.2s cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+			outline: 0 solid rgb(var(--swatch-primary));
+			background-color: rgba(var(--swatch-background), 1);
+			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
+			color: rgb(var(--swatch-text-general));
 			font-size: 0.8em;
 			font-weight: var(--wght);
+			text-transform: uppercase;
+			will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
+			translate: 0;
+			inset: -1em auto auto 1rem;
 
 			&::after {
 				content: "\0021b4";
@@ -1925,9 +1928,28 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 		}
 
 		&:nth-child(2) {
+			display: grid;
+			margin-inline: 1.25rem;
+
 			> input {
 				width: 100%;
+				margin-inline: 0;
+				padding-block: 0.5ch;
+				padding-inline: 1ex;
 			}
+		}
+	}
+
+	&:focus-within {
+		> td:nth-child(1) {
+			--wght: calc(var(--ui-hvr-wght) + 100);
+
+			outline: 0 solid rgb(var(--swatch-primary));
+			background-color: rgba(var(--swatch-primary), 1);
+			box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
+			color: rgb(var(--swatch-background));
+			font-weight: var(--wght);
+			translate: -0.25em -0.25em;
 		}
 	}
 }
@@ -1955,7 +1977,9 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 						display: grid;
 						grid-auto-flow: row;
 						grid-template-columns: repeat(3, 3rem 1fr);
+						align-items: center;
 						width: 100%;
+						text-align: left;
 						text-indent: -0.5ch;
 
 						& input {
@@ -2001,6 +2025,10 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 	}
 }
 
+#revision-list {
+	margin-block-start: 3ex;
+}
+
 table.page-history {
 	width: 100%;
 
@@ -2035,10 +2063,15 @@ table.page-history {
 			&:nth-of-type(3) {
 				grid-area: rev-flags;
 			}
-			&:nth-of-type(4) {
+			&.optionstd {
 				display: grid;
 				grid-area: rev-actions;
+				grid-gap: 0.25rem;
 				grid-template-columns: 1fr 1fr 1fr;
+
+				& a {
+					@mixin bhl-btn 1em;
+				}
 			}
 			&:nth-of-type(5) {
 				grid-area: rev-user;
@@ -2051,41 +2084,6 @@ table.page-history {
 				grid-area: rev-com;
 				width: calc(100% - 2em) !important; /* Overwriting Wikidot Inline-Styling */
 				padding: 0 1em;
-			}
-
-			&.optionstd a {
-				--wght: var(--ui-wght);
-				display: inline-flex;
-				position: relative;
-				justify-content: center;
-				width: 1rem;
-				margin: 0 auto;
-				padding: 0.125rem;
-				overflow: hidden;
-				transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-					color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-				border: 0.0625rem solid rgba(var(--ui-button-hover-outline), 0.05);
-				outline: 0 solid rgb(var(--ui-button-hover-outline));
-				background-color: rgb(var(--ui-button-bg));
-				box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
-				color: rgb(var(--ui-button-txt));
-				font-family: var(--UI-font);
-				font-weight: var(--wght);
-				text-decoration: none;
-				will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
-
-				&:is(:hover, :active, :focus, :focus-within) {
-					--wght: var(--ui-hvr-wght);
-					border-color: transparent;
-					outline: 0 solid rgb(var(--ui-button-hover-outline));
-					background-color: rgb(var(--ui-button-hover-bg));
-					box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
-					color: rgb(var(--ui-button-hover-txt));
-					font-weight: var(--wght);
-					text-decoration: none;
-					cursor: pointer;
-				}
 			}
 		}
 
@@ -2346,7 +2344,8 @@ table.page-files {
 			border-radius: 0;
 			outline: 0 solid rgb(var(--ui-button-hover-outline));
 			background-color: rgb(var(--ui-button-bg));
-			box-shadow: 0 0 0 0 rgb(var(--ui-button-bg));
+			box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+				inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-bg));
 			color: rgb(var(--ui-button-txt));
 			font-family: var(--UI-font);
 			font-weight: var(--wght);
@@ -2356,7 +2355,10 @@ table.page-files {
 			&:is(:hover, :active, :focus, :focus-within) {
 				--wght: var(--ui-hvr-wght);
 				background-color: rgb(var(--ui-button-hover-bg));
-				box-shadow: 0 0 0 0 rgb(var(--ui-button-hover-outline));
+				box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
+					inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+					inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0),
+					0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
 				color: rgb(var(--ui-button-hover-txt));
 				font-weight: var(--wght);
 				text-decoration: none;
@@ -2419,42 +2421,7 @@ table.page-files {
 			justify-content: center;
 
 			& a {
-				&,
-				&:visited {
-					--wght: var(--ui-wght);
-					display: inline-flex;
-					position: relative;
-					z-index: 2;
-					justify-content: center;
-					min-width: 5em;
-					margin: 0;
-					padding: 0.25em;
-					overflow: hidden;
-					transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-						color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-						font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-					border: 0.0625rem solid rgba(var(--ui-button-hover-outline), 0.05);
-					outline: 0 solid rgb(var(--ui-button-hover-outline));
-					background-color: rgb(var(--ui-button-bg));
-					box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-bg));
-					color: rgb(var(--ui-button-txt));
-					font-family: var(--UI-font);
-					font-weight: var(--wght);
-					text-decoration: none;
-					will-change: box-shadow, color, background-color, font-weight, font-variation-settings;
-				}
-
-				&:is(:hover, :active, :focus, :focus-within) {
-					--wght: var(--ui-hvr-wght);
-					border-color: transparent;
-					outline: 0 solid rgb(var(--ui-button-hover-outline));
-					background-color: rgba(var(--ui-button-hover-bg), 1);
-					box-shadow: 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
-					color: rgb(var(--ui-button-hover-txt));
-					font-weight: var(--wght);
-					text-decoration: none;
-					cursor: pointer;
-				}
+				@mixin bhl-btn 5em;
 			}
 		}
 	}
@@ -2554,7 +2521,6 @@ table.page-files {
 		background-color: rgb(var(--swatch-secondary-color));
 		box-shadow: inset 0.25rem 0 0 0 rgba(var(--swatch-primary), 1),
 			-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
-			inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 			inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 	}
 
@@ -2862,37 +2828,69 @@ table.page-files {
 		}
 	}
 
-	& a + h1 {
-		+ h2 ~ ul li {
-			text-align: left;
+	& h1 {
+		+ h2 ~ ul {
+			list-style: none;
+
+			&:not(:first-of-type) {
+				margin-block-start: 1ex;
+				padding-block-start: 1ex;
+				border-top: 0.0625rem solid rgb(var(--swatch-tertiary-color));
+			}
+
+			& li {
+				display: inline-flex;
+				position: relative;
+				align-items: center;
+				width: 100%;
+				height: fit-content;
+				padding-block-start: 0.5ex;
+				text-align: left;
+
+				&:last-of-type {
+					padding-block-start: 0;
+				}
+
+				&:not(:last-of-type) {
+					&::before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						bottom: 0;
+						left: -1.5ch;
+						width: 0.0625rem;
+						height: calc(100% - 2ex);
+						border-left: 0.0625rem dashed rgb(var(--swatch-border-color));
+						translate: 0 0.75ex;
+					}
+				}
+
+				&::after {
+					content: "\002022";
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: -1.0625rem;
+					color: rgb(var(--swatch-text-general));
+					font-family: var(--UI-font);
+					font-size: 1em;
+					line-height: 1.6rem;
+					translate: 0 -50%;
+				}
+
+				& a {
+					line-height: 1.125;
+				}
+			}
 		}
 
 		+ p + h2 ~ div[style="padding-left:3em;"] > div {
 			grid-template-columns: 5em 1fr;
+			align-items: center;
 			text-align: left;
 
 			& a {
-				--wght: var(--ui-wght);
-				display: inline-flex;
-				align-items: center;
-				width: fit-content;
-				margin-right: 0 !important;
-				padding: 0 1em;
-				transition: color 160ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 160ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-variation-settings 160ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-					text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1);
-				background-color: transparent;
-				box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
-				font-weight: var(--wght);
-				text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
-
-				&:is(:hover, :active, :focus, :focus-within) {
-					--wght: var(--ui-hvr-wght);
-					box-shadow: inset 0 -2em 0 0 rgb(var(--swatch-primary));
-					color: rgb(var(--swatch-text-secondary-color));
-					font-weight: var(--wght);
-					text-decoration: underline rgb(var(--swatch-primary)) 0;
-				}
+				@mixin bhl-btn 5em;
 			}
 		}
 	}
@@ -2902,6 +2900,7 @@ table.page-files {
 		grid-auto-flow: dense;
 		grid-gap: 0.0625rem;
 		grid-template-columns: repeat(auto-fill, minmax(calc(var(--body-width-on-desktop) / 4), 1fr));
+		margin-inline: 1.25rem;
 		border: 0.0625rem solid rgba(var(--swatch-border-color), 0.05);
 		background-color: rgba(var(--swatch-border-color), 0.05);
 
@@ -2935,32 +2934,100 @@ table.page-files {
 	& form[onsubmit*="RenamePage"] {
 		& table {
 			display: grid;
-			grid-gap: 0.25em;
-			grid-template-columns: 0.5fr 1.5fr;
-			grid-template-rows: 1.5em 1.5em;
+			grid-auto-flow: row;
+			grid-gap: 0.5em;
 			align-items: center;
 			justify-content: center;
 			white-space: nowrap;
-			gap: 0.25em;
 
-			& td {
-				&:first-of-type {
-					padding-right: 0.5em;
-					text-align: right;
-				}
-				&:last-of-type {
+			& tbody {
+				display: contents;
+
+				& tr {
 					display: flex;
+					align-items: center;
+					justify-content: center;
 
-					& * {
-						flex-grow: 2;
+					&:first-of-type {
+						& td {
+							box-sizing: border-box;
+							padding: 0.5ch 1ex;
+
+							&:first-of-type {
+								--wght: 600;
+
+								background-color: rgb(var(--swatch-primary));
+								color: rgb(var(--swatch-text-secondary-color));
+								font-family: var(--UI-font);
+								font-weight: var(--wght);
+								text-transform: uppercase;
+							}
+
+							&:last-of-type {
+								border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
+								background-color: rgb(var(--swatch-secondary-color));
+							}
+						}
+					}
+
+					&:last-of-type {
+						position: relative;
+						margin-block: 2ex;
+
+						& td {
+							&:first-of-type {
+								--wght: calc(var(--ui-wght) + 100);
+
+								display: flex;
+								position: absolute;
+								align-items: center;
+								justify-content: flex-start;
+								width: max-content;
+								margin-block: 0;
+								margin-inline: 1ex;
+								padding: 0 0.25em;
+								transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+									background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+									font-weight 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+									font-variation-settings 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+								outline: 0 solid rgb(var(--swatch-primary));
+								background-color: rgba(var(--swatch-background), 1);
+								box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
+								color: rgb(var(--swatch-text-general));
+								font-size: 0.8em;
+								font-weight: var(--wght);
+								text-transform: uppercase;
+								will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
+								translate: 0;
+								inset: -1em auto auto 0;
+							}
+
+							&:last-of-type {
+								& input {
+									margin-inline: 0;
+									padding-block: 0.5ch;
+									padding-inline: 1ex;
+								}
+							}
+						}
+
+						&:focus-within {
+							& td {
+								&:first-of-type {
+									--wght: calc(var(--ui-hvr-wght) + 100);
+
+									outline: 0 solid rgb(var(--swatch-primary));
+									background-color: rgba(var(--swatch-primary), 1);
+									box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
+									color: rgb(var(--swatch-background));
+									font-weight: var(--wght);
+									translate: -0.25em -0.25em;
+								}
+							}
+						}
 					}
 				}
 			}
-		}
-
-		& tbody,
-		& tr {
-			display: contents;
 		}
 	}
 
@@ -2985,7 +3052,6 @@ table.page-files {
 				background-color: rgb(var(--swatch-secondary-color));
 				box-shadow: inset 0.25rem 0 0 0 rgba(var(--swatch-primary), 1),
 					-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
-					inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 					inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 
 				&:not(:only-of-type, :last-of-type) {

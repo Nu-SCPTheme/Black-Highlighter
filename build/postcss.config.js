@@ -5,6 +5,7 @@ module.exports = (ctx) => {
 	const path = require("path");
 	const stylelint = require("stylelint");
 	const postcssImport = require("postcss-import");
+	const postcssMixins = require("postcss-mixins");
 	const reporter = require("postcss-reporter");
 	const mqPacker = require("@hail2u/css-mqpacker");
 	const lightningcss = require("postcss-lightningcss");
@@ -60,6 +61,7 @@ module.exports = (ctx) => {
 	switch(nodeEnv) {
 		case "watching":
 			plugins = [
+				postcssMixins,
 				lightningcss(lightningcssOptions),
 				reporter(reporterOptions)
 			];
@@ -67,6 +69,7 @@ module.exports = (ctx) => {
 		case "production":
 			plugins = [
 				postcssImport,
+				postcssMixins,
 				lightningcss(lightningcssOptions),
 				mqPacker,
 				reporter(reporterOptions)
@@ -75,6 +78,7 @@ module.exports = (ctx) => {
 		case "development":
 			plugins = [
 				postcssImport,
+				postcssMixins,
 				lightningcss(lightningcssOptions),
 				stylelint(stylelintOptions),
 				reporter(reporterOptions)

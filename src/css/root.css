@@ -709,3 +709,45 @@
 
 	--sidebar-transition-timing: 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 }
+
+@define-mixin bhl-btn $maxwidth {
+	--wght: var(--ui-wght);
+
+	display: inline-flex;
+	position: relative;
+	z-index: 2;
+	align-items: center;
+	justify-content: center;
+	min-width: $maxwidth;
+	margin: 0;
+	padding: 0.25em;
+	overflow: hidden;
+	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+		color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgb(var(--ui-button-bg));
+	box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-bg));
+	color: rgb(var(--ui-button-txt));
+	font-family: var(--UI-font);
+	font-weight: var(--wght);
+	text-decoration: none;
+	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+
+	&:is(:hover, :active, :focus, :focus-within) {
+		--wght: var(--ui-hvr-wght);
+
+		border-color: transparent;
+		outline: 0 solid rgb(var(--swatch-primary));
+		background-color: rgb(var(--ui-button-hover-bg));
+		box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
+			inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+			inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0), 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+		color: rgb(var(--ui-button-hover-txt));
+		font-weight: var(--wght);
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
