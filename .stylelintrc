@@ -1,18 +1,30 @@
 {
   "formatter": "verbose",
   "fix": true,
-  "extends": ["stylelint-config-property-sort-order-smacss", "stylelint-prettier/recommended"],
+  "extends": [
+    "stylelint-config-property-sort-order-smacss",
+    "stylelint-config-standard"
+  ],
   "verbose": true,
   "rules": {
     "alpha-value-notation": "number",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["/^.*mixin/", "custom-media"]
+      }
+    ],
     "color-function-notation": null,
     "color-no-hex": true,
+    "comment-empty-line-before": null,
+    "custom-property-empty-line-before": null,
     "custom-property-pattern": null,
     "declaration-block-no-duplicate-custom-properties": null,
-    "declaration-block-no-duplicate-properties": [true, { "ignore": ["consecutive-duplicates-with-different-values"] }],
-    "declaration-colon-newline-after": null,
-    "indentation": null,
-    "max-line-length": null,
+    "declaration-block-no-duplicate-properties": [
+      true,
+      { "ignore": ["consecutive-duplicates-with-different-values"] }
+    ],
+    "declaration-property-value-no-unknown": true,
     "no-descending-specificity": null,
     "no-duplicate-selectors": null,
     "property-no-vendor-prefix": null,
@@ -21,7 +33,6 @@
     "selector-id-pattern": null,
     "selector-not-notation": "complex",
     "unit-disallowed-list": ["px"],
-    "value-list-comma-newline-after": null,
     "value-keyword-case": null
   }
 }

@@ -13,6 +13,10 @@ module.exports = (ctx) => {
 
 	const nodeEnv = ctx.env;
 
+	const fileImportOptions = {
+		filter: url => !url.includes("fonts.css")
+	};
+
 	const stylelintOptions = {
 		configFile: path.join(__dirname, "../.stylelintrc"),
 		fix: nodeEnv === "development" ? true : false
@@ -68,16 +72,15 @@ module.exports = (ctx) => {
 			break;
 		case "production":
 			plugins = [
-				postcssImport,
+				postcssImport(fileImportOptions),
 				postcssMixins,
 				lightningcss(lightningcssOptions),
-				mqPacker,
 				reporter(reporterOptions)
 			];
 			break;
 		case "development":
 			plugins = [
-				postcssImport,
+				postcssImport(fileImportOptions),
 				postcssMixins,
 				lightningcss(lightningcssOptions),
 				stylelint(stylelintOptions),

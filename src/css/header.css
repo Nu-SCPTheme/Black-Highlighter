@@ -595,7 +595,7 @@ div#container-wrap {
 				}
 
 				&,
-				&:focus:within {
+				&:focus-within {
 					> a {
 						&:is(:hover, :active) {
 							--wght: var(--ui-hvr-wght);
@@ -1231,6 +1231,7 @@ div#container-wrap {
 
 		> *:not(#account-topbutton, [href*="account/messages"]) {
 			--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
 			clip-path: var(--clip-path);
 			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), text-decoration 200ms cubic-bezier(0.4, 0, 0.2, 1),
 				color 200ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),

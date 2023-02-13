@@ -55,7 +55,6 @@
 	/* Hover Scrollbar Behavior */
 	&:is(:hover, :active, :focus-within) {
 		scrollbar-color: rgba(var(--swatch-primary-darker), 1) /* Thumb */ rgba(var(--swatch-menubg-color), 1); /* Track */
-
 		border-color: rgba(var(--swatch-primary-darker), 1);
 	}
 
@@ -333,6 +332,7 @@
 		/* ===MAIN LINKS & TEXT=== */
 		& a {
 			--wght: var(--ui-wght);
+
 			display: flex;
 			position: relative;
 			z-index: 2;
@@ -361,13 +361,6 @@
 				flex-grow: 1;
 			}
 
-			/* Center Forum link if it right next to Main link */
-			&[href="/"] + a[href="/forum:start"]:last-child {
-				flex-basis: 15%;
-				justify-content: center;
-				padding: 0;
-			}
-
 			/* ===MAIN LINKS HOVER BG BAR=== */
 
 			/* Menu Item Hover Color Bar */
@@ -394,11 +387,22 @@
 			}
 		}
 
+		& a[href="/"] + a[href="/forum:start"]:last-child,
+		&:first-of-type a[href="/"],
+		&:nth-of-type(2) a[href="/forum:start"] {
+			justify-content: center;
+			padding: 0;
+		}
+
 		&.small {
 			& a {
+				height: 1.25rem;
+				font-size: calc(var(--base-font-size) * (11 / 15));
+
 				&,
 				&:visited {
 					--wght: var(--ui-wght);
+
 					display: flex;
 					flex-grow: 2;
 					justify-content: flex-start;
@@ -417,30 +421,10 @@
 			}
 		}
 
-		/* ===SCP & TALES SERIES== */
-		&.scp-series a,
-		&.scp-tales a,
-		&.small a:not([href*="shortest"]),
-		& a[href*="scp-series"] {
-			justify-content: center;
-			width: auto;
-			padding: 0 0.25em;
-			text-indent: 0;
-			white-space: nowrap;
-
-			&::before {
-				width: 250%;
-			}
-		}
-
-		> :last-child {
-			flex-grow: 2;
-		}
-
 		&,
 		&.small {
 			& a,
-			& a:visted {
+			& a:visited {
 				--wght: var(--ui-wght);
 
 				display: flex;
@@ -471,9 +455,24 @@
 			}
 		}
 
-		&.small a {
-			height: 1.25rem;
-			font-size: calc(var(--base-font-size) * (11 / 15));
+		/* ===SCP & TALES SERIES== */
+		&.scp-series a,
+		&.scp-tales a,
+		&.small a:not([href*="shortest"]),
+		& a[href*="scp-series"] {
+			justify-content: center;
+			width: auto;
+			padding: 0 0.25em;
+			text-indent: 0;
+			white-space: nowrap;
+
+			&::before {
+				width: 250%;
+			}
+		}
+
+		> :last-child {
+			flex-grow: 2;
 		}
 
 		> div:not(:nth-child(2), .collapsible-block) {
@@ -498,7 +497,7 @@
 	}
 }
 
-/* Needed for correct Interwiki box font styling*/
+/* Needed for correct Interwiki box font styling */
 #interwiki div.menu-item a {
 	font-family: var(--UI-font, var(--header-font));
 	font-size: calc(var(--base-font-size) * (13 / 15));
@@ -717,6 +716,7 @@
 
 		&.collapsible-block-unfolded-link {
 			border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
+
 			> a {
 				&.collapsible-block-link {
 					background: rgba(var(--sidebar-collapsible-ufld-link-bg));

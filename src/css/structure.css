@@ -44,15 +44,12 @@
 	font-weight: var(--wght, revert);
 
 	@supports (font-variation-settings: inherit) {
-		font-variation-settings: "ital" var(--ital, 0), "slnt" var(--slnt, 0), "CASL" var(--CASL, 0), "CRSV" var(--CRSV, 0),
-			"MONO" var(--MONO, 0), "FLAR" var(--FLAR, 0);
+		font-variation-settings: "ital" var(--ital, 0), "slnt" var(--slnt, 0), "CASL" var(--CASL, 0), "CRSV" var(--CRSV, 0), "MONO" var(--MONO, 0), "FLAR" var(--FLAR, 0);
 	}
 
 	@supports (font-feature-settings: inherit) {
-		font-feature-settings: "lnum" var(--lnum, 1), "pnum" var(--pnum, 1), "kern" var(--kern, 1), "cpsp" var(--cpsp, 1),
-			"liga" var(--liga, 1), "case" var(--case, 1), "clig" var(--clig, 1), "dlig" var(--dlig, 0), "calt" var(--calt, 1),
-			"aalt" var(--aalt, 0), "ss01" var(--ss01, 1), "ss02" var(--ss02, 0), "ss03" var(--ss03, 1), "ss04" var(--ss04, 1),
-			"zero" var(--zero, 1), "cv11" var(--cv11, 0);
+		font-feature-settings: "lnum" var(--lnum, 1), "pnum" var(--pnum, 1), "kern" var(--kern, 1), "cpsp" var(--cpsp, 1), "liga" var(--liga, 1), "case" var(--case, 1), "clig" var(--clig, 1), "dlig" var(--dlig, 0), "calt" var(--calt, 1),
+			"aalt" var(--aalt, 0), "ss01" var(--ss01, 1), "ss02" var(--ss02, 0), "ss03" var(--ss03, 1), "ss04" var(--ss04, 1), "zero" var(--zero, 1), "cv11" var(--cv11, 0);
 	}
 }
 
@@ -160,60 +157,70 @@ body {
 
 		font-weight: var(--wght);
 	}
+
 	&[style*="1000"] {
 		&,
 		& * {
 			--wght: 1000;
 		}
 	}
+
 	&[style*="900"] {
 		&,
 		& * {
 			--wght: 900;
 		}
 	}
+
 	&[style*="800"] {
 		&,
 		& * {
 			--wght: 800;
 		}
 	}
+
 	&[style*="700"] {
 		&,
 		& * {
 			--wght: 700;
 		}
 	}
+
 	&[style*="600"] {
 		&,
 		& * {
 			--wght: 600;
 		}
 	}
+
 	&[style*="500"] {
 		&,
 		& * {
 			--wght: 500;
 		}
 	}
+
 	&[style*="400"] {
 		&,
 		& * {
 			--wght: 400;
 		}
 	}
+
 	&[style*="300"] {
 		&,
 		& * {
 			--wght: 300;
 		}
 	}
+
 	&[style*="200"] {
 		&,
 		& * {
 			--wght: 200;
 		}
 	}
+
 	&[style*="100"] {
 		&,
 		& * {
@@ -249,6 +256,14 @@ object,
 table,
 video {
 	max-width: 100%;
+}
+
+iframe.html-block-iframe {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
 }
 
 button,
@@ -295,8 +310,7 @@ input.text,
 input.checkbox,
 div.note,
 #lock-info {
-	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -384,15 +398,14 @@ input[type="checkbox"] {
 		inset: 75% auto auto 40%;
 		height: 150%;
 		rotate: -135deg;
-		transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms, box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
-			clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms, box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
+
 	&::after {
 		inset: 40% auto auto 5%;
 		height: 50%;
 		rotate: -45deg;
-		transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
-			box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms, clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+		transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms, clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 	}
 
 	&:checked {
@@ -409,13 +422,11 @@ input[type="checkbox"] {
 		}
 
 		&::before {
-			transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms,
-				box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms, clip-path 159ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
+			transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 200ms, box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 150ms, clip-path 159ms cubic-bezier(0.4, 0, 0.2, 1) 150ms;
 		}
 
 		&::after {
-			transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms, box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
-				clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition: background-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 50ms, box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		}
 	}
 }
@@ -541,8 +552,7 @@ input[type="radio"] {
 
 				margin: 0;
 				padding: 0.125em 0.5em;
-				transition: padding 200ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1),
-					color 150ms cubic-bezier(0.4, 0, 0.2, 1), translate 200ms cubic-bezier(0.4, 0, 0.2, 1),
+				transition: padding 200ms cubic-bezier(0.4, 0, 0.2, 1), clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1), translate 200ms cubic-bezier(0.4, 0, 0.2, 1),
 					font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 				outline: 0 solid rgb(var(--swatch-primary));
 				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -557,15 +567,9 @@ input[type="radio"] {
 					inset: 0 auto auto 0;
 					width: 100%;
 					height: 100%;
-					transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-						background-image 50ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), background-image 50ms cubic-bezier(0.4, 0, 0.2, 1);
 					background-color: rgba(var(--swatch-background), 1);
-					background-image: linear-gradient(
-						to bottom,
-						rgba(var(--background-gradient-color), 1),
-						rgba(var(--background-gradient-color), 0) var(--background-gradient-distance),
-						rgba(var(--background-gradient-color), 0) 100%
-					);
+					background-image: linear-gradient(to bottom, rgba(var(--background-gradient-color), 1), rgba(var(--background-gradient-color), 0) var(--background-gradient-distance), rgba(var(--background-gradient-color), 0) 100%);
 					pointer-events: none;
 					background-position-y: top;
 				}
@@ -582,20 +586,11 @@ input[type="radio"] {
 					padding-left: 0.5rem;
 					outline: 0 solid rgb(var(--swatch-primary));
 					color: rgb(var(--swatch-background));
-					clip-path: polygon(
-						0 0,
-						calc(100% + 0.125rem) 0,
-						calc(100% + 0.125rem) calc(100% + 0.125rem),
-						0 calc(100% + 0.125rem)
-					);
+					clip-path: polygon(0 0, calc(100% + 0.125rem) 0, calc(100% + 0.125rem) calc(100% + 0.125rem), 0 calc(100% + 0.125rem));
 
 					&::before {
 						background-color: rgba(var(--swatch-primary), 1);
-						background-image: linear-gradient(
-							to bottom,
-							rgba(var(--background-gradient-color), 0) 0,
-							rgba(var(--background-gradient-color), 0) var(--background-gradient-distance)
-						);
+						background-image: linear-gradient(to bottom, rgba(var(--background-gradient-color), 0) 0, rgba(var(--background-gradient-color), 0) var(--background-gradient-distance));
 						clip-path: unset;
 					}
 				}
@@ -639,8 +634,7 @@ input[type="radio"] {
 			--wght: var(--ui-wght);
 
 			padding: 0.25rem;
-			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-				font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
 			border: none;
 			outline: 0 solid rgb(var(--swatch-primary));
 			box-shadow: inset 0 0 0 0.0625rem rgba(var(--swatch-tertiary-color), 0.3625);
@@ -819,7 +813,7 @@ input[type="radio"] {
 	&,
 	& * {
 		border: none;
-		border-radius: none !important;
+		border-radius: 0 !important;
 		font-family: var(--UI-font);
 	}
 
@@ -900,7 +894,8 @@ input[type="radio"] {
 			& span {
 				display: none;
 				position: unset;
-				inset: unset auto auto unset;
+				top: unset;
+				left: unset;
 				margin-top: unset;
 				margin-left: unset;
 				background-image: none;
@@ -953,7 +948,6 @@ input[type="radio"] {
 
 		.ui-datepicker-calendar {
 			display: grid;
-			grid-gap: 0.125rem;
 			gap: 0.125rem;
 			grid-template-columns: repeat(7, 1fr);
 
@@ -1066,7 +1060,7 @@ sub {
 tt {
 	--calt: 0;
 
-	word-wrap: anywhere;
+	word-wrap: normal;
 	white-space: pre-wrap;
 	hyphens: auto;
 	overflow-wrap: break-word;
@@ -1235,6 +1229,7 @@ ol {
 					width: 4ch;
 				}
 			}
+
 			& ol {
 				counter-reset: step3 0;
 
@@ -1246,6 +1241,7 @@ ol {
 						width: 6ch;
 					}
 				}
+
 				& ol {
 					counter-reset: step4 0;
 
@@ -1257,6 +1253,7 @@ ol {
 							width: 8ch;
 						}
 					}
+
 					& ol {
 						counter-reset: step5 0;
 
@@ -1350,18 +1347,19 @@ a {
 .code,
 .page-source {
 	padding: 1em;
+	overflow-x: auto;
 	border: 0.0625rem dashed rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-secondary-color));
 	word-break: break-word;
 	hyphens: auto;
+	-webkit-overflow-scrolling: touch;
 
 	&,
 	& * {
 		--MONO: 1;
 
 		font-family: var(--mono-font);
-		font-variation-settings: "wght" var(--mono-wght), "slnt" var(--slnt), "CASL" var(--CASL), "CRSV" var(--CRSV),
-			"MONO" var(--MONO);
+		font-variation-settings: "wght" var(--mono-wght), "slnt" var(--slnt), "CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
 	}
 
 	& * {
@@ -1389,6 +1387,78 @@ a {
 	& pre {
 		white-space: pre-wrap;
 	}
+}
+
+/* hl code colors */
+.hl-default {
+	color: rgb(var(--swatch-menutxt-general-color));
+}
+
+.hl-code {
+	color: rgb(var(--swatch-menutxt-general-color));
+}
+
+.hl-brackets {
+	color: rgb(var(--swatch-menutxt-general-color));
+}
+
+.hl-comment {
+	color: rgb(102, 111, 120);
+}
+
+.hl-quotes {
+	color: rgb(183, 83, 1);
+}
+
+.hl-string {
+	color: rgb(86, 122, 13);
+}
+
+.hl-identifier {
+	color: rgb(1, 84, 147);
+}
+
+.hl-builtin {
+	color: rgb(183, 83, 1);
+}
+
+.hl-reserved {
+	color: rgb(128, 51, 120);
+}
+
+.hl-inlinedoc {
+	color: rgb(1, 84, 147);
+}
+
+.hl-var {
+	color: rgb(86, 122, 13);
+}
+
+.hl-url {
+	color: rgb(1, 84, 147);
+}
+
+.hl-special {
+	--wght: calc(var(--mono-wght) + 100);
+
+	color: rgb(1, 84, 147);
+	font-weight: var(--wght);
+}
+
+.hl-number {
+	color: rgb(183, 83, 1);
+}
+
+.hl-inlinetags {
+	--wght: calc(var(--mono-wght) + 100);
+
+	color: rgb(183, 83, 1);
+	font-weight: var(--wght);
+}
+
+.hl-gutter {
+	background-color: rgb(var(--swatch-secondary-color));
+	color: rgb(var(--swatch-background));
 }
 
 /* Ruby Elements from Sigma-9 */
@@ -1492,12 +1562,10 @@ rt {
 
 @keyframes lift-in {
 	from {
-		box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25),
-			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+		box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
 
 	to {
-		box-shadow: 0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-alternate-color), 0.25),
-			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+		box-shadow: 0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
 }

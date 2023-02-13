@@ -23,19 +23,16 @@
 		"postcss-reporter": "^7.0.5",
 		"postcss-url": "^10.1.3",
 		"prettier": "^2.8.4",
-		"stylelint": "^14.16.1",
-		"stylelint-config-prettier": "^9.0.4",
+		"stylelint": "^15.1.0",
 		"stylelint-config-property-sort-order-smacss": "^9.0.0",
-		"stylelint-config-standard": "^29.0.0",
-		"stylelint-prettier": "^2.0.0"
+		"stylelint-config-standard": "^30.0.1"
 	},
 	"scripts": {
 		"build": "make",
 		"postcss": "node node_modules/postcss-cli/index.js",
 		"optimize": "node build/optimize.mjs",
 		"watchbase": "postcss $npm_config_bhl_i --config build/postcss.config.js -o $npm_config_bhl_o -w --env $npm_config_bhl_env --verbose",
-		"watch": "npm run watchbase --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development & npm run watchbase --bhl-i=src/css/normalize.css --bhl-o=dist/css/normalize.css --bhl-env=development & npm run watchbase --bhl-i=dist/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=watching & npm run watchbase --bhl-i=dist/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=watching",
-		"stylelint-check": "stylelint-config-prettier-check"
+		"watch": "npm run watchbase --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development & npm run watchbase --bhl-i=src/css/normalize.css --bhl-o=dist/css/normalize.css --bhl-env=development & npm run watchbase --bhl-i=dist/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=watching & npm run watchbase --bhl-i=dist/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=watching"
 	},
 	"browserslist": "defaults and not op_mini all"
 }

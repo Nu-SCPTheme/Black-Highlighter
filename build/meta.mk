@@ -23,5 +23,5 @@ $(DIRECTORIES):
 
 # npm rules
 node_modules: package.json package-lock.json
-	npm install
+	npm install --force
 	touch node_modules
