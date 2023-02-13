@@ -50,7 +50,7 @@
 		17.3 =SIDEBLOCK MENU
 		17.4 =MENU-ITEMS
 		17.5 =SIDEBAR COLLAPSIBLES
-		17.5 =INTERWIKI ELEMENTS
+		17.5 =InterWIKI ELEMENTS
 	18. =FOOTER
 	19. =LICENSE AREA
 
@@ -69,6 +69,8 @@
 		21.2 =RATING MODULE
 		21.3 =MODALS
 		21.4 =FOOTNOTES HOVER BLOCK
+		21.5 =LISTPAGES PAGER
+		21.6 =ANIMATIONS
 
 	===============================
 	======== TEXT ELEMENTS ========
@@ -83,6 +85,7 @@
   =============== */
 
 /* ===CUSTOM MEDIA DEFINITIONS=== */
+
 @custom-media --viewport-desktop only screen and (width >= 56.25rem);
 @custom-media --viewport-tablet only screen and (width <= 56.25rem);
 @custom-media --viewport-mobile only screen and (width <= 30rem);
@@ -106,10 +109,10 @@
 	--body-font: Inter, Verdana, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell,
 		"Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--header-font: Inter, Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, "Helvetica Neue", Helvetica, Arial,
+	--header-font: Inter, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", "Helvetica Neue", Helvetica, Arial,
 		sans-serif;
 	--title-font: var(--header-font);
-	--mono-font: Recursive, Consolas, monaco, monospace;
+	--mono-font: Recursive, Consolas, Monaco, monospace;
 
 	/* ===BASE FONT SIZE & LINE HEIGHT=== */
 	--min-font-size: 0.8125rem; /* 13px */
@@ -210,15 +213,15 @@
 	--dark-gray-monochrome: 48, 48, 52;
 	/* black */
 	--black-monochrome: 12, 12, 12;
-	/* subdued theme color, for visited links */
+	/* subdued theme color for visited links */
 	--pale-accent: 210, 20, 20;
-	/* vivid theme color, the "default" accent color */
+	/* vivid theme color the "default" accent color */
 	--bright-accent: 133, 0, 5;
 	/* theme color */
 	--medium-accent: 100, 46, 44;
 	/* darker theme color */
 	--dark-accent: 100, 3, 15;
-	/* alternate accent color, for newpage links */
+	/* alternate accent color for newpage links */
 	--alt-accent: 221, 102, 17;
 
 	/* ===PRIMARY COLORS=== */
@@ -263,39 +266,42 @@
 
 	/* ===PRIMARY GRADIENTS=== */
 	/* Creates the header image at top of page */
-	--gradient-header: linear-gradient(
-		to top,
-		rgb(var(--header-gradient-color-bottom)) 0%,
-		rgb(var(--header-gradient-color-middle)) 90%,
-		rgb(var(--header-gradient-color-top)) 100%
-	);
+	--gradient-header:
+		linear-gradient(
+			to top,
+			rgb(var(--header-gradient-color-bottom)) 0%,
+			rgb(var(--header-gradient-color-middle)) 90%,
+			rgb(var(--header-gradient-color-top)) 100%
+		);
 	/* Diagonal Strikes placed on top of header image */
-	--diagonal-stripes: repeating-linear-gradient(
-		45deg,
-		hsla(0deg, 0%, 100%, 0),
-		hsla(0deg, 0%, 100%, 0) 0.25vh,
-		rgba(88, 88, 88, 0.1) 0.35vh,
-		rgba(88, 88, 88, 0.2) 0.5vh
-	);
+	--diagonal-stripes:
+		repeating-linear-gradient(
+			45deg,
+			hsl(0deg 0% 100% / 0),
+			hsl(0deg 0% 100% / 0) 0.25vh,
+			rgb(88 88 88 / 0.1) 0.35vh,
+			rgb(88 88 88 / 0.2) 0.5vh
+		);
 	/* Create top-menu bar below the header */
-	--gradient-topmenu: linear-gradient(
-		to bottom,
-		rgba(255, 255, 255, 0) 0%,
-		rgba(255, 255, 255, 0) var(--header-height-on-desktop),
-		rgba(var(--swatch-topmenu-border-color), 1) var(--header-height-on-desktop),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--header-height-on-desktop) + 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 0.95) calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color), 1) 100%
-	);
-	--gradient-topmenu-mobile: linear-gradient(
-		to bottom,
-		rgba(var(--swatch-topmenu-border-color), 1) 0,
-		rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color), 1) var(--topbar-height-on-mobile)
-	);
+	--gradient-topmenu:
+		linear-gradient(
+			to bottom,
+			rgb(255 255 255 / 0) 0%,
+			rgb(255 255 255 / 0) var(--header-height-on-desktop),
+			rgba(var(--swatch-topmenu-border-color), 1) var(--header-height-on-desktop),
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--header-height-on-desktop) + 0.125rem),
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(100% - 0.125rem),
+			rgba(var(--swatch-topmenu-border-color), 1) 100%
+		);
+	--gradient-topmenu-mobile:
+		linear-gradient(
+			to bottom,
+			rgba(var(--swatch-topmenu-border-color), 1) 0,
+			rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+			rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
+			rgba(var(--swatch-topmenu-border-color), 1) var(--topbar-height-on-mobile)
+		);
 	/* Subtle gradient that begins just below the top-bar and header */
 	--background-gradient-distance: 40rem;
 	--gradient-background: linear-gradient(
@@ -335,8 +341,9 @@
 }
 
 /*  ===============================
-	======= SPECIFIC COLORS =======
-	===============================
+		======= SPECIFIC COLORS =======
+		===============================
+
 /* Colors for Buttons, Tabs, Tables, Footnotes Hover/Modal, Etc. */
 
 :root {
@@ -428,7 +435,7 @@
 }
 
 #side-bar,
-#interwiki {
+#Interwiki {
 	/* ===SIDE-BAR ELEMENTS=== */
 
 	/* ===SIDE-BAR GENERAL=== */
@@ -442,25 +449,27 @@
 	--facebook-icon-color: 59, 89, 152;
 	--github-icon-color: 25, 23, 23;
 	--instagram-icon-color: 240, 148, 51;
-	--instagram-icon-gradient: linear-gradient(
-		45deg,
-		rgb(240, 148, 51) 0%,
-		rgb(230, 104, 60) 25%,
-		rgb(220, 39, 67) 50%,
-		rgb(204, 35, 102) 75%,
-		rgb(188, 24, 136) 100%
-	);
+	--instagram-icon-gradient:
+		linear-gradient(
+			45deg,
+			rgb(240 148 51) 0%,
+			rgb(230 104 60) 25%,
+			rgb(220 39 67) 50%,
+			rgb(204 35 102) 75%,
+			rgb(188 24 136) 100%
+		);
 	--reddit-icon-color: 225, 69, 0;
 	--sandbox-icon-color: 35, 140, 120;
 	--steam-icon-color: 8, 20, 40;
 	--tiktok-icon-color: 12, 12, 12;
-	--tiktok-icon-gradient: linear-gradient(
-		125deg,
-		rgb(37, 244, 238) 0%,
-		rgb(37, 244, 238) 50%,
-		rgb(254, 44, 85) calc(50% + 0.0625rem),
-		rgb(254, 44, 85) 100%
-	);
+	--tiktok-icon-gradient:
+		linear-gradient(
+			125deg,
+			rgb(37 244 238) 0%,
+			rgb(37 244 238) 50%,
+			rgb(254 44 85) calc(50% + 0.0625rem),
+			rgb(254 44 85) 100%
+		);
 	--twitch-icon-color: 100, 65, 165;
 	--twitter-icon-color: 29, 161, 242;
 	--youtube-icon-color: 255, 0, 0;
@@ -494,7 +503,7 @@
 	/* Unfolded Colors */
 	--sidebar-collapsible-ufld-link-bg: var(--sidebar-collapsible-fld-link-bg);
 	--sidebar-collapsible-ufld-link-color: var(--sideblock-heading-text-color);
-	--sidebar-collapsible-ufld-link-hover-bg: var(--swatch-primary), 1;
+	--sidebar-collapsible-ufld-link-hover-bg: var(--swatch-primary);
 	--sidebar-collapsible-ufld-link-hover-color: var(--sidebar-collapsible-fld-link-hover-color);
 	--sidebar-collapsible-ufld-arrow-color: var(--sidebar-collapsible-fld-arrow-color);
 	--sidebar-collapsible-ufld-arrow-hover-color: var(--sidebar-collapsible-fld-arrow-hover-color);
@@ -506,18 +515,20 @@
 	--sidebar-collapsible-link-hover-color: var(--sidebar-links-hover-text-color);
 }
 
-/* ===INTERWIKI ELEMENTS=== */
-#interwiki {
+/* ===InterWIKI ELEMENTS=== */
+
+#Interwiki {
 	--base-font-size: var(--max-font-size);
 }
 
 @media only screen and (max-width: 14rem) {
-	#interwiki {
+	#Interwiki {
 		--base-font-size: var(--min-font-size);
 	}
 }
 
 /* ===FOOTER=== */
+
 #footer {
 	--footer-bg-color: var(--swatch-primary-darkest);
 	--footer-text-color: var(--swatch-text-secondary-color);
@@ -527,6 +538,7 @@
 }
 
 /* ===LICENSE AREA=== */
+
 #license-area {
 	--license-bg-color: var(--swatch-alternate-color);
 	--license-text-color: var(--swatch-text-secondary-color);
@@ -607,8 +619,62 @@
 }
 
 /* ===GLOBAL ELEMENTS=== */
+
+/* ===UI BUTTONS=== */
+@define-mixin bhl-btn $maxwidth {
+	--wght: var(--ui-wght);
+
+	display: inline-flex;
+	position: relative;
+	z-index: 2;
+	align-items: center;
+	justify-content: center;
+	min-width: $maxwidth;
+	margin: 0;
+	padding: 0.25em;
+	overflow: hidden;
+	transition:
+		border-color 0.2s var(--ease-in-out),
+		box-shadow 0.2s var(--ease-in-out),
+		color 0.15s var(--ease-in-out),
+		background-color 0.15s var(--ease-in-out),
+		font-weight 0.2s var(--ease-in-out),
+		font-variation-settings 0.2s var(--ease-in-out);
+	border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgb(var(--ui-button-bg));
+	box-shadow:
+		-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75),
+		0 0 0 0 rgb(var(--ui-button-bg));
+	color: rgb(var(--ui-button-txt));
+	font-family: var(--UI-font);
+	font-weight: var(--wght);
+	text-decoration: none;
+	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+
+	&:is(:hover, :active, :focus, :focus-within) {
+		--wght: var(--ui-hvr-wght);
+
+		border-color: transparent;
+		outline: 0 solid rgb(var(--swatch-primary));
+		background-color: rgb(var(--ui-button-hover-bg));
+		box-shadow:
+			0 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+			inset 0 0 0 0 rgba(var(--swatch-tertiary-color), 0),
+			0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+		color: rgb(var(--ui-button-hover-txt));
+		font-weight: var(--wght);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	@supports ( width: 1cqw ) {
+		font-size: max(var(--min-font-size), min(0.75cqw, var(--max-font-size)));
+	}
+}
+
 :root {
-	/* ===UI BUTTONS=== */
 	--ui-button-bg: var(--swatch-secondary-color);
 	--ui-button-txt: var(--swatch-text-tertiary-color);
 	--ui-button-hover-bg: var(--swatch-primary);
@@ -616,6 +682,7 @@
 	--ui-button-hover-outline: var(--swatch-primary);
 
 	/* ===RATING MODULE=== */
+
 	--rating-module-button-plus-color: 0, 200, 0;
 	--rating-module-button-negative-color: 200, 0, 0;
 	--rating-module-button-cancel-color: var(--swatch-tertiary-color);
@@ -628,10 +695,10 @@
 	--rating-module-text-hover-color: var(--swatch-text-secondary-color);
 
 	/* ===MODALS=== */
+
 	--modal-bg: var(--swatch-secondary-color);
 	--modal-body-text: var(--swatch-text-tertiary-color);
-	/* h1/h2/h3/h4/h5/h6 */
-	--modal-body-header-txt: var(--swatch-text-tertiary-color);
+	--modal-body-header-txt: var(--swatch-text-tertiary-color); /* h1/h2/h3/h4/h5/h6 */
 
 	--modal-header-bg: var(--swatch-primary-darkest);
 	--modal-header-txt: var(--swatch-text-secondary-color);
@@ -656,11 +723,61 @@
 	--pager-selected-link: var(--swatch-text-secondary-color);
 }
 
+/* ===ANIMATIONS=== */
+:root {
+	--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in {
+	from {
+		translate: 1rem 1rem;
+	}
+
+	to {
+		translate: 0 0;
+	}
+}
+
+@keyframes slide-down {
+	from {
+		max-height: 0;
+	}
+
+	to {
+		max-height: var(--header-height-on-desktop);
+	}
+}
+
+@keyframes lift-in {
+	from {
+		box-shadow:
+			0 0 0 0 rgba(var(--swatch-alternate-color), 0.25),
+			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+	}
+
+	to {
+		box-shadow:
+			0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-alternate-color), 0.25),
+			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+	}
+}
+
 /*  ===============================
 		======== TEXT ELEMENTS ========
 		===============================
 
 /* ===HARDCODED TEXT=== */
+
 :root {
 	/* Found in Wikidot Structure */
 	--text-tags: "TAGS\0021b4";
@@ -685,6 +802,7 @@
 		===============================
 
 /* ===LEGACY VARIABLES=== */
+
 /* These Vars are being left for now in case they are used in various these but will eventually be removed */
 :root {
 	/* Legacy Var -- No longer used */
@@ -707,47 +825,5 @@
 	--box-border-right: 0.0625rem 0 0 0 rgb(var(--swatch-border-color));
 	--box-border-all: 0 0 0 0.0625rem rgb(var(--swatch-border-color));
 
-	--sidebar-transition-timing: 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
-}
-
-@define-mixin bhl-btn $maxwidth {
-	--wght: var(--ui-wght);
-
-	display: inline-flex;
-	position: relative;
-	z-index: 2;
-	align-items: center;
-	justify-content: center;
-	min-width: $maxwidth;
-	margin: 0;
-	padding: 0.25em;
-	overflow: hidden;
-	transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-		color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
-	outline: 0 solid rgb(var(--swatch-primary));
-	background-color: rgb(var(--ui-button-bg));
-	box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
-		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75), 0 0 0 0 rgb(var(--ui-button-bg));
-	color: rgb(var(--ui-button-txt));
-	font-family: var(--UI-font);
-	font-weight: var(--wght);
-	text-decoration: none;
-	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
-
-	&:is(:hover, :active, :focus, :focus-within) {
-		--wght: var(--ui-hvr-wght);
-
-		border-color: transparent;
-		outline: 0 solid rgb(var(--swatch-primary));
-		background-color: rgb(var(--ui-button-hover-bg));
-		box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0),
-			inset 0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0),
-			inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0), 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
-		color: rgb(var(--ui-button-hover-txt));
-		font-weight: var(--wght);
-		text-decoration: none;
-		cursor: pointer;
-	}
+	--sidebar-transition-timing: 0.5s var(--ease-in-out) 0.1s;
 }

@@ -13,7 +13,7 @@
 			4.2.1 =MAIN LINKS HOVER BG BAR
 		4.3 =SCP & TALES SERIES
 		4.4 =SIGMA-9 OVERWRITES
-	5. =COMMON THEME COMPATABILITY
+	5. =COMMON THEME COMPATIBILITY
 	6. =MOBILE SIDEBAR
   =============== */
 
@@ -32,8 +32,10 @@
 	padding: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
-	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), scrollbar-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-		border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		background-color 0.15s var(--ease-in-out),
+		scrollbar-color 0.15s var(--ease-in-out),
+		border-color 0.15s var(--ease-in-out);
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0.4);
 	background-color: rgba(var(--sidebar-bg-color), 1);
@@ -43,8 +45,7 @@
 	scrollbar-width: thin;
 	overscroll-behavior: contain;
 	scrollbar-color:
-		/* Thumb */ rgba(var(--swatch-primary-darker), 0.1) /* Track */
-		rgba(var(--swatch-tertiary-color), 0.05);
+		/* Thumb */ rgba(var(--swatch-primary-darker), 0.1) /* Track */ rgba(var(--swatch-tertiary-color), 0.05);
 	justify-self: start;
 
 	@supports (-moz-appearance: none) and (background-attachment: local) and (not (-moz-osx-font-smoothing: auto)) {
@@ -73,7 +74,6 @@
 	}
 
 	/* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
-
 	& div[style*="#f0fff6"] {
 		background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 	}
@@ -94,12 +94,25 @@
 		background-color: rgba(var(--sidebar-media-bg-color)) !important;
 	}
 
-	/* Social Media Icons */
+	/* ===SUB-BLOCK=== */
 	.side-block {
+		:is(#side-bar, #interwiki) & {
+			margin: 0.5rem 0.5rem 0 0;
+			border: 0;
+			background: rgba(var(--sideblock-bg-color));
+			direction: ltr;
+		}
+
+		#interwiki & {
+			display: grid;
+			grid-template-rows: repeat(auto-fit, minmax(1.3125rem, 1fr));
+		}
+
+		/* Social Media Icons */
 		&.media {
 			& a {
 				position: relative;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: background-color 0.15s var(--ease-in-out);
 				background-color: rgb(var(--social-color));
 				mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -112,7 +125,7 @@
 					top: 0;
 					width: 100%;
 					height: 100%;
-					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: clip-path 0.2s var(--ease-in-out);
 					background-color: rgb(var(--social-icon-hover-color));
 					pointer-events: none;
 					clip-path: var(--clip-path);
@@ -188,10 +201,7 @@
 			background-color: rgba(var(--dark-accent), 0.15) !important;
 		}
 	}
-}
 
-/* ===SUB-BLOCK=== */
-#side-bar {
 	.side-block,
 	& div[style*="center"],
 	& div[style*="center"] > div {
@@ -211,21 +221,8 @@
 	}
 }
 
-.side-block {
-	:is(#side-bar, #interwiki) & {
-		margin: 0.5rem 0.5rem 0 0;
-		border: 0;
-		background: rgb(var(--sideblock-bg-color));
-		direction: ltr;
-	}
-
-	#interwiki & {
-		display: grid;
-		grid-template-rows: repeat(auto-fit, minmax(1.3125rem, 1fr));
-	}
-}
-
 /* ===HEADING=== */
+
 #side-bar,
 #interwiki {
 	.heading {
@@ -234,7 +231,7 @@
 		justify-content: flex-start;
 		min-height: 1.5rem;
 		margin: 0 0 0.25rem;
-		background-color: rgb(var(--sideblock-heading-bg-color));
+		background-color: rgba(var(--sideblock-heading-bg-color));
 		box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 
 		/* Firefox left padding for scrollbar but not on OSX */
@@ -304,8 +301,11 @@
 			height: 1.5rem;
 			margin: 0;
 			padding: 0 0.6em;
-			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-				font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition:
+				background-color 0.15s var(--ease-in-out),
+				color 0.15s var(--ease-in-out),
+				font-weight 0.2s var(--ease-in-out),
+				font-variation-settings 0.2s var(--ease-in-out);
 			background-clip: padding-box;
 			background-color: rgba(var(--sidebar-links-bg-color));
 			color: rgb(var(--sidebar-links-text));
@@ -324,7 +324,7 @@
 			min-width: 35%;
 			padding-right: 3em;
 			padding-left: 1em;
-			color: rgba(var(--sidebar-subtext-color));
+			color: rgb(var(--sidebar-subtext-color));
 			font-size: calc(var(--base-font-size) * (11 / 15));
 			text-align: left;
 		}
@@ -342,8 +342,11 @@
 			margin: 0;
 			padding: 0 0 0 calc(var(--base-font-size) * (13 / 15));
 			overflow: hidden;
-			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-				font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition:
+				background-color 0.15s var(--ease-in-out),
+				color 0.15s var(--ease-in-out),
+				font-weight 0.2s var(--ease-in-out),
+				font-variation-settings 0.2s var(--ease-in-out);
 			background-clip: padding-box;
 			background-color: rgba(var(--sidebar-links-bg-color));
 			font-size: calc(var(--base-font-size) * (13 / 15));
@@ -373,7 +376,7 @@
 				inset: 0 auto auto calc(var(--base-font-size) * (13 / 15) * -1);
 				width: calc(100% + (var(--base-font-size) * (13 / 15)));
 				height: 100%;
-				transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: clip-path 0.2s var(--ease-in-out);
 				opacity: 1;
 				background-color: rgb(var(--sidebar-links-hover-bg-color));
 				pointer-events: none;
@@ -408,8 +411,11 @@
 					justify-content: flex-start;
 					height: 1.5rem;
 					margin: 0;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-						font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition:
+						background-color 0.15s var(--ease-in-out),
+						color 0.15s var(--ease-in-out),
+						font-weight 0.2s var(--ease-in-out),
+						font-variation-settings 0.2s var(--ease-in-out);
 					background-clip: padding-box;
 					background-color: rgba(var(--sidebar-links-bg-color));
 					color: rgb(var(--sidebar-links-text));
@@ -432,8 +438,11 @@
 				justify-content: flex-start;
 				height: 1.5rem;
 				margin: 0;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition:
+					background-color 0.15s var(--ease-in-out),
+					color 0.15s var(--ease-in-out),
+					font-weight 0.2s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
 				background-clip: padding-box;
 				background-color: rgba(var(--sidebar-links-bg-color));
 				color: rgb(var(--sidebar-links-text));
@@ -504,7 +513,6 @@
 }
 
 /* Search box specific styling */
-
 #___gcse_0 {
 	> div {
 		display: inline-flex;
@@ -517,7 +525,7 @@
 
 			> table > tbody > tr > td.gsc-search-button {
 				> button {
-					transition: background-color 80ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.1s var(--ease-in-out);
 					background-color: rgba(var(--swatch-primary-darkest), 0);
 					color: rgb(var(--swatch-text-secondary-color));
 					line-height: 1.85;
@@ -599,7 +607,7 @@
 
 	#side-bar .scpnet-interwiki-wrapper:not(:lang(cn), .interwiki-stylable) p::after {
 		z-index: 1;
-		transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: background-color 0.5s var(--ease-in-out);
 		background-color: rgb(var(--swatch-menubg-color));
 		mix-blend-mode: overlay;
 	}
@@ -616,7 +624,6 @@
 }
 
 /* Collapsibles in the sidebar */
-
 #side-bar div.collapsible-block {
 	position: relative;
 	flex-basis: 100%;
@@ -633,8 +640,11 @@
 			width: 100%;
 			height: 100%;
 			margin-left: 0;
-			transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-				font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition:
+				color 0.15s var(--ease-in-out),
+				background-color 0.15s var(--ease-in-out),
+				font-weight 0.2s var(--ease-in-out),
+				font-variation-settings 0.2s var(--ease-in-out);
 			color: rgb(var(--sidebar-collapsible-link-color));
 
 			/* create a dropdown triangle next to the collapsible */
@@ -644,7 +654,7 @@
 				inset: 0 0 auto auto;
 				width: 2rem;
 				height: 100%;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: background-color 0.15s var(--ease-in-out);
 				mask: var(--down-arrow-mask) 50% 50% / 1em no-repeat;
 			}
 
@@ -686,15 +696,15 @@
 					color: rgb(var(--sidebar-collapsible-fld-link-color));
 
 					&::after {
-						background: rgba(var(--sidebar-collapsible-fld-arrow-color));
+						background: rgb(var(--sidebar-collapsible-fld-arrow-color));
 					}
 
 					&:is(:hover, :active) {
-						background: rgba(var(--sidebar-collapsible-fld-link-hover-bg));
+						background: rgb(var(--sidebar-collapsible-fld-link-hover-bg));
 						color: rgb(var(--sidebar-collapsible-fld-link-hover-color));
 
 						&::after {
-							background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
+							background: rgb(var(--sidebar-collapsible-fld-arrow-hover-color));
 						}
 					}
 				}
@@ -703,11 +713,11 @@
 			&:is(:focus-within) {
 				> a {
 					&.collapsible-block-link {
-						background: rgba(var(--sidebar-collapsible-fld-link-hover-bg));
+						background: rgb(var(--sidebar-collapsible-fld-link-hover-bg));
 						color: rgb(var(--sidebar-collapsible-fld-link-hover-color));
 
 						&::after {
-							background: rgba(var(--sidebar-collapsible-fld-arrow-hover-color));
+							background: rgb(var(--sidebar-collapsible-fld-arrow-hover-color));
 						}
 					}
 				}
@@ -719,20 +729,20 @@
 
 			> a {
 				&.collapsible-block-link {
-					background: rgba(var(--sidebar-collapsible-ufld-link-bg));
+					background: rgb(var(--sidebar-collapsible-ufld-link-bg));
 					color: rgb(var(--sidebar-collapsible-ufld-link-color));
 
 					&::after {
 						rotate: 180deg;
-						background: rgba(var(--sidebar-collapsible-ufld-arrow-color));
+						background: rgb(var(--sidebar-collapsible-ufld-arrow-color));
 					}
 
 					&:is(:hover, :active) {
-						background: rgba(var(--sidebar-collapsible-ufld-link-hover-bg));
+						background: rgb(var(--sidebar-collapsible-ufld-link-hover-bg));
 						color: rgb(var(--sidebar-collapsible-ufld-link-hover-color));
 
 						&::after {
-							background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
+							background: rgb(var(--sidebar-collapsible-ufld-arrow-hover-color));
 						}
 					}
 				}
@@ -741,11 +751,11 @@
 			&:is(:focus-within) {
 				> a {
 					&.collapsible-block-link {
-						background: rgba(var(--sidebar-collapsible-ufld-link-hover-bg));
+						background: rgb(var(--sidebar-collapsible-ufld-link-hover-bg));
 						color: rgb(var(--sidebar-collapsible-ufld-link-hover-color));
 
 						&::after {
-							background: rgba(var(--sidebar-collapsible-ufld-arrow-hover-color));
+							background: rgb(var(--sidebar-collapsible-ufld-arrow-hover-color));
 						}
 					}
 				}
@@ -756,7 +766,7 @@
 		&.collapsible-block-content {
 			box-sizing: border-box;
 			border-right: 2rem solid rgba(var(--sidebar-border-color));
-			background-color: rgb(var(--sidebar-collapsible-body-bg));
+			background-color: rgba(var(--sidebar-collapsible-body-bg));
 
 			/* hide the last border within the collapsible */
 			.menu-item {
@@ -787,7 +797,8 @@
 	}
 }
 
-/* ===COMMON THEME COMPATABILITY=== */
+/* ===COMMON THEME COMPATIBILITY=== */
+
 #side-bar div.menu-item.expandable {
 	max-width: calc(100% - (var(--base-font-size) * (13 / 15)));
 
@@ -848,11 +859,11 @@
 /* Common Theme Colors */
 #side-bar div.side-block {
 	&.yellow {
-		background-color: rgba(255, 255, 229, 0.15);
+		background-color: rgb(255 255 229 / 0.15);
 	}
 
 	&.green {
-		background-color: rgba(229, 255, 229, 0.15);
+		background-color: rgb(229 255 229 / 0.15);
 	}
 
 	&:not(:lang(en)) {
@@ -863,6 +874,7 @@
 }
 
 /* ===MOBILE SIDEBAR=== */
+
 @media (--viewport-tablet) {
 	#side-bar {
 		display: block;
@@ -874,7 +886,7 @@
 		height: 100%;
 		padding-left: 0.25em;
 		overflow-y: auto;
-		transition: left 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
+		transition: left 0.5s var(--ease-in-out) 0.1s;
 		direction: initial;
 
 		&::after {
@@ -916,7 +928,7 @@
 		height: 100%;
 		margin-left: var(--scrollbar-width);
 		padding-right: var(--sidebar-width-on-mobile);
-		transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
+		transition: all 0.5s var(--ease-in-out) 0.1s;
 		opacity: 0;
 		background: rgba(var(--swatch-menubg-black-color), 0.3) 0.0625rem 0.0625rem repeat;
 		pointer-events: none;
@@ -924,7 +936,7 @@
 
 	#skrollr-body:target #side-bar,
 	#side-bar:target {
-		--box-shadow: rgb(var(--swatch-text-secondary-color, 252, 252, 252));
+		--box-shadow: rgb(var(--swatch-text-secondary-color));
 
 		display: block;
 		z-index: 10;

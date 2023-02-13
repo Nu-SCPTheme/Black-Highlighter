@@ -23,6 +23,7 @@
 */
 
 /* ===CZECH BRANCH=== */
+
 :where(:lang(cs)) {
 	#side-bar {
 		& div.menu-item:first-of-type {
@@ -44,7 +45,7 @@
 
 			& a {
 				position: relative;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: background-color 0.15s var(--ease-in-out);
 				background-color: rgb(var(--social-color));
 				mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -56,7 +57,7 @@
 					top: 0;
 					width: 100%;
 					height: 100%;
-					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: clip-path 0.2s var(--ease-in-out);
 					background-color: rgb(var(--social-icon-hover-color));
 					pointer-events: none;
 					clip-path: var(--clip-path);
@@ -100,6 +101,7 @@
 }
 
 /* ===FRENCH BRANCH=== */
+
 :where(:lang(fr)) {
 	#side-bar {
 		.side-block.media {
@@ -131,7 +133,7 @@
 					position: relative;
 					margin: 0;
 					padding: 0;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					background-color: rgb(var(--social-color));
 					mask: var(--social-logo-mask) center center / contain no-repeat;
 					color: transparent;
@@ -145,7 +147,7 @@
 						inset: 0 auto auto 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -161,6 +163,7 @@
 }
 
 /* ===GERMAN BRANCH=== */
+
 :where(:lang(de)) {
 	#side-bar {
 		:not(.scpnet-interwiki-wrapper) {
@@ -206,7 +209,7 @@
 
 				& a {
 					position: relative;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					background-color: rgb(var(--social-color));
 					background-image: unset;
 					mask: var(--social-logo-mask) center center / contain no-repeat;
@@ -219,7 +222,7 @@
 						inset: 0 auto auto 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -325,9 +328,13 @@
 				grid-row: 1;
 				justify-content: flex-end;
 				padding-right: 1em;
-				transition: padding-right 150ms cubic-bezier(0.4, 0, 0.2, 1), border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition:
+					padding-right 0.15s var(--ease-in-out),
+					border-color 0.15s var(--ease-in-out),
+					background-color 0.15s var(--ease-in-out),
+					color 0.15s var(--ease-in-out),
+					font-weight 0.2s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
 			}
 		}
 
@@ -393,7 +400,8 @@
 						-webkit-text-stroke: 0.0625rem rgb(var(--text-shadow-color));
 
 						@supports not (-webkit-text-stroke: initial) {
-							text-shadow: rgb(var(--text-outline-color)) 0.0625rem 0 0,
+							text-shadow:
+								rgb(var(--text-outline-color)) 0.0625rem 0 0,
 								rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0,
 								rgb(var(--text-outline-color)) -0.026rem 0.0568rem 0,
 								rgb(var(--text-outline-color)) -0.0619rem 0.0088rem 0,
@@ -437,9 +445,13 @@
 			-webkit-text-stroke: 0.0625rem rgb(var(--text-shadow-color));
 
 			@supports not (-webkit-text-stroke: initial) {
-				text-shadow: rgb(var(--text-outline-color)) 0.0625rem 0 0, rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0,
-					rgb(var(--text-outline-color)) -0.026rem 0.0568rem 0, rgb(var(--text-outline-color)) -0.0619rem 0.0088rem 0,
-					rgb(var(--text-outline-color)) -0.0409rem -0.0473rem 0, rgb(var(--text-outline-color)) 0.0177rem -0.0599rem 0,
+				text-shadow:
+					rgb(var(--text-outline-color)) 0.0625rem 0 0,
+					rgb(var(--text-outline-color)) 0.0338rem 0.0526rem 0,
+					rgb(var(--text-outline-color)) -0.026rem 0.0568rem 0,
+					rgb(var(--text-outline-color)) -0.0619rem 0.0088rem 0,
+					rgb(var(--text-outline-color)) -0.0409rem -0.0473rem 0,
+					rgb(var(--text-outline-color)) 0.0177rem -0.0599rem 0,
 					rgb(var(--text-outline-color)) 0.06rem -0.0175rem 0;
 			}
 		}
@@ -457,6 +469,7 @@
 /* ===GREEK BRANCH=== */
 
 /* ===ITALIAN BRANCH=== */
+
 :where(:lang(it)) {
 	#side-bar {
 		--telegram-icon-color: 0, 136, 204;
@@ -489,7 +502,7 @@
 
 		& a {
 			position: relative;
-			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			transition: background-color 0.15s var(--ease-in-out);
 			background-color: rgb(var(--social-color));
 			mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -501,7 +514,7 @@
 				top: 0;
 				width: 100%;
 				height: 100%;
-				transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: clip-path 0.2s var(--ease-in-out);
 				background-color: rgb(var(--social-icon-hover-color));
 				pointer-events: none;
 				clip-path: var(--clip-path);
@@ -554,6 +567,7 @@
 }
 
 /* ===JAPANESE BRANCH=== */
+
 :where(:lang(ja)) {
 	#side-bar {
 		& hr {
@@ -588,7 +602,7 @@
 					height: 1.6875rem;
 					margin: 0;
 					padding: 0;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					border: none;
 					background-color: rgb(var(--social-color));
 					mask: var(--social-logo-mask) center center / contain no-repeat;
@@ -601,7 +615,7 @@
 						inset: 0 auto auto 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -660,9 +674,12 @@
 				z-index: 2;
 				grid-column: 2;
 				grid-row: 1;
-				transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition:
+					border-color 0.15s var(--ease-in-out),
+					background-color 0.15s var(--ease-in-out),
+					color 0.15s var(--ease-in-out),
+					font-weight 0.2s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
 
 				&[style*="line-through"] {
 					display: contents;
@@ -681,8 +698,10 @@
 					content: "|";
 					position: absolute;
 					left: 0;
-					transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-						font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition:
+						color 0.15s var(--ease-in-out),
+						font-weight 0.2s var(--ease-in-out),
+						font-variation-settings 0.2s var(--ease-in-out);
 					color: rgba(var(--sidebar-links-text), 0.25);
 				}
 
@@ -701,6 +720,7 @@
 }
 
 /* ===KOREAN BRANCH=== */
+
 :where(:lang(ko)) {
 	#side-bar {
 		--youtube-icon-color: 255, 0, 0;
@@ -725,7 +745,7 @@
 
 			& a {
 				position: relative;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: background-color 0.15s var(--ease-in-out);
 				background-color: rgb(var(--social-color));
 				mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -737,7 +757,7 @@
 					top: 0;
 					width: 100%;
 					height: 100%;
-					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: clip-path 0.2s var(--ease-in-out);
 					background-color: rgb(var(--social-icon-hover-color));
 					pointer-events: none;
 					clip-path: var(--clip-path);
@@ -794,6 +814,7 @@
 }
 
 /* ===PORTUGESE BRANCH=== */
+
 :where(:lang(pt-br)) {
 	#side-bar {
 		& div.menu-item a[href*="series"] {
@@ -815,7 +836,7 @@
 
 				& a {
 					position: relative;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					background-color: rgb(var(--social-color));
 					mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -827,7 +848,7 @@
 						top: 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -893,7 +914,7 @@
 			padding: inherit;
 			border: 0;
 			border-radius: inherit;
-			background-color: rgb(var(--sideblock-bg-color));
+			background-color: rgba(var(--sideblock-bg-color));
 			box-shadow: 0 0.25rem rgb(var(--swatch-primary-darkest));
 			direction: ltr;
 
@@ -953,9 +974,12 @@
 				z-index: 2;
 				grid-column: 2;
 				grid-row: 1;
-				transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-					color 150ms cubic-bezier(0.4, 0, 0.2, 1), font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1),
-					font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition:
+					border-color 0.15s var(--ease-in-out),
+					background-color 0.15s var(--ease-in-out),
+					color 0.15s var(--ease-in-out),
+					font-weight 0.2s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
 			}
 		}
 
@@ -980,6 +1004,7 @@
 }
 
 /* ===SIMPLIFIED CHINESE BRANCH=== */
+
 :where(:lang(cn)) {
 	#side-bar {
 		--bilibili-icon-color: 0, 161, 214;
@@ -1049,7 +1074,7 @@
 						height: 1.6875rem;
 						margin: 0;
 						padding: 0;
-						transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: background-color 0.15s var(--ease-in-out);
 						background-color: rgb(var(--social-color));
 						font-size: var(--base-font-size);
 						line-height: 1;
@@ -1064,7 +1089,7 @@
 						inset: 0 auto auto 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -1091,6 +1116,7 @@
 }
 
 /* ===SPANISH BRANCH=== */
+
 :where(:lang(es)) {
 	#side-bar {
 		.side-block {
@@ -1118,7 +1144,7 @@
 					height: 1.6875rem;
 					margin: 0;
 					padding: 0;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					background-color: rgb(var(--social-color));
 					font-size: var(--base-font-size);
 					line-height: 1;
@@ -1133,7 +1159,7 @@
 						left: 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -1188,6 +1214,7 @@
 }
 
 /* ===THAI BRANCH=== */
+
 :where(:lang(th)) {
 	#side-bar {
 		& br {
@@ -1198,7 +1225,7 @@
 			height: auto;
 
 			& a {
-				font-weight: normal;
+				font-weight: 400;
 			}
 
 			& input.text {
@@ -1276,7 +1303,7 @@
 					height: 1.6875rem;
 					margin: 0;
 					padding: 0;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					background-color: rgb(var(--social-color));
 					font-size: var(--base-font-size);
 					line-height: 1;
@@ -1290,7 +1317,7 @@
 						inset: 0 auto auto 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -1354,8 +1381,11 @@
 						height: 1.5rem;
 						margin: 0;
 						padding: 0 0 0 calc(var(--base-font-size) * (14 / 15));
-						transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-							font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition:
+							background-color 0.15s var(--ease-in-out),
+							color 0.15s var(--ease-in-out),
+							font-weight 0.2s var(--ease-in-out),
+							font-variation-settings 0.2s var(--ease-in-out);
 						background-clip: padding-box;
 						background-color: rgba(var(--sidebar-links-bg-color));
 						color: rgb(var(--sidebar-links-text));
@@ -1375,7 +1405,7 @@
 							inset: 0 auto auto calc(var(--base-font-size) * (14 / 15) * -1);
 							width: calc(100% + (var(--base-font-size) * (14 / 15)));
 							height: 100%;
-							transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+							transition: clip-path 0.2s var(--ease-in-out);
 							opacity: 1;
 							background-color: rgb(var(--sidebar-links-hover-bg-color));
 							pointer-events: none;
@@ -1412,6 +1442,7 @@
 }
 
 /* ===TRADITIONAL CHINESE BRANCH=== */
+
 :where(:lang(zh)) {
 	#side-bar {
 		--plurk-icon-color: 255, 87, 77;
@@ -1436,7 +1467,7 @@
 				position: relative;
 				width: 1.6875rem;
 				height: 1.6875rem;
-				transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: background-color 0.15s var(--ease-in-out);
 				background-color: rgb(var(--social-color));
 				mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -1448,7 +1479,7 @@
 					top: 0;
 					width: 100%;
 					height: 100%;
-					transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: clip-path 0.2s var(--ease-in-out);
 					background-color: rgb(var(--social-icon-hover-color));
 					pointer-events: none;
 					clip-path: var(--clip-path);
@@ -1524,7 +1555,7 @@
 
 				& a {
 					position: relative;
-					transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition: background-color 0.15s var(--ease-in-out);
 					background-color: rgb(var(--social-color));
 					mask: var(--social-logo-mask) center center / contain no-repeat;
 
@@ -1536,7 +1567,7 @@
 						top: 0;
 						width: 100%;
 						height: 100%;
-						transition: clip-path 200ms cubic-bezier(0.4, 0, 0.2, 1);
+						transition: clip-path 0.2s var(--ease-in-out);
 						background-color: rgb(var(--social-icon-hover-color));
 						pointer-events: none;
 						clip-path: var(--clip-path);
@@ -1613,9 +1644,12 @@
 					z-index: 2;
 					grid-column: 2;
 					grid-row: 1;
-					transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-						background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1),
-						font-weight 200ms cubic-bezier(0.4, 0, 0.2, 1), font-variation-settings 200ms cubic-bezier(0.4, 0, 0.2, 1);
+					transition:
+						border-color 0.15s var(--ease-in-out),
+						background-color 0.15s var(--ease-in-out),
+						color 0.15s var(--ease-in-out),
+						font-weight 0.2s var(--ease-in-out),
+						font-variation-settings 0.2s var(--ease-in-out);
 				}
 			}
 		}

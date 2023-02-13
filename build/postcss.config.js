@@ -7,19 +7,21 @@ module.exports = (ctx) => {
 	const postcssImport = require("postcss-import");
 	const postcssMixins = require("postcss-mixins");
 	const reporter = require("postcss-reporter");
-	const mqPacker = require("@hail2u/css-mqpacker");
+	//const mqPacker = require("@hail2u/css-mqpacker");
 	const lightningcss = require("postcss-lightningcss");
 	const browserslist = require("../package.json").browserslist;
 
 	const nodeEnv = ctx.env;
 
-	const fileImportOptions = {
-		filter: url => !url.includes("fonts.css")
-	};
+	const fileImportOptions = {};
 
 	const stylelintOptions = {
 		configFile: path.join(__dirname, "../.stylelintrc"),
 		fix: nodeEnv === "development" ? true : false
+	};
+
+	const mixinOptions = {
+		mixinsDir: path.join(__dirname, "../src/css")
 	};
 
 	const lightningcssOptions = ({
@@ -48,6 +50,16 @@ module.exports = (ctx) => {
 						url.url = "../" + url.url
 					];
 				return url;
+				},
+				Rule: {
+					import(rule) {
+						nodeEnv === "development" || !rule.value.url.includes("../") ? [
+							rule.value.url
+						] : [
+							rule.value.url = "../" + rule.value.url
+						];
+						return rule;
+					}
 				}
 			}
 		}
@@ -63,26 +75,21 @@ module.exports = (ctx) => {
 	let plugins = [];
 
 	switch(nodeEnv) {
-		case "watching":
-			plugins = [
-				postcssMixins,
-				lightningcss(lightningcssOptions),
-				reporter(reporterOptions)
-			];
-			break;
 		case "production":
 			plugins = [
 				postcssImport(fileImportOptions),
-				postcssMixins,
 				lightningcss(lightningcssOptions),
+				postcssMixins(mixinOptions),
+				//mqPacker,
 				reporter(reporterOptions)
 			];
 			break;
 		case "development":
 			plugins = [
 				postcssImport(fileImportOptions),
-				postcssMixins,
 				lightningcss(lightningcssOptions),
+				postcssMixins(mixinOptions),
+				//mqPacker,
 				stylelint(stylelintOptions),
 				reporter(reporterOptions)
 			];
