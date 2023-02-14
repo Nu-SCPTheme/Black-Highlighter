@@ -24,19 +24,16 @@ module.exports = (ctx) => {
 		mixinsDir: path.join(__dirname, "../src/css")
 	};
 
+	console.log(`ctx.file.dirname: ${ctx.file.dirname}`);
+
 	const lightningcssOptions = ({
 		filename: path.join(ctx.file.dirname, "/", ctx.file.basename),
 		browsers: browserslist,
 		lightningcssOptions: {
-			projectRoot: ctx.file.dirname,
-			inputSourceMap:
-				path.join(
-					ctx.file.dirname,
-					nodeEnv === "production" ?
-						"/black-highlighter.css.map" :
-						"/min/black-highlighter.min.css.map"),
+			projectRoot: path.join( ctx.file.dirname, "/parts" ),
+			inputSourceMap: path.join( ctx.file.dirname, "/black-highlighter.css.map" ),
 			minify: nodeEnv === "development" ? false : true,
-			sourceMap: false,
+			sourceMap: true,
 			errorRecovery: false,
 			drafts: {
 				nesting: true,
@@ -44,11 +41,14 @@ module.exports = (ctx) => {
 			},
 			visitor: {
 				Url(url) {
-					nodeEnv === "development" || !url.url.includes("../") ? [
-						url.url
-					] : [
-						url.url = "../" + url.url
-					];
+					let urlArray = url.url.split("/").reverse();
+					if (url.url.includes("/fonts") || url.url.includes("/img")) {
+						nodeEnv === "development" ? [
+							url.url = "../" + urlArray[1] + "/" + urlArray[0]
+						] : [
+							url.url = "../../" + urlArray[1] + "/" + urlArray[0]
+						];
+					}
 				return url;
 				},
 				Rule: {
@@ -99,7 +99,10 @@ module.exports = (ctx) => {
 	}
 
 	return {
-		map: { inline: false },
+		map: [
+			true,
+			{ inline: false }
+		],
 		plugins: plugins
 	};
 };

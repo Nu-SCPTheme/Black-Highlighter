@@ -4,7 +4,10 @@ BUILD_SOURCES := \
 
 # Directory creation
 DIRECTORIES := \
+	dist/css/ \
 	dist/css/min/ \
+	dist/css/parts/ \
+	dist/css/parts/int/ \
 	dist/fonts/ \
 	dist/fonts/int \
 	dist/fonts/int/chinese-simplified \
