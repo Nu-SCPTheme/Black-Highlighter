@@ -16,8 +16,5 @@ dist/img/social-icons/%: src/img/social-icons/%
 	build/install.sh 644 $< $@
 
 # Images to optimize
-dist/img/%.png: src/img/%.png node_modules
-	npm run optimize -- png $< $@
-
 dist/img/%.svg: src/img/%.svg node_modules
-	npm run optimize -- svg $< $@
+	npm run svgo -- $< --config ./build/svgo.config.js -o $@

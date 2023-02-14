@@ -7,7 +7,6 @@ module.exports = (ctx) => {
 	const postcssImport = require("postcss-import");
 	const postcssMixins = require("postcss-mixins");
 	const reporter = require("postcss-reporter");
-	//const mqPacker = require("@hail2u/css-mqpacker");
 	const lightningcss = require("postcss-lightningcss");
 	const browserslist = require("../package.json").browserslist;
 
@@ -24,14 +23,11 @@ module.exports = (ctx) => {
 		mixinsDir: path.join(__dirname, "../src/css")
 	};
 
-	console.log(`ctx.file.dirname: ${ctx.file.dirname}`);
-
 	const lightningcssOptions = ({
-		filename: path.join(ctx.file.dirname, "/", ctx.file.basename),
+		filename: path.join(ctx.file.dirname,"/",ctx.file.basename),
 		browsers: browserslist,
 		lightningcssOptions: {
-			projectRoot: path.join( ctx.file.dirname, "/parts" ),
-			inputSourceMap: path.join( ctx.file.dirname, "/black-highlighter.css.map" ),
+			projectRoot: path.join( ctx.file.dirname,"/parts" ),
 			minify: nodeEnv === "development" ? false : true,
 			sourceMap: true,
 			errorRecovery: false,
@@ -40,13 +36,14 @@ module.exports = (ctx) => {
 				customMedia: true
 			},
 			visitor: {
+				/* Assures relative URL links point to the correct files on /dist */
 				Url(url) {
 					let urlArray = url.url.split("/").reverse();
-					if (url.url.includes("/fonts") || url.url.includes("/img")) {
+					if (url.url.includes("../")) {
 						nodeEnv === "development" ? [
-							url.url = "../" + urlArray[1] + "/" + urlArray[0]
+							url.url = `../${urlArray[1]}/${urlArray[0]}`
 						] : [
-							url.url = "../../" + urlArray[1] + "/" + urlArray[0]
+							url.url = `../../${urlArray[1]}/${urlArray[0]}`
 						];
 					}
 				return url;
@@ -80,7 +77,6 @@ module.exports = (ctx) => {
 				postcssImport(fileImportOptions),
 				lightningcss(lightningcssOptions),
 				postcssMixins(mixinOptions),
-				//mqPacker,
 				reporter(reporterOptions)
 			];
 			break;
@@ -89,7 +85,6 @@ module.exports = (ctx) => {
 				postcssImport(fileImportOptions),
 				lightningcss(lightningcssOptions),
 				postcssMixins(mixinOptions),
-				//mqPacker,
 				stylelint(stylelintOptions),
 				reporter(reporterOptions)
 			];
@@ -99,10 +94,7 @@ module.exports = (ctx) => {
 	}
 
 	return {
-		map: [
-			true,
-			{ inline: false }
-		],
+		map: { inline: true },
 		plugins: plugins
 	};
 };

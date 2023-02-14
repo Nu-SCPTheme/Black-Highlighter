@@ -4,6 +4,7 @@ MAKEFLAGS += --no-builtin-rules
 .PHONY: default
 .PHONY: images css files fonts scp-test legacy
 .PHONY: clean
+.PHONY: rebuildcss
 
 # Default rule
 default: images css files fonts scp-test legacy
@@ -29,5 +30,5 @@ legacy: dist/stable/styles/ $(LEGACY_CSS_OUTPUTS)
 clean:
 	rm -rf dist
 
-rebuildCSS:
+rebuildcss:
 	rm -rf dist/css | make css
