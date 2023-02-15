@@ -9,15 +9,18 @@
 		"url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.4.13",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"lightningcss": "^1.19.0",
 		"node": "^19.6.0",
 		"postcss": "^8.4.21",
 		"postcss-cli": "^10.1.0",
+		"postcss-csso": "^6.0.1",
 		"postcss-import": "^15.1.0",
 		"postcss-lightningcss": "^0.6.0",
 		"postcss-mixins": "^9.0.4",
+		"postcss-nesting": "^11.2.0",
 		"postcss-reporter": "^7.0.5",
 		"postcss-url": "^10.1.3",
 		"prettier": "^2.8.4",
@@ -30,8 +33,8 @@
 		"build": "make",
 		"postcss": "node node_modules/postcss-cli/index.js",
 		"svgo": "node node_modules/svgo/bin/svgo",
-		"watchbase": "postcss $npm_config_bhl_i --config build/postcss.config.js -o $npm_config_bhl_o -w --env $npm_config_bhl_env --verbose",
-		"watch": "npm run watchbase --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development & npm run watchbase --bhl-i=src/css/normalize.css --bhl-o=dist/css/normalize.css --bhl-env=development & npm run watchbase --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production & npm run watchbase --bhl-i=src/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=production"
+		"base": "postcss $npm_config_bhl_i --config build/postcss.config.js -o $npm_config_bhl_o -w --env $npm_config_bhl_env --verbose",
+		"watch": "npm run base --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development & npm run base --bhl-i=src/css/normalize.css --bhl-o=dist/css/normalize.css --bhl-env=development & npm run base --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production & npm run base --bhl-i=src/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=production"
 	},
 	"browserslist": "defaults and not op_mini all"
 }

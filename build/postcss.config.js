@@ -6,7 +6,13 @@ module.exports = (ctx) => {
 	const stylelint = require("stylelint");
 	const postcssImport = require("postcss-import");
 	const postcssMixins = require("postcss-mixins");
+	const presetEnv = require("postcss-preset-env");
+	const nesting = require("postcss-nesting");
+	const autoprefixer = require("autoprefixer");
+	const url = require("postcss-url");
+	const csso = require("postcss-csso");
 	const reporter = require("postcss-reporter");
+
 	const lightningcss = require("postcss-lightningcss");
 	const browserslist = require("../package.json").browserslist;
 
@@ -22,6 +28,26 @@ module.exports = (ctx) => {
 	const mixinOptions = {
 		mixinsDir: path.join(__dirname, "../src/css")
 	};
+
+	const presetEnvOptions = ({
+		stage: 2,
+		minimumVendorImplementations: 2,
+		autoprefixer: false,
+		features: {
+			"custom-media-queries": true,
+			"has-pseudo-class": true
+		}
+	});
+
+	const urlOptions = ({
+		url: "rebase",
+		assetsPath: path.join(__dirname, "../dist")
+	});
+
+	const cssoOptions = ({
+		restructure: true,
+		sourceMap: true
+	});
 
 	const lightningcssOptions = ({
 		filename: path.join(ctx.file.dirname,"/",ctx.file.basename),
@@ -47,16 +73,6 @@ module.exports = (ctx) => {
 						];
 					}
 				return url;
-				},
-				Rule: {
-					import(rule) {
-						nodeEnv === "development" || !rule.value.url.includes("../") ? [
-							rule.value.url
-						] : [
-							rule.value.url = "../" + rule.value.url
-						];
-						return rule;
-					}
 				}
 			}
 		}
@@ -72,11 +88,23 @@ module.exports = (ctx) => {
 	let plugins = [];
 
 	switch(nodeEnv) {
-		case "production":
+		case "lightningcss":
 			plugins = [
 				postcssImport(fileImportOptions),
 				lightningcss(lightningcssOptions),
 				postcssMixins(mixinOptions),
+				reporter(reporterOptions)
+			];
+			break;
+		case "production":
+			plugins = [
+				postcssImport(fileImportOptions),
+				presetEnv(presetEnvOptions),
+				url(urlOptions),
+				nesting,
+				postcssMixins(mixinOptions),
+				autoprefixer,
+				csso(cssoOptions),
 				reporter(reporterOptions)
 			];
 			break;
@@ -94,7 +122,6 @@ module.exports = (ctx) => {
 	}
 
 	return {
-		map: { inline: true },
 		plugins: plugins
 	};
 };
