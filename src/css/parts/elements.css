@@ -1163,7 +1163,9 @@ table[style*="margin:0"] * {
 		font-weight: var(--wght);
 		scrollbar-width: thin;
 
-		&:is(::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-corner) {
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-thumb,
+		&::-webkit-scrollbar-corner {
 			width: 0.5em;
 		}
 

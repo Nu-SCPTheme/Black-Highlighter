@@ -13,6 +13,7 @@
 		"pnpm": ">=7"
 	},
 	"devDependencies": {
+		"@csstools/postcss-global-data": "^1.0.2",
 		"autoprefixer": "^10.4.13",
 		"eslint": "^8.34.0",
 		"eslint-config-prettier": "^8.6.0",
@@ -25,7 +26,7 @@
 		"postcss-import": "^15.1.0",
 		"postcss-lightningcss": "^0.6.0",
 		"postcss-mixins": "^9.0.4",
-		"postcss-nesting": "^11.2.0",
+		"postcss-preset-env": "^8.0.1",
 		"postcss-reporter": "^7.0.5",
 		"postcss-url": "^10.1.3",
 		"prettier": "^2.8.4",
@@ -36,14 +37,8 @@
 	},
 	"scripts": {
 		"build": "make",
-		"postcss": "node node_modules/postcss-cli/index.js",
-		"svgo": "node node_modules/svgo/bin/svgo",
 		"base": "postcss $npm_config_bhl_i --config build/postcss.config.js -o $npm_config_bhl_o -w --env $npm_config_bhl_env --verbose",
-		"watch": "npm run base --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development & npm run base --bhl-i=src/css/normalize.css --bhl-o=dist/css/normalize.css --bhl-env=development & npm run base --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production & npm run base --bhl-i=src/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=production"
-		"css": "postcss",
-		"optimize": "node build/optimize.mjs",
-		"watchbase": "postcss $npm_config_bhl_i --config build/postcss.config.js -o $npm_config_bhl_o -w --env $npm_config_bhl_env --verbose",
-		"watch": "pnpm watchbase --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development & pnpm watchbase --bhl-i=src/css/normalize.css --bhl-o=dist/css/normalize.css --bhl-env=development & pnpm watchbase --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production & pnpm watchbase --bhl-i=src/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=production"
+		"watch": "cp -r src/css/parts dist/css/parts & build/install.sh 644 src/css/black-highlighter.css dist/css/black-highlighter-import.css & build/install.sh 644 src/css/normalize.css dist/css/normalize.css & pnpm --bhl-i=dist/css/black-highlighter-import.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development base & pnpm --bhl-i=dist/css/black-highlighter-import.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production base & pnpm --bhl-i=dist/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=development base"
 	},
 	"browserslist": "defaults and not op_mini all"
 }

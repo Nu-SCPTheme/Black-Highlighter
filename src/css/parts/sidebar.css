@@ -96,7 +96,8 @@
 
 	/* ===SUB-BLOCK=== */
 	.side-block {
-		:is(#side-bar, #interwiki) & {
+		#side-bar &,
+		#interwiki & {
 			margin: 0.5rem 0.5rem 0 0;
 			border: 0;
 			background: rgba(var(--sideblock-bg-color));

@@ -31,4 +31,4 @@ clean:
 	rm -rf dist
 
 rebuildcss:
-	rm -rf dist/css | make css
+	rm -rf dist/css && make css

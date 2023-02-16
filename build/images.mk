@@ -17,7 +17,7 @@ dist/img/social-icons/%: src/img/social-icons/%
 
 # Images to optimize
 dist/img/%.png: src/img/%.png node_modules
-	pnpm optimize png $< $@
+	pnpm svgo $< -o $@
 
 dist/img/%.svg: src/img/%.svg node_modules
-	pnpm optimize svg $< $@
+	pnpm svgo $< -o $@

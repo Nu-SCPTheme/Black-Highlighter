@@ -7,7 +7,6 @@ module.exports = (ctx) => {
 	const postcssImport = require("postcss-import");
 	const postcssMixins = require("postcss-mixins");
 	const presetEnv = require("postcss-preset-env");
-	const nesting = require("postcss-nesting");
 	const autoprefixer = require("autoprefixer");
 	const url = require("postcss-url");
 	const csso = require("postcss-csso");
@@ -17,35 +16,48 @@ module.exports = (ctx) => {
 	const browserslist = require("../package.json").browserslist;
 
 	const nodeEnv = ctx.env;
-
-	const fileImportOptions = {};
+	const dev = nodeEnv === "development";
 
 	const stylelintOptions = {
-		configFile: path.join(__dirname, "../.stylelintrc"),
-		fix: nodeEnv === "development" ? true : false
+		configFile: path.join(ctx.cwd, "/.stylelintrc"),
+		fix: true
 	};
 
 	const mixinOptions = {
-		mixinsDir: path.join(__dirname, "../src/css")
+		mixinsDir: path.join( ctx.file.dirname,"/parts" )
 	};
 
 	const presetEnvOptions = ({
 		stage: 2,
-		minimumVendorImplementations: 2,
 		autoprefixer: false,
+		importFrom: path.join( ctx.file.dirname,"/parts/root.css" ),
+		preserve: false,
 		features: {
+			"custom-properties": false,
 			"custom-media-queries": true,
-			"has-pseudo-class": true
+			"media-query-ranges": true,
+			"nesting-rules": true,
+			"has-pseudo-class": true,
+			"is-pseudo-class": false
 		}
 	});
 
 	const urlOptions = ({
-		url: "rebase",
-		assetsPath: path.join(__dirname, "../dist")
+		url: "rebase"
 	});
 
+	const fileImportOptions = {
+		plugins: [
+			presetEnv(presetEnvOptions),
+			url(urlOptions),
+			postcssMixins(mixinOptions),
+			autoprefixer
+		]
+	};
+
 	const cssoOptions = ({
-		restructure: true,
+		restructure: !dev,
+		forceMediaMerge: !dev,
 		sourceMap: true
 	});
 
@@ -54,7 +66,7 @@ module.exports = (ctx) => {
 		browsers: browserslist,
 		lightningcssOptions: {
 			projectRoot: path.join( ctx.file.dirname,"/parts" ),
-			minify: nodeEnv === "development" ? false : true,
+			minify: !dev,
 			sourceMap: true,
 			errorRecovery: false,
 			drafts: {
@@ -66,7 +78,7 @@ module.exports = (ctx) => {
 				Url(url) {
 					let urlArray = url.url.split("/").reverse();
 					if (url.url.includes("../")) {
-						nodeEnv === "development" ? [
+						dev ? [
 							url.url = `../${urlArray[1]}/${urlArray[0]}`
 						] : [
 							url.url = `../../${urlArray[1]}/${urlArray[0]}`
@@ -92,28 +104,21 @@ module.exports = (ctx) => {
 			plugins = [
 				postcssImport(fileImportOptions),
 				lightningcss(lightningcssOptions),
-				postcssMixins(mixinOptions),
 				reporter(reporterOptions)
 			];
 			break;
 		case "production":
 			plugins = [
+				stylelint(stylelintOptions),
 				postcssImport(fileImportOptions),
-				presetEnv(presetEnvOptions),
-				url(urlOptions),
-				nesting,
-				postcssMixins(mixinOptions),
-				autoprefixer,
 				csso(cssoOptions),
 				reporter(reporterOptions)
 			];
 			break;
 		case "development":
 			plugins = [
-				postcssImport(fileImportOptions),
-				lightningcss(lightningcssOptions),
-				postcssMixins(mixinOptions),
 				stylelint(stylelintOptions),
+				postcssImport(fileImportOptions),
 				reporter(reporterOptions)
 			];
 			break;
@@ -122,6 +127,7 @@ module.exports = (ctx) => {
 	}
 
 	return {
+		map: {inline: false},
 		plugins: plugins
 	};
 };

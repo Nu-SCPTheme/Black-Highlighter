@@ -127,8 +127,8 @@
 }
 
 /* Temporary fix until either Safari fixes itself or another solution reveals itself */
-@media (--viewport-tablet) {
-	:root {
+:root {
+	@media (--viewport-tablet) {
 		--base-font-size: var(--min-font-size);
 	}
 }
