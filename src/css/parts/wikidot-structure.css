@@ -1701,6 +1701,12 @@ form#edit-page-form {
 		}
 	}
 
+	/* Editor Modals */
+	#odialog-container [id*="wd-ed-imagewizard-by"],
+	#odialog-container [id*="wd-ed-imagewizard-by"] + * {
+		grid-column: 1;
+	}
+
 	#edit-page-textarea {
 		min-width: 100%;
 		min-height: calc(var(--body-width-on-desktop) / 2);
@@ -2051,6 +2057,14 @@ form#edit-page-form {
 }
 
 /* ===PAGE TAGS ACTION=== */
+#page-tags-error {
+	--wght: 700;
+
+	background-color: rgb(var(--rating-module-button-negative-color));
+	color: rgb(var(--swatch-background));
+	font-family: var(--UI-font);
+	font-weight: var(--wght);
+}
 
 form[onsubmit*="PageTagsModule"] table > tbody > tr {
 	display: flex;
@@ -2494,6 +2508,13 @@ table.page-files {
 		grid-template-columns: 1.5fr 1.5fr 1fr 2fr;
 		padding: 0.5em 0;
 	}
+
+	[id*="files-"] & {
+		& tbody tr {
+			grid-template-columns: 1.5fr 1.5fr 1fr 2fr;
+			padding: .5em 0;
+		}
+	}
 }
 
 #odialog-container {
@@ -2655,6 +2676,14 @@ table.page-files {
 
 			margin-inline: 0 1ch;
 		}
+	}
+}
+
+/* File Info Modal Image */
+#odialog-container .content {
+	& h1 + div[style*="text-align: center; margin: 1em"] {
+		grid-column-start: 3;
+		grid-row-end: 3;
 	}
 }
 
@@ -3791,12 +3820,12 @@ div.odialog-shader-iframe {
 	.modal-body,
 	.content {
 		display: grid;
-		grid-auto-flow: column;
 		margin: 0 1rem;
 		padding: 0;
 
 		:is(h1, h2, h3, h4, h5) {
-			grid-column: 1 / span 3;
+			grid-column: 1;
+			grid-row: 1;
 			width: max-content;
 			margin: 0.25em 0.25em 0.5em;
 			padding-bottom: 0.5em;
@@ -3805,6 +3834,7 @@ div.odialog-shader-iframe {
 		}
 
 		& p {
+			grid-column-start: 1;
 			width: 100%;
 			margin: 1em 1rem 0 0;
 		}
@@ -3861,6 +3891,32 @@ div.odialog-shader-iframe {
 			}
 		}
 
+		> p {
+			+ table.form {
+				display: grid;
+				grid-auto-flow: column;
+				grid-column: 1;
+				justify-content: flex-start;
+
+				& tbody,
+				& tr {
+					display: contents;
+				}
+
+				> tbody > tr > td:nth-child(2) {
+					display: grid;
+					grid-auto-flow: column;
+					align-items: center;
+					justify-content: flex-start;
+					text-indent: -1.5ch;
+					gap: 2ch;
+
+					> span.image-wizard-source-attached {
+						display: contents;
+					}
+				}
+			}
+		}
 	}
 
 	/* Objectionable Content Modal */

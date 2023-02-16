@@ -12,8 +12,9 @@ module.exports = (ctx) => {
 	const csso = require("postcss-csso");
 	const reporter = require("postcss-reporter");
 
+	/* Disabling LightningCSS until its functionality is a little more robust
 	const lightningcss = require("postcss-lightningcss");
-	const browserslist = require("../package.json").browserslist;
+	const browserslist = require("../package.json").browserslist; */
 
 	const nodeEnv = ctx.env;
 	const dev = nodeEnv === "development";
@@ -61,6 +62,9 @@ module.exports = (ctx) => {
 		sourceMap: true
 	});
 
+	/* 	==============================
+			LIGHTNING CSS DISABLED FOR NOW
+			==============================
 	const lightningcssOptions = ({
 		filename: path.join(ctx.file.dirname,"/",ctx.file.basename),
 		browsers: browserslist,
@@ -75,7 +79,7 @@ module.exports = (ctx) => {
 			},
 			visitor: {
 				/* Assures relative URL links point to the correct files on /dist */
-				Url(url) {
+				/* Url(url) {
 					let urlArray = url.url.split("/").reverse();
 					if (url.url.includes("../")) {
 						dev ? [
@@ -89,6 +93,7 @@ module.exports = (ctx) => {
 			}
 		}
 	});
+	*/
 
 	const reporterOptions = {
 		formatter: input => {
@@ -100,6 +105,7 @@ module.exports = (ctx) => {
 	let plugins = [];
 
 	switch(nodeEnv) {
+		/*
 		case "lightningcss":
 			plugins = [
 				postcssImport(fileImportOptions),
@@ -107,6 +113,7 @@ module.exports = (ctx) => {
 				reporter(reporterOptions)
 			];
 			break;
+		*/
 		case "production":
 			plugins = [
 				stylelint(stylelintOptions),
@@ -123,7 +130,7 @@ module.exports = (ctx) => {
 			];
 			break;
 		default:
-			console.log("no plugins");
+			console.log("No ENV defined so no Plugins enabled.");
 	}
 
 	return {

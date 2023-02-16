@@ -25,6 +25,6 @@ $(DIRECTORIES):
 	mkdir -p $@
 
 # pnpm rules
-node_modules: package.json package-lock.json
+node_modules: package.json pnpm-lock.yaml
 	pnpm install
 	touch node_modules

@@ -38,7 +38,7 @@
 	"scripts": {
 		"build": "make",
 		"base": "postcss $npm_config_bhl_i --config build/postcss.config.js -o $npm_config_bhl_o -w --env $npm_config_bhl_env --verbose",
-		"watch": "cp -r src/css/parts dist/css/parts & build/install.sh 644 src/css/black-highlighter.css dist/css/black-highlighter-import.css & build/install.sh 644 src/css/normalize.css dist/css/normalize.css & pnpm --bhl-i=dist/css/black-highlighter-import.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development base & pnpm --bhl-i=dist/css/black-highlighter-import.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production base & pnpm --bhl-i=dist/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=development base"
+		"watch": "pnpm --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/black-highlighter.css --bhl-env=development base & pnpm --bhl-i=src/css/black-highlighter.css --bhl-o=dist/css/min/black-highlighter.min.css --bhl-env=production base & pnpm --bhl-i=src/css/normalize.css --bhl-o=dist/css/min/normalize.min.css --bhl-env=development base"
 	},
 	"browserslist": "defaults and not op_mini all"
 }
