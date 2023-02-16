@@ -18,7 +18,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: ~/.pnpm
           key: ${{ runner.os }}-node-${{ hashFiles('package.json') }}
 
       - name: Build

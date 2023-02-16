@@ -18,7 +18,7 @@ See a preview without the Sigma-9 here: https://scptestwiki.wikidot.com/
 On a UNIX-like environment with GNU Makefile, you can build Black Highlighter from its source files using the following:
 
 ```
-npm install
+pnpm install
 make
 ```
 

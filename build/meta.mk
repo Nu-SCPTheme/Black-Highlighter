@@ -24,7 +24,7 @@ DIRECTORIES := \
 $(DIRECTORIES):
 	mkdir -p $@
 
-# npm rules
+# pnpm rules
 node_modules: package.json package-lock.json
-	npm install --force
+	pnpm install
 	touch node_modules
