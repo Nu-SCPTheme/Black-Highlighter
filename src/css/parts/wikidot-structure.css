@@ -1701,22 +1701,6 @@ form#edit-page-form {
 		}
 	}
 
-	/* Editor Modals */
-	#odialog-container [id*="wd-ed-imagewizard-by"],
-	#odialog-container [id*="wd-ed-imagewizard-by"] + * {
-		grid-column: 1;
-	}
-
-	#edit-page-textarea {
-		min-width: 100%;
-		min-height: calc(var(--body-width-on-desktop) / 2);
-		padding: 0.75em 1em;
-
-		&:focus {
-			outline: 0 solid transparent;
-		}
-	}
-
 	& textarea {
 		overflow-y: auto;
 		border: none;
@@ -3785,7 +3769,6 @@ div.odialog-shader-iframe {
 				}
 			}
 		}
-
 	}
 
 	.modal-header,
@@ -3825,12 +3808,15 @@ div.odialog-shader-iframe {
 
 		:is(h1, h2, h3, h4, h5) {
 			grid-column: 1;
-			grid-row: 1;
 			width: max-content;
 			margin: 0.25em 0.25em 0.5em;
 			padding-bottom: 0.5em;
 			box-shadow: 0 0.0625rem 0 0 rgba(var(--modal-header-stripe), 0.2);
 			color: rgb(var(--modal-body-header-txt));
+
+			&:first-child {
+				grid-row: 1;
+			}
 		}
 
 		& p {
@@ -3897,6 +3883,8 @@ div.odialog-shader-iframe {
 				grid-auto-flow: column;
 				grid-column: 1;
 				justify-content: flex-start;
+				margin: 1rem 0;
+				gap: 1ch;
 
 				& tbody,
 				& tr {
@@ -4002,6 +3990,99 @@ div.odialog-shader-iframe {
 	& span.printuser img.small,
 	& span.printuser.deleted img {
 		box-sizing: content-box;
+	}
+
+	/* Editor Modals */
+	[id*="wd-ed-imagewizard-by"] {
+		&,
+		& + * {
+			grid-column: 1;
+		}
+
+		~ table.form {
+			display: grid;
+			grid-auto-flow: row;
+			gap: 1ch;
+			grid-template-columns: max-content 1fr;
+
+			& tbody,
+			& tr {
+				display: contents;
+			}
+
+			& select {
+				text-indent: 0.5ch;
+			}
+		}
+	}
+
+	#wd-ed-imagewizard-byfile:not([style*="none"]) {
+		display: grid !important;
+		grid-auto-flow: column;
+		grid-column-gap: 1ch;
+
+		& select {
+			text-indent: 0.5ch;
+		}
+
+		& option {
+			text-indent: 1ch;
+		}
+
+		#wd-ed-imagewizard-byfile-list {
+			display: contents;
+
+			& p,
+			& table:first-of-type {
+				grid-column-start: 1;
+			}
+
+			& table:first-of-type {
+				display: flex;
+				width: 100%;
+
+				& tbody,
+				& tr {
+					display: contents;
+				}
+
+				& td:nth-of-type(2) {
+					display: flex;
+
+					&,
+					& select {
+						flex-grow: 2;
+					}
+				}
+			}
+
+			& table.form {
+				display: flex;
+				grid-row: 1 / span 2;
+				flex-flow: column;
+
+				& tbody,
+				& tr {
+					display: contents;
+				}
+			}
+		}
+	}
+
+	#edit-page-textarea {
+		min-width: 100%;
+		min-height: calc(var(--body-width-on-desktop) / 2);
+		padding: 0.75em 1em;
+
+		&:focus {
+			outline: 0 solid transparent;
+		}
+	}
+
+	div[class*="autocomplete"] {
+		width: 100%;
+
+
 	}
 }
 
