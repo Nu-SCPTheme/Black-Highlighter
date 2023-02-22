@@ -9,7 +9,7 @@ FILES_OUTPUTS := \
 	dist/error.html
 
 # Dummy rules
-package-lock.json:
+pnpm-lock.yaml:
 
 dist/spherical/domicile.html: src/misc/domicile.html
 	build/install.sh 644 $< $@
