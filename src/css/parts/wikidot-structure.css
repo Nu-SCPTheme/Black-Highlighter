@@ -1077,6 +1077,7 @@ form#edit-page-form {
 	.wd-editor-toolbar-panel {
 		--icon-size: max(1.5em, min(5.75vw, calc((var(--body-width-on-desktop) - 6em) / 22)));
 
+		container-type: inline-size;
 		display: grid;
 		position: relative;
 		grid-area: toolbar;
@@ -1096,6 +1097,10 @@ form#edit-page-form {
 		background-color: rgb(var(--swatch-background));
 		box-shadow: 0 -0.0625rem 0 0 rgb(var(--swatch-tertiary-color));
 		gap: 0.125em;
+
+		@supports (font-size: 1cqi) {
+			--icon-size: max(1.5em, min(3.75cqi, calc((var(--body-width-on-desktop) - 6em) / 22)));
+		}
 
 		@media (--viewport-mobile), (orientation: portrait) {
 			grid-template-areas:
@@ -2369,7 +2374,7 @@ table.page-files {
 			.options {
 				display: grid;
 				grid-auto-flow: column;
-				grid-template-columns: repeat(auto-fit, 5em);
+				grid-template-columns: repeat(auto-fit, calc(1ch + 5em));
 				gap: 0.5ch;
 			}
 		}
@@ -2499,6 +2504,11 @@ table.page-files {
 			padding: .5em 0;
 		}
 	}
+}
+
+[id*="files"] {
+	display: flex;
+	flex-flow: column;
 }
 
 #odialog-container {
@@ -3950,10 +3960,6 @@ div.odialog-shader-iframe {
 
 		& a[href*="feedback.wikidot.com"] {
 			@mixin bhl-btn 10em;
-
-			@supports (font-size: 1cqi) {
-				font-size: calc(max(var(--min-font-size),min(.75cqi,var(--max-font-size))) * 1.8);
-			}
 		}
 	}
 
@@ -4079,7 +4085,7 @@ div.odialog-shader-iframe {
 		}
 	}
 
-	div[class*="autocomplete"] {
+	& div[class*="autocomplete"] {
 		width: 100%;
 
 

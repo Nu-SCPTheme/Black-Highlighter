@@ -3,6 +3,7 @@
 module.exports = (ctx) => {
 
 	const path = require("path");
+	const globalData = require("@csstools/postcss-global-data");
 	const stylelint = require("stylelint");
 	const postcssImport = require("postcss-import");
 	const postcssMixins = require("postcss-mixins");
@@ -11,13 +12,18 @@ module.exports = (ctx) => {
 	const url = require("postcss-url");
 	const csso = require("postcss-csso");
 	const reporter = require("postcss-reporter");
+	const browserslist = require("../package.json").browserslist;
 
 	/* Disabling LightningCSS until its functionality is a little more robust
 	const lightningcss = require("postcss-lightningcss");
-	const browserslist = require("../package.json").browserslist; */
+	*/
 
 	const nodeEnv = ctx.env;
 	const dev = nodeEnv === "development";
+
+	const globalDataOptions = {
+		files: [ path.join( ctx.file.dirname,"/parts/root.css" ) ]
+	};
 
 	const stylelintOptions = {
 		configFile: path.join(ctx.cwd, "/.stylelintrc"),
@@ -29,10 +35,9 @@ module.exports = (ctx) => {
 	};
 
 	const presetEnvOptions = ({
-		stage: 2,
 		autoprefixer: false,
-		importFrom: path.join( ctx.file.dirname,"/parts/root.css" ),
 		preserve: false,
+		browsers: browserslist,
 		features: {
 			"custom-properties": false,
 			"custom-media-queries": true,
@@ -49,6 +54,7 @@ module.exports = (ctx) => {
 
 	const fileImportOptions = {
 		plugins: [
+			globalData(globalDataOptions),
 			presetEnv(presetEnvOptions),
 			url(urlOptions),
 			postcssMixins(mixinOptions),

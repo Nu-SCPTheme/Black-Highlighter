@@ -1035,10 +1035,12 @@ table[style*="margin:0"] * {
 
 #toc {
 	&.floatleft {
+		margin-inline-end: 1ch;
 		float: left;
 	}
 
 	&.floatright {
+		margin-inline-start: 1ch;
 		float: right;
 	}
 
@@ -1144,6 +1146,7 @@ table[style*="margin:0"] * {
 		margin: 0;
 		padding: 0.25em 0.5em 0.25em 0;
 		color: transparent;
+		white-space: nowrap;
 	}
 
 	#toc-list {
@@ -2115,12 +2118,12 @@ body.print-body {
 
 /* Reduced Motion Media Query */
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media all and (prefers-reduced-motion) {
 	*,
 	*::before,
 	*::after {
-		transition-duration: 0s;
-		transition-timing-function: linear;
-		transition-delay: 0s;
+		transition-duration: 0s !important;
+		transition-timing-function: linear !important;
+		transition-delay: 0s !important;
 	}
 }
