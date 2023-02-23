@@ -268,26 +268,11 @@
 	/* Diagonal Strikes placed on top of header image */
 	--diagonal-stripes: repeating-linear-gradient(45deg, hsl(0deg 0% 100% / 0), hsl(0deg 0% 100% / 0) 0.25vh, rgb(88 88 88 / 0.1) 0.35vh, rgb(88 88 88 / 0.2) 0.5vh);
 	/* Create top-menu bar below the header */
-	--gradient-topmenu: linear-gradient(
-		to bottom,
-		rgb(255 255 255 / 0) 0%,
-		rgb(255 255 255 / 0) var(--header-height-on-desktop),
-		rgba(var(--swatch-topmenu-border-color), 1) var(--header-height-on-desktop),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--header-height-on-desktop) + 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(100% - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color), 1) 100%
-	);
-	--gradient-topmenu-mobile: linear-gradient(
-		to bottom,
-		rgba(var(--swatch-topmenu-border-color), 1) 0,
-		rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
-		rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
-		rgba(var(--swatch-topmenu-border-color), 1) var(--topbar-height-on-mobile)
-	);
+	--gradient-topmenu: linear-gradient( to bottom, rgb(255 255 255 / 0) 0%, rgb(255 255 255 / 0) var(--header-height-on-desktop), rgb(var(--swatch-topmenu-border-color)) var(--header-height-on-desktop), rgb(var(--swatch-topmenu-bg-color)) calc(var(--header-height-on-desktop) + 0.125rem), rgb(var(--swatch-topmenu-bg-color)) calc(100% - 0.125rem), rgb(var(--swatch-topmenu-border-color)) 100% );
+	--gradient-topmenu-mobile: linear-gradient( to bottom, rgb(var(--swatch-topmenu-border-color)) 0, rgb(var(--swatch-topmenu-bg-color)) 0.125rem, rgb(var(--swatch-topmenu-bg-color)) calc(var(--topbar-height-on-mobile) - 0.125rem), rgb(var(--swatch-topmenu-bg-color)) calc(var(--topbar-height-on-mobile) - 0.125rem), rgb(var(--swatch-topmenu-border-color)) var(--topbar-height-on-mobile) );
 	/* Subtle gradient that begins just below the top-bar and header */
 	--background-gradient-distance: 40rem;
-	--gradient-background: linear-gradient(to bottom, rgba(var(--background-gradient-color), 1) 0, rgba(var(--background-gradient-color), 0) var(--background-gradient-distance));
+	--gradient-background: linear-gradient(to bottom, rgb(var(--background-gradient-color)) 0, rgba(var(--background-gradient-color), 0) var(--background-gradient-distance));
 
 	/* ===STRUCTURAL SPACING ELEMENTS=== */
 	--body-width-on-desktop: 44.25rem;

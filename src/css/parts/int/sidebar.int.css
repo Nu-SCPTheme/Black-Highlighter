@@ -41,7 +41,7 @@
 		.side-block.blue {
 			margin: 0.5rem 0.5rem 0 0;
 			padding: 0.5rem !important;
-			background-color: rgba(var(--sidebar-media-bg-color)) !important;
+			background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 			& a {
 				position: relative;
@@ -111,7 +111,7 @@
 			margin: 0.5rem 0.5rem 0 0;
 			padding: 0.5rem !important;
 			column-gap: 0.5rem;
-			background-color: rgba(var(--sidebar-media-bg-color)) !important;
+			background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 			& div.heading {
 				flex: 2 0 100%;
@@ -197,7 +197,7 @@
 			&.svg-icons {
 				margin: 0.5rem 0.5rem 0.5rem 0;
 				padding: 0.5rem !important;
-				background-color: rgba(var(--sidebar-media-bg-color)) !important;
+				background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 				> p {
 					display: grid;
@@ -395,8 +395,8 @@
 						align-items: center;
 						justify-content: center;
 						background-image: unset;
-						color: rgba(var(--sidebar-bg-color), 1);
-						-webkit-text-fill-color: rgba(var(--sidebar-bg-color), 1);
+						color: rgb(var(--sidebar-bg-color));
+						-webkit-text-fill-color: rgb(var(--sidebar-bg-color));
 						-webkit-text-stroke: 0.0625rem rgb(var(--text-shadow-color));
 
 						@supports not (-webkit-text-stroke: initial) {
@@ -414,7 +414,7 @@
 			}
 
 			&:hover + div.collapsible-block a.collapsible-block-link::before {
-				--text-outline-color: rgba(var(--sidebar-bg-color), 1);
+				--text-outline-color: rgb(var(--sidebar-bg-color));
 			}
 
 			.menu-item {
@@ -440,8 +440,8 @@
 			align-items: center;
 			justify-content: center;
 			background-image: unset;
-			color: rgba(var(--sidebar-bg-color), 1);
-			-webkit-text-fill-color: rgba(var(--sidebar-bg-color), 1);
+			color: rgb(var(--sidebar-bg-color));
+			-webkit-text-fill-color: rgb(var(--sidebar-bg-color));
 			-webkit-text-stroke: 0.0625rem rgb(var(--text-shadow-color));
 
 			@supports not (-webkit-text-stroke: initial) {
@@ -457,7 +457,7 @@
 		}
 
 		.collapsible-block-content {
-			border-right: var(--base-font-size) solid rgba(var(--sidebar-border-color));
+			border-right: var(--base-font-size) solid rgb(var(--sidebar-border-color));
 
 			& div.menu-item {
 				max-width: 100%;
@@ -493,7 +493,7 @@
 		justify-content: space-evenly;
 		width: var(--sidebar-width-on-mobile);
 		padding: 0.5em !important;
-		background-color: rgba(var(--sidebar-media-bg-color)) !important;
+		background-color: rgb(var(--sidebar-media-bg-color)) !important;
 		direction: ltr;
 
 		& br {
@@ -586,7 +586,7 @@
 				width: var(--sidebar-width-on-mobile);
 				margin: 0.5rem 0.5rem 0 0;
 				padding: 0.5em !important;
-				background-color: rgba(var(--sidebar-media-bg-color)) !important;
+				background-color: rgb(var(--sidebar-media-bg-color)) !important;
 				direction: ltr;
 
 				> div {
@@ -732,7 +732,7 @@
 			width: var(--sidebar-width-on-mobile);
 			margin: 0.5rem 0.5rem 0 0;
 			padding: 0.5em !important;
-			background-color: rgba(var(--sidebar-media-bg-color)) !important;
+			background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 			+ div + div {
 				grid-auto-flow: row;
@@ -832,7 +832,7 @@
 				width: var(--sidebar-width-on-mobile);
 				margin: 0.5rem 0.5rem 0 0;
 				padding: 0.5em !important;
-				background-color: rgba(var(--sidebar-media-bg-color)) !important;
+				background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 				& a {
 					position: relative;
@@ -914,7 +914,7 @@
 			padding: inherit;
 			border: 0;
 			border-radius: inherit;
-			background-color: rgba(var(--sideblock-bg-color));
+			background-color: rgb(var(--sideblock-bg-color));
 			box-shadow: 0 0.25rem rgb(var(--swatch-primary-darkest));
 			direction: ltr;
 
@@ -1123,7 +1123,7 @@
 			.media {
 				margin: 0.5rem 0.5rem 0 0;
 				padding: 0.5rem !important;
-				background-color: rgba(var(--sidebar-media-bg-color)) !important;
+				background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 				> div {
 					display: grid !important;
@@ -1258,7 +1258,7 @@
 						justify-content: center;
 						margin-top: 0.5rem !important;
 						padding: 0 0.25rem;
-						box-shadow: 0 0 0 0.125rem rgba(var(--swatch-primary), 1);
+						box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 						cursor: pointer;
 					}
 				}
@@ -1387,7 +1387,7 @@
 							font-weight 0.2s var(--ease-in-out),
 							font-variation-settings 0.2s var(--ease-in-out);
 						background-clip: padding-box;
-						background-color: rgba(var(--sidebar-links-bg-color));
+						background-color: rgb(var(--sidebar-links-bg-color));
 						color: rgb(var(--sidebar-links-text));
 						font-size: calc(var(--base-font-size) * (14 / 15));
 						font-weight: var(--wght);
@@ -1457,7 +1457,7 @@
 			justify-content: space-evenly !important;
 			margin: 0.5rem 0.5rem 0 0;
 			padding: 0.5rem !important;
-			background-color: rgba(var(--sidebar-media-bg-color)) !important;
+			background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 			> div {
 				display: contents !important;
@@ -1547,7 +1547,7 @@
 				width: var(--sidebar-width-on-mobile);
 				margin: 0.5rem 0.5rem 0 0;
 				padding: 0.5em !important;
-				background-color: rgba(var(--sidebar-media-bg-color)) !important;
+				background-color: rgb(var(--sidebar-media-bg-color)) !important;
 
 				> div {
 					display: contents;

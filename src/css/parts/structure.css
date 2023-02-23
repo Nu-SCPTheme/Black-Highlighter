@@ -66,18 +66,18 @@ body {
 	padding: 0;
 	color: rgb(var(--swatch-text-general));
 	font-variant-ligatures: none;
-	scrollbar-color: rgba(var(--swatch-tertiary-color), 1) /* Thumb */ rgba(var(--swatch-secondary-color), 1); /* Track */
+	scrollbar-color: rgb(var(--swatch-tertiary-color)) /* Thumb */ rgb(var(--swatch-secondary-color)); /* Track */
 }
 
 /* Webkit Scrollbar */
 ::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-	background: rgba(var(--swatch-tertiary-color), 1);
+	background: rgb(var(--swatch-tertiary-color));
 }
 
 ::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
-	background: rgba(var(--swatch-secondary-color), 1);
+	background: rgb(var(--swatch-secondary-color));
 }
 
 /* Chrome, Safari, Opera Scrollbar */
@@ -104,7 +104,7 @@ body::-webkit-scrollbar-track {
 
 body {
 	/* coloring */
-	background-color: rgba(var(--swatch-background), 1);
+	background-color: rgb(var(--swatch-background));
 
 	/* font behavior */
 	font-family: var(--body-font);
@@ -424,7 +424,7 @@ input[type="checkbox"] {
 		&::after {
 			--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
-			background-color: rgba(var(--swatch-primary), 1);
+			background-color: rgb(var(--swatch-primary));
 			box-shadow: 0 0 0 0.05em rgb(var(--swatch-secondary-color));
 		}
 
@@ -592,11 +592,11 @@ input[type="radio"] {
 					transition:
 						background-color 0.2s var(--ease-in-out),
 						background-image 0.05s var(--ease-in-out);
-					background-color: rgba(var(--swatch-background), 1);
+					background-color: rgb(var(--swatch-background));
 					background-image:
 						linear-gradient(
 							to bottom,
-							rgba(var(--background-gradient-color), 1),
+							rgb(var(--background-gradient-color)),
 							rgba(var(--background-gradient-color), 0) var(--background-gradient-distance),
 							rgba(var(--background-gradient-color), 0) 100%
 						);
@@ -624,7 +624,7 @@ input[type="radio"] {
 					);
 
 					&::before {
-						background-color: rgba(var(--swatch-primary), 1);
+						background-color: rgb(var(--swatch-primary));
 						background-image: linear-gradient(
 							to bottom,
 							rgba(var(--background-gradient-color), 0) 0,

@@ -364,7 +364,7 @@ div#container-wrap {
 	outline-width: 0;
 	background-color: rgba(var(--search-icon-hover-bg-color),0);
 	box-shadow: 0 0 0 0 rgb(var(--search-focus-outline-color));
-	color: rgba(var(--search-textbox-text-color));
+	color: rgb(var(--search-textbox-text-color));
 	cursor: pointer;
 }
 
@@ -496,7 +496,7 @@ div#container-wrap {
 				text-decoration: none;
 
 				&:is(:hover, :active, :focus, :focus-within) {
-					background-color: rgba(var(--ui-button-hover-bg), 1);
+					background-color: rgb(var(--ui-button-hover-bg));
 					color: rgb(var(--ui-button-hover-txt));
 				}
 			}
@@ -604,7 +604,7 @@ div#container-wrap {
 		}
 
 		& a {
-			--box-shadow: rgba(var(--login-dropdown-border-color));
+			--box-shadow: rgb(var(--login-dropdown-border-color));
 			--wght: var(--ui-wght);
 
 			position: relative;
@@ -759,7 +759,7 @@ div#container-wrap {
 				> a {
 					--wght: calc(var(--ui-hvr-wght) + 200);
 
-					background-color: rgba(var(--topmenu-category-hover-bg));
+					background-color: rgb(var(--topmenu-category-hover-bg));
 					color: rgb(var(--topmenu-category-hover-color));
 					font-weight: var(--wght);
 
@@ -828,7 +828,7 @@ div#container-wrap {
 			}
 
 			> ul {
-				--box-shadow: rgba(var(--dropdown-border-color));
+				--box-shadow: rgb(var(--dropdown-border-color));
 
 				display: flex;
 				visibility: visible;
@@ -843,7 +843,7 @@ div#container-wrap {
 				max-width: var(--header-width-on-desktop);
 				margin-top: var(--topbar-height-on-desktop);
 				border-top: none;
-				background: rgba(var(--dropdown-bg-color));
+				background: rgb(var(--dropdown-bg-color));
 				box-shadow:
 					0 0.125rem 0.375rem var(--box-shadow),
 					inset 0 0 0 0.0625rem var(--box-shadow);
@@ -871,7 +871,7 @@ div#container-wrap {
 							font-weight 0.2s var(--ease-in-out),
 							font-variation-settings 0.2s var(--ease-in-out);
 						border: 0 solid rgb(0 0 0 / 0);
-						background: rgba(var(--dropdown-links-bg-color));
+						background: rgb(var(--dropdown-links-bg-color));
 						color: rgb(var(--dropdown-links-color));
 						font-size: calc(var(--base-font-size) * (13 / 15));
 						font-weight: var(--wght);
@@ -927,7 +927,7 @@ div#container-wrap {
 							opacity 0.1s var(--ease-in-out),
 							background-color 0.1s var(--ease-in-out);
 						opacity: 0;
-						background-color: rgba(var(--dropdown-bg-color));
+						background-color: rgb(var(--dropdown-bg-color));
 						pointer-events: none;
 					}
 
@@ -1273,7 +1273,7 @@ div#container-wrap {
 			width: 100%;
 			height: 100%;
 			transition: background-color 0.15s var(--ease-in-out);
-			background-color: rgba(var(--login-mobile-icon-color), 1);
+			background-color: rgb(var(--login-mobile-icon-color));
 			cursor: pointer;
 			pointer-events: all;
 			mask: var(--user-account-mask) center right / calc(var(--account-height) - 0.5em) no-repeat;
@@ -1300,17 +1300,7 @@ div#container-wrap {
 		width: var(--header-width-on-mobile, 100vw);
 		margin: 0;
 		padding: 0;
-		background: var(
-			--gradient-topmenu-mobile,
-			linear-gradient(
-				to bottom,
-				rgba(var(--swatch-topmenu-border-color), 1) 0,
-				rgba(var(--swatch-topmenu-bg-color), 1) 0.125rem,
-				rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
-				rgba(var(--swatch-topmenu-bg-color), 1) calc(var(--topbar-height-on-mobile) - 0.125rem),
-				rgba(var(--swatch-topmenu-border-color), 1) var(--topbar-height-on-mobile)
-			)
-		);
+		background: var(--gradient-topmenu-mobile);
 	}
 
 	/* ul */

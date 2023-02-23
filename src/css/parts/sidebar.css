@@ -38,7 +38,7 @@
 		border-color 0.15s var(--ease-in-out);
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0.4);
-	background-color: rgba(var(--sidebar-bg-color), 1);
+	background-color: rgb(var(--sidebar-bg-color));
 	color: rgb(var(--sidebar-links-text));
 	font-family: var(--UI-font, var(--header-font));
 	direction: rtl;
@@ -55,8 +55,8 @@
 
 	/* Hover Scrollbar Behavior */
 	&:is(:hover, :active, :focus-within) {
-		scrollbar-color: rgba(var(--swatch-primary-darker), 1) /* Thumb */ rgba(var(--swatch-menubg-color), 1); /* Track */
-		border-color: rgba(var(--swatch-primary-darker), 1);
+		scrollbar-color: rgb(var(--swatch-primary-darker)) /* Thumb */ rgb(var(--swatch-menubg-color)); /* Track */
+		border-color: rgb(var(--swatch-primary-darker));
 	}
 
 	&::-webkit-scrollbar-track {
@@ -84,14 +84,14 @@
 
 	& div[style*="#fff0f0"],
 	.side-block.resources {
-		background-color: rgba(var(--sidebar-resources-bg-color)) !important;
+		background-color: rgb(var(--sidebar-resources-bg-color)) !important;
 	}
 
 	& div[style*="#e5e5ff"],
 	& .side-block.media {
 		margin: 0.5rem 0.5rem 0 0;
 		padding: 0.5rem !important;
-		background-color: rgba(var(--sidebar-media-bg-color)) !important;
+		background-color: rgb(var(--sidebar-media-bg-color)) !important;
 	}
 }
 
@@ -102,7 +102,7 @@
 	#interwiki & {
 		margin: 0.5rem 0.5rem 0 0;
 		border: 0;
-		background: rgba(var(--sideblock-bg-color));
+		background: rgb(var(--sideblock-bg-color));
 		direction: ltr;
 	}
 
@@ -235,7 +235,7 @@
 		justify-content: flex-start;
 		min-height: 1.5rem;
 		margin: 0 0 0.25rem;
-		background-color: rgba(var(--sideblock-heading-bg-color));
+		background-color: rgb(var(--sideblock-heading-bg-color));
 		box-shadow: 0 0.0625rem 0 0 rgb(var(--sideblock-heading-border-color));
 
 		/* Firefox left padding for scrollbar but not on OSX */
@@ -274,7 +274,7 @@
 			min-height: 1.5rem;
 			margin: 0;
 			padding: 0;
-			box-shadow: inset 0 calc(var(--sidebar-internal-border-thickness) * -1) 0 0 rgba(var(--sidebar-border-color));
+			box-shadow: inset 0 calc(var(--sidebar-internal-border-thickness) * -1) 0 0 rgb(var(--sidebar-border-color));
 			font-size: 0;
 		}
 
@@ -311,7 +311,7 @@
 				font-weight 0.2s var(--ease-in-out),
 				font-variation-settings 0.2s var(--ease-in-out);
 			background-clip: padding-box;
-			background-color: rgba(var(--sidebar-links-bg-color));
+			background-color: rgb(var(--sidebar-links-bg-color));
 			color: rgb(var(--sidebar-links-text));
 			font-size: calc(var(--base-font-size) * (13 / 15));
 			font-weight: var(--wght);
@@ -352,7 +352,7 @@
 				font-weight 0.2s var(--ease-in-out),
 				font-variation-settings 0.2s var(--ease-in-out);
 			background-clip: padding-box;
-			background-color: rgba(var(--sidebar-links-bg-color));
+			background-color: rgb(var(--sidebar-links-bg-color));
 			font-size: calc(var(--base-font-size) * (13 / 15));
 			font-weight: var(--wght);
 			letter-spacing: 0.04em;
@@ -421,7 +421,7 @@
 						font-weight 0.2s var(--ease-in-out),
 						font-variation-settings 0.2s var(--ease-in-out);
 					background-clip: padding-box;
-					background-color: rgba(var(--sidebar-links-bg-color));
+					background-color: rgb(var(--sidebar-links-bg-color));
 					color: rgb(var(--sidebar-links-text));
 					font-size: calc(var(--base-font-size) * (13 / 15));
 					font-weight: var(--wght);
@@ -448,7 +448,7 @@
 					font-weight 0.2s var(--ease-in-out),
 					font-variation-settings 0.2s var(--ease-in-out);
 				background-clip: padding-box;
-				background-color: rgba(var(--sidebar-links-bg-color));
+				background-color: rgb(var(--sidebar-links-bg-color));
 				color: rgb(var(--sidebar-links-text));
 				font-size: calc(var(--base-font-size) * (13 / 15));
 				font-weight: var(--wght);
@@ -489,7 +489,7 @@
 		}
 
 		> div:not(:nth-child(2), .collapsible-block) {
-			border-left: 0.125rem solid rgba(var(--sidebar-border-color));
+			border-left: 0.125rem solid rgb(var(--sidebar-border-color));
 		}
 
 		& img,
@@ -696,7 +696,7 @@
 		&.collapsible-block-folded {
 			> a {
 				&.collapsible-block-link {
-					background: rgba(var(--sidebar-collapsible-fld-link-bg));
+					background: rgb(var(--sidebar-collapsible-fld-link-bg));
 					color: rgb(var(--sidebar-collapsible-fld-link-color));
 
 					&::after {
@@ -729,7 +729,7 @@
 		}
 
 		&.collapsible-block-unfolded-link {
-			border-bottom: 0.125rem solid rgba(var(--sidebar-border-color));
+			border-bottom: 0.125rem solid rgb(var(--sidebar-border-color));
 
 			> a {
 				&.collapsible-block-link {
@@ -769,8 +769,8 @@
 		/* create a gap next to the collapsible contents */
 		&.collapsible-block-content {
 			box-sizing: border-box;
-			border-right: 2rem solid rgba(var(--sidebar-border-color));
-			background-color: rgba(var(--sidebar-collapsible-body-bg));
+			border-right: 2rem solid rgb(var(--sidebar-border-color));
+			background-color: rgb(var(--sidebar-collapsible-body-bg));
 
 			/* hide the last border within the collapsible */
 			.menu-item {

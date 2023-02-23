@@ -208,10 +208,10 @@
 					background-color 0.15s var(--ease-in-out);
 				background: transparent;
 				box-shadow:
-					0.0625rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1),
+					0.0625rem 0.0625rem 0 0 rgb(var(--swatch-primary)),
 					0.25rem 0.0625rem 0 0 rgba(var(--background-gradient-color), 0.7),
-					0.25rem 0.0625rem 0 0 rgba(var(--swatch-background), 1),
-					0.3125rem 0.0625rem 0 0 rgba(var(--swatch-primary), 1);
+					0.25rem 0.0625rem 0 0 rgb(var(--swatch-background)),
+					0.3125rem 0.0625rem 0 0 rgb(var(--swatch-primary));
 			}
 		}
 
@@ -222,7 +222,7 @@
 			&::before {
 				background-color: rgb(var(--swatch-primary));
 				box-shadow:
-					0 0 0 0.25rem rgba(var(--swatch-primary), 1),
+					0 0 0 0.25rem rgb(var(--swatch-primary)),
 					0 0 0 0 rgba(var(--background-gradient-color), 0),
 					0 0 0 0 rgba(var(--swatch-background), 0),
 					0 0 0 0 rgba(var(--swatch-primary), 0);
@@ -954,7 +954,7 @@ form#edit-page-form {
 						font-weight 0.2s var(--ease-in-out),
 						font-variation-settings 0.2s var(--ease-in-out);
 					outline: 0 solid rgb(var(--swatch-primary));
-					background-color: rgba(var(--swatch-background), 1);
+					background-color: rgb(var(--swatch-background));
 					box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 					color: rgb(var(--swatch-text-general));
 					font-size: 0.8em;
@@ -1013,7 +1013,7 @@ form#edit-page-form {
 					--wght: calc(var(--ui-hvr-wght) + 100);
 
 					outline: 0 solid rgb(var(--swatch-primary));
-					background-color: rgba(var(--swatch-primary), 1);
+					background-color: rgb(var(--swatch-primary));
 					box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 					color: rgb(var(--swatch-background));
 					font-weight: var(--wght);
@@ -1170,7 +1170,7 @@ form#edit-page-form {
 						}
 					}
 
-					@supports selector(:has(p)) {
+					@supports selector(div:has(p)) {
 						&:has(.weditor-h1) {
 							grid-area: header-h1;
 						}
@@ -1488,7 +1488,7 @@ form#edit-page-form {
 			padding: 0;
 			overflow: hidden;
 			border: none;
-			background-color: rgba(var(--editor-icon-bg));
+			background-color: rgb(var(--editor-icon-bg));
 			background-image: initial;
 			background-position: initial;
 
@@ -1846,7 +1846,7 @@ form#edit-page-form {
 		justify-content: stretch;
 		margin-top: 1.5rem;
 		padding-top: 0.75em;
-		background-color: rgba(var(--swatch-background), 1);
+		background-color: rgb(var(--swatch-background));
 		box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 		color: transparent;
 		font-weight: var(--wght);
@@ -1862,7 +1862,7 @@ form#edit-page-form {
 				background-color 0.15s var(--ease-in-out),
 				color 0.15s var(--ease-in-out);
 			outline: 0 solid rgb(var(--swatch-primary));
-			background-color: rgba(var(--swatch-background), 1);
+			background-color: rgb(var(--swatch-background));
 			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 			color: rgb(var(--swatch-text-general));
 			font-size: 0.8em;
@@ -1908,7 +1908,7 @@ form#edit-page-form {
 		&:focus-within {
 			&::before {
 				outline: 0 solid rgb(var(--swatch-primary));
-				background-color: rgba(var(--swatch-primary), 1);
+				background-color: rgb(var(--swatch-primary));
 				box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
 				color: rgb(var(--swatch-background));
 				translate: 0 -0.25em;
@@ -2087,7 +2087,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 				font-weight 0.2s var(--ease-in-out),
 				font-variation-settings 0.2s var(--ease-in-out);
 			outline: 0 solid rgb(var(--swatch-primary));
-			background-color: rgba(var(--swatch-background), 1);
+			background-color: rgb(var(--swatch-background));
 			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 			color: rgb(var(--swatch-text-general));
 			font-size: 0.8em;
@@ -2120,7 +2120,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 			--wght: calc(var(--ui-hvr-wght) + 100);
 
 			outline: 0 solid rgb(var(--swatch-primary));
-			background-color: rgba(var(--swatch-primary), 1);
+			background-color: rgb(var(--swatch-primary));
 			box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 			color: rgb(var(--swatch-background));
 			font-weight: var(--wght);
@@ -2576,7 +2576,7 @@ table.page-files {
 								font-weight 0.2s var(--ease-in-out),
 								font-variation-settings 0.2s var(--ease-in-out);
 							outline: 0 solid rgb(var(--swatch-primary));
-							background-color: rgba(var(--swatch-background), 1);
+							background-color: rgb(var(--swatch-background));
 							box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 							color: rgb(var(--swatch-text-general));
 							font-size: 0.8em;
@@ -2604,7 +2604,7 @@ table.page-files {
 								--wght: calc(var(--ui-hvr-wght) + 100);
 
 								outline: 0 solid rgb(var(--swatch-primary));
-								background-color: rgba(var(--swatch-primary), 1);
+								background-color: rgb(var(--swatch-primary));
 								box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 								color: rgb(var(--swatch-background));
 								font-weight: var(--wght);
@@ -2840,7 +2840,7 @@ table.page-files {
 		border: none;
 		background-color: rgb(var(--swatch-secondary-color));
 		box-shadow:
-			inset 0.25rem 0 0 0 rgba(var(--swatch-primary), 1),
+			inset 0.25rem 0 0 0 rgb(var(--swatch-primary)),
 			-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
 			inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 	}
@@ -2893,7 +2893,7 @@ table.page-files {
 			}
 		}
 
-		@supports selector(:has(p)) {
+		@supports selector(div:has(p)) {
 			&:has(+ span) {
 				justify-self: flex-end;
 			}
@@ -3105,7 +3105,7 @@ table.page-files {
 								font-weight 0.2s var(--ease-in-out),
 								font-variation-settings 0.2s var(--ease-in-out);
 							outline: 0 solid rgb(var(--swatch-primary));
-							background-color: rgba(var(--swatch-background), 1);
+							background-color: rgb(var(--swatch-background));
 							box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 							color: rgb(var(--swatch-text-general));
 							font-size: 0.8em;
@@ -3135,7 +3135,7 @@ table.page-files {
 								--wght: calc(var(--ui-hvr-wght) + 100);
 
 								outline: 0 solid rgb(var(--swatch-primary));
-								background-color: rgba(var(--swatch-primary), 1);
+								background-color: rgb(var(--swatch-primary));
 								box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 								color: rgb(var(--swatch-background));
 								font-weight: var(--wght);
@@ -3422,7 +3422,7 @@ table.page-files {
 									font-weight 0.2s var(--ease-in-out),
 									font-variation-settings 0.2s var(--ease-in-out);
 								outline: 0 solid rgb(var(--swatch-primary));
-								background-color: rgba(var(--swatch-background), 1);
+								background-color: rgb(var(--swatch-background));
 								box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 								color: rgb(var(--swatch-text-general));
 								font-size: 0.8em;
@@ -3449,7 +3449,7 @@ table.page-files {
 									--wght: calc(var(--ui-hvr-wght) + 100);
 
 									outline: 0 solid rgb(var(--swatch-primary));
-									background-color: rgba(var(--swatch-primary), 1);
+									background-color: rgb(var(--swatch-primary));
 									box-shadow: 0 0 0 0.15625rem rgb(var(--swatch-primary));
 									color: rgb(var(--swatch-background));
 									font-weight: var(--wght);
@@ -3463,7 +3463,7 @@ table.page-files {
 		}
 	}
 
-	@supports selector(:has(p)) {
+	@supports selector(div:has(p)) {
 		&:has(
 			form[onsubmit*="setParent"],
 			#who-rated-page-area,
@@ -3484,7 +3484,7 @@ table.page-files {
 				padding: 0.825em 1.25em;
 				background-color: rgb(var(--swatch-secondary-color));
 				box-shadow:
-					inset 0.25rem 0 0 0 rgba(var(--swatch-primary), 1),
+					inset 0.25rem 0 0 0 rgb(var(--swatch-primary)),
 					-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
 					inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 
@@ -3987,7 +3987,7 @@ div.odialog-shader-iframe {
 			}
 
 			&:is(:hover, :active, :focus, :focus-within) {
-				background-color: rgba(var(--ui-button-hover-bg), 1);
+				background-color: rgb(var(--ui-button-hover-bg));
 				color: rgb(var(--ui-button-hover-txt));
 			}
 		}
@@ -4180,7 +4180,7 @@ div.odialog-shader-iframe {
 			transition:
 				background-color 0.15s var(--ease-in-out),
 				color 0.15s var(--ease-in-out);
-			border: 0.0625rem solid rgba(var(--swatch-primary-darker), 1);
+			border: 0.0625rem solid rgb(var(--swatch-primary-darker));
 			border-radius: 0.25rem;
 			background-color: rgba(var(--swatch-secondary-color), 0.25);
 			color: rgb(var(--swatch-primary-darkest));
@@ -4188,7 +4188,7 @@ div.odialog-shader-iframe {
 			letter-spacing: 0.016em;
 
 			&:is(:hover, :active, :focus) {
-				background-color: rgba(var(--swatch-alternate-color), 1);
+				background-color: rgb(var(--swatch-alternate-color));
 				color: rgb(var(--swatch-primary-darker));
 				text-decoration: none;
 			}
