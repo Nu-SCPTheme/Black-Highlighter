@@ -1402,6 +1402,21 @@ table[style*="margin:0"] * {
 			grid-row: 2;
 		}
 
+		&::after {
+			--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
+
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			inset: 0 auto auto 0;
+			width: 100%;
+			height: 100%;
+			transition: clip-path 0.2s var(--ease-in-out);
+			background-color: rgb(var(--pager-hover-bg));
+			pointer-events: none;
+			clip-path: var(--clip-path);
+		}
+
 		&,
 		& * {
 			display: flex;
@@ -1468,49 +1483,37 @@ table[style*="margin:0"] * {
 				}
 			}
 		}
-	}
 
-	& a {
-		display: block;
-		z-index: 2;
-		align-items: center;
-		width: 100%;
-		padding-inline: 0.25em;
-		overflow: hidden;
-		transition: color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
-		text-overflow: ellipsis;
-
-		&::after {
-			--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
-
-			content: " ";
-			position: absolute;
-			z-index: -1;
-			inset: 0 auto auto 0;
+		& a {
+			display: block;
+			z-index: 2;
+			align-items: center;
 			width: 100%;
-			height: 100%;
-			transition: clip-path 0.2s var(--ease-in-out);
-			background-color: rgb(var(--pager-hover-bg));
-			pointer-events: none;
-			clip-path: var(--clip-path);
-		}
+			padding-inline: 0.25em;
+			overflow: hidden;
+			transition: color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+			text-overflow: ellipsis;
 
-		&,
-		&:visited {
-			color: rgb(var(--pager-link));
+			&,
+			&:visited {
+				color: rgb(var(--pager-link));
+			}
+
+			&:is(:hover, :active, :focus, :focus-within) {
+				--wght: var(--ui-hvr-wght);
+
+				color: rgb(var(--pager-link-hover));
+				font-weight: var(--wght);
+				text-decoration: none;
+			}
 		}
 
 		&:is(:hover, :active, :focus, :focus-within) {
-			--wght: var(--ui-hvr-wght);
-
-			color: rgb(var(--pager-link-hover));
-			font-weight: var(--wght);
-			text-decoration: none;
-
 			&::after {
 				--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 			}
 		}
+
 	}
 }
 
