@@ -3321,6 +3321,8 @@ a {
 	-webkit-text-decoration: underline solid currentColor;
 	        text-decoration: underline solid currentColor;
 	text-decoration-thickness: 0.09375em;
+	-webkit-text-decoration: underline 0.09375em;
+	        text-decoration: underline 0.09375em;
 	-webkit-text-decoration-color: transparent;
 	        text-decoration-color: transparent;
 }
@@ -3341,6 +3343,8 @@ a:visited {
 	-webkit-text-decoration: underline solid currentColor;
 	        text-decoration: underline solid currentColor;
 	text-decoration-thickness: 0.09375em;
+	-webkit-text-decoration: underline 0.09375em;
+	        text-decoration: underline 0.09375em;
 	-webkit-text-decoration-color: transparent;
 	        text-decoration-color: transparent;
 }
@@ -3371,6 +3375,8 @@ a:active {
 	-webkit-text-decoration: underline solid currentColor;
 	        text-decoration: underline solid currentColor;
 	text-decoration-thickness: 0.09375em;
+	-webkit-text-decoration: underline 0.09375em;
+	        text-decoration: underline 0.09375em;
 	-webkit-text-decoration-color: currentColor;
 	        text-decoration-color: currentColor;
 }
@@ -3392,6 +3398,8 @@ a:focus-within {
 	-webkit-text-decoration: underline solid currentColor;
 	        text-decoration: underline solid currentColor;
 	text-decoration-thickness: 0.09375em;
+	-webkit-text-decoration: underline 0.09375em;
+	        text-decoration: underline 0.09375em;
 	-webkit-text-decoration-color: currentColor;
 	        text-decoration-color: currentColor;
 }
@@ -3960,6 +3968,8 @@ div.page-watch-options a:visited {
 	-webkit-text-decoration: underline dotted currentColor;
 	        text-decoration: underline dotted currentColor;
 	text-decoration-thickness: 0.09375rem;
+	-webkit-text-decoration: underline dotted 0.09375rem;
+	        text-decoration: underline dotted 0.09375rem;
 }
 div.page-watch-options a:hover,
 div.page-watch-options a:active {
@@ -4518,10 +4528,18 @@ div[id*="page-options-bottom"]>a#delete-button {
 	font-weight: var(--wght);
 	line-height: 1;
 	text-decoration: underline;
-	text-decoration: underline;
+	-webkit-text-decoration: underline solid rgb(133, 0, 5);
+	        text-decoration: underline solid rgb(133, 0, 5);
 	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
 	        text-decoration: underline solid rgb(var(--swatch-primary));
 	text-decoration-thickness: 0.125em;
+	text-decoration: underline;
+	text-decoration: underline solid rgb(133, 0, 5);
+	text-decoration-thickness: 0.125em;
+	-webkit-text-decoration: underline 0.125em rgb(133, 0, 5);
+	        text-decoration: underline 0.125em rgb(133, 0, 5);
+	-webkit-text-decoration: underline 0.125em rgb(var(--swatch-primary));
+	        text-decoration: underline 0.125em rgb(var(--swatch-primary));
 }
 #license-area a::before {
 	--clip-path:
@@ -6361,10 +6379,18 @@ table.page-files tr>td>a:visited:not(.btn) {
 	font-weight: var(--wght);
 	text-align: center;
 	text-decoration: underline;
-	text-decoration: underline;
+	-webkit-text-decoration: underline solid rgb(100, 3, 15);
+	        text-decoration: underline solid rgb(100, 3, 15);
 	-webkit-text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	        text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	text-decoration-thickness: 0.125em;
+	text-decoration: underline;
+	text-decoration: underline solid rgb(100, 3, 15);
+	text-decoration-thickness: 0.125em;
+	-webkit-text-decoration: underline rgb(100, 3, 15) 0.125em;
+	        text-decoration: underline rgb(100, 3, 15) 0.125em;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
+	        text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.125em;
 	word-break: break-word;
 	-webkit-hyphens: auto;
 	    -ms-hyphens: auto;
@@ -6381,12 +6407,10 @@ table.page-files tr>td>a:not(.btn):active {
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 table.page-files tr>td>a:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
@@ -6396,12 +6420,10 @@ table.page-files tr>td>a:not(.btn):focus-within {
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form)>a.btn {
 	margin: 0 0.5em;
@@ -6852,6 +6874,13 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	-webkit-text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	        text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	text-decoration-thickness: 0.0625rem;
+	text-decoration: underline;
+	text-decoration: underline solid rgb(100, 3, 15);
+	text-decoration-thickness: 0.0625rem;
+	-webkit-text-decoration: underline rgb(100, 3, 15) 0.0625rem;
+	        text-decoration: underline rgb(100, 3, 15) 0.0625rem;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
+	        text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 #st-action-area>a:not(.btn):not([href="javascript:;"]):hover,
 #st-action-area>a:not(.btn):not([href="javascript:;"]):active {
@@ -6862,12 +6891,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 #st-action-area>a:not(.btn):not([href="javascript:;"]):focus-within {
 	--wght: var(--ui-hvr-wght);
@@ -6877,12 +6904,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 #st-action-area div:not(.wanted-pages-module) a:nth-of-type(n):not([href="javascript:;"]) {
 	justify-content: flex-end;
@@ -6942,6 +6967,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	-webkit-text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	        text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	text-decoration-thickness: 0.0625rem;
+	-webkit-text-decoration: underline rgb(100, 3, 15) 0.0625rem;
+	        text-decoration: underline rgb(100, 3, 15) 0.0625rem;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
+	        text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 #action-area a[onclick*="deleteTag"]:not(.btn):hover,
 #action-area a[onclick*="deleteTag"]:not(.btn):active {
@@ -6952,12 +6981,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 #action-area a[onclick*="deleteTag"]:not(.btn):focus-within {
 	--wght: var(--ui-hvr-wght);
@@ -6967,12 +6994,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 #edit-meta-newtag-form table {
 	display: grid;
@@ -7047,6 +7072,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	-webkit-text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	        text-decoration: underline solid rgb(var(--swatch-primary-darkest));
 	text-decoration-thickness: 0.0625rem;
+	-webkit-text-decoration: underline rgb(100, 3, 15) 0.0625rem;
+	        text-decoration: underline rgb(100, 3, 15) 0.0625rem;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
+	        text-decoration: underline rgb(var(--swatch-primary-darkest)) 0.0625rem;
 }
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:hover,
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:active {
@@ -7057,12 +7086,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 #action-area a + h1 + p + h2 ~ div[style="padding-left:3em;"] >  div a:focus-within {
 	--wght: var(--ui-hvr-wght);
@@ -7072,12 +7099,10 @@ table.page-files tbody tr td:not(.page-rate-widget-box):not(#search-top-box-form
 	color: rgb(var(--swatch-text-secondary-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(133, 0, 5);
-	        text-decoration: underline solid rgb(133, 0, 5);
-	-webkit-text-decoration: underline solid rgb(var(--swatch-primary));
-	        text-decoration: underline solid rgb(var(--swatch-primary));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(133, 0, 5) 0;
+	        text-decoration: underline rgb(133, 0, 5) 0;
+	-webkit-text-decoration: underline rgb(var(--swatch-primary)) 0;
+	        text-decoration: underline rgb(var(--swatch-primary)) 0;
 }
 #action-area p+ul[style*="list-style: none"] {
 	display: grid;
@@ -11287,6 +11312,8 @@ div#container-wrap {
 	-webkit-text-decoration: underline solid rgb(var(--login-myaccount-underline-color));
 	        text-decoration: underline solid rgb(var(--login-myaccount-underline-color));
 	text-decoration-thickness: 0.125em;
+	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0.125em;
+	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0.125em;
 }
 #login-status a#my-account:hover,
 #login-status a#my-account:active {
@@ -11295,10 +11322,8 @@ div#container-wrap {
 	color: rgb(var(--login-myaccount-hover-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(var(--login-myaccount-underline-color));
-	        text-decoration: underline solid rgb(var(--login-myaccount-underline-color));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 }
 #login-status a#my-account:focus-within {
 	--wght: var(--ui-hvr-wght);
@@ -11306,10 +11331,8 @@ div#container-wrap {
 	color: rgb(var(--login-myaccount-hover-color));
 	font-weight: 500;
 	font-weight: var(--wght);
-	text-decoration: underline;
-	-webkit-text-decoration: underline solid rgb(var(--login-myaccount-underline-color));
-	        text-decoration: underline solid rgb(var(--login-myaccount-underline-color));
-	text-decoration-thickness: 0;
+	-webkit-text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
+	        text-decoration: underline rgb(var(--login-myaccount-underline-color)) 0;
 }
 #login-status #account-topbutton {
 	position: relative;
@@ -15642,7 +15665,7 @@ body.print-body #main-content .page-tags span {
 	#header div[class*="top-bar"] > ul > li > ul li > a {
 		--min-font-size: 1rem;
 		--max-font-size: 1rem;
-		font-size: max(0.8125rem, min(2vw, 0.9375rem));
+		font-size: max(1rem, min(2vw, 1rem));
 		font-size: var(--base-font-size);
 		line-height: 1;
 		white-space: inherit;
