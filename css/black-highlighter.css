@@ -15016,12 +15016,13 @@ span.printuser a:first-of-type:not(:last-of-type) {
 
 span.printuser a:first-of-type:not(:last-of-type) img.small {
 			height: 100%;
+			width: calc(100% - 0.3625rem);
 			aspect-ratio: 1/1;
 		}
 
 span.printuser img.small,
 	span.printuser.deleted img {
-		padding: 0 0 0 0.5rem;
+		padding: 0 0 0 0.3625rem;
 		background-position: left center;
 		background-size: 100% calc(100% + 0.125rem);
 		object-fit: cover;
