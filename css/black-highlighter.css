@@ -13340,7 +13340,7 @@ div#container-wrap {
 		margin-top: 1ex;
 	}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav {
 		--clip-path: polygon(-0.0625rem -0.5rem, calc(100% + 0.0625rem) -0.5rem, calc(100% + 0.0625rem) 100%, -0.0625rem 100%);
 
 		display: flex;
@@ -13356,14 +13356,14 @@ div#container-wrap {
 		        clip-path: var(--clip-path);
 	}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav a {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav a {
 			border: medium none currentColor;
 			border: initial;
 			background-color: rgb(var(--tabs-bg));
 			color: rgb(var(--tabs-txt));
 		}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li {
 			display: flex;
 			position: relative;
 			flex-grow: 2;
@@ -13378,7 +13378,7 @@ div#container-wrap {
 			will-change: box-shadow, color, background-color;
 		}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a {
 				--wght: var(--ui-wght);
 
 				display: flex;
@@ -13390,7 +13390,7 @@ div#container-wrap {
 				vertical-align: bottom;
 			}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a::before {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a::before {
 					--clip-path: polygon(0 calc(100% - 0.25rem), calc(100% + 1rem) calc(100% - 0.25rem), calc(100% + 1rem) calc(100% + 1rem), 0 calc(100% + 1rem));
 
 					content: " ";
@@ -13412,29 +13412,29 @@ div#container-wrap {
 					        clip-path: var(--clip-path);
 				}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a em {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a em {
 					border: medium none currentColor !important;
 					border: initial !important;
 				}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a em {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a em {
 					transition: color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out); /* Overwriting Wikidot Inline-Styling */
 				}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a:is(:hover, :active, :focus) em {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a:is(:hover, :active, :focus) em {
 						--wght: var(--ui-hvr-wght);
 
 						color: rgb(var(--tabs-hover-txt));
 						font-weight: var(--wght);
 					}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li:not(.selected) a:is(:hover, :active, :focus, :focus-within)::before {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li:not(.selected) a:is(:hover, :active, :focus, :focus-within)::before {
 						--clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0 calc(100% + 1rem));
 
 						background-color: rgb(var(--tabs-hover-bg));
 					}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav a em, :where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a em {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav a em, :is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a em {
 				top: 0;
 				padding: 0.35em 0.75em;
 				overflow: hidden;
@@ -13445,7 +13445,7 @@ div#container-wrap {
 
 /* Selected Tab */
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected {
 			z-index: 10;
 			margin: 0;
 			padding: 0;
@@ -13453,40 +13453,40 @@ div#container-wrap {
 			box-shadow: 0 0 0 0.25rem rgb(var(--tabs-selected-outline));
 		}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a {
 				color: rgb(var(--tabs-selected-txt)) !important;
 			}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a {
 				--wght: var(--ui-hvr-wght);
 
 				background-image: none; /* Overwriting Wikidot Inline-Styling */
 				font-weight: var(--wght);
 			}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a,
-				:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a em {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a,
+				:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a em {
 					border: none;
 					border-color: transparent;
 				}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a:is(:hover, :active) {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a:is(:hover, :active) {
 					/* Indicate that the currently selected tab is not clickable */
 					cursor: default;
 				}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a::before, :where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected:is(:hover, :active, :focus, :focus-within) a::before {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a::before, :is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected:is(:hover, :active, :focus, :focus-within) a::before {
 						--clip-path: polygon(0 0, calc(100% + 1rem) -1rem, calc(100% + 1rem) calc(100% + 1rem), 0 calc(100% + 1rem));
 
 						background-color: rgb(var(--tabs-selected-bg));
 					}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom):first-child .yui-nav {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom):first-child .yui-nav {
 		margin-top: 2.5ex;
 		margin-bottom: auto;
 	}
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-content {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-content {
 		padding: 1.5ex 2ch;
 		border: 0.0625rem solid rgb(var(--tabs-content-border-color));
 		background-color: rgb(var(--tabs-content-bg-color));
@@ -13494,7 +13494,7 @@ div#container-wrap {
 
 /* ===BLOCKQUOTE=== */
 
-:where(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
+:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
 	display: block;
 	position: relative;
 	margin-top: 1ex;
@@ -13508,17 +13508,17 @@ div#container-wrap {
 	box-shadow: inset 0 0 0 0.0625rem rgba(var(--blockquote-border-color), 0.5), inset 0.0625rem 0 0 0 rgba(var(--blockquote-border-color), 0.5), inset 0 -0.0625rem 0 0 rgba(var(--blockquote-border-color), 0.75);
 }
 
-:where(blockquote, .blockquote, div.blockquote, [class*="blockquote"]):is(:first-child, :only-child) {
+:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]):is(:first-child, :only-child) {
 		margin-top: 0;
 	}
 
-:where(blockquote, .blockquote, div.blockquote, [class*="blockquote"]):last-child:not(:only-child) {
+:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]):last-child:not(:only-child) {
 		margin-bottom: 1em;
 	}
 
 @supports (display: flow-root) {
 
-:where(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
+:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
 		display: flow-root;
 }
 	}
