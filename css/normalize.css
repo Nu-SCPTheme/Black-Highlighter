@@ -71,7 +71,7 @@
 /* ============================================ */
 
 :where(dt) {
-	font-weight: 700;
+	font-weight: bold;
 }
 
 :where(dd) {
@@ -93,7 +93,7 @@
 	margin: 0;
 	clear: both;
 	overflow: visible; /* 2 */
-	border-top-width: 0.0625rem;
+	border-top-width: 1px;
 	color: inherit;
 }
 
@@ -165,7 +165,7 @@
  * all browsers.
  */
 
-:where(sub, sup) {
+:where(sub,sup) {
 	position: relative;
 	font-size: 75%;
 	line-height: 0;
@@ -282,8 +282,7 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-:where([type="number"])::-webkit-inner-spin-button,
-:where([type="number"])::-webkit-outer-spin-button {
+:where([type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button) {
 	height: auto;
 }
 
@@ -292,14 +291,14 @@ textarea {
  */
 
 :where([type="search"]) {
-	outline-offset: -0.125rem; /* 1 */
+	outline-offset: -2px; /* 1 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-:where([type="search"])::-webkit-search-decoration {
+:where([type="search"]::-webkit-search-decoration) {
 	-webkit-appearance: none;
 }
 
@@ -308,7 +307,7 @@ textarea {
  * 2. Fix font inheritance.
  */
 
-::-webkit-file-upload-button {
+:where(::-webkit-file-upload-button) {
 	-webkit-appearance: button; /* 1 */
 	font: inherit; /* 2 */
 }
@@ -384,6 +383,9 @@ textarea {
 	text-align: left;
 }
 
+/* Sigma-9 Normalizer
+	 ========================================================================== */
+
 /* ===Re-Enabling Stylelint Properties=== */
 
 /* stylelint-enable
@@ -392,12 +394,10 @@ textarea {
 	font-family-no-duplicate-names
 */
 
-/* Sigma-9 Normalizer
-	 ========================================================================== */
-
 #content-wrap {
 	position: inherit;
 	max-width: inherit;
+	height: inherit;
 	height: inherit;
 	min-height: inherit;
 	margin: inherit;
@@ -406,22 +406,27 @@ textarea {
 h1,
 #page-title {
 	margin: inherit;
-	padding: inherit;
+	padding-top: inherit;
 	color: inherit;
+}
+
+h1,
+#page-title,
+h1 {
+	padding: inherit;
 	font-weight: inherit;
 }
 
 h1 {
 	margin-top: inherit;
-	padding: inherit;
-	font-weight: inherit;
 }
 
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h7 {
 	margin: inherit;
 	padding: inherit;
 	letter-spacing: inherit;
@@ -431,21 +436,13 @@ h6 {
 	border-color: inherit;
 }
 
-.meta-title {
-	margin: inherit;
-	padding: inherit;
-	border-bottom: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.meta-title p {
-	margin: inherit;
-}
-
 ul {
 	list-style: inherit;
+}
+
+#top-bar ul {
+	right: inherit;
+	bottom: inherit;
 }
 
 li,
@@ -455,28 +452,28 @@ p {
 
 a {
 	background: inherit;
-	color: inherit;
 	text-decoration: inherit;
 }
 
-a:visited {
-	color: inherit;
-}
-
-a:hover {
-	background-color: inherit;
-	text-decoration: inherit;
-}
-
+a,
 #side-bar a:visited,
-#interwiki a:visited {
+#interwiki a:visited,
+a:visited,
+a.newpage {
 	color: inherit;
 }
 
 a.newpage {
 	background: inherit;
-	color: inherit;
+}
+
+a.newpage,
+a:hover {
 	text-decoration: inherit;
+}
+
+a:hover {
+	background-color: inherit;
 }
 
 .form-control {
@@ -485,8 +482,13 @@ a.newpage {
 
 #header,
 #top-bar {
-	width: inherit;
 	max-width: inherit;
+}
+
+#header,
+#top-bar,
+#top-bar {
+	width: inherit;
 	margin: inherit;
 }
 
@@ -504,32 +506,31 @@ body {
 	font-size: inherit;
 }
 
-#interwiki body {
-	background-color: inherit;
-}
-
 div#container-wrap {
 	background: inherit;
 }
 
 sup {
-	position: inherit;
 	top: inherit;
 	vertical-align: inherit;
 }
 
+sup,
 #header {
 	position: inherit;
+}
+
+#header {
 	z-index: inherit;
 	height: inherit;
 	padding-bottom: inherit;
+
 	background: inherit;
-	background-position: inherit;
-	background-size: inherit;
 }
 
 #search-top-box {
 	position: inherit;
+	z-index: inherit;
 	top: inherit;
 	right: inherit;
 	width: inherit;
@@ -537,15 +538,37 @@ sup {
 }
 
 #search-top-box-input {
-	display: inherit;
+	border: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+}
+
+#search-top-box input.empty {
+	color: inherit;
+}
+
+#search-top-box-input,
+#search-top-box-input:hover,
+#search-top-box-input:focus {
+	background-color: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+	color: inherit;
+}
+
+#search-top-box-input:hover,
+#search-top-box-input:focus {
+	border: inherit;
 }
 
 #search-top-box-form input[type="submit"] {
 	padding: inherit;
 	border: inherit;
+	-webkit-border-radius: inherit;
 	border-radius: inherit;
+	background: inherit;
 	background-color: inherit;
-	background-image: inherit;
+	-webkit-box-shadow: inherit;
 	box-shadow: inherit;
 	color: inherit;
 	font-size: inherit;
@@ -556,1296 +579,43 @@ sup {
 #search-top-box-form input[type="submit"]:hover,
 #search-top-box-form input[type="submit"]:focus {
 	border: inherit;
-	background-color: inherit;
-	background-image: inherit;
+	background: inherit;
+	-webkit-box-shadow: inherit;
 	box-shadow: inherit;
 	color: inherit;
 	text-shadow: inherit;
 }
 
 #login-status {
+	position: inherit;
 	z-index: inherit;
+	z-index: inherit;
+	top: inherit;
+	right: inherit;
+	overflow: inherit;
 	color: inherit;
 	font-size: inherit;
 }
 
-#login-status a {
-	background: inherit;
-	color: inherit;
-}
-
-#login-status ul a {
-	background: inherit;
-	color: inherit;
-}
-
+#login-status a,
+#login-status ul a,
 #account-topbutton {
 	background: inherit;
 	color: inherit;
 }
 
-.printuser img.small {
-	margin-right: inherit;
-}
-
-#header h1 {
-	max-height: inherit;
-	margin-left: inherit;
-	padding: inherit;
-	float: inherit;
-}
-
-#header h2 {
-	max-height: inherit;
-	margin-left: inherit;
-	padding: inherit;
-	float: inherit;
-	clear: inherit;
-	font-size: inherit;
-}
-
-#header h1 a {
-	display: inherit;
-	max-height: inherit;
-	margin: inherit;
-	padding: inherit;
-	background: inherit;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	letter-spacing: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
-	text-shadow: inherit;
-}
-
-#header h2 span {
-	display: inherit;
-	max-height: inherit;
-	margin: inherit;
-	padding: inherit;
-	color: inherit;
-	font-weight: inherit;
-	line-height: inherit;
-	text-shadow: inherit;
-}
-
-#top-bar {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-
-#top-bar ul {
-	float: inherit;
-}
-
-#top-bar li {
-	margin: inherit;
-}
-
-#top-bar a {
-	background: inherit;
-	color: inherit;
-}
-
-#top-bar ul li {
-	position: inherit;
-	border: inherit;
-}
-
-#top-bar ul li ul {
-	width: inherit;
-	border: inherit;
-	border-top: inherit;
-	border-width: inherit;
-	box-shadow: inherit;
-}
-
-#top-bar ul li a {
-	padding: inherit;
-	border-right: inherit;
-	border-left: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
-}
-
-#top-bar .top-bar > ul > li > a,
-#top-bar .mobile-top-bar > ul > li > a {
-	font-weight: inherit;
-}
-
-#top-bar ul li.sfhover a,
-#top-bar ul li:hover a {
-	border-right: inherit;
-	border-left: inherit;
-	background: inherit;
-	color: inherit;
-}
-
-#top-bar ul li.sfhover ul li a,
-#top-bar ul li:hover ul li a {
-	width: inherit;
-	height: inherit;
-	max-height: inherit;
-	padding-top: inherit;
-	padding-bottom: inherit;
-	border-top: inherit;
-	border-width: inherit;
-	line-height: inherit;
-}
-
-#top-bar ul li.sfhover a:hover,
-#top-bar ul li:hover a:hover {
-	background: inherit;
-	text-decoration: inherit;
-}
-
-#top-bar ul li ul li,
-#top-bar ul li ul li.sfhover,
-#top-bar ul li ul li:hover {
-	border-width: inherit;
-}
-
-#top-bar ul li ul li a {
-	border-width: inherit;
-}
-
-#top-bar ul li ul a,
-#top-bar a:hover {
-	color: inherit;
-}
-
-.top-bar ul li:last-of-type ul {
-	right: inherit;
-}
-
-#side-bar {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	padding: inherit;
-	float: inherit;
-	clear: inherit;
-	border: inherit;
-	overscroll-behavior: inherit;
-}
-
-#interwiki .side-block {
-	margin: inherit;
-}
-
-#side-bar .side-block,
-#interwiki .side-block {
-	margin-bottom: inherit;
-	padding: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background: inherit;
-	box-shadow: inherit;
-}
-
-#side-bar .side-block.media {
-	background: inherit;
-}
-
-#side-bar .side-block.resources {
-	background: inherit;
-}
-
-#side-bar .side-area {
-	padding: inherit;
-}
-
-#side-bar .heading,
-#interwiki .heading {
-	margin-top: inherit;
-	margin-bottom: inherit;
-	padding-left: inherit;
-	border-bottom: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-#side-bar p,
-#interwiki p {
-	margin: inherit;
-}
-
-#side-bar .menu-item,
-#interwiki .menu-item {
-	margin: inherit;
-}
-
-#side-bar .menu-item.small {
-	font-size: inherit;
-}
-
-#side-bar .menu-item img,
-#interwiki .menu-item img {
-	position: inherit;
-	bottom: inherit;
-	width: inherit;
-	height: inherit;
-	margin-right: inherit;
-	border: inherit;
-}
-
-#side-bar .menu-item a,
-#interwiki .menu-item a {
-	font-weight: inherit;
-}
-
-#side-bar .menu-item.inactive img {
-	opacity: inherit;
-}
-
-#side-bar .menu-item.inactive a {
-	color: inherit;
-}
-
-#side-bar .menu-item .sub-text {
-	color: inherit;
-	font-size: inherit;
-}
-
-#side-bar .collapsible-block-link {
-	margin-left: inherit;
-	font-weight: inherit;
-}
-
-#side-bar .collapsible-block-unfolded-link {
-	border-bottom: inherit;
-}
-
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link {
-	margin-top: inherit;
-	margin-bottom: inherit;
-	margin-left: inherit;
-	color: inherit;
-	font-size: inherit;
-}
-
-#side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover {
-	color: inherit;
-	text-decoration: inherit;
-}
-
-#side-bar ul {
-	padding: inherit;
-	list-style-type: inherit;
-}
-
-.close-menu {
-	display: inherit;
-}
-
-@media (max-width: 47.9375rem) {
-	#top-bar .open-menu a {
-		position: inherit;
-		z-index: inherit;
-		top: inherit;
-		left: inherit;
-		width: inherit;
-		height: inherit;
-		border: inherit;
-		border-radius: inherit;
-		background-color: inherit;
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-		line-height: inherit;
-		text-align: inherit;
-	}
-
-	#top-bar .open-menu a:hover {
-		-webkit-box-shadow: inherit;
-		box-shadow: inherit;
-		text-decoration: inherit;
-	}
-
-	#side-bar {
-		display: inherit;
-		position: inherit;
-		z-index: inherit;
-		top: inherit;
-		left: inherit;
-		width: inherit;
-		height: inherit;
-		padding: inherit;
-		overflow-y: inherit;
-		-webkit-transition: inherit;
-		-o-transition: inherit;
-		transition: inherit;
-		background-color: inherit;
-	}
-
-	#side-bar::after {
-		content: inherit;
-		position: inherit;
-		top: inherit;
-		width: inherit;
-		height: inherit;
-		background-color: inherit;
-	}
-
-	#side-bar:target {
-		left: inherit;
-	}
-
-	#side-bar:target .close-menu {
-		display: inherit;
-		position: inherit;
-		z-index: inherit;
-		top: inherit;
-		left: inherit;
-		width: inherit;
-		height: inherit;
-		background: inherit;
-	}
-}
-
-#main-content {
-	position: inherit;
-	margin: inherit;
-	padding: inherit;
-}
-
-#breadcrumbs {
-	margin: inherit;
-}
-
-.pseudocrumbs {
-	margin: inherit;
-}
-
-.yui-navset .yui-content {
-	background-color: inherit;
-}
-
-.yui-navset .yui-nav a,
-.yui-navset .yui-navset-top .yui-nav a {
-	background-color: inherit;
-	background-image: inherit;
-}
-
-.yui-navset .yui-nav .selected a,
-.yui-navset .yui-nav .selected a:focus,
-.yui-navset .yui-nav .selected a:hover {
-	background: inherit;
-	color: inherit;
-}
-
-.yui-navset .yui-nav a:hover,
-.yui-navset .yui-nav a:focus {
-	background: inherit;
-	text-decoration: inherit;
-}
-
-.yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
-	border-color: inherit;
-}
-
-.yui-navset li {
-	line-height: inherit;
-}
-
-#footer {
-	margin-top: inherit;
-	padding: inherit;
-	clear: inherit;
-	background: inherit;
-	color: inherit;
-	font-size: inherit;
-}
-
-#footer .options {
-	display: inherit;
-	visibility: inherit;
-	width: inherit;
-	float: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-#footer a {
-	background: inherit;
-	color: inherit;
-}
-
-div.sexy-box {
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background: inherit;
-}
-
-div.sexy-box div.image-container img {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-}
-
-#page-content {
-	min-height: inherit;
-}
-
-.unmargined > p {
-	margin: inherit;
-	line-height: inherit;
-}
-
-.content-panel {
-	margin: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	box-shadow: inherit;
-}
-
-.content-panel.standalone {
-	background: inherit;
-}
-
-.content-panel.series {
-	margin-bottom: inherit;
-	padding: inherit;
-}
-
-.content-panel.centered {
-	text-align: inherit;
-}
-
-.content-panel.left-column {
-	width: inherit;
-	float: inherit;
-}
-
-.content-panel.right-column {
-	width: inherit;
-	float: inherit;
-}
-
-.content-panel .panel-heading {
-	padding: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-shadow: inherit;
-}
-
-.content-panel .panel-heading > p,
-.content-panel .panel-footer > p {
-	margin: inherit;
-}
-
-.content-panel .panel-body {
-	padding: inherit;
-	background: inherit;
-}
-
-.content-panel .panel-footer {
-	padding: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-	text-shadow: inherit;
-}
-
-.content-panel .panel-footer a {
-	color: inherit;
-}
-
-.content-panel .content-toc {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	box-shadow: inherit;
-	white-space: inherit;
-}
-
-.alternate:nth-child(even) {
-	background-color: inherit;
-}
-
-.page-rate-widget-box {
-	display: inherit;
-	margin-right: inherit;
-	margin-bottom: inherit;
-	border-radius: inherit;
-	box-shadow: inherit;
-}
-
-div.page-rate-widget-box .rate-points {
-	border: inherit;
-	border-right: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-}
-
-.page-rate-widget-box .rateup,
-.page-rate-widget-box .ratedown {
-	border-top: inherit;
-	border-bottom: inherit;
-	background-color: inherit;
-	font-weight: inherit;
-}
-
-.page-rate-widget-box .rateup a,
-.page-rate-widget-box .ratedown a {
-	margin: inherit;
-	padding: inherit;
-	background: inherit;
-	color: inherit;
-}
-
-.page-rate-widget-box .rateup a:hover,
-.page-rate-widget-box .ratedown a:hover {
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-.page-rate-widget-box .cancel {
-	border: inherit;
-	border-left: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-}
-
-.page-rate-widget-box .cancel a {
-	background: inherit;
-	color: inherit;
-	text-transform: inherit;
-}
-
-.page-rate-widget-box .cancel a:hover {
-	border-radius: inherit;
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-#main-content .page-tags {
-	margin: inherit;
-	padding: inherit;
-}
-
-#main-content .page-tags span {
-	display: inherit;
-	max-width: inherit;
-	padding: inherit;
-}
-
-#main-content .page-tags a {
-	display: inherit;
-	white-space: inherit;
-}
-
-.scp-image-block {
-	width: inherit;
-	border: inherit;
-	box-shadow: inherit;
-}
-
-.scp-image-block.block-right {
-	margin: inherit;
-	float: inherit;
-	clear: inherit;
-}
-
-.scp-image-block.block-left {
-	margin: inherit;
-	float: inherit;
-	clear: inherit;
-}
-
-.scp-image-block.block-center {
-	margin-right: inherit;
-	margin-left: inherit;
-}
-
-.scp-image-block img {
-	width: inherit;
-	border: inherit;
-}
-
-.scp-image-block .scp-image-caption {
-	width: inherit;
-	padding: inherit;
-	border-top: inherit;
-	background-color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-}
-
-.scp-image-block > p {
-	margin: inherit;
-}
-
-.scp-image-block .scp-image-caption > p {
-	margin: inherit;
-	padding: inherit;
-}
-
-#page-content a.collapsible-block-link {
-	overflow-wrap: inherit;
-}
-
-.footer-wikiwalk-nav {
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.licensebox .collapsible-block-link {
-	margin-left: inherit;
-	padding: inherit;
-	-webkit-transition: inherit;
-	-moz-transition: inherit;
-	transition: inherit;
-	opacity: inherit;
-	color: inherit;
-	font-weight: inherit;
-}
-
-.licensebox .collapsible-block-link:hover,
-.licensebox .collapsible-block-link:active {
-	opacity: inherit;
-}
-
-.forum-thread-box .description-block {
-	padding: inherit;
-	border-radius: inherit;
-	box-shadow: inherit;
-}
-
-.thread-container .post .head {
-	padding: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	box-shadow: inherit;
-}
-
-.post-container .post-container {
-	padding-left: inherit;
-	border-left: inherit;
-}
-
-.signature {
-	display: inherit;
-}
-
-#avatar-hover-container {
-	display: inherit;
-}
-
-.ruby,
-ruby {
-	display: inherit;
-	height: inherit;
-	line-height: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
-	white-space: inherit;
-}
-
-.rt,
-rt {
-	display: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	text-align: inherit;
-	white-space: inherit;
-}
-
-.keycap {
-	padding: inherit;
-	border: inherit;
-	border-bottom-width: inherit;
-	-moz-border-radius: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
-	border-color: inherit;
-	background-color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	white-space: inherit;
-}
-
-.tags {
-	display: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	-webkit-border-top-right-radius: inherit;
-	border-top-right-radius: inherit;
-	-webkit-border-bottom-right-radius: inherit;
-	border-bottom-right-radius: inherit;
-	background: inherit;
-	color: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
-	-moz-border-radius-bottomright: inherit;
-	-moz-border-radius-topright: inherit;
-}
-
-.tags::before {
-	content: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	padding: inherit;
-	float: inherit;
-	border-width: inherit;
-	border-style: inherit;
-	border-color: inherit;
-}
-
-.tags::after {
-	content: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	float: inherit;
-	-moz-border-radius: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
-	background: inherit;
-	-moz-box-shadow: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
-}
-
-.bblock {
-	transition: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-.bblock:hover {
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-.dblock {
-	transition: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-.dblock:hover {
-	background-color: inherit;
-	text-decoration: inherit;
-}
-
-div.blockquote {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-div.curved {
-	margin: inherit;
-	border-radius: inherit;
-}
-
-@media (max-width: 29.9375rem) {
-	blockquote,
-	div.blockquote,
-	div.curved {
-		margin: inherit;
-	}
-}
-
-@media (min-width: 30rem) and (max-width: 36.25rem) {
-	blockquote,
-	div.blockquote,
-	div.curved {
-		margin: inherit;
-	}
-}
-
-.changes-list-item td.title {
-	min-width: inherit;
-}
-
-.changes-list-item .flags {
-	width: inherit;
-	text-align: inherit;
-}
-
-.changes-list-item .mod-date {
-	text-align: inherit;
-}
-
-.changes-list-item .mod-by {
-	width: inherit;
-}
-
-@media (max-width: 27.1875rem) {
-	.changes-list-item .revision-no {
-		display: inherit;
-	}
-}
-
-.emph {
-	-webkit-text-emphasis-style: inherit;
-	text-emphasis-style: inherit;
-}
-
-::-webkit-scrollbar {
-	width: inherit;
-	height: inherit;
-	border: inherit;
-}
-
-::-webkit-scrollbar-track {
-	background: inherit;
-}
-
-::-webkit-scrollbar-thumb {
-	background: inherit;
-}
-
-.page-source {
-	word-break: inherit;
-}
-
-img,
-embed,
-video,
-object,
-iframe,
-table {
-	max-width: inherit;
-}
-
-:where(#page-content) div {
-	max-width: inherit;
-}
-
-#edit-page-comments {
-	width: inherit;
-}
-
-@media (max-width: 47.9375rem) {
-	#main-content {
-		max-width: inherit;
-		margin: inherit;
-		padding: inherit;
-		-webkit-transition: inherit;
-		-o-transition: inherit;
-		transition: inherit;
-	}
-
-	span,
-	a {
-		overflow-wrap: inherit;
-	}
-
-	.page-history tbody tr td:last-child {
-		width: inherit;
-	}
-
-	td.name {
-		width: inherit;
-	}
-
-	.yui-navset {
-		z-index: inherit;
-	}
-
-	#navi-bar,
-	#navi-bar-shadow {
-		display: inherit;
-	}
-
-	.page-options-bottom a {
-		padding: inherit;
-	}
-
-	.license-area {
-		font-size: inherit;
-	}
-
-	.owindow {
-		min-width: inherit;
-		max-width: inherit;
-	}
-
-	.modal-body .table,
-	.modal-body .table ~ div {
-		float: inherit;
-	}
-
-	.owindow .button-bar {
-		float: inherit;
-	}
-
-	.owindow div a.btn-primary {
-		width: inherit;
-		float: inherit;
-	}
-
-	.owindow div .btn-primary ~ div {
-		width: inherit;
-	}
-
-	#header {
-		max-width: inherit;
-		background-position: inherit;
-		background-size: inherit;
-	}
-
-	#header h1,
-	#header h2 {
-		margin-left: inherit;
-	}
-
-	#header h1 a {
-		font-size: inherit;
-	}
-
-	#search-top-box-input {
-		width: inherit;
-	}
-
-	.top-bar {
-		display: inherit;
-	}
-
-	.mobile-top-bar {
-		display: inherit;
-	}
-
-	.mobile-top-bar ul li:last-of-type ul {
-		right: inherit;
-	}
-}
-
-@media (max-width: 29.9375rem) {
-	#search-top-box-input {
-		display: inherit;
-	}
-
-	#page-content {
-		font-size: inherit;
-	}
-
-	#recent-posts-category {
-		width: inherit;
-	}
-
-	.page-options-bottom a {
-		padding: inherit;
-	}
-
-	.license-area {
-		font-size: inherit;
-	}
-
-	table.form td,
-	table.form th {
-		padding: inherit;
-		float: inherit;
-	}
-
-	#edit-page-title {
-		max-width: inherit;
-	}
-
-	.content-panel.left-column,
-	.content-panel.right-column {
-		width: inherit;
-		float: inherit;
-	}
-
-	#page-content div,
-	#page-content div table {
-		clear: inherit;
-	}
-
-	#page-content div.title {
-		word-break: inherit;
-	}
-}
-
-div.scpnet-interwiki-wrapper {
-	margin: inherit;
-}
-
-iframe.scpnet-interwiki-frame {
-	height: inherit;
-	border: inherit;
-}
-
-div#u-adult-warning {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background: inherit;
-	color: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-}
-
-div#u-adult-warning > div#u-adult-header {
-	color: inherit;
-	font-size: inherit;
-	text-shadow: inherit;
-}
-
-div#u-adult-warning > div#u-adult-header p {
-	margin: inherit;
-}
-
-div#u-adult-warning > .error-block {
-	margin: inherit;
-	margin-bottom: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-}
-
-div.preview {
-	display: inherit;
-}
-
-/* Wikidot Default Styles Normalizer
-	 ========================================================================== */
-
-body {
-	margin: inherit;
-	padding: inherit;
-	font-family: inherit;
-	font-size: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-img {
-	border-width: inherit;
-}
-
-blockquote {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-table {
-	empty-cells: inherit;
-}
-
-td {
-	text-align: inherit;
-}
-
-a {
-	color: inherit;
-}
-
-a:hover {
-	background-color: inherit;
-}
-
-h1 a {
-	text-decoration: inherit;
-}
-
-body.wait,
-body.wait * {
-	cursor: inherit;
-}
-
-a.newpage {
-	color: inherit;
-}
-
-#container-wrap-wrap {
-	position: inherit;
-}
-
-#container {
-	margin: inherit;
-	padding: inherit;
-}
-
-#header {
-	position: inherit;
-	z-index: inherit;
-	height: inherit;
-}
-
-#header h1 {
-	margin: inherit;
-	padding: inherit;
-}
-
-#header h2 {
-	margin: inherit;
-	padding: inherit;
-}
-
-#content-wrap {
-	margin: inherit;
-	padding: inherit;
-}
-
-#content-wrap {
-	_height: inherit;
-	min-height: inherit;
-}
-
-#side-bar {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	clear: inherit;
-}
-
-#side-bar ul {
-	margin: inherit;
-	padding: inherit;
-}
-
-#page-title {
-	margin: inherit;
-	padding-top: inherit;
-	border-bottom: inherit;
-	font-size: inherit;
-}
-
-#breadcrumbs {
-	margin-top: inherit;
-}
-
-#main-content {
-	margin-left: inherit;
-	padding: inherit;
-}
-
-#page-info-break {
-	height: inherit;
-	clear: inherit;
-	font-size: inherit;
-}
-
-#page-info {
-	margin: inherit;
-	clear: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.page-tags {
-	margin: inherit;
-	padding: inherit;
-	clear: inherit;
-	text-align: inherit;
-}
-
-.page-tags a {
-	margin: inherit;
-}
-
-.page-tags span {
-	padding-top: inherit;
-	border-top: inherit;
-	font-size: inherit;
-}
-
-#footer {
-	margin-top: inherit;
-	padding: inherit;
-	clear: inherit;
-	overflow: inherit;
-}
-
-#footer .options {
-	padding: inherit;
-	float: inherit;
-	font-size: inherit;
-}
-
-#footer p {
-	margin: inherit;
-	padding: inherit;
-}
-
-#license-area {
-	padding: inherit;
-	color: inherit;
-	text-align: inherit;
-}
-
-#search-top-box {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	right: inherit;
-}
-
-#search-top-box input.empty {
-	color: inherit;
-}
-
-#login-status {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	right: inherit;
-	overflow: inherit;
-}
-
-#login-status > a > strong {
+#login-status>a>strong {
 	-webkit-animation-name: inherit;
-	animation-name: inherit;
 	-webkit-animation-duration: inherit;
-	animation-duration: inherit;
 	-webkit-animation-timing-function: inherit;
-	animation-timing-function: inherit;
 	-webkit-animation-iteration-count: inherit;
-	animation-iteration-count: inherit;
 	text-decoration: inherit;
+}
+
+.printuser img.small {
+	height: inherit;
+	margin-right: inherit;
+	vertical-align: inherit;
 }
 
 #account-options {
@@ -1896,1279 +666,308 @@ a.newpage {
 	text-decoration: inherit;
 }
 
+#header h1,
+#header h2 {
+	max-height: inherit;
+	margin-left: inherit;
+	padding: inherit;
+	float: inherit;
+}
+
+#header h2 {
+	clear: inherit;
+	font-size: inherit;
+}
+
+#header h1 a {
+	background: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	text-decoration: inherit;
+}
+
+#header h1 a,
+#header h2 span {
+	display: inherit;
+	max-height: inherit;
+	margin: inherit;
+	padding: inherit;
+	color: inherit;
+	line-height: inherit;
+	text-shadow: inherit;
+}
+
+#header h2 span {
+	font-weight: inherit;
+}
+
 #top-bar {
 	position: inherit;
 	z-index: inherit;
-	right: inherit;
-	bottom: inherit;
+	z-index: inherit;
+	top: inherit;
+	height: inherit;
+	padding: inherit;
+	font-size: inherit;
+	line-height: inherit;
 }
 
 #top-bar ul {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
+	float: inherit;
 }
 
 #top-bar li {
 	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	list-style: inherit;
 }
 
-#top-bar li ul {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-}
-
-#top-bar li ul li {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-}
-
-#top-bar li a {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	text-align: inherit;
-	text-decoration: inherit;
-}
-
-#top-bar a:hover {
-	background-color: inherit;
-	text-decoration: inherit;
-}
-
-#top-bar li ul li a {
-	width: inherit;
-	border: inherit;
-	background-color: inherit;
-	text-align: inherit;
-}
-
-#top-bar li ul {
-	visibility: inherit;
-	position: inherit;
-}
-
-#top-bar li:hover ul,
-#top-bar li.sfhover ul {
-	visibility: inherit;
-}
-
-.edit-section-button {
-	margin-top: inherit;
-	margin-right: inherit;
-	padding: inherit;
-	float: inherit;
-	background-color: inherit;
-}
-
-#edit-section-content {
-	padding: inherit;
-	border: inherit;
-}
-
-.page-options-bottom {
-	height: inherit;
-	margin: inherit;
-	line-height: inherit;
-	text-align: inherit;
-}
-
-.page-options-bottom a {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-}
-
-.page-watch-options {
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.page-watch-options a {
-	text-decoration: inherit;
-}
-
-.page-watch-options a:hover {
-	text-decoration: inherit;
-}
-
-.change-textarea-size {
-	padding-right: inherit;
-	padding-left: inherit;
-	float: inherit;
-	text-align: inherit;
-}
-
-.change-textarea-size a {
-	padding: inherit;
-	border: inherit;
-	border-width: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
-}
-
-.edit-help-34 {
-	margin-top: inherit;
-}
-
-.preview-message {
-	position: inherit;
-	z-index: inherit;
-	right: inherit;
-	max-width: inherit;
-	padding: inherit;
-	border: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
-}
-
-#page-version-info {
-	position: inherit;
-	right: inherit;
-	max-width: inherit;
-	padding: inherit;
-	border: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
-}
-
-#lock-info {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-#action-area {
-	width: inherit;
-	padding: inherit;
-}
-
-a.action-area-close {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	font-size: inherit;
-}
-
-a.action-area-close:hover {
-	background-color: inherit;
-}
-
-.odate {
-	display: inherit;
-}
-
-.wiki-email {
-	visibility: inherit;
-}
-
-table.wiki-content-table {
-	margin: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-table.wiki-content-table td {
-	padding: inherit;
-	border: inherit;
-}
-
-table.wiki-content-table th {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-#toc {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-#toc .title {
-	margin: inherit;
-	padding: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-}
-
-#toc #toc-action-bar {
-	padding: inherit;
-}
-
-#toc-list {
-	margin: inherit;
-}
-
-#toc.floatright {
-	margin: inherit;
-	float: inherit;
-}
-
-#toc.floatleft {
-	margin: inherit;
-	float: inherit;
-}
-
-tt {
-	font-family: inherit;
-	font-size: inherit;
-}
-
-pre {
-	font-family: inherit;
-}
-
-.code {
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background-color: inherit;
-	font-family: inherit;
-}
-
-code {
-	font-family: inherit;
-}
-
-.math-equation {
-	display: inherit;
-	height: inherit;
-	padding: inherit;
-	text-align: inherit;
-}
-
-.equation-number {
-	margin-top: inherit;
-	float: inherit;
-	font-size: inherit;
-}
-
-.math-inline {
-	display: inherit;
-}
-
-#MathJax_Message {
-	display: inherit;
-}
-
-.math-inline span.merror {
-	color: inherit;
-}
-
-a.inline-math-error {
-	padding: inherit;
-	font-weight: inherit;
-}
-
-a.math-equation-error {
-	padding: inherit;
-	font-weight: inherit;
-}
-
-div.wiki-note {
-	width: inherit;
-	margin: inherit;
-	border: inherit;
-	text-align: inherit;
-}
-
-.footnote .f-heading,
-.equation .e-heading,
-.reference .r-heading {
-	font-weight: inherit;
-}
-
-.footnote .f-content,
-.reference .r-content {
-	margin: inherit;
-}
-
-.footnote .f-footer,
-.equation .e-footer,
-.reference .r-footer {
-	font-size: inherit;
-}
-
-.footnotes-footer {
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-}
-
-.footnotes-footer .title {
-	margin: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-a.footnoteref {
-	display: inherit;
-}
-
-.bibitems {
-	margin: inherit;
-	padding: inherit;
-}
-
-.bibitems .title {
-	margin: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.bibitem {
-	height: inherit;
-}
-
-a.bibcite {
-	display: inherit;
-}
-
-.image-container {
-	padding: inherit;
-}
-
-.image-container.aligncenter {
-	text-align: inherit;
-}
-
-.image-container.alignright {
-	padding-right: inherit;
-	text-align: inherit;
-}
-
-.image-container.alignleft {
-	padding-left: inherit;
-	text-align: inherit;
-}
-
-.image-container.floatright {
-	padding-right: inherit;
-	float: inherit;
-}
-
-.image-container.floatleft {
-	padding-left: inherit;
-	float: inherit;
-}
-
-.gallery-box {
-	width: inherit;
-	overflow: inherit;
-}
-
-.gallery-item {
-	margin: inherit;
-	float: inherit;
-	border: inherit;
-}
-
-.gallery-item table {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-item td {
-	text-align: inherit;
-}
-
-.gallery-item.square {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-item.thumbnail {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-item.small {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-item.medium {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-box .gallery-item table,
-.gallery-box .gallery-item .td {
-	margin: inherit;
-	padding: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-.new-page-box {
-	margin: inherit;
-	text-align: inherit;
-}
-
-#revision-list .pager {
-	margin: inherit;
-	text-align: inherit;
-}
-
-table.page-history td.optionstd a {
-	padding: inherit;
-	border: inherit;
-	text-decoration: inherit;
-}
-
-.diff-table {
-	width: inherit;
-}
-
-.diff-table td.from,
-.diff-table td.to {
-	width: inherit;
-	padding: inherit;
-	border: inherit;
-	vertical-align: inherit;
-}
-
-.diff-table td.action {
-	width: inherit;
-	padding: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
-}
-
-.inline-diff ins {
-	background-color: inherit;
-	white-space: inherit;
-}
-
-.inline-diff del {
-	background-color: inherit;
-	white-space: inherit;
-}
-
-.Differences {
-	width: inherit;
-	empty-cells: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-.Differences thead th {
-	padding: inherit;
-	border-bottom: inherit;
+#top-bar a {
 	background: inherit;
 	color: inherit;
-	text-align: inherit;
 }
 
-.Differences tbody th {
-	width: inherit;
-	padding: inherit;
+#top-bar ul li {
+	position: inherit;
+	border: inherit;
+}
+
+#top-bar ul li ul {
+	border: inherit;
+	border-top: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+#top-bar ul li a {
+	max-height: inherit;
+	padding-top: inherit;
+	padding-bottom: inherit;
+	overflow: inherit;
 	border-right: inherit;
-	background: inherit;
-	font-size: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
-}
-
-.Differences td {
-	padding: inherit;
-	font-family: inherit;
-	font-size: inherit;
-}
-
-.DifferencesSideBySide .ChangeInsert td.Left {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeInsert td.Right {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeDelete td.Left {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeDelete td.Right {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeReplace .Left {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeReplace .Right {
-	background: inherit;
-}
-
-.Differences ins,
-.Differences del {
+	border-left: inherit;
+	line-height: inherit;
 	text-decoration: inherit;
 }
 
-.DifferencesSideBySide .ChangeReplace ins,
-.DifferencesSideBySide .ChangeReplace del {
+#top-bar ul li.sfhover a,
+#top-bar ul li:hover a {
+	border-right: inherit;
+	border-left: inherit;
 	background: inherit;
-}
-
-.Differences .Skipped {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace .Left,
-.DifferencesInline .ChangeDelete .Left {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace .Right,
-.DifferencesInline .ChangeInsert .Right {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace ins {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace del {
-	background: inherit;
-}
-
-pre {
-	width: inherit;
-	overflow: inherit;
-}
-
-table.page-compare {
-	margin: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-table.page-compare td,
-table.page-compare th {
-	padding: inherit;
-	border: inherit;
-}
-
-.page-source {
-	padding: inherit;
-	border: inherit;
-}
-
-.page-source pre {
-	white-space: inherit;
-}
-
-.wiki-parse-error {
-	padding: inherit;
 	color: inherit;
 }
 
-.spantip {
-	text-decoration: inherit;
-	cursor: inherit;
-}
-
-.pager {
-	margin: inherit;
-	text-align: inherit;
-}
-
-.pager-no {
-	padding: inherit;
-}
-
-.pager .dots {
-	margin: inherit;
-	padding: inherit;
-}
-
-.pager a {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	text-decoration: inherit;
-}
-
-.pager .current {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-weight: inherit;
-}
-
-table.page-files {
-	margin: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-table.page-files td {
-	padding: inherit;
-}
-
-table.page-files .highlight {
-	background-color: inherit;
-}
-
-table.page-files .options {
-	text-align: inherit;
-}
-
-.printuser a {
-	margin-right: inherit;
-}
-
-.printuser img.small {
-	z-index: inherit;
+#top-bar ul li.sfhover ul li a,
+#top-bar ul li:hover ul li a {
 	width: inherit;
 	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-	vertical-align: inherit;
+	max-height: inherit;
+	padding-top: inherit;
+	padding-bottom: inherit;
+	border-top: inherit;
+	border-width: inherit;
+	line-height: inherit;
 }
 
-.printuser.anonymous img.small {
-	padding: inherit;
-}
-
-a.avatar-hover,
-a.avatar-hover:hover {
-	padding: inherit;
+#top-bar ul li.sfhover a:hover,
+#top-bar ul li:hover a:hover {
 	background: inherit;
-	background-image: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
 	text-decoration: inherit;
 }
 
-a.avatar-hover img {
-	vertical-align: inherit;
+#top-bar ul li ul {
+	width: inherit;
 }
 
-a.avatar-hover div {
-	position: inherit;
+#top-bar ul li ul,
+#top-bar ul li ul li,
+#top-bar ul li ul li.sfhover,
+#top-bar ul li ul li,
+#top-bar ul li ul li:hover,
+#top-bar ul li ul li a {
+	border-width: inherit;
 }
 
-a.avatar-hover div div {
+#top-bar ul li ul a,
+#top-bar a:hover {
+	color: inherit;
+}
+
+.top-bar ul li:last-of-type ul {
+	right: inherit;
+}
+
+#top-bar ul>li>ul {
+	*margin-top: inherit;
+}
+
+#side-bar {
+	display: inherit;
 	position: inherit;
 	top: inherit;
-	right: inherit;
 	left: inherit;
-	width: inherit;
-	height: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
-}
-
-a.avatar-hover div span {
-	z-index: inherit;
-	margin: inherit;
-	padding: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
-}
-
-.printuser a:hover img.large {
-	display: inherit;
-}
-
-.printuser .ip {
-	font-size: inherit;
-}
-
-.wait-block {
-	padding-left: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-}
-
-.error-inline {
-	border: inherit;
-	color: inherit;
-}
-
-.error-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-}
-
-.error-block .title {
-	margin-bottom: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.warning-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-}
-
-.warning-block .title {
-	margin-bottom: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.help-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-}
-
-.wait-icon {
-	height: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-}
-
-.wait-progress {
-	height: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-}
-
-table.form {
-	margin: inherit;
-}
-
-table.form.alignleft {
-	margin: inherit;
-}
-
-table.form td,
-table.form th {
-	padding: inherit;
-	vertical-align: inherit;
-}
-
-table.form > tr > td:first-child {
-	text-align: inherit;
-}
-
-table.form.grid {
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-table.form.grid td,
-table.form.grid th {
-	padding: inherit;
-	border: inherit;
-}
-
-table.form td div.sub,
-form div.sub {
-	color: inherit;
-	font-size: inherit;
-}
-
-table.form tr.invalid-value-row td {
-	background-color: inherit;
-}
-
-table.form div.field-error-message {
-	display: inherit;
-	color: inherit;
-}
-
-table.form tr.invalid-value-row div.field-error-message {
-	display: inherit;
-	color: inherit;
-}
-
-table.form tr.invalid-value-row td div.field-error-message {
-	display: inherit;
-}
-
-hr {
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-}
-
-* html hr {
-	margin: inherit;
-}
-
-input {
-	font-size: inherit;
-}
-
-div.buttons {
-	padding: inherit;
-	text-align: inherit;
-}
-
-div.buttons.alignleft {
-	text-align: inherit;
-}
-
-div.buttons input,
-input.button,
-button,
-a.button {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-div.buttons input:hover,
-input.button:hover,
-button:hover,
-a.button:hover {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.button.disabled,
-div.buttons input.disabled {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.button.disabled:hover,
-div.buttons input.disabled:hover {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.checkbox {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.text {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-}
-
-input.text.invalid {
-	border-color: inherit;
-}
-
-textarea {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-}
-
-div.note {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	font-size: inherit;
-}
-
-div.note-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-}
-
-div.site-list-item {
-	margin: inherit;
-	padding: inherit;
-}
-
-div.site-list-item:hover {
-	background-color: inherit;
-}
-
-div.site-list-item .name {
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-div.site-list-item .description {
-	padding-left: inherit;
-	font-style: inherit;
-}
-
-div.site-list-item .options {
-	margin-right: inherit;
 	float: inherit;
+	clear: inherit;
 }
 
-.search-highlight {
-	background-color: inherit;
-}
-
-.self-ads {
-	width: inherit;
-	margin: inherit;
+#side-bar,
+#side-bar .side-block,
+#interwiki .side-block {
 	padding: inherit;
 	border: inherit;
 }
 
-.self-ads .title {
-	padding-bottom: inherit;
-	font-size: inherit;
+#side-bar .side-block,
+#interwiki .side-block {
+	margin-bottom: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
 }
 
-.self-ads .image {
+#side-bar .side-area {
+	padding: inherit;
+}
+
+#side-bar .heading,
+#interwiki .heading {
+	margin-top: inherit;
+	margin-bottom: inherit;
 	padding-left: inherit;
-	float: inherit;
+	border-bottom: inherit;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
 }
 
-div.wd-adunit {
+#side-bar p,
+#side-bar div.menu-item,
+#interwiki p,
+#interwiki div.menu-item {
 	margin: inherit;
-	text-align: inherit;
 }
 
-div.wd-adunit-side_slide {
+#side-bar div.menu-item img,
+#interwiki div.menu-item img {
 	position: inherit;
-	z-index: inherit;
-	right: inherit;
-	width: inherit;
-}
-
-div.wd-adunit-mobile_anchor {
-	position: inherit;
-	z-index: inherit;
 	bottom: inherit;
-	left: inherit;
 	width: inherit;
 	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	transform-origin: inherit;
-	background-color: inherit;
-}
-
-div.bsa_linkbox {
-	margin: inherit;
-}
-
-iframe[id^="revmob-ad-"] {
-	position: inherit;
-	min-width: inherit;
-	max-width: inherit;
-}
-
-#house-ad-1 {
-	padding: inherit;
+	margin-right: inherit;
 	border: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	background: inherit;
-	color: inherit;
-	font-family: inherit;
-	text-align: inherit;
 }
 
-#house-ad-1 .close {
-	display: inherit;
-	padding: inherit;
-	float: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	background: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
-}
-
-#house-ad-1 .close:hover {
-	background: inherit;
-	text-decoration: inherit;
-}
-
-#house-ad-1 p {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
+#side-bar div.menu-item a,
+#interwiki div.menu-item a {
 	font-weight: inherit;
 }
 
-#house-ad-1 .button-wrap {
-	padding: inherit;
-}
-
-#house-ad-1 .button-wrap a {
-	padding: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	border-color: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
-}
-
-#house-ad-1 .button-wrap a:hover {
-	border-color: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-.hubzo-ad {
-	font-size: inherit;
-	line-height: inherit;
-	text-align: inherit;
-}
-
-.hubzo-ad .link a {
-	color: inherit;
-	font-size: inherit;
-}
-
-.hubzo-ad .network {
+#side-bar div.menu-item.inactive img {
 	opacity: inherit;
+}
+
+#side-bar div.menu-item.inactive a {
+	color: inherit;
+}
+
+#side-bar div.menu-item .sub-text {
+	color: inherit;
 	font-size: inherit;
 }
 
-.ext-au {
-	max-width: inherit;
-	margin: inherit;
-	overflow: inherit;
-	text-align: inherit;
-	cursor: inherit;
+#side-bar .collapsible-block-folded {
+	background: inherit;
 }
 
-.ext-au img.image {
-	height: inherit;
-	float: inherit;
-}
-
-.ext-au .title {
+#side-bar .collapsible-block-link {
 	margin-left: inherit;
-	font-size: inherit;
 	font-weight: inherit;
 }
 
-.ext-au .description {
-	margin-left: inherit;
-	padding: inherit;
-	opacity: inherit;
+#side-bar .collapsible-block-unfolded-link {
+	border-bottom: inherit;
 }
 
-.ext-au .link {
-	margin-left: inherit;
-}
-
-.rss-icon {
-	vertical-align: inherit;
-}
-
-#side-bar div.foldable-list-container ul li ul li {
+#side-bar .collapsible-block-unfolded-link .collapsible-block-link {
+	margin-top: inherit;
+	margin-bottom: inherit;
+	color: inherit;
 	font-size: inherit;
 }
 
-#login-iframe {
-	height: inherit;
+#side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover {
+	color: inherit;
+	text-decoration: inherit;
 }
 
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li,
-.yui-navset .yui-navset-bottom .yui-nav li {
-	margin: inherit;
+#side-bar ul {
+	padding: inherit;
+	list-style-type: inherit;
 }
 
-.yui-navset-left .yui-nav li,
-.yui-navset-right .yui-nav li {
-	margin: inherit;
-}
-
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-left .yui-nav,
-.yui-navset-right .yui-nav {
+div.scpnet-interwiki-wrapper {
 	width: inherit;
+	margin-left: inherit;
 }
 
-.yui-navset-top .yui-nav,
-.yui-navset-bottom .yui-nav {
-	width: inherit;
+iframe.scpnet-interwiki-frame {
+	border: inherit;
 }
 
-.yui-navset .yui-navset-left,
-.yui-navset-left {
-	padding: inherit;
-}
-
-.yui-navset-right {
-	padding: inherit;
-}
-
-.yui-navset-top,
-.yui-navset-bottom {
-	padding: inherit;
-}
-
-.yui-nav,
-.yui-nav li {
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
-}
-
-.yui-navset .yui-nav li em {
-	font-style: inherit;
-}
-
-.yui-navset {
+#main-content {
 	position: inherit;
-	zoom: inherit;
+	margin: inherit;
+	padding: inherit;
+}
+
+#page-info-break {
+	height: 1px;
+	clear: both;
+	font-size: 1px;
+}
+
+#page-info {
+	margin: inherit;
+	clear: inherit;
+	font-size: inherit;
+	text-align: inherit;
+}
+
+.page-tags {
+	margin: inherit;
+	padding: inherit;
+	clear: inherit;
+	text-align: inherit;
+}
+
+.page-tags a {
+	margin: inherit;
+}
+
+.page-tags span {
+	padding-top: inherit;
+	border-top: inherit;
+	font-size: inherit;
+}
+
+#breadcrumbs {
+	margin: inherit;
+}
+
+.psuedocrumbs {
+	margin: inherit;
 }
 
 .yui-navset .yui-content {
-	zoom: inherit;
-}
-
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li,
-.yui-navset .yui-navset-bottom .yui-nav li {
-	zoom: inherit;
-	vertical-align: inherit;
-	cursor: inherit;
-}
-
-.yui-navset-left .yui-nav li,
-.yui-navset-right .yui-nav li {
-	display: inherit;
-}
-
-.yui-navset .yui-nav a {
-	position: inherit;
-}
-
-.yui-navset .yui-nav li a,
-.yui-navset-top .yui-nav li a,
-.yui-navset-bottom .yui-nav li a {
-	display: inherit;
-	zoom: inherit;
-	vertical-align: inherit;
-}
-
-.yui-navset-left .yui-nav li a,
-.yui-navset-right .yui-nav li a {
-	display: inherit;
-}
-
-.yui-navset-bottom .yui-nav li a {
-	vertical-align: inherit;
-}
-
-.yui-navset .yui-nav li a em,
-.yui-navset-top .yui-nav li a em,
-.yui-navset-bottom .yui-nav li a em {
-	display: inherit;
-}
-
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-left .yui-nav,
-.yui-navset-right .yui-nav {
-	position: inherit;
-	z-index: inherit;
-}
-
-.yui-navset-top .yui-nav,
-.yui-navset-bottom .yui-nav {
-	position: inherit;
-}
-
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset-left .yui-nav {
-	right: inherit;
-	left: inherit;
-}
-
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-right .yui-nav {
-	right: inherit;
-	left: inherit;
-}
-
-.yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
-	zoom: inherit;
-	border: inherit;
-	border-width: inherit;
-}
-
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li {
-	margin: inherit;
-	padding: inherit;
-	zoom: inherit;
-}
-
-.yui-navset .yui-nav .selected,
-.yui-navset .yui-navset-top .yui-nav .selected {
-	margin: inherit;
+	background-color: inherit;
 }
 
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
-	position: inherit;
-	border: inherit;
-	border-width: inherit;
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-.yui-navset .yui-nav a em,
-.yui-navset .yui-navset-top .yui-nav a em {
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	bottom: inherit;
-	left: inherit;
-	padding: inherit;
-	border: inherit;
-	border-width: inherit;
-	cursor: inherit;
+	background-color: inherit;
+	background-image: inherit;
 }
 
 .yui-navset .yui-nav .selected a,
@@ -3180,1630 +979,1008 @@ iframe[id^="revmob-ad-"] {
 
 .yui-navset .yui-nav a:hover,
 .yui-navset .yui-nav a:focus {
-	outline: inherit;
 	background: inherit;
-}
-
-.yui-navset .yui-nav .selected a em {
-	padding: inherit;
-}
-
-.yui-navset .yui-nav .selected a,
-.yui-navset .yui-nav .selected a em {
-	border-color: inherit;
-}
-
-.yui-navset .yui-content {
-	background: inherit;
-}
-
-.yui-navset .yui-content,
-.yui-navset .yui-navset-top .yui-content {
-	padding: inherit;
-	border: inherit;
-	border-top-color: inherit;
-}
-
-.yui-navset-left .yui-nav,
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-right .yui-nav {
-	top: inherit;
-	bottom: inherit;
-	border-width: inherit;
-}
-
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-right .yui-nav {
-	border-width: inherit;
-}
-
-.yui-navset-left .yui-nav li,
-.yui-navset .yui-navset-left .yui-nav li,
-.yui-navset-right .yui-nav li {
-	margin: inherit;
-	padding: inherit;
-}
-
-.yui-navset-right .yui-nav li {
-	padding: inherit;
-}
-
-.yui-navset-left .yui-nav .selected,
-.yui-navset .yui-navset-left .yui-nav .selected {
-	margin: inherit;
-}
-
-.yui-navset-right .yui-nav .selected {
-	margin: inherit;
-}
-
-.yui-navset-left .yui-nav a,
-.yui-navset-right .yui-nav a {
-	border-width: inherit;
-}
-
-.yui-navset-left .yui-nav a em,
-.yui-navset .yui-navset-left .yui-nav a em,
-.yui-navset-right .yui-nav a em {
-	top: inherit;
-	left: inherit;
-	padding: inherit;
-	border-width: inherit;
-}
-
-.yui-navset-right .yui-nav a em {
-	right: inherit;
-	left: inherit;
-	border-width: inherit;
-}
-
-.yui-navset-left .yui-nav a,
-.yui-navset-left .yui-nav .selected a,
-.yui-navset-left .yui-nav a:hover,
-.yui-navset-right .yui-nav a,
-.yui-navset-right .yui-nav .selected a,
-.yui-navset-right .yui-nav a:hover,
-.yui-navset-bottom .yui-nav a,
-.yui-navset-bottom .yui-nav .selected a,
-.yui-navset-bottom .yui-nav a:hover {
-	background-image: inherit;
-}
-
-.yui-navset-left .yui-content {
-	border: inherit;
-	border-left-color: inherit;
-}
-
-.yui-navset-bottom .yui-nav,
-.yui-navset .yui-navset-bottom .yui-nav {
-	border-width: inherit;
-}
-
-.yui-navset .yui-navset-bottom .yui-nav .selected,
-.yui-navset-bottom .yui-nav .selected {
-	margin: inherit;
-}
-
-.yui-navset .yui-navset-bottom .yui-nav li,
-.yui-navset-bottom .yui-nav li {
-	padding: inherit;
-	vertical-align: inherit;
-}
-
-.yui-navset .yui-navset-bottom .yui-nav a em,
-.yui-navset-bottom .yui-nav a em {
-	top: inherit;
-	bottom: inherit;
-	border-width: inherit;
-}
-
-.yui-navset-bottom .yui-content,
-.yui-navset .yui-navset-bottom .yui-content {
-	border: inherit;
-	border-bottom-color: inherit;
-}
-
-/*
-.hl-default {
-	color: inherit;
-}
-.hl-code {
-	color: inherit;
-}
-.hl-brackets {
-	color: inherit;
-}
-.hl-comment {
-	color: inherit;
-}
-.hl-quotes {
-	color: inherit;
-}
-.hl-string {
-	color: inherit;
-}
-.hl-identifier {
-	color: inherit;
-}
-.hl-builtin {
-	color: inherit;
-}
-.hl-reserved {
-	color: inherit;
-}
-.hl-inlinedoc {
-	color: inherit;
-}
-.hl-var {
-	color: inherit;
-}
-.hl-url {
-	color: inherit;
-}
-.hl-special {
-	color: inherit;
-	font-weight: inherit;
-}
-.hl-number {
-	color: inherit;
-}
-.hl-inlinetags {
-	color: inherit;
-	font-weight: inherit;
-}
-
-.hl-gutter {
-	background-color: inherit;
-	color: inherit;
-}
-*/
-
-.autocomplete-container {
-	position: inherit;
-	width: inherit;
-	margin: inherit;
-}
-
-.autocomplete-input {
-	display: inherit;
-	position: inherit;
-	width: inherit;
-}
-
-.autocomplete-list {
-	position: inherit;
-	z-index: inherit;
-	left: inherit;
-	width: inherit;
-	padding: inherit;
-	overflow: inherit;
-	text-align: inherit;
-}
-
-.yui-ac-content {
-	border: inherit;
-	background: inherit;
-}
-
-.autocomplete-list ul {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
-}
-
-.autocomplete-list li {
-	padding: inherit;
-	white-space: inherit;
-	cursor: inherit;
-}
-
-.autocomplete-list li.yui-ac-highlight {
-	background-color: inherit;
-}
-
-.forum-breadcrumbs {
-	margin-top: inherit;
-}
-
-.forum-group {
-	margin: inherit;
-}
-
-.forum-group div.head {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-}
-
-.forum-group div.head .title {
-	font-weight: inherit;
-}
-
-.forum-group table {
-	width: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-.forum-group table td {
-	padding: inherit;
-	border: inherit;
-}
-
-.forum-group table td.name .description {
-	color: inherit;
-	font-size: inherit;
-}
-
-.forum-group table td.name .title {
-	font-weight: inherit;
-}
-
-.forum-group table td.last {
-	width: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-group table td.posts {
-	width: inherit;
-	text-align: inherit;
-}
-
-.forum-group table td.threads {
-	width: inherit;
-	text-align: inherit;
-}
-
-.forum-group table tr.head td {
-	background-color: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box {
-	margin: inherit;
-}
-
-.forum-category-box .description-block {
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-.forum-category-box .description-block .statistics {
-	padding: inherit;
-	float: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box .options {
-	margin: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box table {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-	border: inherit;
-}
-
-.forum-category-box table td {
-	padding: inherit;
-	border: inherit;
-}
-
-.forum-category-box table tr.head td {
-	background-color: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box table td.name .description {
-	color: inherit;
-	font-size: inherit;
-}
-
-.forum-category-box table td.name .title {
-	font-weight: inherit;
-}
-
-.forum-category-box table td.last {
-	width: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box table td.posts {
-	width: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box table td.started {
-	width: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-category-box .pager {
-	margin: inherit;
-	text-align: inherit;
-}
-
-.forum-new-thread-box .description {
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-.forum-new-thread-box .description .statistics {
-	padding: inherit;
-	float: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-thread-box {
-	margin: inherit;
-}
-
-.forum-thread-box .description-block {
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-.forum-thread-box .description-block .head {
-	color: inherit;
-	font-size: inherit;
-}
-
-.forum-thread-box .description-block .statistics {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.forum-thread-box .options {
-	margin: inherit;
-	text-align: inherit;
-}
-
-.forum-thread-box .action-area {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-}
-
-.thread-container .post {
-	width: inherit;
-	padding: inherit;
-}
-
-.thread-container .post .options a {
-	margin: inherit;
-	padding: inherit;
-	color: inherit;
-}
-
-.thread-container .post .head {
-	padding: inherit;
-	background-color: inherit;
-}
-
-.thread-container .post .long .head .options {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-}
-
-.thread-container .post .long .head .title {
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.thread-container .post .long .changes {
-	margin-bottom: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.thread-container .post .long .changes a {
-	color: inherit;
-}
-
-.thread-container .post .long .revisions {
-	padding: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-
-.thread-container .post .long .revisions .title {
-	padding-bottom: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.thread-container .post .long .revisions table {
-	margin: inherit;
-	font-size: inherit;
-}
-
-.thread-container .post .long .revisions table tr.active td {
-	background-color: inherit;
-}
-
-.thread-container .post .long .options {
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	text-align: inherit;
-}
-
-.thread-container .post .short {
-	display: inherit;
-	padding: inherit;
-	background-color: inherit;
-}
-
-.thread-container .post .short .options {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	color: inherit;
-}
-
-.thread-container .post .signature {
-	font-size: inherit;
-}
-
-.thread-container .post .signature hr.signature-separator {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-}
-
-.thread-container .post.folded .long {
-	display: inherit;
-}
-
-.thread-container .post.folded .short {
-	display: inherit;
-}
-
-.post-container .post-container {
-	margin-left: inherit;
-}
-
-.post-container.fordelete {
-	padding: inherit;
-	border: inherit;
-}
-
-div.new-post {
-	margin: inherit;
-	text-align: inherit;
-}
-
-div.new-post a {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-.forum-recent-posts-box .pager {
-	margin: inherit;
-	text-align: inherit;
-}
-
-.forum-mini-stat {
-	margin: inherit;
-}
-
-.forum-mini-stat .item .info {
-	color: inherit;
-	font-size: inherit;
-}
-
-.wd-editor-toolbar-panel div {
-	height: inherit;
-}
-
-.wd-editor-toolbar-panel a {
-	margin: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-.wd-editor-toolbar-panel a:hover {
-	border-color: inherit;
-}
-
-.wd-editor-toolbar-panel ul {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	list-style: inherit;
-}
-
-.wd-editor-toolbar-panel ul li {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-}
-
-.wd-editor-toolbar-panel ul li ul {
-	position: inherit;
-	z-index: inherit;
-	left: inherit;
-}
-
-.wd-editor-toolbar-panel ul li ul li a {
-	float: inherit;
-}
-
-.wd-editor-toolbar-panel ul li ul li {
-	margin: inherit;
-}
-
-.wd-editor-toolbar-panel ul li ul li a {
-	display: inherit;
-	float: inherit;
-}
-
-.wd-editor-toolbar-panel ul li:hover ul,
-.wd-editor-toolbar-panel ul li.sfhover ul {
-	left: inherit;
-	border: inherit;
-	background-color: inherit;
-}
-
-.wd-editor-toolbar-panel li.hseparator {
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	background-color: inherit;
-}
-
-.wd-editor-toolbar-panel ul li a {
-	display: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-}
-
-.wd-editor-toolbar-panel ul li a span {
-	display: inherit;
-}
-
-.wd-editor-toolbar-panel a {
-	background-image: inherit;
-}
-
-.wd-editor-toolbar-panel a:hover {
-	background-image: inherit;
-}
-
-a.weditor-bold {
-	background-position: inherit;
-}
-
-a.weditor-italic {
-	background-position: inherit;
-}
-
-a.weditor-underline {
-	background-position: inherit;
-}
-
-a.weditor-strikethrough {
-	background-position: inherit;
-}
-
-a.weditor-teletype {
-	background-position: inherit;
-}
-
-a.weditor-quote {
-	background-position: inherit;
-}
-
-a.weditor-superscript {
-	background-position: inherit;
-}
-
-a.weditor-subscript {
-	background-position: inherit;
-}
-
-a.weditor-raw {
-	background-position: inherit;
-}
-
-a.weditor-hr {
-	background-position: inherit;
-}
-
-a.weditor-div {
-	background-position: inherit;
-}
-
-a.weditor-clearfloat {
-	background-position: inherit;
-}
-
-a.weditor-clearfloatleft {
-	background-position: inherit;
-}
-
-a.weditor-clearfloatright {
-	background-position: inherit;
-}
-
-a.weditor-divwiz {
-	background-position: inherit;
-}
-
-a.weditor-table {
-	background-position: inherit;
-}
-
-a.weditor-toc {
-	background-position: inherit;
-}
-
-a.weditor-uri {
-	background-position: inherit;
-}
-
-a.weditor-uriwiz {
-	background-position: inherit;
-}
-
-a.weditor-pagelink {
-	background-position: inherit;
-}
-
-a.weditor-pagelinkwiz {
-	background-position: inherit;
-}
-
-a.weditor-image {
-	background-position: inherit;
-}
-
-a.weditor-imagewiz {
-	background-position: inherit;
-}
-
-a.weditor-video {
-	background-position: inherit;
-}
-
-a.weditor-audio {
-	background-position: inherit;
-}
-
-a.weditor-code {
-	background-position: inherit;
-}
-
-a.weditor-codewiz {
-	background-position: inherit;
-}
-
-a.weditor-numlist {
-	background-position: inherit;
-}
-
-a.weditor-bullist {
-	background-position: inherit;
-}
-
-a.weditor-incindent {
-	background-position: inherit;
-}
-
-a.weditor-decindent {
-	background-position: inherit;
-}
-
-a.weditor-deflist {
-	background-position: inherit;
-}
-
-a.weditor-footnote {
-	background-position: inherit;
-}
-
-a.weditor-math {
-	background-position: inherit;
-}
-
-a.weditor-mathinline {
-	background-position: inherit;
-}
-
-a.weditor-eqref {
-	background-position: inherit;
-}
-
-a.weditor-bib {
-	background-position: inherit;
-}
-
-a.weditor-bibcite {
-	background-position: inherit;
-}
-
-a.weditor-h1 {
-	background-position: inherit;
-}
-
-a.weditor-h2 {
-	background-position: inherit;
-}
-
-a.weditor-h3 {
-	background-position: inherit;
-}
-
-a.weditor-h4 {
-	background-position: inherit;
-}
-
-a.weditor-h5 {
-	background-position: inherit;
-}
-
-a.weditor-h6 {
-	background-position: inherit;
-}
-
-a.weditor-html {
-	background-position: inherit;
-}
-
-.odialog-shader,
-.odialog-shader-iframe {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-}
-
-.odialog-shader {
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
-}
-
-.odialog-shader-iframe {
-	filter: inherit;
-	opacity: inherit;
-}
-
-table#odialog-box-container {
-	position: inherit;
-	left: inherit;
-	width: inherit;
-	margin: inherit;
-}
-
-table#odialog-box-container td {
-	width: inherit;
-	height: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
-}
-
-table#odialog-box-container td div {
-	margin: inherit;
-}
-
-#odialog-wrapper {
-	text-align: inherit;
-}
-
-#odialog-container {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	width: inherit;
-	height: inherit;
-}
-
-.owindow {
-	position: inherit;
-	width: inherit;
-	border: inherit;
-	background-color: inherit;
-	text-align: inherit;
-}
-
-.owindow .close {
-	padding: inherit;
-	float: inherit;
-	font-size: inherit;
-	cursor: inherit;
-}
-
-.owindow .title {
-	height: inherit;
-	padding: inherit;
-	background-color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	cursor: inherit;
-}
-
-.owindow .content {
-	padding: inherit;
-}
-
-.owindow .button-bar {
-	margin: inherit;
-	padding: inherit;
-	text-align: inherit;
-}
-
-.owindow .button-bar input {
-	padding: inherit;
-}
-
-.owindow .button-bar a {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
 	text-decoration: inherit;
 }
 
-.owindow .button-bar a:hover {
-	background-color: inherit;
+.yui-navset .yui-nav,
+.yui-navset .yui-navset-top .yui-nav,
+.yui-navset .yui-nav,
+.yui-navset .yui-navset-top .yui-nav {
+	border-color: inherit;
 }
 
-.owindow.owait {
-	width: inherit;
-}
-
-.owindow.owait .content {
-	margin: inherit;
-	padding: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-}
-
-.owindow.osuccess {
-	width: inherit;
-}
-
-.owindow.osuccess .content {
-	margin: inherit;
-	padding: inherit;
-}
-
-.box444 {
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	background-color: inherit;
-}
-
-.box444 .button-bar {
-	padding: inherit;
-	background-color: inherit;
-	text-align: inherit;
-}
-
-.hovertip {
+.yui-navset .yui-nav li a em,
+.yui-navset-top .yui-nav li a em,
+.yui-navset-bottom .yui-nav li a em {
 	display: inherit;
-	z-index: inherit;
-	width: inherit;
-	border: inherit;
-	background-color: inherit;
 }
 
-.hovertip .title {
+.yui-navset li {
+	line-height: inherit;
+}
+
+#footer {
+	margin-top: inherit;
 	padding: inherit;
+	clear: inherit;
+	background: inherit;
+	color: inherit;
 	font-size: inherit;
-	font-weight: inherit;
 }
 
-.hovertip .content {
-	padding: inherit;
-}
-
-#jquery-overlay {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-}
-
-#jquery-lightbox {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	line-height: inherit;
-	text-align: inherit;
-}
-
-#jquery-lightbox a img {
-	border: inherit;
-}
-
-#lightbox-container-image-box {
-	position: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	background-color: inherit;
-}
-
-#lightbox-container-image {
-	padding: inherit;
-}
-
-#lightbox-loading {
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	line-height: inherit;
-	text-align: inherit;
-}
-
-#lightbox-nav {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-}
-
-#lightbox-container-image-box > #lightbox-nav {
-	left: inherit;
-}
-
-#lightbox-nav a {
-	outline: inherit;
-}
-
-#lightbox-nav-btnPrev,
-#lightbox-nav-btnNext {
+#footer .options {
 	display: inherit;
+	visibility: inherit;
 	width: inherit;
-	height: inherit;
-	zoom: inherit;
-}
-
-#lightbox-nav-btnPrev {
-	left: inherit;
 	float: inherit;
+	font-size: inherit;
+	text-align: inherit;
 }
 
-#lightbox-nav-btnNext {
-	right: inherit;
-	float: inherit;
-}
-
-#lightbox-container-image-data-box {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	background-color: inherit;
-	font: inherit;
-	line-height: inherit;
-}
-
-#lightbox-container-image-data {
-	padding: inherit;
+#footer a {
+	background: inherit;
 	color: inherit;
 }
 
-#lightbox-container-image-data #lightbox-image-details {
-	width: inherit;
-	float: inherit;
+#footer p {
+	margin: inherit;
+	padding: inherit;
+}
+
+#license-area {
+	padding: inherit;
+	color: inherit;
 	text-align: inherit;
 }
 
-#lightbox-image-details-caption {
+#toc {
+	border: inherit;
+	background-color: inherit;
+}
+
+#toc #toc-action-bar {
+	padding: inherit;
+}
+
+#toc .title {
+	margin: inherit;
+	font-weight: inherit;
+	text-align: inherit;
+}
+
+#revision-list .pager {
+	margin: initial;
+	text-align: initial;
+}
+
+.pager {
+	margin: initial;
+	text-align: initial;
+}
+
+.pager-no {
+	padding: initial;
+}
+
+.pager .dots {
+	margin: initial;
+	padding: initial;
+}
+
+.pager a {
+	margin: initial;
+	padding: initial;
+	border: initial;
+	text-decoration: initial;
+}
+
+.pager .current {
+	margin: initial;
+	padding: initial;
+	border: initial;
+	background-color: initial;
+	color: initial;
+	font-weight: initial;
+}
+
+div.sexy-box {
+	overflow: inherit;
+	background: inherit;
+}
+
+div.sexy-box,
+div.sexy-box div.image-container img {
+	margin: inherit;
+	padding: inherit;
+	border: inherit;
+}
+
+#page-content {
+	min-height: inherit;
+}
+
+.unmargined>p {
+	margin: inherit;
+	line-height: inherit;
+}
+
+.content-panel {
+	margin: inherit;
+	border: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background-color: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+.content-panel.standalone {
+	background: inherit;
+}
+
+.content-panel.series {
+	margin-bottom: inherit;
+	padding: inherit;
+}
+
+.content-panel.centered {
+	text-align: inherit;
+}
+
+.content-panel.left-column,
+.content-panel.right-column {
+	width: inherit;
+	float: inherit;
+}
+
+.content-panel .panel-heading {
+	padding: inherit;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-shadow: inherit;
+}
+
+.content-panel .panel-heading>p,
+.content-panel .panel-footer>p {
+	margin: inherit;
+}
+
+.content-panel .panel-body {
+	padding: inherit;
+	background: inherit;
+}
+
+.content-panel .panel-footer {
+	padding: inherit;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-align: inherit;
+	text-shadow: inherit;
+}
+
+.content-panel .panel-footer a {
+	color: inherit;
+}
+
+.content-panel .content-toc {
+	margin: inherit;
+	padding: inherit;
+	float: inherit;
+	border: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background-color: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+	white-space: inherit;
+}
+
+.alternate:nth-child(even) {
+	background-color: inherit;
+}
+
+.page-rate-widget-box {
+	display: inherit;
+	margin-right: inherit;
+	margin-bottom: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+div.page-rate-widget-box .rate-points {
+	border: inherit;
+	border-right: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background-color: inherit;
+}
+
+.page-rate-widget-box .rateup,
+.page-rate-widget-box .ratedown {
+	border-top: inherit;
+	border-bottom: inherit;
+	background-color: inherit;
 	font-weight: inherit;
 }
 
-#lightbox-image-details-currentNumber {
+.page-rate-widget-box .rateup a,
+.page-rate-widget-box .ratedown a {
+	margin: inherit;
+	padding: inherit;
+	background: inherit;
+	color: inherit;
+}
+
+.page-rate-widget-box .rateup a:hover,
+.page-rate-widget-box .ratedown a:hover {
+	background: inherit;
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.page-rate-widget-box .cancel {
+	border: inherit;
+	border-left: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background-color: inherit;
+}
+
+.page-rate-widget-box .cancel a {
+	background: inherit;
+	color: inherit;
+	text-transform: inherit;
+}
+
+.page-rate-widget-box .cancel a:hover {
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background: inherit;
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.heritage-rating-module {
 	display: inherit;
-	padding-bottom: inherit;
+	padding: inherit;
+	border: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background-color: inherit;
+}
+
+.heritage-rating-module,
+.heritage-rating-module .page-rate-widget-box {
+	margin-right: inherit;
+	margin-bottom: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+.heritage-rating-module .heritage-emblem {
+	position: inherit;
+	top: inherit;
+	left: inherit;
+	width: inherit;
+	height: inherit;
+	margin-right: inherit;
+	float: inherit;
+	overflow: inherit;
+}
+
+.heritage-rating-module .heritage-emblem img {
+	width: inherit;
+	height: inherit;
+	border: inherit;
+}
+
+#main-content .page-tags {
+	margin: inherit;
+	padding: inherit;
+}
+
+#main-content .page-tags span {
+	display: inherit;
+	max-width: inherit;
+	padding: inherit;
+}
+
+#main-content .page-tags a {
+	display: inherit;
+	white-space: inherit;
+}
+
+.scp-image-block {
+	width: inherit;
+	border: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+.scp-image-block.block-right,
+.scp-image-block.block-left {
+	margin: inherit;
+	float: inherit;
 	clear: inherit;
 }
 
-#lightbox-secNav-btnClose {
+.scp-image-block.block-center {
+	margin-right: inherit;
+	margin-left: inherit;
+}
+
+.scp-image-block img {
 	width: inherit;
-	padding-bottom: inherit;
-	float: inherit;
+	border: inherit;
 }
 
-#navi-bar-shadow {
-	height: inherit;
-}
-
-#navi-bar {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
+.scp-image-block .scp-image-caption {
 	width: inherit;
-	height: inherit;
-	overflow: inherit;
-	border-bottom: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	background-position: inherit;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-}
-
-#navi-bar a {
-	margin: inherit;
 	padding: inherit;
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
-}
-
-#navi-bar a:hover {
+	border-top: inherit;
 	background-color: inherit;
-	text-decoration: inherit;
-}
-
-#navi-bar a.logo {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	background-image: inherit;
-	filter: inherit;
-}
-
-#navi-bar a.logo span {
-	display: inherit;
-}
-
-#navi-bar .new-site {
-	position: inherit;
-	top: inherit;
-	left: inherit;
-}
-
-#navi-bar .new-site input.text {
-	width: inherit;
+	font-size: inherit;
+	font-weight: inherit;
 	text-align: inherit;
 }
 
-#navi-bar .new-site input.empty {
-	color: inherit;
+.scp-image-block>p {
+	margin: inherit;
 }
 
-#navi-bar .share {
-	position: inherit;
-	top: inherit;
-	left: inherit;
+.scp-image-block .scp-image-caption>p {
+	margin: inherit;
+	padding: inherit;
 }
 
-#navi-bar .share span {
+.footer-wikiwalk-nav {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.forum-thread-box .description-block,
+.thread-container .post .head {
+	padding: inherit;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+.thread-container .post .head {
+	background: inherit;
+	background-color: inherit;
+}
+
+.signature {
+	display: inherit;
+}
+
+.ruby,
+ruby {
+	height: inherit;
 	vertical-align: inherit;
 }
 
-#navi-bar .share img {
-	width: inherit;
-	height: inherit;
-}
-
-#navi-bar .action-buttons {
+.ruby,
+ruby,
+.rt,
+rt {
 	display: inherit;
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	height: inherit;
-	padding: inherit;
-	color: inherit;
-}
-
-#navi-bar .action-buttons a {
-	padding: inherit;
-	color: inherit;
-}
-
-#navi-bar .join {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	color: inherit;
-	font-weight: inherit;
-}
-
-#navi-bar .random-site {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	height: inherit;
-	padding: inherit;
-	color: inherit;
-}
-
-#navi-bar .random-site:hover {
-	border-color: inherit;
-}
-
-#navi-bar .close {
-	position: inherit;
-	top: inherit;
-	right: inherit;
-}
-
-#footer-bar {
-	max-width: inherit;
-	margin: inherit;
-	padding-top: inherit;
-	overflow: inherit;
-	border-top: inherit;
-}
-
-#footer-bar h2 {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-}
-
-#footer-bar .units {
-	overflow: inherit;
-}
-
-#footer-bar .unit {
-	width: inherit;
-	float: inherit;
-}
-
-#footer-bar .unit .inner {
-	padding: inherit;
-	text-align: inherit;
-}
-
-#footer-bar .unit .image {
-	display: inherit;
-	height: inherit;
-	overflow: inherit;
-	text-decoration: inherit;
-}
-
-#footer-bar h3 {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-#footer-bar a {
-	opacity: inherit;
-	background: inherit;
-	text-decoration: inherit;
-}
-
-#footer-bar a:hover {
-	background: inherit;
-	text-decoration: inherit;
-}
-
-#footer-bar .desc {
-	font-size: inherit;
-}
-
-#footer-bar .close {
-	margin: inherit;
-	float: inherit;
-}
-
-#footer-bar .ads-here {
-	padding: inherit;
-	text-align: inherit;
-}
-
-.form-table .form-value {
-	display: inherit;
-}
-
-.form-table .form-error {
-	border: inherit;
-}
-
-.form-table .form-hinted {
-	color: inherit;
-}
-
-.form-table .form-message {
-	display: inherit;
-	color: inherit;
-}
-
-iframe.html-block-iframe {
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background: inherit;
-}
-
-#boonity_free_site_bottom {
-	margin: inherit;
-}
-
-.awesome,
-.awesome:hover {
-	background-color: inherit;
-	color: inherit;
-}
-
-.awesome {
-	display: inherit;
-	position: inherit;
-	margin-top: inherit;
-	margin-bottom: inherit;
-	padding: inherit;
-	border: inherit;
-	-moz-border-radius: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-	-moz-box-shadow: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
-	font-size: inherit;
-	font-style: inherit;
-	font-weight: inherit;
 	line-height: inherit;
 	text-align: inherit;
-	text-decoration: inherit;
-	text-shadow: inherit;
-	vertical-align: inherit;
-	cursor: inherit;
-	-moz-user-select: inherit;
-	user-select: inherit;
+	white-space: inherit;
 }
 
-.awesome::selection {
-	background: inherit;
+.rt,
+rt,
+.keycap {
+	font-size: inherit;
 }
 
-.awesome {
-	outline: inherit;
-}
-
-.awesome::-moz-focus-inner {
+.keycap {
 	border: inherit;
-}
-
-.awesome:focus,
-.awesome:hover {
-	background-image: inherit;
-}
-
-.awesome:active {
-	background-image: inherit;
-	-moz-box-shadow: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
-}
-
-.awesome.blue,
-.awesome.blue:hover {
-	background-color: inherit;
-}
-
-.awesome.darkblue,
-.awesome.darkblue:hover {
-	background-color: inherit;
-}
-
-.awesome.red,
-.awesome.red:hover {
-	background-color: inherit;
-}
-
-.awesome.green,
-.awesome.green:hover {
-	background-color: inherit;
-}
-
-.awesome.grey,
-.awesome.grey:hover {
-	background-color: inherit;
-}
-
-.awesome.small {
-	padding: inherit;
-	font-size: inherit;
-}
-
-.awesome.small:active {
-	padding: inherit;
-}
-
-.awesome.medium:active {
-	padding: inherit;
-}
-
-.awesome.large {
-	padding: inherit;
-	font-size: inherit;
-}
-
-.awesome.large:active {
-	padding: inherit;
-}
-
-.awesome.larger {
-	padding: inherit;
-	font-size: inherit;
-}
-
-.awesome.larger:active {
-	padding: inherit;
-}
-
-.awesome.huge {
-	padding: inherit;
-	font-size: inherit;
-}
-
-.awesome.huge:active {
-	padding: inherit;
-}
-
-table.guest-commenting {
-	margin-bottom: inherit;
-	padding: inherit;
-	border-collapse: inherit;
-	border: inherit;
-}
-
-table.guest-commenting td {
-	padding: inherit;
-}
-
-table.guest-commenting td input {
-	margin: inherit;
-}
-
-table.guest-commenting td label.hint {
-	color: inherit;
-}
-
-.wikidot-hybrid-module-loading {
-	padding-top: inherit;
-	background: inherit;
-}
-
-#tiptip_holder {
-	display: inherit;
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-}
-
-#tiptip_holder.tip_top {
-	padding-bottom: inherit;
-}
-
-#tiptip_holder.tip_bottom {
-	padding-top: inherit;
-}
-
-#tiptip_holder.tip_right {
-	padding-left: inherit;
-}
-
-#tiptip_holder.tip_left {
-	padding-right: inherit;
-}
-
-#tiptip_content {
-	padding: inherit;
-	border: inherit;
+	border-bottom-width: inherit;
 	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
 	border-radius: inherit;
+	border-color: inherit;
 	background-color: inherit;
-	background-image: inherit;
-	-webkit-box-shadow: inherit;
-	-moz-box-shadow: inherit;
-	box-shadow: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-shadow: inherit;
+	font-family: inherit;
+	white-space: inherit;
 }
 
-#tiptip_arrow,
-#tiptip_arrow_inner {
-	position: inherit;
-	width: inherit;
+.keycap,
+.tags {
+	padding: inherit;
+}
+
+.tags {
+	display: inherit;
 	height: inherit;
+	margin: inherit;
+	-webkit-border-top-right-radius: inherit;
+	border-top-right-radius: inherit;
+	-webkit-border-bottom-right-radius: inherit;
+	border-bottom-right-radius: inherit;
+	background: inherit;
+	color: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	text-decoration: inherit;
+}
+
+.tags:before {
+	padding: inherit;
 	border-width: inherit;
 	border-style: inherit;
 	border-color: inherit;
 }
 
-#tiptip_holder.tip_top #tiptip_arrow {
-	border-top-color: inherit;
-}
-
-#tiptip_holder.tip_bottom #tiptip_arrow {
-	border-bottom-color: inherit;
-}
-
-#tiptip_holder.tip_right #tiptip_arrow {
-	border-right-color: inherit;
-}
-
-#tiptip_holder.tip_left #tiptip_arrow {
-	border-left-color: inherit;
-}
-
-#tiptip_holder.tip_top #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-top-color: inherit;
-}
-
-#tiptip_holder.tip_bottom #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-bottom-color: inherit;
-}
-
-#tiptip_holder.tip_right #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-right-color: inherit;
-}
-
-#tiptip_holder.tip_left #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-left-color: inherit;
-}
-
-.gallery-image-size-small {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-.gallery-image-size-medium {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-.gallery-image-size-thumbnail {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-.gallery-image-size-square {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-#new-post-div input.text {
-	width: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-#new-post-div textarea#np-text {
-	width: inherit;
-}
-
-.flag-user-ok {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
-}
-
-.flag-user-abusive {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
-}
-
-.unflag-user-ok {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
-}
-
-.unflag-user-abusive {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
-}
-
-#upload-file-list table .progress .progress-bar {
+.tags:before,
+.tags:after {
+	content: inherit;
 	position: inherit;
-	z-index: inherit;
+	top: inherit;
 	left: inherit;
 	width: inherit;
 	height: inherit;
-	margin: inherit;
+	float: inherit;
 }
 
-#upload-file-list table .progress .progress-bar span {
-	display: inherit;
-	position: inherit;
-	z-index: inherit;
-	margin: inherit;
-	text-align: inherit;
+.tags:after {
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	background: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
 }
 
-#upload-file-list table .progress .progress-bar {
-	z-index: inherit;
-	width: inherit;
-	height: inherit;
+.bblock {
+	-webkit-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+}
+
+.bblock,
+.bblock:hover,
+.dblock {
 	background-color: inherit;
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.dblock {
+	-webkit-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+}
+
+.dblock:hover {
+	background-color: inherit;
+	text-decoration: inherit;
+}
+
+.emph {
+	-webkit-text-emphasis-style: inherit;
+	text-emphasis-style: inherit;
+}
+
+@document url-prefix() {
+	.emph {
+		padding: inherit;
+		background-clip: inherit;
+		background-color: inherit;
+		background-image: inherit;
+		background-repeat: inherit;
+		-webkit-background-size: inherit inherit;
+		background-size: inherit;
+
+		font-family: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+	}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.emph {
+		padding: inherit;
+		background-clip: inherit;
+		background-color: inherit;
+		background-image: inherit;
+		background-repeat: inherit;
+		-webkit-background-size: inherit inherit;
+		background-size: inherit;
+
+		font-family: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+	}
+}
+
+@-ms-viewport {
+	width: inherit;
+	zoom: inherit;
+}
+
+@-o-viewport {
+	width: inherit;
+	zoom: inherit;
+}
+
+@viewport {
+	width: inherit;
+	zoom: inherit;
+}
+
+::-webkit-scrollbar {
+	width: inherit;
+
+	height: inherit;
+
+	border: inherit;
+	border-round: inherit;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+	background: inherit;
+}
+
+.page-source {
+	word-break: inherit;
+}
+
+img,
+embed,
+video,
+object,
+iframe,
+table,
+#page-content div,
+#page-content div table {
+	max-width: inherit;
+}
+
+table.form td,
+table.form th {
+	padding: inherit;
+	vertical-align: inherit;
+}
+
+#edit-page-comments {
+	width: inherit;
+}
+
+.change-textarea-size {
+	float: inherit;
+}
+
+@media (max-width: 767px) {
+	.owindow {
+		min-width: inherit;
+		max-width: inherit;
+	}
+
+	.modal-body .table,
+	.modal-body .table~div,
+	.owindow .button-bar {
+		float: inherit;
+	}
+
+	.owindow div a.btn-primary {
+		width: inherit;
+		float: inherit;
+	}
+
+	.mobile-top-bar ul li:last-of-type ul {
+		right: inherit;
+	}
+
+	span,
+	a {
+		word-break: inherit;
+	}
+}
+
+@media (max-width: 479px) {
+	#search-top-box-input {
+		display: inherit;
+	}
+
+	#page-content {
+		font-size: inherit;
+	}
+
+	#main-content {
+		margin: inherit;
+	}
+
+	#recent-posts-category {
+		width: inherit;
+	}
+
+	#header,
+	.mobile-top-bar {
+		max-width: inherit;
+	}
+
+	#side-bar {
+		position: inherit;
+		width: inherit;
+	}
+
+	.top-bar,
+	.mobile-top-bar {
+		display: inherit;
+	}
+
+	.mobile-top-bar,
+	.page-options-bottom a {
+		padding: inherit;
+	}
+
+	#header h1 a {
+		font-size: inherit;
+	}
+
+	blockquote,
+	.blockquote,
+	div.blockquote {
+		margin: inherit;
+	}
+
+	.license-area {
+		font-size: inherit;
+	}
+
+	#header {
+		background-position: inherit;
+		-webkit-background-size: inherit inherit;
+		background-size: inherit;
+	}
+
+	#header h1,
+	#header h2 {
+		margin-left: inherit;
+	}
+
+	table.form td,
+	table.form th {
+		padding: inherit;
+		float: inherit;
+		vertical-align: inherit;
+	}
+
+	td.name {
+		width: inherit;
+	}
+
+	table.form td,
+	table.form th {
+		padding: inherit;
+	}
+
+	#edit-page-title {
+		max-width: inherit;
+	}
+
+	.content-panel.left-column,
+	.content-panel.right-column {
+		width: inherit;
+		float: inherit;
+	}
+
+	#page-content div,
+	#page-content div table {
+		clear: inherit;
+	}
+
+	#page-content div.title {
+		word-break: inherit;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 580px) {
+	#search-top-box-input {
+		width: inherit;
+	}
+
+	#main-content {
+		margin: inherit;
+	}
+
+	#header,
+	.mobile-top-bar {
+		max-width: inherit;
+	}
+
+	#side-bar {
+		position: inherit;
+		width: inherit;
+	}
+
+	.top-bar,
+	.mobile-top-bar {
+		display: inherit;
+	}
+
+	.page-options-bottom a {
+		padding: inherit;
+	}
+
+	#header h1 a {
+		font-size: inherit;
+	}
+
+	blockquote,
+	.blockquote,
+	div.blockquote {
+		margin: inherit;
+	}
+
+	.license-area {
+		font-size: inherit;
+	}
+
+	#header {
+		background-position: inherit;
+		-webkit-background-size: inherit inherit;
+		background-size: inherit;
+	}
+
+	#header h1,
+	#header h2 {
+		margin-left: inherit;
+	}
+
+	#page-content div.title {
+		word-break: inherit;
+	}
+
+	td.name {
+		width: inherit;
+	}
+
+	.content-panel.left-column,
+	.content-panel.right-column {
+		width: inherit;
+		float: inherit;
+	}
+
+	#page-content div,
+	#page-content div table {
+		clear: inherit;
+	}
+}
+
+@media (min-width: 581px) and (max-width: 767px) {
+
+	#search-top-box-input,
+	#side-bar {
+		width: inherit;
+	}
+
+	#side-bar {
+		position: inherit;
+	}
+
+	#main-content {
+		margin: inherit;
+	}
+
+	#header,
+	.mobile-top-bar {
+		max-width: inherit;
+	}
+
+	.top-bar,
+	.mobile-top-bar {
+		display: inherit;
+	}
+
+	.page-options-bottom a {
+		padding: inherit;
+	}
+
+	#header h1 a,
+	.license-area {
+		font-size: inherit;
+	}
+
+	#header {
+		background-position: inherit;
+		-webkit-background-size: inherit inherit;
+		background-size: inherit;
+	}
+
+	#header h1,
+	#header h2 {
+		margin-left: inherit;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	#main-content {
+		margin: inherit;
+	}
+
+	#header,
+	#top-bar #side-bar {
+		max-width: inherit;
+	}
+
+	.top-bar li {
+		margin: inherit;
+	}
+
+	#top-bar ul li.sfhover ul li a,
+	#top-bar ul li:hover ul li a {
+		width: inherit;
+	}
+
+	.page-options-bottom a {
+		padding: inherit;
+	}
+
+	#header h1 a,
+	.license-area {
+		font-size: inherit;
+	}
+
+	#header {
+		background-position: inherit;
+		-webkit-background-size: inherit inherit;
+		background-size: inherit;
+	}
+
+	#header h1,
+	#header h2 {
+		margin-left: inherit;
+	}
+
+	.content-panel.left-column,
+	.content-panel.right-column {
+		width: inherit;
+		float: inherit;
+	}
+
+	#page-content div,
+	#page-content div table {
+		clear: inherit;
+	}
+}
+
+.close-menu {
+	display: inherit;
+}
+
+@media (max-width: 767px) {
+	.page-history tbody tr td:last-child {
+		width: inherit;
+	}
+
+	.owindow {
+		min-width: inherit;
+		max-width: inherit;
+	}
+
+	.modal-body .table,
+	.modal-body .table~div,
+	.owindow .button-bar {
+		float: inherit;
+	}
+
+	.owindow div .btn-primary {
+		width: inherit;
+		float: inherit;
+	}
+
+	.owindow div .btn-primary~div {
+		width: inherit;
+	}
+
+	.yui-navset {
+		z-index: inherit;
+	}
+
+	#navi-bar,
+	#navi-bar-shadow {
+		display: inherit;
+	}
+
+	#top-bar .open-menu a {
+		position: inherit;
+		z-index: inherit;
+		top: inherit;
+		left: inherit;
+		width: inherit;
+		height: inherit;
+		border: inherit;
+		-webkit-border-radius: inherit;
+		border-radius: inherit;
+		background-color: inherit;
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		text-align: inherit;
+	}
+
+	#top-bar .open-menu a:hover {
+		-webkit-box-shadow: inherit;
+		box-shadow: inherit;
+		text-decoration: inherit;
+	}
+
+	#main-content {
+		max-width: inherit;
+		margin: inherit;
+	}
+
+	#main-content,
+	#side-bar {
+		padding: inherit;
+		-webkit-transition: inherit;
+		-o-transition: inherit;
+		transition: inherit;
+	}
+
+	#side-bar {
+		display: inherit;
+		z-index: inherit;
+		left: inherit;
+		overflow-y: inherit;
+	}
+
+	#side-bar,
+	#side-bar:after {
+		position: inherit;
+		top: inherit;
+		width: inherit;
+		height: inherit;
+		background-color: inherit;
+	}
+
+	#side-bar:after {
+		content: inherit;
+	}
+
+	#side-bar:target {
+		display: inherit;
+		z-index: inherit;
+		left: inherit;
+		width: inherit;
+		margin: inherit;
+		border: inherit;
+	}
+
+	#side-bar:target+#main-content {
+		left: inherit;
+	}
+
+	#side-bar:target .close-menu {
+		display: inherit;
+		position: inherit;
+		z-index: inherit;
+		top: inherit;
+		left: inherit;
+		width: inherit;
+		height: inherit;
+		background: inherit;
+	}
+}
+
+@media (max-width: 479px) {
+	#search-top-box-input {
+		width: inherit;
+	}
 }
 
 /*# sourceMappingURL=normalize.css.map */
