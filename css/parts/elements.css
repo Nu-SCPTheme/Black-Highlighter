@@ -1528,14 +1528,14 @@ span.printuser {
 	height: min-content;
 	margin-right: 0.25ch;
 
-	& a:first-of-type,
+	& a:first-of-type:not(:last-of-type),
 	&.deleted img {
 		display: inline-block;
 		height: 1.5em;
 		margin: 0 0.25ch 0 0;
 	}
 
-	& a:first-of-type {
+	& a:first-of-type:not(:last-of-type) {
 		aspect-ratio: 8/6;
 
 		& img.small {

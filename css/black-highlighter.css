@@ -12070,7 +12070,7 @@ div#container-wrap {
 		font-weight: var(--wght);
 	}
 
-#login-status span.printuser a:first-of-type {
+#login-status span.printuser a:first-of-type:not(:last-of-type) {
 			margin-right: 0.5ch;
 		}
 
@@ -15003,18 +15003,18 @@ span.printuser {
 	margin-right: 0.25ch;
 }
 
-span.printuser a:first-of-type,
+span.printuser a:first-of-type:not(:last-of-type),
 	span.printuser.deleted img {
 		display: inline-block;
 		height: 1.5em;
 		margin: 0 0.25ch 0 0;
 	}
 
-span.printuser a:first-of-type {
+span.printuser a:first-of-type:not(:last-of-type) {
 		aspect-ratio: 8/6;
 	}
 
-span.printuser a:first-of-type img.small {
+span.printuser a:first-of-type:not(:last-of-type) img.small {
 			height: 100%;
 			aspect-ratio: 1/1;
 		}
