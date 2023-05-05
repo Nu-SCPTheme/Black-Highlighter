@@ -1,0 +1,172 @@
+/* INT SIDEBAR STYLING
+   ============================= */
+
+/* Styling specific to Int Branches' Headers
+
+/* ===DIRECTORY===
+	1.  =CZECH BRANCH
+	2.  =FRENCH BRANCH
+	3.  =GERMAN BRANCH
+	4.  =GREEK BRANCH
+	5.  =ITALIAN BRANCH
+	6.  =JAPANESE BRANCH
+	7.  =KOREAN BRANCH
+	8.  =POLISH BRANCH
+	9.  =PORTUGESE BRANCH
+	10. =RUSSIAN BRANCH
+	11. =SIMPLIFIED CHINESE BRANCH
+	12. =SPANISH BRANCH
+	13. =THAI BRANCH
+	14. =TRADITIONAL CHINESE BRANCH
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
+*/
+
+/* ===CZECH BRANCH=== */
+
+:where(:lang(cs)) {
+	:root& {
+		--text-messages: "Zprávy";
+	}
+}
+
+/* ===FRENCH BRANCH=== */
+
+/* ===GERMAN BRANCH=== */
+
+:where(:lang(de)) {
+	:root& {
+		--text-messages: "Nachrichten"; /* Machine Translation */
+	}
+}
+
+@media (--viewport-tablet) {
+	:where(:lang(de)) {
+		#header div.open-menu {
+			background-image: var(--gradient-topmenu-mobile);
+		}
+	}
+}
+
+/* ===GREEK BRANCH=== */
+
+:where(:lang(el)) {
+	:root& {
+		--text-messages: "Μηνύματα";
+	}
+}
+
+/* ===ITALIAN BRANCH=== */
+
+:where(:lang(it)) {
+	:root& {
+		--text-messages: "Messaggi";
+	}
+}
+
+/* ===JAPANESE BRANCH=== */
+
+:where(:lang(ja)) {
+	:root& {
+		--text-messages: "メッセージ";
+	}
+}
+
+/* ===KOREAN BRANCH=== */
+
+:where(:lang(ko)) {
+	:root& {
+		--text-messages: "메시지";
+	}
+}
+
+/* ===POLISH BRANCH=== */
+
+:where(:lang(pl)) {
+	:root& {
+		--text-messages: "Wiadomości";
+	}
+}
+
+/* ===PORTUGESE BRANCH=== */
+
+:where(:lang(pt-br)) {
+	:root& {
+		--text-messages: "Mensagens";
+	}
+}
+
+/* ===RUSSIAN BRANCH=== */
+
+:where(:lang(ru)) {
+	:root& {
+		--text-messages: "Сообщения"; /* Machine Translation */
+	}
+}
+
+:where(:lang(ru)) {
+	#top-bar .list-pages-item {
+		&,
+		& .top-bar {
+			height: 100%;
+		}
+	}
+
+	@media (--viewport-tablet) {
+		#header div[class*="top-bar"] > ul {
+			height: var(--topbar-height-on-mobile);
+
+			> li > a {
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+
+/* ===SIMPLIFIED CHINESE BRANCH=== */
+
+:where(:lang(cn)) {
+	:root& {
+		--text-messages: "消息";
+	}
+}
+
+/* ===SPANISH BRANCH=== */
+
+:where(:lang(es)) {
+	:root& {
+		--text-messages: "Mensajes";
+	}
+}
+
+/* ===THAI BRANCH=== */
+
+:where(:lang(th)) {
+	:root& {
+		--text-messages: "ข้อความ"; /* Machine Translation */
+	}
+}
+
+/* ===TRADITIONAL CHINESE BRANCH=== */
+
+:where(:lang(zh-tr)) {
+	:root& {
+		--text-messages: "訊息";
+	}
+}
+
+/* ===UKRAINIAN BRANCH=== */
+
+:where(:lang(uk)) {
+	:root& {
+		--text-messages: "Повідомлення"; /* Machine Translation */
+	}
+}
+
+/* ===VIETNAMESE BRANCH=== */
+
+:where(:lang(vi)) {
+	:root& {
+		--text-messages: "Tin nhắn";
+	}
+}

@@ -1,0 +1,403 @@
+/* INT WIKIDOT STRUCTURE STYLING
+   ============================= */
+
+/* Styling specific to Int Branches' Wikidot Structure
+
+/* ===DIRECTORY===
+	1.  =CZECH BRANCH
+	2.  =FRENCH BRANCH
+	3.  =GERMAN BRANCH
+	4.  =GREEK BRANCH
+	5.  =ITALIAN BRANCH
+	6.  =JAPANESE BRANCH
+	7.  =KOREAN BRANCH
+	8.  =POLISH BRANCH
+	9.  =PORTUGESE BRANCH
+	10. =RUSSIAN BRANCH
+	11. =SIMPLIFIED CHINESE BRANCH
+	12. =SPANISH BRANCH
+	13. =THAI BRANCH
+	14. =TRADITIONAL CHINESE BRANCH
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
+*/
+
+/* ===CZECH BRANCH=== */
+
+:where(:lang(cs)) {
+	:root& {
+		--text-editor-desc: "Krátký popis změn:";
+		--text-pagehistory-flags: "změny";
+		--text-pagehistory-actions: "akce";
+		--text-pagehistory-by: "od";
+		--text-pagehistory-date: "datum";
+		--text-sitetools: "Nástroje stránky";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+
+	& div#page-options-bottom-2 {
+		&:not(.page-rate-widget-box, #search-top-box-form) {
+			> a.btn {
+				flex-basis: 6rem;
+			}
+		}
+	}
+}
+
+/* ===FRENCH BRANCH=== */
+
+:where(:lang(fr)) {
+	:root& {
+		--text-tags: "étiquettes\0021b4";
+		--text-editor-desc: "Courte Description des Modifications:";
+		--text-pagehistory-rev: "rév.";
+		--text-pagehistory-flags: "drapeaux";
+		--text-pagehistory-by: "par";
+		--text-sitetools: "Outils du Site";
+	}
+
+	#main-content .page-tags::before {
+		text-transform: uppercase;
+	}
+}
+
+/* ===GERMAN BRANCH=== */
+
+:where(:lang(de)) {
+	:root& {
+		--text-editor-desc: "Kurze Beschreibung der Änderungen:";
+		--text-pagehistory-flags: "markierungen";
+		--text-pagehistory-actions: "aktionen";
+		--text-pagehistory-by: "durch";
+		--text-pagehistory-date: "datum";
+		--text-sitetools: "Site-Werkzeuge";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					flex-basis: max-content;
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+
+	& div#page-options-bottom-2 {
+		&:not(.page-rate-widget-box, #search-top-box-form) {
+			> a.btn {
+				flex-basis: 6rem;
+			}
+		}
+	}
+}
+
+/* ===GREEK BRANCH=== */
+
+:where(:lang(el)) {
+	:root& {
+		--text-tags: "ΕΤΙΚΈΤΕΣ\0021b4";
+		--text-editor-desc: "Σύντομη περιγραφή των αλλαγών:";
+		--text-pagehistory-rev: "ανα.";
+		--text-pagehistory-flags: "σημαίες";
+		--text-pagehistory-actions: "δράσεις";
+		--text-pagehistory-by: "του";
+		--text-pagehistory-date: "ημερομηνία";
+		--text-sitetools: "Εργαλεία Ιστοσελίδας";
+	}
+}
+
+/* ===ITALIAN BRANCH=== */
+
+:where(:lang(it)) {
+	:root& {
+		--text-tags: "TAG\0021b4";
+		--text-editor-desc: "Breve descrizione delle modifiche:";
+		--text-pagehistory-flags: "segnalazioni";
+		--text-pagehistory-actions: "azioni";
+		--text-pagehistory-by: "da";
+		--text-pagehistory-date: "data";
+		--text-sitetools: "Strumenti del Sito";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+
+	& div#page-options-bottom-2 {
+		&:not(.page-rate-widget-box, #search-top-box-form) {
+			> a.btn {
+				flex-basis: 6rem;
+			}
+		}
+	}
+}
+
+/* ===JAPANESE BRANCH=== */
+
+:where(:lang(ja)) {
+	:root& {
+		--text-tags: "タグ\0021b4";
+		--text-editor-desc: "変更の要旨";
+		--text-pagehistory-flags: "フラグ";
+		--text-pagehistory-actions: "アクション";
+		--text-pagehistory-by: "編集者";
+		--text-pagehistory-date: "日付";
+		--text-sitetools: "サイトツール";
+	}
+}
+
+/* ===KOREAN BRANCH=== */
+
+:where(:lang(ko)) {
+	:root& {
+		--text-tags: "태그\0021b4";
+		--text-editor-desc: "수정에 대한 짤막한 설명";
+		--text-pagehistory-rev: "수정";
+		--text-pagehistory-flags: "유형";
+		--text-pagehistory-actions: "활동";
+		--text-pagehistory-by: "편집자";
+		--text-pagehistory-date: "날짜";
+		--text-sitetools: "사이트 도구";
+	}
+}
+
+/* ===POLISH BRANCH=== */
+
+:where(:lang(pl)) {
+	:root& {
+		--text-tags: "TAGS\0021b4";
+		--text-editor-desc: "Krótki Opis Zmian:";
+		--text-pagehistory-rev: "wersja";
+		--text-pagehistory-flags: "flagi";
+		--text-pagehistory-actions: "opcje";
+		--text-pagehistory-by: "przez";
+		--text-pagehistory-date: "Data";
+		--text-sitetools: "Narzędzia Witryny";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+
+	& div#page-options-bottom-2 {
+		&:not(.page-rate-widget-box, #search-top-box-form) {
+			> a.btn {
+				flex-basis: 6rem;
+			}
+		}
+	}
+}
+
+/* ===PORTUGESE BRANCH=== */
+:where(:lang(pt-br)) {
+	:root& {
+		--text-editor-desc: "Resumo das Mudanças:";
+		--text-pagehistory-rev: "Revisão";
+		--text-pagehistory-flags: "Marcações";
+		--text-pagehistory-actions: "Ações";
+		--text-pagehistory-by: "Por";
+		--text-pagehistory-date: "Data";
+		--text-sitetools: "Ferramentas do Site";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+
+	& div#page-options-bottom-2 {
+		&:not(.page-rate-widget-box, #search-top-box-form) {
+			> a.btn {
+				flex-basis: 6rem;
+			}
+		}
+	}
+}
+
+/* ===RUSSIAN BRANCH=== */
+
+:where(:lang(ru)) {
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					flex-basis: 6rem;
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+}
+
+/* ===SIMPLIFIED CHINESE BRANCH=== */
+
+:where(:lang(cn)) {
+	:root& {
+		--text-editor-desc: "简要修改说明";
+		--text-pagehistory-rev: "版本";
+		--text-pagehistory-flags: "标记";
+		--text-pagehistory-actions: "操作";
+		--text-pagehistory-by: "更新者";
+		--text-pagehistory-date: "日期";
+		--text-sitetools: "网站工具";
+	}
+}
+
+/* ===SPANISH BRANCH=== */
+
+:where(:lang(es)) {
+	:root& {
+		--text-tags: "Etiquetas\0021b4";
+		--text-editor-desc: "Breve descripción de los cambios:";
+		--text-pagehistory-flags: "marcas";
+		--text-pagehistory-actions: "acciones";
+		--text-pagehistory-by: "por";
+		--text-pagehistory-date: "fecha";
+		--text-sitetools: "Herramientas del Sitio";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					flex-basis: 6rem;
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+}
+
+/* ===THAI BRANCH=== */
+
+/* Overwriting Thai Branch's !important on their Sigma-9 version */
+:where(:lang(th)) {
+	#page-content .page-rate-widget-box .rate-points {
+		background-color: transparent !important;
+	}
+}
+
+/* ===TRADITIONAL CHINESE BRANCH=== */
+
+:where(:lang(zh-tr)) {
+	:root& {
+		--text-tags: "標籤\0021b4";
+		--text-editor-desc: "本次編輯的簡要說明";
+		--text-pagehistory-rev: "修訂版本";
+		--text-pagehistory-flags: "標記";
+		--text-pagehistory-actions: "動作";
+		--text-pagehistory-by: "由";
+		--text-pagehistory-date: "日期";
+		--text-sitetools: "網站工具";
+	}
+}
+
+/* ===UKRAINIAN BRANCH=== */
+
+:where(:lang(uk)) {
+	:root& {
+		--text-tags: "Теґи\0021b4";
+	}
+
+	#page-options-container {
+		& div[id*="page-options-bottom"] {
+			&:not(.page-rate-widget-box, #search-top-box-form) {
+				> a.btn {
+					--button-padding: calc(var(--icon-size) / 4) calc(var(--icon-size) / 8);
+
+					flex-basis: 6rem;
+					height: auto;
+					line-height: 1;
+					white-space: normal;
+				}
+			}
+		}
+	}
+
+	@media (--viewport-desktop) {
+		#container {
+			width: calc((99vw - (99vw - 99%)));
+		}
+
+		#content-wrap {
+			grid-template-areas: "side-bar content";
+			grid-template-columns:
+			/* Sidebar Width */
+				var(--sidebar-width-on-desktop)
+				1fr;
+			margin: 0 !important; /* Overwriting branch's !important */
+			padding: 0 !important; /* Overwriting branch's !important */
+		}
+	}
+}
+
+/* ===VIETNAMESE BRANCH=== */
+
+:where(:lang(vi)) {
+	:root& {
+		--text-tags: "TAG\0021b4";
+		--text-editor-desc: "Tóm tắt thay đổi:";
+		--text-pagehistory-rev: "stt.";
+		--text-pagehistory-flags: "nhãn";
+		--text-pagehistory-actions: "t.chọn";
+		--text-pagehistory-by: "bởi";
+		--text-pagehistory-date: "ngày";
+		--text-sitetools: "Công Cụ Trang";
+	}
+}

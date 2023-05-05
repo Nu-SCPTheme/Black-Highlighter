@@ -1,0 +1,769 @@
+/* ROOT VARS
+   ============================= */
+
+/* Structural elements generally part of standard HTML spec as well as Wikidot's base structural elements */
+
+/* ===DIRECTORY===
+	0. =CUSTOM MEDIA DEFINITIONS
+	1. =S-CSS-P INTEGRATION
+	2. =HEADER ELEMENTS
+	3. =TYPEFACES
+		3.1 =BASE FONT SIZE & LINE HEIGHT
+		3.2 =HEADER TITLE FONT SIZES
+	4. =VARIABLE FONT SETTINGS
+		4.1 =VARIABLE MONO FONT SETTINGS
+	5. =OPENTYPE FEATURE SETTINGS
+	6. =STANDARD THEME COLORS
+	7. =PRIMARY COLORS
+		8.1. =GENERAL COLORS
+		8.2. =GENERAL TEXT COLORS
+	8. =BACKGROUND & HEADER COLORS
+	9. =MENU COLORS
+		9.1 =MENU BACKGROUND COLORS
+		9.2 =MENU TEXT COLORS
+	10. =SECONDARY & TERTIARY COLORS
+	11. =PRIMARY GRADIENTS
+	12. =STRUCTURAL SPACING ELEMENTS
+		14.1 =HEADER MEASUREMENTS
+		14.2 =TOPBAR MEASUREMENTS
+		14.3 =FINAL HEADER + TOPBAR MEASUREMENTS
+		14.4 =SIDEBAR MEASUREMENTS
+
+	===============================
+	======= SPECIFIC COLORS =======
+	===============================
+	13. =BACKGROUND GRADIENT
+		13.1 =GENERAL BACKGROUND
+		13.2 =HEADER GRADIENT
+		13.3 =TOPBAR GRADIENT
+	14. =LINK COLORS
+	15. =HEADER ELEMENTS
+		15.1 =HEADER TITLES
+		15.2 =SEARCH ELEMENT
+		15.3 =LOGIN BOX ELEMENT
+	16. =TOPBAR ELEMENTS
+		16.1 =TOPBAR CATEGORIES
+		16.2 =DROPDOWN MENU
+	17. =SIDE-BAR ELEMENTS
+		17.1 =SIDE-BAR GENERAL
+		17.2 =SOCIAL MEDIA ICONS
+		17.3 =SIDEBLOCK MENU
+		17.4 =MENU-ITEMS
+		17.5 =SIDEBAR COLLAPSIBLES
+		17.5 =INTERWIKI ELEMENTS
+	18. =FOOTER
+	19. =LICENSE AREA
+
+	20. =MAIN CONTENT UI ELEMENTS
+		20.1 =UI ICONS
+			20.1.1 =PAGE OPTIONS ICONS
+			20.1.2 =TEXT EDITOR ICONS
+		20.2 =TABS
+		20.3 =TABLES
+		20.4 =BLOCKQUOTES
+		20.5 =FOOTNOTES/BIBLIOGRAPHY FOOTER
+		20.6 =TOC
+
+	21. =GLOBAL ELEMENTS
+		21.1 =UI BUTTONS
+		21.2 =RATING MODULE
+		21.3 =MODALS
+		21.4 =FOOTNOTES HOVER BLOCK
+		21.5 =LISTPAGES PAGER
+		21.6 =ANIMATIONS
+
+	===============================
+	======== TEXT ELEMENTS ========
+	===============================
+
+	22. =HARDCODED TEXT
+
+	===============================
+	========= DEPRECIATED =========
+	===============================
+	22. =LEGACY VARS
+  =============== */
+
+/* ===CUSTOM MEDIA DEFINITIONS=== */
+
+@custom-media --viewport-desktop only screen and (width >= 56.25rem);
+@custom-media --viewport-tablet only screen and (width <= 56.25rem);
+@custom-media --viewport-mobile only screen and (width <= 30rem);
+
+:root {
+	/* ===S-CSS-P INTEGRATION=== */
+	/* If you're making a new CSS theme, please include the following three variables at minimum. */
+	--theme-base: "black-highlighter";
+	/* must be either "black-highlighter" or "sigma9" */
+	--theme-id: "black-highlighter";
+	/* set this to the URL of your theme's page - eg for "component:ar-theme", set it to "ar-theme" */
+	--theme-name: "Black Highlighter Theme";
+	/* set this to your theme's full name */
+
+	/* ===HEADER ELEMENTS=== */
+	--logo-image: url("../../img/logo.svg");
+	--header-title: "SCP Foundation";
+	--header-subtitle: "SECURE, CONTAIN, PROTECT";
+
+	/* ===TYPEFACES=== */
+	--body-font: Inter, Verdana, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--UI-font: PTRootUI, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--header-font: Inter, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--title-font: var(--header-font);
+	--mono-font: Recursive, Consolas, Monaco, monospace;
+
+	/* ===BASE FONT SIZE & LINE HEIGHT=== */
+	--min-font-size: 0.8125rem; /* 13px */
+	--max-font-size: 0.9375rem; /* 15px */
+
+	--base-font-size: max(var(--min-font-size), min(2vw, var(--max-font-size)));
+
+	--base-line-height: 1.5;
+
+	/* ===HEADER TITLE FONT SIZES=== */
+	--header-h1-font-size: calc(var(--base-font-size) * (40 / 15));
+
+	--header-h2-font-size: var(--base-font-size);
+}
+
+/* Temporary fix until either Safari fixes itself or another solution reveals itself */
+:root {
+	@media (--viewport-tablet) {
+		--base-font-size: var(--min-font-size);
+	}
+}
+
+:root {
+	/* ===VARIABLE FONT SETTINGS=== */
+	/* SETTING  |  ============== DESCRIPTION			|	FONT: 	RANGE 	 */
+	/* SETTING  |  ============== Weight				|	Body: 100 - 900  */
+	--wght: 400;
+	/* SETTING  |  ============== Weight for UI			|	  UI: 100 - 700  */
+	--ui-wght: 500;
+	/* SETTING  |  ============== Hover Weight for UI	|	  UI: 100 - 700  */
+	--ui-hvr-wght: 500;
+	/* ========================== Body Font Italic 		| 	Body:   0 - 1    */
+	--ital: 0;
+
+	/* ===VARIABLE MONO FONT SETTINGS=== */
+	/* See here for Recursive Font information: https://www.recursive.design/ */
+	/* =========================== Mono Font Weight 		| 	Mono: 300 - 1000 */
+	--mono-wght: 350;
+	/* ========================== Mono Font Italic 		| 	Mono: -15 - 0    */
+	--slnt: 0;
+	/* ========================== Mono Font Casual Amnt | 	Mono:   0 - 1    */
+	--CASL: 0;
+	/* ========================== Mono Font Cursive Amnt|	Mono:   0 - 1    */
+	--CRSV: 0;
+	/* ========================== Mono Font Mono Amnt	| 	Mono:   0 - 1    */
+	--MONO: 1;
+
+	/* ===OPENTYPE FEATURE SETTINGS=== */
+	/* See here for detailed explainations: https://sparanoid.com/lab/opentype-features/ */
+	/* ========================== Lining Numerals		|	Any: 	0 OR 1	 */
+	--lnum: 1;
+	/* ========================== Proportional Numerals	|	Any: 	0 OR 1	 */
+	--pnum: 1;
+	/* ========================== Kerning				|	Any: 	0 OR 1	 */
+	--kern: 1;
+	/* ========================== Capital Spacing		|	Any: 	0 OR 1	 */
+	--cpsp: 1;
+	/* ========================== Case Alternatives		|	Any: 	0 OR 1	 */
+	--liga: 1;
+	/* ========================== Standard Ligature		|	Any: 	0 OR 1	 */
+	--case: 1;
+	/* ========================== Contextual Ligature	|	Any: 	0 OR 1	 */
+	--clig: 1;
+	/* ========================== Discretionary Ligature|	Any: 	0 OR 1	 */
+	--dlig: 0;
+	/* ========================== Contextual Alternate	|	Any: 	0 OR 1	 */
+	--calt: 1;
+	/* ========================== Access All Alternates	|	Any: 	0 OR 1	 */
+	--aalt: 0;
+	/* ========================== Stylistic Sets		|	Any: 	0 OR 1	 */
+	/* ========================== SS 1 | Open Digits	|	Inter: 	0 OR 1	 */
+	--ss01: 1;
+	/* ========================== SS 2 | Disambiguation	|	Inter: 	0 OR 1	 */
+	--ss02: 0;
+	/* ========================== SS 3 | Curved R		|	Inter: 	0 OR 1	 */
+	--ss03: 1;
+	/* ========================== SS 4 | SS2 w/o zero	|	Inter: 	0 OR 1	 */
+	--ss04: 1;
+	/* ========================== Slashed Zero			|	Inter: 	0 OR 1	 */
+	--zero: 1;
+	/* ========================== Single Story a		|	Inter: 	0 OR 1	 */
+	--cv11: 0;
+
+	/* ===STANDARD THEME COLORS=== */
+	/* white */
+	--white-monochrome: 252, 252, 252;
+	/* v light gray for blockquotes and stuff */
+	--pale-gray-monochrome: 244, 244, 244;
+	/* very light pale gray for misc. use */
+	--light-pale-gray-monochrome: 244, 244, 244;
+	/* very light accent gray for misc. use */
+	--very-light-gray-monochrome: 215, 215, 215;
+	/* light accent gray for login status */
+	--light-gray-monochrome: 160, 160, 160;
+	/* gray */
+	--gray-monochrome: 66, 66, 72;
+	/* dark accent gray for sidebar background */
+	--dark-gray-monochrome: 48, 48, 52;
+	/* black */
+	--black-monochrome: 12, 12, 12;
+	/* subdued theme color */
+	--pale-accent: 210, 20, 20;
+	/* vivid theme color the "default" accent color */
+	--bright-accent: 133, 0, 5;
+	/* theme color */
+	--medium-accent: 100, 46, 44;
+	/* darker theme color */
+	--dark-accent: 100, 3, 15;
+	/* alternate accent color for newpage links */
+	--alt-accent: 221, 102, 17;
+
+	/* ===PRIMARY COLORS=== */
+	/* ===GENERAL COLORS=== */
+	--swatch-primary: var(--bright-accent);
+	--swatch-primary-darker: var(--medium-accent);
+	--swatch-primary-darkest: var(--dark-accent);
+	--swatch-border-color: var(--black-monochrome);
+
+	/* ===GENERAL TEXT COLORS=== */
+	--swatch-text-dark: var(--black-monochrome);
+	--swatch-text-light: var(--white-monochrome);
+	--swatch-text-general: var(--swatch-text-dark);
+	--swatch-important-text: var(--bright-accent);
+
+	/* ===MENU COLORS=== */
+	/* ===MENU BACKGROUND COLORS=== */
+	--swatch-menubg-color: var(--white-monochrome);
+	--swatch-menubg-light-color: var(--pale-gray-monochrome);
+	--swatch-menubg-medium-color: var(--light-gray-monochrome);
+	--swatch-menubg-medium-dark-color: var(--gray-monochrome);
+	--swatch-menubg-dark-color: var(--dark-gray-monochrome);
+	--swatch-menubg-black-color: var(--black-monochrome);
+	--swatch-menubg-hover-color: var(--black-monochrome);
+
+	/* ===MENU TEXT COLORS=== */
+	--swatch-menutxt-dark-color: var(--black-monochrome);
+	--swatch-menutxt-light-color: var(--white-monochrome);
+	--swatch-menutxt-general-color: var(--swatch-menutxt-dark-color);
+
+	/* ===SECONDARY & TERTIARY COLORS=== */
+	/* Editing these will edit a vast majority of theme elements. Useful for making dark themes */
+
+	/* Colors for Secondary & Tertiary items like Blockquote and YUI Tabs */
+	--swatch-secondary-color: var(--swatch-menubg-light-color);
+	--swatch-tertiary-color: var(--swatch-menubg-medium-color);
+	--swatch-alternate-color: var(--swatch-menubg-dark-color);
+
+	/* Text Colors for Secondary & Tertiary items like Sidebar Headers and Top-Bar Menu Text */
+	--swatch-text-secondary-color: var(--swatch-menutxt-light-color);
+	--swatch-text-tertiary-color: var(--swatch-menutxt-dark-color);
+
+	/* ===PRIMARY GRADIENTS=== */
+	/* Creates the header image at top of page */
+	--gradient-header: linear-gradient(to top, rgb(var(--header-gradient-color-bottom)) 0%, rgb(var(--header-gradient-color-middle)) 90%, rgb(var(--header-gradient-color-top)) 100%);
+	/* Diagonal Strikes placed on top of header image */
+	--diagonal-stripes: repeating-linear-gradient(45deg, hsl(0deg 0% 100% / 0), hsl(0deg 0% 100% / 0) 0.25vh, rgb(88 88 88 / 0.1) 0.35vh, rgb(88 88 88 / 0.2) 0.5vh);
+	/* Create top-menu bar below the header */
+	--gradient-topmenu: linear-gradient( to bottom, rgb(255 255 255 / 0) 0%, rgb(255 255 255 / 0) var(--header-height-on-desktop), rgb(var(--swatch-topmenu-border-color)) var(--header-height-on-desktop), rgb(var(--swatch-topmenu-bg-color)) calc(var(--header-height-on-desktop) + 0.125rem), rgb(var(--swatch-topmenu-bg-color)) calc(100% - 0.125rem), rgb(var(--swatch-topmenu-border-color)) 100% );
+	--gradient-topmenu-mobile: linear-gradient( to bottom, rgb(var(--swatch-topmenu-border-color)) 0, rgb(var(--swatch-topmenu-bg-color)) 0.125rem, rgb(var(--swatch-topmenu-bg-color)) calc(var(--topbar-height-on-mobile) - 0.125rem), rgb(var(--swatch-topmenu-bg-color)) calc(var(--topbar-height-on-mobile) - 0.125rem), rgb(var(--swatch-topmenu-border-color)) var(--topbar-height-on-mobile) );
+	/* Subtle gradient that begins just below the top-bar and header */
+	--background-gradient-distance: 40rem;
+	--gradient-background: linear-gradient(to bottom, rgb(var(--background-gradient-color)) 0, rgba(var(--background-gradient-color), 0) var(--background-gradient-distance));
+
+	/* ===STRUCTURAL SPACING ELEMENTS=== */
+	--body-width-on-desktop: 44.25rem;
+	--body-width-on-mobile: 100%;
+	--scrollbar-width: 1ch;
+
+	/* ===HEADER MEASUREMENTS=== */
+	--header-width-on-desktop: 61.25rem;
+	--header-width-on-mobile: 100vw;
+	--header-height-on-desktop: 7.5rem;
+	--header-height-on-mobile: 7.5rem;
+	--header-background-image-size: 100% var(--header-height-on-desktop);
+
+	/* ===TOPBAR MEASUREMENTS=== */
+	--topbar-height-on-desktop: 1.875rem;
+	--topbar-height-on-mobile: 3rem;
+
+	/* ===FINAL HEADER + TOPBAR MEASUREMENTS=== */
+	/* These Vars should not be edited unless necessary. */
+	--final-header-height-on-desktop: calc(var(--header-height-on-desktop) + var(--topbar-height-on-desktop));
+	--final-header-height-on-mobile: calc(var(--header-height-on-mobile) + var(--topbar-height-on-mobile));
+
+	/* ===SIDEBAR MEASUREMENTS=== */
+	--sidebar-width-on-desktop: min(calc(var(--base-font-size) * (266 / 15)), calc((100vw - var(--body-width-on-desktop))));
+	--sidebar-width-on-mobile: calc(var(--base-font-size) * (238 / 15));
+	--sidebar-internal-border-thickness: 0.125rem;
+}
+
+/*  ===============================
+		======= SPECIFIC COLORS =======
+		===============================
+
+/* Colors for Buttons, Tabs, Tables, Footnotes Hover/Modal, Etc. */
+
+:root {
+	/* ===BACKGROUND GRADIENT=== */
+
+	/* ===GENERAL BACKGROUND=== */
+	/* Overall Page Background Color */
+	--swatch-background: var(--white-monochrome);
+	/* Gradient Color used for the --gradient-background var */
+	--background-gradient-color: var(--very-light-gray-monochrome);
+
+	/* ===HEADER GRADIENT=== */
+	/* Colors forming the header gradient used in --gradient-header var */
+	--header-gradient-color-bottom: var(--medium-accent);
+	--header-gradient-color-middle: var(--black-monochrome);
+	--header-gradient-color-top: var(--black-monochrome);
+
+	/* ===TOPBAR GRADIENT=== */
+	/* Colors used in the --gradient-topmenu var to give the topbar its color */
+	--swatch-topmenu-bg-color: var(--swatch-menubg-medium-dark-color);
+	--swatch-topmenu-border-color: var(--swatch-menubg-black-color);
+
+	/* ===LINK COLORS=== */
+	--link-color: var(--pale-accent);
+	--visited-link-color: var(--swatch-primary-darkest);
+	--hover-link-color: var(--swatch-primary);
+	--newpage-color: var(--alt-accent);
+}
+
+#header {
+	/* ===HEADER ELEMENTS=== */
+	/* ===HEADER TITLES=== */
+	/* Header H1 and H2 colors */
+	--swatch-headerh1-color: var(--swatch-text-light);
+	--swatch-headerh2-color: var(--swatch-text-light);
+
+	/* ===SEARCH ELEMENT=== */
+	--search-icon-color: var(--swatch-text-secondary-color);
+	--search-icon-hover-color: var(--swatch-text-secondary-color);
+	--search-icon-hover-bg-color: var(--swatch-alternate-color);
+	--search-textbox-text-color: 0, 0, 0, 0;
+	/* Focus is when the search box has been clicked on */
+	--search-icon-focus-color: var(--swatch-text-secondary-color);
+	--search-icon-focus-bg-color: var(--swatch-primary);
+	--search-focus-outline-color: var(--swatch-primary);
+	--search-focus-textbox-bg-color: var(--swatch-alternate-color);
+	--search-focus-textbox-text-color: var(--swatch-text-secondary-color);
+
+	/* ===LOGIN BOX ELEMENT=== */
+	--login-line-divider-color: var(--swatch-text-secondary-color);
+	--login-username-color: var(--swatch-text-secondary-color);
+	--login-myaccount-color: var(--swatch-text-secondary-color);
+	--login-myaccount-hover-color: var(--login-myaccount-color);
+	--login-myaccount-underline-color: var(--swatch-primary-darkest);
+	--login-myaccount-hover-bg-color: var(--swatch-primary-darkest);
+	--login-arrow-color: var(--search-icon-color);
+	/* Dropdown Box when arrow is clicked */
+	--login-dropdown-bg-color: var(--swatch-menubg-color);
+	--login-dropdown-bg-image: var(--gradient-header);
+	--login-dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
+	--login-dropdown-text-color: var(--swatch-text-secondary-color);
+	--login-dropdown-text-hover-color: var(--swatch-text-secondary-color);
+	--login-dropdown-bg-hover-color: var(--swatch-primary);
+
+	/* Mobile Icon Styling */
+	--login-mobile-icon-color: var(--search-icon-color);
+	--login-mobile-icon-hover-color: var(--search-icon-hover-color);
+	--login-mobile-icon-hover-bg-color: var(--search-icon-hover-bg-color);
+}
+
+#top-bar {
+	/* ===TOPBAR ELEMENTS=== */
+
+	/* ===TOPBAR CATEGORIES=== */
+	--topmenu-category-color: var(--swatch-text-secondary-color);
+	--topmenu-category-hover-color: var(--swatch-text-secondary-color);
+	--topmenu-category-hover-bg: 0, 0, 0, 0; /* Transparent */
+	--topmenu-hover-border-color: var(--swatch-primary);
+
+	--mobile-topmenu-sidebar-button-color: var(--swatch-text-secondary-color);
+
+	/* ===DROPDOWN MENU=== */
+	--dropdown-bg-color: var(--swatch-alternate-color), 0.9;
+	--dropdown-border-color: var(--swatch-text-tertiary-color), 0.5;
+	--dropdown-links-color: var(--swatch-text-secondary-color);
+	--dropdown-links-bg-color: 0, 0, 0, 0; /* Transparent */
+	--dropdown-links-hover-color: var(--swatch-text-secondary-color);
+	--dropdown-links-hover-bg-color: var(--swatch-primary);
+}
+
+#side-bar,
+#interwiki {
+	/* ===SIDE-BAR ELEMENTS=== */
+
+	/* ===SIDE-BAR GENERAL=== */
+	--sidebar-bg-color: var(--swatch-menubg-color);
+	--sidebar-resources-bg-color: var(--swatch-primary-darker), 0.25;
+	--sidebar-media-bg-color: var(--swatch-primary-darker), 0.125;
+
+	/* ===SOCIAL MEDIA ICONS=== */
+	--discord-icon-color: 88, 101, 242; /* BLURPLE */
+	--deviantart-icon-color: 0, 199, 135;
+	--facebook-icon-color: 59, 89, 152;
+	--github-icon-color: 25, 23, 23;
+	--instagram-icon-color: 240, 148, 51;
+	--instagram-icon-gradient: linear-gradient(45deg, rgb(240 148 51) 0%, rgb(230 104 60) 25%, rgb(220 39 67) 50%, rgb(204 35 102) 75%, rgb(188 24 136) 100%);
+	--reddit-icon-color: 225, 69, 0;
+	--sandbox-icon-color: 35, 140, 120;
+	--steam-icon-color: 8, 20, 40;
+	--tiktok-icon-color: 12, 12, 12;
+	--tiktok-icon-gradient: linear-gradient(125deg, rgb(37 244 238) 0%, rgb(37 244 238) 50%, rgb(254 44 85) calc(50% + 0.0625rem), rgb(254 44 85) 100%);
+	--twitch-icon-color: 100, 65, 165;
+	--twitter-icon-color: 29, 161, 242;
+	--youtube-icon-color: 255, 0, 0;
+
+	--social-icon-hover-color: var(--swatch-primary);
+
+	/* ===SIDEBLOCK MENU=== */
+	--sideblock-bg-color: 0, 0, 0, 0; /* Transparent */
+	--sideblock-heading-border-color: var(--swatch-primary);
+	--sideblock-heading-bg-color: 0, 0, 0, 0; /* Transparent */
+	--sideblock-heading-text-color: var(--swatch-primary-darker);
+
+	/* ===MENU-ITEMS=== */
+	--sidebar-border-color: var(--swatch-border-color), 0.08;
+	--sidebar-subtext-color: var(--swatch-primary);
+
+	--sidebar-links-text: var(--swatch-menutxt-general-color);
+	--sidebar-links-bg-color: 0, 0, 0, 0; /* Transparent */
+	--sidebar-links-hover-bg-color: var(--swatch-primary);
+	--sidebar-links-hover-text-color: var(--swatch-text-secondary-color);
+
+	/* ===SIDEBAR COLLAPSIBLES=== */
+	/* Folded Colors */
+	--sidebar-collapsible-fld-link-bg: var(--swatch-primary-darker), 0.25;
+	--sidebar-collapsible-fld-link-color: var(--sideblock-heading-text-color);
+	--sidebar-collapsible-fld-link-hover-bg: var(--swatch-primary-darker);
+	--sidebar-collapsible-fld-link-hover-color: var(--swatch-text-secondary-color);
+	--sidebar-collapsible-fld-arrow-color: var(--swatch-text-tertiary-color);
+	--sidebar-collapsible-fld-arrow-hover-color: var(--swatch-text-secondary-color);
+
+	/* Unfolded Colors */
+	--sidebar-collapsible-ufld-link-bg: var(--sidebar-collapsible-fld-link-bg);
+	--sidebar-collapsible-ufld-link-color: var(--sideblock-heading-text-color);
+	--sidebar-collapsible-ufld-link-hover-bg: var(--swatch-primary);
+	--sidebar-collapsible-ufld-link-hover-color: var(--sidebar-collapsible-fld-link-hover-color);
+	--sidebar-collapsible-ufld-arrow-color: var(--sidebar-collapsible-fld-arrow-color);
+	--sidebar-collapsible-ufld-arrow-hover-color: var(--sidebar-collapsible-fld-arrow-hover-color);
+
+	/* Unfolded Body Colors */
+	--sidebar-collapsible-body-bg: var(--swatch-primary), 0.125;
+	--sidebar-collapsible-link-color: var(--sidebar-links-text);
+	--sidebar-collapsible-link-hover-bg: var(--sidebar-links-hover-bg-color);
+	--sidebar-collapsible-link-hover-color: var(--sidebar-links-hover-text-color);
+}
+
+/* ===INTERWIKI ELEMENTS=== */
+
+#interwiki {
+	--base-font-size: var(--max-font-size);
+}
+
+@media only screen and (max-width: 14rem) {
+	#interwiki {
+		--base-font-size: var(--min-font-size);
+	}
+}
+
+/* ===FOOTER=== */
+
+#footer {
+	--footer-bg-color: var(--swatch-primary-darkest);
+	--footer-text-color: var(--swatch-text-secondary-color);
+	--footer-link-color: var(--swatch-text-secondary-color);
+	--footer-link-hover-color: var(--swatch-primary);
+	--footer-link-hover-bg-color: var(--swatch-secondary-color);
+}
+
+/* ===LICENSE AREA=== */
+
+#license-area {
+	--license-bg-color: var(--swatch-alternate-color);
+	--license-text-color: var(--swatch-text-secondary-color);
+	--license-link-color: var(--swatch-text-secondary-color);
+	--license-link-hover-color: var(--swatch-primary);
+	--license-link-hover-bg-color: var(--swatch-secondary-color);
+}
+
+#main-content {
+	/* ===MAIN CONTENT UI ELEMENTS */
+	/* ===UI ICONS=== */
+	/* ===PAGE OPTIONS ICONS=== */
+	--ui-icon-color: var(--swatch-text-secondary-color);
+	--ui-icon-bg: var(--swatch-primary-darkest);
+	--ui-icon-hover-color: var(--swatch-text-secondary-color);
+	--ui-icon-hover-bg: var(--swatch-primary);
+
+	/* ===TEXT EDITOR ICONS=== */
+	--editor-icon-color: var(--swatch-menutxt-general-color);
+	--editor-icon-bg: 0, 0, 0, 0; /* Transparent */
+	--editor-icon-hover-color: var(--swatch-background);
+	--editor-icon-hover-bg: var(--swatch-primary);
+	--editor-icon-submenu-bg: var(--swatch-secondary-color);
+
+	/* ===TABS=== */
+	--tabs-bg: var(--swatch-secondary-color);
+	--tabs-txt: var(--swatch-text-tertiary-color);
+	--tabs-hover-bg: var(--swatch-primary-darker);
+	--tabs-hover-txt: var(--swatch-text-secondary-color);
+	--tabs-selected-bg: var(--swatch-primary);
+	--tabs-selected-txt: var(--swatch-text-secondary-color);
+	--tabs-selected-outline: var(--swatch-primary);
+	--tabs-bottom-border-color: var(--swatch-primary-darker);
+
+	--tabs-content-bg-color: var(--swatch-secondary-color), 0.25;
+	--tabs-content-border-color: var(--swatch-tertiary-color);
+
+	/* ===TABLES=== */
+	--tables-header-bg: var(--swatch-primary-darkest);
+	--tables-header-txt: var(--swatch-text-secondary-color);
+	--tables-border: var(--swatch-tertiary-color);
+	--tables-body-bg: var(--swatch-background);
+	--tables-body-txt: var(--swatch-text-general);
+
+	/* ===BLOCKQUOTES=== */
+	--blockquote-bg-color: var(--swatch-secondary-color), 0.25;
+	--blockquote-border-color: var(--swatch-tertiary-color);
+	/* Color for special .colorbar-quote blockquote class */
+	--blockquote-colorbar-color: var(--swatch-primary), 1;
+
+	/* ===FOOTNOTES/BIBLIOGRAPHY FOOTER=== */
+	--footnotes-footer-bg-color: var(--swatch-secondary-color);
+	--footnotes-footer-colorbar-color: var(--swatch-primary-darkest);
+	--footnotes-footer-title-bg-color: var(--swatch-primary-darkest);
+	--footnotes-footer-title-text-color: var(--swatch-text-secondary-color);
+	--footnotes-footer-num-color: var(--link-color);
+	--footnotes-footer-num-hover-color: var(--hover-link-color);
+	--footnotes-footer-text-color: var(--swatch-text-general);
+
+	/* ===TOC=== */
+	--toc-header-bg-color: var(--swatch-primary-darkest);
+	--toc-header-text-color: var(--swatch-text-secondary-color);
+	--toc-header-text-hover-color: var(--swatch-text-secondary-color);
+
+	--toc-body-bg-color: var(--swatch-menubg-color);
+	--toc-directory-lines-color: var(--swatch-tertiary-color);
+
+	--toc-body-link-color: var(--link-color);
+	--toc-body-link-hover-color: var(--link-color);
+	--toc-body-hover-arrow-color: var(--link-color);
+
+	/* ===PAGE TAGS=== */
+	--pagetags-title-bg: var(--swatch-primary-darkest);
+	--pagetags-title-text: var(--swatch-text-secondary-color);
+	--pagetags-text-color: var(--swatch-primary-darkest);
+	--pagetags-text-hover-color: var(--swatch-background);
+	--pagetags-text-hover-bg-color: var(--swatch-primary);
+}
+
+/* ===GLOBAL ELEMENTS=== */
+
+/* ===UI BUTTONS=== */
+@define-mixin bhl-btn $maxwidth {
+	--wght: var(--ui-wght);
+
+	display: inline-flex;
+	container-type: normal;
+	position: relative;
+	z-index: 2;
+	align-items: center;
+	justify-content: center;
+	min-width: $maxwidth;
+	margin: 0;
+	padding: 0.25em;
+	overflow: hidden;
+	transition:
+		border-color 0.2s var(--ease-in-out),
+		box-shadow 0.2s var(--ease-in-out),
+		color 0.15s var(--ease-in-out),
+		background-color 0.15s var(--ease-in-out),
+		font-weight 0.2s var(--ease-in-out),
+		font-variation-settings 0.2s var(--ease-in-out);
+	border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
+	outline: 0 solid rgb(var(--swatch-primary));
+	background-color: rgb(var(--ui-button-bg));
+	box-shadow:
+		-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75),
+		0 0 0 0 rgb(var(--ui-button-bg));
+	color: rgb(var(--ui-button-txt));
+	font-family: var(--UI-font);
+	font-weight: var(--wght);
+	text-decoration: none;
+	will-change: border-color, box-shadow, color, background-color, font-weight, font-variation-settings;
+
+	@supports (font-size:0.75cqi) {
+		font-size: calc(max(var(--min-font-size),min(0.75cqi,var(--max-font-size))) * 1.8);
+	}
+
+	&:is(:hover, :active, :focus, :focus-within) {
+		--wght: var(--ui-hvr-wght);
+
+		border-color: transparent;
+		outline: 0 solid rgb(var(--swatch-primary));
+		background-color: rgb(var(--ui-button-hover-bg));
+		box-shadow: 0 0 0 0 rgba(var(--swatch-tertiary-color), 0), inset 0 0 0 0 rgba(var(--swatch-tertiary-color), 0), 0 0 0 0.125rem rgb(var(--ui-button-hover-outline));
+		color: rgb(var(--ui-button-hover-txt));
+		font-weight: var(--wght);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	@supports (font-size: 1cqi) {
+		font-size: max(var(--min-font-size), min(0.75cqi, var(--max-font-size)));
+	}
+}
+
+:root {
+	--ui-button-bg: var(--swatch-secondary-color);
+	--ui-button-txt: var(--swatch-text-tertiary-color);
+	--ui-button-hover-bg: var(--swatch-primary);
+	--ui-button-hover-txt: var(--swatch-text-secondary-color);
+	--ui-button-hover-outline: var(--swatch-primary);
+
+	/* ===RATING MODULE=== */
+
+	--rating-module-button-plus-color: 0, 200, 0;
+	--rating-module-button-negative-color: 200, 0, 0;
+	--rating-module-button-cancel-color: var(--swatch-tertiary-color);
+	--rating-module-button-credit-color: var(--swatch-secondary-color);
+
+	--rating-module-bg-color: var(--swatch-background);
+	--rating-module-bottom-border-color: var(--swatch-primary);
+
+	--rating-module-text-color: var(--swatch-text-tertiary-color);
+	--rating-module-text-hover-color: var(--swatch-text-secondary-color);
+
+	/* ===MODALS=== */
+
+	--modal-bg: var(--swatch-secondary-color);
+	--modal-body-text: var(--swatch-text-tertiary-color);
+	--modal-body-header-txt: var(--swatch-text-tertiary-color); /* h1/h2/h3/h4/h5/h6 */
+
+	--modal-header-bg: var(--swatch-primary-darkest);
+	--modal-header-txt: var(--swatch-text-secondary-color);
+	--modal-header-stripe: var(--swatch-primary);
+
+	/* ===FOOTNOTES HOVER BLOCK=== */
+	--hoverblock-bg: var(--swatch-secondary-color);
+	--hoverblock-txt: var(--swatch-text-tertiary-color);
+	--hoverblock-header-bg: var(--swatch-primary-darker);
+	--hoverblock-header-txt: var(--swatch-text-secondary-color);
+	--hoverblock-footer-bg: var(--swatch-tertiary-color);
+	--hoverblock-footer-txt: var(--swatch-text-tertiary-color);
+
+	/* ===LISTPAGES PAGER=== */
+	--pager-text: var(--swatch-text-general);
+	--pager-link: var(--link-color);
+
+	--pager-link-hover: var(--swatch-text-secondary-color);
+	--pager-hover-bg: var(--swatch-primary-darkest);
+
+	--pager-selected-bg: var(--swatch-primary);
+	--pager-selected-link: var(--swatch-text-secondary-color);
+}
+
+/* ===ANIMATIONS=== */
+:root {
+	--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in {
+	from {
+		translate: 1rem 1rem;
+	}
+
+	to {
+		translate: 0 0;
+	}
+}
+
+@keyframes slide-down {
+	from {
+		max-height: 0;
+	}
+
+	to {
+		max-height: var(--header-height-on-desktop);
+	}
+}
+
+@keyframes lift-in {
+	from {
+		box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+	}
+
+	to {
+		box-shadow: 0.25rem 0.125rem 0.5rem 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+	}
+}
+
+/*  ===============================
+		======== TEXT ELEMENTS ========
+		===============================
+
+/* ===HARDCODED TEXT=== */
+
+:root {
+	/* Found in Wikidot Structure */
+	--text-tags: "TAGS\0021b4";
+	--text-editor-desc: "Short Description of Changes:";
+	--text-pagehistory-rev: "rev.";
+	--text-pagehistory-flags: "flags";
+	--text-pagehistory-actions: "actions";
+	--text-pagehistory-by: "by";
+	--text-pagehistory-date: "date";
+	--text-sitetools: "Site Tools";
+
+	/* Found in Elements */
+	--text-creditview-back: "Back";
+	--text-tableofcontents: "Table of Contents";
+
+	/* Found in Header */
+	--text-messages: "Messages";
+}
+
+/*  ===============================
+		========= DEPRECIATED =========
+		===============================
+
+/* ===LEGACY VARIABLES=== */
+
+/* These Vars are being left for now in case they are used in various these but will eventually be removed */
+:root {
+	/* Legacy Var -- No longer used */
+	--gradient-sidemenu-header: linear-gradient(10deg, rgba(var(--swatch-primary-darker), 0.45) 0%, rgba(var(--swatch-primary-darker), 0.55) 100%);
+
+	--rating-module-button-color: var(--swatch-menutxt-general-color);
+
+	--border-styling: solid 0.0625rem rgb(var(--swatch-border-color));
+
+	--border-radius-width: 0.0625rem;
+
+	/* Box-Shadow 1px Borders */
+	--box-border-bottom: 0 0.0625rem 0 0 rgb(var(--swatch-border-color));
+	--box-border-top: 0 -0.0625rem 0 0 rgb(var(--swatch-border-color));
+	--box-border-left: -0.0625rem 0 0 0 rgb(var(--swatch-border-color));
+	--box-border-right: 0.0625rem 0 0 0 rgb(var(--swatch-border-color));
+	--box-border-all: 0 0 0 0.0625rem rgb(var(--swatch-border-color));
+
+	--sidebar-transition-timing: 0.5s var(--ease-in-out) 0.1s;
+}
