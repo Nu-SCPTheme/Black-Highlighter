@@ -1540,13 +1540,14 @@ span.printuser {
 
 		& img.small {
 			height: 100%;
+			width: calc(100% - 0.3625rem);
 			aspect-ratio: 1/1;
 		}
 	}
 
 	& img.small,
 	&.deleted img {
-		padding: 0 0 0 0.5rem;
+		padding: 0 0 0 0.3625rem;
 		background-position: left center;
 		background-size: 100% calc(100% + 0.125rem);
 		object-fit: cover;
