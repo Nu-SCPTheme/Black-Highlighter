@@ -1,0 +1,150 @@
+/* INT ELEMENTS STYLING
+   ============================= */
+
+/* Styling specific to Int Branches' Elements
+
+/* ===DIRECTORY===
+	1.  =CZECH BRANCH
+	2.  =FRENCH BRANCH
+	3.  =GERMAN BRANCH
+	4.  =GREEK BRANCH
+	5.  =ITALIAN BRANCH
+	6.  =JAPANESE BRANCH
+	7.  =KOREAN BRANCH
+	8.  =POLISH BRANCH
+	9.  =PORTUGESE BRANCH
+	10. =RUSSIAN BRANCH
+	11. =SIMPLIFIED CHINESE BRANCH
+	12. =SPANISH BRANCH
+	13. =THAI BRANCH
+	14. =TRADITIONAL CHINESE BRANCH
+	15. =UKRAINIAN BRANCH
+	16. =VIETNAMESE BRANCH
+*/
+
+/* ===CZECH BRANCH=== */
+
+:where(:lang(cs)) {
+	:root& {
+		--text-creditview-back: "Zpět";
+		--text-tableofcontents: "Obsah";
+	}
+}
+
+/* ===FRENCH BRANCH=== */
+
+:where(:lang(fr)) {
+	:root& {
+		--text-creditview-back: "Retour";
+		--text-tableofcontents: "Sommaire";
+	}
+}
+
+/* ===GERMAN BRANCH=== */
+
+:where(:lang(de)) {
+	:root& {
+		--text-creditview-back: "Zurück";
+		--text-tableofcontents: "Inhalt";
+	}
+
+	.page-rate-widget-box,
+	#page-content .rate-box-with-credit-button {
+		background-color: rgb(var(--rating-module-bg-color)) !important;
+	}
+}
+
+/* ===GREEK BRANCH=== */
+
+:where(:lang(el)) {
+	:root& {
+		--text-creditview-back: "Πίσω";
+		--text-tableofcontents: "Πίνακας περιεχομένων";
+	}
+}
+
+/* ===ITALIAN BRANCH=== */
+
+:where(:lang(it)) {
+	:root& {
+		--text-creditview-back: "Indietro";
+		--text-tableofcontents: "Indice dei contenuti";
+	}
+}
+
+/* ===JAPANESE BRANCH=== */
+
+:where(:lang(ja)) {
+	:root& {
+		--text-creditview-back: "閉じる";
+		--text-tableofcontents: "目次";
+	}
+}
+
+/* ===KOREAN BRANCH=== */
+
+:where(:lang(ko)) {
+	:root& {
+		--text-creditview-back: "뒤로";
+		--text-tableofcontents: "목차";
+	}
+}
+
+/* ===POLISH BRANCH=== */
+
+:where(:lang(pl)) {
+	:root& {
+		--text-creditview-back: "Powrót";
+		--text-tableofcontents: "Spis Treści";
+	}
+}
+
+/* ===PORTUGESE BRANCH=== */
+
+:where(:lang(pt-br)) {
+	:root& {
+		--text-creditview-back: "Voltar";
+		--text-tableofcontents: "Índice";
+	}
+}
+
+/* ===RUSSIAN BRANCH=== */
+
+/* ===SIMPLIFIED CHINESE BRANCH=== */
+
+:where(:lang(cn)) {
+	:root& {
+		--text-creditview-back: "返回";
+		--text-tableofcontents: "目录";
+	}
+}
+
+/* ===SPANISH BRANCH=== */
+
+:where(:lang(es)) {
+	:root& {
+		--text-creditview-back: "Volver";
+		--text-tableofcontents: "Tabla de Contenidos";
+	}
+}
+
+/* ===THAI BRANCH=== */
+
+/* ===TRADITIONAL CHINESE BRANCH=== */
+
+:where(:lang(zh-tr)) {
+	:root& {
+		--text-creditview-back: "返回";
+		--text-tableofcontents: "目录";
+	}
+}
+
+/* ===UKRAINIAN BRANCH=== */
+
+/* ===VIETNAMESE BRANCH=== */
+
+:where(:lang(vi)) {
+	:root& {
+		--text-tableofcontents: "Mục Lục";
+	}
+}

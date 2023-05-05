@@ -1,5 +1,24 @@
-# Ignore Wrap Files
-/src/css/black-highlighter-wrap-begin.css
-/src/css/black-highlighter-wrap-close.css
-/src/css/normalize-wrap-begin.css
-/src/css/normalize-wrap-close.css
+# Build Files
+Makefile
+build
+*.map
+
+# dist files
+dist/
+
+# Normalize File
+normalize.css
+
+# Non-web
+*.md
+*.patch
+
+# NPM
+node_modules/
+pnpm-lock.yaml
+
+# Misc
+.DS_Store
+.*.swp
+*.bak
+.vscode/

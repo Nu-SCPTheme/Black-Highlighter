@@ -1,11 +1,13 @@
 # Variables
 BUILD_SOURCES := \
-	$(wildcard build/*) \
-	cssnano.config.js
+	$(wildcard build/*)
 
 # Directory creation
 DIRECTORIES := \
+	dist/css/ \
 	dist/css/min/ \
+	dist/css/parts/ \
+	dist/css/parts/int/ \
 	dist/fonts/ \
 	dist/fonts/int \
 	dist/fonts/int/chinese-simplified \
@@ -22,7 +24,7 @@ DIRECTORIES := \
 $(DIRECTORIES):
 	mkdir -p $@
 
-# npm rules
-node_modules: package.json package-lock.json
-	npm install
+# pnpm rules
+node_modules: package.json pnpm-lock.yaml
+	pnpm install
 	touch node_modules

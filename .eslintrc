@@ -2,14 +2,17 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jquery": true
   },
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 8
   },
   "extends": [
     "eslint:recommended", 
-    "eslint-plugin-prettier"
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "eslint-plugin-prettier"
@@ -18,6 +21,7 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "prettier/prettier": "error",
-    "no-console": "off"
+    "no-console": "off",
+    "endOfLine": "off"
   }
 }
