@@ -34,7 +34,7 @@
 	}
 }
 
-:where(.yui-navset, .yui-navset-top, .yui-navset-bottom) {
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) {
 	.yui-nav {
 		--clip-path: polygon(-0.0625rem -0.5rem, calc(100% + 0.0625rem) -0.5rem, calc(100% + 0.0625rem) 100%, -0.0625rem 100%);
 
@@ -188,7 +188,7 @@
 
 /* ===BLOCKQUOTE=== */
 
-:where(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
+:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
 	display: block;
 	position: relative;
 	margin-block: 1ex 0;
