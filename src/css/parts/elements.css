@@ -417,7 +417,7 @@
 
 /* ===IMAGE BLOCK=== */
 
-:is(.image-block, .scp-image-block) {
+:is(div.image-block, div.scp-image-block) {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -1888,8 +1888,8 @@ div.block-left {
 		max-width: 90vw !important; /* Overwriting JS-injected inline styling */
 	}
 
-	.image-block,
-	.scp-image-block {
+	div.image-block,
+	div.scp-image-block {
 		&.block-right,
 		&.block-left {
 			max-width: 40vw !important; /* Overwriting JS-injected inline styling */
