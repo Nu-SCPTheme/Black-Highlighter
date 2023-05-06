@@ -13732,7 +13732,7 @@ div#container-wrap {
 
 /* ===IMAGE BLOCK=== */
 
-:is(.image-block, .scp-image-block) {
+:is(div.image-block, div.scp-image-block) {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -13740,45 +13740,45 @@ div#container-wrap {
 	box-shadow: 0 0 0 0.0625rem rgb(var(--swatch-tertiary-color)), -0.0625rem 0 0 0 rgb(var(--swatch-tertiary-color)), 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 }
 
-:is(.image-block, .scp-image-block),
-	:is(.image-block, .scp-image-block) * {
+:is(div.image-block, div.scp-image-block),
+	:is(div.image-block, div.scp-image-block) * {
 		border: none;
 	}
 
-:is(.image-block, .scp-image-block) * {
+:is(div.image-block, div.scp-image-block) * {
 		width: 100%;
 	}
 
-.block-right:is(.image-block, .scp-image-block) {
+.block-right:is(div.image-block, div.scp-image-block) {
 		margin: 0 0 1em 2em;
 		float: right;
 		clear: right;
 	}
 
-.block-left:is(.image-block, .scp-image-block) {
+.block-left:is(div.image-block, div.scp-image-block) {
 		margin: 0 2em 1em 0;
 		float: left;
 		clear: left;
 	}
 
-.block-center:is(.image-block, .scp-image-block) {
+.block-center:is(div.image-block, div.scp-image-block) {
 		margin-right: auto;
 		margin-left: auto;
 	}
 
-:is(.image-block, .scp-image-block) img.image {
+:is(div.image-block, div.scp-image-block) img.image {
 		min-width: 100%;
 		border: 0;
 	}
 
-:is(.image-block, .scp-image-block) img.image[style*="width:"] {
+:is(div.image-block, div.scp-image-block) img.image[style*="width:"] {
 			width: 100% !important;
 		}
 
-:is(.image-block, .scp-image-block) img.image[style*="width:"] { /* Overwriting img width set by Image Block component as it's is already placed on the parent div */
+:is(div.image-block, div.scp-image-block) img.image[style*="width:"] { /* Overwriting img width set by Image Block component as it's is already placed on the parent div */
 		}
 
-:is(.image-block, .scp-image-block) :is(.image-caption, .scp-image-caption) {
+:is(div.image-block, div.scp-image-block) :is(.image-caption, .scp-image-caption) {
 		--wght: 600;
 
 		box-sizing: border-box;
@@ -13793,7 +13793,7 @@ div#container-wrap {
 		text-align: center;
 	}
 
-:is(.image-block, .scp-image-block) :is(.image-caption, .scp-image-caption) > p {
+:is(div.image-block, div.scp-image-block) :is(.image-caption, .scp-image-caption) > p {
 			margin: 0;
 			padding: 0;
 		}
@@ -15370,23 +15370,23 @@ div.block-left {
 
 	.hovertip { /* Overwriting JS-injected inline styling */
 	}
-		.image-block.block-right,
-		.scp-image-block.block-right,
-		.image-block.block-left,
-		.scp-image-block.block-left {
+		div.image-block.block-right,
+		div.scp-image-block.block-right,
+		div.image-block.block-left,
+		div.scp-image-block.block-left {
 			max-width: 40vw !important;
 		}
-		.image-block.block-right,
-		.scp-image-block.block-right,
-		.image-block.block-left,
-		.scp-image-block.block-left { /* Overwriting JS-injected inline styling */
+		div.image-block.block-right,
+		div.scp-image-block.block-right,
+		div.image-block.block-left,
+		div.scp-image-block.block-left { /* Overwriting JS-injected inline styling */
 		}
 
-		.image-block img.image[style*="width:"], .scp-image-block img.image[style*="width:"] {
+		div.image-block img.image[style*="width:"], div.scp-image-block img.image[style*="width:"] {
 			width: 100% !important;
 		}
 
-		.image-block img.image[style*="width:"], .scp-image-block img.image[style*="width:"] { /* Overwriting JS-injected inline styling */
+		div.image-block img.image[style*="width:"], div.scp-image-block img.image[style*="width:"] { /* Overwriting JS-injected inline styling */
 		}
 
 	:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
