@@ -1210,18 +1210,6 @@ h6 {
 	}
 }
 
-div[id*="page-content"] p {
-	margin-block: 1ex 0;
-
-	&:is(:first-child, :only-child) {
-		margin-block-start: 0;
-	}
-
-	&:last-child:not(:only-child) {
-		margin-block-end: 1em;
-	}
-}
-
 /* ===LISTS=== */
 
 ul:not(.yui-nav) {
