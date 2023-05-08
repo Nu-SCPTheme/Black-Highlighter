@@ -5362,8 +5362,12 @@ form#edit-page-form .wd-editor-toolbar-panel + div {
 		}
 
 form#edit-page-form textarea {
+		width: 100% !important;
+	}
+
+form#edit-page-form textarea {
 		overflow-y: auto;
-		border: none;
+		border: none; /* Overwriting inline styling */
 		outline: 0 solid transparent;
 		font-size: 0.9em;
 		line-height: 1.42;
