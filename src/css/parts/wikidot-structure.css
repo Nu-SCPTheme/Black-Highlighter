@@ -1108,6 +1108,7 @@ form#edit-page-form {
 		& ul li ul {
 			position: absolute;
 			z-index: 30;
+			list-style: none;
 		}
 
 		& div {
@@ -1123,6 +1124,10 @@ form#edit-page-form {
 					position: relative;
 					height: 100%;
 					margin: 0;
+
+					&.hseparator {
+						display: none;
+					}
 
 					> ul {
 						--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
