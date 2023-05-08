@@ -1045,7 +1045,7 @@ hr {
 		margin-top: 0;
 	}
 
-	+ :not(p) {
+	+ :not(p):not(:has(p)) {
 		padding-top: 1em;
 	}
 }
