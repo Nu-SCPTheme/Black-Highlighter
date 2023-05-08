@@ -2936,22 +2936,26 @@ input[type="radio"]:checked::before {
 
 /* ===STANDARD STRUCTURE=== */
 
-hr {
-	display: block;
-	height: 0.0625rem;
-	margin: 1em 0 0;
-	padding: 0;
-	border: 0;
-	border-top: 0.0625rem solid rgb(var(--swatch-tertiary-color));
-}
-
-hr:first-child {
-		margin-top: 0;
+#main-content p {
+		margin: 1ex 0;
 	}
 
-.js-has-pseudo hr + :not(p):not([csstools-has-1m-2w-2p-37-14-1q-w-34-15]:not(does-not-exist)) {
-		padding-top: 1em;
+#main-content hr {
+		display: block;
+		height: 0.0625rem;
+		margin: 1ex 0;
+		padding: 0;
+		border: 0;
+		border-top: 0.0625rem solid rgb(var(--swatch-tertiary-color));
 	}
+
+#main-content hr:first-child {
+			margin-top: 0;
+		}
+
+#main-content hr + p {
+			padding-top: 0;
+		}
 
 /* ===STYLING=== */
 
