@@ -4750,6 +4750,7 @@ form#edit-page-form .wd-editor-toolbar-panel {
 form#edit-page-form .wd-editor-toolbar-panel ul li ul {
 			position: absolute;
 			z-index: 30;
+			list-style: none;
 		}
 
 form#edit-page-form .wd-editor-toolbar-panel div {
@@ -4768,6 +4769,10 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li {
 					height: 100%;
 					margin: 0;
 				}
+
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li.hseparator {
+						display: none;
+					}
 
 form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul {
 						--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
