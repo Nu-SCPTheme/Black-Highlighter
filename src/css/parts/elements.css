@@ -1402,7 +1402,7 @@ table[style*="margin:0"] * {
 			grid-row: 2;
 		}
 
-		&:not(.dots, .pager-no)::after {
+		&::after {
 			--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
 
 			content: " ";
@@ -1514,6 +1514,13 @@ table[style*="margin:0"] * {
 			}
 		}
 
+	}
+
+	& span.dots,
+	& span.pager-no {
+		&::after {
+			display: none;
+		}
 	}
 }
 
