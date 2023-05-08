@@ -643,7 +643,7 @@ div.rate-box-with-credit-button {
 		box-shadow: none;
 	}
 
-	> .creditButton {
+	> div.creditButton {
 		&,
 		& > p {
 			display: block;
@@ -659,7 +659,7 @@ div.rate-box-with-credit-button {
 
 /* Heritage Rating Module */
 
-.heritage-rating-module {
+div.heritage-rating-module {
 	display: inline-block;
 	margin-right: 2em;
 	margin-bottom: 0.625rem;
@@ -670,13 +670,13 @@ div.rate-box-with-credit-button {
 	background-color: rgb(var(--rating-module-bg-color));
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 
-	.page-rate-widget-box {
+	& div.page-rate-widget-box {
 		margin-right: 0;
 		margin-bottom: 0;
 		box-shadow: none;
 	}
 
-	.heritage-emblem {
+	& div.heritage-emblem {
 		position: relative;
 		inset: -0.125rem auto auto 0.125rem;
 		width: 1rem;
@@ -696,12 +696,12 @@ div.rate-box-with-credit-button {
 /* Info module */
 /* These override the styles provided by the base Info Module so have been given a higher specificity with #page-content */
 
-#page-content .creditRate {
+#page-content div.creditRate {
 	margin-right: 0;
 	margin-bottom: 0;
 }
 
-#page-content .rate-box-with-credit-button {
+#page-content div.rate-box-with-credit-button {
 	> .creditButton {
 		&:is(:hover, :active) {
 			background: initial;
@@ -768,7 +768,7 @@ div.rate-box-with-credit-button {
 		}
 	}
 
-	> .page-rate-widget-box {
+	> div.page-rate-widget-box {
 		display: inline-flex;
 		overflow: hidden;
 		border-radius: 0;

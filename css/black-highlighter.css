@@ -13974,8 +13974,8 @@ div.rate-box-with-credit-button .page-rate-widget-box {
 		box-shadow: none;
 	}
 
-div.rate-box-with-credit-button > .creditButton,
-		div.rate-box-with-credit-button > .creditButton > p {
+div.rate-box-with-credit-button > div.creditButton,
+		div.rate-box-with-credit-button > div.creditButton > p {
 			display: block;
 			width: calc(var(--base-font-size) * (21 / 15));
 			height: 100%;
@@ -13987,7 +13987,7 @@ div.rate-box-with-credit-button > .creditButton,
 
 /* Heritage Rating Module */
 
-.heritage-rating-module {
+div.heritage-rating-module {
 	display: inline-block;
 	margin-right: 2em;
 	margin-bottom: 0.625rem;
@@ -13999,13 +13999,13 @@ div.rate-box-with-credit-button > .creditButton,
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 }
 
-.heritage-rating-module .page-rate-widget-box {
+div.heritage-rating-module div.page-rate-widget-box {
 		margin-right: 0;
 		margin-bottom: 0;
 		box-shadow: none;
 	}
 
-.heritage-rating-module .heritage-emblem {
+div.heritage-rating-module div.heritage-emblem {
 		position: relative;
 		top: -0.125rem;
 		right: auto;
@@ -14018,7 +14018,7 @@ div.rate-box-with-credit-button > .creditButton,
 		overflow: visible;
 	}
 
-.heritage-rating-module .heritage-emblem img {
+div.heritage-rating-module div.heritage-emblem img {
 			width: 1.25rem;
 			height: 1.25rem;
 			border: 0;
@@ -14028,37 +14028,37 @@ div.rate-box-with-credit-button > .creditButton,
 
 /* These override the styles provided by the base Info Module so have been given a higher specificity with #page-content */
 
-#page-content .creditRate {
+#page-content div.creditRate {
 	margin-right: 0;
 	margin-bottom: 0;
 }
 
-#page-content .rate-box-with-credit-button > .creditButton:is(:hover, :active) {
+#page-content div.rate-box-with-credit-button > .creditButton:is(:hover, :active) {
 			background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
 			background: initial;
 		}
 
-#page-content .rate-box-with-credit-button > .creditButton > p {
+#page-content div.rate-box-with-credit-button > .creditButton > p {
 			display: block;
 			position: relative;
 			margin: 0;
 			padding: 0;
 		}
 
-#page-content .rate-box-with-credit-button > .creditButton > p,
-			#page-content .rate-box-with-credit-button > .creditButton > p > a {
+#page-content div.rate-box-with-credit-button > .creditButton > p,
+			#page-content div.rate-box-with-credit-button > .creditButton > p > a {
 				width: 100%;
 				height: 100%;
 			}
 
-#page-content .rate-box-with-credit-button > .creditButton > p > a {
+#page-content div.rate-box-with-credit-button > .creditButton > p > a {
 				display: flex;
 				margin-left: 0;
 				border-left: none;
 				background-color: transparent;
 			}
 
-#page-content .rate-box-with-credit-button > .creditButton > p > a::before {
+#page-content div.rate-box-with-credit-button > .creditButton > p > a::before {
 					--mask-image: var(--credit-button-mask);
 
 					content: " ";
@@ -14077,7 +14077,7 @@ div.rate-box-with-credit-button > .creditButton,
 					        mask: var(--mask-image) center center / calc(var(--rating-module-height) - 0.375em) no-repeat;
 				}
 
-#page-content .rate-box-with-credit-button > .creditButton > p > a::after {
+#page-content div.rate-box-with-credit-button > .creditButton > p > a::after {
 					--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
 
 					content: " ";
@@ -14095,15 +14095,15 @@ div.rate-box-with-credit-button > .creditButton,
 					        clip-path: var(--clip-path);
 				}
 
-#page-content .rate-box-with-credit-button > .creditButton > p > a:is(:hover, :active, :focus, :focus-within)::before {
+#page-content div.rate-box-with-credit-button > .creditButton > p > a:is(:hover, :active, :focus, :focus-within)::before {
 						background-color: rgb(var(--rating-module-text-hover-color));
 					}
 
-#page-content .rate-box-with-credit-button > .creditButton > p > a:is(:hover, :active, :focus, :focus-within)::after {
+#page-content div.rate-box-with-credit-button > .creditButton > p > a:is(:hover, :active, :focus, :focus-within)::after {
 						--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 					}
 
-#page-content .rate-box-with-credit-button > .page-rate-widget-box {
+#page-content div.rate-box-with-credit-button > div.page-rate-widget-box {
 		display: inline-flex;
 		overflow: hidden;
 		border-radius: 0;
