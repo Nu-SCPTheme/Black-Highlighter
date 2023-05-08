@@ -486,7 +486,7 @@
 }
 
 div.page-rate-widget-box,
-#page-content .rate-box-with-credit-button {
+#page-content div.rate-box-with-credit-button {
 	display: inline-flex;
 	height: var(--rating-module-height);
 	margin: 0 0 0.75rem;
@@ -499,6 +499,7 @@ div.page-rate-widget-box,
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 }
 
+div.rate-box-with-credit-button div.page-rate-widget-box,
 div.page-rate-widget-box {
 	:is(.rate-points, .rateup, .ratedown, .cancel) {
 		display: block;
@@ -634,7 +635,7 @@ div.page-rate-widget-box {
 }
 
 /* Credit Button Rating Module Specific */
-.rate-box-with-credit-button {
+div.rate-box-with-credit-button {
 	.page-rate-widget-box {
 		border: none;
 		border-radius: 0;

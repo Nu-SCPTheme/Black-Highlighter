@@ -13808,7 +13808,7 @@ div#container-wrap {
 }
 
 div.page-rate-widget-box,
-#page-content .rate-box-with-credit-button {
+#page-content div.rate-box-with-credit-button {
 	display: inline-flex;
 	height: var(--rating-module-height);
 	margin: 0 0 0.75rem;
@@ -13821,13 +13821,15 @@ div.page-rate-widget-box,
 	box-shadow: 0 0.125rem 0 0 rgb(var(--rating-module-bottom-border-color));
 }
 
-div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel) {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel), div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel) {
 		display: block;
 		margin: 0 0.125rem 0 0;
 		border: none;
 	}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
+		div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
+		div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a,
 		div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a {
 			display: block;
 			width: calc(var(--base-font-size) * (21 / 15));
@@ -13838,18 +13840,22 @@ div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
 			text-transform: uppercase;
 		}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
+			div.page-rate-widget-box :is(.rateup, .ratedown, .cancel),
+			div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a,
 			div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a,
+			div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel):is(:hover, :active, :focus),
 			div.page-rate-widget-box :is(.rateup, .ratedown, .cancel):is(:hover, :active, :focus),
+			div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus),
 			div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus) {
 				color: transparent;
 			}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a, div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a {
 			z-index: 0;
 		}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::after {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::after, div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::after {
 				--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
 
 				content: " ";
@@ -13869,7 +13875,7 @@ div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::after {
 				        clip-path: var(--clip-path);
 			}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::before {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::before, div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::before {
 				content: " ";
 				position: absolute;
 				z-index: 1;
@@ -13885,26 +13891,26 @@ div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a::before {
 				        mask: center / calc(var(--rating-module-height) - 0.5em) no-repeat;
 			}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus) {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus), div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus) {
 				-webkit-text-decoration: none;
 				text-decoration: none;
 			}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus)::before {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus)::before, div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus)::before {
 					background-color: rgb(var(--rating-module-text-hover-color));
 				}
 
-div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus)::after {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus)::after, div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a:is(:hover, :active, :focus)::after {
 					--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 				}
 
-div.page-rate-widget-box :is(.rateup, .ratedown) a {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown) a, div.page-rate-widget-box :is(.rateup, .ratedown) a {
 			background: transparent none repeat 0 0 / auto auto padding-box border-box scroll;
 			background: initial;
 			background-color: transparent;
 		}
 
-div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel), div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a {
+div.rate-box-with-credit-button div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel), div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel), div.rate-box-with-credit-button div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a, div.page-rate-widget-box :is(.rateup, .ratedown, .cancel) a {
 		--wght: 600;
 
 		position: relative;
@@ -13912,38 +13918,38 @@ div.page-rate-widget-box :is(.rate-points, .rateup, .ratedown, .cancel), div.pag
 		font-weight: var(--wght);
 	}
 
-div.page-rate-widget-box .cancel {
+div.rate-box-with-credit-button div.page-rate-widget-box .cancel, div.page-rate-widget-box .cancel {
 		font-size: 0.85em;
 	}
 
-div.page-rate-widget-box .rateup a::before {
+div.rate-box-with-credit-button div.page-rate-widget-box .rateup a::before, div.page-rate-widget-box .rateup a::before {
 			-webkit-mask-image: var(--rateup-mask);
 			        mask-image: var(--rateup-mask);
 		}
 
-div.page-rate-widget-box .rateup a::after {
+div.rate-box-with-credit-button div.page-rate-widget-box .rateup a::after, div.page-rate-widget-box .rateup a::after {
 			background-color: rgb(var(--rating-module-button-plus-color));
 		}
 
-div.page-rate-widget-box .ratedown a::before {
+div.rate-box-with-credit-button div.page-rate-widget-box .ratedown a::before, div.page-rate-widget-box .ratedown a::before {
 			-webkit-mask-image: var(--ratedown-mask);
 			        mask-image: var(--ratedown-mask);
 		}
 
-div.page-rate-widget-box .ratedown a::after {
+div.rate-box-with-credit-button div.page-rate-widget-box .ratedown a::after, div.page-rate-widget-box .ratedown a::after {
 			background-color: rgb(var(--rating-module-button-negative-color));
 		}
 
-div.page-rate-widget-box .cancel a::before {
+div.rate-box-with-credit-button div.page-rate-widget-box .cancel a::before, div.page-rate-widget-box .cancel a::before {
 			-webkit-mask-image: var(--cancel-mask);
 			        mask-image: var(--cancel-mask);
 		}
 
-div.page-rate-widget-box .cancel a::after {
+div.rate-box-with-credit-button div.page-rate-widget-box .cancel a::after, div.page-rate-widget-box .cancel a::after {
 			background-color: rgb(var(--rating-module-button-cancel-color));
 		}
 
-div.page-rate-widget-box .rate-points {
+div.rate-box-with-credit-button div.page-rate-widget-box .rate-points, div.page-rate-widget-box .rate-points {
 		display: flex;
 		padding: 0 0.5em;
 		border: none;
@@ -13955,21 +13961,21 @@ div.page-rate-widget-box .rate-points {
 		text-transform: capitalize;
 	}
 
-div.page-rate-widget-box .rate-points .number {
+div.rate-box-with-credit-button div.page-rate-widget-box .rate-points .number, div.page-rate-widget-box .rate-points .number {
 			font-size: calc(var(--base-font-size) * (17 / 15));
 		}
 
 /* Credit Button Rating Module Specific */
 
-.rate-box-with-credit-button .page-rate-widget-box {
+div.rate-box-with-credit-button .page-rate-widget-box {
 		border: none;
 		border-radius: 0;
 		background: none;
 		box-shadow: none;
 	}
 
-.rate-box-with-credit-button > .creditButton,
-		.rate-box-with-credit-button > .creditButton > p {
+div.rate-box-with-credit-button > .creditButton,
+		div.rate-box-with-credit-button > .creditButton > p {
 			display: block;
 			width: calc(var(--base-font-size) * (21 / 15));
 			height: 100%;
