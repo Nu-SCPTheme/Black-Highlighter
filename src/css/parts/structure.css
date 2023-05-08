@@ -1044,6 +1044,10 @@ hr {
 	&:first-child {
 		margin-top: 0;
 	}
+
+	+ :not(p) {
+		padding-top: 1em;
+	}
 }
 
 /* ===STYLING=== */
