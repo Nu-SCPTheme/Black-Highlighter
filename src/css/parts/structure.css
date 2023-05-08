@@ -1033,20 +1033,26 @@ input[type="radio"] {
 
 /* ===STANDARD STRUCTURE=== */
 
-hr {
-	display: block;
-	height: 0.0625rem;
-	margin: 1em 0 0;
-	padding: 0;
-	border: 0;
-	border-top: 0.0625rem solid rgb(var(--swatch-tertiary-color));
-
-	&:first-child {
-		margin-top: 0;
+#main-content {
+	& p {
+		margin: 1ex 0;
 	}
 
-	+ :not(p):not(:has(> p)) {
-		padding-top: 1em;
+	& hr {
+		display: block;
+		height: 0.0625rem;
+		margin: 1ex 0;
+		padding: 0;
+		border: 0;
+		border-top: 0.0625rem solid rgb(var(--swatch-tertiary-color));
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		+ p {
+			padding-top: 0;
+		}
 	}
 }
 
