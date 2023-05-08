@@ -14867,7 +14867,7 @@ div.colmod-block > ul > li {
 	}
 		}
 
-#action-area .pager span:not(.dots):not(.pager-no)::after {
+#action-area .pager span::after {
 			--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
 
 			content: " ";
@@ -14989,6 +14989,10 @@ div.colmod-block > ul > li {
 #action-area .pager span:is(:hover, :active, :focus, :focus-within)::after {
 				--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 			}
+
+#action-area .pager span.dots::after, #action-area .pager span.pager-no::after {
+			display: none;
+		}
 
 /* ===WIKIDOT USER ICONS=== */
 
