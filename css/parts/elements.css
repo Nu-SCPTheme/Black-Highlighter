@@ -1375,151 +1375,154 @@ table[style*="margin:0"] * {
 
 /* ===LISTPAGES PAGER=== */
 
-#action-area .pager {
-	--wght: var(--ui-wght);
+#action-area,
+#main-content {
+	.pager {
+		--wght: var(--ui-wght);
 
-	display: grid;
-	grid-auto-columns: minmax(0.5em, 1fr);
-	grid-template-columns: 5em 1fr;
-	margin: 0;
-	box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
-	color: rgb(var(--pager-text));
-	font-weight: var(--wght);
-	white-space: nowrap;
-	gap: 0;
-
-	@media (--viewport-tablet) {
-		grid-template-columns: repeat(auto-fit, minmax(0.5em, 1fr));
-		padding-inline: 1.5em;
-	}
-
-	& span {
-		grid-column: span 2;
-		grid-row: 1;
-		transition: background-color 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+		display: grid;
+		grid-auto-columns: minmax(0.5em, 1fr);
+		grid-template-columns: 5em 1fr;
+		margin: 0;
+		box-shadow: 0 0.125rem 0 0 rgb(var(--pager-selected-bg));
+		color: rgb(var(--pager-text));
+		font-weight: var(--wght);
+		white-space: nowrap;
+		gap: 0;
 
 		@media (--viewport-tablet) {
-			grid-row: 2;
+			grid-template-columns: repeat(auto-fit, minmax(0.5em, 1fr));
+			padding-inline: 1.5em;
 		}
 
-		&::after {
-			--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
-
-			content: " ";
-			position: absolute;
-			z-index: -1;
-			inset: 0 auto auto 0;
-			width: 100%;
-			height: 100%;
-			transition: clip-path 0.2s var(--ease-in-out);
-			background-color: rgb(var(--pager-hover-bg));
-			pointer-events: none;
-			clip-path: var(--clip-path);
-		}
-
-		&,
-		& * {
-			display: flex;
-			position: relative;
-			align-content: center;
-			justify-content: center;
-		}
-
-		&.dots {
-			grid-column: span 1;
-		}
-
-		&.pager-no {
-			grid-column: 1 / span 4;
+		& span {
+			grid-column: span 2;
 			grid-row: 1;
-			text-transform: uppercase;
-			justify-self: flex-start;
+			transition: background-color 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 
-			&,
-			+ span:not(.current),
-			~ span:last-of-type:not(.current) {
-				grid-column: span 3;
-				font-size: calc(var(--base-font-size) * 13 / 15);
+			@media (--viewport-tablet) {
+				grid-row: 2;
 			}
-		}
 
-		&.current {
-			--wght: var(--ui-hvr-wght);
+			&::after {
+				--clip-path: polygon(0 100%, 100% 115%, 100% 100%, 0 115%);
 
-			margin: 0;
-			padding: 0;
-			background-color: rgb(var(--pager-selected-bg));
-			color: rgb(var(--pager-selected-link));
-			font-weight: var(--wght);
-
-			&::before {
-				content: "";
+				content: " ";
 				position: absolute;
-				bottom: 0;
-				width: 1em;
-				height: 1.5em;
-				background-color: rgb(var(--pager-selected-bg));
-
-				@media (--viewport-mobile) {
-					display: none;
-				}
-			}
-
-			&:not(:last-of-type)::before {
-				--clip-path: polygon(100% 0, 0 100%, 100% 100%);
-
-				left: -1em;
+				z-index: -1;
+				inset: 0 auto auto 0;
+				width: 100%;
+				height: 100%;
+				transition: clip-path 0.2s var(--ease-in-out);
+				background-color: rgb(var(--pager-hover-bg));
+				pointer-events: none;
 				clip-path: var(--clip-path);
 			}
 
-			&:last-of-type {
-				width: calc(100% - 1em);
+			&,
+			& * {
+				display: flex;
+				position: relative;
+				align-content: center;
+				justify-content: center;
+			}
 
-				&::before {
-					--clip-path: polygon(0 0, 0 100%, 100% 100%);
+			&.dots {
+				grid-column: span 1;
+			}
 
-					right: -1em;
-					clip-path: var(--clip-path);
+			&.pager-no {
+				grid-column: 1 / span 4;
+				grid-row: 1;
+				text-transform: uppercase;
+				justify-self: flex-start;
+
+				&,
+				+ span:not(.current),
+				~ span:last-of-type:not(.current) {
+					grid-column: span 3;
+					font-size: calc(var(--base-font-size) * 13 / 15);
 				}
 			}
-		}
 
-		& a {
-			display: block;
-			z-index: 2;
-			align-items: center;
-			width: 100%;
-			padding-inline: 0.25em;
-			overflow: hidden;
-			transition: color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
-			text-overflow: ellipsis;
+			&.current {
+				--wght: var(--ui-hvr-wght);
 
-			&,
-			&:visited {
-				color: rgb(var(--pager-link));
+				margin: 0;
+				padding: 0;
+				background-color: rgb(var(--pager-selected-bg));
+				color: rgb(var(--pager-selected-link));
+				font-weight: var(--wght);
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					width: 1em;
+					height: 1.5em;
+					background-color: rgb(var(--pager-selected-bg));
+
+					@media (--viewport-mobile) {
+						display: none;
+					}
+				}
+
+				&:not(:last-of-type)::before {
+					--clip-path: polygon(100% 0, 0 100%, 100% 100%);
+
+					left: -1em;
+					clip-path: var(--clip-path);
+				}
+
+				&:last-of-type {
+					width: calc(100% - 1em);
+
+					&::before {
+						--clip-path: polygon(0 0, 0 100%, 100% 100%);
+
+						right: -1em;
+						clip-path: var(--clip-path);
+					}
+				}
+			}
+
+			& a {
+				display: block;
+				z-index: 2;
+				align-items: center;
+				width: 100%;
+				padding-inline: 0.25em;
+				overflow: hidden;
+				transition: color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+				text-overflow: ellipsis;
+
+				&,
+				&:visited {
+					color: rgb(var(--pager-link));
+				}
+
+				&:is(:hover, :active, :focus, :focus-within) {
+					--wght: var(--ui-hvr-wght);
+
+					color: rgb(var(--pager-link-hover));
+					font-weight: var(--wght);
+					text-decoration: none;
+				}
 			}
 
 			&:is(:hover, :active, :focus, :focus-within) {
-				--wght: var(--ui-hvr-wght);
-
-				color: rgb(var(--pager-link-hover));
-				font-weight: var(--wght);
-				text-decoration: none;
+				&::after {
+					--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+				}
 			}
+
 		}
 
-		&:is(:hover, :active, :focus, :focus-within) {
+		& span.dots,
+		& span.pager-no {
 			&::after {
-				--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
+				display: none;
 			}
-		}
-
-	}
-
-	& span.dots,
-	& span.pager-no {
-		&::after {
-			display: none;
 		}
 	}
 }
@@ -1546,8 +1549,8 @@ span.printuser {
 		aspect-ratio: 8/6;
 
 		& img.small {
-			height: 100%;
 			width: calc(100% - 0.3625rem);
+			height: 100%;
 			aspect-ratio: 1/1;
 		}
 	}
