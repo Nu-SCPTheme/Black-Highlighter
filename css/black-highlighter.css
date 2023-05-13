@@ -2366,7 +2366,9 @@ input[type="radio"]:checked::before {
 
 /* ===DATA-FORM STYLING=== */
 
-#edit-page-form.data-form {
+#edit-page-form.data-form,
+#new-post-form.data-form,
+#new-thread-form.data-form {
 	padding: 0;
 	background-color: transparent;
 	font-size: 0.8125rem;
@@ -2374,19 +2376,23 @@ input[type="radio"]:checked::before {
 }
 
 #edit-page-form.data-form,
-	#edit-page-form.data-form * {
+	#new-post-form.data-form,
+	#new-thread-form.data-form,
+	#edit-page-form.data-form *,
+	#new-post-form.data-form *,
+	#new-thread-form.data-form * {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
 	}
 
-#edit-page-form.data-form div.buttons {
+#edit-page-form.data-form div.buttons, #new-post-form.data-form div.buttons, #new-thread-form.data-form div.buttons {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-#edit-page-form.data-form .form-row {
+#edit-page-form.data-form .form-row, #new-post-form.data-form .form-row, #new-thread-form.data-form .form-row {
 		display: grid;
 		grid-auto-rows: auto;
 		margin: 1.25rem 0 0.75em;
@@ -2394,24 +2400,24 @@ input[type="radio"]:checked::before {
 		font-size: 0.8em;
 	}
 
-#edit-page-form.data-form .form-row .form-values {
+#edit-page-form.data-form .form-row .form-values, #new-post-form.data-form .form-row .form-values, #new-thread-form.data-form .form-row .form-values {
 			padding: 0.5em 0;
 			box-shadow: 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 		}
 
-#edit-page-form.data-form .form-row .form-values > span {
+#edit-page-form.data-form .form-row .form-values > span, #new-post-form.data-form .form-row .form-values > span, #new-thread-form.data-form .form-row .form-values > span {
 				display: contents;
 			}
 
 /* ===DATA-FORM LABEL STYLING=== */
 
-#edit-page-form.data-form .form-row .form-labels {
+#edit-page-form.data-form .form-row .form-labels, #new-post-form.data-form .form-row .form-labels, #new-thread-form.data-form .form-row .form-labels {
 			z-index: 2;
 			margin: -1em 0 -0.5em 1rem;
 			transition: translate 0.2s var(--ease-in-out);
 		}
 
-#edit-page-form.data-form .form-row .form-labels span {
+#edit-page-form.data-form .form-row .form-labels span, #new-post-form.data-form .form-row .form-labels span, #new-thread-form.data-form .form-row .form-labels span {
 				--wght: calc(var(--ui-wght) + 100);
 				--header-height: var(--final-header-height-on-desktop);
 
@@ -2447,7 +2453,7 @@ input[type="radio"]:checked::before {
 				will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
 			}
 
-#edit-page-form.data-form .form-row .form-labels span::before {
+#edit-page-form.data-form .form-row .form-labels span::before, #new-post-form.data-form .form-row .form-labels span::before, #new-thread-form.data-form .form-row .form-labels span::before {
 					content: "";
 					position: absolute;
 					z-index: -1;
@@ -2472,11 +2478,11 @@ input[type="radio"]:checked::before {
 					background-position-y: top;
 				}
 
-#edit-page-form.data-form .form-row:focus-within .form-labels {
+#edit-page-form.data-form .form-row:focus-within .form-labels, #new-post-form.data-form .form-row:focus-within .form-labels, #new-thread-form.data-form .form-row:focus-within .form-labels {
 				translate: -0.125rem -0.125rem;
 			}
 
-#edit-page-form.data-form .form-row:focus-within .form-labels span {
+#edit-page-form.data-form .form-row:focus-within .form-labels span, #new-post-form.data-form .form-row:focus-within .form-labels span, #new-thread-form.data-form .form-row:focus-within .form-labels span {
 					--wght: calc(var(--ui-hvr-wght) + 100);
 
 					padding-left: 0.5rem;
@@ -2496,7 +2502,7 @@ input[type="radio"]:checked::before {
 					);
 				}
 
-#edit-page-form.data-form .form-row:focus-within .form-labels span::before {
+#edit-page-form.data-form .form-row:focus-within .form-labels span::before, #new-post-form.data-form .form-row:focus-within .form-labels span::before, #new-thread-form.data-form .form-row:focus-within .form-labels span::before {
 						background-color: rgb(var(--swatch-primary));
 						background-image: linear-gradient(
 							to bottom,
@@ -2510,7 +2516,11 @@ input[type="radio"]:checked::before {
 /* ===DATA-FORM GENERAL INPUT STYLING=== */
 
 #edit-page-form.data-form .form-row span.field-select-long,
-		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser {
+		#new-post-form.data-form .form-row span.field-select-long,
+		#new-thread-form.data-form .form-row span.field-select-long,
+		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser,
+		#new-post-form.data-form .form-row div.dataform-pagepath-chooser,
+		#new-thread-form.data-form .form-row div.dataform-pagepath-chooser {
 			display: flex;
 			position: relative;
 			flex-flow: column wrap;
@@ -2519,15 +2529,23 @@ input[type="radio"]:checked::before {
 			border-radius: 0 0.25rem 0.25rem;
 		}
 
-#edit-page-form.data-form .form-row span.field-select-long :not(.text-danger), #edit-page-form.data-form .form-row div.dataform-pagepath-chooser :not(.text-danger) {
+#edit-page-form.data-form .form-row span.field-select-long :not(.text-danger), #new-post-form.data-form .form-row span.field-select-long :not(.text-danger), #new-thread-form.data-form .form-row span.field-select-long :not(.text-danger), #edit-page-form.data-form .form-row div.dataform-pagepath-chooser :not(.text-danger), #new-post-form.data-form .form-row div.dataform-pagepath-chooser :not(.text-danger), #new-thread-form.data-form .form-row div.dataform-pagepath-chooser :not(.text-danger) {
 				flex-grow: 1;
 				width: 100%;
 			}
 
 #edit-page-form.data-form .form-row span.field-select-short,
+		#new-post-form.data-form .form-row span.field-select-short,
+		#new-thread-form.data-form .form-row span.field-select-short,
 		#edit-page-form.data-form .form-row span.field-checkbox,
+		#new-post-form.data-form .form-row span.field-checkbox,
+		#new-thread-form.data-form .form-row span.field-checkbox,
 		#edit-page-form.data-form .form-row div.field-static,
-		#edit-page-form.data-form .form-row span.field-file {
+		#new-post-form.data-form .form-row div.field-static,
+		#new-thread-form.data-form .form-row div.field-static,
+		#edit-page-form.data-form .form-row span.field-file,
+		#new-post-form.data-form .form-row span.field-file,
+		#new-thread-form.data-form .form-row span.field-file {
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
@@ -2538,18 +2556,38 @@ input[type="radio"]:checked::before {
 		}
 
 #edit-page-form.data-form .form-row input[type="text"],
+		#new-post-form.data-form .form-row input[type="text"],
+		#new-thread-form.data-form .form-row input[type="text"],
 		#edit-page-form.data-form .form-row textarea,
+		#new-post-form.data-form .form-row textarea,
+		#new-thread-form.data-form .form-row textarea,
 		#edit-page-form.data-form .form-row input.form-control,
+		#new-post-form.data-form .form-row input.form-control,
+		#new-thread-form.data-form .form-row input.form-control,
 		#edit-page-form.data-form .form-row span.field-select-long select,
-		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select {
+		#new-post-form.data-form .form-row span.field-select-long select,
+		#new-thread-form.data-form .form-row span.field-select-long select,
+		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select,
+		#new-post-form.data-form .form-row div.dataform-pagepath-chooser select,
+		#new-thread-form.data-form .form-row div.dataform-pagepath-chooser select {
 			font-size: 1.2em !important;
 		}
 
 #edit-page-form.data-form .form-row input[type="text"],
+		#new-post-form.data-form .form-row input[type="text"],
+		#new-thread-form.data-form .form-row input[type="text"],
 		#edit-page-form.data-form .form-row textarea,
+		#new-post-form.data-form .form-row textarea,
+		#new-thread-form.data-form .form-row textarea,
 		#edit-page-form.data-form .form-row input.form-control,
+		#new-post-form.data-form .form-row input.form-control,
+		#new-thread-form.data-form .form-row input.form-control,
 		#edit-page-form.data-form .form-row span.field-select-long select,
-		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select {
+		#new-post-form.data-form .form-row span.field-select-long select,
+		#new-thread-form.data-form .form-row span.field-select-long select,
+		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser select,
+		#new-post-form.data-form .form-row div.dataform-pagepath-chooser select,
+		#new-thread-form.data-form .form-row div.dataform-pagepath-chooser select {
 			--wght: var(--ui-wght);
 
 			padding: 0.25rem;
@@ -2564,7 +2602,7 @@ input[type="radio"]:checked::before {
 			will-change: box-shadow, background-color, font-weight, font-variation-settings;
 		}
 
-#edit-page-form.data-form .form-row input[type="text"]:focus, #edit-page-form.data-form .form-row textarea:focus, #edit-page-form.data-form .form-row input.form-control:focus, #edit-page-form.data-form .form-row span.field-select-long select:focus, #edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus {
+#edit-page-form.data-form .form-row input[type="text"]:focus, #new-post-form.data-form .form-row input[type="text"]:focus, #new-thread-form.data-form .form-row input[type="text"]:focus, #edit-page-form.data-form .form-row textarea:focus, #new-post-form.data-form .form-row textarea:focus, #new-thread-form.data-form .form-row textarea:focus, #edit-page-form.data-form .form-row input.form-control:focus, #new-post-form.data-form .form-row input.form-control:focus, #new-thread-form.data-form .form-row input.form-control:focus, #edit-page-form.data-form .form-row span.field-select-long select:focus, #new-post-form.data-form .form-row span.field-select-long select:focus, #new-thread-form.data-form .form-row span.field-select-long select:focus, #edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus, #new-post-form.data-form .form-row div.dataform-pagepath-chooser select:focus, #new-thread-form.data-form .form-row div.dataform-pagepath-chooser select:focus {
 				--wght: var(--ui-hvr-wght);
 
 				border: none;
@@ -2573,7 +2611,7 @@ input[type="radio"]:checked::before {
 				box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 			}
 
-#edit-page-form.data-form .form-row input[type="text"]:focus-visible, #edit-page-form.data-form .form-row textarea:focus-visible, #edit-page-form.data-form .form-row input.form-control:focus-visible, #edit-page-form.data-form .form-row span.field-select-long select:focus-visible, #edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus-visible {
+#edit-page-form.data-form .form-row input[type="text"]:focus-visible, #new-post-form.data-form .form-row input[type="text"]:focus-visible, #new-thread-form.data-form .form-row input[type="text"]:focus-visible, #edit-page-form.data-form .form-row textarea:focus-visible, #new-post-form.data-form .form-row textarea:focus-visible, #new-thread-form.data-form .form-row textarea:focus-visible, #edit-page-form.data-form .form-row input.form-control:focus-visible, #new-post-form.data-form .form-row input.form-control:focus-visible, #new-thread-form.data-form .form-row input.form-control:focus-visible, #edit-page-form.data-form .form-row span.field-select-long select:focus-visible, #new-post-form.data-form .form-row span.field-select-long select:focus-visible, #new-thread-form.data-form .form-row span.field-select-long select:focus-visible, #edit-page-form.data-form .form-row div.dataform-pagepath-chooser select:focus-visible, #new-post-form.data-form .form-row div.dataform-pagepath-chooser select:focus-visible, #new-thread-form.data-form .form-row div.dataform-pagepath-chooser select:focus-visible {
 				--wght: var(--ui-hvr-wght);
 
 				border: none;
@@ -2582,7 +2620,7 @@ input[type="radio"]:checked::before {
 				box-shadow: 0 0 0 0.125rem rgb(var(--swatch-primary));
 			}
 
-#edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row input[type="text"], #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row textarea, #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row input.form-control, #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row span.field-select-long select, #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row div.dataform-pagepath-chooser select {
+#edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row input[type="text"], #edit-page-form.data-form .form-row:focus-within #new-post-form.data-form .form-row input[type="text"], #edit-page-form.data-form .form-row:focus-within #new-thread-form.data-form .form-row input[type="text"], #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row textarea, #edit-page-form.data-form .form-row:focus-within #new-post-form.data-form .form-row textarea, #edit-page-form.data-form .form-row:focus-within #new-thread-form.data-form .form-row textarea, #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row input.form-control, #edit-page-form.data-form .form-row:focus-within #new-post-form.data-form .form-row input.form-control, #edit-page-form.data-form .form-row:focus-within #new-thread-form.data-form .form-row input.form-control, #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row span.field-select-long select, #edit-page-form.data-form .form-row:focus-within #new-post-form.data-form .form-row span.field-select-long select, #edit-page-form.data-form .form-row:focus-within #new-thread-form.data-form .form-row span.field-select-long select, #edit-page-form.data-form .form-row:focus-within #edit-page-form.data-form .form-row div.dataform-pagepath-chooser select, #edit-page-form.data-form .form-row:focus-within #new-post-form.data-form .form-row div.dataform-pagepath-chooser select, #edit-page-form.data-form .form-row:focus-within #new-thread-form.data-form .form-row div.dataform-pagepath-chooser select {
 				--wght: var(--ui-hvr-wght);
 
 				border: none;
@@ -2592,21 +2630,31 @@ input[type="radio"]:checked::before {
 			}
 
 #edit-page-form.data-form .form-row input[type="text"],
+		#new-post-form.data-form .form-row input[type="text"],
+		#new-thread-form.data-form .form-row input[type="text"],
 		#edit-page-form.data-form .form-row textarea,
+		#new-post-form.data-form .form-row textarea,
+		#new-thread-form.data-form .form-row textarea,
 		#edit-page-form.data-form .form-row input.form-control,
+		#new-post-form.data-form .form-row input.form-control,
+		#new-thread-form.data-form .form-row input.form-control,
 		#edit-page-form.data-form .form-row span.field-select-long,
-		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser {
+		#new-post-form.data-form .form-row span.field-select-long,
+		#new-thread-form.data-form .form-row span.field-select-long,
+		#edit-page-form.data-form .form-row div.dataform-pagepath-chooser,
+		#new-post-form.data-form .form-row div.dataform-pagepath-chooser,
+		#new-thread-form.data-form .form-row div.dataform-pagepath-chooser {
 			width: calc(100% - 2rem);
 			margin: 0 1rem;
 		}
 
-#edit-page-form.data-form .form-row span.form-value select {
+#edit-page-form.data-form .form-row span.form-value select, #new-post-form.data-form .form-row span.form-value select, #new-thread-form.data-form .form-row span.form-value select {
 			border-radius: 0 0.25rem 0.25rem;
 		}
 
 /* ===CHECKBOX & RADIO DATAFORM STYLING=== */
 
-#edit-page-form.data-form .form-row span.field-select-short label, #edit-page-form.data-form .form-row span.field-checkbox label {
+#edit-page-form.data-form .form-row span.field-select-short label, #new-post-form.data-form .form-row span.field-select-short label, #new-thread-form.data-form .form-row span.field-select-short label, #edit-page-form.data-form .form-row span.field-checkbox label, #new-post-form.data-form .form-row span.field-checkbox label, #new-thread-form.data-form .form-row span.field-checkbox label {
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -2614,53 +2662,62 @@ input[type="radio"]:checked::before {
 				text-indent: 0.5ch;
 			}
 
-#edit-page-form.data-form .form-row span.field-select-short input, #edit-page-form.data-form .form-row span.field-checkbox input {
+#edit-page-form.data-form .form-row span.field-select-short input, #new-post-form.data-form .form-row span.field-select-short input, #new-thread-form.data-form .form-row span.field-select-short input, #edit-page-form.data-form .form-row span.field-checkbox input, #new-post-form.data-form .form-row span.field-checkbox input, #new-thread-form.data-form .form-row span.field-checkbox input {
 				margin: 0;
 			}
 
-#edit-page-form.data-form .form-row span.field-checkbox {
+#edit-page-form.data-form .form-row span.field-checkbox, #new-post-form.data-form .form-row span.field-checkbox, #new-thread-form.data-form .form-row span.field-checkbox {
 			padding: 0.75em 0;
 		}
 
-#edit-page-form.data-form .form-row span.field-checkbox span.text-danger {
+#edit-page-form.data-form .form-row span.field-checkbox span.text-danger, #new-post-form.data-form .form-row span.field-checkbox span.text-danger, #new-thread-form.data-form .form-row span.field-checkbox span.text-danger {
 				translate: 0;
 				transition: translate 0.2s var(--ease-in-out);
 			}
 
-#edit-page-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger {
+#edit-page-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
+				#edit-page-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
+				#edit-page-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger
+				 {
 					translate: 0.25em;
 				}
 
 /* ===STATIC DATAFORM STYLING=== */
 
-#edit-page-form.data-form .form-row div.field-static {
+#edit-page-form.data-form .form-row div.field-static, #new-post-form.data-form .form-row div.field-static, #new-thread-form.data-form .form-row div.field-static {
 			font-size: 1.2em !important;
 		}
 
-#edit-page-form.data-form .form-row div.field-static { /* Overwriting inline styling */
+#edit-page-form.data-form .form-row div.field-static, #new-post-form.data-form .form-row div.field-static, #new-thread-form.data-form .form-row div.field-static { /* Overwriting inline styling */
 		}
 
 /* ===PASSWORD STYLING=== */
 
-#edit-page-form.data-form .form-row span.field-password {
+#edit-page-form.data-form .form-row span.field-password, #new-post-form.data-form .form-row span.field-password, #new-thread-form.data-form .form-row span.field-password {
 			text-indent: 1rem;
 		}
 
-#edit-page-form.data-form .form-row span.field-password .form-control {
+#edit-page-form.data-form .form-row span.field-password .form-control, #new-post-form.data-form .form-row span.field-password .form-control, #new-thread-form.data-form .form-row span.field-password .form-control {
 				width: calc(100% - 2rem);
 				margin: 0 0 0 1rem;
 			}
 
 /* ===SELECT & PAGE SELECT STYLING=== */
 
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span select {
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span select, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span select, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span select {
 						grid-column: 2;
 						grid-row: 1;
 						flex-grow: 2;
 						margin-bottom: 0.5em;
 					}
 
-#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] span {
+#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] span, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] span, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] span {
 					display: grid;
 					position: relative;
 					grid-column: 2;
@@ -2672,11 +2729,23 @@ input[type="radio"]:checked::before {
 				}
 
 #edit-page-form.data-form .form-row span.field-select-long::before,
+			#new-post-form.data-form .form-row span.field-select-long::before,
+			#new-thread-form.data-form .form-row span.field-select-long::before,
 			#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
+			#new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
+			#new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before,
 			#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before,
+			#new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before,
+			#new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before,
 			#edit-page-form.data-form .form-row span.field-select-long::after,
+			#new-post-form.data-form .form-row span.field-select-long::after,
+			#new-thread-form.data-form .form-row span.field-select-long::after,
 			#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
-			#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after {
+			#new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
+			#new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after,
+			#edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after,
+			#new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after,
+			#new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after {
 				content: "";
 				position: absolute;
 				top: 0;
@@ -2688,12 +2757,12 @@ input[type="radio"]:checked::before {
 				pointer-events: none;
 			}
 
-#edit-page-form.data-form .form-row span.field-select-long::before, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before {
+#edit-page-form.data-form .form-row span.field-select-long::before, #new-post-form.data-form .form-row span.field-select-long::before, #new-thread-form.data-form .form-row span.field-select-long::before, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::before, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::before {
 				border-radius: 0 0.25rem 0.25rem 0;
 				background-color: rgb(var(--swatch-primary));
 			}
 
-#edit-page-form.data-form .form-row span.field-select-long::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after {
+#edit-page-form.data-form .form-row span.field-select-long::after, #new-post-form.data-form .form-row span.field-select-long::after, #new-thread-form.data-form .form-row span.field-select-long::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"] > span span::after {
 				--clip-path: polygon(35% 40%, 65% 40%, 50% 65%);
 
 				transition: -webkit-clip-path 0.2s var(--ease-in-out);
@@ -2706,7 +2775,7 @@ input[type="radio"]:checked::before {
 				        clip-path: var(--clip-path);
 			}
 
-#edit-page-form.data-form .form-row span.field-select-long:focus-within::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span span::after {
+#edit-page-form.data-form .form-row span.field-select-long:focus-within::after, #new-post-form.data-form .form-row span.field-select-long:focus-within::after, #new-thread-form.data-form .form-row span.field-select-long:focus-within::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span::after, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span::after, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span::after, #edit-page-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span span::after, #new-post-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span span::after, #new-thread-form.data-form .form-row span.field-pagepage div[class*="dataform-pagepath"]:focus-within > span span::after {
 				--clip-path: polygon(40% 50%, 60% 30%, 60% 70%);
 
 				background-color: rgb(var(--swatch-secondary-color));
@@ -2714,7 +2783,7 @@ input[type="radio"]:checked::before {
 				        clip-path: var(--clip-path);
 			}
 
-#edit-page-form.data-form .form-row td.form-values select {
+#edit-page-form.data-form .form-row td.form-values select, #new-post-form.data-form .form-row td.form-values select, #new-thread-form.data-form .form-row td.form-values select {
 				width: 100%;
 				border: none;
 				-webkit-appearance: none;
@@ -2722,7 +2791,7 @@ input[type="radio"]:checked::before {
 				        appearance: none;
 			}
 
-#edit-page-form.data-form .form-row td.form-values select option {
+#edit-page-form.data-form .form-row td.form-values select option, #new-post-form.data-form .form-row td.form-values select option, #new-thread-form.data-form .form-row td.form-values select option {
 					margin-top: 2em;
 					color: rgb(var(--swatch-text-secondary-color));
 				}
@@ -4480,7 +4549,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 
 /* ===EDIT AREA=== */
 
-form#edit-page-form:not(.data-form), form#new-post-form:not(.data-form) {
+form#edit-page-form:not(.data-form), form#new-post-form:not(.data-form), form#new-thread-form:not(.data-form) {
 		display: grid;
 		position: relative;
 		grid-template-areas:
@@ -4511,58 +4580,66 @@ form#edit-page-form:not(.data-form), form#new-post-form:not(.data-form) {
 
 form#edit-page-form:not(.data-form),
 		form#new-post-form:not(.data-form),
+		form#new-thread-form:not(.data-form),
 		form#edit-page-form:not(.data-form) *,
-		form#new-post-form:not(.data-form) * {
+		form#new-post-form:not(.data-form) *,
+		form#new-thread-form:not(.data-form) * {
 			box-sizing: border-box;
 		}
 
 form#edit-page-form:not(.data-form) > table,
 		form#new-post-form:not(.data-form) > table,
+		form#new-thread-form:not(.data-form) > table,
 		form#edit-page-form:not(.data-form) > table tbody,
 		form#new-post-form:not(.data-form) > table tbody,
+		form#new-thread-form:not(.data-form) > table tbody,
 		form#edit-page-form:not(.data-form) > table tr,
 		form#new-post-form:not(.data-form) > table tr,
+		form#new-thread-form:not(.data-form) > table tr,
 		form#edit-page-form:not(.data-form) > table:not(.form) td,
-		form#new-post-form:not(.data-form) > table:not(.form) td {
+		form#new-post-form:not(.data-form) > table:not(.form) td,
+		form#new-thread-form:not(.data-form) > table:not(.form) td {
 			display: contents;
 		}
 
 form#edit-page-form,
 	form#new-post-form,
+	form#new-thread-form,
 	form#edit-page-form :not(#edit-page-textarea),
-	form#new-post-form :not(#edit-page-textarea) {
+	form#new-post-form :not(#edit-page-textarea),
+	form#new-thread-form :not(#edit-page-textarea) {
 		max-width: var(--body-width-on-desktop);
 	}
 
-form#edit-page-form :not(input):not(textarea), form#new-post-form :not(input):not(textarea) {
+form#edit-page-form :not(input):not(textarea), form#new-post-form :not(input):not(textarea), form#new-thread-form :not(input):not(textarea) {
 		font-family: var(--UI-font);
 	}
 
-form#edit-page-form div.sub, form#new-post-form div.sub {
+form#edit-page-form div.sub, form#new-post-form div.sub, form#new-thread-form div.sub {
 		color: rgba(var(--swatch-menutxt-general-color), 0.5);
 	}
 
 /* ===EDITOR CAPTCHA FIELDS=== */
 
-form#edit-page-form #page_id, form#new-post-form #page_id {
+form#edit-page-form #page_id, form#new-post-form #page_id, form#new-thread-form #page_id {
 		grid-area: pageid;
 	}
 
-form#edit-page-form #recaptcha_challenge_field, form#new-post-form #recaptcha_challenge_field {
+form#edit-page-form #recaptcha_challenge_field, form#new-post-form #recaptcha_challenge_field, form#new-thread-form #recaptcha_challenge_field {
 		grid-area: captcha-1;
 	}
 
-form#edit-page-form #recaptcha_response_field, form#new-post-form #recaptcha_response_field {
+form#edit-page-form #recaptcha_response_field, form#new-post-form #recaptcha_response_field, form#new-thread-form #recaptcha_response_field {
 		grid-area: captcha-2;
 	}
 
-form#edit-page-form #edit-page-captcha, form#new-post-form #edit-page-captcha {
+form#edit-page-form #edit-page-captcha, form#new-post-form #edit-page-captcha, form#new-thread-form #edit-page-captcha {
 		grid-area: captcha-3;
 	}
 
 /* ===EDITOR TITLE BOX=== */
 
-form#edit-page-form table.form:first-of-type tr td:first-of-type, form#new-post-form table.form:first-of-type tr td:first-of-type {
+form#edit-page-form table.form:first-of-type tr td:first-of-type, form#new-post-form table.form:first-of-type tr td:first-of-type, form#new-thread-form table.form:first-of-type tr td:first-of-type {
 					--wght: calc(var(--ui-wght) + 100);
 
 					position: absolute;
@@ -4596,16 +4673,16 @@ form#edit-page-form table.form:first-of-type tr td:first-of-type, form#new-post-
 					left: 0.75rem;
 				}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type, form#new-post-form table.form:first-of-type tr td:last-of-type {
+form#edit-page-form table.form:first-of-type tr td:last-of-type, form#new-post-form table.form:first-of-type tr td:last-of-type, form#new-thread-form table.form:first-of-type tr td:last-of-type {
 					grid-area: title-box;
 					box-shadow: 0 -0.0625em 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 				}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input, form#new-post-form table.form:first-of-type tr td:last-of-type input {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input, form#new-post-form table.form:first-of-type tr td:last-of-type input, form#new-thread-form table.form:first-of-type tr td:last-of-type input {
 						font-size: 1.2em !important;
 					}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input, form#new-post-form table.form:first-of-type tr td:last-of-type input {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input, form#new-post-form table.form:first-of-type tr td:last-of-type input, form#new-thread-form table.form:first-of-type tr td:last-of-type input {
 						--wght: var(--ui-wght);
 
 						width: calc(100% - 2rem);
@@ -4623,23 +4700,23 @@ form#edit-page-form table.form:first-of-type tr td:last-of-type input, form#new-
 						will-change: box-shadow, background-color, font-weight, font-variation-settings;
 					}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input:not(:-moz-placeholder-shown), form#new-post-form table.form:first-of-type tr td:last-of-type input:not(:-moz-placeholder-shown) {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input:not(:-moz-placeholder-shown), form#new-post-form table.form:first-of-type tr td:last-of-type input:not(:-moz-placeholder-shown), form#new-thread-form table.form:first-of-type tr td:last-of-type input:not(:-moz-placeholder-shown) {
 							background-color: rgba(var(--swatch-primary-darker), 0.05);
 						}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input:not(:placeholder-shown), form#new-post-form table.form:first-of-type tr td:last-of-type input:not(:placeholder-shown) {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input:not(:placeholder-shown), form#new-post-form table.form:first-of-type tr td:last-of-type input:not(:placeholder-shown), form#new-thread-form table.form:first-of-type tr td:last-of-type input:not(:placeholder-shown) {
 							background-color: rgba(var(--swatch-primary-darker), 0.05);
 						}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input:-moz-placeholder-shown, form#new-post-form table.form:first-of-type tr td:last-of-type input:-moz-placeholder-shown {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input:-moz-placeholder-shown, form#new-post-form table.form:first-of-type tr td:last-of-type input:-moz-placeholder-shown, form#new-thread-form table.form:first-of-type tr td:last-of-type input:-moz-placeholder-shown {
 							background-color: rgba(var(--swatch-primary-darker), 0.2);
 						}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input:placeholder-shown, form#new-post-form table.form:first-of-type tr td:last-of-type input:placeholder-shown {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input:placeholder-shown, form#new-post-form table.form:first-of-type tr td:last-of-type input:placeholder-shown, form#new-thread-form table.form:first-of-type tr td:last-of-type input:placeholder-shown {
 							background-color: rgba(var(--swatch-primary-darker), 0.2);
 						}
 
-form#edit-page-form table.form:first-of-type tr td:last-of-type input:is(:focus, :focus-visible, :focus-within), form#new-post-form table.form:first-of-type tr td:last-of-type input:is(:focus, :focus-visible, :focus-within) {
+form#edit-page-form table.form:first-of-type tr td:last-of-type input:is(:focus, :focus-visible, :focus-within), form#new-post-form table.form:first-of-type tr td:last-of-type input:is(:focus, :focus-visible, :focus-within), form#new-thread-form table.form:first-of-type tr td:last-of-type input:is(:focus, :focus-visible, :focus-within) {
 							--wght: var(--ui-hvr-wght);
 
 							border: none;
@@ -4649,7 +4726,7 @@ form#edit-page-form table.form:first-of-type tr td:last-of-type input:is(:focus,
 							font-weight: var(--wght);
 						}
 
-form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-post-form table.form:first-of-type tr:focus-within td:first-of-type {
+form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-post-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-thread-form table.form:first-of-type tr:focus-within td:first-of-type {
 					--wght: calc(var(--ui-hvr-wght) + 100);
 
 					outline: 0 solid rgb(var(--swatch-primary));
@@ -4662,11 +4739,11 @@ form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, f
 
 /* Template Dropdown Styling */
 
-form#edit-page-form table.form:first-of-type tr:not(:only-of-type):first-of-type > td:last-of-type, form#new-post-form table.form:first-of-type tr:not(:only-of-type):first-of-type > td:last-of-type {
+form#edit-page-form table.form:first-of-type tr:not(:only-of-type):first-of-type > td:last-of-type, form#new-post-form table.form:first-of-type tr:not(:only-of-type):first-of-type > td:last-of-type, form#new-thread-form table.form:first-of-type tr:not(:only-of-type):first-of-type > td:last-of-type {
 					grid-column: 1 / span 5;
 				}
 
-form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:last-of-type, form#new-post-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:last-of-type {
+form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:last-of-type, form#new-post-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:last-of-type, form#new-thread-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:last-of-type {
 						display: grid;
 						grid-column: 6 / span 1;
 						align-items: center;
@@ -4674,11 +4751,11 @@ form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type 
 						padding: 0 1em 0 0;
 					}
 
-form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:first-of-type, form#new-post-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:first-of-type {
+form#edit-page-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:first-of-type, form#new-post-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:first-of-type, form#new-thread-form table.form:first-of-type tr:not(:only-of-type):last-of-type > td:first-of-type {
 						grid-column: 6 / span 1;
 					}
 
-form#edit-page-form #page-templates, form#new-post-form #page-templates {
+form#edit-page-form #page-templates, form#new-post-form #page-templates, form#new-thread-form #page-templates {
 		--wght: var(--ui-wght);
 
 		padding: 0.25rem;
@@ -4694,11 +4771,11 @@ form#edit-page-form #page-templates, form#new-post-form #page-templates {
 		will-change: box-shadow, background-color, font-weight, font-variation-settings;
 	}
 
-form#edit-page-form #page-templates option, form#new-post-form #page-templates option {
+form#edit-page-form #page-templates option, form#new-post-form #page-templates option, form#new-thread-form #page-templates option {
 			color: rgb(var(--swatch-menutxt-light-color));
 		}
 
-form#edit-page-form #page-templates:is(:focus, :focus-visible, :focus-within), form#new-post-form #page-templates:is(:focus, :focus-visible, :focus-within) {
+form#edit-page-form #page-templates:is(:focus, :focus-visible, :focus-within), form#new-post-form #page-templates:is(:focus, :focus-visible, :focus-within), form#new-thread-form #page-templates:is(:focus, :focus-visible, :focus-within) {
 			--wght: var(--ui-hvr-wght);
 
 			border: none;
@@ -4709,7 +4786,7 @@ form#edit-page-form #page-templates:is(:focus, :focus-visible, :focus-within), f
 
 /* ===EDITOR TOOLBAR=== */
 
-form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-toolbar-panel {
+form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-toolbar-panel, form#new-thread-form .wd-editor-toolbar-panel {
 		--icon-size: max(1.5em, min(5.75vw, calc((var(--body-width-on-desktop) - 6em) / 22)));
 
 		container-type: inline-size;
@@ -4736,14 +4813,14 @@ form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-tool
 
 @supports (font-size: 1cqi) {
 
-form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-toolbar-panel {
+form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-toolbar-panel, form#new-thread-form .wd-editor-toolbar-panel {
 			--icon-size: max(1.5em, min(3.75cqi, calc((var(--body-width-on-desktop) - 6em) / 22)));
 	}
 		}
 
 @media only screen and (max-width: 30rem), (orientation: portrait) {
 
-form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-toolbar-panel {
+form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-toolbar-panel, form#new-thread-form .wd-editor-toolbar-panel {
 			grid-template-areas:
 				"header-h1 bold-txt italic-txt underline-txt strike-txt super-txt sub-txt raw-txt teletype-txt . ordered-list unordered-list increment-list decrement-list"
 				"quote-block hr-txt div-block code-block code-wizard html-block create-table . url-txt url-wizard page-link-txt page-link-wizard image-block image-wizard"
@@ -4752,35 +4829,35 @@ form#edit-page-form .wd-editor-toolbar-panel, form#new-post-form .wd-editor-tool
 	}
 		}
 
-form#edit-page-form .wd-editor-toolbar-panel ul li ul, form#new-post-form .wd-editor-toolbar-panel ul li ul {
+form#edit-page-form .wd-editor-toolbar-panel ul li ul, form#new-post-form .wd-editor-toolbar-panel ul li ul, form#new-thread-form .wd-editor-toolbar-panel ul li ul {
 			position: absolute;
 			z-index: 30;
 			list-style: none;
 		}
 
-form#edit-page-form .wd-editor-toolbar-panel div, form#new-post-form .wd-editor-toolbar-panel div {
+form#edit-page-form .wd-editor-toolbar-panel div, form#new-post-form .wd-editor-toolbar-panel div, form#new-thread-form .wd-editor-toolbar-panel div {
 			display: contents;
 		}
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul, form#new-post-form .wd-editor-toolbar-panel div > ul {
+form#edit-page-form .wd-editor-toolbar-panel div > ul, form#new-post-form .wd-editor-toolbar-panel div > ul, form#new-thread-form .wd-editor-toolbar-panel div > ul {
 				display: contents;
 				margin: 0;
 				padding: 0;
 				list-style: none;
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul > li, form#new-post-form .wd-editor-toolbar-panel div > ul > li {
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li, form#new-post-form .wd-editor-toolbar-panel div > ul > li, form#new-thread-form .wd-editor-toolbar-panel div > ul > li {
 					position: relative;
 					height: var(--icon-size);
 					width: var(--icon-size);
 					margin: 0;
 				}
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul > li.hseparator, form#new-post-form .wd-editor-toolbar-panel div > ul > li.hseparator {
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li.hseparator, form#new-post-form .wd-editor-toolbar-panel div > ul > li.hseparator, form#new-thread-form .wd-editor-toolbar-panel div > ul > li.hseparator {
 						display: none;
 					}
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul, form#new-post-form .wd-editor-toolbar-panel div > ul > li > ul {
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul, form#new-post-form .wd-editor-toolbar-panel div > ul > li > ul, form#new-thread-form .wd-editor-toolbar-panel div > ul > li > ul {
 						--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 						display: grid;
@@ -4815,11 +4892,11 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul, form#new-post-f
 						        clip-path: var(--clip-path);
 					}
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul a, form#new-post-form .wd-editor-toolbar-panel div > ul > li > ul a {
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul a, form#new-post-form .wd-editor-toolbar-panel div > ul > li > ul a, form#new-thread-form .wd-editor-toolbar-panel div > ul > li > ul a {
 							background-color: rgb(var(--editor-icon-submenu-bg));
 						}
 
-form#edit-page-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :focus-within, .sfhover) > ul, form#new-post-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :focus-within, .sfhover) > ul {
+form#edit-page-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :focus-within, .sfhover) > ul, form#new-post-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :focus-within, .sfhover) > ul, form#new-thread-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :focus-within, .sfhover) > ul {
 							--clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
 							left: var(--icon-size);
@@ -4842,300 +4919,300 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :
 						}
 
 @supports selector(div:has(p)) {
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-h1), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-h1) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-h1), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-h1), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-h1) {
 							grid-area: header-h1;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bold), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bold) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bold), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bold), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bold) {
 							grid-area: bold-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-italic), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-italic) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-italic), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-italic), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-italic) {
 							grid-area: italic-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-underline), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-underline) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-underline), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-underline), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-underline) {
 							grid-area: underline-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-strikethrough), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-strikethrough) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-strikethrough), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-strikethrough), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-strikethrough) {
 							grid-area: strike-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-teletype), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-teletype) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-teletype), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-teletype), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-teletype) {
 							grid-area: teletype-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-quote), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-quote) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-quote), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-quote), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-quote) {
 							grid-area: quote-block;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-superscript), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-superscript) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-superscript), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-superscript), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-superscript) {
 							grid-area: super-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-subscript), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-subscript) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-subscript), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-subscript), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-subscript) {
 							grid-area: sub-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-raw), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-raw) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-raw), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-raw), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-raw) {
 							grid-area: raw-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-hr), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-hr) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-hr), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-hr), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-hr) {
 							grid-area: hr-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-div), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-div) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-div), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-div), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-div) {
 							grid-area: div-block;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-clearfloat), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-clearfloat) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-clearfloat), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-clearfloat), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-clearfloat) {
 							grid-area: clear-all-fl;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-table), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-table) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-table), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-table), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-table) {
 							grid-area: create-table;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-toc), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-toc) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-toc), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-toc), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-toc) {
 							grid-area: create-toc;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-code), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-code) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-code), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-code), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-code) {
 							grid-area: code-block;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-codewiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-codewiz) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-codewiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-codewiz), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-codewiz) {
 							grid-area: code-wizard;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uri), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uri) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uri), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uri), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uri) {
 							grid-area: url-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uriwiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uriwiz) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uriwiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uriwiz), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-uriwiz) {
 							grid-area: url-wizard;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelink), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelink) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelink), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelink), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelink) {
 							grid-area: page-link-txt;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelinkwiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelinkwiz) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelinkwiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelinkwiz), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-pagelinkwiz) {
 							grid-area: page-link-wizard;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-image), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-image) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-image), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-image), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-image) {
 							grid-area: image-block;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-imagewiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-imagewiz) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-imagewiz), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-imagewiz), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-imagewiz) {
 							grid-area: image-wizard;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-html), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-html) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-html), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-html), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-html) {
 							grid-area: html-block;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-numlist), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-numlist) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-numlist), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-numlist), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-numlist) {
 							grid-area: ordered-list;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bullist), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bullist) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bullist), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bullist), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bullist) {
 							grid-area: unordered-list;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-incindent), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-incindent) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-incindent), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-incindent), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-incindent) {
 							grid-area: increment-list;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-decindent), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-decindent) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-decindent), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-decindent), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-decindent) {
 							grid-area: decrement-list;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-deflist), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-deflist) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-deflist), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-deflist), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-deflist) {
 							grid-area: definition-list;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-footnote), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-footnote) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-footnote), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-footnote), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-footnote) {
 							grid-area: create-footnote;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-math), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-math) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-math), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-math), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-math) {
 							grid-area: math-block;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-mathinline), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-mathinline) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-mathinline), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-mathinline), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-mathinline) {
 							grid-area: math-inline;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-eqref), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-eqref) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-eqref), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-eqref), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-eqref) {
 							grid-area: equation-ref;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bib), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bib) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bib), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bib), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bib) {
 							grid-area: bibliography;
 						}
 
-						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bibcite), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bibcite) {
+						form#edit-page-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bibcite), form#new-post-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bibcite), form#new-thread-form .wd-editor-toolbar-panel div > ul > li:has(.weditor-bibcite) {
 							grid-area: bib-cite;
 						}
 					}
 
 @supports not selector(:has(p)) {
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(1) {
 						grid-area: header-h1;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(2) {
 						grid-area: bold-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(3) {
 						grid-area: italic-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(4) {
 						grid-area: underline-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(5) {
 						grid-area: strike-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(6) {
 						grid-area: teletype-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(7) {
 						grid-area: quote-block;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(8) {
 						grid-area: super-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(9) {
 						grid-area: sub-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(1) > ul > li:nth-of-type(10) {
 						grid-area: raw-txt;
 					}
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(1) {
 						grid-area: hr-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(2) {
 						grid-area: div-block;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(3) {
 						grid-area: clear-all-fl;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(4) {
 						grid-area: create-table;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(5) {
 						grid-area: create-toc;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(7) {
 						grid-area: code-block;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(8) {
 						grid-area: code-wizard;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(10) {
 						grid-area: url-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(11) {
 						grid-area: url-wizard;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(12) {
 						grid-area: page-link-txt;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(13) {
 						grid-area: page-link-wizard;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(15) {
 						grid-area: image-block;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(16) {
 						grid-area: image-wizard;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(2) > ul > li:nth-of-type(18) {
 						grid-area: html-block;
 					}
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(1) {
 						grid-area: ordered-list;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(2) {
 						grid-area: unordered-list;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(3) {
 						grid-area: increment-list;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(4) {
 						grid-area: decrement-list;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(5) {
 						grid-area: definition-list;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(6) {
 						grid-area: create-footnote;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(8) {
 						grid-area: math-block;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(9) {
 						grid-area: math-inline;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(10) {
 						grid-area: equation-ref;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(12) {
 						grid-area: bibliography;
 					}
 
-					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13) {
+					form#edit-page-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13), form#new-post-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13), form#new-thread-form .wd-editor-toolbar-panel div:nth-of-type(3) > ul > li:nth-of-type(13) {
 						grid-area: bib-cite;
 					}
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel li .hseparator, form#new-post-form .wd-editor-toolbar-panel li .hseparator {
+form#edit-page-form .wd-editor-toolbar-panel li .hseparator, form#new-post-form .wd-editor-toolbar-panel li .hseparator, form#new-thread-form .wd-editor-toolbar-panel li .hseparator {
 				display: none;
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::before, form#new-post-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::before {
+form#edit-page-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::before, form#new-post-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::before, form#new-thread-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::before {
 					background-color: rgb(var(--editor-icon-hover-color));
 				}
 
-form#edit-page-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::after, form#new-post-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::after {
+form#edit-page-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::after, form#new-post-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::after, form#new-thread-form .wd-editor-toolbar-panel li:is(:hover, :active, :focus-within) > a::after {
 					--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 				}
 
-form#edit-page-form .wd-editor-toolbar-panel a, form#new-post-form .wd-editor-toolbar-panel a {
+form#edit-page-form .wd-editor-toolbar-panel a, form#new-post-form .wd-editor-toolbar-panel a, form#new-thread-form .wd-editor-toolbar-panel a {
 			display: block;
 			position: relative;
 			width: 100%;
@@ -5153,8 +5230,10 @@ form#edit-page-form .wd-editor-toolbar-panel a, form#new-post-form .wd-editor-to
 
 form#edit-page-form .wd-editor-toolbar-panel a::before,
 			form#new-post-form .wd-editor-toolbar-panel a::before,
+			form#new-thread-form .wd-editor-toolbar-panel a::before,
 			form#edit-page-form .wd-editor-toolbar-panel a::after,
-			form#new-post-form .wd-editor-toolbar-panel a::after {
+			form#new-post-form .wd-editor-toolbar-panel a::after,
+			form#new-thread-form .wd-editor-toolbar-panel a::after {
 				content: "";
 				position: absolute;
 				top: 0;
@@ -5164,7 +5243,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::before,
 				height: 100%;
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a::before, form#new-post-form .wd-editor-toolbar-panel a::before {
+form#edit-page-form .wd-editor-toolbar-panel a::before, form#new-post-form .wd-editor-toolbar-panel a::before, form#new-thread-form .wd-editor-toolbar-panel a::before {
 				z-index: 1;
 				width: 100%;
 				transition: background-color 0.15s var(--ease-in-out);
@@ -5173,7 +5252,7 @@ form#edit-page-form .wd-editor-toolbar-panel a::before, form#new-post-form .wd-e
 				        mask: var(--edit-menu-mask) center center / calc(var(--icon-size) * 0.8) no-repeat;
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a::after, form#new-post-form .wd-editor-toolbar-panel a::after {
+form#edit-page-form .wd-editor-toolbar-panel a::after, form#new-post-form .wd-editor-toolbar-panel a::after, form#new-thread-form .wd-editor-toolbar-panel a::after {
 				--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
 				z-index: 0;
@@ -5189,183 +5268,183 @@ form#edit-page-form .wd-editor-toolbar-panel a::after, form#new-post-form .wd-ed
 				        clip-path: var(--clip-path);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a span, form#new-post-form .wd-editor-toolbar-panel a span {
+form#edit-page-form .wd-editor-toolbar-panel a span, form#new-post-form .wd-editor-toolbar-panel a span, form#new-thread-form .wd-editor-toolbar-panel a span {
 				display: none;
 			}
 
 /* ===TOOLBAR ICONS === */
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-h1::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h1::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h1::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h1::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-h1::before {
 				--edit-menu-mask: var(--h1-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-h2::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h2::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h2::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h2::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-h2::before {
 				--edit-menu-mask: var(--h2-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-h3::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h3::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h3::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h3::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-h3::before {
 				--edit-menu-mask: var(--h3-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-h4::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h4::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h4::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h4::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-h4::before {
 				--edit-menu-mask: var(--h4-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-h5::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h5::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h5::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h5::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-h5::before {
 				--edit-menu-mask: var(--h5-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-h6::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h6::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-h6::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-h6::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-h6::before {
 				--edit-menu-mask: var(--h6-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-bold::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bold::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bold::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bold::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-bold::before {
 				--edit-menu-mask: var(--bold-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-italic::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-italic::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-italic::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-italic::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-italic::before {
 				--edit-menu-mask: var(--italic-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-underline::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-underline::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-underline::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-underline::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-underline::before {
 				--edit-menu-mask: var(--underline-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-strikethrough::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-strikethrough::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-strikethrough::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-strikethrough::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-strikethrough::before {
 				--edit-menu-mask: var(--strikethrough-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-teletype::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-teletype::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-teletype::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-teletype::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-teletype::before {
 				--edit-menu-mask: var(--teletype-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-quote::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-quote::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-quote::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-quote::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-quote::before {
 				--edit-menu-mask: var(--quote-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-superscript::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-superscript::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-superscript::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-superscript::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-superscript::before {
 				--edit-menu-mask: var(--superscript-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-subscript::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-subscript::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-subscript::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-subscript::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-subscript::before {
 				--edit-menu-mask: var(--subscript-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-raw::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-raw::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-raw::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-raw::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-raw::before {
 				--edit-menu-mask: var(--rawtext-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-hr::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-hr::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-hr::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-hr::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-hr::before {
 				--edit-menu-mask: var(--hr-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-div::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-div::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-div::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-div::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-div::before {
 				--edit-menu-mask: var(--divblock-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloat::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-clearfloat::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloat::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-clearfloat::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-clearfloat::before {
 				--edit-menu-mask: var(--clearfloat-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-clearfloatleft::before {
 				--edit-menu-mask: var(--clearfloatleft-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-clearfloatright::before {
 				--edit-menu-mask: var(--clearfloatright-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-table::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-table::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-table::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-table::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-table::before {
 				--edit-menu-mask: var(--table-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-toc::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-toc::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-toc::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-toc::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-toc::before {
 				--edit-menu-mask: var(--toc-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-code::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-code::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-code::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-code::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-code::before {
 				--edit-menu-mask: var(--codeblock-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-codewiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-codewiz::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-codewiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-codewiz::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-codewiz::before {
 				--edit-menu-mask: var(--codewiz-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-uri::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-uri::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-uri::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-uri::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-uri::before {
 				--edit-menu-mask: var(--url-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-uriwiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-uriwiz::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-uriwiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-uriwiz::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-uriwiz::before {
 				--edit-menu-mask: var(--urlwiz-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelink::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-pagelink::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelink::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-pagelink::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-pagelink::before {
 				--edit-menu-mask: var(--pagelink-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-pagelinkwiz::before {
 				--edit-menu-mask: var(--pagelinkwiz-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-image::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-image::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-image::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-image::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-image::before {
 				--edit-menu-mask: var(--imageblock-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-imagewiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-imagewiz::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-imagewiz::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-imagewiz::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-imagewiz::before {
 				--edit-menu-mask: var(--imagewiz-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-html::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-html::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-html::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-html::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-html::before {
 				--edit-menu-mask: var(--htmlblock-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-numlist::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-numlist::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-numlist::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-numlist::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-numlist::before {
 				--edit-menu-mask: var(--ordered-list-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-bullist::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bullist::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bullist::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bullist::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-bullist::before {
 				--edit-menu-mask: var(--unordered-list-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-incindent::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-incindent::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-incindent::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-incindent::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-incindent::before {
 				--edit-menu-mask: var(--inc-list-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-decindent::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-decindent::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-decindent::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-decindent::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-decindent::before {
 				--edit-menu-mask: var(--dec-list-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-deflist::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-deflist::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-deflist::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-deflist::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-deflist::before {
 				--edit-menu-mask: var(--def-list-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-footnote::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-footnote::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-footnote::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-footnote::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-footnote::before {
 				--edit-menu-mask: var(--footnote-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-math::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-math::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-math::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-math::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-math::before {
 				--edit-menu-mask: var(--math-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-mathinline::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-mathinline::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-mathinline::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-mathinline::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-mathinline::before {
 				--edit-menu-mask: var(--inline-math-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-eqref::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-eqref::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-eqref::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-eqref::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-eqref::before {
 				--edit-menu-mask: var(--eq-def-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-bib::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bib::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bib::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bib::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-bib::before {
 				--edit-menu-mask: var(--bib-mask);
 			}
 
-form#edit-page-form .wd-editor-toolbar-panel a.weditor-bibcite::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bibcite::before {
+form#edit-page-form .wd-editor-toolbar-panel a.weditor-bibcite::before, form#new-post-form .wd-editor-toolbar-panel a.weditor-bibcite::before, form#new-thread-form .wd-editor-toolbar-panel a.weditor-bibcite::before {
 				--edit-menu-mask: var(--bib-cite-mask);
 			}
 
 /* ===EDITOR TEXTAREA=== */
 
-form#edit-page-form .wd-editor-toolbar-panel + div, form#new-post-form .wd-editor-toolbar-panel + div {
+form#edit-page-form .wd-editor-toolbar-panel + div, form#new-post-form .wd-editor-toolbar-panel + div, form#new-thread-form .wd-editor-toolbar-panel + div {
 			position: relative;
 			grid-area: editbox;
 			padding: 0.125em 0;
@@ -5374,11 +5453,11 @@ form#edit-page-form .wd-editor-toolbar-panel + div, form#new-post-form .wd-edito
 				inset 0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.25);
 		}
 
-form#edit-page-form textarea, form#new-post-form textarea {
+form#edit-page-form textarea, form#new-post-form textarea, form#new-thread-form textarea {
 		width: 100% !important;
 	}
 
-form#edit-page-form textarea, form#new-post-form textarea {
+form#edit-page-form textarea, form#new-post-form textarea, form#new-thread-form textarea {
 		overflow-y: auto;
 		border: none; /* Overwriting inline styling */
 		padding: 1ex 1ch;
@@ -5394,7 +5473,7 @@ form#edit-page-form textarea, form#new-post-form textarea {
 
 /* ===EDITOR HELP LINKS=== */
 
-form#edit-page-form .edit-help-34, form#new-post-form .edit-help-34 {
+form#edit-page-form .edit-help-34, form#new-post-form .edit-help-34, form#new-thread-form .edit-help-34 {
 		--wght: var(--ui-wght);
 
 		display: flex;
@@ -5413,7 +5492,7 @@ form#edit-page-form .edit-help-34, form#new-post-form .edit-help-34 {
 		white-space: nowrap;
 	}
 
-form#edit-page-form .edit-help-34 > a, form#new-post-form .edit-help-34 > a {
+form#edit-page-form .edit-help-34 > a, form#new-post-form .edit-help-34 > a, form#new-thread-form .edit-help-34 > a {
 			display: inline-flex;
 			position: relative;
 			align-items: center;
@@ -5421,7 +5500,7 @@ form#edit-page-form .edit-help-34 > a, form#new-post-form .edit-help-34 > a {
 			padding: 0 0.25em;
 		}
 
-form#edit-page-form .edit-help-34 > a::after, form#new-post-form .edit-help-34 > a::after {
+form#edit-page-form .edit-help-34 > a::after, form#new-post-form .edit-help-34 > a::after, form#new-thread-form .edit-help-34 > a::after {
 				--clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
 				content: " ";
@@ -5440,21 +5519,23 @@ form#edit-page-form .edit-help-34 > a::after, form#new-post-form .edit-help-34 >
 				        clip-path: var(--clip-path);
 			}
 
-form#edit-page-form .edit-help-34 > a:nth-of-type(1), form#new-post-form .edit-help-34 > a:nth-of-type(1) {
+form#edit-page-form .edit-help-34 > a:nth-of-type(1), form#new-post-form .edit-help-34 > a:nth-of-type(1), form#new-thread-form .edit-help-34 > a:nth-of-type(1) {
 				margin: 0 1.5em 0 0.5em;
 			}
 
 form#edit-page-form .edit-help-34 > a:nth-of-type(2)::before,
 				form#new-post-form .edit-help-34 > a:nth-of-type(2)::before,
+				form#new-thread-form .edit-help-34 > a:nth-of-type(2)::before,
 				form#edit-page-form .edit-help-34 > a:nth-of-type(2):is(:hover, :active, :focus, :focus-within)::before,
-				form#new-post-form .edit-help-34 > a:nth-of-type(2):is(:hover, :active, :focus, :focus-within)::before {
+				form#new-post-form .edit-help-34 > a:nth-of-type(2):is(:hover, :active, :focus, :focus-within)::before,
+				form#new-thread-form .edit-help-34 > a:nth-of-type(2):is(:hover, :active, :focus, :focus-within)::before {
 					content: " | ";
 					position: absolute;
 					left: -1em;
 					color: rgb(var(--swatch-text-tertiary-color));
 				}
 
-form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within), form#new-post-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within) {
+form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within), form#new-post-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within), form#new-thread-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within) {
 				--wght: calc(var(--ui-hvr-wght));
 
 				transition:
@@ -5467,13 +5548,13 @@ form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)
 				text-decoration: none;
 			}
 
-form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)::after, form#new-post-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)::after {
+form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)::after, form#new-post-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)::after, form#new-thread-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)::after {
 					--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
 				}
 
 /* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
 
-form#edit-page-form .change-textarea-size, form#new-post-form .change-textarea-size {
+form#edit-page-form .change-textarea-size, form#new-post-form .change-textarea-size, form#new-thread-form .change-textarea-size {
 		display: grid;
 		grid-area: text-resize;
 		grid-auto-flow: column;
@@ -5486,7 +5567,7 @@ form#edit-page-form .change-textarea-size, form#new-post-form .change-textarea-s
 		grid-gap: 0.25em;
 	}
 
-form#edit-page-form .change-textarea-size a, form#new-post-form .change-textarea-size a {
+form#edit-page-form .change-textarea-size a, form#new-post-form .change-textarea-size a, form#new-thread-form .change-textarea-size a {
 			--wght: calc(var(--ui-wght) + 100);
 
 			display: inline-flex;
@@ -5507,7 +5588,7 @@ form#edit-page-form .change-textarea-size a, form#new-post-form .change-textarea
 			font-weight: var(--wght);
 		}
 
-form#edit-page-form .change-textarea-size a:is(:hover, :active, :focus, :focus-within), form#new-post-form .change-textarea-size a:is(:hover, :active, :focus, :focus-within) {
+form#edit-page-form .change-textarea-size a:is(:hover, :active, :focus, :focus-within), form#new-post-form .change-textarea-size a:is(:hover, :active, :focus, :focus-within), form#new-thread-form .change-textarea-size a:is(:hover, :active, :focus, :focus-within) {
 				--wght: calc(var(--ui-hvr-wght) + 100);
 
 				background-color: rgb(var(--swatch-primary));
@@ -5516,7 +5597,7 @@ form#edit-page-form .change-textarea-size a:is(:hover, :active, :focus, :focus-w
 
 /* ===EDITOR DESCRIPTION BOX=== */
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1), form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1), form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1), form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
 		--wght: var(--ui-hvr-wght);
 
 		display: grid;
@@ -5533,7 +5614,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 		font-weight: var(--wght);
 	}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before {
 			content: var(--text-editor-desc);
 			position: absolute;
 			z-index: 2;
@@ -5556,11 +5637,11 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 			will-change: box-shadow, color, background-color;
 		}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br {
 			display: none;
 		}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea {
 			--wght: var(--ui-wght);
 
 			z-index: 1;
@@ -5580,27 +5661,27 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 			will-change: box-shadow, background-color;
 		}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:-moz-placeholder-shown), form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:-moz-placeholder-shown) {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:-moz-placeholder-shown), form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:-moz-placeholder-shown), form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:-moz-placeholder-shown) {
 				background-color: rgba(var(--swatch-primary-darker), 0.05);
 				color: rgb(var(--swatch-menutxt-general-color));
 			}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown), form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown) {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown), form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown), form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:not(:placeholder-shown) {
 				background-color: rgba(var(--swatch-primary-darker), 0.05);
 				color: rgb(var(--swatch-menutxt-general-color));
 			}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:-moz-placeholder-shown, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:-moz-placeholder-shown {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:-moz-placeholder-shown, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:-moz-placeholder-shown, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:-moz-placeholder-shown {
 				background-color: rgba(var(--swatch-primary-darker), 0.4);
 				color: rgb(var(--swatch-menutxt-general-color));
 			}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) textarea:placeholder-shown {
 				background-color: rgba(var(--swatch-primary-darker), 0.4);
 				color: rgb(var(--swatch-menutxt-general-color));
 			}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
 				outline: 0 solid rgb(var(--swatch-primary));
 				background-color: rgb(var(--swatch-primary));
 				box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
@@ -5608,7 +5689,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 				translate: 0 -0.25em;
 			}
 
-form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea {
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea {
 				border: none;
 				outline: 0 solid rgb(var(--swatch-primary));
 				background-color: rgba(var(--swatch-secondary-color), 0);
@@ -5618,7 +5699,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 
 /* ===DESCRIPTION CHAR COUNT=== */
 
-form#edit-page-form .edit-page-bottomtable div.sub, form#new-post-form .edit-page-bottomtable div.sub {
+form#edit-page-form .edit-page-bottomtable div.sub, form#new-post-form .edit-page-bottomtable div.sub, form#new-thread-form .edit-page-bottomtable div.sub {
 		z-index: 5;
 		grid-area: descsub;
 		height: 1rem;
@@ -5630,7 +5711,7 @@ form#edit-page-form .edit-page-bottomtable div.sub, form#new-post-form .edit-pag
 
 /* ===EDITOR LOCK INFO=== */
 
-form#edit-page-form #lock-info, form#new-post-form #lock-info {
+form#edit-page-form #lock-info, form#new-post-form #lock-info, form#new-thread-form #lock-info {
 		grid-area: info-lock;
 		margin: 0.25em auto;
 		border: none;
@@ -5641,7 +5722,7 @@ form#edit-page-form #lock-info, form#new-post-form #lock-info {
 
 /* ===EDITOR NOTIFY CHECKBOX=== */
 
-form#edit-page-form div.do-not-notify, form#new-post-form div.do-not-notify {
+form#edit-page-form div.do-not-notify, form#new-post-form div.do-not-notify, form#new-thread-form div.do-not-notify {
 		display: flex;
 		grid-area: nonotif;
 		align-items: center;
@@ -5649,19 +5730,19 @@ form#edit-page-form div.do-not-notify, form#new-post-form div.do-not-notify {
 		padding: 0 0 1ch;
 	}
 
-form#edit-page-form div.do-not-notify label, form#new-post-form div.do-not-notify label {
+form#edit-page-form div.do-not-notify label, form#new-post-form div.do-not-notify label, form#new-thread-form div.do-not-notify label {
 			display: flex;
 			height: 1em;
 			line-height: 1;
 		}
 
-form#edit-page-form div.do-not-notify label input, form#new-post-form div.do-not-notify label input {
+form#edit-page-form div.do-not-notify label input, form#new-post-form div.do-not-notify label input, form#new-thread-form div.do-not-notify label input {
 				margin-right: 0.5em;
 			}
 
 /* ===EDITOR BUTTONS=== */
 
-form#edit-page-form div.buttons, form#new-post-form div.buttons {
+form#edit-page-form div.buttons, form#new-post-form div.buttons, form#new-thread-form div.buttons {
 		display: grid;
 		grid-gap: 1ch;
 		grid-area: editbuttons;
