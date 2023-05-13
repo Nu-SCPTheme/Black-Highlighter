@@ -695,51 +695,52 @@
 		13.2 =HEADER GRADIENT
 		13.3 =TOPBAR GRADIENT
 	14. =LINK COLORS
-	15. =HEADER ELEMENTS
-		15.1 =HEADER TITLES
-		15.2 =SEARCH ELEMENT
-		15.3 =LOGIN BOX ELEMENT
-	16. =TOPBAR ELEMENTS
-		16.1 =TOPBAR CATEGORIES
-		16.2 =DROPDOWN MENU
-	17. =SIDE-BAR ELEMENTS
-		17.1 =SIDE-BAR GENERAL
-		17.2 =SOCIAL MEDIA ICONS
-		17.3 =SIDEBLOCK MENU
-		17.4 =MENU-ITEMS
-		17.5 =SIDEBAR COLLAPSIBLES
-		17.5 =INTERWIKI ELEMENTS
-	18. =FOOTER
-	19. =LICENSE AREA
+	15. =CODE BLOCK COLORS
+	16. =HEADER ELEMENTS
+		16.1 =HEADER TITLES
+		16.2 =SEARCH ELEMENT
+		16.3 =LOGIN BOX ELEMENT
+	17. =TOPBAR ELEMENTS
+		17.1 =TOPBAR CATEGORIES
+		17.2 =DROPDOWN MENU
+	18. =SIDE-BAR ELEMENTS
+		18.1 =SIDE-BAR GENERAL
+		18.2 =SOCIAL MEDIA ICONS
+		18.3 =SIDEBLOCK MENU
+		18.4 =MENU-ITEMS
+		18.5 =SIDEBAR COLLAPSIBLES
+		18.5 =INTERWIKI ELEMENTS
+	19. =FOOTER
+	20. =LICENSE AREA
 
-	20. =MAIN CONTENT UI ELEMENTS
-		20.1 =UI ICONS
-			20.1.1 =PAGE OPTIONS ICONS
-			20.1.2 =TEXT EDITOR ICONS
-		20.2 =TABS
-		20.3 =TABLES
-		20.4 =BLOCKQUOTES
-		20.5 =FOOTNOTES/BIBLIOGRAPHY FOOTER
-		20.6 =TOC
+	21. =MAIN CONTENT UI ELEMENTS
+		21.1 =UI ICONS
+			21.1.1 =PAGE OPTIONS ICONS
+			21.1.2 =TEXT EDITOR ICONS
+		21.2 =TABS
+		21.3 =TABLES
+		21.4 =BLOCKQUOTES
+		21.5 =FOOTNOTES/BIBLIOGRAPHY FOOTER
+		21.6 =TOC
 
-	21. =GLOBAL ELEMENTS
-		21.1 =UI BUTTONS
-		21.2 =RATING MODULE
-		21.3 =MODALS
-		21.4 =FOOTNOTES HOVER BLOCK
-		21.5 =LISTPAGES PAGER
-		21.6 =ANIMATIONS
+	22. =GLOBAL ELEMENTS
+		22.1 =UI BUTTONS
+		22.2 =RATING MODULE
+		22.3 =MODALS
+		22.4 =FOOTNOTES HOVER BLOCK
+		22.5 =LISTPAGES PAGER
+		22.6 =ANIMATIONS
 
 	===============================
 	======== TEXT ELEMENTS ========
 	===============================
 
-	22. =HARDCODED TEXT
+	23. =HARDCODED TEXT
 
 	===============================
 	========= DEPRECIATED =========
 	===============================
-	22. =LEGACY VARS
+	24. =LEGACY VARS
   =============== */
 
 /* ===CUSTOM MEDIA DEFINITIONS=== */
@@ -987,6 +988,23 @@
 	--visited-link-color: var(--swatch-primary-darkest);
 	--hover-link-color: var(--swatch-primary);
 	--newpage-color: var(--alt-accent);
+
+	/* ===CODE BLOCK COLORS=== */
+	--swatch-code-text-general: var(--swatch-text-general);
+
+	--swatch-code-text-comment: 102 111 120; /* Greyish Blue */
+	--swatch-code-text-quotes: 183 83 1; /* Redish Orange */
+	--swatch-code-text-string: 86 122 13; /* Green */
+	--swatch-code-text-identifier: 1 84 147; /* Blue */
+	--swatch-code-text-reserved: 128 51 120; /* Dark Purple */
+
+	--swatch-code-text-builtin: var(--swatch-code-text-quotes);
+	--swatch-code-text-inlinedoc: var(--swatch-code-text-identifier);
+	--swatch-code-text-var: var(--swatch-code-text-string);
+	--swatch-code-text-url: var(--swatch-code-text-identifier);
+	--swatch-code-text-special: var(--swatch-code-text-identifier);
+	--swatch-code-text-number: var(--swatch-code-text-quotes);
+	--swatch-code-text-inlinetags: var(--swatch-code-text-quotes);
 }
 
 #header {
@@ -3438,68 +3456,68 @@ a:is(:hover, :active, :focus, :focus-within) {
 /* hl code colors */
 
 .hl-default {
-	color: rgb(var(--swatch-menutxt-general-color));
+	color: rgb(var(--swatch-text-general));
 }
 
 .hl-code {
-	color: rgb(var(--swatch-menutxt-general-color));
+	color: rgb(var(--swatch-text-general));
 }
 
 .hl-brackets {
-	color: rgb(var(--swatch-menutxt-general-color));
+	color: rgb(var(--swatch-text-general));
 }
 
 .hl-comment {
-	color: rgb(102, 111, 120);
+	color: rgb(var(--swatch-code-text-comment));
 }
 
 .hl-quotes {
-	color: rgb(183, 83, 1);
+	color: rgb(var(--swatch-code-text-quotes));
 }
 
 .hl-string {
-	color: rgb(86, 122, 13);
+	color: rgb(var(--swatch-code-text-string));
 }
 
 .hl-identifier {
-	color: rgb(1, 84, 147);
+	color: rgb(var(--swatch-code-text-identifier));
 }
 
 .hl-builtin {
-	color: rgb(183, 83, 1);
+	color: rgb(var(--swatch-code-text-builtin));
 }
 
 .hl-reserved {
-	color: rgb(128, 51, 120);
+	color: rgb(var(--swatch-code-text-reserved));
 }
 
 .hl-inlinedoc {
-	color: rgb(1, 84, 147);
+	color: rgb(var(--swatch-code-text-inlinedoc));
 }
 
 .hl-var {
-	color: rgb(86, 122, 13);
+	color: rgb(var(--swatch-code-text-var));
 }
 
 .hl-url {
-	color: rgb(1, 84, 147);
+	color: rgb(var(--swatch-code-text-url));
 }
 
 .hl-special {
 	--wght: calc(var(--mono-wght) + 100);
 
-	color: rgb(1, 84, 147);
+	color: rgb(var(--swatch-code-text-special));
 	font-weight: var(--wght);
 }
 
 .hl-number {
-	color: rgb(183, 83, 1);
+	color: rgb(var(--swatch-code-text-number));
 }
 
 .hl-inlinetags {
 	--wght: calc(var(--mono-wght) + 100);
 
-	color: rgb(183, 83, 1);
+	color: rgb(var(--swatch-code-text-inlinetags));
 	font-weight: var(--wght);
 }
 
