@@ -522,7 +522,9 @@ input[type="radio"] {
 
 /* ===DATA-FORM STYLING=== */
 
-#edit-page-form.data-form {
+#edit-page-form.data-form,
+#new-post-form.data-form,
+#new-thread-form.data-form {
 	padding: 0;
 	background-color: transparent;
 	font-size: 0.8125rem;
@@ -748,7 +750,10 @@ input[type="radio"] {
 				translate: 0;
 				transition: translate 0.2s var(--ease-in-out);
 
-				#edit-page-form.data-form .form-row span.field-checkbox input:checked + & {
+				#edit-page-form.data-form .form-row span.field-checkbox input:checked + &,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + &,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + &
+				 {
 					translate: 0.25em;
 				}
 			}
