@@ -2334,16 +2334,13 @@ table.page-history {
 	}
 }
 
-div.diff-box,
-#view-diff-div {
-	& div.inline-diff {
-		& del {
-			background-color: rgba(var(--rating-module-button-negative-color), 0.25);
-		}
+div.inline-diff {
+	& del {
+		background-color: rgba(var(--rating-module-button-negative-color), 0.25);
+	}
 
-		& ins {
-			background-color: rgba(var(--rating-module-button-plus-color), 0.25);
-		}
+	& ins {
+		background-color: rgba(var(--rating-module-button-plus-color), 0.25);
 	}
 }
 
