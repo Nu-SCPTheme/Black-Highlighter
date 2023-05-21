@@ -2063,9 +2063,7 @@ input.checkbox,
 div.note,
 #lock-info {
 	transition:
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out);
+		box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out);
 	border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
 	background-color: rgb(var(--swatch-background));
 	color: rgb(var(--swatch-text-general));
@@ -2128,12 +2126,7 @@ input[type="text"]::-webkit-scrollbar-thumb, input.text::-webkit-scrollbar-thumb
 		padding: 0.25em;
 		overflow: hidden;
 		transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 		border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 		outline: 0 solid rgb(var(--swatch-primary));
 		background-color: rgb(var(--ui-button-bg));
@@ -2185,8 +2178,7 @@ input[type="checkbox"] {
 	width: 1em;
 	height: 1em;
 	transition:
-		box-shadow 0.2s var(--ease-in-out),
-		border-color 0.15s var(--ease-in-out);
+		box-shadow 0.2s var(--ease-in-out), border-color 0.15s var(--ease-in-out);
 	border: 0.0625rem solid rgb(var(--swatch-tertiary-color));
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: transparent;
@@ -2222,18 +2214,11 @@ input[type="checkbox"]::before {
 		height: 150%;
 		rotate: -135deg;
 		transition:
-			background-color 0.05s var(--ease-in-out) 0.05s,
-			box-shadow 0.15s var(--ease-in-out),
-			-webkit-clip-path 0.15s var(--ease-in-out);
+			background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 		transition:
-			background-color 0.05s var(--ease-in-out) 0.05s,
-			box-shadow 0.15s var(--ease-in-out),
-			clip-path 0.15s var(--ease-in-out);
+			background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out);
 		transition:
-			background-color 0.05s var(--ease-in-out) 0.05s,
-			box-shadow 0.15s var(--ease-in-out),
-			clip-path 0.15s var(--ease-in-out),
-			-webkit-clip-path 0.15s var(--ease-in-out);
+			background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 	}
 
 input[type="checkbox"]::after {
@@ -2244,18 +2229,11 @@ input[type="checkbox"]::after {
 		height: 50%;
 		rotate: -45deg;
 		transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			-webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
+			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, -webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
 		transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			clip-path 0.15s var(--ease-in-out) 0.15s;
+			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, clip-path 0.15s var(--ease-in-out) 0.15s;
 		transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			clip-path 0.15s var(--ease-in-out) 0.15s,
-			-webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
+			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, clip-path 0.15s var(--ease-in-out) 0.15s, -webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
 	}
 
 input[type="checkbox"]:checked {
@@ -2274,34 +2252,20 @@ input[type="checkbox"]:checked::before,
 
 input[type="checkbox"]:checked::before {
 			transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			-webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
+			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, -webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
 			transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			clip-path 0.15s var(--ease-in-out) 0.15s;
+			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, clip-path 0.15s var(--ease-in-out) 0.15s;
 			transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			clip-path 0.15s var(--ease-in-out) 0.15s,
-			-webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
+			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, clip-path 0.15s var(--ease-in-out) 0.15s, -webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
 		}
 
 input[type="checkbox"]:checked::after {
 			transition:
-				background-color 0.05s var(--ease-in-out) 0.05s,
-				box-shadow 0.15s var(--ease-in-out),
-				-webkit-clip-path 0.15s var(--ease-in-out);
+				background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 			transition:
-				background-color 0.05s var(--ease-in-out) 0.05s,
-				box-shadow 0.15s var(--ease-in-out),
-				clip-path 0.15s var(--ease-in-out);
+				background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out);
 			transition:
-				background-color 0.05s var(--ease-in-out) 0.05s,
-				box-shadow 0.15s var(--ease-in-out),
-				clip-path 0.15s var(--ease-in-out),
-				-webkit-clip-path 0.15s var(--ease-in-out);
+				background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 		}
 
 /* ===RADIO BUTTONS=== */
@@ -2442,27 +2406,11 @@ input[type="radio"]:checked::before {
 				margin: 0;
 				padding: 0.125em 0.5em;
 				transition:
-					padding 0.2s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					translate 0.2s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out),
-					-webkit-clip-path 0.2s var(--ease-in-out);
+					padding 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out), -webkit-clip-path 0.2s var(--ease-in-out);
 				transition:
-					padding 0.2s var(--ease-in-out),
-					clip-path 0.2s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					translate 0.2s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out);
+					padding 0.2s var(--ease-in-out), clip-path 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 				transition:
-					padding 0.2s var(--ease-in-out),
-					clip-path 0.2s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					translate 0.2s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out),
-					-webkit-clip-path 0.2s var(--ease-in-out);
+					padding 0.2s var(--ease-in-out), clip-path 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out), -webkit-clip-path 0.2s var(--ease-in-out);
 				outline: 0 solid rgb(var(--swatch-primary));
 				-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 				        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -2482,8 +2430,7 @@ input[type="radio"]:checked::before {
 					width: 100%;
 					height: 100%;
 					transition:
-						background-color 0.2s var(--ease-in-out),
-						background-image 0.05s var(--ease-in-out);
+						background-color 0.2s var(--ease-in-out), background-image 0.05s var(--ease-in-out);
 					background-color: rgb(var(--swatch-background));
 					background-image:
 						linear-gradient(
@@ -2610,10 +2557,7 @@ input[type="radio"]:checked::before {
 
 			padding: 0.25rem;
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			border: none;
 			outline: 0 solid rgb(var(--swatch-primary));
 			box-shadow: inset 0 0 0 0.0625rem rgba(var(--swatch-tertiary-color), 0.3625); /* Overwrite Wikidot Inline Styling */
@@ -2902,8 +2846,7 @@ input[type="radio"]:checked::before {
 				width: 1em;
 				height: 1em;
 				transition:
-					height 0.2s var(--ease-in-out),
-					width 0.2s var(--ease-in-out);
+					height 0.2s var(--ease-in-out), width 0.2s var(--ease-in-out);
 				border-radius: 0.25em;
 				background-color: rgb(var(--swatch-secondary-color));
 			}
@@ -3310,8 +3253,7 @@ a {
 a,
 	a:visited {
 		transition:
-			text-decoration-color 0.15s var(--ease-in-out),
-			color 0.15s var(--ease-in-out);
+			text-decoration-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out);
 		text-decoration: underline;
 		-webkit-text-decoration: underline solid transparent;
 		        text-decoration: underline solid transparent;
@@ -3333,8 +3275,7 @@ a.newpage {
 
 a:is(:hover, :active, :focus, :focus-within) {
 		transition:
-			text-decoration-color 0.15s var(--ease-in-out),
-			color 0.15s var(--ease-in-out);
+			text-decoration-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out);
 		background-color: transparent;
 		color: rgb(var(--hover-link-color));
 		text-decoration: underline;
@@ -3356,8 +3297,7 @@ a:is(:hover, :active, :focus, :focus-within) {
 .dblock {
 	display: inline;
 	transition:
-		background-color 2s var(--ease-in-out),
-		color 2s var(--ease-in-out);
+		background-color 2s var(--ease-in-out), color 2s var(--ease-in-out);
 	background-color: rgb(var(--swatch-menubg-black-color));
 	color: rgb(var(--swatch-text-dark));
 	-webkit-text-decoration: none;
@@ -3818,8 +3758,7 @@ rt {
 				height: 100%;
 				transform: skew(-25deg);
 				transition:
-					box-shadow 0.15s var(--ease-in-out),
-					background-color 0.15s var(--ease-in-out);
+					box-shadow 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out);
 				background: transparent;
 				box-shadow:
 					0.0625rem 0.0625rem 0 0 rgb(var(--swatch-primary)),
@@ -3898,10 +3837,7 @@ div.page-watch-options a,
 			margin: -0.15em 0;
 			padding: 0.15em;
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary));
 			font-weight: var(--wght);
 			text-decoration: underline;
@@ -3989,9 +3925,7 @@ div.page-watch-options a:is(:hover, :active, :focus, :focus-within) {
 					padding: 0.1em 0.4em 0.1em 0.3em;
 					overflow: hidden;
 					transition:
-						color 0.15s var(--ease-in-out),
-						font-weight 0.2s var(--ease-in-out),
-						font-variation-settings 0.2s var(--ease-in-out);
+						color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 					font-weight: var(--wght);
 					line-height: 1;
 				}
@@ -4026,10 +3960,7 @@ div.page-watch-options a:is(:hover, :active, :focus, :focus-within) {
 						--wght: calc(var(--ui-hvr-wght));
 
 						transition:
-							box-shadow 0.2s var(--ease-in-out),
-							color 0.15s var(--ease-in-out),
-							font-weight 0.2s var(--ease-in-out),
-							font-variation-settings 0.2s var(--ease-in-out);
+							box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 						font-weight: var(--wght);
 						-webkit-text-decoration: none;
 						text-decoration: none;
@@ -4279,9 +4210,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 			padding: 0.2em;
 			overflow: hidden;
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			color: rgb(var(--link-color));
 			font-weight: var(--wght);
 			line-height: 1;
@@ -4313,9 +4242,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 			--wght: calc(var(--ui-hvr-wght));
 
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			color: rgb(var(--hover-link-color));
 			font-weight: var(--wght);
 			-webkit-text-decoration: none;
@@ -4362,21 +4289,11 @@ div[id*="page-options-bottom"] > a#delete-button {
 			padding: 0.2em;
 			overflow: hidden;
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.15s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out), -webkit-text-decoration 0.15s var(--ease-in-out);
 			transition:
-				text-decoration 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				text-decoration 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			transition:
-				text-decoration 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.15s var(--ease-in-out);
+				text-decoration 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out), -webkit-text-decoration 0.15s var(--ease-in-out);
 			font-weight: var(--wght);
 			line-height: 1;
 			text-decoration: underline;
@@ -4411,9 +4328,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 			--wght: calc(var(--ui-hvr-wght));
 
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			font-weight: var(--wght);
 			-webkit-text-decoration: none;
 			text-decoration: none;
@@ -4515,12 +4430,7 @@ div[id*="page-options-bottom"] > a#delete-button {
 		padding: 0.25em;
 		overflow: hidden;
 		transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 		border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 		outline: 0 solid rgb(var(--swatch-primary));
 		background-color: rgb(var(--ui-button-bg));
@@ -4671,12 +4581,7 @@ form#edit-page-form table.form:first-of-type tr td:first-of-type, form#new-post-
 					margin-right: 1ex;
 					padding: 0 0.25em;
 					transition:
-						box-shadow 0.2s var(--ease-in-out),
-						color 0.15s var(--ease-in-out),
-						background-color 0.15s var(--ease-in-out),
-						translate 0.2s var(--ease-in-out),
-						font-weight 0.2s var(--ease-in-out),
-						font-variation-settings 0.2s var(--ease-in-out);
+						box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 					outline: 0 solid rgb(var(--swatch-primary));
 					background-color: rgb(var(--swatch-background));
 					box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -4708,10 +4613,7 @@ form#edit-page-form table.form:first-of-type tr td:last-of-type input, form#new-
 						margin: 0.5rem 1rem;
 						padding: 0.25em;
 						transition:
-							box-shadow 0.2s var(--ease-in-out),
-							background-color 0.15s var(--ease-in-out),
-							font-weight 0.2s var(--ease-in-out),
-							font-variation-settings 0.2s var(--ease-in-out);
+							box-shadow 0.2s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 						border: none;
 						outline: 0 solid rgb(var(--swatch-primary));
 						box-shadow: 0 0 0 0 rgb(var(--swatch-primary)); /* Overwrite Wikidot Inline Styling */
@@ -4779,10 +4681,7 @@ form#edit-page-form #page-templates, form#new-post-form #page-templates, form#ne
 
 		padding: 0.25rem;
 		transition:
-			box-shadow 0.2s var(--ease-in-out),
-			background-color 0.15s var(--ease-in-out),
-			font-weight 0.2s var(--ease-in-out),
-			font-variation-settings 0.2s var(--ease-in-out);
+			box-shadow 0.2s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 		border: none;
 		border-radius: 0.25rem;
 		outline: 0 solid rgb(var(--swatch-primary));
@@ -4891,18 +4790,11 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li > ul, form#new-post-f
 						padding-left: 0;
 						overflow: hidden;
 						transition:
-							box-shadow 0.1s var(--ease-in-out) 0.25s,
-							padding-left 0.1s var(--ease-in-out) 0.25s,
-							-webkit-clip-path 0.2s var(--ease-in-out);
+							box-shadow 0.1s var(--ease-in-out) 0.25s, padding-left 0.1s var(--ease-in-out) 0.25s, -webkit-clip-path 0.2s var(--ease-in-out);
 						transition:
-							clip-path 0.2s var(--ease-in-out),
-							box-shadow 0.1s var(--ease-in-out) 0.25s,
-							padding-left 0.1s var(--ease-in-out) 0.25s;
+							clip-path 0.2s var(--ease-in-out), box-shadow 0.1s var(--ease-in-out) 0.25s, padding-left 0.1s var(--ease-in-out) 0.25s;
 						transition:
-							clip-path 0.2s var(--ease-in-out),
-							box-shadow 0.1s var(--ease-in-out) 0.25s,
-							padding-left 0.1s var(--ease-in-out) 0.25s,
-							-webkit-clip-path 0.2s var(--ease-in-out);
+							clip-path 0.2s var(--ease-in-out), box-shadow 0.1s var(--ease-in-out) 0.25s, padding-left 0.1s var(--ease-in-out) 0.25s, -webkit-clip-path 0.2s var(--ease-in-out);
 						border: none;
 						background-color: rgb(var(--swatch-background));
 						box-shadow: inset 0 0 0 0 rgb(var(--swatch-tertiary-color));
@@ -4921,18 +4813,11 @@ form#edit-page-form .wd-editor-toolbar-panel div > ul > li:is(:hover, :active, :
 							left: var(--icon-size);
 							padding-left: 0.125em;
 							transition:
-								box-shadow 0.1s var(--ease-in-out),
-								padding-left 0.1s var(--ease-in-out),
-								-webkit-clip-path 0.2s var(--ease-in-out) 0.05s;
+								box-shadow 0.1s var(--ease-in-out), padding-left 0.1s var(--ease-in-out), -webkit-clip-path 0.2s var(--ease-in-out) 0.05s;
 							transition:
-								clip-path 0.2s var(--ease-in-out) 0.05s,
-								box-shadow 0.1s var(--ease-in-out),
-								padding-left 0.1s var(--ease-in-out);
+								clip-path 0.2s var(--ease-in-out) 0.05s, box-shadow 0.1s var(--ease-in-out), padding-left 0.1s var(--ease-in-out);
 							transition:
-								clip-path 0.2s var(--ease-in-out) 0.05s,
-								box-shadow 0.1s var(--ease-in-out),
-								padding-left 0.1s var(--ease-in-out),
-								-webkit-clip-path 0.2s var(--ease-in-out) 0.05s;
+								clip-path 0.2s var(--ease-in-out) 0.05s, box-shadow 0.1s var(--ease-in-out), padding-left 0.1s var(--ease-in-out), -webkit-clip-path 0.2s var(--ease-in-out) 0.05s;
 							box-shadow: inset 0.125em 0 0 0 rgb(var(--swatch-tertiary-color));
 							pointer-events: all;
 						}
@@ -5558,9 +5443,7 @@ form#edit-page-form .edit-help-34 > a:is(:hover, :active, :focus, :focus-within)
 				--wght: calc(var(--ui-hvr-wght));
 
 				transition:
-					color 0.15s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out);
+					color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 				color: rgb(var(--swatch-background));
 				font-weight: var(--wght);
 				-webkit-text-decoration: none;
@@ -5596,10 +5479,7 @@ form#edit-page-form .change-textarea-size a, form#new-post-form .change-textarea
 			height: 1.125em;
 			padding: 0;
 			transition:
-				background-color 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			border: none;
 			background-color: rgba(var(--swatch-primary-darker), 0.4);
 			box-shadow: none;
@@ -5643,9 +5523,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 			left: 1rem;
 			padding: 0.15625em;
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out);
 			outline: 0 solid rgb(var(--swatch-primary));
 			background-color: rgb(var(--swatch-background));
 			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -5670,8 +5548,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 			margin: -1.325em auto 0;
 			padding: 0.75em 0.5em 0.5em;
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), background-color 0.15s var(--ease-in-out);
 			outline: 0 solid rgb(var(--swatch-primary));
 			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
 			color: rgb(var(--swatch-menutxt-general-color));
@@ -5784,12 +5661,7 @@ form#edit-page-form div.buttons, form#new-post-form div.buttons, form#new-thread
 	padding: 0.25em;
 	overflow: hidden;
 	transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 	border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 	outline: 0 solid rgb(var(--swatch-primary));
 	background-color: rgb(var(--ui-button-bg));
@@ -5941,12 +5813,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(1) {
 			margin-right: 1ex;
 			padding: 0 0.25em;
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out),
-				translate 0.2s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			outline: 0 solid rgb(var(--swatch-primary));
 			background-color: rgb(var(--swatch-background));
 			box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -6125,12 +5992,7 @@ table.page-history tr td.optionstd a {
 					padding: 0.25em;
 					overflow: hidden;
 					transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 					border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 					outline: 0 solid rgb(var(--swatch-primary));
 					background-color: rgb(var(--ui-button-bg));
@@ -6371,24 +6233,11 @@ table.page-files tr > td > a:not(.btn),
 						align-items: center;
 						padding: 0 0.5em;
 						transition:
-							color 0.15s var(--ease-in-out),
-							font-weight 0.15s var(--ease-in-out),
-							font-variation-settings 0.15s var(--ease-in-out),
-							box-shadow 0.2s var(--ease-in-out),
-							-webkit-text-decoration 0.2s var(--ease-in-out);
+							color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 						transition:
-							color 0.15s var(--ease-in-out),
-							font-weight 0.15s var(--ease-in-out),
-							font-variation-settings 0.15s var(--ease-in-out),
-							box-shadow 0.2s var(--ease-in-out),
-							text-decoration 0.2s var(--ease-in-out);
+							color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out);
 						transition:
-							color 0.15s var(--ease-in-out),
-							font-weight 0.15s var(--ease-in-out),
-							font-variation-settings 0.15s var(--ease-in-out),
-							box-shadow 0.2s var(--ease-in-out),
-							text-decoration 0.2s var(--ease-in-out),
-							-webkit-text-decoration 0.2s var(--ease-in-out);
+							color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 						background-color: transparent;
 						box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 						font-weight: var(--wght);
@@ -6494,12 +6343,7 @@ table.page-files thead tr,
 							margin-right: 1ex;
 							padding: 0 0.25em;
 							transition:
-								box-shadow 0.2s var(--ease-in-out),
-								color 0.15s var(--ease-in-out),
-								background-color 0.15s var(--ease-in-out),
-								translate 0.2s var(--ease-in-out),
-								font-weight 0.2s var(--ease-in-out),
-								font-variation-settings 0.2s var(--ease-in-out);
+								box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 							outline: 0 solid rgb(var(--swatch-primary));
 							background-color: rgb(var(--swatch-background));
 							box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -6589,12 +6433,7 @@ table.page-files thead tr,
 			padding: 0.25em;
 			overflow: hidden;
 			transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 			outline: 0 solid rgb(var(--swatch-primary));
 			background-color: rgb(var(--ui-button-bg));
@@ -6727,12 +6566,7 @@ table.page-files thead tr,
 				padding: 0.25em;
 				overflow: hidden;
 				transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 				border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 				outline: 0 solid rgb(var(--swatch-primary));
 				background-color: rgb(var(--ui-button-bg));
@@ -6901,24 +6735,11 @@ table.page-files thead tr,
 			align-items: center;
 			padding: 0 0.5em;
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.15s var(--ease-in-out),
-				font-variation-settings 0.15s var(--ease-in-out),
-				box-shadow 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.15s var(--ease-in-out),
-				font-variation-settings 0.15s var(--ease-in-out),
-				box-shadow 0.2s var(--ease-in-out),
-				text-decoration 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out);
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.15s var(--ease-in-out),
-				font-variation-settings 0.15s var(--ease-in-out),
-				box-shadow 0.2s var(--ease-in-out),
-				text-decoration 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 			background-color: transparent;
 			box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 			font-weight: var(--wght);
@@ -7151,12 +6972,7 @@ table.page-files thead tr,
 							margin-right: 1ex;
 							padding: 0 0.25em;
 							transition:
-								box-shadow 0.2s var(--ease-in-out),
-								color 0.15s var(--ease-in-out),
-								background-color 0.15s var(--ease-in-out),
-								translate 0.2s var(--ease-in-out),
-								font-weight 0.2s var(--ease-in-out),
-								font-variation-settings 0.2s var(--ease-in-out);
+								box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 							outline: 0 solid rgb(var(--swatch-primary));
 							background-color: rgb(var(--swatch-background));
 							box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -7255,10 +7071,7 @@ table.page-files thead tr,
 						position: relative;
 						z-index: 2;
 						transition:
-							background-color 0.15s var(--ease-in-out),
-							color 0.15s var(--ease-in-out),
-							font-weight 0.2s var(--ease-in-out),
-							font-variation-settings 0.2s var(--ease-in-out);
+							background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 					}
 
 #action-area form[onsubmit*="setParent"] #parent-page-name-list ul li:is(:hover, :active, :focus-within)::before {
@@ -7340,24 +7153,11 @@ table.page-files thead tr,
 							display: inline-flex;
 							padding: 0.25ex 0.5ch;
 							transition:
-								color 0.15s var(--ease-in-out),
-								font-weight 0.15s var(--ease-in-out),
-								font-variation-settings 0.15s var(--ease-in-out),
-								box-shadow 0.2s var(--ease-in-out),
-								-webkit-text-decoration 0.2s var(--ease-in-out);
+								color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 							transition:
-								color 0.15s var(--ease-in-out),
-								font-weight 0.15s var(--ease-in-out),
-								font-variation-settings 0.15s var(--ease-in-out),
-								box-shadow 0.2s var(--ease-in-out),
-								text-decoration 0.2s var(--ease-in-out);
+								color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out);
 							transition:
-								color 0.15s var(--ease-in-out),
-								font-weight 0.15s var(--ease-in-out),
-								font-variation-settings 0.15s var(--ease-in-out),
-								box-shadow 0.2s var(--ease-in-out),
-								text-decoration 0.2s var(--ease-in-out),
-								-webkit-text-decoration 0.2s var(--ease-in-out);
+								color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 							background-color: transparent;
 							box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 							font-weight: var(--wght);
@@ -7397,12 +7197,7 @@ table.page-files thead tr,
 				padding: 0.25em;
 				overflow: hidden;
 				transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 				border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 				outline: 0 solid rgb(var(--swatch-primary));
 				background-color: rgb(var(--ui-button-bg));
@@ -7545,12 +7340,7 @@ table.page-files thead tr,
 								margin-right: 1ex;
 								padding: 0 0.25em;
 								transition:
-									box-shadow 0.2s var(--ease-in-out),
-									color 0.15s var(--ease-in-out),
-									background-color 0.15s var(--ease-in-out),
-									translate 0.2s var(--ease-in-out),
-									font-weight 0.2s var(--ease-in-out),
-									font-variation-settings 0.2s var(--ease-in-out);
+									box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 								outline: 0 solid rgb(var(--swatch-primary));
 								background-color: rgb(var(--swatch-background));
 								box-shadow: 0 0 0 0 rgb(var(--swatch-primary));
@@ -7738,24 +7528,11 @@ table.page-files thead tr,
 								align-items: center;
 								padding: 0 0.5em;
 								transition:
-									color 0.15s var(--ease-in-out),
-									font-weight 0.15s var(--ease-in-out),
-									font-variation-settings 0.15s var(--ease-in-out),
-									box-shadow 0.2s var(--ease-in-out),
-									-webkit-text-decoration 0.2s var(--ease-in-out);
+									color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 								transition:
-									color 0.15s var(--ease-in-out),
-									font-weight 0.15s var(--ease-in-out),
-									font-variation-settings 0.15s var(--ease-in-out),
-									box-shadow 0.2s var(--ease-in-out),
-									text-decoration 0.2s var(--ease-in-out);
+									color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out);
 								transition:
-									color 0.15s var(--ease-in-out),
-									font-weight 0.15s var(--ease-in-out),
-									font-variation-settings 0.15s var(--ease-in-out),
-									box-shadow 0.2s var(--ease-in-out),
-									text-decoration 0.2s var(--ease-in-out),
-									-webkit-text-decoration 0.2s var(--ease-in-out);
+									color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 								background-color: transparent;
 								box-shadow: inset 0 0 0 0 rgb(var(--swatch-primary-darkest));
 								font-weight: var(--wght);
@@ -7807,12 +7584,7 @@ table.page-files thead tr,
 						padding: 0.25em;
 						overflow: hidden;
 						transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 						border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 						outline: 0 solid rgb(var(--swatch-primary));
 						background-color: rgb(var(--ui-button-bg));
@@ -8214,12 +7986,7 @@ div.odialog-shader-iframe {
 			padding: 0.25em;
 			overflow: hidden;
 			transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 			outline: 0 solid rgb(var(--swatch-primary));
 			background-color: rgb(var(--ui-button-bg));
@@ -8440,8 +8207,7 @@ div.odialog-shader-iframe {
 			margin: 0.1rem;
 			padding: 0.25em;
 			transition:
-				background-color 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out);
+				background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out);
 			border: 0.0625rem solid rgb(var(--swatch-primary-darker));
 			border-radius: 0.25rem;
 			background-color: rgba(var(--swatch-secondary-color), 0.25);
@@ -8989,9 +8755,7 @@ div.wd-adunit {
 	overflow-x: hidden;
 	overflow-y: auto;
 	transition:
-		background-color 0.15s var(--ease-in-out),
-		scrollbar-color 0.15s var(--ease-in-out),
-		border-color 0.15s var(--ease-in-out);
+		background-color 0.15s var(--ease-in-out), scrollbar-color 0.15s var(--ease-in-out), border-color 0.15s var(--ease-in-out);
 	border: none;
 	border-color: rgba(var(--swatch-tertiary-color), 0.4);
 	background-color: rgb(var(--sidebar-bg-color));
@@ -9286,10 +9050,7 @@ div.wd-adunit {
 			margin: 0;
 			padding: 0 0.6em;
 			transition:
-				background-color 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			background-clip: padding-box;
 			background-color: rgb(var(--sidebar-links-bg-color));
 			color: rgb(var(--sidebar-links-text));
@@ -9329,10 +9090,7 @@ div.wd-adunit {
 			padding: 0 0 0 calc(var(--base-font-size) * (13 / 15));
 			overflow: hidden;
 			transition:
-				background-color 0.15s var(--ease-in-out),
-				color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			background-clip: padding-box;
 			background-color: rgb(var(--sidebar-links-bg-color));
 			font-size: calc(var(--base-font-size) * (13 / 15));
@@ -9411,10 +9169,7 @@ div.wd-adunit {
 					height: 1.5rem;
 					margin: 0;
 					transition:
-						background-color 0.15s var(--ease-in-out),
-						color 0.15s var(--ease-in-out),
-						font-weight 0.2s var(--ease-in-out),
-						font-variation-settings 0.2s var(--ease-in-out);
+						background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 					background-clip: padding-box;
 					background-color: rgb(var(--sidebar-links-bg-color));
 					color: rgb(var(--sidebar-links-text));
@@ -9440,10 +9195,7 @@ div.wd-adunit {
 				height: 1.5rem;
 				margin: 0;
 				transition:
-					background-color 0.15s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out);
+					background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 				background-clip: padding-box;
 				background-color: rgb(var(--sidebar-links-bg-color));
 				color: rgb(var(--sidebar-links-text));
@@ -9656,10 +9408,7 @@ div.wd-adunit {
 			height: 100%;
 			margin-left: 0;
 			transition:
-				color 0.15s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out),
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			color: rgb(var(--sidebar-collapsible-link-color));
 
 			/* create a dropdown triangle next to the collapsible */
@@ -10326,12 +10075,7 @@ div.wd-adunit {
 				justify-content: flex-end;
 				padding-right: 1em;
 				transition:
-					padding-right 0.15s var(--ease-in-out),
-					border-color 0.15s var(--ease-in-out),
-					background-color 0.15s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out);
+					padding-right 0.15s var(--ease-in-out), border-color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			}
 
 :where(:lang(de)) #side-bar .collapsible-block + .collapsible-block {
@@ -10677,11 +10421,7 @@ div.wd-adunit {
 				grid-column: 2;
 				grid-row: 1;
 				transition:
-					border-color 0.15s var(--ease-in-out),
-					background-color 0.15s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out);
+					border-color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			}
 
 :where(:lang(ja)) #side-bar div.menu-item span[style*="line-through"] {
@@ -10703,9 +10443,7 @@ div.wd-adunit {
 					position: absolute;
 					left: 0;
 					transition:
-						color 0.15s var(--ease-in-out),
-						font-weight 0.2s var(--ease-in-out),
-						font-variation-settings 0.2s var(--ease-in-out);
+						color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 					color: rgba(var(--sidebar-links-text), 0.25);
 				}
 
@@ -10962,11 +10700,7 @@ div.wd-adunit {
 				grid-column: 2;
 				grid-row: 1;
 				transition:
-					border-color 0.15s var(--ease-in-out),
-					background-color 0.15s var(--ease-in-out),
-					color 0.15s var(--ease-in-out),
-					font-weight 0.2s var(--ease-in-out),
-					font-variation-settings 0.2s var(--ease-in-out);
+					border-color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			}
 
 :where(:lang(ru)) #side-bar > hr + .side-block {
@@ -11379,10 +11113,7 @@ div.wd-adunit {
 						margin: 0;
 						padding: 0 0 0 calc(var(--base-font-size) * (14 / 15));
 						transition:
-							background-color 0.15s var(--ease-in-out),
-							color 0.15s var(--ease-in-out),
-							font-weight 0.2s var(--ease-in-out),
-							font-variation-settings 0.2s var(--ease-in-out);
+							background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 						background-clip: padding-box;
 						background-color: rgb(var(--sidebar-links-bg-color));
 						color: rgb(var(--sidebar-links-text));
@@ -11647,11 +11378,7 @@ div.wd-adunit {
 					grid-column: 2;
 					grid-row: 1;
 					transition:
-						border-color 0.15s var(--ease-in-out),
-						background-color 0.15s var(--ease-in-out),
-						color 0.15s var(--ease-in-out),
-						font-weight 0.2s var(--ease-in-out),
-						font-variation-settings 0.2s var(--ease-in-out);
+						border-color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 				}
 
 :where(:lang(uk)) #side-bar div.menu-item a[href*="system:recent-changes"] {
@@ -11905,18 +11632,11 @@ div#container-wrap {
 		width: var(--search-height);
 		height: var(--search-height);
 		transition:
-			background-color 0.15s var(--ease-in-out),
-			box-shadow 0.15s var(--ease-in-out),
-			-webkit-clip-path 0.15s var(--ease-in-out);
+			background-color 0.15s var(--ease-in-out), box-shadow 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 		transition:
-			background-color 0.15s var(--ease-in-out),
-			clip-path 0.15s var(--ease-in-out),
-			box-shadow 0.15s var(--ease-in-out);
+			background-color 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out), box-shadow 0.15s var(--ease-in-out);
 		transition:
-			background-color 0.15s var(--ease-in-out),
-			clip-path 0.15s var(--ease-in-out),
-			box-shadow 0.15s var(--ease-in-out),
-			-webkit-clip-path 0.15s var(--ease-in-out);
+			background-color 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out), box-shadow 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 		border: none;
 		will-change: background-color, clip-path;
 		cursor: pointer;
@@ -12191,15 +11911,11 @@ div#container-wrap {
 			align-items: center;
 			padding: 0 0.5em;
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				text-decoration 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out);
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				text-decoration 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out);
 			background-color: transparent;
 			box-shadow: inset 0 0 0 0 rgb(var(--login-myaccount-hover-bg-color));
 			color: rgb(var(--login-myaccount-color));
@@ -12379,9 +12095,7 @@ div#container-wrap {
 			max-height: 2em;
 			padding: 0 0.25em;
 			transition:
-				color 0.15s var(--ease-in-out),
-				font-weight 0.15s var(--ease-in-out),
-				font-variation-settings 0.15s var(--ease-in-out);
+				color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out);
 			box-shadow: inset 0 0 0 0.0625rem var(--login-dropdown-border-color);
 			font-weight: var(--wght);
 		}
@@ -12649,10 +12363,7 @@ div#container-wrap {
 						padding: 0 1em;
 						overflow: hidden;
 						transition:
-							background-color 0.15s var(--ease-in-out),
-							color 0.15s var(--ease-in-out),
-							font-weight 0.2s var(--ease-in-out),
-							font-variation-settings 0.2s var(--ease-in-out);
+							background-color 0.15s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 						border: 0 solid rgba(0, 0, 0, 0);
 						background: rgb(var(--dropdown-links-bg-color));
 						color: rgb(var(--dropdown-links-color));
@@ -12710,8 +12421,7 @@ div#container-wrap {
 						height: auto;
 						margin: 0;
 						transition:
-							opacity 0.1s var(--ease-in-out),
-							background-color 0.1s var(--ease-in-out);
+							opacity 0.1s var(--ease-in-out), background-color 0.1s var(--ease-in-out);
 						opacity: 0;
 						background-color: rgb(var(--dropdown-bg-color));
 						pointer-events: none;
@@ -12749,15 +12459,11 @@ div#container-wrap {
 					-webkit-backdrop-filter: blur(0);
 					        backdrop-filter: blur(0);
 					transition:
-						opacity 0.2s var(--ease-in-out),
-						-webkit-backdrop-filter 0.2s var(--ease-in-out);
+						opacity 0.2s var(--ease-in-out), -webkit-backdrop-filter 0.2s var(--ease-in-out);
 					transition:
-						backdrop-filter 0.2s var(--ease-in-out),
-						opacity 0.2s var(--ease-in-out);
+						backdrop-filter 0.2s var(--ease-in-out), opacity 0.2s var(--ease-in-out);
 					transition:
-						backdrop-filter 0.2s var(--ease-in-out),
-						opacity 0.2s var(--ease-in-out),
-						-webkit-backdrop-filter 0.2s var(--ease-in-out);
+						backdrop-filter 0.2s var(--ease-in-out), opacity 0.2s var(--ease-in-out), -webkit-backdrop-filter 0.2s var(--ease-in-out);
 			}
 				}
 
@@ -12783,8 +12489,7 @@ div#container-wrap {
 #header div[class*="top-bar"] li a {
 			/* any a after li */
 			transition:
-				font-weight 0.2s var(--ease-in-out),
-				font-variation-settings 0.2s var(--ease-in-out);
+				font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 		}
 
 #header div[class*="top-bar"] li:is(:hover, :active, :focus-within) a {
@@ -13042,25 +12747,11 @@ div#container-wrap {
 
 			        clip-path: var(--clip-path);
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				color 0.2s var(--ease-in-out),
-				opacity 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.2s var(--ease-in-out),
-				-webkit-clip-path 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), color 0.2s var(--ease-in-out), opacity 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out), -webkit-clip-path 0.2s var(--ease-in-out);
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				text-decoration 0.2s var(--ease-in-out),
-				color 0.2s var(--ease-in-out),
-				clip-path 0.2s var(--ease-in-out),
-				opacity 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), color 0.2s var(--ease-in-out), clip-path 0.2s var(--ease-in-out), opacity 0.2s var(--ease-in-out);
 			transition:
-				box-shadow 0.2s var(--ease-in-out),
-				text-decoration 0.2s var(--ease-in-out),
-				color 0.2s var(--ease-in-out),
-				clip-path 0.2s var(--ease-in-out),
-				opacity 0.2s var(--ease-in-out),
-				-webkit-text-decoration 0.2s var(--ease-in-out),
-				-webkit-clip-path 0.2s var(--ease-in-out);
+				box-shadow 0.2s var(--ease-in-out), text-decoration 0.2s var(--ease-in-out), color 0.2s var(--ease-in-out), clip-path 0.2s var(--ease-in-out), opacity 0.2s var(--ease-in-out), -webkit-text-decoration 0.2s var(--ease-in-out), -webkit-clip-path 0.2s var(--ease-in-out);
 			opacity: 0;
 		}
 
@@ -13069,15 +12760,11 @@ div#container-wrap {
 
 			margin-left: 0;
 			transition:
-				background-color 0.15s var(--ease-in-out),
-				-webkit-clip-path 0.15s var(--ease-in-out);
+				background-color 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 			transition:
-				clip-path 0.15s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out);
+				clip-path 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out);
 			transition:
-				clip-path 0.15s var(--ease-in-out),
-				background-color 0.15s var(--ease-in-out),
-				-webkit-clip-path 0.15s var(--ease-in-out);
+				clip-path 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 			background-color: rgba(var(--login-arrow-color), 0);
 			pointer-events: all;
 			-webkit-clip-path: var(--clip-path);
@@ -14414,12 +14101,7 @@ div.heritage-rating-module div.heritage-emblem img {
 		padding: 0.25em;
 		overflow: hidden;
 		transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 		border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 		outline: 0 solid rgb(var(--swatch-primary));
 		background-color: rgb(var(--ui-button-bg));
@@ -15659,12 +15341,7 @@ body.print-body #print-options a {
 			padding: 0.25em;
 			overflow: hidden;
 			transition:
-		border-color 0.2s var(--ease-in-out),
-		box-shadow 0.2s var(--ease-in-out),
-		color 0.15s var(--ease-in-out),
-		background-color 0.15s var(--ease-in-out),
-		font-weight 0.2s var(--ease-in-out),
-		font-variation-settings 0.2s var(--ease-in-out);
+		border-color 0.2s var(--ease-in-out), box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
 			border: 0.0625rem solid rgba(var(--swatch-primary), 0.05);
 			outline: 0 solid rgb(var(--swatch-primary));
 			background-color: rgb(var(--ui-button-bg));
