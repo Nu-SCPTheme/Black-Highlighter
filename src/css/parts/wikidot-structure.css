@@ -505,7 +505,7 @@ div[id*="page-options-bottom"] {
 			translate: 0 -50%;
 
 			@supports not (translate: 0 -50%) {
-				transform: translate(0 -50%);
+				transform: translate(0, -50%);
 			}
 		}
 
@@ -969,7 +969,7 @@ form#new-thread-form {
 					inset: -0.75rem auto auto 0.75rem;
 
 					@supports not (translate: 0 0) {
-						transform: translate(0 0);
+						transform: translate(0, 0);
 						will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
 					}
 				}
@@ -1029,7 +1029,7 @@ form#new-thread-form {
 					translate: -0.125rem -0.125rem;
 
 					@supports not (translate: -0.125rem -0.125rem) {
-						transform: translate(-0.125rem -0.125rem);
+						transform: translate(-0.125rem, -0.125rem);
 					}
 				}
 			}
@@ -1950,7 +1950,7 @@ form#new-thread-form {
 			will-change: box-shadow, color, background-color;
 
 			@supports not (translate: 0 0) {
-				transform: translate(0 0);
+				transform: translate(0, 0);
 			}
 		}
 
@@ -1997,7 +1997,7 @@ form#new-thread-form {
 				translate: 0 -0.25em;
 
 				@supports not (translate: 0 -0.25em) {
-					transform: translate(0 -0.25em);
+					transform: translate(0, -0.25em);
 				}
 			}
 
@@ -2226,7 +2226,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 			translate: -0.25em -0.25em;
 
 			@supports not (translate: -0.25em -0.25em) {
-				transform: translate(-0.25em -0.25em);
+				transform: translate(-0.25em, -0.25em);
 			}
 		}
 	}
@@ -2724,7 +2724,7 @@ table.page-files {
 								translate: -0.25em -0.25em;
 
 								@supports not (translate: -0.25em -0.25em) {
-									transform: translate(-0.25em -0.25em);
+									transform: translate(-0.25em, -0.25em);
 								}
 							}
 						}
@@ -3271,7 +3271,7 @@ table.page-files {
 								translate: -0.25em -0.25em;
 
 								@supports not (translate: -0.25em -0.25em) {
-									transform: translate(-0.25em -0.25em);
+									transform: translate(-0.25em, -0.25em);
 								}
 							}
 						}
@@ -3398,7 +3398,7 @@ table.page-files {
 							translate: 0 0.3625ex;
 
 							@supports not (translate: 0 0.3625ex) {
-								transform: translate(0 0.3625ex);
+								transform: translate(0, 0.3625ex);
 							}
 						}
 					}
@@ -3416,7 +3416,7 @@ table.page-files {
 						translate: 0 -50%;
 
 						@supports not (translate: 0 -50%) {
-							transform: translate(0 -50%);
+							transform: translate(0, -50%);
 						}
 					}
 
@@ -3609,7 +3609,7 @@ table.page-files {
 									translate: -0.25em -0.25em;
 
 									@supports not (translate: -0.25em -0.25em) {
-										transform: translate(-0.25em -0.25em);
+										transform: translate(-0.25em, -0.25em);
 									}
 								}
 							}
@@ -3849,7 +3849,7 @@ div.odialog-shader-iframe {
 		translate: -50% -50%;
 
 		@supports not (translate: -50% -50%) {
-			transform: translate(-50% -50%);
+			transform: translate(-50%, -50%);
 		}
 
 		&.owait .content {

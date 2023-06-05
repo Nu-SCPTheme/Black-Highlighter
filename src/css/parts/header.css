@@ -169,7 +169,7 @@ div#container-wrap {
 	font-size: calc(var(--base-font-size) * (13 / 15));
 
 	@supports not (translate: 0 -50%) {
-		transform: translate(0 -50%);
+		transform: translate(0, -50%);
 	}
 
 	&::after,
@@ -424,7 +424,7 @@ div#container-wrap {
 	white-space: nowrap;
 
 	@supports not (translate: 0 -50%) {
-		transform: translate(0 -50%);
+		transform: translate(0, -50%);
 	}
 
 	& span.printuser {
@@ -590,7 +590,7 @@ div#container-wrap {
 							pointer-events: none;
 
 							@supports not (translate: -50% 0) {
-								transform: translate(-50% 0);
+								transform: translate(-50%, 0);
 							}
 						}
 					}
@@ -1341,7 +1341,7 @@ div#container-wrap {
 					translate: -50% 0;
 
 					@supports not (translate: -50% 0) {
-						transform: translate(-50% 0);
+						transform: translate(-50%, 0);
 					}
 
 					> li {
@@ -1374,7 +1374,7 @@ div#container-wrap {
 						translate: -50% 0;
 
 						@supports not (translate: -50% 0) {
-							transform: translate(-50% 0);
+							transform: translate(-50%, 0);
 						}
 					}
 				}
@@ -1406,7 +1406,7 @@ div#container-wrap {
 						translate: -50% 0;
 
 						@supports not (translate: -50% 0) {
-							transform: translate(-50% 0);
+							transform: translate(-50%, 0);
 						}
 					}
 				}
