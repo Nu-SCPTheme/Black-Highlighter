@@ -739,6 +739,10 @@
 					&::after {
 						rotate: 180deg;
 						background: rgb(var(--sidebar-collapsible-ufld-arrow-color));
+
+						@supports not (rotate: 180deg) {
+							transform: rotateZ(180deg);
+						}
 					}
 
 					&:is(:hover, :active) {

@@ -69,6 +69,11 @@
 			box-shadow: 0 0 0 0 rgb(var(--tabs-selected-outline));
 			will-change: box-shadow, color, background-color;
 
+			@supports not (translate: 0 0) {
+				transform: translate(0 0);
+				transition: box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out)
+			}
+
 			& a {
 				--wght: var(--ui-wght);
 
@@ -142,6 +147,10 @@
 			padding: 0;
 			translate: 0 -0.25rem;
 			box-shadow: 0 0 0 0.25rem rgb(var(--tabs-selected-outline));
+
+			@supports not (translate: 0 0) {
+				transform: translate(0 -0.25rem);
+			}
 
 			& a {
 				--wght: var(--ui-hvr-wght);
@@ -372,6 +381,10 @@
 		animation: slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 		font-family: var(--UI-font);
 		font-size: 0.9em;
+
+		@supports not (translate: 0 0) {
+			transform: translate(0 0);
+		}
 	}
 
 	.footnote {
@@ -799,6 +812,10 @@ div.heritage-rating-module {
 		margin: 0 auto;
 		translate: 0 -50%;
 		color: rgb(var(--modal-body-text));
+
+		@supports not (translate: 0 -50%) {
+			transform: translate(0 -50%);
+		}
 	}
 
 	& div.modalbox {
@@ -894,12 +911,21 @@ div.heritage-rating-module {
 						transition: rotate 0.2s var(--ease-in-out), scale 0.2s var(--ease-in-out);
 						background-color: rgb(var(--modal-header-bg));
 						mask: var(--mask-image) center / 0.75em no-repeat;
+
+						@supports not (scale: 1) {
+							transform: rotateZ(0deg) scale(1);
+							transition: transform 0.2s var(--ease-in-out);
+						}
 					}
 				}
 
 				&:is(:hover, :active, :focus, :focus-within):first-of-type::after {
 					rotate: 15deg;
 					scale: 1.1;
+
+					@supports not (scale: 1.1) {
+						transform: rotateZ(15deg) scale(1.1);
+					}
 				}
 			}
 
@@ -916,6 +942,10 @@ div.heritage-rating-module {
 		scale: 2 1;
 		opacity: 1;
 		filter: opacity(0);
+
+		@supports not (scale: 2 1) {
+			transform: scale(2, 1);
+		}
 	}
 
 	& div.creditBottomRate {
@@ -1182,6 +1212,10 @@ table[style*="margin:0"] * {
 				color: rgb(var(--toc-directory-lines-color));
 				font-family: monospace;
 				translate: 0 -50%;
+
+				@supports not (translate: 0 -50%) {
+					transform: translate(0 -50%);
+				}
 			}
 
 			&:first-of-type {
@@ -1285,6 +1319,11 @@ table[style*="margin:0"] * {
 				background-color: rgb(var(--toc-body-hover-arrow-color));
 				pointer-events: none;
 				mask: var(--right-arrow-mask) center center / 0.3625em 1em no-repeat;
+
+				@supports not (rotate: y 25deg) {
+					transform: rotateY(25deg) translate(-1.25em -50%);
+					transition: transform 0.15s var(--ease-in-out), opacity 0.2s var(--ease-in-out);
+				}
 			}
 
 			&,
@@ -1300,11 +1339,19 @@ table[style*="margin:0"] * {
 				font-weight: var(--wght);
 				text-decoration: none;
 
+				@supports not (translate: 0.25rem 0) {
+					transform: translate(0.25rem 0);
+				}
+
 				&::before {
 					translate: -1em calc(-50% + 0.0625em);
 					rotate: y 0deg;
 					opacity: 1;
 					pointer-events: all;
+
+					@supports not (translate: -1em calc(-50% + 0.0625em)) {
+						transform: rotateY(0deg) translate(-1em calc(-50% + 0.0625em));
+					}
 				}
 			}
 		}
@@ -1639,12 +1686,20 @@ div.wiki-note {
 		left: 1.35em;
 		transform: skew(-15deg);
 		rotate: -6deg;
+
+		@supports not (rotate: -6deg) {
+			transform: rotateZ(-6deg) skew(-15deg);
+		}
 	}
 
 	&::after {
 		right: 1.125em;
 		transform: skew(15deg);
 		rotate: 6deg;
+
+		@supports not (rotate: 6deg) {
+			transform: rotateZ(6deg) skew(15deg);
+		}
 	}
 }
 
@@ -1742,6 +1797,10 @@ div.keycap {
 		border-radius: 50%;
 		background: rgb(var(--swatch-background));
 		box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-alternate-color));
+
+		@supports not (translate: 0 -50%) {
+			transform: translate(0 -50%);
+		}
 	}
 }
 

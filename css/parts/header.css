@@ -168,6 +168,10 @@ div#container-wrap {
 	color: transparent;
 	font-size: calc(var(--base-font-size) * (13 / 15));
 
+	@supports not (translate: 0 -50%) {
+		transform: translate(0 -50%);
+	}
+
 	&::after,
 	& input[type="submit"] {
 		width: var(--search-height);
@@ -419,6 +423,10 @@ div#container-wrap {
 	font-weight: var(--wght);
 	white-space: nowrap;
 
+	@supports not (translate: 0 -50%) {
+		transform: translate(0 -50%);
+	}
+
 	& span.printuser {
 		--wght: var(--ui-wght);
 
@@ -580,6 +588,10 @@ div#container-wrap {
 							translate: -50% 0;
 							font-size: calc(var(--base-font-size) * (11 / 15));
 							pointer-events: none;
+
+							@supports not (translate: -50% 0) {
+								transform: translate(-50% 0);
+							}
 						}
 					}
 
@@ -1328,6 +1340,10 @@ div#container-wrap {
 					margin-top: var(--topbar-height-on-mobile);
 					translate: -50% 0;
 
+					@supports not (translate: -50% 0) {
+						transform: translate(-50% 0);
+					}
+
 					> li {
 						& ul {
 							top: 100%;
@@ -1356,6 +1372,10 @@ div#container-wrap {
 
 					&:is(:hover, :active, :focus-within) {
 						translate: -50% 0;
+
+						@supports not (translate: -50% 0) {
+							transform: translate(-50% 0);
+						}
 					}
 				}
 
@@ -1384,6 +1404,10 @@ div#container-wrap {
 				&:is(:hover, :active, :focus-within) {
 					> ul {
 						translate: -50% 0;
+
+						@supports not (translate: -50% 0) {
+							transform: translate(-50% 0);
+						}
 					}
 				}
 			}

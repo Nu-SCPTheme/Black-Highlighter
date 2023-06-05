@@ -503,6 +503,10 @@ div[id*="page-options-bottom"] {
 			background-color: rgb(var(--ui-icon-color));
 			mask: var(--button-icon) center center / calc(var(--icon-size) - 0.5em) no-repeat;
 			translate: 0 -50%;
+
+			@supports not (translate: 0 -50%) {
+				transform: translate(0 -50%);
+			}
 		}
 
 		&:is(:hover, :active, :focus, :focus-within) {
@@ -963,6 +967,11 @@ form#new-thread-form {
 					translate: 0 0;
 					will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
 					inset: -0.75rem auto auto 0.75rem;
+
+					@supports not (translate: 0 0) {
+						transform: translate(0 0);
+						will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+					}
 				}
 
 				&:last-of-type {
@@ -1018,6 +1027,10 @@ form#new-thread-form {
 					color: rgb(var(--swatch-background));
 					font-weight: var(--wght);
 					translate: -0.125rem -0.125rem;
+
+					@supports not (translate: -0.125rem -0.125rem) {
+						transform: translate(-0.125rem -0.125rem);
+					}
 				}
 			}
 
@@ -1935,6 +1948,10 @@ form#new-thread-form {
 			text-transform: uppercase;
 			translate: 0 0;
 			will-change: box-shadow, color, background-color;
+
+			@supports not (translate: 0 0) {
+				transform: translate(0 0);
+			}
 		}
 
 		& br {
@@ -1978,6 +1995,10 @@ form#new-thread-form {
 				box-shadow: 0 0 0 0.15625em rgb(var(--swatch-primary));
 				color: rgb(var(--swatch-background));
 				translate: 0 -0.25em;
+
+				@supports not (translate: 0 -0.25em) {
+					transform: translate(0 -0.25em);
+				}
 			}
 
 			& textarea {
@@ -2163,6 +2184,18 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 			translate: 0;
 			inset: -1em auto auto 1rem;
 
+			@supports not (translate: 0) {
+				transition:
+					box-shadow 0.2s var(--ease-in-out),
+					color 0.15s var(--ease-in-out),
+					background-color 0.15s var(--ease-in-out),
+					transform 0.2s var(--ease-in-out),
+					font-weight 0.2s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
+				transform: translate(0);
+				will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+			}
+
 			&::after {
 				content: "\0021b4";
 			}
@@ -2191,6 +2224,10 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr {
 			color: rgb(var(--swatch-background));
 			font-weight: var(--wght);
 			translate: -0.25em -0.25em;
+
+			@supports not (translate: -0.25em -0.25em) {
+				transform: translate(-0.25em -0.25em);
+			}
 		}
 	}
 }
@@ -2649,6 +2686,18 @@ table.page-files {
 							will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
 							translate: 0;
 							inset: -1em auto auto 0.75ch;
+
+							@supports not (translate: 0) {
+								transition:
+									box-shadow 0.2s var(--ease-in-out),
+									color 0.15s var(--ease-in-out),
+									background-color 0.15s var(--ease-in-out),
+									transform 0.2s var(--ease-in-out),
+									font-weight 0.2s var(--ease-in-out),
+									font-variation-settings 0.2s var(--ease-in-out);
+								transform: translate(0);
+								will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+							}
 						}
 
 						&:last-of-type {
@@ -2673,6 +2722,10 @@ table.page-files {
 								color: rgb(var(--swatch-background));
 								font-weight: var(--wght);
 								translate: -0.25em -0.25em;
+
+								@supports not (translate: -0.25em -0.25em) {
+									transform: translate(-0.25em -0.25em);
+								}
 							}
 						}
 					}
@@ -3178,6 +3231,18 @@ table.page-files {
 							will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
 							translate: 0;
 							inset: -1em auto auto -0.25em;
+
+							@supports not (translate: 0) {
+								transition:
+									box-shadow 0.2s var(--ease-in-out),
+									color 0.15s var(--ease-in-out),
+									background-color 0.15s var(--ease-in-out),
+									transform 0.2s var(--ease-in-out),
+									font-weight 0.2s var(--ease-in-out),
+									font-variation-settings 0.2s var(--ease-in-out);
+								transform: translate(0);
+								will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+							}
 						}
 
 						&:last-of-type {
@@ -3204,6 +3269,10 @@ table.page-files {
 								color: rgb(var(--swatch-background));
 								font-weight: var(--wght);
 								translate: -0.25em -0.25em;
+
+								@supports not (translate: -0.25em -0.25em) {
+									transform: translate(-0.25em -0.25em);
+								}
 							}
 						}
 					}
@@ -3327,6 +3396,10 @@ table.page-files {
 							height: calc(100% - 1ex);
 							border-left: 0.0625rem dashed rgb(var(--swatch-border-color));
 							translate: 0 0.3625ex;
+
+							@supports not (translate: 0 0.3625ex) {
+								transform: translate(0 0.3625ex);
+							}
 						}
 					}
 
@@ -3341,6 +3414,10 @@ table.page-files {
 						font-size: 1em;
 						line-height: 1.6rem;
 						translate: 0 -50%;
+
+						@supports not (translate: 0 -50%) {
+							transform: translate(0 -50%);
+						}
 					}
 
 					& a {
@@ -3495,6 +3572,18 @@ table.page-files {
 								will-change: box-shadow, color, background-color, translate, font-weight, font-variation-settings;
 								translate: 0;
 								inset: -1em auto auto 0;
+
+								@supports not (translate: 0) {
+									transition:
+										box-shadow 0.2s var(--ease-in-out),
+										color 0.15s var(--ease-in-out),
+										background-color 0.15s var(--ease-in-out),
+										transform 0.2s var(--ease-in-out),
+										font-weight 0.2s var(--ease-in-out),
+										font-variation-settings 0.2s var(--ease-in-out);
+									transform: translate(0);
+									will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+								}
 							}
 
 							&:last-of-type {
@@ -3518,6 +3607,10 @@ table.page-files {
 									color: rgb(var(--swatch-background));
 									font-weight: var(--wght);
 									translate: -0.25em -0.25em;
+
+									@supports not (translate: -0.25em -0.25em) {
+										transform: translate(-0.25em -0.25em);
+									}
 								}
 							}
 						}
@@ -3754,6 +3847,10 @@ div.odialog-shader-iframe {
 		color: rgb(var(--modal-body-text));
 		inset: 50% auto auto 50% !important; /* Overwrite Wikidot Inline-Styling */
 		translate: -50% -50%;
+
+		@supports not (translate: -50% -50%) {
+			transform: translate(-50% -50%);
+		}
 
 		&.owait .content {
 			padding: 0.5em 0.5em 2em;
@@ -4163,6 +4260,18 @@ div.odialog-shader-iframe {
 
 	100% {
 		rotate: 360deg;
+	}
+}
+
+@supports not (rotate: 0) {
+	@keyframes loading {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 }
 

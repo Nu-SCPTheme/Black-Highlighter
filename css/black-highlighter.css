@@ -1316,6 +1316,18 @@
 	}
 }
 
+@supports not (translate: 1rem 1rem) {
+	@keyframes slide-in {
+		from {
+			transform: translate(1rem 1rem);
+		}
+
+		to {
+			transform: translate(0 0);
+		}
+	}
+}
+
 @keyframes slide-down {
 	from {
 		max-height: 0;
@@ -2221,6 +2233,12 @@ input[type="checkbox"]::before {
 			background-color 0.05s var(--ease-in-out) 0.05s, box-shadow 0.15s var(--ease-in-out), clip-path 0.15s var(--ease-in-out), -webkit-clip-path 0.15s var(--ease-in-out);
 	}
 
+@supports not (rotate: -135deg) {
+input[type="checkbox"]::before {
+			transform: rotateZ(-135deg);
+	}
+		}
+
 input[type="checkbox"]::after {
 		top: 40%;
 		right: auto;
@@ -2235,6 +2253,12 @@ input[type="checkbox"]::after {
 		transition:
 			background-color 0.05s var(--ease-in-out) 0.2s, box-shadow 0.15s var(--ease-in-out) 0.15s, clip-path 0.15s var(--ease-in-out) 0.15s, -webkit-clip-path 0.15s var(--ease-in-out) 0.15s;
 	}
+
+@supports not (rotate: -45deg) {
+input[type="checkbox"]::after {
+			transform: rotateZ(-45deg);
+	}
+		}
 
 input[type="checkbox"]:checked {
 		border-color: rgb(var(--swatch-primary));
@@ -2324,6 +2348,13 @@ input[type="radio"]::after {
 		background: rgba(var(--swatch-tertiary-color), 0.5);
 	}
 
+@supports not (scale: 0) {
+
+input[type="radio"]::after {
+			transform: scale(0);
+	}
+		}
+
 input[type="radio"]:checked {
 		transition: all 0.2s var(--ease-in-out);
 		outline: 0 solid rgb(var(--swatch-primary));
@@ -2338,6 +2369,13 @@ input[type="radio"]:checked::after {
 			transition: all 0.5s;
 			background: transparent;
 		}
+
+@supports not (scale: 1) {
+
+input[type="radio"]:checked::after {
+				transform: scale(1);
+		}
+			}
 
 input[type="radio"]:checked::before {
 			width: 0.5em;
@@ -2446,6 +2484,13 @@ input[type="radio"]:checked::before {
 #edit-page-form.data-form .form-row:focus-within .form-labels, #new-post-form.data-form .form-row:focus-within .form-labels, #new-thread-form.data-form .form-row:focus-within .form-labels {
 				translate: -0.125rem -0.125rem;
 			}
+
+@supports not (translate: -0.125rem -0.125rem) {
+
+#edit-page-form.data-form .form-row:focus-within .form-labels, #new-post-form.data-form .form-row:focus-within .form-labels, #new-thread-form.data-form .form-row:focus-within .form-labels {
+					transform: translate(-0.125rem -0.125rem);
+			}
+				}
 
 #edit-page-form.data-form .form-row:focus-within .form-labels span, #new-post-form.data-form .form-row:focus-within .form-labels span, #new-thread-form.data-form .form-row:focus-within .form-labels span {
 					--wght: calc(var(--ui-hvr-wght) + 100);
@@ -2637,6 +2682,14 @@ input[type="radio"]:checked::before {
 				transition: translate 0.2s var(--ease-in-out);
 			}
 
+@supports not (translate: 0) {
+
+#edit-page-form.data-form .form-row span.field-checkbox span.text-danger, #new-post-form.data-form .form-row span.field-checkbox span.text-danger, #new-thread-form.data-form .form-row span.field-checkbox span.text-danger {
+					transform: translate(0);
+					transition: transform 0.2s var(--ease-in-out);
+			}
+				}
+
 #edit-page-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
 				#edit-page-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
 				#edit-page-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger,
@@ -2649,6 +2702,22 @@ input[type="radio"]:checked::before {
 				 {
 					translate: 0.25em;
 				}
+
+@supports not (translate: 0.25em) {
+
+#edit-page-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
+				#edit-page-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
+				#edit-page-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-post-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + #edit-page-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + #new-post-form.data-form .form-row span.field-checkbox span.text-danger,
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + #new-thread-form.data-form .form-row span.field-checkbox span.text-danger
+				 {
+						transform: translate(0.25em);
+				}
+					}
 
 /* ===STATIC DATAFORM STYLING=== */
 
@@ -4063,6 +4132,13 @@ div[id*="page-options-bottom"] > a::after {
 			translate: 0 -50%;
 		}
 
+@supports not (translate: 0 -50%) {
+
+div[id*="page-options-bottom"] > a::after {
+				transform: translate(0 -50%);
+		}
+			}
+
 div[id*="page-options-bottom"] > a:is(:hover, :active, :focus, :focus-within)::after {
 				background-color: rgb(var(--ui-icon-hover-color));
 			}
@@ -4606,6 +4682,14 @@ form#edit-page-form table.form:first-of-type tr td:first-of-type, form#edit-post
 					left: 0.75rem;
 				}
 
+@supports not (translate: 0 0) {
+
+form#edit-page-form table.form:first-of-type tr td:first-of-type, form#edit-post-form table.form:first-of-type tr td:first-of-type, form#new-post-form table.form:first-of-type tr td:first-of-type, form#new-thread-form table.form:first-of-type tr td:first-of-type {
+						transform: translate(0 0);
+						will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+				}
+					}
+
 form#edit-page-form table.form:first-of-type tr td:last-of-type, form#edit-post-form table.form:first-of-type tr td:last-of-type, form#new-post-form table.form:first-of-type tr td:last-of-type, form#new-thread-form table.form:first-of-type tr td:last-of-type {
 					grid-area: title-box;
 					box-shadow: 0 -0.0625em 0 0 rgba(var(--swatch-tertiary-color), 0.5);
@@ -4666,6 +4750,13 @@ form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, f
 					font-weight: var(--wght);
 					translate: -0.125rem -0.125rem;
 				}
+
+@supports not (translate: -0.125rem -0.125rem) {
+
+form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, form#edit-post-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-post-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-thread-form table.form:first-of-type tr:focus-within td:first-of-type {
+						transform: translate(-0.125rem -0.125rem);
+				}
+					}
 
 /* Template Dropdown Styling */
 
@@ -5619,6 +5710,13 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 			will-change: box-shadow, color, background-color;
 		}
 
+@supports not (translate: 0 0) {
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#edit-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before {
+				transform: translate(0 0);
+		}
+			}
+
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br, form#edit-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) br {
 			display: none;
 		}
@@ -5669,6 +5767,13 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 				color: rgb(var(--swatch-background));
 				translate: 0 -0.25em;
 			}
+
+@supports not (translate: 0 -0.25em) {
+
+form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#edit-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
+					transform: translate(0 -0.25em);
+			}
+				}
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea, form#edit-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within textarea {
 				border: none;
@@ -5914,6 +6019,16 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(1) {
 			left: 1rem;
 		}
 
+@supports not (translate: 0) {
+
+form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(1) {
+				transition:
+					box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+				transform: translate(0);
+				will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+		}
+			}
+
 form[onsubmit*="PageTagsModule"] table > tbody > tr > td:nth-child(1)::after {
 				content: "\0021b4";
 			}
@@ -5944,6 +6059,13 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr:focus-within > td:nth-child(
 			font-weight: var(--wght);
 			translate: -0.25em -0.25em;
 		}
+
+@supports not (translate: -0.25em -0.25em) {
+
+form[onsubmit*="PageTagsModule"] table > tbody > tr:focus-within > td:nth-child(1) {
+				transform: translate(-0.25em -0.25em);
+		}
+			}
 
 /* ===PAGE HISTORY=== */
 
@@ -6444,6 +6566,16 @@ table.page-files thead tr,
 							left: 0.75ch;
 						}
 
+@supports not (translate: 0) {
+
+#odialog-container #rename-error-block + table tbody tr:last-of-type td:first-of-type {
+								transition:
+									box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+								transform: translate(0);
+								will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+						}
+							}
+
 #odialog-container #rename-error-block + table tbody tr:last-of-type td:last-of-type input {
 								box-sizing: border-box;
 								width: 100%;
@@ -6465,6 +6597,13 @@ table.page-files thead tr,
 								font-weight: var(--wght);
 								translate: -0.25em -0.25em;
 							}
+
+@supports not (translate: -0.25em -0.25em) {
+
+#odialog-container #rename-error-block + table tbody tr:last-of-type:focus-within td:first-of-type {
+									transform: translate(-0.25em -0.25em);
+							}
+								}
 
 #file-upload-form table,
 		#file-upload-form table > *,
@@ -7073,6 +7212,16 @@ table.page-files thead tr,
 							left: -0.25em;
 						}
 
+@supports not (translate: 0) {
+
+#action-area form[onsubmit*="setParent"] table.form tbody > tr > td:first-of-type {
+								transition:
+									box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+								transform: translate(0);
+								will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+						}
+							}
+
 #action-area form[onsubmit*="setParent"] table.form tbody > tr > td:last-of-type input {
 								margin-left: 0;
 								margin-right: 0;
@@ -7096,6 +7245,13 @@ table.page-files thead tr,
 								font-weight: var(--wght);
 								translate: -0.25em -0.25em;
 							}
+
+@supports not (translate: -0.25em -0.25em) {
+
+#action-area form[onsubmit*="setParent"] table.form tbody > tr:focus-within > td:first-of-type {
+									transform: translate(-0.25em -0.25em);
+							}
+								}
 
 #action-area form[onsubmit*="setParent"] .buttons {
 			display: grid;
@@ -7218,6 +7374,13 @@ table.page-files thead tr,
 							translate: 0 0.3625ex;
 						}
 
+@supports not (translate: 0 0.3625ex) {
+
+#action-area h1 + h2 ~ ul li:not(:last-of-type)::before {
+								transform: translate(0 0.3625ex);
+						}
+							}
+
 #action-area h1 + h2 ~ ul li::after {
 						content: "\002022";
 						display: block;
@@ -7230,6 +7393,13 @@ table.page-files thead tr,
 						line-height: 1.6rem;
 						translate: 0 -50%;
 					}
+
+@supports not (translate: 0 -50%) {
+
+#action-area h1 + h2 ~ ul li::after {
+							transform: translate(0 -50%);
+					}
+						}
 
 #action-area h1 + h2 ~ ul li a,
 						#action-area h1 + h2 ~ ul li a:visited {
@@ -7441,6 +7611,16 @@ table.page-files thead tr,
 								left: 0;
 							}
 
+@supports not (translate: 0) {
+
+#action-area form[onsubmit*="RenamePage"] table tbody tr:last-of-type td:first-of-type {
+									transition:
+										box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+									transform: translate(0);
+									will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
+							}
+								}
+
 #action-area form[onsubmit*="RenamePage"] table tbody tr:last-of-type td:last-of-type input {
 									box-sizing: border-box;
 									margin-left: 0;
@@ -7461,6 +7641,13 @@ table.page-files thead tr,
 									font-weight: var(--wght);
 									translate: -0.25em -0.25em;
 								}
+
+@supports not (translate: -0.25em -0.25em) {
+
+#action-area form[onsubmit*="RenamePage"] table tbody tr:last-of-type:focus-within td:first-of-type {
+										transform: translate(-0.25em -0.25em);
+								}
+									}
 
 @supports selector(div:has(p)) {
 			#action-area:has(
@@ -7775,6 +7962,13 @@ div.odialog-shader-iframe {
 		color: rgb(var(--modal-body-text)); /* Overwrite Wikidot Inline-Styling */
 		translate: -50% -50%;
 	}
+
+@supports not (translate: -50% -50%) {
+
+#odialog-container div.owindow {
+			transform: translate(-50% -50%);
+	}
+		}
 
 #odialog-container div.owindow.owait .content {
 			padding: 0.5em 0.5em 2em;
@@ -8250,6 +8444,18 @@ div.odialog-shader-iframe {
 
 	100% {
 		rotate: 360deg;
+	}
+}
+
+@supports not (rotate: 0) {
+	@keyframes loading {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 }
 
@@ -9582,6 +9788,12 @@ div.wd-adunit {
 						rotate: 180deg;
 						background: rgb(var(--sidebar-collapsible-ufld-arrow-color));
 					}
+
+@supports not (rotate: 180deg) {
+#side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link::after {
+							transform: rotateZ(180deg);
+					}
+						}
 
 #side-bar div.collapsible-block div.collapsible-block-unfolded-link > a.collapsible-block-link:is(:hover, :active) {
 						background: rgb(var(--sidebar-collapsible-ufld-link-hover-bg));
@@ -11712,6 +11924,13 @@ div#container-wrap {
 	font-size: calc(var(--base-font-size) * (13 / 15));
 }
 
+@supports not (translate: 0 -50%) {
+
+#search-top-box {
+		transform: translate(0 -50%);
+}
+	}
+
 #search-top-box::after,
 	#search-top-box input[type="submit"] {
 		width: var(--search-height);
@@ -11973,6 +12192,13 @@ div#container-wrap {
 	white-space: nowrap;
 }
 
+@supports not (translate: 0 -50%) {
+
+#login-status {
+		transform: translate(0 -50%);
+}
+	}
+
 #login-status span.printuser {
 		--wght: var(--ui-wght);
 
@@ -12156,6 +12382,13 @@ div#container-wrap {
 							font-size: calc(var(--base-font-size) * (11 / 15));
 							pointer-events: none;
 						}
+
+@supports not (translate: -50% 0) {
+
+#login-status #account-options ul li > a[href*="/messages"]::after {
+								transform: translate(-50% 0);
+						}
+							}
 
 #login-status #account-options ul li > a:is(:hover, :active, :focus-within)::before {
 						--clip-path: polygon(-15% 0, 115% 0, 100% 100%, 0 100%);
@@ -12934,6 +13167,13 @@ div#container-wrap {
 					margin-top: var(--topbar-height-on-mobile);
 					translate: -50% 0;
 				}
+
+					@supports not (translate: -50% 0) {
+
+				#header div[class*="top-bar"] > ul > li > ul {
+						transform: translate(-50% 0);
+				}
+					}
 						#header div[class*="top-bar"] > ul > li > ul > li ul {
 							top: 100%;
 							width: 90%;
@@ -12958,6 +13198,13 @@ div#container-wrap {
 					#header div[class*="top-bar"] > ul > li > ul:is(:hover, :active, :focus-within) {
 						translate: -50% 0;
 					}
+
+						@supports not (translate: -50% 0) {
+
+					#header div[class*="top-bar"] > ul > li > ul:is(:hover, :active, :focus-within) {
+							transform: translate(-50% 0);
+					}
+						}
 					#header div[class*="top-bar"] > ul > li ul > li {
 						max-width: calc(80vw + 0.0625rem);
 						height: var(--topbar-height-on-mobile);
@@ -12980,6 +13227,12 @@ div#container-wrap {
 					#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul {
 						translate: -50% 0;
 					}
+
+						@supports not (translate: -50% 0) {
+					#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul {
+							transform: translate(-50% 0);
+					}
+						}
 
 			#header div[class*="top-bar"] > ul:first-of-type > li:last-of-type > ul {
 				right: 0;
@@ -13257,6 +13510,14 @@ div#container-wrap {
 			will-change: box-shadow, color, background-color;
 		}
 
+@supports not (translate: 0 0) {
+
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li {
+				transform: translate(0 0);
+				transition: box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out);
+		}
+			}
+
 :is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li a {
 				--wght: var(--ui-wght);
 
@@ -13331,6 +13592,13 @@ div#container-wrap {
 			translate: 0 -0.25rem;
 			box-shadow: 0 0 0 0.25rem rgb(var(--tabs-selected-outline));
 		}
+
+@supports not (translate: 0 0) {
+
+:is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected {
+				transform: translate(0 -0.25rem);
+		}
+			}
 
 :is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected a {
 				color: rgb(var(--tabs-selected-txt)) !important;
@@ -13582,6 +13850,13 @@ div#container-wrap {
 		font-family: var(--UI-font);
 		font-size: 0.9em;
 	}
+
+@supports not (translate: 0 0) {
+
+.hovertip .content {
+			transform: translate(0 0);
+	}
+		}
 
 .hovertip .footnote {
 		display: flex;
@@ -14031,6 +14306,12 @@ div.heritage-rating-module div.heritage-emblem img {
 		color: rgb(var(--modal-body-text));
 	}
 
+@supports not (translate: 0 -50%) {
+[id*="u-credit"] .modalcontainer {
+			transform: translate(0 -50%);
+	}
+		}
+
 [id*="u-credit"] div.modalbox {
 		background: rgb(var(--modal-bg)) !important;
 	}
@@ -14137,10 +14418,23 @@ div.heritage-rating-module div.heritage-emblem img {
 						        mask: var(--mask-image) center / 0.75em no-repeat;
 					}
 
+@supports not (scale: 1) {
+[id*="u-credit"] .credit.first > p:first-of-type::after {
+							transform: rotateZ(0deg) scale(1);
+							transition: transform 0.2s var(--ease-in-out);
+					}
+						}
+
 [id*="u-credit"] .credit.first > p:is(:hover, :active, :focus, :focus-within):first-of-type::after {
 					rotate: 15deg;
 					scale: 1.1;
 				}
+
+@supports not (scale: 1.1) {
+[id*="u-credit"] .credit.first > p:is(:hover, :active, :focus, :focus-within):first-of-type::after {
+						transform: rotateZ(15deg) scale(1.1);
+				}
+					}
 
 [id*="u-credit"] .credit.first h1 + p:not(:first-of-type) {
 				margin-top: 0;
@@ -14160,6 +14454,12 @@ div.heritage-rating-module div.heritage-emblem img {
 		opacity: 1;
 		filter: opacity(0);
 	}
+
+@supports not (scale: 2 1) {
+[id*="u-credit"] .close-credits {
+			transform: scale(2, 1);
+	}
+		}
 
 [id*="u-credit"] div.creditBottomRate {
 		height: -moz-fit-content !important;
@@ -14508,6 +14808,13 @@ div.colmod-block > ul > li {
 				translate: 0 -50%;
 			}
 
+@supports not (translate: 0 -50%) {
+
+#toc #toc-list div::before {
+					transform: translate(0 -50%);
+			}
+				}
+
 #toc #toc-list div:first-of-type {
 				margin-top: 0.25em;
 			}
@@ -14621,6 +14928,14 @@ div.colmod-block > ul > li {
 				        mask: var(--right-arrow-mask) center center / 0.3625em 1em no-repeat;
 			}
 
+@supports not (rotate: y 25deg) {
+
+#toc #toc-list a::before {
+					transform: rotateY(25deg) translate(-1.25em -50%);
+					transition: transform 0.15s var(--ease-in-out), opacity 0.2s var(--ease-in-out);
+			}
+				}
+
 #toc #toc-list a,
 			#toc #toc-list a:visited {
 				color: rgb(var(--toc-body-link-color));
@@ -14636,12 +14951,26 @@ div.colmod-block > ul > li {
 				text-decoration: none;
 			}
 
+@supports not (translate: 0.25rem 0) {
+
+#toc #toc-list a:is(:hover, :active, :focus, :focus-within) {
+					transform: translate(0.25rem 0);
+			}
+				}
+
 #toc #toc-list a:is(:hover, :active, :focus, :focus-within)::before {
 					translate: -1em calc(-50% + 0.0625em);
 					rotate: y 0deg;
 					opacity: 1;
 					pointer-events: all;
 				}
+
+@supports not (translate: -1em calc(-50% + 0.0625em)) {
+
+#toc #toc-list a:is(:hover, :active, :focus, :focus-within)::before {
+						transform: rotateY(0deg) translate(-1em calc(-50% + 0.0625em));
+				}
+					}
 
 /* ===WARNING BOX=== */
 
@@ -14998,11 +15327,23 @@ div.wiki-note::before {
 		rotate: -6deg;
 	}
 
+@supports not (rotate: -6deg) {
+div.wiki-note::before {
+			transform: rotateZ(-6deg) skew(-15deg);
+	}
+		}
+
 div.wiki-note::after {
 		right: 1.125em;
 		transform: skew(15deg);
 		rotate: 6deg;
 	}
+
+@supports not (rotate: 6deg) {
+div.wiki-note::after {
+			transform: rotateZ(6deg) skew(15deg);
+	}
+		}
 
 /* Class that adds rounded corners */
 
@@ -15115,6 +15456,13 @@ div.keycap {
 		background: rgb(var(--swatch-background));
 		box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-alternate-color));
 	}
+
+@supports not (translate: 0 -50%) {
+
+.tags::after {
+			transform: translate(0 -50%);
+	}
+		}
 
 div.tags {
 	display: inline-block;

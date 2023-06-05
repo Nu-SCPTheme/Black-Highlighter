@@ -403,6 +403,10 @@ input[type="checkbox"] {
 			background-color 0.05s var(--ease-in-out) 0.05s,
 			box-shadow 0.15s var(--ease-in-out),
 			clip-path 0.15s var(--ease-in-out);
+
+		@supports not (rotate: -135deg) {
+			transform: rotateZ(-135deg);
+		}
 	}
 
 	&::after {
@@ -413,6 +417,10 @@ input[type="checkbox"] {
 			background-color 0.05s var(--ease-in-out) 0.2s,
 			box-shadow 0.15s var(--ease-in-out) 0.15s,
 			clip-path 0.15s var(--ease-in-out) 0.15s;
+
+		@supports not (rotate: -45deg) {
+			transform: rotateZ(-45deg);
+		}
 	}
 
 	&:checked {
@@ -495,6 +503,10 @@ input[type="radio"] {
 		scale: 0;
 		border-radius: 50%;
 		background: rgba(var(--swatch-tertiary-color), 0.5);
+
+		@supports not (scale: 0) {
+			transform: scale(0);
+		}
 	}
 
 	&:checked {
@@ -509,6 +521,10 @@ input[type="radio"] {
 			scale: 1;
 			transition: all 0.5s;
 			background: transparent;
+
+			@supports not (scale: 1) {
+				transform: scale(1);
+			}
 		}
 
 		&::before {
@@ -611,6 +627,10 @@ input[type="radio"] {
 		&:focus-within {
 			.form-labels {
 				translate: -0.125rem -0.125rem;
+
+				@supports not (translate: -0.125rem -0.125rem) {
+					transform: translate(-0.125rem -0.125rem);
+				}
 
 				& span {
 					--wght: calc(var(--ui-hvr-wght) + 100);
@@ -750,11 +770,20 @@ input[type="radio"] {
 				translate: 0;
 				transition: translate 0.2s var(--ease-in-out);
 
+				@supports not (translate: 0) {
+					transform: translate(0);
+					transition: transform 0.2s var(--ease-in-out);
+				}
+
 				#edit-page-form.data-form .form-row span.field-checkbox input:checked + &,
 				#new-post-form.data-form .form-row span.field-checkbox input:checked + &,
 				#new-thread-form.data-form .form-row span.field-checkbox input:checked + &
 				 {
 					translate: 0.25em;
+
+					@supports not (translate: 0.25em) {
+						transform: translate(0.25em);
+					}
 				}
 			}
 		}
