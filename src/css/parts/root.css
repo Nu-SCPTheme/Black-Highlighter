@@ -714,6 +714,19 @@
 	}
 }
 
+
+@supports not (translate: 1rem 1rem) {
+	@keyframes slide-in {
+		from {
+			transform: translate(1rem 1rem);
+		}
+
+		to {
+			transform: translate(0 0);
+		}
+	}
+}
+
 @keyframes slide-down {
 	from {
 		max-height: 0;
