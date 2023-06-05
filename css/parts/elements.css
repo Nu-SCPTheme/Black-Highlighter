@@ -70,7 +70,7 @@
 			will-change: box-shadow, color, background-color;
 
 			@supports not (translate: 0 0) {
-				transform: translate(0 0);
+				transform: translate(0, 0);
 				transition: box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out)
 			}
 
@@ -149,7 +149,7 @@
 			box-shadow: 0 0 0 0.25rem rgb(var(--tabs-selected-outline));
 
 			@supports not (translate: 0 0) {
-				transform: translate(0 -0.25rem);
+				transform: translate(0, -0.25rem);
 			}
 
 			& a {
@@ -383,7 +383,7 @@
 		font-size: 0.9em;
 
 		@supports not (translate: 0 0) {
-			transform: translate(0 0);
+			transform: translate(0, 0);
 		}
 	}
 
@@ -814,7 +814,7 @@ div.heritage-rating-module {
 		color: rgb(var(--modal-body-text));
 
 		@supports not (translate: 0 -50%) {
-			transform: translate(0 -50%);
+			transform: translate(0, -50%);
 		}
 	}
 
@@ -1214,7 +1214,7 @@ table[style*="margin:0"] * {
 				translate: 0 -50%;
 
 				@supports not (translate: 0 -50%) {
-					transform: translate(0 -50%);
+					transform: translate(0, -50%);
 				}
 			}
 
@@ -1340,7 +1340,7 @@ table[style*="margin:0"] * {
 				text-decoration: none;
 
 				@supports not (translate: 0.25rem 0) {
-					transform: translate(0.25rem 0);
+					transform: translate(0.25rem, 0);
 				}
 
 				&::before {
@@ -1799,7 +1799,7 @@ div.keycap {
 		box-shadow: -0.0625rem -0.0625rem 0.125rem rgb(var(--swatch-alternate-color));
 
 		@supports not (translate: 0 -50%) {
-			transform: translate(0 -50%);
+			transform: translate(0, -50%);
 		}
 	}
 }

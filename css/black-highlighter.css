@@ -4135,7 +4135,7 @@ div[id*="page-options-bottom"] > a::after {
 @supports not (translate: 0 -50%) {
 
 div[id*="page-options-bottom"] > a::after {
-				transform: translate(0 -50%);
+				transform: translate(0, -50%);
 		}
 			}
 
@@ -4685,7 +4685,7 @@ form#edit-page-form table.form:first-of-type tr td:first-of-type, form#edit-post
 @supports not (translate: 0 0) {
 
 form#edit-page-form table.form:first-of-type tr td:first-of-type, form#edit-post-form table.form:first-of-type tr td:first-of-type, form#new-post-form table.form:first-of-type tr td:first-of-type, form#new-thread-form table.form:first-of-type tr td:first-of-type {
-						transform: translate(0 0);
+						transform: translate(0, 0);
 						will-change: box-shadow, color, background-color, transform, font-weight, font-variation-settings;
 				}
 					}
@@ -4754,7 +4754,7 @@ form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, f
 @supports not (translate: -0.125rem -0.125rem) {
 
 form#edit-page-form table.form:first-of-type tr:focus-within td:first-of-type, form#edit-post-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-post-form table.form:first-of-type tr:focus-within td:first-of-type, form#new-thread-form table.form:first-of-type tr:focus-within td:first-of-type {
-						transform: translate(-0.125rem -0.125rem);
+						transform: translate(-0.125rem, -0.125rem);
 				}
 					}
 
@@ -5713,7 +5713,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 @supports not (translate: 0 0) {
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#edit-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1)::before {
-				transform: translate(0 0);
+				transform: translate(0, 0);
 		}
 			}
 
@@ -5771,7 +5771,7 @@ form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-t
 @supports not (translate: 0 -0.25em) {
 
 form#edit-page-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#edit-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-post-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before, form#new-thread-form .edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1):focus-within::before {
-					transform: translate(0 -0.25em);
+					transform: translate(0, -0.25em);
 			}
 				}
 
@@ -6063,7 +6063,7 @@ form[onsubmit*="PageTagsModule"] table > tbody > tr:focus-within > td:nth-child(
 @supports not (translate: -0.25em -0.25em) {
 
 form[onsubmit*="PageTagsModule"] table > tbody > tr:focus-within > td:nth-child(1) {
-				transform: translate(-0.25em -0.25em);
+				transform: translate(-0.25em, -0.25em);
 		}
 			}
 
@@ -6601,7 +6601,7 @@ table.page-files thead tr,
 @supports not (translate: -0.25em -0.25em) {
 
 #odialog-container #rename-error-block + table tbody tr:last-of-type:focus-within td:first-of-type {
-									transform: translate(-0.25em -0.25em);
+									transform: translate(-0.25em, -0.25em);
 							}
 								}
 
@@ -7249,7 +7249,7 @@ table.page-files thead tr,
 @supports not (translate: -0.25em -0.25em) {
 
 #action-area form[onsubmit*="setParent"] table.form tbody > tr:focus-within > td:first-of-type {
-									transform: translate(-0.25em -0.25em);
+									transform: translate(-0.25em, -0.25em);
 							}
 								}
 
@@ -7377,7 +7377,7 @@ table.page-files thead tr,
 @supports not (translate: 0 0.3625ex) {
 
 #action-area h1 + h2 ~ ul li:not(:last-of-type)::before {
-								transform: translate(0 0.3625ex);
+								transform: translate(0, 0.3625ex);
 						}
 							}
 
@@ -7397,7 +7397,7 @@ table.page-files thead tr,
 @supports not (translate: 0 -50%) {
 
 #action-area h1 + h2 ~ ul li::after {
-							transform: translate(0 -50%);
+							transform: translate(0, -50%);
 					}
 						}
 
@@ -7645,7 +7645,7 @@ table.page-files thead tr,
 @supports not (translate: -0.25em -0.25em) {
 
 #action-area form[onsubmit*="RenamePage"] table tbody tr:last-of-type:focus-within td:first-of-type {
-										transform: translate(-0.25em -0.25em);
+										transform: translate(-0.25em, -0.25em);
 								}
 									}
 
@@ -7966,7 +7966,7 @@ div.odialog-shader-iframe {
 @supports not (translate: -50% -50%) {
 
 #odialog-container div.owindow {
-			transform: translate(-50% -50%);
+			transform: translate(-50%, -50%);
 	}
 		}
 
@@ -11927,7 +11927,7 @@ div#container-wrap {
 @supports not (translate: 0 -50%) {
 
 #search-top-box {
-		transform: translate(0 -50%);
+		transform: translate(0, -50%);
 }
 	}
 
@@ -12195,7 +12195,7 @@ div#container-wrap {
 @supports not (translate: 0 -50%) {
 
 #login-status {
-		transform: translate(0 -50%);
+		transform: translate(0, -50%);
 }
 	}
 
@@ -12386,7 +12386,7 @@ div#container-wrap {
 @supports not (translate: -50% 0) {
 
 #login-status #account-options ul li > a[href*="/messages"]::after {
-								transform: translate(-50% 0);
+								transform: translate(-50%, 0);
 						}
 							}
 
@@ -13171,7 +13171,7 @@ div#container-wrap {
 					@supports not (translate: -50% 0) {
 
 				#header div[class*="top-bar"] > ul > li > ul {
-						transform: translate(-50% 0);
+						transform: translate(-50%, 0);
 				}
 					}
 						#header div[class*="top-bar"] > ul > li > ul > li ul {
@@ -13202,7 +13202,7 @@ div#container-wrap {
 						@supports not (translate: -50% 0) {
 
 					#header div[class*="top-bar"] > ul > li > ul:is(:hover, :active, :focus-within) {
-							transform: translate(-50% 0);
+							transform: translate(-50%, 0);
 					}
 						}
 					#header div[class*="top-bar"] > ul > li ul > li {
@@ -13230,7 +13230,7 @@ div#container-wrap {
 
 						@supports not (translate: -50% 0) {
 					#header div[class*="top-bar"] > ul > li:is(:hover, :active, :focus-within) > ul {
-							transform: translate(-50% 0);
+							transform: translate(-50%, 0);
 					}
 						}
 
@@ -13513,7 +13513,7 @@ div#container-wrap {
 @supports not (translate: 0 0) {
 
 :is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav li {
-				transform: translate(0 0);
+				transform: translate(0, 0);
 				transition: box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out);
 		}
 			}
@@ -13596,7 +13596,7 @@ div#container-wrap {
 @supports not (translate: 0 0) {
 
 :is(.yui-navset, .yui-navset-top, .yui-navset-bottom) .yui-nav .selected {
-				transform: translate(0 -0.25rem);
+				transform: translate(0, -0.25rem);
 		}
 			}
 
@@ -13854,7 +13854,7 @@ div#container-wrap {
 @supports not (translate: 0 0) {
 
 .hovertip .content {
-			transform: translate(0 0);
+			transform: translate(0, 0);
 	}
 		}
 
@@ -14308,7 +14308,7 @@ div.heritage-rating-module div.heritage-emblem img {
 
 @supports not (translate: 0 -50%) {
 [id*="u-credit"] .modalcontainer {
-			transform: translate(0 -50%);
+			transform: translate(0, -50%);
 	}
 		}
 
@@ -14811,7 +14811,7 @@ div.colmod-block > ul > li {
 @supports not (translate: 0 -50%) {
 
 #toc #toc-list div::before {
-					transform: translate(0 -50%);
+					transform: translate(0, -50%);
 			}
 				}
 
@@ -14954,7 +14954,7 @@ div.colmod-block > ul > li {
 @supports not (translate: 0.25rem 0) {
 
 #toc #toc-list a:is(:hover, :active, :focus, :focus-within) {
-					transform: translate(0.25rem 0);
+					transform: translate(0.25rem, 0);
 			}
 				}
 
@@ -15460,7 +15460,7 @@ div.keycap {
 @supports not (translate: 0 -50%) {
 
 .tags::after {
-			transform: translate(0 -50%);
+			transform: translate(0, -50%);
 	}
 		}
 
