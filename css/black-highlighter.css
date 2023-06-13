@@ -13942,22 +13942,15 @@ div#container-wrap {
 	}
 
 :is(div.image-block, div.scp-image-block) img.image {
-		min-width: 100%;
+		width: 100%;
 		border: 0;
 	}
-
-:is(div.image-block, div.scp-image-block) img.image[style*="width:"] {
-			width: 100% !important;
-		}
-
-:is(div.image-block, div.scp-image-block) img.image[style*="width:"] { /* Overwriting img width set by Image Block component as it's is already placed on the parent div */
-		}
 
 :is(div.image-block, div.scp-image-block) :is(.image-caption, .scp-image-caption) {
 		--wght: 600;
 
 		box-sizing: border-box;
-		max-width: 100%;
+		width: 100%;
 		padding: 0.5ex .5ch 1ex;
 		background-color: rgb(var(--swatch-secondary-color));
 		font-size: 0.9em;
