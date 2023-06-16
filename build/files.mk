@@ -13,6 +13,7 @@ FILES_OUTPUTS := \
 # Dummy rules
 pnpm-lock.yaml:
 
+# File copy
 dist/spherical/domicile.html: src/misc/domicile.html
 	build/install.sh 644 $< $@
 
@@ -21,3 +22,7 @@ dist/.gitattributes: src/misc/gitattributes
 
 dist/%.html: src/root/%.html
 	build/install.sh 644 $< $@
+
+# Special rule, delete anything not meant for S3
+clean-up-s3:
+	rm -rf dist/spherical dist/.gitattributes dist/*.html dist/*.js
