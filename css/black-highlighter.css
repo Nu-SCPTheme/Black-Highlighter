@@ -1235,6 +1235,15 @@
 	--pagetags-text-color: var(--swatch-primary-darkest);
 	--pagetags-text-hover-color: var(--swatch-background);
 	--pagetags-text-hover-bg-color: var(--swatch-primary);
+
+	/* ===DEFINITION LISTS */
+	--dl-content-bg-color: var(--swatch-secondary-color), 0.25;
+	--dl-content-border-color: var(--swatch-tertiary-color);
+
+	--dt-bg-color: var(--swatch-primary-darkest);
+	--dt-text-color: var(--swatch-text-secondary-color);
+
+	--dd-left-border-color: var(--dt-bg-color);
 }
 
 /* ===GLOBAL ELEMENTS=== */
@@ -3221,98 +3230,76 @@ h6 {
 
 /* ===LISTS=== */
 
-ul:not(.yui-nav) {
-	list-style: inside;
-}
-
 #page-content ul:not(.yui-nav) {
-		padding-left: 1em;
+		padding-left: 0;
+		list-style: inside;
 	}
+
+#page-content ul:not(.yui-nav) ul:not(.yui-nav),
+		#page-content ul:not(.yui-nav) ol {
+			padding-left: 1em;
+		}
 
 /* Ordered Lists */
 
-ol {
-	list-style: outside none;
-}
-
 #page-content ol {
-		padding-left: 1em;
-		counter-reset: step1 0;
+		list-style: decimal inside;
+		padding-left: 0;
 	}
 
-#page-content ol > li {
-			counter-increment: step1;
+#page-content ol ol,
+		#page-content ol ul:not(.yui-nav) {
+			padding-left: 1em;
 		}
-
-#page-content ol > li::marker {
-				content: counter(step1) ". ";
-				display: inline-block;
-				width: 2ch;
-				margin-right: 1ch;
-				text-align: center;
-			}
-
-#page-content ol > li:nth-child(n + 10)::marker {
-				width: 3ch;
-			}
-
-#page-content ol > li:nth-child(n + 100)::marker {
-				width: 5ch;
-			}
 
 /* Special Hierarchical Ordered List */
 
-#page-content .heirarch ol ol {
-			counter-reset: step2 0;
+#page-content :is(.hierarch, .heirarch) {
+		counter-reset: hierarch;
+		list-style-type: none;
+	}
+
+#page-content :is(.hierarch, .heirarch) ol {
+			counter-reset: hierarch;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
 		}
 
-#page-content .heirarch ol ol > li {
-				counter-increment: step2;
+#page-content :is(.hierarch, .heirarch) ol li {
+				padding-left: 1em;
+				text-indent: -1em;
 			}
 
-#page-content .heirarch ol ol > li::marker {
-					content: counter(step1) "." counter(step2) " ";
-					width: 4ch;
+#page-content :is(.hierarch, .heirarch) ol li::before {
+					counter-increment: hierarch;
+					content: counters(hierarch, ".") " ";
 				}
 
-#page-content .heirarch ol ol ol {
-				counter-reset: step3 0;
-			}
+/* Definition Lists */
 
-#page-content .heirarch ol ol ol > li {
-					counter-increment: step3;
-				}
+#page-content dl {
+		padding: 1.5ex 2ch;
+		border: .0625rem solid rgb(var(--dl-content-border-color));
+		background-color: rgb(var(--dl-content-bg-color));
+	}
 
-#page-content .heirarch ol ol ol > li::marker {
-						content: counter(step1) "." counter(step2) "." counter(step3) " ";
-						width: 6ch;
-					}
+#page-content dl dt {
+			--wght: 700;
+			width: -moz-fit-content;
+			width: fit-content;
+			margin: 0;
+			padding: 0 .5em;
+			background-color: rgb(var(--dt-bg-color));
+			color: rgb(var(--dt-text-color));
+			font-weight: var(--wght);
+		}
 
-#page-content .heirarch ol ol ol ol {
-					counter-reset: step4 0;
-				}
-
-#page-content .heirarch ol ol ol ol > li {
-						counter-increment: step4;
-					}
-
-#page-content .heirarch ol ol ol ol > li::marker {
-							content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4) " ";
-							width: 8ch;
-						}
-
-#page-content .heirarch ol ol ol ol ol {
-						counter-reset: step5 0;
-					}
-
-#page-content .heirarch ol ol ol ol ol > li {
-							counter-increment: step5;
-						}
-
-#page-content .heirarch ol ol ol ol ol > li::marker {
-								content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4) "." counter(step5) " ";
-								width: 10ch;
-							}
+#page-content dl dd {
+			margin-bottom: 1ex;
+			text-indent: 1em;
+			border-left: solid 0.5ch rgb(var(--dd-left-border-color));
+		}
 
 /* ===ANCHOR LINKS=== */
 
