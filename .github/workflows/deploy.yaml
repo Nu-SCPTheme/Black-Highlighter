@@ -56,7 +56,7 @@ jobs:
 
       - name: Deploy (S3)
         uses: jakejarvis/s3-sync-action@master
-        #if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           args: --delete
         env:
@@ -69,7 +69,7 @@ jobs:
 
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
-        #if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         env:
           DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION }}
           PATHS: /theme/en/black-highlighter
