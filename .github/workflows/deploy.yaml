@@ -51,6 +51,9 @@ jobs:
           branch: gh-pages
           folder: dist
 
+      - name: Clean up for S3
+        run: make clean-up-s3
+
       - name: Deploy (S3)
         uses: jakejarvis/s3-sync-action@master
         with:
