@@ -25,4 +25,4 @@ dist/%.html: src/root/%.html
 
 # Special rule, delete anything not meant for S3
 clean-up-s3:
-	rm -rf dist/spherical dist/.gitattributes dist/*.html
+	rm -rf dist/spherical dist/.gitattributes dist/*.html dist/*.js
