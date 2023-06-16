@@ -1,4 +1,4 @@
-name: 'Build'
+name: Deploy
 on:
   push:
     paths:
@@ -44,9 +44,30 @@ jobs:
       - name: Build
         run: make
 
-      - name: Deploy
+      - name: Deploy (GitHub Pages)
         uses: JamesIves/github-pages-deploy-action@4.1.4
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           branch: gh-pages
           folder: dist
+
+      - name: Deploy (S3)
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SOURCE_DIR: dist
+          DEST_DIR: theme/en/black-highlighter
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION }}
+          PATHS: /theme/en/black-highlighter
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
