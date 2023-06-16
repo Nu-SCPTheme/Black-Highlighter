@@ -1248,96 +1248,71 @@ h6 {
 }
 
 /* ===LISTS=== */
+#page-content {
+	& ul:not(.yui-nav) {
+		padding-left: 0;
+		list-style: inside;
 
-ul:not(.yui-nav) {
-	list-style: inside;
-
-	#page-content & {
-		padding-left: 1em;
+		& ul:not(.yui-nav),
+		& ol {
+			padding-left: 1em;
+		}
 	}
-}
 
-/* Ordered Lists */
-ol {
-	list-style: outside none;
+	/* Ordered Lists */
+	& ol {
+		list-style: decimal inside;
+		padding-left: 0;
 
-	#page-content & {
-		padding-left: 1em;
-		counter-reset: step1 0;
-
-		> li {
-			counter-increment: step1;
-
-			&::marker {
-				content: counter(step1) ". ";
-				display: inline-block;
-				width: 2ch;
-				margin-right: 1ch;
-				text-align: center;
-			}
-
-			&:nth-child(n + 10)::marker {
-				width: 3ch;
-			}
-
-			&:nth-child(n + 100)::marker {
-				width: 5ch;
-			}
+		& ol,
+		& ul:not(.yui-nav) {
+			padding-left: 1em;
 		}
 	}
 
 	/* Special Hierarchical Ordered List */
-	#page-content .heirarch & {
+	:is(.hierarch, .heirarch) {
+		counter-reset: hierarch;
+		list-style-type: none;
+
 		& ol {
-			counter-reset: step2 0;
+			counter-reset: hierarch;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
 
-			> li {
-				counter-increment: step2;
+			& li {
+				padding-left: 1em;
+				text-indent: -1em;
 
-				&::marker {
-					content: counter(step1) "." counter(step2) " ";
-					width: 4ch;
+				&::before {
+					counter-increment: hierarch;
+					content: counters(hierarch, ".") " ";
 				}
 			}
+		}
+	}
 
-			& ol {
-				counter-reset: step3 0;
+	/* Definition Lists */
+	& dl {
+		padding: 1.5ex 2ch;
+		border: .0625rem solid rgb(var(--dl-content-border-color));
+		background-color: rgb(var(--dl-content-bg-color));
 
-				> li {
-					counter-increment: step3;
+		& dt {
+			--wght: 700;
+			width: fit-content;
+			margin: 0;
+			padding: 0 .5em;
+			background-color: rgb(var(--dt-bg-color));
+			color: rgb(var(--dt-text-color));
+			font-weight: var(--wght);
+		}
 
-					&::marker {
-						content: counter(step1) "." counter(step2) "." counter(step3) " ";
-						width: 6ch;
-					}
-				}
-
-				& ol {
-					counter-reset: step4 0;
-
-					> li {
-						counter-increment: step4;
-
-						&::marker {
-							content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4) " ";
-							width: 8ch;
-						}
-					}
-
-					& ol {
-						counter-reset: step5 0;
-
-						> li {
-							counter-increment: step5;
-
-							&::marker {
-								content: counter(step1) "." counter(step2) "." counter(step3) "." counter(step4) "." counter(step5) " ";
-								width: 10ch;
-							}
-						}
-					}
-				}
-			}
+		& dd {
+			margin-bottom: 1ex;
+			text-indent: 1em;
+			border-left: solid 0.5ch rgb(var(--dd-left-border-color));
 		}
 	}
 }
