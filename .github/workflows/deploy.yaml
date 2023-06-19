@@ -61,7 +61,7 @@ jobs:
         uses: jakejarvis/s3-sync-action@master
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          args: --delete
+          args: --content-encoding utf-8 --delete
         env:
           AWS_S3_BUCKET: ${{ vars.AWS_S3_BUCKET }}
           AWS_REGION: ${{ vars.AWS_REGION }}
