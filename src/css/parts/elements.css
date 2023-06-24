@@ -11,17 +11,18 @@
 	5.  =IMAGE BLOCK
 	6.  =RATING MODULE
 	7.  =TABLES
-	8.  =TOC
-	9.  =WARNING BOX
-	10. =LISTPAGES PAGER
-	11. =WIKIDOT USER ICONS
-	12. =AYERS' INFO MODULE
-	13. =SIDEBOX DIV
-	14. =MISC SMALL ELEMENTS
-	15. =FRONT PAGE ELEMENTS
-		15.1 =CONTENT PANEL
-	16. =MOBILE ELEMENTS
-	17. =PRINT FORMATTING
+	8.  =COLLAPSIBLE BLOCKS
+	9.  =TOC
+	10.  =WARNING BOX
+	11. =LISTPAGES PAGER
+	12. =WIKIDOT USER ICONS
+	13. =AYERS' INFO MODULE
+	14. =SIDEBOX DIV
+	15. =MISC SMALL ELEMENTS
+	16. =FRONT PAGE ELEMENTS
+		16.1 =CONTENT PANEL
+	17. =MOBILE ELEMENTS
+	18. =PRINT FORMATTING
   =============== */
 
 /* ===TABVIEW=== */
@@ -1026,6 +1027,12 @@ div.heritage-rating-module {
 	display: none;
 }
 
+/* ===COLLAPSIBLE BLOCKS=== */
+
+.collapsible-block-unfolded-link * {
+  overflow-wrap: anywhere;
+}
+
 /* Nested Collapsible Block Fix */
 div.colmod-block > ul,
 div.colmod-block > ul > li {
@@ -1619,7 +1626,7 @@ span.printuser {
 	}
 }
 
-/*Styling for page-content printuser */
+/* Styling for page-content printuser */
 #page-content span.printuser {
 	align-items: baseline;
 
