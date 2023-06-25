@@ -16,5 +16,8 @@ assignees: Woedenaz
 **Describe alternatives you've considered:**  
 [A clear and concise description of any alternative solutions or features you've considered.]
 
+**Link to the relevant page(s)**  
+[Link to any pages which help demonstrate why this feature request would be beneficial.]
+
 **Additional context:**  
 [Add any other context or screenshots about the feature request here.]
