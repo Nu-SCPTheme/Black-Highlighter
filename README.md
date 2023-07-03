@@ -1,11 +1,21 @@
 # Black Highlighter
 
-[![Travis CI Build Status](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter.svg?branch=master)](https://travis-ci.org/Nu-SCPTheme/Black-Highlighter)
+<p align="center">
+  <img width="500"
+       src="https://raw.githubusercontent.com/Nu-SCPTheme/Black-Highlighter/master/src/img/black-highlighter-logo.svg"
+       alt="Black Highlighter Logo">
+</p>
+
+<p align="center">
+  <a href="https://github.com/Nu-SCPTheme/Black-Highlighter/actions?query=workflow%253ABuild">
+    <img src="https://github.com/Nu-SCPTheme/Black-Highlighter/workflows/Build/badge.svg"
+         alt="Black Highlighter build status badge">
+  </a>
+</p>
 
     [2019-2023 Wikidot Theme]
     Designed by Woedenaz, Croquembouche, & djkaktus
     Built by Woedenaz, Croquembouche, aismallard & rounderhouse (for some reason)
-
 
 A WiP new theme for the SCP Wiki utilizing more current CSS styling standards.
 
