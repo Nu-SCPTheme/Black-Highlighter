@@ -17,7 +17,7 @@
     Designed by Woedenaz, Croquembouche, & djkaktus
     Built by Woedenaz, Croquembouche, aismallard & rounderhouse (for some reason)
 
-A new theme for the SCP Wiki utilizing more current CSS styling standards.
+A base theme for the SCP Wiki utilizing more current CSS styling standards.
 * Preview (overwriting Sigma): https://scpwiki.com/scp-4999
 * Preview (base theme): https://scptestwiki.wikidot.com/
 
