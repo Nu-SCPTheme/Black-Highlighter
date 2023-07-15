@@ -869,76 +869,76 @@ div.heritage-rating-module {
 		}
 
 		&.first {
-			> p {
-				&:not(:first-of-type) {
-					width: 100%;
-					margin: 0;
-					padding: 1em 0 0;
-				}
-
-				&:first-of-type {
-					position: absolute;
-					inset: 0.5em 0.5em auto auto;
-					width: 1.25em;
-					height: 1.25em;
-					margin: 0;
-					font-size: 1.25em;
-					font-size: max(1.5em, min(2vm, 1.5em));
-
-					&::before,
-					&::after {
-						content: "";
-						position: absolute;
-						inset: 0 0 auto auto;
-						width: 100%;
-						height: 100%;
-						pointer-events: none;
-					}
-
-					&::before {
-						border-radius: 50%;
-						background-color: rgb(var(--modal-bg));
-					}
-
-					&::after {
-						--mask-image: var(--cancel-mask);
-
-						rotate: 0deg;
-						scale: 1;
-						transition: rotate 0.2s var(--ease-in-out), scale 0.2s var(--ease-in-out);
-						background-color: rgb(var(--modal-header-bg));
-						mask: var(--mask-image) center / 0.75em no-repeat;
-
-						@supports not (scale: 1) {
-							transform: rotateZ(0deg) scale(1);
-							transition: transform 0.2s var(--ease-in-out);
-						}
-					}
-				}
-
-				&:is(:hover, :active, :focus, :focus-within):first-of-type::after {
-					rotate: 15deg;
-					scale: 1.1;
-
-					@supports not (scale: 1.1) {
-						transform: rotateZ(15deg) scale(1.1);
-					}
-				}
+			p {
+				width: 100%;
+				margin: 0;
+				padding: 1em 0 0;
 			}
 
-			& h1 + p:not(:first-of-type) {
+			& h1 + p {
 				margin-top: 0;
 			}
 		}
 	}
 
 	.close-credits {
-		inset: 0 auto;
+		inset: 0 0;
 		width: 1.25em;
 		height: 1.25em !important; /* Overwrite inline styling */
 		scale: 2 1;
 		opacity: 1;
 		filter: opacity(0);
+
+		> a {
+			display: flex;
+			position: absolute;
+			pointer-events: all;
+			inset: 0.5em 0.5em auto auto;
+			width: 1.25em;
+			height: 1.25em;
+			margin: 0;
+			font-size: 1.25em;
+			font-size: max(1.5em, min(2vm, 1.5em));
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0 0 auto auto;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+			}
+
+			&::before {
+				border-radius: 50%;
+				background-color: rgb(var(--modal-bg));
+			}
+
+			&::after {
+				--mask-image: var(--cancel-mask);
+
+				rotate: 0deg;
+				scale: 1;
+				transition: rotate 0.2s var(--ease-in-out), scale 0.2s var(--ease-in-out);
+				background-color: rgb(var(--modal-header-bg));
+				mask: var(--mask-image) center / 0.75em no-repeat;
+
+				@supports not (scale: 1) {
+					transform: rotateZ(0deg) scale(1);
+					transition: transform 0.2s var(--ease-in-out);
+				}
+			}
+
+			&:is(:hover, :active, :focus, :focus-within)::after {
+				rotate: 15deg;
+				scale: 1.1;
+
+				@supports not (scale: 1.1) {
+					transform: rotateZ(15deg) scale(1.1);
+				}
+			}
+		}
 
 		@supports not (scale: 2 1) {
 			transform: scale(2, 1);
