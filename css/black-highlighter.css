@@ -14358,73 +14358,13 @@ div.heritage-rating-module div.heritage-emblem img {
 			overflow-y: auto;
 		}
 
-[id*="u-credit"] .credit.first > p:not(:first-of-type) {
-					width: 100%;
-					margin: 0;
-					padding: 1em 0 0;
-				}
+[id*="u-credit"] .credit.first p {
+				width: 100%;
+				margin: 0;
+				padding: 1em 0 0;
+			}
 
-[id*="u-credit"] .credit.first > p:first-of-type {
-					position: absolute;
-					top: 0.5em;
-					right: 0.5em;
-					bottom: auto;
-					left: auto;
-					width: 1.25em;
-					height: 1.25em;
-					margin: 0;
-					font-size: 1.25em;
-					font-size: max(1.5em, min(2vm, 1.5em));
-				}
-
-[id*="u-credit"] .credit.first > p:first-of-type::before,
-					[id*="u-credit"] .credit.first > p:first-of-type::after {
-						content: "";
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: auto;
-						left: auto;
-						width: 100%;
-						height: 100%;
-						pointer-events: none;
-					}
-
-[id*="u-credit"] .credit.first > p:first-of-type::before {
-						border-radius: 50%;
-						background-color: rgb(var(--modal-bg));
-					}
-
-[id*="u-credit"] .credit.first > p:first-of-type::after {
-						--mask-image: var(--cancel-mask);
-
-						rotate: 0deg;
-						scale: 1;
-						transition: rotate 0.2s var(--ease-in-out), scale 0.2s var(--ease-in-out);
-						background-color: rgb(var(--modal-header-bg));
-						-webkit-mask: var(--mask-image) center / 0.75em no-repeat;
-						        mask: var(--mask-image) center / 0.75em no-repeat;
-					}
-
-@supports not (scale: 1) {
-[id*="u-credit"] .credit.first > p:first-of-type::after {
-							transform: rotateZ(0deg) scale(1);
-							transition: transform 0.2s var(--ease-in-out);
-					}
-						}
-
-[id*="u-credit"] .credit.first > p:is(:hover, :active, :focus, :focus-within):first-of-type::after {
-					rotate: 15deg;
-					scale: 1.1;
-				}
-
-@supports not (scale: 1.1) {
-[id*="u-credit"] .credit.first > p:is(:hover, :active, :focus, :focus-within):first-of-type::after {
-						transform: rotateZ(15deg) scale(1.1);
-				}
-					}
-
-[id*="u-credit"] .credit.first h1 + p:not(:first-of-type) {
+[id*="u-credit"] .credit.first h1 + p {
 				margin-top: 0;
 			}
 
@@ -14434,14 +14374,76 @@ div.heritage-rating-module div.heritage-emblem img {
 
 [id*="u-credit"] .close-credits {
 		top: 0;
-		right: auto;
+		right: 0;
 		bottom: 0;
-		left: auto;
+		left: 0;
 		width: 1.25em; /* Overwrite inline styling */
 		scale: 2 1;
 		opacity: 1;
 		filter: opacity(0);
 	}
+
+[id*="u-credit"] .close-credits > a {
+			display: flex;
+			position: absolute;
+			pointer-events: all;
+			top: 0.5em;
+			right: 0.5em;
+			bottom: auto;
+			left: auto;
+			width: 1.25em;
+			height: 1.25em;
+			margin: 0;
+			font-size: 1.25em;
+			font-size: max(1.5em, min(2vm, 1.5em));
+		}
+
+[id*="u-credit"] .close-credits > a::before,
+			[id*="u-credit"] .close-credits > a::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: auto;
+				left: auto;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+			}
+
+[id*="u-credit"] .close-credits > a::before {
+				border-radius: 50%;
+				background-color: rgb(var(--modal-bg));
+			}
+
+[id*="u-credit"] .close-credits > a::after {
+				--mask-image: var(--cancel-mask);
+
+				rotate: 0deg;
+				scale: 1;
+				transition: rotate 0.2s var(--ease-in-out), scale 0.2s var(--ease-in-out);
+				background-color: rgb(var(--modal-header-bg));
+				-webkit-mask: var(--mask-image) center / 0.75em no-repeat;
+				        mask: var(--mask-image) center / 0.75em no-repeat;
+			}
+
+@supports not (scale: 1) {
+[id*="u-credit"] .close-credits > a::after {
+					transform: rotateZ(0deg) scale(1);
+					transition: transform 0.2s var(--ease-in-out);
+			}
+				}
+
+[id*="u-credit"] .close-credits > a:is(:hover, :active, :focus, :focus-within)::after {
+				rotate: 15deg;
+				scale: 1.1;
+			}
+
+@supports not (scale: 1.1) {
+[id*="u-credit"] .close-credits > a:is(:hover, :active, :focus, :focus-within)::after {
+					transform: rotateZ(15deg) scale(1.1);
+			}
+				}
 
 @supports not (scale: 2 1) {
 [id*="u-credit"] .close-credits {
