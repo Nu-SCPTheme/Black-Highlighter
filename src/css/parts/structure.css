@@ -1250,8 +1250,8 @@ h6 {
 /* ===LISTS=== */
 #page-content {
 	& ul:not(.yui-nav) {
-		padding-left: 0;
-		list-style: inside;
+		list-style: outside;
+		margin-left: 1em;
 
 		& ul:not(.yui-nav),
 		& ol {
@@ -1261,8 +1261,8 @@ h6 {
 
 	/* Ordered Lists */
 	& ol {
-		list-style: decimal inside;
-		padding-left: 0;
+		list-style: decimal outside;
+		margin-left: 1em;
 
 		& ol,
 		& ul:not(.yui-nav) {
