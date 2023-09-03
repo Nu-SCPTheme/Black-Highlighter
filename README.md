@@ -2,7 +2,8 @@
 
 <p>
   <a href="https://github.com/Nu-SCPTheme/Black-Highlighter/actions?query=workflow%253ABuild">
-    <img src="https://github.com/Nu-SCPTheme/Black-Highlighter/workflows/Build/badge.svg"
+    <img style="background:rgb(215,215,215);border-radius:1rem;"
+         src="https://github.com/Nu-SCPTheme/Black-Highlighter/workflows/Build/badge.svg"
          alt="Black Highlighter build status badge">
   </a>
 </p>
