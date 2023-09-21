@@ -44,12 +44,33 @@
 	font-weight: var(--wght, revert);
 
 	@supports (font-variation-settings: inherit) {
-		font-variation-settings: "ital" var(--ital, 0), "slnt" var(--slnt, 0), "CASL" var(--CASL, 0), "CRSV" var(--CRSV, 0), "MONO" var(--MONO, 0), "FLAR" var(--FLAR, 0);
+		font-variation-settings:
+			"ital" var(--ital, 0),
+			"slnt" var(--slnt, 0),
+			"CASL" var(--CASL, 0),
+			"CRSV" var(--CRSV, 0),
+			"MONO" var(--MONO, 0),
+			"FLAR" var(--FLAR, 0);
 	}
 
 	@supports (font-feature-settings: inherit) {
-		font-feature-settings: "lnum" var(--lnum, 1), "pnum" var(--pnum, 1), "kern" var(--kern, 1), "cpsp" var(--cpsp, 1), "liga" var(--liga, 1), "case" var(--case, 1), "clig" var(--clig, 1), "dlig" var(--dlig, 0), "calt" var(--calt, 1),
-			"aalt" var(--aalt, 0), "ss01" var(--ss01, 1), "ss02" var(--ss02, 0), "ss03" var(--ss03, 1), "ss04" var(--ss04, 1), "zero" var(--zero, 1), "cv11" var(--cv11, 0);
+		font-feature-settings:
+			"lnum" var(--lnum, 1),
+			"pnum" var(--pnum, 1),
+			"kern" var(--kern, 1),
+			"cpsp" var(--cpsp, 1),
+			"liga" var(--liga, 1),
+			"case" var(--case, 1),
+			"clig" var(--clig, 1),
+			"dlig" var(--dlig, 0),
+			"calt" var(--calt, 1),
+			"aalt" var(--aalt, 0),
+			"ss01" var(--ss01, 1),
+			"ss02" var(--ss02, 0),
+			"ss03" var(--ss03, 1),
+			"ss04" var(--ss04, 1),
+			"zero" var(--zero, 1),
+			"cv11" var(--cv11, 0);
 	}
 }
 
@@ -113,6 +134,7 @@ body {
 	line-height: var(--base-line-height);
 	word-break: normal;
 	hyphens: manual;
+	font-optical-sizing: auto;
 
 	/* line behavior */
 	orphans: 2;
@@ -438,9 +460,9 @@ input[type="checkbox"] {
 
 		&::before {
 			transition:
-			background-color 0.05s var(--ease-in-out) 0.2s,
-			box-shadow 0.15s var(--ease-in-out) 0.15s,
-			clip-path 0.15s var(--ease-in-out) 0.15s;
+				background-color 0.05s var(--ease-in-out) 0.2s,
+				box-shadow 0.15s var(--ease-in-out) 0.15s,
+				clip-path 0.15s var(--ease-in-out) 0.15s;
 		}
 
 		&::after {
@@ -611,13 +633,7 @@ input[type="radio"] {
 						background-color 0.2s var(--ease-in-out),
 						background-image 0.05s var(--ease-in-out);
 					background-color: rgb(var(--swatch-background));
-					background-image:
-						linear-gradient(
-							to bottom,
-							rgb(var(--background-gradient-color)),
-							rgba(var(--background-gradient-color), 0) var(--background-gradient-distance),
-							rgba(var(--background-gradient-color), 0) 100%
-						);
+					background-image: linear-gradient(to bottom, rgb(var(--background-gradient-color)), rgba(var(--background-gradient-color), 0) var(--background-gradient-distance), rgba(var(--background-gradient-color), 0) 100%);
 					pointer-events: none;
 					background-position-y: top;
 				}
@@ -638,20 +654,11 @@ input[type="radio"] {
 					padding-left: 0.5rem;
 					outline: 0 solid rgb(var(--swatch-primary));
 					color: rgb(var(--swatch-background));
-					clip-path: polygon(
-						0 0,
-						calc(100% + 0.125rem) 0,
-						calc(100% + 0.125rem) calc(100% + 0.125rem),
-						0 calc(100% + 0.125rem)
-					);
+					clip-path: polygon(0 0, calc(100% + 0.125rem) 0, calc(100% + 0.125rem) calc(100% + 0.125rem), 0 calc(100% + 0.125rem));
 
 					&::before {
 						background-color: rgb(var(--swatch-primary));
-						background-image: linear-gradient(
-							to bottom,
-							rgba(var(--background-gradient-color), 0) 0,
-							rgba(var(--background-gradient-color), 0) var(--background-gradient-distance)
-						);
+						background-image: linear-gradient(to bottom, rgba(var(--background-gradient-color), 0) 0, rgba(var(--background-gradient-color), 0) var(--background-gradient-distance));
 						clip-path: unset;
 					}
 				}
@@ -777,8 +784,7 @@ input[type="radio"] {
 
 				#edit-page-form.data-form .form-row span.field-checkbox input:checked + &,
 				#new-post-form.data-form .form-row span.field-checkbox input:checked + &,
-				#new-thread-form.data-form .form-row span.field-checkbox input:checked + &
-				 {
+				#new-thread-form.data-form .form-row span.field-checkbox input:checked + & {
 					translate: 0.25em;
 
 					@supports not (translate: 0.25em) {
@@ -1093,7 +1099,11 @@ pre {
 		max-width: 90vw;
 		font-family: var(--mono-font);
 		white-space: pre;
-		font-variation-settings: "wght" var(--mono-wght), "CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
+		font-variation-settings:
+			"wght" var(--mono-wght),
+			"CASL" var(--CASL),
+			"CRSV" var(--CRSV),
+			"MONO" var(--MONO);
 	}
 
 	& i,
@@ -1111,7 +1121,7 @@ pre {
 /* Unsetting Footnoteref styling on Common Theme */
 .footnoteref {
 	position: unset;
-	top: -.5em;
+	top: -0.5em;
 	vertical-align: unset;
 }
 
@@ -1121,7 +1131,7 @@ sup {
 	#main-content & {
 		position: relative;
 		font-size: 0.75em;
-		top: -.5em;
+		top: -0.5em;
 	}
 }
 
@@ -1151,7 +1161,11 @@ tt {
 		--MONO: 1;
 
 		font-family: var(--mono-font);
-		font-variation-settings: "wght" var(--mono-wght), "CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
+		font-variation-settings:
+			"wght" var(--mono-wght),
+			"CASL" var(--CASL),
+			"CRSV" var(--CRSV),
+			"MONO" var(--MONO);
 	}
 
 	& i,
@@ -1296,14 +1310,14 @@ h6 {
 	/* Definition Lists */
 	& dl {
 		padding: 1.5ex 2ch;
-		border: .0625rem solid rgb(var(--dl-content-border-color));
+		border: 0.0625rem solid rgb(var(--dl-content-border-color));
 		background-color: rgb(var(--dl-content-bg-color));
 
 		& dt {
 			--wght: 700;
 			width: fit-content;
 			margin: 0;
-			padding: 0 .5em;
+			padding: 0 0.5em;
 			background-color: rgb(var(--dt-bg-color));
 			color: rgb(var(--dt-text-color));
 			font-weight: var(--wght);
@@ -1411,7 +1425,12 @@ a {
 		--MONO: 1;
 
 		font-family: var(--mono-font);
-		font-variation-settings: "wght" var(--mono-wght), "slnt" var(--slnt), "CASL" var(--CASL), "CRSV" var(--CRSV), "MONO" var(--MONO);
+		font-variation-settings:
+			"wght" var(--mono-wght),
+			"slnt" var(--slnt),
+			"CASL" var(--CASL),
+			"CRSV" var(--CRSV),
+			"MONO" var(--MONO);
 	}
 
 	& * {
