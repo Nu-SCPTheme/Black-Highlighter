@@ -6,14 +6,14 @@
 /* ===DIRECTORY===
 	1.  =TABVIEW
 	2.  =BLOCKQUOTE
-	3.  =FOOTNOTES & BIBLIOGRAPHY
+	3.  =FOOTNOTES & BIBLIOGRAPHY & LaTeX
 	4.  =HOVER BLOCKS
 	5.  =IMAGE BLOCK
 	6.  =RATING MODULE
 	7.  =TABLES
 	8.  =COLLAPSIBLE BLOCKS
 	9.  =TOC
-	10.  =WARNING BOX
+	10. =WARNING BOX
 	11. =LISTPAGES PAGER
 	12. =WIKIDOT USER ICONS
 	13. =AYERS' INFO MODULE
@@ -227,7 +227,7 @@
 		inset 0 -0.0625rem 0 0 rgba(var(--blockquote-border-color), 0.75);
 }
 
-/* ===FOOTNOTES & BIBLIOGRAPHY=== */
+/* ===FOOTNOTES & BIBLIOGRAPHY & LaTeX === */
 
 :is(.footnotes-footer, .bibitems) {
 	display: block;
@@ -343,6 +343,43 @@
 			margin: 0 0 0 -2em;
 		}
 	}
+}
+
+.math-equation{
+	display: none;
+	text-align: center;
+	padding: 0.5em 0;
+}
+
+.equation-number{
+	float: right;
+	margin-top: 1em;
+	font-size: 1.1em;
+}
+
+.math-inline {
+    display: none;
+}
+
+span#MathJax_Message {
+    display: none;
+}
+
+span.math-inline span.merror {
+	color: rgb(var(--swatch-secondary-color));
+}
+
+a:is(.inline-math-error, .math-equation-error) {
+	--wght: 700;
+	font-weight: var(--wght);
+}
+
+a.inline-math-error {
+    padding: 0 0.5em;
+}
+
+a.math-equation-error {
+    padding: 0 2em;
 }
 
 /* ===HOVER BLOCKS=== */
