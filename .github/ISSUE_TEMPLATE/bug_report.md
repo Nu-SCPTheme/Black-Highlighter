@@ -14,7 +14,7 @@ assignees: Woedenaz
 [Provide a full screenshot of the page, along with any other pictures of the issue.]
 
 **Link to the page(s) having this issue:**  
-[It is not possible to debug the styling without being able to see the page in question. Please add links of where this issue is occurring.}
+[It is not possible to debug the styling without being able to see the page in question. Please add links of where this issue is occurring.]
 
 **Device information:** (fill in as appropriate)  
  - Device: [e.g. iPhone 12]
