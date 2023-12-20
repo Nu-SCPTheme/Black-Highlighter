@@ -15380,7 +15380,7 @@ div#container-wrap {
 /* ===BLOCKQUOTE=== */
 
 :is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
-	display: block;
+	display: flow-root;
 	position: relative;
 	margin-top: 1ex;
 	margin-bottom: 0;
@@ -15400,13 +15400,6 @@ div#container-wrap {
 
 :is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]):last-child:not(:only-child) {
 		margin-bottom: 1em;
-	}
-
-@supports (display: flow-root) {
-
-:is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
-		display: flow-root;
-}
 	}
 
 .colorbar-quote {
