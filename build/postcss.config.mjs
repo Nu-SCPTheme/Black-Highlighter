@@ -17,7 +17,8 @@ export default (ctx) => {
 
 	const nodeEnv = ctx.env;
 	const dev = nodeEnv === "development";
-	const browserslist = fs.readFileSync(path.resolve(ctx.file.dirname, "../../.browserslistrc"), "utf8").trim();
+        const browserslistpath = path.resolve(ctx.file.dirname, "../../.browserslistrc");
+	const browserslist = fs.readFileSync(browserslistpath, "utf8").trim();
 
 	const globalDataOptions = {
 		files: [ path.join( ctx.file.dirname,"/parts/root.css" ) ]
