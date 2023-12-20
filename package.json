@@ -1,41 +1,42 @@
 {
-	"name": "black-highlighter",
-	"description": "Modern base theme for the SCP Wiki (build process)",
-	"version": "1.0.0",
-	"authors": "Woedenaz, Croquembouche",
-	"license": "CC-BY-SA-3.0",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
-	},
-	"engines": {
-		"bun": ">=1.0.17"
-	},
-	"devDependencies": {
-		"@csstools/postcss-global-data": "^2.0.0",
-		"autoprefixer": "^10.4.13",
-		"eslint": "^8.34.0",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-prettier": "^5.0.0",
-		"lightningcss": "^1.19.0",
-		"postcss": "^8.4.21",
-		"postcss-cli": "^11.0.0",
-		"postcss-csso": "^6.0.1",
-		"postcss-import": "^15.1.0",
-		"postcss-lightningcss": "^1.0.0",
-		"postcss-mixins": "^9.0.4",
-		"postcss-preset-env": "^9.0.0",
-		"postcss-reporter": "^7.0.5",
-		"postcss-url": "^10.1.3",
-		"prettier": "^3.0.0",
-		"stylelint": "^16.0.2",
-		"stylelint-config-property-sort-order-smacss": "^10.0.0",
-		"stylelint-config-standard": "^35.0.0",
-		"svgo": "^3.0.2"
-	},
-	"scripts": {
-		"build": "make",
-		"base": "postcss $bhl_i --config build/postcss.config.mjs -o $bhl_o -w --env $bhl_env --verbose",
-		"watch": "bhl_i=src/css/black-highlighter.css bhl_o=dist/css/black-highlighter.css bhl_env=development bun base & bhl_i=src/css/black-highlighter.css bhl_o=dist/css/min/black-highlighter.min.css bhl_env=production bun base & bhl_i=src/css/normalize.css bhl_o=dist/css/min/normalize.min.css bhl_env=development bun base"
-	}
+  "name": "black-highlighter",
+  "description": "Modern base theme for the SCP Wiki (build process)",
+  "version": "1.0.0",
+  "authors": "Woedenaz, Croquembouche",
+  "license": "CC-BY-SA-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nu-SCPTheme/Black-Highlighter"
+  },
+  "engines": {
+    "bun": ">=1.0.17"
+  },
+  "devDependencies": {
+    "@csstools/postcss-global-data": "^2.0.0",
+    "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "lightningcss": "^1.19.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^11.0.0",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-lightningcss": "^1.0.0",
+    "postcss-mixins": "^9.0.4",
+    "postcss-preset-env": "^9.0.0",
+    "postcss-reporter": "^7.0.5",
+    "postcss-url": "^10.1.3",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.2",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-standard": "^35.0.0",
+    "svgo": "^3.0.2"
+  },
+  "scripts": {
+    "build": "make",
+    "base": "cross-env postcss $bhl_i --config build/postcss.config.mjs -o $bhl_o -w --env $bhl_env --verbose",
+    "watch": "cross-env bhl_i=src/css/black-highlighter.css bhl_o=dist/css/black-highlighter.css bhl_env=development bun base & cross-env bhl_i=src/css/black-highlighter.css bhl_o=dist/css/min/black-highlighter.min.css bhl_env=production bun base & cross-env bhl_i=src/css/normalize.css bhl_o=dist/css/min/normalize.min.css bhl_env=development bun base"
+  }
 }
