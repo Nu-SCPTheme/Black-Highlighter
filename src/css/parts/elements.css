@@ -199,7 +199,7 @@
 /* ===BLOCKQUOTE=== */
 
 :is(blockquote, .blockquote, div.blockquote, [class*="blockquote"]) {
-	display: block;
+	display: flow-root;
 	position: relative;
 	margin-block: 1ex 0;
 	margin-inline: 2ch;
@@ -215,10 +215,6 @@
 
 	&:last-child:not(:only-child) {
 		margin-block-end: 1em;
-	}
-
-	@supports (display: flow-root) {
-		display: flow-root;
 	}
 }
 
