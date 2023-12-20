@@ -56,7 +56,7 @@
 		"content-wrap"
 		"footer"
 		"license";
-	grid-template-columns: auto;
+	grid-template-columns: minmax(0,1fr);
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -102,6 +102,7 @@
 	padding-right: 0;
 	padding-left: 0;
 	background-color: transparent;
+	overflow-wrap: break-word;
 
 	/* Mobile Chrome Width Fix */
 	@supports (not (-webkit-hyphens: none)) and (not (-moz-appearance: none)) and (list-style-type: "*") {
@@ -447,8 +448,6 @@ div[id*="page-options-bottom"] {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	max-width: min(90vw, var(--body-width-on-desktop));
 	gap: 1ch;
 	font-family: var(--UI-font);
 	font-size: var(--base-font-size);
@@ -4394,10 +4393,6 @@ div.odialog-shader-iframe {
 
 	#page-content {
 		min-height: calc(100vh - var(--final-header-height-on-mobile));
-	}
-
-	#page-options-bottom {
-		width: 100%;
 	}
 
 	table.page-history tr {
