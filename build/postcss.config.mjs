@@ -1,104 +1,54 @@
 import fs from "fs";
 import path from "path";
-import globalData from "@csstools/postcss-global-data";
+import postcss from "postcss";
 import stylelint from "stylelint";
-import postcssImport from "postcss-import";
-import postcssMixins from "postcss-mixins";
-import presetEnv from "postcss-preset-env";
-import autoprefixer from "autoprefixer";
-import url from "postcss-url";
-import csso from "postcss-csso";
+import postcssLightningcss from "postcss-lightningcss";
 import reporter from "postcss-reporter";
-/* Disabling LightningCSS until its functionality is a little more robust
-import lightningCSS from "postcss-lightningcss";
-*/
+import { bundle } from "lightningcss";
+
+const lightningcssBundle = (opts = {}) => {
+	return {
+		postcssPlugin: "lightningcss-bundle",
+		Once(root, { result }) {
+			const filename = opts.filename || result.opts.from;
+			const { code } = bundle({
+				filename,
+				...opts.lightningcssOptions
+			});
+
+			root.removeAll();
+			const parsedCode = postcss.parse(code);
+			root.append(parsedCode);
+		}
+	};
+};
 
 export default (ctx) => {
-
 	const nodeEnv = ctx.env;
 	const dev = nodeEnv === "development";
-        const browserslistpath = path.resolve(ctx.file.dirname, "../../.browserslistrc");
-	const browserslist = fs.readFileSync(browserslistpath, "utf8").trim();
 
-	const globalDataOptions = {
-		files: [ path.join( ctx.file.dirname,"/parts/root.css" ) ]
-	};
+	const browserslistpath = path.resolve(ctx.file.dirname, "../../.browserslistrc");
+	const browserslist = fs.readFileSync(browserslistpath, "utf8").trim();
 
 	const stylelintOptions = {
 		configFile: path.join(ctx.cwd, "/.stylelintrc"),
 		fix: true
 	};
 
-	const mixinOptions = {
-		mixinsDir: path.join( ctx.file.dirname,"/parts" )
-	};
+	lightningcssBundle.postcss = true;
 
-	const presetEnvOptions = ({
-		autoprefixer: false,
-		preserve: false,
-		browsers: browserslist,
-		features: {
-			"custom-properties": false,
-			"custom-media-queries": true,
-			"media-query-ranges": true,
-			"nesting-rules": true,
-			"has-pseudo-class": true,
-			"is-pseudo-class": false
-		}
-	});
-
-	const urlOptions = ({
-		url: "rebase"
-	});
-
-	const fileImportOptions = {
-		plugins: [
-			globalData(globalDataOptions),
-			presetEnv(presetEnvOptions),
-			url(urlOptions),
-			postcssMixins(mixinOptions),
-			autoprefixer
-		]
-	};
-
-	const cssoOptions = ({
-		restructure: !dev,
-		forceMediaMerge: !dev,
-		sourceMap: true
-	});
-
-	/* 	==============================
-			LIGHTNING CSS DISABLED FOR NOW
-			==============================
-	const lightningcssOptions = ({
-		filename: path.join(ctx.file.dirname,"/",ctx.file.basename),
+	const lightningcssOptions = {
 		browsers: browserslist,
 		lightningcssOptions: {
-			projectRoot: path.join( ctx.file.dirname,"/parts" ),
 			minify: !dev,
 			sourceMap: true,
-			errorRecovery: false,
+			cssModules: false,
 			drafts: {
 				nesting: true,
 				customMedia: true
 			},
-			visitor: {
-				/* Assures relative URL links point to the correct files on /dist */
-				/* Url(url) {
-					let urlArray = url.url.split("/").reverse();
-					if (url.url.includes("../")) {
-						dev ? [
-							url.url = `../${urlArray[1]}/${urlArray[0]}`
-						] : [
-							url.url = `../../${urlArray[1]}/${urlArray[0]}`
-						];
-					}
-				return url;
-				}
-			}
-		}
-	});
-	*/
+		},
+	};
 
 	const reporterOptions = {
 		formatter: input => {
@@ -109,28 +59,13 @@ export default (ctx) => {
 
 	let plugins = [];
 
-	switch(nodeEnv) {
-		/*
-		case "lightningcss":
-			plugins = [
-				postcssImport(fileImportOptions),
-				lightningcss(lightningcssOptions),
-				reporter(reporterOptions)
-			];
-			break;
-		*/
+	switch (nodeEnv) {
 		case "production":
-			plugins = [
-				stylelint(stylelintOptions),
-				postcssImport(fileImportOptions),
-				csso(cssoOptions),
-				reporter(reporterOptions)
-			];
-			break;
 		case "development":
 			plugins = [
 				stylelint(stylelintOptions),
-				postcssImport(fileImportOptions),
+				lightningcssBundle(lightningcssOptions),
+				postcssLightningcss(lightningcssOptions),
 				reporter(reporterOptions)
 			];
 			break;
@@ -139,7 +74,7 @@ export default (ctx) => {
 	}
 
 	return {
-		map: {inline: false},
+		map: { inline: false },
 		plugins: plugins
 	};
 };
