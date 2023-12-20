@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import postcss from "postcss";
+import postcssMixins from "postcss-mixins";
 import stylelint from "stylelint";
 import postcssLightningcss from "postcss-lightningcss";
 import reporter from "postcss-reporter";
@@ -35,6 +36,10 @@ export default (ctx) => {
 		fix: true
 	};
 
+	const mixinOptions = {
+		mixinsDir: path.join( ctx.file.dirname,"/parts" )
+	};
+
 	lightningcssBundle.postcss = true;
 
 	const lightningcssOptions = {
@@ -65,6 +70,7 @@ export default (ctx) => {
 			plugins = [
 				stylelint(stylelintOptions),
 				lightningcssBundle(lightningcssOptions),
+				postcssMixins(mixinOptions),
 				postcssLightningcss(lightningcssOptions),
 				reporter(reporterOptions)
 			];
