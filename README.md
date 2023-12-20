@@ -27,7 +27,7 @@ A base theme for the SCP Wiki utilizing more current CSS styling standards.
 On a UNIX-like environment with GNU Makefile, you can build Black Highlighter from its source files using the following:
 
 ```
-pnpm install
+bun i
 make
 ```
 
@@ -35,6 +35,6 @@ This will perform the combinations, minifications, etc. all automatically. All a
 
 The `Makefile` was constructed to be rigorous with requisites and outputs, it should only rebuild what has since been modified. As such, you can run the build in parallel with jobservers, such as `make -j 4`.
 
-However (for obvious reasons) `make` cannot determine if `node_modules` has all the required dependencies, it merely checks if the `node_modules/` directory exists. You will need to re-run `npm install` if you modify npm's local state.
+However (for obvious reasons) `make` cannot determine if `node_modules` has all the required dependencies, it merely checks if the `node_modules/` directory exists. You will need to re-run `bun install` if you modify npm's local state.
 
 Additionally, you can run `make -B` to force re-building all targets, or `make clean` to dispose of the `/dist` directory.

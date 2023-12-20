@@ -14,10 +14,10 @@ dist/css/parts/%: src/css/parts/%
 # CSS rules
 dist/css/min/black-highlighter.min.css: src/css/black-highlighter.css $(BUILD_SOURCES) $(CSS_SOURCES) node_modules
 		build/install.sh 644 $< dist/css/black-highlighter-imports.css
-		pnpm postcss dist/css/black-highlighter-imports.css --config build --env development -o dist/css/black-highlighter.css
-		pnpm postcss dist/css/black-highlighter-imports.css --config build --env production -o $@
+		bun postcss dist/css/black-highlighter-imports.css --config build --env development -o dist/css/black-highlighter.css
+		bun postcss dist/css/black-highlighter-imports.css --config build --env production -o $@
 
 dist/css/min/normalize.min.css: src/css/normalize.css $(BUILD_SOURCES) node_modules
 		build/install.sh 644 $< dist/css/normalize.css
-		pnpm postcss dist/css/normalize.css --config build --env development -r
-		pnpm postcss dist/css/normalize.css --config build --env production -o $@
+		bun postcss dist/css/normalize.css --config build --env development -r
+		bun postcss dist/css/normalize.css --config build --env production -o $@

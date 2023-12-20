@@ -1,25 +1,23 @@
-"use strict";
+import fs from "fs";
+import path from "path";
+import globalData from "@csstools/postcss-global-data";
+import stylelint from "stylelint";
+import postcssImport from "postcss-import";
+import postcssMixins from "postcss-mixins";
+import presetEnv from "postcss-preset-env";
+import autoprefixer from "autoprefixer";
+import url from "postcss-url";
+import csso from "postcss-csso";
+import reporter from "postcss-reporter";
+/* Disabling LightningCSS until its functionality is a little more robust
+import lightningCSS from "postcss-lightningcss";
+*/
 
-module.exports = (ctx) => {
-
-	const path = require("path");
-	const globalData = require("@csstools/postcss-global-data");
-	const stylelint = require("stylelint");
-	const postcssImport = require("postcss-import");
-	const postcssMixins = require("postcss-mixins");
-	const presetEnv = require("postcss-preset-env");
-	const autoprefixer = require("autoprefixer");
-	const url = require("postcss-url");
-	const csso = require("postcss-csso");
-	const reporter = require("postcss-reporter");
-	const browserslist = require("../package.json").browserslist;
-
-	/* Disabling LightningCSS until its functionality is a little more robust
-	const lightningcss = require("postcss-lightningcss");
-	*/
+export default (ctx) => {
 
 	const nodeEnv = ctx.env;
 	const dev = nodeEnv === "development";
+	const browserslist = fs.readFileSync(path.resolve(ctx.file.dirname, "../../.browserslistrc"), "utf8").trim();
 
 	const globalDataOptions = {
 		files: [ path.join( ctx.file.dirname,"/parts/root.css" ) ]
