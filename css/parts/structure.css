@@ -1131,14 +1131,21 @@ sup {
 	#main-content & {
 		position: relative;
 		font-size: 0.75em;
-		top: -0.5em;
+	}
+}
+
+sup {
+	&,
+	#main-content & {
+		top: -0.125em;
+		vertical-align: super;
 	}
 }
 
 sub {
 	&,
 	#main-content & {
-		bottom: -0.25em;
+		top: 0.125em;
 		vertical-align: sub;
 	}
 }
