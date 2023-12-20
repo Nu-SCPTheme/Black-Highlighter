@@ -25,6 +25,6 @@ $(DIRECTORIES):
 	mkdir -p $@
 
 # bun rules
-node_modules: package.json
+node_modules: package.json bun.lockb
 	bun install
 	touch node_modules
