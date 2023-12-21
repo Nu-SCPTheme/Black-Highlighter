@@ -384,7 +384,7 @@ a.math-equation-error {
 	z-index: 100;
 	width: fit-content !important; /* Overwriting JS-injected inline styling */
 	max-width: calc(var(--body-width-on-desktop) - 2rem);
-	animation: fade-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+	animation: bhl-fade-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 	border: none !important; /* Overwriting JS-injected inline styling */
 	opacity: 0;
 	background-color: rgb(var(--hoverblock-bg)) !important; /* Overwriting JS-injected inline styling */
@@ -400,7 +400,7 @@ a.math-equation-error {
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		animation: lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		animation: bhl-lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 		background-color: transparent;
 		box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
@@ -412,7 +412,7 @@ a.math-equation-error {
 		margin: 0;
 		padding: 0.25em 0.5em;
 		translate: 0 0;
-		animation: slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		animation: bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 		font-family: var(--UI-font);
 		font-size: 0.9em;
 
