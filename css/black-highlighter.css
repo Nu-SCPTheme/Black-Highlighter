@@ -1339,7 +1339,7 @@
 	--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@-webkit-keyframes fade-in {
+@-webkit-keyframes bhl-fade-in {
 	from {
 		opacity: 0;
 	}
@@ -1349,7 +1349,7 @@
 	}
 }
 
-@keyframes fade-in {
+@keyframes bhl-fade-in {
 	from {
 		opacity: 0;
 	}
@@ -1359,7 +1359,7 @@
 	}
 }
 
-@-webkit-keyframes slide-in {
+@-webkit-keyframes bhl-slide-in {
 	from {
 		translate: 1rem 1rem;
 	}
@@ -1369,7 +1369,7 @@
 	}
 }
 
-@keyframes slide-in {
+@keyframes bhl-slide-in {
 	from {
 		translate: 1rem 1rem;
 	}
@@ -1380,7 +1380,7 @@
 }
 
 @supports not (translate: 1rem 1rem) {
-	@-webkit-keyframes slide-in {
+	@-webkit-keyframes bhl-slide-in {
 		from {
 			-webkit-transform: translate(1rem, 1rem);
 			        transform: translate(1rem, 1rem);
@@ -1391,7 +1391,7 @@
 			        transform: translate(0, 0);
 		}
 	}
-	@keyframes slide-in {
+	@keyframes bhl-slide-in {
 		from {
 			-webkit-transform: translate(1rem, 1rem);
 			        transform: translate(1rem, 1rem);
@@ -1404,7 +1404,7 @@
 	}
 }
 
-@-webkit-keyframes slide-down {
+@-webkit-keyframes bhl-slide-down {
 	from {
 		max-height: 0;
 	}
@@ -1414,7 +1414,7 @@
 	}
 }
 
-@keyframes slide-down {
+@keyframes bhl-slide-down {
 	from {
 		max-height: 0;
 	}
@@ -1424,7 +1424,7 @@
 	}
 }
 
-@-webkit-keyframes lift-in {
+@-webkit-keyframes bhl-lift-in {
 	from {
 		-webkit-box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 		        box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
@@ -1436,7 +1436,7 @@
 	}
 }
 
-@keyframes lift-in {
+@keyframes bhl-lift-in {
 	from {
 		-webkit-box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 		        box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
@@ -9072,8 +9072,8 @@ div.odialog-shader-iframe {
 				height: 1.5rem;
 				margin: -0.9rem auto;
 				margin-top: 0.6rem;
-				-webkit-animation: loading 1.2s linear infinite;
-				        animation: loading 1.2s linear infinite;
+				-webkit-animation: bhl-loading 1.2s linear infinite;
+				        animation: bhl-loading 1.2s linear infinite;
 				border-top: 0.3rem solid rgb(var(--modal-header-stripe));
 				border-right: 0.3rem solid transparent;
 				border-bottom: 0.3rem solid rgb(var(--modal-header-stripe));
@@ -9592,7 +9592,7 @@ div.odialog-shader-iframe {
 
 	}
 
-@-webkit-keyframes loading {
+@-webkit-keyframes bhl-loading {
 	0% {
 		rotate: 0deg;
 	}
@@ -9602,7 +9602,7 @@ div.odialog-shader-iframe {
 	}
 }
 
-@keyframes loading {
+@keyframes bhl-loading {
 	0% {
 		rotate: 0deg;
 	}
@@ -9613,7 +9613,7 @@ div.odialog-shader-iframe {
 }
 
 @supports not (rotate: 0) {
-	@-webkit-keyframes loading {
+	@-webkit-keyframes bhl-loading {
 		0% {
 			-webkit-transform: rotate(0deg);
 			        transform: rotate(0deg);
@@ -9624,7 +9624,7 @@ div.odialog-shader-iframe {
 			        transform: rotate(360deg);
 		}
 	}
-	@keyframes loading {
+	@keyframes bhl-loading {
 		0% {
 			-webkit-transform: rotate(0deg);
 			        transform: rotate(0deg);
@@ -15606,8 +15606,8 @@ a.math-equation-error {
 	width: fit-content !important; /* Overwriting JS-injected inline styling */
 	max-width: -webkit-calc(var(--body-width-on-desktop) - 2rem);
 	max-width: calc(var(--body-width-on-desktop) - 2rem);
-	-webkit-animation: fade-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
-	        animation: fade-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+	-webkit-animation: bhl-fade-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+	        animation: bhl-fade-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 	border: none !important; /* Overwriting JS-injected inline styling */
 	opacity: 0;
 	background-color: rgb(var(--hoverblock-bg)) !important; /* Overwriting JS-injected inline styling */
@@ -15627,8 +15627,8 @@ a.math-equation-error {
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		-webkit-animation: lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
-		        animation: lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		-webkit-animation: bhl-lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		        animation: bhl-lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 		background-color: transparent;
 		-webkit-box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 		        box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
@@ -15647,8 +15647,8 @@ a.math-equation-error {
 		margin: 0;
 		padding: 0.25em 0.5em;
 		translate: 0 0;
-		-webkit-animation: slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
-		        animation: slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		-webkit-animation: bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		        animation: bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 		font-family: var(--UI-font);
 		font-size: 0.9em;
 	}
