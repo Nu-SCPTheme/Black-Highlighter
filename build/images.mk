@@ -24,9 +24,8 @@ dist/img/social-icons/%: src/img/social-icons/%
 	$(call compare_exist_and_size,$<,$@,build/install.sh 644 $< $@)
 
 # Images to optimize with size check
-SVGO_PATH := $(shell which svgo)
 dist/img/%.png: src/img/%.png
-	$(call compare_exist_and_size,$<,$@,$(SVGO_PATH) $< -o $@)
+	$(call compare_exist_and_size,$<,$@,svgo $< -o $@)
 
 dist/img/%.svg: src/img/%.svg
-	$(call compare_exist_and_size,$<,$@,$(SVGO_PATH) $< -o $@)
+	$(call compare_exist_and_size,$<,$@,svgo $< -o $@)
