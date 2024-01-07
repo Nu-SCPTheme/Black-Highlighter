@@ -37,7 +37,7 @@ export default (ctx) => {
 	};
 
 	const mixinOptions = {
-		mixinsDir: path.join( ctx.file.dirname,"/parts" )
+		mixinsDir: path.join(ctx.file.dirname, "/parts")
 	};
 
 	lightningcssBundle.postcss = true;
@@ -52,6 +52,18 @@ export default (ctx) => {
 				nesting: true,
 				customMedia: true
 			},
+			visitor: {
+				Url(url) {
+					if (!dev) {
+						url.url = url.url;
+					} else {
+						if (url.url.startsWith("../../")) {
+							url.url = url.url.replace("../../", "../");
+						}
+					}
+					return url;
+				}
+			}
 		},
 	};
 
