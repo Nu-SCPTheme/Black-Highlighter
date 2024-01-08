@@ -27,4 +27,3 @@ $(DIRECTORIES):
 # bun rules
 node_modules: package.json bun.lockb
 	bun install
-	touch node_modules
