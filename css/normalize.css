@@ -1,4364 +1,3602 @@
-@charset "utf-8";
-
-/* ===Disabled Stylelint Properties=== */
-
-/* stylelint-disable
-	unit-disallowed-list,
-	comment-empty-line-before,
-	font-family-no-duplicate-names
-*/
-
-/*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
-
-/* Document */
-
-/* ============================================ */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- * 3. Remove gray overlay on links for iOS.
- */
-
 :where(html) {
-	line-height: 1.15; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
-	-webkit-tap-highlight-color: transparent; /* 3 */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.15;
 }
-
-/* Sections */
-
-/* ============================================ */
-
-/**
- * Remove the margin in all browsers.
- */
 
 :where(body) {
-	margin: 0;
+  margin: 0;
 }
-
-/**
- * Render the `main` element consistently in IE.
- */
 
 :where(main) {
-	display: block;
+  display: block;
 }
-
-/* Headings */
-
-/* ============================================ */
 
 :where(h1, h2, h3, h4, h5, h6) {
-	margin: 0;
-	font-size: inherit;
-	font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
 }
-
-/* Lists (enumeration) */
-
-/* ============================================ */
 
 :where(ul, ol) {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Lists (definition) */
-
-/* ============================================ */
-
 :where(dt) {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 :where(dd) {
-	margin-left: 0;
+  margin-left: 0;
 }
-
-/* Grouping content */
-
-/* ============================================ */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 
 :where(hr) {
-	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
-	margin: 0;
-	clear: both;
-	overflow: visible; /* 2 */
-	border-top-width: 1px;
-	color: inherit;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  clear: both;
+  color: inherit;
+  border-top-width: 1px;
+  height: 0;
+  margin: 0;
+  overflow: visible;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
 :where(pre) {
-	font-family: monospace, monospace; /* 1 */
-	font-size: inherit; /* 2 */
+  font-family: monospace;
+  font-size: inherit;
 }
 
 :where(address) {
-	font-style: inherit;
+  font-style: inherit;
 }
-
-/* Text-level semantics */
-
-/* ============================================ */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
 
 :where(a) {
-	background-color: transparent;
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
 }
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
 
 :where(abbr[title]) {
-	text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
 
 :where(b, strong) {
-	font-weight: bolder;
+  font-weight: bolder;
 }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 
 :where(code, kbd, samp) {
-	font-family: monospace, monospace; /* 1 */
-	font-size: inherit; /* 2 */
+  font-family: monospace;
+  font-size: inherit;
 }
-
-/**
- * Add the correct font size in all browsers.
- */
 
 :where(small) {
-	font-size: 80%;
+  font-size: 80%;
 }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-:where(sub,sup) {
-	position: relative;
-	font-size: 75%;
-	line-height: 0;
-	vertical-align: baseline;
+:where(sub, sup) {
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
 }
 
 :where(sub) {
-	bottom: -0.25em;
+  bottom: -.25em;
 }
 
 :where(sup) {
-	top: -0.5em;
+  top: -.5em;
 }
-
-/* Replaced content */
-
-/* ============================================ */
-
-/**
- * Prevent vertical alignment issues.
- */
 
 :where(svg, img, embed, object, iframe) {
-	vertical-align: bottom;
+  vertical-align: bottom;
 }
-
-/* Forms */
-
-/* ============================================ */
-
-/**
- * Reset form fields to make them styleable.
- * 1. Make form elements stylable across systems iOS especially.
- * 2. Inherit text-transform from parent.
- */
 
 :where(button, input, optgroup, select, textarea) {
-	-webkit-appearance: none; /* 1 */
-	appearance: none;
-	margin: 0;
-	padding: 0;
-	border-radius: 0;
-	background: transparent;
-	color: inherit;
-	font: inherit;
-	text-align: inherit;
-	text-transform: inherit; /* 2 */
-	vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  vertical-align: middle;
+  background: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/**
- * Correct cursors for clickable elements.
- */
-
 :where(button, [type="button"], [type="reset"], [type="submit"]) {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 :where(button:disabled, [type="button"]:disabled, [type="reset"]:disabled, [type="submit"]:disabled) {
-	cursor: default;
+  cursor: default;
 }
 
-/**
- * Improve outlines for Firefox and unify style with input elements & buttons.
- */
-
 :where(:-moz-focusring) {
-	outline: auto;
+  outline: auto;
 }
 
 :where(select:disabled) {
-	opacity: inherit;
+  opacity: inherit;
 }
-
-/**
- * Remove padding
- */
 
 :where(option) {
-	padding: 0;
+  padding: 0;
 }
 
-/**
- * Reset to invisible
- */
-
 :where(fieldset) {
-	min-width: 0;
-	margin: 0;
-	padding: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :where(legend) {
-	padding: 0;
+  padding: 0;
 }
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
 
 :where(progress) {
-	vertical-align: baseline;
+  vertical-align: baseline;
 }
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
 
 textarea {
-	overflow: auto;
+  overflow: auto;
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-:where([type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button) {
-	height: auto;
+:where() {
+  height: auto;
 }
-
-/**
- * Correct the outline style in Safari.
- */
 
 :where([type="search"]) {
-	outline-offset: -2px; /* 1 */
+  outline-offset: -2px;
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-:where([type="search"]::-webkit-search-decoration) {
-	-webkit-appearance: none;
+:where() {
+  -webkit-appearance: button;
+  font: inherit;
 }
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Fix font inheritance.
- */
-
-:where(::-webkit-file-upload-button) {
-	-webkit-appearance: button; /* 1 */
-	font: inherit; /* 2 */
-}
-
-/**
- * Fix appearance for Firefox
- */
 
 :where([type="number"]) {
-	-moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
-
-/**
- * Clickable labels
- */
 
 :where(label[for]) {
-	cursor: pointer;
+  cursor: pointer;
 }
-
-/* Interactive */
-
-/* ============================================ */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
 
 :where(details) {
-	display: block;
+  display: block;
 }
-
-/*
- * Add the correct display in all browsers.
- */
 
 :where(summary) {
-	display: list-item;
+  display: list-item;
 }
-
-/*
- * Remove outline for editable content.
- */
 
 :where([contenteditable]:focus) {
-	outline: auto;
+  outline: auto;
 }
 
-/* Tables */
-
-/* ============================================ */
-
-/**
-1. Correct table border color inheritance in all Chrome and Safari.
-*/
-
 :where(table) {
-	border-collapse: collapse;
-	border-color: inherit; /* 1 */
+  border-collapse: collapse;
+  border-color: inherit;
 }
 
 :where(caption) {
-	text-align: left;
+  text-align: left;
 }
 
 :where(td, th) {
-	padding: 0;
-	vertical-align: top;
+  vertical-align: top;
+  padding: 0;
 }
 
 :where(th) {
-	font-weight: bold;
-	text-align: left;
+  text-align: left;
+  font-weight: bold;
 }
-
-/* Sigma-9 Normalizer
-	 ========================================================================== */
-
-/* ===Re-Enabling Stylelint Properties=== */
-
-/* stylelint-enable
-	unit-disallowed-list,
-	comment-empty-line-before,
-	font-family-no-duplicate-names
-*/
 
 #content-wrap {
-	position: inherit;
-	max-width: inherit;
-	height: inherit;
-	min-height: inherit;
-	margin: inherit;
+  position: inherit;
+  max-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  margin: inherit;
 }
 
-h1,
-#page-title {
-	margin: inherit;
-	padding: inherit;
-	color: inherit;
-	font-weight: inherit;
+h1, #page-title {
+  margin: inherit;
+  padding: inherit;
+  color: inherit;
+  font-weight: inherit;
 }
 
 h1 {
-	margin-top: inherit;
-	padding: inherit;
-	font-weight: inherit;
+  margin-top: inherit;
+  padding: inherit;
+  font-weight: inherit;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: inherit;
-	padding: inherit;
-	letter-spacing: inherit;
+h2, h3, h4, h5, h6 {
+  margin: inherit;
+  padding: inherit;
+  letter-spacing: inherit;
 }
 
 #page-title {
-	border-color: inherit;
+  border-color: inherit;
 }
 
 .meta-title {
-	margin: inherit;
-	padding: inherit;
-	border-bottom: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  margin: inherit;
+  padding: inherit;
+  border-bottom: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .meta-title p {
-	margin: inherit;
+  margin: inherit;
 }
 
 ul {
-	list-style: inherit;
+  list-style: inherit;
 }
 
-li,
-p {
-	line-height: inherit;
+li, p {
+  line-height: inherit;
 }
 
 a {
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  background: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 a:visited {
-	color: inherit;
+  color: inherit;
 }
 
 a:hover {
-	background-color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-#side-bar a:visited,
-#interwiki a:visited {
-	color: inherit;
+#side-bar a:visited, #interwiki a:visited {
+  color: inherit;
 }
 
 a.newpage {
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  background: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .form-control {
-	width: inherit;
+  width: inherit;
 }
 
-#header,
-#top-bar {
-	width: inherit;
-	max-width: inherit;
-	margin: inherit;
+#header, #top-bar {
+  width: inherit;
+  max-width: inherit;
+  margin: inherit;
 }
 
 .mobile-top-bar {
-	display: inherit;
-	position: inherit;
-	z-index: inherit;
-	bottom: inherit;
-	left: inherit;
+  display: inherit;
+  position: inherit;
+  z-index: inherit;
+  bottom: inherit;
+  left: inherit;
 }
 
 body {
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
 #interwiki body {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 div#container-wrap {
-	background: inherit;
+  background: inherit;
 }
 
 sup {
-	vertical-align: unset;
+  vertical-align: unset;
 }
 
 #header {
-	position: inherit;
-	z-index: inherit;
-	height: inherit;
-	padding-bottom: inherit;
-	background: inherit;
-	background-position: inherit;
-	background-size: inherit;
+  position: inherit;
+  z-index: inherit;
+  height: inherit;
+  padding-bottom: inherit;
+  background: inherit;
+  background-position: inherit;
+  background-size: inherit;
 }
 
 #search-top-box {
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	width: inherit;
-	text-align: inherit;
+  position: inherit;
+  top: inherit;
+  right: inherit;
+  width: inherit;
+  text-align: inherit;
 }
 
 #search-top-box-input {
-	display: inherit;
+  display: inherit;
 }
 
 #search-top-box-form input[type="submit"] {
-	padding: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	box-shadow: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  padding: inherit;
+  border: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  box-shadow: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-#search-top-box-form input[type="submit"]:hover,
+#search-top-box-form input[type="submit"]:hover {
+  border: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  box-shadow: inherit;
+  color: inherit;
+  text-shadow: inherit;
+}
+
 #search-top-box-form input[type="submit"]:focus {
-	border: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	box-shadow: inherit;
-	color: inherit;
-	text-shadow: inherit;
+  border: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  box-shadow: inherit;
+  color: inherit;
+  text-shadow: inherit;
 }
 
 #login-status {
-	z-index: inherit;
-	color: inherit;
-	font-size: inherit;
+  z-index: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
-#login-status a {
-	background: inherit;
-	color: inherit;
-}
-
-#login-status ul a {
-	background: inherit;
-	color: inherit;
-}
-
-#account-topbutton {
-	background: inherit;
-	color: inherit;
+#login-status a, #login-status ul a, #account-topbutton {
+  background: inherit;
+  color: inherit;
 }
 
 .printuser img.small {
-	margin-right: inherit;
+  margin-right: inherit;
 }
 
 #header h1 {
-	max-height: inherit;
-	margin-left: inherit;
-	padding: inherit;
-	float: inherit;
+  max-height: inherit;
+  margin-left: inherit;
+  padding: inherit;
+  float: inherit;
 }
 
 #header h2 {
-	max-height: inherit;
-	margin-left: inherit;
-	padding: inherit;
-	float: inherit;
-	clear: inherit;
-	font-size: inherit;
+  max-height: inherit;
+  margin-left: inherit;
+  padding: inherit;
+  float: inherit;
+  clear: inherit;
+  font-size: inherit;
 }
 
 #header h1 a {
-	display: inherit;
-	max-height: inherit;
-	margin: inherit;
-	padding: inherit;
-	background: inherit;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	letter-spacing: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
-	text-shadow: inherit;
+  display: inherit;
+  max-height: inherit;
+  margin: inherit;
+  padding: inherit;
+  background: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  text-shadow: inherit;
 }
 
 #header h2 span {
-	display: inherit;
-	max-height: inherit;
-	margin: inherit;
-	padding: inherit;
-	color: inherit;
-	font-weight: inherit;
-	line-height: inherit;
-	text-shadow: inherit;
+  display: inherit;
+  max-height: inherit;
+  margin: inherit;
+  padding: inherit;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-shadow: inherit;
 }
 
 #top-bar {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	line-height: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 #top-bar ul {
-	float: inherit;
+  float: inherit;
 }
 
 #top-bar li {
-	margin: inherit;
+  margin: inherit;
 }
 
 #top-bar a {
-	background: inherit;
-	color: inherit;
+  background: inherit;
+  color: inherit;
 }
 
 #top-bar ul li {
-	position: inherit;
-	border: inherit;
+  position: inherit;
+  border: inherit;
 }
 
 #top-bar ul li ul {
-	width: inherit;
-	border: inherit;
-	border-top: inherit;
-	border-width: inherit;
-	box-shadow: inherit;
+  width: inherit;
+  border: inherit;
+  border-top: inherit;
+  border-width: inherit;
+  box-shadow: inherit;
 }
 
 #top-bar ul li a {
-	max-height: inherit;
-	padding: inherit;
-	border-right: inherit;
-	border-left: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
+  max-height: inherit;
+  padding: inherit;
+  border-right: inherit;
+  border-left: inherit;
+  line-height: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-#top-bar .top-bar > ul > li > a,
-#top-bar .mobile-top-bar > ul > li > a {
-	font-weight: inherit;
+#top-bar .top-bar > ul > li > a, #top-bar .mobile-top-bar > ul > li > a {
+  font-weight: inherit;
 }
 
-#top-bar ul li.sfhover a,
-#top-bar ul li:hover a {
-	border-right: inherit;
-	border-left: inherit;
-	background: inherit;
-	color: inherit;
+#top-bar ul li.sfhover a, #top-bar ul li:hover a {
+  border-right: inherit;
+  border-left: inherit;
+  background: inherit;
+  color: inherit;
 }
 
-#top-bar ul li.sfhover ul li a,
-#top-bar ul li:hover ul li a {
-	width: inherit;
-	height: inherit;
-	max-height: inherit;
-	padding-top: inherit;
-	padding-bottom: inherit;
-	border-top: inherit;
-	border-width: inherit;
-	line-height: inherit;
+#top-bar ul li.sfhover ul li a, #top-bar ul li:hover ul li a {
+  width: inherit;
+  height: inherit;
+  max-height: inherit;
+  padding-top: inherit;
+  padding-bottom: inherit;
+  border-top: inherit;
+  border-width: inherit;
+  line-height: inherit;
 }
 
-#top-bar ul li.sfhover a:hover,
-#top-bar ul li:hover a:hover {
-	background: inherit;
-	text-decoration: inherit;
+#top-bar ul li.sfhover a:hover, #top-bar ul li:hover a:hover {
+  background: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-#top-bar ul li ul li,
-#top-bar ul li ul li.sfhover,
-#top-bar ul li ul li:hover {
-	border-width: inherit;
+#top-bar ul li ul li, #top-bar ul li ul li.sfhover, #top-bar ul li ul li:hover, #top-bar ul li ul li a {
+  border-width: inherit;
 }
 
-#top-bar ul li ul li a {
-	border-width: inherit;
-}
-
-#top-bar ul li ul a,
-#top-bar a:hover {
-	color: inherit;
+#top-bar ul li ul a, #top-bar a:hover {
+  color: inherit;
 }
 
 .top-bar ul li:last-of-type ul {
-	right: inherit;
+  right: inherit;
 }
 
 #side-bar {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	padding: inherit;
-	float: inherit;
-	clear: inherit;
-	border: inherit;
-	overscroll-behavior: inherit;
+  display: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  padding: inherit;
+  float: inherit;
+  clear: inherit;
+  border: inherit;
+  overscroll-behavior: inherit;
 }
 
 #interwiki .side-block {
-	margin: inherit;
+  margin: inherit;
 }
 
-#side-bar .side-block,
-#interwiki .side-block {
-	margin-bottom: inherit;
-	padding: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background: inherit;
-	box-shadow: inherit;
+#side-bar .side-block, #interwiki .side-block {
+  margin-bottom: inherit;
+  padding: inherit;
+  border: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background: inherit;
+  box-shadow: inherit;
 }
 
-#side-bar .side-block.media {
-	background: inherit;
-}
-
-#side-bar .side-block.resources {
-	background: inherit;
+#side-bar .side-block.media, #side-bar .side-block.resources {
+  background: inherit;
 }
 
 #side-bar .side-area {
-	padding: inherit;
+  padding: inherit;
 }
 
-#side-bar .heading,
-#interwiki .heading {
-	margin-top: inherit;
-	margin-bottom: inherit;
-	padding-left: inherit;
-	border-bottom: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+#side-bar .heading, #interwiki .heading {
+  margin-top: inherit;
+  margin-bottom: inherit;
+  padding-left: inherit;
+  border-bottom: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-#side-bar p,
-#interwiki p {
-	margin: inherit;
-}
-
-#side-bar .menu-item,
-#interwiki .menu-item {
-	margin: inherit;
+#side-bar p, #interwiki p, #side-bar .menu-item, #interwiki .menu-item {
+  margin: inherit;
 }
 
 #side-bar .menu-item.small {
-	font-size: inherit;
+  font-size: inherit;
 }
 
-#side-bar .menu-item img,
-#interwiki .menu-item img {
-	position: inherit;
-	bottom: inherit;
-	width: inherit;
-	height: inherit;
-	margin-right: inherit;
-	border: inherit;
+#side-bar .menu-item img, #interwiki .menu-item img {
+  position: inherit;
+  bottom: inherit;
+  width: inherit;
+  height: inherit;
+  margin-right: inherit;
+  border: inherit;
 }
 
-#side-bar .menu-item a,
-#interwiki .menu-item a {
-	font-weight: inherit;
+#side-bar .menu-item a, #interwiki .menu-item a {
+  font-weight: inherit;
 }
 
 #side-bar .menu-item.inactive img {
-	opacity: inherit;
+  opacity: inherit;
 }
 
 #side-bar .menu-item.inactive a {
-	color: inherit;
+  color: inherit;
 }
 
 #side-bar .menu-item .sub-text {
-	color: inherit;
-	font-size: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
 #side-bar .collapsible-block-link {
-	margin-left: unset;
-	font-weight: unset;
+  margin-left: unset;
+  font-weight: unset;
 }
 
 #side-bar .collapsible-block-unfolded-link {
-	border-bottom: unset;
+  border-bottom: unset;
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
-	margin-top: inherit;
-	margin-bottom: inherit;
-	margin-left: inherit;
-	color: inherit;
-	font-size: inherit;
+  margin-top: inherit;
+  margin-bottom: inherit;
+  margin-left: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
 #side-bar .collapsible-block-unfolded-link .collapsible-block-link:hover {
-	color: inherit;
-	text-decoration: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #side-bar ul {
-	padding: inherit;
-	list-style-type: inherit;
+  padding: inherit;
+  list-style-type: inherit;
 }
 
 .close-menu {
-	display: inherit;
+  display: inherit;
 }
 
 @media (max-width: 47.9375rem) {
-	#top-bar .open-menu a {
-		position: inherit;
-		z-index: inherit;
-		top: inherit;
-		left: inherit;
-		width: inherit;
-		height: inherit;
-		border: inherit;
-		border-radius: inherit;
-		background-color: inherit;
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-		line-height: inherit;
-		text-align: inherit;
-	}
+  #top-bar .open-menu a {
+    position: inherit;
+    z-index: inherit;
+    top: inherit;
+    left: inherit;
+    width: inherit;
+    height: inherit;
+    border: inherit;
+    -webkit-border-radius: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: inherit;
+  }
 
-	#top-bar .open-menu a:hover {
-		-webkit-box-shadow: inherit;
-		box-shadow: inherit;
-		text-decoration: inherit;
-	}
+  #top-bar .open-menu a:hover {
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
 
-	#side-bar {
-		display: inherit;
-		position: inherit;
-		z-index: inherit;
-		top: inherit;
-		left: inherit;
-		width: inherit;
-		height: inherit;
-		padding: inherit;
-		overflow-y: inherit;
-		-webkit-transition: inherit;
-		-o-transition: inherit;
-		transition: inherit;
-		background-color: inherit;
-	}
+  #side-bar {
+    display: inherit;
+    position: inherit;
+    z-index: inherit;
+    top: inherit;
+    left: inherit;
+    width: inherit;
+    height: inherit;
+    padding: inherit;
+    overflow-y: inherit;
+    -o-transition: inherit;
+    background-color: inherit;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
 
-	#side-bar::after {
-		content: inherit;
-		position: inherit;
-		top: inherit;
-		width: inherit;
-		height: inherit;
-		background-color: inherit;
-	}
+  #side-bar:after {
+    content: inherit;
+    position: inherit;
+    top: inherit;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+  }
 
-	#side-bar:target {
-		left: inherit;
-	}
+  #side-bar:target {
+    left: inherit;
+  }
 
-	#side-bar:target .close-menu {
-		display: inherit;
-		position: inherit;
-		z-index: inherit;
-		top: inherit;
-		left: inherit;
-		width: inherit;
-		height: inherit;
-		background: inherit;
-	}
+  #side-bar:target .close-menu {
+    display: inherit;
+    position: inherit;
+    z-index: inherit;
+    top: inherit;
+    left: inherit;
+    width: inherit;
+    height: inherit;
+    background: inherit;
+  }
 }
 
 #main-content {
-	position: inherit;
-	margin: inherit;
-	padding: inherit;
+  position: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
-#breadcrumbs {
-	margin: inherit;
-}
-
-.pseudocrumbs {
-	margin: inherit;
+#breadcrumbs, .pseudocrumbs {
+  margin: inherit;
 }
 
 .yui-navset .yui-content {
-	background-color: inherit;
+  background-color: inherit;
 }
 
-.yui-navset .yui-nav a,
-.yui-navset .yui-navset-top .yui-nav a {
-	background-color: inherit;
-	background-image: inherit;
+.yui-navset .yui-nav a, .yui-navset .yui-navset-top .yui-nav a {
+  background-color: inherit;
+  background-image: inherit;
 }
 
-.yui-navset .yui-nav .selected a,
-.yui-navset .yui-nav .selected a:focus,
-.yui-navset .yui-nav .selected a:hover {
-	background: inherit;
-	color: inherit;
+.yui-navset .yui-nav a:hover, .yui-navset .yui-nav a:focus {
+  background: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-.yui-navset .yui-nav a:hover,
-.yui-navset .yui-nav a:focus {
-	background: inherit;
-	text-decoration: inherit;
-}
-
-.yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
-	border-color: inherit;
+.yui-navset .yui-nav, .yui-navset .yui-navset-top .yui-nav {
+  border-color: inherit;
 }
 
 .yui-navset li {
-	line-height: inherit;
+  line-height: inherit;
 }
 
 #footer {
-	margin-top: inherit;
-	padding: inherit;
-	clear: inherit;
-	background: inherit;
-	color: inherit;
-	font-size: inherit;
+  margin-top: inherit;
+  padding: inherit;
+  clear: inherit;
+  background: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
 #footer .options {
-	display: inherit;
-	visibility: inherit;
-	width: inherit;
-	float: inherit;
-	font-size: inherit;
-	text-align: inherit;
+  display: inherit;
+  visibility: inherit;
+  width: inherit;
+  float: inherit;
+  font-size: inherit;
+  text-align: inherit;
 }
 
 #footer a {
-	background: inherit;
-	color: inherit;
+  background: inherit;
+  color: inherit;
 }
 
 div.sexy-box {
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background: inherit;
+  margin: inherit;
+  padding: inherit;
+  overflow: inherit;
+  border: inherit;
+  background: inherit;
 }
 
 div.sexy-box div.image-container img {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
 }
 
 #page-content {
-	min-height: inherit;
+  min-height: inherit;
 }
 
 .unmargined > p {
-	margin: inherit;
-	line-height: inherit;
+  margin: inherit;
+  line-height: inherit;
 }
 
 .content-panel {
-	margin: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	box-shadow: inherit;
+  margin: inherit;
+  border: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+  box-shadow: inherit;
 }
 
 .content-panel.standalone {
-	background: inherit;
+  background: inherit;
 }
 
 .content-panel.series {
-	margin-bottom: inherit;
-	padding: inherit;
+  margin-bottom: inherit;
+  padding: inherit;
 }
 
 .content-panel.centered {
-	text-align: inherit;
+  text-align: inherit;
 }
 
-.content-panel.left-column {
-	width: inherit;
-	float: inherit;
-}
-
-.content-panel.right-column {
-	width: inherit;
-	float: inherit;
+.content-panel.left-column, .content-panel.right-column {
+  width: inherit;
+  float: inherit;
 }
 
 .content-panel .panel-heading {
-	padding: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-shadow: inherit;
+  padding: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-shadow: inherit;
 }
 
-.content-panel .panel-heading > p,
-.content-panel .panel-footer > p {
-	margin: inherit;
+.content-panel .panel-heading > p, .content-panel .panel-footer > p {
+  margin: inherit;
 }
 
 .content-panel .panel-body {
-	padding: inherit;
-	background: inherit;
+  padding: inherit;
+  background: inherit;
 }
 
 .content-panel .panel-footer {
-	padding: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-	text-shadow: inherit;
+  padding: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  text-shadow: inherit;
 }
 
 .content-panel .panel-footer a {
-	color: inherit;
+  color: inherit;
 }
 
 .content-panel .content-toc {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	border: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	box-shadow: inherit;
-	white-space: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
+  border: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+  box-shadow: inherit;
+  white-space: inherit;
 }
 
-.alternate:nth-child(even) {
-	background-color: inherit;
+.alternate:nth-child(2n) {
+  background-color: inherit;
 }
 
 .page-rate-widget-box {
-	display: inherit;
-	margin-right: inherit;
-	margin-bottom: inherit;
-	border-radius: inherit;
-	box-shadow: inherit;
+  display: inherit;
+  margin-right: inherit;
+  margin-bottom: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  box-shadow: inherit;
 }
 
 div.page-rate-widget-box .rate-points {
-	border: inherit;
-	border-right: inherit;
-	border-radius: inherit;
-	background-color: inherit;
+  border: inherit;
+  border-right: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
 }
 
-.page-rate-widget-box .rateup,
-.page-rate-widget-box .ratedown {
-	border-top: inherit;
-	border-bottom: inherit;
-	background-color: inherit;
-	font-weight: inherit;
+.page-rate-widget-box .rateup, .page-rate-widget-box .ratedown {
+  border-top: inherit;
+  border-bottom: inherit;
+  background-color: inherit;
+  font-weight: inherit;
 }
 
-.page-rate-widget-box .rateup a,
-.page-rate-widget-box .ratedown a {
-	margin: inherit;
-	padding: inherit;
-	background: inherit;
-	color: inherit;
+.page-rate-widget-box .rateup a, .page-rate-widget-box .ratedown a {
+  margin: inherit;
+  padding: inherit;
+  background: inherit;
+  color: inherit;
 }
 
-.page-rate-widget-box .rateup a:hover,
-.page-rate-widget-box .ratedown a:hover {
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
+.page-rate-widget-box .rateup a:hover, .page-rate-widget-box .ratedown a:hover {
+  background: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .page-rate-widget-box .cancel {
-	border: inherit;
-	border-left: inherit;
-	border-radius: inherit;
-	background-color: inherit;
+  border: inherit;
+  border-left: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
 }
 
 .page-rate-widget-box .cancel a {
-	background: inherit;
-	color: inherit;
-	text-transform: inherit;
+  background: inherit;
+  color: inherit;
+  text-transform: inherit;
 }
 
 .page-rate-widget-box .cancel a:hover {
-	border-radius: inherit;
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #main-content .page-tags {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 #main-content .page-tags span {
-	display: inherit;
-	max-width: inherit;
-	padding: inherit;
+  display: inherit;
+  max-width: inherit;
+  padding: inherit;
 }
 
 #main-content .page-tags a {
-	display: inherit;
-	white-space: inherit;
+  display: inherit;
+  white-space: inherit;
 }
 
 .scp-image-block {
-	width: unset;
-	border: unset;
-	box-shadow: unset;
+  width: unset;
+  border: unset;
+  box-shadow: unset;
 }
 
-.scp-image-block.block-right {
-	margin: unset;
-	float: unset;
-	clear: unset;
-}
-
-.scp-image-block.block-left {
-	margin: unset;
-	float: unset;
-	clear: unset;
+.scp-image-block.block-right, .scp-image-block.block-left {
+  margin: unset;
+  float: unset;
+  clear: unset;
 }
 
 .scp-image-block.block-center {
-	margin-right: unset;
-	margin-left: unset;
+  margin-right: unset;
+  margin-left: unset;
 }
 
 .scp-image-block img {
-	width: unset;
-	border: unset;
+  width: unset;
+  border: unset;
 }
 
 .scp-image-block .scp-image-caption {
-	width: unset;
-	padding: unset;
-	border-top: unset;
-	background-color: unset;
-	font-size: unset;
-	font-weight: unset;
-	text-align: unset;
+  width: unset;
+  padding: unset;
+  border-top: unset;
+  background-color: unset;
+  font-size: unset;
+  font-weight: unset;
+  text-align: unset;
 }
 
 .scp-image-block > p {
-	margin: unset;
+  margin: unset;
 }
 
 .scp-image-block .scp-image-caption > p {
-	margin: unset;
-	padding: unset;
+  margin: unset;
+  padding: unset;
 }
 
 #page-content a.collapsible-block-link {
-	overflow-wrap: inherit;
+  overflow-wrap: inherit;
 }
 
 .forum-thread-box .description-block {
-	padding: inherit;
-	border-radius: inherit;
-	box-shadow: inherit;
+  padding: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  box-shadow: inherit;
 }
 
 .thread-container .post .head {
-	padding: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	box-shadow: inherit;
+  padding: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  box-shadow: inherit;
 }
 
 .post-container .post-container {
-	padding-left: inherit;
-	border-left: inherit;
+  padding-left: inherit;
+  border-left: inherit;
 }
 
-.signature {
-	display: inherit;
+.signature, #avatar-hover-container {
+  display: inherit;
 }
 
-#avatar-hover-container {
-	display: inherit;
+.ruby, ruby {
+  display: inherit;
+  height: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  white-space: inherit;
 }
 
-.ruby,
-ruby {
-	display: inherit;
-	height: inherit;
-	line-height: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
-	white-space: inherit;
-}
-
-.rt,
-rt {
-	display: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	text-align: inherit;
-	white-space: inherit;
+.rt, rt {
+  display: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  white-space: inherit;
 }
 
 .keycap {
-	padding: inherit;
-	border: inherit;
-	border-bottom-width: inherit;
-	-moz-border-radius: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
-	border-color: inherit;
-	background-color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	white-space: inherit;
+  padding: inherit;
+  border: inherit;
+  border-bottom-width: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  border-color: inherit;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: inherit;
 }
 
 .tags {
-	display: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	-webkit-border-top-right-radius: inherit;
-	border-top-right-radius: inherit;
-	-webkit-border-bottom-right-radius: inherit;
-	border-bottom-right-radius: inherit;
-	background: inherit;
-	color: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
-	-moz-border-radius-bottomright: inherit;
-	-moz-border-radius-topright: inherit;
+  display: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
+  -webkit-border-top-right-radius: inherit;
+  -webkit-border-top-right-radius: inherit;
+  border-top-right-radius: inherit;
+  -webkit-border-bottom-right-radius: inherit;
+  -webkit-border-bottom-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  background: inherit;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  -moz-border-radius-bottomright: inherit;
+  -moz-border-radius-topright: inherit;
 }
 
-.tags::before {
-	content: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	padding: inherit;
-	float: inherit;
-	border-width: inherit;
-	border-style: inherit;
-	border-color: inherit;
+.tags:before {
+  content: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  padding: inherit;
+  float: inherit;
+  border-width: inherit;
+  border-style: inherit;
+  border-color: inherit;
 }
 
-.tags::after {
-	content: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	float: inherit;
-	-moz-border-radius: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
-	background: inherit;
-	-moz-box-shadow: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
+.tags:after {
+  content: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  float: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background: inherit;
+  -moz-box-shadow: inherit;
+  -webkit-box-shadow: inherit;
+  box-shadow: inherit;
 }
 
 .bblock {
-	transition: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  -webkit-transition: inherit;
+  transition: inherit;
 }
 
 .bblock:hover {
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .dblock {
-	transition: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  -webkit-transition: inherit;
+  transition: inherit;
 }
 
 .dblock:hover {
-	background-color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 div.blockquote {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 div.curved {
-	margin: inherit;
-	border-radius: inherit;
+  margin: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
 }
 
 @media (max-width: 29.9375rem) {
-	blockquote,
-	div.blockquote,
-	div.curved {
-		margin: inherit;
-	}
+  blockquote, div.blockquote, div.curved {
+    margin: inherit;
+  }
 }
 
 @media (min-width: 30rem) and (max-width: 36.25rem) {
-	blockquote,
-	div.blockquote,
-	div.curved {
-		margin: inherit;
-	}
+  blockquote, div.blockquote, div.curved {
+    margin: inherit;
+  }
 }
 
 .changes-list-item td.title {
-	min-width: inherit;
+  min-width: inherit;
 }
 
 .changes-list-item .flags {
-	width: inherit;
-	text-align: inherit;
+  width: inherit;
+  text-align: inherit;
 }
 
 .changes-list-item .mod-date {
-	text-align: inherit;
+  text-align: inherit;
 }
 
 .changes-list-item .mod-by {
-	width: inherit;
+  width: inherit;
 }
 
 @media (max-width: 27.1875rem) {
-	.changes-list-item .revision-no {
-		display: inherit;
-	}
+  .changes-list-item .revision-no {
+    display: inherit;
+  }
 }
 
 .emph {
-	-webkit-text-emphasis-style: inherit;
-	text-emphasis-style: inherit;
+  -webkit-text-emphasis-style: inherit;
+  text-emphasis-style: inherit;
 }
 
 ::-webkit-scrollbar {
-	width: inherit;
-	height: inherit;
-	border: inherit;
+  width: inherit;
+  height: inherit;
+  border: inherit;
 }
 
 ::-webkit-scrollbar-track {
-	background: inherit;
+  background: inherit;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: inherit;
+  background: inherit;
 }
 
 .page-source {
-	word-break: inherit;
+  word-break: inherit;
 }
 
-img,
-embed,
-video,
-object,
-iframe,
-table {
-	max-width: inherit;
+img, embed, video, object, iframe, table {
+  max-width: inherit;
 }
 
 :where(#page-content) div {
-	max-width: unset;
+  max-width: unset;
 }
 
 #edit-page-comments {
-	width: inherit;
+  width: inherit;
 }
 
 @media (max-width: 47.9375rem) {
-	#main-content {
-		max-width: inherit;
-		margin: inherit;
-		padding: inherit;
-		-webkit-transition: inherit;
-		-o-transition: inherit;
-		transition: inherit;
-	}
+  #main-content {
+    max-width: inherit;
+    margin: inherit;
+    padding: inherit;
+    -o-transition: inherit;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
 
-	span,
-	a {
-		overflow-wrap: inherit;
-	}
+  span, a {
+    overflow-wrap: inherit;
+  }
 
-	.page-history tbody tr td:last-child {
-		width: inherit;
-	}
+  .page-history tbody tr td:last-child, td.name {
+    width: inherit;
+  }
 
-	td.name {
-		width: inherit;
-	}
+  .yui-navset {
+    z-index: inherit;
+  }
 
-	.yui-navset {
-		z-index: inherit;
-	}
+  #navi-bar, #navi-bar-shadow {
+    display: inherit;
+  }
 
-	#navi-bar,
-	#navi-bar-shadow {
-		display: inherit;
-	}
+  .page-options-bottom a {
+    padding: inherit;
+  }
 
-	.page-options-bottom a {
-		padding: inherit;
-	}
+  .license-area {
+    font-size: inherit;
+  }
 
-	.license-area {
-		font-size: inherit;
-	}
+  .owindow {
+    min-width: inherit;
+    max-width: inherit;
+  }
 
-	.owindow {
-		min-width: inherit;
-		max-width: inherit;
-	}
+  .modal-body .table, .modal-body .table ~ div, .owindow .button-bar {
+    float: inherit;
+  }
 
-	.modal-body .table,
-	.modal-body .table ~ div {
-		float: inherit;
-	}
+  .owindow div a.btn-primary {
+    width: inherit;
+    float: inherit;
+  }
 
-	.owindow .button-bar {
-		float: inherit;
-	}
+  .owindow div .btn-primary ~ div {
+    width: inherit;
+  }
 
-	.owindow div a.btn-primary {
-		width: inherit;
-		float: inherit;
-	}
+  #header {
+    max-width: inherit;
+    background-position: inherit;
+    background-size: inherit;
+  }
 
-	.owindow div .btn-primary ~ div {
-		width: inherit;
-	}
+  #header h1, #header h2 {
+    margin-left: inherit;
+  }
 
-	#header {
-		max-width: inherit;
-		background-position: inherit;
-		background-size: inherit;
-	}
+  #header h1 a {
+    font-size: inherit;
+  }
 
-	#header h1,
-	#header h2 {
-		margin-left: inherit;
-	}
+  #search-top-box-input {
+    width: inherit;
+  }
 
-	#header h1 a {
-		font-size: inherit;
-	}
+  .top-bar, .mobile-top-bar {
+    display: inherit;
+  }
 
-	#search-top-box-input {
-		width: inherit;
-	}
-
-	.top-bar {
-		display: inherit;
-	}
-
-	.mobile-top-bar {
-		display: inherit;
-	}
-
-	.mobile-top-bar ul li:last-of-type ul {
-		right: inherit;
-	}
+  .mobile-top-bar ul li:last-of-type ul {
+    right: inherit;
+  }
 }
 
 @media (max-width: 29.9375rem) {
-	#search-top-box-input {
-		display: inherit;
-	}
+  #search-top-box-input {
+    display: inherit;
+  }
 
-	#page-content {
-		font-size: inherit;
-	}
+  #page-content {
+    font-size: inherit;
+  }
 
-	#recent-posts-category {
-		width: inherit;
-	}
+  #recent-posts-category {
+    width: inherit;
+  }
 
-	.page-options-bottom a {
-		padding: inherit;
-	}
+  .page-options-bottom a {
+    padding: inherit;
+  }
 
-	.license-area {
-		font-size: inherit;
-	}
+  .license-area {
+    font-size: inherit;
+  }
 
-	table.form td,
-	table.form th {
-		padding: inherit;
-		float: inherit;
-	}
+  table.form td, table.form th {
+    padding: inherit;
+    float: inherit;
+  }
 
-	#edit-page-title {
-		max-width: inherit;
-	}
+  #edit-page-title {
+    max-width: inherit;
+  }
 
-	.content-panel.left-column,
-	.content-panel.right-column {
-		width: inherit;
-		float: inherit;
-	}
+  .content-panel.left-column, .content-panel.right-column {
+    width: inherit;
+    float: inherit;
+  }
 
-	#page-content div,
-	#page-content div table {
-		clear: inherit;
-	}
+  #page-content div, #page-content div table {
+    clear: inherit;
+  }
 
-	#page-content div.title {
-		word-break: inherit;
-	}
+  #page-content div.title {
+    word-break: inherit;
+  }
 }
 
 div.scpnet-interwiki-wrapper {
-	margin: inherit;
+  margin: inherit;
 }
 
 iframe.scpnet-interwiki-frame {
-	height: inherit;
-	border: inherit;
+  height: inherit;
+  border: inherit;
 }
-
-/* Wikidot Default Styles Normalizer
-	 ========================================================================== */
 
 body {
-	margin: inherit;
-	padding: inherit;
-	font-family: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 img {
-	border-width: inherit;
+  border-width: inherit;
 }
 
 blockquote {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 table {
-	empty-cells: inherit;
+  empty-cells: inherit;
 }
 
 td {
-	text-align: inherit;
+  text-align: inherit;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 a:hover {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 h1 a {
-	text-decoration: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 a.newpage {
-	color: inherit;
+  color: inherit;
 }
 
 #container-wrap-wrap {
-	position: inherit;
+  position: inherit;
 }
 
 #container {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 #header {
-	position: inherit;
-	z-index: inherit;
-	height: inherit;
+  position: inherit;
+  z-index: inherit;
+  height: inherit;
 }
 
-#header h1 {
-	margin: inherit;
-	padding: inherit;
-}
-
-#header h2 {
-	margin: inherit;
-	padding: inherit;
+#header h1, #header h2, #content-wrap {
+  margin: inherit;
+  padding: inherit;
 }
 
 #content-wrap {
-	margin: inherit;
-	padding: inherit;
-}
-
-#content-wrap {
-	_height: inherit;
-	min-height: inherit;
+  _height: inherit;
+  min-height: inherit;
 }
 
 #side-bar {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	clear: inherit;
+  width: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
+  clear: inherit;
 }
 
 #side-bar ul {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 #page-title {
-	margin: inherit;
-	padding-top: inherit;
-	border-bottom: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding-top: inherit;
+  border-bottom: inherit;
+  font-size: inherit;
 }
 
 #breadcrumbs {
-	margin-top: inherit;
+  margin-top: inherit;
 }
 
 #main-content {
-	margin-left: inherit;
-	padding: inherit;
+  margin-left: inherit;
+  padding: inherit;
 }
 
 #page-info-break {
-	height: inherit;
-	clear: inherit;
-	font-size: inherit;
+  height: inherit;
+  clear: inherit;
+  font-size: inherit;
 }
 
 #page-info {
-	margin: inherit;
-	clear: inherit;
-	font-size: inherit;
-	text-align: inherit;
+  margin: inherit;
+  clear: inherit;
+  font-size: inherit;
+  text-align: inherit;
 }
 
 .page-tags {
-	margin: inherit;
-	padding: inherit;
-	clear: inherit;
-	text-align: inherit;
+  margin: inherit;
+  padding: inherit;
+  clear: inherit;
+  text-align: inherit;
 }
 
 .page-tags a {
-	margin: inherit;
+  margin: inherit;
 }
 
 .page-tags span {
-	padding-top: inherit;
-	border-top: inherit;
-	font-size: inherit;
+  padding-top: inherit;
+  border-top: inherit;
+  font-size: inherit;
 }
 
 #footer {
-	margin-top: inherit;
-	padding: inherit;
-	clear: inherit;
-	overflow: inherit;
+  margin-top: inherit;
+  padding: inherit;
+  clear: inherit;
+  overflow: inherit;
 }
 
 #footer .options {
-	padding: inherit;
-	float: inherit;
-	font-size: inherit;
+  padding: inherit;
+  float: inherit;
+  font-size: inherit;
 }
 
 #footer p {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 #license-area {
-	padding: inherit;
-	color: inherit;
-	text-align: inherit;
+  padding: inherit;
+  color: inherit;
+  text-align: inherit;
 }
 
 #search-top-box {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	right: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  right: inherit;
 }
 
 #search-top-box input.empty {
-	color: inherit;
+  color: inherit;
 }
 
 #login-status {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	right: inherit;
-	overflow: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  right: inherit;
+  overflow: inherit;
 }
 
 #login-status > a > strong {
-	-webkit-animation-name: inherit;
-	animation-name: inherit;
-	-webkit-animation-duration: inherit;
-	animation-duration: inherit;
-	-webkit-animation-timing-function: inherit;
-	animation-timing-function: inherit;
-	-webkit-animation-iteration-count: inherit;
-	animation-iteration-count: inherit;
-	text-decoration: inherit;
+  -webkit-animation-name: inherit;
+  -webkit-animation-name: inherit;
+  animation-name: inherit;
+  -webkit-animation-duration: inherit;
+  -webkit-animation-duration: inherit;
+  animation-duration: inherit;
+  -webkit-animation-timing-function: inherit;
+  -webkit-animation-timing-function: inherit;
+  animation-timing-function: inherit;
+  -webkit-animation-iteration-count: inherit;
+  -webkit-animation-iteration-count: inherit;
+  animation-iteration-count: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #account-options {
-	display: inherit;
-	position: inherit;
-	z-index: inherit;
-	right: inherit;
-	-moz-box-sizing: inherit;
-	box-sizing: inherit;
-	width: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
+  display: inherit;
+  position: inherit;
+  z-index: inherit;
+  right: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  width: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 #account-options ul {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
+  list-style: inherit;
 }
 
 #account-options li {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 #account-options li a {
-	display: inherit;
-	z-index: inherit;
-	-moz-box-sizing: inherit;
-	box-sizing: inherit;
-	padding: inherit;
+  display: inherit;
+  z-index: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  padding: inherit;
 }
 
 #account-options li a:hover {
-	color: inherit;
+  color: inherit;
 }
 
 #account-topbutton {
-	margin-left: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-decoration: inherit;
+  margin-left: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #top-bar {
-	position: inherit;
-	z-index: inherit;
-	right: inherit;
-	bottom: inherit;
+  position: inherit;
+  z-index: inherit;
+  right: inherit;
+  bottom: inherit;
 }
 
 #top-bar ul {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
+  list-style: inherit;
 }
 
 #top-bar li {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	list-style: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
+  list-style: inherit;
 }
 
 #top-bar li ul {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
+  width: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
 }
 
 #top-bar li ul li {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
 }
 
 #top-bar li a {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	text-align: inherit;
-	text-decoration: inherit;
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
+  text-align: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #top-bar a:hover {
-	background-color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #top-bar li ul li a {
-	width: inherit;
-	border: inherit;
-	background-color: inherit;
-	text-align: inherit;
+  width: inherit;
+  border: inherit;
+  background-color: inherit;
+  text-align: inherit;
 }
 
 #top-bar li ul {
-	visibility: inherit;
-	position: inherit;
+  visibility: inherit;
+  position: inherit;
 }
 
-#top-bar li:hover ul,
-#top-bar li.sfhover ul {
-	visibility: inherit;
+#top-bar li:hover ul, #top-bar li.sfhover ul {
+  visibility: inherit;
 }
 
 .edit-section-button {
-	margin-top: inherit;
-	margin-right: inherit;
-	padding: inherit;
-	float: inherit;
-	background-color: inherit;
+  margin-top: inherit;
+  margin-right: inherit;
+  padding: inherit;
+  float: inherit;
+  background-color: inherit;
 }
 
 #edit-section-content {
-	padding: inherit;
-	border: inherit;
+  padding: inherit;
+  border: inherit;
 }
 
 .page-options-bottom {
-	height: inherit;
-	margin: inherit;
-	line-height: inherit;
-	text-align: inherit;
+  height: inherit;
+  margin: inherit;
+  line-height: inherit;
+  text-align: inherit;
 }
 
 .page-options-bottom a {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-size: inherit;
 }
 
 .page-watch-options {
-	font-size: inherit;
-	text-align: inherit;
+  font-size: inherit;
+  text-align: inherit;
 }
 
-.page-watch-options a {
-	text-decoration: inherit;
-}
-
-.page-watch-options a:hover {
-	text-decoration: inherit;
+.page-watch-options a, .page-watch-options a:hover {
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .change-textarea-size {
-	padding-right: inherit;
-	padding-left: inherit;
-	float: inherit;
-	text-align: inherit;
+  padding-right: inherit;
+  padding-left: inherit;
+  float: inherit;
+  text-align: inherit;
 }
 
 .change-textarea-size a {
-	padding: inherit;
-	border: inherit;
-	border-width: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
+  padding: inherit;
+  border: inherit;
+  border-width: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .edit-help-34 {
-	margin-top: inherit;
+  margin-top: inherit;
 }
 
 .preview-message {
-	position: inherit;
-	z-index: inherit;
-	right: inherit;
-	max-width: inherit;
-	padding: inherit;
-	border: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
+  position: inherit;
+  z-index: inherit;
+  right: inherit;
+  max-width: inherit;
+  padding: inherit;
+  border: inherit;
+  opacity: inherit;
+  background-color: inherit;
+  filter: inherit;
 }
 
 #page-version-info {
-	position: inherit;
-	right: inherit;
-	max-width: inherit;
-	padding: inherit;
-	border: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
+  position: inherit;
+  right: inherit;
+  max-width: inherit;
+  padding: inherit;
+  border: inherit;
+  opacity: inherit;
+  background-color: inherit;
+  filter: inherit;
 }
 
 #lock-info {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 #action-area {
-	width: inherit;
-	padding: inherit;
+  width: inherit;
+  padding: inherit;
 }
 
 a.action-area-close {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
+  font-size: inherit;
 }
 
 a.action-area-close:hover {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 .odate {
-	display: inherit;
+  display: inherit;
 }
 
 .wiki-email {
-	visibility: inherit;
+  visibility: inherit;
 }
 
 table.wiki-content-table {
-	margin: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
+  margin: inherit;
+  border-spacing: inherit;
+  border-collapse: inherit;
 }
 
 table.wiki-content-table td {
-	padding: inherit;
-	border: inherit;
+  padding: inherit;
+  border: inherit;
 }
 
 table.wiki-content-table th {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 #toc {
-	display: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 #toc .title {
-	margin: inherit;
-	padding: inherit;
-	font-weight: inherit;
-	text-align: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-weight: inherit;
+  text-align: inherit;
 }
 
 #toc #toc-action-bar {
-	padding: inherit;
+  padding: inherit;
 }
 
-#toc-list {
-	margin: inherit;
-}
-
-#toc.floatright {
-	margin: inherit;
-}
-
-#toc.floatleft {
-	margin: inherit;
+#toc-list, #toc.floatright, #toc.floatleft {
+  margin: inherit;
 }
 
 tt {
-	font-family: inherit;
-	font-size: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 pre {
-	font-family: inherit;
+  font-family: inherit;
 }
 
 .code {
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	border: inherit;
-	background-color: inherit;
-	font-family: inherit;
+  margin: inherit;
+  padding: inherit;
+  overflow: inherit;
+  border: inherit;
+  background-color: inherit;
+  font-family: inherit;
 }
 
 code {
-	font-family: inherit;
+  font-family: inherit;
 }
 
 .math-equation {
-	display: inherit;
-	height: inherit;
-	padding: inherit;
-	text-align: inherit;
+  display: inherit;
+  height: inherit;
+  padding: inherit;
+  text-align: inherit;
 }
 
 .equation-number {
-	margin-top: inherit;
-	float: inherit;
-	font-size: inherit;
+  margin-top: inherit;
+  float: inherit;
+  font-size: inherit;
 }
 
-.math-inline {
-	display: inherit;
-}
-
-#MathJax_Message {
-	display: inherit;
+.math-inline, #MathJax_Message {
+  display: inherit;
 }
 
 .math-inline span.merror {
-	color: inherit;
+  color: inherit;
 }
 
-a.inline-math-error {
-	padding: inherit;
-	font-weight: inherit;
-}
-
-a.math-equation-error {
-	padding: inherit;
-	font-weight: inherit;
+a.inline-math-error, a.math-equation-error {
+  padding: inherit;
+  font-weight: inherit;
 }
 
 div.wiki-note {
-	width: inherit;
-	margin: inherit;
-	border: inherit;
-	text-align: inherit;
+  width: inherit;
+  margin: inherit;
+  border: inherit;
+  text-align: inherit;
 }
 
-.footnote .f-heading,
-.equation .e-heading,
-.reference .r-heading {
-	font-weight: inherit;
+.footnote .f-heading, .equation .e-heading, .reference .r-heading {
+  font-weight: inherit;
 }
 
-.footnote .f-content,
-.reference .r-content {
-	margin: unset;
+.footnote .f-content, .reference .r-content {
+  margin: unset;
 }
 
-.footnote .f-footer,
-.equation .e-footer,
-.reference .r-footer {
-	font-size: unset;
+.footnote .f-footer, .equation .e-footer, .reference .r-footer {
+  font-size: unset;
 }
 
 .footnotes-footer {
-	height: unset;
-	margin: unset;
-	padding: unset;
+  height: unset;
+  margin: unset;
+  padding: unset;
 }
 
 .footnotes-footer .title {
-	margin: unset;
-	font-size: unset;
-	font-weight: unset;
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
 }
 
 a.footnoteref {
-	display: unset;
+  display: unset;
 }
 
 .bibitems {
-	margin: unset;
-	padding: unset;
+  margin: unset;
+  padding: unset;
 }
 
 .bibitems .title {
-	margin: unset;
-	font-size: unset;
-	font-weight: unset;
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
 }
 
 .bibitem {
-	height: unset;
+  height: unset;
 }
 
 a.bibcite {
-	display: unset;
+  display: unset;
 }
 
 .image-container {
-	padding: unset;
+  padding: unset;
 }
 
 .image-container.alignright {
-	padding-right: unset;
+  padding-right: unset;
 }
 
 .image-container.alignleft {
-	padding-left: unset;
+  padding-left: unset;
 }
 
 .image-container.floatright {
-	padding-right: unset;
+  padding-right: unset;
 }
 
 .image-container.floatleft {
-	padding-left: unset;
+  padding-left: unset;
 }
 
 .gallery-box {
-	width: inherit;
-	overflow: inherit;
+  width: inherit;
+  overflow: inherit;
 }
 
 .gallery-item {
-	margin: inherit;
-	float: inherit;
-	border: inherit;
+  margin: inherit;
+  float: inherit;
+  border: inherit;
 }
 
 .gallery-item table {
-	width: inherit;
-	height: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 .gallery-item td {
-	text-align: inherit;
+  text-align: inherit;
 }
 
-.gallery-item.square {
-	width: inherit;
-	height: inherit;
+.gallery-item.square, .gallery-item.thumbnail, .gallery-item.small, .gallery-item.medium {
+  width: inherit;
+  height: inherit;
 }
 
-.gallery-item.thumbnail {
-	width: inherit;
-	height: inherit;
+.gallery-box .gallery-item table, .gallery-box .gallery-item .td {
+  margin: inherit;
+  padding: inherit;
+  border-spacing: inherit;
+  border-collapse: inherit;
 }
 
-.gallery-item.small {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-item.medium {
-	width: inherit;
-	height: inherit;
-}
-
-.gallery-box .gallery-item table,
-.gallery-box .gallery-item .td {
-	margin: inherit;
-	padding: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
-}
-
-.new-page-box {
-	margin: inherit;
-	text-align: inherit;
-}
-
-#revision-list .pager {
-	margin: inherit;
-	text-align: inherit;
+.new-page-box, #revision-list .pager {
+  margin: inherit;
+  text-align: inherit;
 }
 
 table.page-history td.optionstd a {
-	padding: inherit;
-	border: inherit;
-	text-decoration: inherit;
+  padding: inherit;
+  border: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .diff-table {
-	width: inherit;
+  width: inherit;
 }
 
-.diff-table td.from,
-.diff-table td.to {
-	width: inherit;
-	padding: inherit;
-	border: inherit;
-	vertical-align: inherit;
+.diff-table td.from, .diff-table td.to {
+  width: inherit;
+  padding: inherit;
+  border: inherit;
+  vertical-align: inherit;
 }
 
 .diff-table td.action {
-	width: inherit;
-	padding: inherit;
-	font-weight: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
+  width: inherit;
+  padding: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
 }
 
-.inline-diff ins {
-	background-color: unset;
-	white-space: unset;
-}
-
-.inline-diff del {
-	background-color: unset;
-	white-space: unset;
+.inline-diff ins, .inline-diff del {
+  background-color: unset;
+  white-space: unset;
 }
 
 .Differences {
-	width: inherit;
-	empty-cells: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
+  width: inherit;
+  empty-cells: inherit;
+  border-spacing: inherit;
+  border-collapse: inherit;
 }
 
 .Differences thead th {
-	padding: inherit;
-	border-bottom: inherit;
-	background: inherit;
-	color: inherit;
-	text-align: inherit;
+  padding: inherit;
+  border-bottom: inherit;
+  background: inherit;
+  color: inherit;
+  text-align: inherit;
 }
 
 .Differences tbody th {
-	width: inherit;
-	padding: inherit;
-	border-right: inherit;
-	background: inherit;
-	font-size: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
+  width: inherit;
+  padding: inherit;
+  border-right: inherit;
+  background: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
 }
 
 .Differences td {
-	padding: inherit;
-	font-family: inherit;
-	font-size: inherit;
+  padding: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.DifferencesSideBySide .ChangeInsert td.Left {
-	background: inherit;
+.DifferencesSideBySide .ChangeInsert td.Left, .DifferencesSideBySide .ChangeInsert td.Right, .DifferencesSideBySide .ChangeDelete td.Left, .DifferencesSideBySide .ChangeDelete td.Right, .DifferencesSideBySide .ChangeReplace .Left, .DifferencesSideBySide .ChangeReplace .Right {
+  background: inherit;
 }
 
-.DifferencesSideBySide .ChangeInsert td.Right {
-	background: inherit;
+.Differences ins, .Differences del {
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-.DifferencesSideBySide .ChangeDelete td.Left {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeDelete td.Right {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeReplace .Left {
-	background: inherit;
-}
-
-.DifferencesSideBySide .ChangeReplace .Right {
-	background: inherit;
-}
-
-.Differences ins,
-.Differences del {
-	text-decoration: inherit;
-}
-
-.DifferencesSideBySide .ChangeReplace ins,
-.DifferencesSideBySide .ChangeReplace del {
-	background: inherit;
-}
-
-.Differences .Skipped {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace .Left,
-.DifferencesInline .ChangeDelete .Left {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace .Right,
-.DifferencesInline .ChangeInsert .Right {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace ins {
-	background: inherit;
-}
-
-.DifferencesInline .ChangeReplace del {
-	background: inherit;
+.DifferencesSideBySide .ChangeReplace ins, .DifferencesSideBySide .ChangeReplace del, .Differences .Skipped, .DifferencesInline .ChangeReplace .Left, .DifferencesInline .ChangeDelete .Left, .DifferencesInline .ChangeReplace .Right, .DifferencesInline .ChangeInsert .Right, .DifferencesInline .ChangeReplace ins, .DifferencesInline .ChangeReplace del {
+  background: inherit;
 }
 
 pre {
-	width: inherit;
-	overflow: inherit;
+  width: inherit;
+  overflow: inherit;
 }
 
 table.page-compare {
-	margin: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
+  margin: inherit;
+  border-spacing: inherit;
+  border-collapse: inherit;
 }
 
-table.page-compare td,
-table.page-compare th {
-	padding: inherit;
-	border: inherit;
-}
-
-.page-source {
-	padding: inherit;
-	border: inherit;
+table.page-compare td, table.page-compare th, .page-source {
+  padding: inherit;
+  border: inherit;
 }
 
 .page-source pre {
-	white-space: inherit;
+  white-space: inherit;
 }
 
 .wiki-parse-error {
-	padding: inherit;
-	color: inherit;
+  padding: inherit;
+  color: inherit;
 }
 
 .spantip {
-	text-decoration: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .pager {
-	margin: inherit;
-	text-align: inherit;
+  margin: inherit;
+  text-align: inherit;
 }
 
 .pager-no {
-	padding: inherit;
+  padding: inherit;
 }
 
 .pager .dots {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 .pager a {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	text-decoration: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .pager .current {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-weight: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-weight: inherit;
 }
 
 table.page-files {
-	margin: inherit;
-	border-spacing: inherit;
-	border-collapse: inherit;
+  margin: inherit;
+  border-spacing: inherit;
+  border-collapse: inherit;
 }
 
 table.page-files td {
-	padding: inherit;
+  padding: inherit;
 }
 
 table.page-files .highlight {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 table.page-files .options {
-	text-align: inherit;
+  text-align: inherit;
 }
 
 .printuser a {
-	margin-right: inherit;
+  margin-right: inherit;
 }
 
 .printuser img.small {
-	z-index: inherit;
-	padding: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-	vertical-align: inherit;
+  z-index: inherit;
+  padding: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  vertical-align: inherit;
 }
 
 .printuser.anonymous img.small {
-	padding: inherit;
+  padding: inherit;
 }
 
-a.avatar-hover,
-a.avatar-hover:hover {
-	padding: inherit;
-	background: inherit;
-	background-image: inherit;
-	color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-decoration: inherit;
+a.avatar-hover, a.avatar-hover:hover {
+  padding: inherit;
+  background: inherit;
+  background-image: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 a.avatar-hover img {
-	vertical-align: inherit;
+  vertical-align: inherit;
 }
 
 a.avatar-hover div {
-	position: inherit;
+  position: inherit;
 }
 
 a.avatar-hover div div {
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
+  position: inherit;
+  top: inherit;
+  right: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  opacity: inherit;
+  background-color: inherit;
+  filter: inherit;
 }
 
 a.avatar-hover div span {
-	z-index: inherit;
-	margin: inherit;
-	padding: inherit;
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
+  z-index: inherit;
+  margin: inherit;
+  padding: inherit;
+  opacity: inherit;
+  background-color: inherit;
+  filter: inherit;
 }
 
 .printuser a:hover img.large {
-	display: inherit;
+  display: inherit;
 }
 
 .printuser .ip {
-	font-size: inherit;
+  font-size: inherit;
 }
 
 .wait-block {
-	padding-left: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
+  padding-left: inherit;
+  background-image: inherit;
+  background-repeat: inherit;
 }
 
 .error-inline {
-	border: inherit;
-	color: inherit;
+  border: inherit;
+  color: inherit;
 }
 
 .error-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  color: inherit;
 }
 
 .error-block .title {
-	margin-bottom: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  margin-bottom: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .warning-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  color: inherit;
 }
 
 .warning-block .title {
-	margin-bottom: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  margin-bottom: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .help-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  color: inherit;
 }
 
-.wait-icon {
-	height: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
+.wait-icon, .wait-progress {
+  height: inherit;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
 }
 
-.wait-progress {
-	height: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
+table.form, table.form.alignleft {
+  margin: inherit;
 }
 
-table.form {
-	margin: inherit;
-}
-
-table.form.alignleft {
-	margin: inherit;
-}
-
-table.form td,
-table.form th {
-	padding: inherit;
-	vertical-align: inherit;
+table.form td, table.form th {
+  padding: inherit;
+  vertical-align: inherit;
 }
 
 table.form > tr > td:first-child {
-	text-align: inherit;
+  text-align: inherit;
 }
 
 table.form.grid {
-	border-spacing: inherit;
-	border-collapse: inherit;
+  border-spacing: inherit;
+  border-collapse: inherit;
 }
 
-table.form.grid td,
-table.form.grid th {
-	padding: inherit;
-	border: inherit;
+table.form.grid td, table.form.grid th {
+  padding: inherit;
+  border: inherit;
 }
 
-table.form td div.sub,
-form div.sub {
-	color: inherit;
-	font-size: inherit;
+table.form td div.sub, form div.sub {
+  color: inherit;
+  font-size: inherit;
 }
 
 table.form tr.invalid-value-row td {
-	background-color: inherit;
+  background-color: inherit;
 }
 
-table.form div.field-error-message {
-	display: inherit;
-	color: inherit;
-}
-
-table.form tr.invalid-value-row div.field-error-message {
-	display: inherit;
-	color: inherit;
+table.form div.field-error-message, table.form tr.invalid-value-row div.field-error-message {
+  display: inherit;
+  color: inherit;
 }
 
 table.form tr.invalid-value-row td div.field-error-message {
-	display: inherit;
+  display: inherit;
 }
 
 hr {
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  color: inherit;
 }
 
 * html hr {
-	margin: inherit;
+  margin: inherit;
 }
 
 input {
-	font-size: inherit;
+  font-size: inherit;
 }
 
 div.buttons {
-	padding: inherit;
-	text-align: inherit;
+  padding: inherit;
+  text-align: inherit;
 }
 
 div.buttons.alignleft {
-	text-align: inherit;
+  text-align: inherit;
 }
 
-div.buttons input,
-input.button,
-button,
-a.button {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
+div.buttons input, input.button, button, a.button {
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-div.buttons input:hover,
-input.button:hover,
-button:hover,
-a.button:hover {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.button.disabled,
-div.buttons input.disabled {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.button.disabled:hover,
-div.buttons input.disabled:hover {
-	background-color: inherit;
-	color: inherit;
-}
-
-input.checkbox {
-	background-color: inherit;
-	color: inherit;
+div.buttons input:hover, input.button:hover, button:hover, a.button:hover, input.button.disabled, div.buttons input.disabled, input.button.disabled:hover, div.buttons input.disabled:hover, input.checkbox {
+  background-color: inherit;
+  color: inherit;
 }
 
 input.text {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  color: inherit;
 }
 
 input.text.invalid {
-	border-color: inherit;
+  border-color: inherit;
 }
 
 textarea {
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 div.note {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  font-size: inherit;
 }
 
 div.note-block {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
 }
 
 div.site-list-item {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 div.site-list-item:hover {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 div.site-list-item .name {
-	font-size: inherit;
-	font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 div.site-list-item .description {
-	padding-left: inherit;
-	font-style: inherit;
+  padding-left: inherit;
+  font-style: inherit;
 }
 
 div.site-list-item .options {
-	margin-right: inherit;
-	float: inherit;
+  margin-right: inherit;
+  float: inherit;
 }
 
 .search-highlight {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 .self-ads {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
+  width: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
 }
 
 .self-ads .title {
-	padding-bottom: inherit;
-	font-size: inherit;
+  padding-bottom: inherit;
+  font-size: inherit;
 }
 
 .self-ads .image {
-	padding-left: inherit;
-	float: inherit;
+  padding-left: inherit;
+  float: inherit;
 }
 
 div.wd-adunit {
-	margin: inherit;
-	text-align: inherit;
+  margin: inherit;
+  text-align: inherit;
 }
 
 div.wd-adunit-side_slide {
-	position: inherit;
-	z-index: inherit;
-	right: inherit;
-	width: inherit;
+  position: inherit;
+  z-index: inherit;
+  right: inherit;
+  width: inherit;
 }
 
 div.wd-adunit-mobile_anchor {
-	position: inherit;
-	z-index: inherit;
-	bottom: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
-	transform-origin: inherit;
-	background-color: inherit;
+  position: inherit;
+  z-index: inherit;
+  bottom: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
+  transform-origin: inherit;
+  background-color: inherit;
 }
 
 div.bsa_linkbox {
-	margin: inherit;
+  margin: inherit;
 }
 
 iframe[id^="revmob-ad-"] {
-	position: inherit;
-	min-width: inherit;
-	max-width: inherit;
+  position: inherit;
+  min-width: inherit;
+  max-width: inherit;
 }
 
 #house-ad-1 {
-	padding: inherit;
-	border: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	background: inherit;
-	color: inherit;
-	font-family: inherit;
-	text-align: inherit;
+  padding: inherit;
+  border: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background: inherit;
+  color: inherit;
+  text-align: inherit;
+  font-family: inherit;
 }
 
 #house-ad-1 .close {
-	display: inherit;
-	padding: inherit;
-	float: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	background: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
+  display: inherit;
+  padding: inherit;
+  float: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background: inherit;
+  color: inherit;
+  font-size: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #house-ad-1 .close:hover {
-	background: inherit;
-	text-decoration: inherit;
+  background: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #house-ad-1 p {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 #house-ad-1 .button-wrap {
-	padding: inherit;
+  padding: inherit;
 }
 
 #house-ad-1 .button-wrap a {
-	padding: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	border-color: inherit;
-	background-color: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
+  padding: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  border-color: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #house-ad-1 .button-wrap a:hover {
-	border-color: inherit;
-	background-color: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  border-color: inherit;
+  background-color: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .hubzo-ad {
-	font-size: inherit;
-	line-height: inherit;
-	text-align: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
 }
 
 .hubzo-ad .link a {
-	color: inherit;
-	font-size: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
 .hubzo-ad .network {
-	opacity: inherit;
-	font-size: inherit;
+  opacity: inherit;
+  font-size: inherit;
 }
 
 .ext-au {
-	max-width: inherit;
-	margin: inherit;
-	overflow: inherit;
-	text-align: inherit;
+  max-width: inherit;
+  margin: inherit;
+  overflow: inherit;
+  text-align: inherit;
 }
 
 .ext-au img.image {
-	height: inherit;
-	float: inherit;
+  height: inherit;
+  float: inherit;
 }
 
 .ext-au .title {
-	margin-left: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  margin-left: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .ext-au .description {
-	margin-left: inherit;
-	padding: inherit;
-	opacity: inherit;
+  margin-left: inherit;
+  padding: inherit;
+  opacity: inherit;
 }
 
 .ext-au .link {
-	margin-left: inherit;
+  margin-left: inherit;
 }
 
 .rss-icon {
-	vertical-align: inherit;
+  vertical-align: inherit;
 }
 
 #side-bar div.foldable-list-container ul li ul li {
-	font-size: inherit;
+  font-size: inherit;
 }
 
 #login-iframe {
-	height: inherit;
+  height: inherit;
 }
 
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li,
-.yui-navset .yui-navset-bottom .yui-nav li {
-	margin: inherit;
+.yui-navset .yui-nav li, .yui-navset .yui-navset-top .yui-nav li, .yui-navset .yui-navset-bottom .yui-nav li, .yui-navset-left .yui-nav li, .yui-navset-right .yui-nav li {
+  margin: inherit;
 }
 
-.yui-navset-left .yui-nav li,
-.yui-navset-right .yui-nav li {
-	margin: inherit;
+.yui-navset .yui-navset-left .yui-nav, .yui-navset .yui-navset-right .yui-nav, .yui-navset-left .yui-nav, .yui-navset-right .yui-nav, .yui-navset-top .yui-nav, .yui-navset-bottom .yui-nav {
+  width: inherit;
 }
 
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-left .yui-nav,
-.yui-navset-right .yui-nav {
-	width: inherit;
+.yui-navset .yui-navset-left, .yui-navset-left, .yui-navset-right, .yui-navset-top, .yui-navset-bottom {
+  padding: inherit;
 }
 
-.yui-navset-top .yui-nav,
-.yui-navset-bottom .yui-nav {
-	width: inherit;
-}
-
-.yui-navset .yui-navset-left,
-.yui-navset-left {
-	padding: inherit;
-}
-
-.yui-navset-right {
-	padding: inherit;
-}
-
-.yui-navset-top,
-.yui-navset-bottom {
-	padding: inherit;
-}
-
-.yui-nav,
-.yui-nav li {
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
+.yui-nav, .yui-nav li {
+  margin: inherit;
+  padding: inherit;
+  list-style: inherit;
 }
 
 .yui-navset .yui-nav li em {
-	font-style: inherit;
+  font-style: inherit;
 }
 
 .yui-navset {
-	position: inherit;
-	zoom: inherit;
+  position: inherit;
+  zoom: inherit;
 }
 
 .yui-navset .yui-content {
-	zoom: inherit;
+  zoom: inherit;
 }
 
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li,
-.yui-navset .yui-navset-bottom .yui-nav li {
-	zoom: inherit;
-	vertical-align: inherit;
+.yui-navset .yui-nav li, .yui-navset .yui-navset-top .yui-nav li, .yui-navset .yui-navset-bottom .yui-nav li {
+  zoom: inherit;
+  vertical-align: inherit;
 }
 
-.yui-navset-left .yui-nav li,
-.yui-navset-right .yui-nav li {
-	display: inherit;
+.yui-navset-left .yui-nav li, .yui-navset-right .yui-nav li {
+  display: inherit;
 }
 
 .yui-navset .yui-nav a {
-	position: inherit;
+  position: inherit;
 }
 
-.yui-navset .yui-nav li a,
-.yui-navset-top .yui-nav li a,
-.yui-navset-bottom .yui-nav li a {
-	display: inherit;
-	zoom: inherit;
-	vertical-align: inherit;
+.yui-navset .yui-nav li a, .yui-navset-top .yui-nav li a, .yui-navset-bottom .yui-nav li a {
+  display: inherit;
+  zoom: inherit;
+  vertical-align: inherit;
 }
 
-.yui-navset-left .yui-nav li a,
-.yui-navset-right .yui-nav li a {
-	display: inherit;
+.yui-navset-left .yui-nav li a, .yui-navset-right .yui-nav li a {
+  display: inherit;
 }
 
 .yui-navset-bottom .yui-nav li a {
-	vertical-align: inherit;
+  vertical-align: inherit;
 }
 
-.yui-navset .yui-nav li a em,
-.yui-navset-top .yui-nav li a em,
-.yui-navset-bottom .yui-nav li a em {
-	display: inherit;
+.yui-navset .yui-nav li a em, .yui-navset-top .yui-nav li a em, .yui-navset-bottom .yui-nav li a em {
+  display: inherit;
 }
 
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-left .yui-nav,
-.yui-navset-right .yui-nav {
-	position: inherit;
-	z-index: inherit;
+.yui-navset .yui-navset-left .yui-nav, .yui-navset .yui-navset-right .yui-nav, .yui-navset-left .yui-nav, .yui-navset-right .yui-nav {
+  position: inherit;
+  z-index: inherit;
 }
 
-.yui-navset-top .yui-nav,
-.yui-navset-bottom .yui-nav {
-	position: inherit;
+.yui-navset-top .yui-nav, .yui-navset-bottom .yui-nav {
+  position: inherit;
 }
 
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset-left .yui-nav {
-	right: inherit;
-	left: inherit;
+.yui-navset .yui-navset-left .yui-nav, .yui-navset-left .yui-nav, .yui-navset .yui-navset-right .yui-nav, .yui-navset-right .yui-nav {
+  right: inherit;
+  left: inherit;
 }
 
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-right .yui-nav {
-	right: inherit;
-	left: inherit;
+.yui-navset .yui-nav, .yui-navset .yui-navset-top .yui-nav {
+  zoom: inherit;
+  border: inherit;
+  border-width: inherit;
 }
 
-.yui-navset .yui-nav,
-.yui-navset .yui-navset-top .yui-nav {
-	zoom: inherit;
-	border: inherit;
-	border-width: inherit;
+.yui-navset .yui-nav li, .yui-navset .yui-navset-top .yui-nav li {
+  margin: inherit;
+  padding: inherit;
+  zoom: inherit;
 }
 
-.yui-navset .yui-nav li,
-.yui-navset .yui-navset-top .yui-nav li {
-	margin: inherit;
-	padding: inherit;
-	zoom: inherit;
+.yui-navset .yui-nav .selected, .yui-navset .yui-navset-top .yui-nav .selected {
+  margin: inherit;
 }
 
-.yui-navset .yui-nav .selected,
-.yui-navset .yui-navset-top .yui-nav .selected {
-	margin: inherit;
+.yui-navset .yui-nav a, .yui-navset .yui-navset-top .yui-nav a {
+  position: inherit;
+  border: inherit;
+  border-width: inherit;
+  background: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
-.yui-navset .yui-nav a,
-.yui-navset .yui-navset-top .yui-nav a {
-	position: inherit;
-	border: inherit;
-	border-width: inherit;
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
+.yui-navset .yui-nav a em, .yui-navset .yui-navset-top .yui-nav a em {
+  position: inherit;
+  top: inherit;
+  right: inherit;
+  bottom: inherit;
+  left: inherit;
+  padding: inherit;
+  border: inherit;
+  border-width: inherit;
 }
 
-.yui-navset .yui-nav a em,
-.yui-navset .yui-navset-top .yui-nav a em {
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	bottom: inherit;
-	left: inherit;
-	padding: inherit;
-	border: inherit;
-	border-width: inherit;
+.yui-navset .yui-nav .selected a, .yui-navset .yui-nav .selected a:focus, .yui-navset .yui-nav .selected a:hover {
+  background: inherit;
+  color: inherit;
 }
 
-.yui-navset .yui-nav .selected a,
-.yui-navset .yui-nav .selected a:focus,
-.yui-navset .yui-nav .selected a:hover {
-	background: inherit;
-	color: inherit;
-}
-
-.yui-navset .yui-nav a:hover,
-.yui-navset .yui-nav a:focus {
-	outline: inherit;
-	background: inherit;
+.yui-navset .yui-nav a:hover, .yui-navset .yui-nav a:focus {
+  outline: inherit;
+  background: inherit;
 }
 
 .yui-navset .yui-nav .selected a em {
-	padding: inherit;
+  padding: inherit;
 }
 
-.yui-navset .yui-nav .selected a,
-.yui-navset .yui-nav .selected a em {
-	border-color: inherit;
+.yui-navset .yui-nav .selected a, .yui-navset .yui-nav .selected a em {
+  border-color: inherit;
 }
 
 .yui-navset .yui-content {
-	background: inherit;
+  background: inherit;
 }
 
-.yui-navset .yui-content,
-.yui-navset .yui-navset-top .yui-content {
-	padding: inherit;
-	border: inherit;
-	border-top-color: inherit;
+.yui-navset .yui-content, .yui-navset .yui-navset-top .yui-content {
+  padding: inherit;
+  border: inherit;
+  border-top-color: inherit;
 }
 
-.yui-navset-left .yui-nav,
-.yui-navset .yui-navset-left .yui-nav,
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-right .yui-nav {
-	top: inherit;
-	bottom: inherit;
-	border-width: inherit;
+.yui-navset-left .yui-nav, .yui-navset .yui-navset-left .yui-nav, .yui-navset .yui-navset-right .yui-nav, .yui-navset-right .yui-nav {
+  top: inherit;
+  bottom: inherit;
+  border-width: inherit;
 }
 
-.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-right .yui-nav {
-	border-width: inherit;
+.yui-navset .yui-navset-right .yui-nav, .yui-navset-right .yui-nav {
+  border-width: inherit;
 }
 
-.yui-navset-left .yui-nav li,
-.yui-navset .yui-navset-left .yui-nav li,
-.yui-navset-right .yui-nav li {
-	margin: inherit;
-	padding: inherit;
+.yui-navset-left .yui-nav li, .yui-navset .yui-navset-left .yui-nav li, .yui-navset-right .yui-nav li {
+  margin: inherit;
+  padding: inherit;
 }
 
 .yui-navset-right .yui-nav li {
-	padding: inherit;
+  padding: inherit;
 }
 
-.yui-navset-left .yui-nav .selected,
-.yui-navset .yui-navset-left .yui-nav .selected {
-	margin: inherit;
+.yui-navset-left .yui-nav .selected, .yui-navset .yui-navset-left .yui-nav .selected, .yui-navset-right .yui-nav .selected {
+  margin: inherit;
 }
 
-.yui-navset-right .yui-nav .selected {
-	margin: inherit;
+.yui-navset-left .yui-nav a, .yui-navset-right .yui-nav a {
+  border-width: inherit;
 }
 
-.yui-navset-left .yui-nav a,
-.yui-navset-right .yui-nav a {
-	border-width: inherit;
-}
-
-.yui-navset-left .yui-nav a em,
-.yui-navset .yui-navset-left .yui-nav a em,
-.yui-navset-right .yui-nav a em {
-	top: inherit;
-	left: inherit;
-	padding: inherit;
-	border-width: inherit;
+.yui-navset-left .yui-nav a em, .yui-navset .yui-navset-left .yui-nav a em, .yui-navset-right .yui-nav a em {
+  top: inherit;
+  left: inherit;
+  padding: inherit;
+  border-width: inherit;
 }
 
 .yui-navset-right .yui-nav a em {
-	right: inherit;
-	left: inherit;
-	border-width: inherit;
+  right: inherit;
+  left: inherit;
+  border-width: inherit;
 }
 
-.yui-navset-left .yui-nav a,
-.yui-navset-left .yui-nav .selected a,
-.yui-navset-left .yui-nav a:hover,
-.yui-navset-right .yui-nav a,
-.yui-navset-right .yui-nav .selected a,
-.yui-navset-right .yui-nav a:hover,
-.yui-navset-bottom .yui-nav a,
-.yui-navset-bottom .yui-nav .selected a,
-.yui-navset-bottom .yui-nav a:hover {
-	background-image: inherit;
+.yui-navset-left .yui-nav a, .yui-navset-left .yui-nav .selected a, .yui-navset-left .yui-nav a:hover, .yui-navset-right .yui-nav a, .yui-navset-right .yui-nav .selected a, .yui-navset-right .yui-nav a:hover, .yui-navset-bottom .yui-nav a, .yui-navset-bottom .yui-nav .selected a, .yui-navset-bottom .yui-nav a:hover {
+  background-image: inherit;
 }
 
 .yui-navset-left .yui-content {
-	border: inherit;
-	border-left-color: inherit;
+  border: inherit;
+  border-left-color: inherit;
 }
 
-.yui-navset-bottom .yui-nav,
-.yui-navset .yui-navset-bottom .yui-nav {
-	border-width: inherit;
+.yui-navset-bottom .yui-nav, .yui-navset .yui-navset-bottom .yui-nav {
+  border-width: inherit;
 }
 
-.yui-navset .yui-navset-bottom .yui-nav .selected,
-.yui-navset-bottom .yui-nav .selected {
-	margin: inherit;
+.yui-navset .yui-navset-bottom .yui-nav .selected, .yui-navset-bottom .yui-nav .selected {
+  margin: inherit;
 }
 
-.yui-navset .yui-navset-bottom .yui-nav li,
-.yui-navset-bottom .yui-nav li {
-	padding: inherit;
-	vertical-align: inherit;
+.yui-navset .yui-navset-bottom .yui-nav li, .yui-navset-bottom .yui-nav li {
+  padding: inherit;
+  vertical-align: inherit;
 }
 
-.yui-navset .yui-navset-bottom .yui-nav a em,
-.yui-navset-bottom .yui-nav a em {
-	top: inherit;
-	bottom: inherit;
-	border-width: inherit;
+.yui-navset .yui-navset-bottom .yui-nav a em, .yui-navset-bottom .yui-nav a em {
+  top: inherit;
+  bottom: inherit;
+  border-width: inherit;
 }
 
-.yui-navset-bottom .yui-content,
-.yui-navset .yui-navset-bottom .yui-content {
-	border: inherit;
-	border-bottom-color: inherit;
+.yui-navset-bottom .yui-content, .yui-navset .yui-navset-bottom .yui-content {
+  border: inherit;
+  border-bottom-color: inherit;
 }
-
-/*
-.hl-default {
-	color: inherit;
-}
-.hl-code {
-	color: inherit;
-}
-.hl-brackets {
-	color: inherit;
-}
-.hl-comment {
-	color: inherit;
-}
-.hl-quotes {
-	color: inherit;
-}
-.hl-string {
-	color: inherit;
-}
-.hl-identifier {
-	color: inherit;
-}
-.hl-builtin {
-	color: inherit;
-}
-.hl-reserved {
-	color: inherit;
-}
-.hl-inlinedoc {
-	color: inherit;
-}
-.hl-var {
-	color: inherit;
-}
-.hl-url {
-	color: inherit;
-}
-.hl-special {
-	color: inherit;
-	font-weight: inherit;
-}
-.hl-number {
-	color: inherit;
-}
-.hl-inlinetags {
-	color: inherit;
-	font-weight: inherit;
-}
-
-.hl-gutter {
-	background-color: inherit;
-	color: inherit;
-}
-*/
 
 .autocomplete-container {
-	position: inherit;
-	width: inherit;
-	margin: inherit;
+  position: inherit;
+  width: inherit;
+  margin: inherit;
 }
 
 .autocomplete-input {
-	display: inherit;
-	position: inherit;
-	width: inherit;
+  display: inherit;
+  position: inherit;
+  width: inherit;
 }
 
 .autocomplete-list {
-	position: inherit;
-	z-index: inherit;
-	left: inherit;
-	width: inherit;
-	padding: inherit;
-	overflow: inherit;
-	text-align: inherit;
+  position: inherit;
+  z-index: inherit;
+  left: inherit;
+  width: inherit;
+  padding: inherit;
+  overflow: inherit;
+  text-align: inherit;
 }
 
 .yui-ac-content {
-	border: inherit;
-	background: inherit;
+  border: inherit;
+  background: inherit;
 }
 
 .autocomplete-list ul {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	list-style: inherit;
+  width: inherit;
+  margin: inherit;
+  padding: inherit;
+  list-style: inherit;
 }
 
 .autocomplete-list li {
-	padding: inherit;
-	white-space: inherit;
+  padding: inherit;
+  white-space: inherit;
 }
 
 .autocomplete-list li.yui-ac-highlight {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 .wd-editor-toolbar-panel div {
-	height: inherit;
+  height: inherit;
 }
 
 .wd-editor-toolbar-panel a {
-	margin: inherit;
-	border: inherit;
-	background-color: inherit;
+  margin: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 .wd-editor-toolbar-panel a:hover {
-	border-color: inherit;
+  border-color: inherit;
 }
 
 .wd-editor-toolbar-panel ul {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
-	list-style: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
+  list-style: inherit;
 }
 
 .wd-editor-toolbar-panel ul li {
-	margin: inherit;
-	padding: inherit;
-	float: inherit;
+  margin: inherit;
+  padding: inherit;
+  float: inherit;
 }
 
 .wd-editor-toolbar-panel ul li ul {
-	position: inherit;
-	z-index: inherit;
-	left: inherit;
+  position: inherit;
+  z-index: inherit;
+  left: inherit;
 }
 
 .wd-editor-toolbar-panel ul li ul li a {
-	float: inherit;
+  float: inherit;
 }
 
 .wd-editor-toolbar-panel ul li ul li {
-	margin: inherit;
+  margin: inherit;
 }
 
 .wd-editor-toolbar-panel ul li ul li a {
-	display: inherit;
-	float: inherit;
+  display: inherit;
+  float: inherit;
 }
 
-.wd-editor-toolbar-panel ul li:hover ul,
-.wd-editor-toolbar-panel ul li.sfhover ul {
-	left: inherit;
-	border: inherit;
-	background-color: inherit;
+.wd-editor-toolbar-panel ul li:hover ul, .wd-editor-toolbar-panel ul li.sfhover ul {
+  left: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 .wd-editor-toolbar-panel li.hseparator {
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	background-color: inherit;
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  background-color: inherit;
 }
 
 .wd-editor-toolbar-panel ul li a {
-	display: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	padding: inherit;
+  display: inherit;
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 .wd-editor-toolbar-panel ul li a span {
-	display: inherit;
+  display: inherit;
 }
 
-.wd-editor-toolbar-panel a {
-	background-image: inherit;
+.wd-editor-toolbar-panel a, .wd-editor-toolbar-panel a:hover {
+  background-image: inherit;
 }
 
-.wd-editor-toolbar-panel a:hover {
-	background-image: inherit;
+a.weditor-bold, a.weditor-italic, a.weditor-underline, a.weditor-strikethrough, a.weditor-teletype, a.weditor-quote, a.weditor-superscript, a.weditor-subscript, a.weditor-raw, a.weditor-hr, a.weditor-div, a.weditor-clearfloat, a.weditor-clearfloatleft, a.weditor-clearfloatright, a.weditor-divwiz, a.weditor-table, a.weditor-toc, a.weditor-uri, a.weditor-uriwiz, a.weditor-pagelink, a.weditor-pagelinkwiz, a.weditor-image, a.weditor-imagewiz, a.weditor-video, a.weditor-audio, a.weditor-code, a.weditor-codewiz, a.weditor-numlist, a.weditor-bullist, a.weditor-incindent, a.weditor-decindent, a.weditor-deflist, a.weditor-footnote, a.weditor-math, a.weditor-mathinline, a.weditor-eqref, a.weditor-bib, a.weditor-bibcite, a.weditor-h1, a.weditor-h2, a.weditor-h3, a.weditor-h4, a.weditor-h5, a.weditor-h6, a.weditor-html {
+  background-position: inherit;
 }
 
-a.weditor-bold {
-	background-position: inherit;
-}
-
-a.weditor-italic {
-	background-position: inherit;
-}
-
-a.weditor-underline {
-	background-position: inherit;
-}
-
-a.weditor-strikethrough {
-	background-position: inherit;
-}
-
-a.weditor-teletype {
-	background-position: inherit;
-}
-
-a.weditor-quote {
-	background-position: inherit;
-}
-
-a.weditor-superscript {
-	background-position: inherit;
-}
-
-a.weditor-subscript {
-	background-position: inherit;
-}
-
-a.weditor-raw {
-	background-position: inherit;
-}
-
-a.weditor-hr {
-	background-position: inherit;
-}
-
-a.weditor-div {
-	background-position: inherit;
-}
-
-a.weditor-clearfloat {
-	background-position: inherit;
-}
-
-a.weditor-clearfloatleft {
-	background-position: inherit;
-}
-
-a.weditor-clearfloatright {
-	background-position: inherit;
-}
-
-a.weditor-divwiz {
-	background-position: inherit;
-}
-
-a.weditor-table {
-	background-position: inherit;
-}
-
-a.weditor-toc {
-	background-position: inherit;
-}
-
-a.weditor-uri {
-	background-position: inherit;
-}
-
-a.weditor-uriwiz {
-	background-position: inherit;
-}
-
-a.weditor-pagelink {
-	background-position: inherit;
-}
-
-a.weditor-pagelinkwiz {
-	background-position: inherit;
-}
-
-a.weditor-image {
-	background-position: inherit;
-}
-
-a.weditor-imagewiz {
-	background-position: inherit;
-}
-
-a.weditor-video {
-	background-position: inherit;
-}
-
-a.weditor-audio {
-	background-position: inherit;
-}
-
-a.weditor-code {
-	background-position: inherit;
-}
-
-a.weditor-codewiz {
-	background-position: inherit;
-}
-
-a.weditor-numlist {
-	background-position: inherit;
-}
-
-a.weditor-bullist {
-	background-position: inherit;
-}
-
-a.weditor-incindent {
-	background-position: inherit;
-}
-
-a.weditor-decindent {
-	background-position: inherit;
-}
-
-a.weditor-deflist {
-	background-position: inherit;
-}
-
-a.weditor-footnote {
-	background-position: inherit;
-}
-
-a.weditor-math {
-	background-position: inherit;
-}
-
-a.weditor-mathinline {
-	background-position: inherit;
-}
-
-a.weditor-eqref {
-	background-position: inherit;
-}
-
-a.weditor-bib {
-	background-position: inherit;
-}
-
-a.weditor-bibcite {
-	background-position: inherit;
-}
-
-a.weditor-h1 {
-	background-position: inherit;
-}
-
-a.weditor-h2 {
-	background-position: inherit;
-}
-
-a.weditor-h3 {
-	background-position: inherit;
-}
-
-a.weditor-h4 {
-	background-position: inherit;
-}
-
-a.weditor-h5 {
-	background-position: inherit;
-}
-
-a.weditor-h6 {
-	background-position: inherit;
-}
-
-a.weditor-html {
-	background-position: inherit;
-}
-
-.odialog-shader,
-.odialog-shader-iframe {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
+.odialog-shader, .odialog-shader-iframe {
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 .odialog-shader {
-	opacity: inherit;
-	background-color: inherit;
-	filter: inherit;
+  opacity: inherit;
+  background-color: inherit;
+  filter: inherit;
 }
 
 .odialog-shader-iframe {
-	filter: inherit;
-	opacity: inherit;
+  filter: inherit;
+  opacity: inherit;
 }
 
 table#odialog-box-container {
-	position: inherit;
-	left: inherit;
-	width: inherit;
-	margin: inherit;
+  position: inherit;
+  left: inherit;
+  width: inherit;
+  margin: inherit;
 }
 
 table#odialog-box-container td {
-	width: inherit;
-	height: inherit;
-	text-align: inherit;
-	vertical-align: inherit;
+  width: inherit;
+  height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
 }
 
 table#odialog-box-container td div {
-	margin: inherit;
+  margin: inherit;
 }
 
 #odialog-wrapper {
-	text-align: inherit;
+  text-align: inherit;
 }
 
 #odialog-container {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	width: inherit;
-	height: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 .owindow {
-	position: inherit;
-	width: inherit;
-	border: inherit;
-	background-color: inherit;
-	text-align: inherit;
+  position: inherit;
+  width: inherit;
+  border: inherit;
+  background-color: inherit;
+  text-align: inherit;
 }
 
 .owindow .close {
-	padding: inherit;
-	float: inherit;
-	font-size: inherit;
+  padding: inherit;
+  float: inherit;
+  font-size: inherit;
 }
 
 .owindow .title {
-	height: inherit;
-	padding: inherit;
-	background-color: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  height: inherit;
+  padding: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .owindow .content {
-	padding: inherit;
+  padding: inherit;
 }
 
 .owindow .button-bar {
-	margin: inherit;
-	padding: inherit;
-	text-align: inherit;
+  margin: inherit;
+  padding: inherit;
+  text-align: inherit;
 }
 
 .owindow .button-bar input {
-	padding: inherit;
+  padding: inherit;
 }
 
 .owindow .button-bar a {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background-color: inherit;
-	text-decoration: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .owindow .button-bar a:hover {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 .owindow.owait {
-	width: inherit;
+  width: inherit;
 }
 
 .owindow.owait .content {
-	margin: inherit;
-	padding: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
+  margin: inherit;
+  padding: inherit;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
 }
 
 .owindow.osuccess {
-	width: inherit;
+  width: inherit;
 }
 
 .owindow.osuccess .content {
-	margin: inherit;
-	padding: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 
 .box444 {
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	background-color: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  background-color: inherit;
 }
 
 .box444 .button-bar {
-	padding: inherit;
-	background-color: inherit;
-	text-align: inherit;
+  padding: inherit;
+  background-color: inherit;
+  text-align: inherit;
 }
 
 .hovertip {
-	display: inherit;
-	z-index: inherit;
-	width: inherit;
-	border: inherit;
-	background-color: inherit;
+  display: inherit;
+  z-index: inherit;
+  width: inherit;
+  border: inherit;
+  background-color: inherit;
 }
 
 .hovertip .title {
-	padding: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  padding: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .hovertip .content {
-	padding: inherit;
+  padding: inherit;
 }
 
 #jquery-overlay {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 #jquery-lightbox {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	line-height: inherit;
-	text-align: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  line-height: inherit;
+  text-align: inherit;
 }
 
 #jquery-lightbox a img {
-	border: inherit;
+  border: inherit;
 }
 
 #lightbox-container-image-box {
-	position: inherit;
-	width: inherit;
-	height: inherit;
-	margin: inherit;
-	background-color: inherit;
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  background-color: inherit;
 }
 
 #lightbox-container-image {
-	padding: inherit;
+  padding: inherit;
 }
 
 #lightbox-loading {
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	line-height: inherit;
-	text-align: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  text-align: inherit;
 }
 
 #lightbox-nav {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 #lightbox-container-image-box > #lightbox-nav {
-	left: inherit;
+  left: inherit;
 }
 
 #lightbox-nav a {
-	outline: inherit;
+  outline: inherit;
 }
 
-#lightbox-nav-btnPrev,
-#lightbox-nav-btnNext {
-	display: inherit;
-	width: inherit;
-	height: inherit;
-	zoom: inherit;
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext {
+  display: inherit;
+  width: inherit;
+  height: inherit;
+  zoom: inherit;
 }
 
 #lightbox-nav-btnPrev {
-	left: inherit;
-	float: inherit;
+  left: inherit;
+  float: inherit;
 }
 
 #lightbox-nav-btnNext {
-	right: inherit;
-	float: inherit;
+  right: inherit;
+  float: inherit;
 }
 
 #lightbox-container-image-data-box {
-	width: inherit;
-	margin: inherit;
-	padding: inherit;
-	overflow: inherit;
-	background-color: inherit;
-	font: inherit;
-	line-height: inherit;
+  width: inherit;
+  margin: inherit;
+  padding: inherit;
+  overflow: inherit;
+  background-color: inherit;
+  font: inherit;
+  line-height: inherit;
 }
 
 #lightbox-container-image-data {
-	padding: inherit;
-	color: inherit;
+  padding: inherit;
+  color: inherit;
 }
 
 #lightbox-container-image-data #lightbox-image-details {
-	width: inherit;
-	float: inherit;
-	text-align: inherit;
+  width: inherit;
+  float: inherit;
+  text-align: inherit;
 }
 
 #lightbox-image-details-caption {
-	font-weight: inherit;
+  font-weight: inherit;
 }
 
 #lightbox-image-details-currentNumber {
-	display: inherit;
-	padding-bottom: inherit;
-	clear: inherit;
+  display: inherit;
+  padding-bottom: inherit;
+  clear: inherit;
 }
 
 #lightbox-secNav-btnClose {
-	width: inherit;
-	padding-bottom: inherit;
-	float: inherit;
+  width: inherit;
+  padding-bottom: inherit;
+  float: inherit;
 }
 
 #navi-bar-shadow {
-	height: inherit;
+  height: inherit;
 }
 
 #navi-bar {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	width: inherit;
-	height: inherit;
-	overflow: inherit;
-	border-bottom: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	background-position: inherit;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  width: inherit;
+  height: inherit;
+  overflow: inherit;
+  border-bottom: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  background-position: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 #navi-bar a {
-	margin: inherit;
-	padding: inherit;
-	background: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  margin: inherit;
+  padding: inherit;
+  background: inherit;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #navi-bar a:hover {
-	background-color: inherit;
-	text-decoration: inherit;
+  background-color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #navi-bar a.logo {
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
-	width: inherit;
-	height: inherit;
-	background-image: inherit;
-	filter: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  background-image: inherit;
+  filter: inherit;
 }
 
 #navi-bar a.logo span {
-	display: inherit;
+  display: inherit;
 }
 
 #navi-bar .new-site {
-	position: inherit;
-	top: inherit;
-	left: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
 }
 
 #navi-bar .new-site input.text {
-	width: inherit;
-	text-align: inherit;
+  width: inherit;
+  text-align: inherit;
 }
 
 #navi-bar .new-site input.empty {
-	color: inherit;
+  color: inherit;
 }
 
 #navi-bar .share {
-	position: inherit;
-	top: inherit;
-	left: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
 }
 
 #navi-bar .share span {
-	vertical-align: inherit;
+  vertical-align: inherit;
 }
 
 #navi-bar .share img {
-	width: inherit;
-	height: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 #navi-bar .action-buttons {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	height: inherit;
-	padding: inherit;
-	color: inherit;
+  display: inherit;
+  position: inherit;
+  top: inherit;
+  right: inherit;
+  height: inherit;
+  padding: inherit;
+  color: inherit;
 }
 
 #navi-bar .action-buttons a {
-	padding: inherit;
-	color: inherit;
+  padding: inherit;
+  color: inherit;
 }
 
 #navi-bar .join {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	left: inherit;
-	color: inherit;
-	font-weight: inherit;
+  display: inherit;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  color: inherit;
+  font-weight: inherit;
 }
 
 #navi-bar .random-site {
-	display: inherit;
-	position: inherit;
-	top: inherit;
-	right: inherit;
-	height: inherit;
-	padding: inherit;
-	color: inherit;
+  display: inherit;
+  position: inherit;
+  top: inherit;
+  right: inherit;
+  height: inherit;
+  padding: inherit;
+  color: inherit;
 }
 
 #navi-bar .random-site:hover {
-	border-color: inherit;
+  border-color: inherit;
 }
 
 #navi-bar .close {
-	position: inherit;
-	top: inherit;
-	right: inherit;
+  position: inherit;
+  top: inherit;
+  right: inherit;
 }
 
 #footer-bar {
-	max-width: inherit;
-	margin: inherit;
-	padding-top: inherit;
-	overflow: inherit;
-	border-top: inherit;
+  max-width: inherit;
+  margin: inherit;
+  padding-top: inherit;
+  overflow: inherit;
+  border-top: inherit;
 }
 
 #footer-bar h2 {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	text-align: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: inherit;
 }
 
 #footer-bar .units {
-	overflow: inherit;
+  overflow: inherit;
 }
 
 #footer-bar .unit {
-	width: inherit;
-	float: inherit;
+  width: inherit;
+  float: inherit;
 }
 
 #footer-bar .unit .inner {
-	padding: inherit;
-	text-align: inherit;
+  padding: inherit;
+  text-align: inherit;
 }
 
 #footer-bar .unit .image {
-	display: inherit;
-	height: inherit;
-	overflow: inherit;
-	text-decoration: inherit;
+  display: inherit;
+  height: inherit;
+  overflow: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #footer-bar h3 {
-	margin: inherit;
-	padding: inherit;
-	font-size: inherit;
-	font-weight: inherit;
+  margin: inherit;
+  padding: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 #footer-bar a {
-	opacity: inherit;
-	background: inherit;
-	text-decoration: inherit;
+  opacity: inherit;
+  background: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #footer-bar a:hover {
-	background: inherit;
-	text-decoration: inherit;
+  background: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 #footer-bar .desc {
-	font-size: inherit;
+  font-size: inherit;
 }
 
 #footer-bar .close {
-	margin: inherit;
-	float: inherit;
+  margin: inherit;
+  float: inherit;
 }
 
 #footer-bar .ads-here {
-	padding: inherit;
-	text-align: inherit;
+  padding: inherit;
+  text-align: inherit;
 }
 
 .form-table .form-value {
-	display: inherit;
+  display: inherit;
 }
 
 .form-table .form-error {
-	border: inherit;
+  border: inherit;
 }
 
 .form-table .form-hinted {
-	color: inherit;
+  color: inherit;
 }
 
 .form-table .form-message {
-	display: inherit;
-	color: inherit;
+  display: inherit;
+  color: inherit;
 }
 
 iframe.html-block-iframe {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	background: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  background: inherit;
 }
 
 #boonity_free_site_bottom {
-	margin: inherit;
+  margin: inherit;
 }
 
-.awesome,
-.awesome:hover {
-	background-color: inherit;
-	color: inherit;
+.awesome, .awesome:hover {
+  background-color: inherit;
+  color: inherit;
 }
 
 .awesome {
-	display: inherit;
-	position: inherit;
-	margin-top: inherit;
-	margin-bottom: inherit;
-	padding: inherit;
-	border: inherit;
-	-moz-border-radius: inherit;
-	-webkit-border-radius: inherit;
-	border-radius: inherit;
-	background-image: inherit;
-	background-repeat: inherit;
-	background-position: inherit;
-	-moz-box-shadow: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
-	font-size: inherit;
-	font-style: inherit;
-	font-weight: inherit;
-	line-height: inherit;
-	text-align: inherit;
-	text-decoration: inherit;
-	text-shadow: inherit;
-	vertical-align: inherit;
-	-moz-user-select: inherit;
-	user-select: inherit;
+  display: inherit;
+  position: inherit;
+  margin-top: inherit;
+  margin-bottom: inherit;
+  padding: inherit;
+  border: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  -moz-box-shadow: inherit;
+  -webkit-box-shadow: inherit;
+  box-shadow: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  text-shadow: inherit;
+  vertical-align: inherit;
+  -moz-user-select: inherit;
+  user-select: inherit;
 }
 
 .awesome::selection {
-	background: inherit;
+  background: inherit;
 }
 
 .awesome {
-	outline: inherit;
+  outline: inherit;
 }
 
 .awesome::-moz-focus-inner {
-	border: inherit;
+  border: inherit;
 }
 
-.awesome:focus,
-.awesome:hover {
-	background-image: inherit;
+.awesome:focus, .awesome:hover {
+  background-image: inherit;
 }
 
 .awesome:active {
-	background-image: inherit;
-	-moz-box-shadow: inherit;
-	-webkit-box-shadow: inherit;
-	box-shadow: inherit;
+  background-image: inherit;
+  -moz-box-shadow: inherit;
+  -webkit-box-shadow: inherit;
+  box-shadow: inherit;
 }
 
-.awesome.blue,
-.awesome.blue:hover {
-	background-color: inherit;
-}
-
-.awesome.darkblue,
-.awesome.darkblue:hover {
-	background-color: inherit;
-}
-
-.awesome.red,
-.awesome.red:hover {
-	background-color: inherit;
-}
-
-.awesome.green,
-.awesome.green:hover {
-	background-color: inherit;
-}
-
-.awesome.grey,
-.awesome.grey:hover {
-	background-color: inherit;
+.awesome.blue, .awesome.blue:hover, .awesome.darkblue, .awesome.darkblue:hover, .awesome.red, .awesome.red:hover, .awesome.green, .awesome.green:hover, .awesome.grey, .awesome.grey:hover {
+  background-color: inherit;
 }
 
 .awesome.small {
-	padding: inherit;
-	font-size: inherit;
+  padding: inherit;
+  font-size: inherit;
 }
 
-.awesome.small:active {
-	padding: inherit;
-}
-
-.awesome.medium:active {
-	padding: inherit;
+.awesome.small:active, .awesome.medium:active {
+  padding: inherit;
 }
 
 .awesome.large {
-	padding: inherit;
-	font-size: inherit;
+  padding: inherit;
+  font-size: inherit;
 }
 
 .awesome.large:active {
-	padding: inherit;
+  padding: inherit;
 }
 
 .awesome.larger {
-	padding: inherit;
-	font-size: inherit;
+  padding: inherit;
+  font-size: inherit;
 }
 
 .awesome.larger:active {
-	padding: inherit;
+  padding: inherit;
 }
 
 .awesome.huge {
-	padding: inherit;
-	font-size: inherit;
+  padding: inherit;
+  font-size: inherit;
 }
 
 .awesome.huge:active {
-	padding: inherit;
+  padding: inherit;
 }
 
 table.guest-commenting {
-	margin-bottom: inherit;
-	padding: inherit;
-	border-collapse: inherit;
-	border: inherit;
+  margin-bottom: inherit;
+  padding: inherit;
+  border-collapse: inherit;
+  border: inherit;
 }
 
 table.guest-commenting td {
-	padding: inherit;
+  padding: inherit;
 }
 
 table.guest-commenting td input {
-	margin: inherit;
+  margin: inherit;
 }
 
 table.guest-commenting td label.hint {
-	color: inherit;
+  color: inherit;
 }
 
 .wikidot-hybrid-module-loading {
-	padding-top: inherit;
-	background: inherit;
+  padding-top: inherit;
+  background: inherit;
 }
 
 #tiptip_holder {
-	display: inherit;
-	position: inherit;
-	z-index: inherit;
-	top: inherit;
-	left: inherit;
+  display: inherit;
+  position: inherit;
+  z-index: inherit;
+  top: inherit;
+  left: inherit;
 }
 
 #tiptip_holder.tip_top {
-	padding-bottom: inherit;
+  padding-bottom: inherit;
 }
 
 #tiptip_holder.tip_bottom {
-	padding-top: inherit;
+  padding-top: inherit;
 }
 
 #tiptip_holder.tip_right {
-	padding-left: inherit;
+  padding-left: inherit;
 }
 
 #tiptip_holder.tip_left {
-	padding-right: inherit;
+  padding-right: inherit;
 }
 
 #tiptip_content {
-	padding: inherit;
-	border: inherit;
-	-webkit-border-radius: inherit;
-	-moz-border-radius: inherit;
-	border-radius: inherit;
-	background-color: inherit;
-	background-image: inherit;
-	-webkit-box-shadow: inherit;
-	-moz-box-shadow: inherit;
-	box-shadow: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-shadow: inherit;
+  padding: inherit;
+  border: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  -webkit-box-shadow: inherit;
+  -moz-box-shadow: inherit;
+  box-shadow: inherit;
+  color: inherit;
+  font-size: inherit;
+  text-shadow: inherit;
 }
 
-#tiptip_arrow,
-#tiptip_arrow_inner {
-	position: inherit;
-	width: inherit;
-	height: inherit;
-	border-width: inherit;
-	border-style: inherit;
-	border-color: inherit;
+#tiptip_arrow, #tiptip_arrow_inner {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  border-width: inherit;
+  border-style: inherit;
+  border-color: inherit;
 }
 
 #tiptip_holder.tip_top #tiptip_arrow {
-	border-top-color: inherit;
+  border-top-color: inherit;
 }
 
 #tiptip_holder.tip_bottom #tiptip_arrow {
-	border-bottom-color: inherit;
+  border-bottom-color: inherit;
 }
 
 #tiptip_holder.tip_right #tiptip_arrow {
-	border-right-color: inherit;
+  border-right-color: inherit;
 }
 
 #tiptip_holder.tip_left #tiptip_arrow {
-	border-left-color: inherit;
+  border-left-color: inherit;
 }
 
 #tiptip_holder.tip_top #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-top-color: inherit;
+  margin-top: inherit;
+  margin-left: inherit;
+  border-top-color: inherit;
 }
 
 #tiptip_holder.tip_bottom #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-bottom-color: inherit;
+  margin-top: inherit;
+  margin-left: inherit;
+  border-bottom-color: inherit;
 }
 
 #tiptip_holder.tip_right #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-right-color: inherit;
+  margin-top: inherit;
+  margin-left: inherit;
+  border-right-color: inherit;
 }
 
 #tiptip_holder.tip_left #tiptip_arrow_inner {
-	margin-top: inherit;
-	margin-left: inherit;
-	border-left-color: inherit;
+  margin-top: inherit;
+  margin-left: inherit;
+  border-left-color: inherit;
 }
 
-.gallery-image-size-small {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-.gallery-image-size-medium {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-.gallery-image-size-thumbnail {
-	max-width: inherit;
-	max-height: inherit;
-}
-
-.gallery-image-size-square {
-	max-width: inherit;
-	max-height: inherit;
+.gallery-image-size-small, .gallery-image-size-medium, .gallery-image-size-thumbnail, .gallery-image-size-square {
+  max-width: inherit;
+  max-height: inherit;
 }
 
 .flag-user-ok {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
-.flag-user-abusive {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
-}
-
-.unflag-user-ok {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
-	text-decoration: inherit;
+.flag-user-abusive, .unflag-user-ok {
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  color: inherit;
+  font-size: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 .unflag-user-abusive {
-	margin: inherit;
-	padding: inherit;
-	border: inherit;
-	color: inherit;
-	font-size: inherit;
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+  color: inherit;
+  font-size: inherit;
 }
-
-/*# sourceMappingURL=normalize.css.map */
