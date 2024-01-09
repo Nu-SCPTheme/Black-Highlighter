@@ -6,18 +6,18 @@ IMAGE_OPTIMIZE_SOURCES := $(wildcard src/img/*)
 IMAGE_OPTIMIZE_OUTPUTS := $(patsubst src/img/%,dist/img/%,$(IMAGE_OPTIMIZE_SOURCES))
 
 # Images to copy
-dist/img/page-toolbar-icons/%: src/img/page-toolbar-icons/%
+dist/img/page-toolbar-icons/%: src/img/page-toolbar-icons/% $(IMAGE_COPY_SOURCES)
 	build/install.sh 644 $< $@
 
-dist/img/text-editor-icons/%: src/img/text-editor-icons/%
+dist/img/text-editor-icons/%: src/img/text-editor-icons/% $(IMAGE_COPY_SOURCES)
 	build/install.sh 644 $< $@
 
-dist/img/social-icons/%: src/img/social-icons/%
+dist/img/social-icons/%: src/img/social-icons/% $(IMAGE_COPY_SOURCES)
 	build/install.sh 644 $< $@
 
 # Images to optimize
-dist/img/%.png: src/img/%.png node_modules
+dist/img/%.png: src/img/%.png $(IMAGE_OPTIMIZE_SOURCES) node_modules
 	bun svgo $< -o $@
 
-dist/img/%.svg: src/img/%.svg node_modules
+dist/img/%.svg: src/img/%.svg $(IMAGE_OPTIMIZE_SOURCES) node_modules
 	bun svgo $< -o $@
