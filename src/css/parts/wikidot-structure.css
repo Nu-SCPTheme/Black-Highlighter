@@ -617,11 +617,12 @@ div[id*="page-options-bottom"] {
 	white-space: nowrap;
 
 	.options {
-		display: grid !important;
-		grid-template-columns: repeat(9, min-content);
+		display: flex !important;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		padding: 0 1.5em 0 0;
+		font-size: 0;
+		padding: 0 .25rem 0 0;
 		color: transparent;
 
 		&,
@@ -635,8 +636,10 @@ div[id*="page-options-bottom"] {
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
-				width: 100%;
 				height: 1em;
+				order: 1;
+				font-size: calc(var(--base-font-size)*.75);
+				padding-right: .4em;
 				box-shadow: 0.0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));
 			}
 		}
