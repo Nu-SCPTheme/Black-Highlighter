@@ -4342,15 +4342,20 @@ div[id*="page-options-bottom"] > a#delete-button {
 
 #footer .options {
   color: rgba(0, 0, 0, 0);
-  grid-template-columns: repeat(9, min-content);
+  -webkit-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  padding: 0 1.5em 0 0;
-  display: grid !important;
+  padding: 0 .25rem 0 0;
+  font-size: 0;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: flex !important;
 }
 
 #footer .options {
@@ -4362,30 +4367,38 @@ div[id*="page-options-bottom"] > a#delete-button {
 }
 
 #footer .options a {
+  font-size: calc(var(--base-font-size) * .75);
   box-shadow: .0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 1;
+  order: 1;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  width: 100%;
   height: 1em;
+  padding-right: .4em;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
 }
 
 #footer .options a:visited {
+  font-size: calc(var(--base-font-size) * .75);
   box-shadow: .0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 1;
+  order: 1;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  width: 100%;
   height: 1em;
+  padding-right: .4em;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
