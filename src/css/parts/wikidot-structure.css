@@ -4382,6 +4382,7 @@ div.odialog-shader-iframe {
 @media (--viewport-tablet) {
 	#content-wrap {
 		grid-template-areas: "content content content";
+		grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
 		justify-content: center;
 		min-height: calc(100vh - var(--final-header-height-on-mobile));
 		margin: calc(var(--topbar-height-on-mobile) - 0.125rem) auto 0 !important;
