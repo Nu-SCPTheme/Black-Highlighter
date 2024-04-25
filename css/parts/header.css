@@ -16,10 +16,7 @@
 
 /* Body Background Image: Includes header image, subtle gradient that extends into the content, and page background color */
 body {
-	background-image:
-		var(--gradient-header),
-		var(--gradient-topmenu),
-		var(--gradient-background);
+	background-image: var(--gradient-header), var(--gradient-topmenu), var(--gradient-background);
 	background-repeat: repeat-x;
 	background-size:
 		var(--header-background-image-size),
@@ -495,6 +492,7 @@ div#container-wrap {
 	}
 
 	/* Not Logged In Styling */
+
 	&:not(.page-rate-widget-box, #search-top-box-form) {
 		> a {
 			&:is(.login-status-create-account, .login-status-sign-in) {
@@ -954,8 +952,7 @@ div#container-wrap {
 					> img {
 						/* Images in Dropdown Menu Support */
 						position: initial;
-						padding: 0 0.25rem;
-						padding-left: 0;
+						padding: 0 0.25rem 0 0;
 					}
 
 					& a {
@@ -1122,7 +1119,6 @@ div#container-wrap {
 		2. *LOGIN/SEARCH BOX
 		3. *TOP BAR
 	=============== */
-
 	::-webkit-scrollbar {
 		width: 0;
 		background: transparent;
@@ -1133,7 +1129,6 @@ div#container-wrap {
 	}
 
 	/* ***MAIN*** */
-
 	:root {
 		--header-h1-font-size: calc(1.15rem + (2.405 - 1.15) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75)));
 		--header-h2-font-size: calc(0.5rem + (0.945 - 0.5) * ((var(--header-width-on-mobile, 100vw) - 18.75rem) / (48 - 18.75)));
@@ -1166,14 +1161,16 @@ div#container-wrap {
 		background-image: var(--logo-image);
 		background-repeat: no-repeat, repeat;
 		background-position: calc((var(--header-height-on-mobile) - 0.75rem) - var(--size)) calc(((var(--size) * -1) + var(--header-height-on-mobile) + var(--y-offset)) / 2);
-		background-size: var(--size), 100% var(--header-height-on-mobile);
+		background-size:
+			var(--size),
+			100% var(--header-height-on-mobile);
 
 		& h1 {
 			max-height: var(--header-height-on-mobile);
 
 			& a {
 				margin-top: calc(((var(--header-height-on-mobile) / 2)) - 1.345rem);
-				margin-left: calc(var(--header-height-on-mobile) - .625rem);
+				margin-left: calc(var(--header-height-on-mobile) - 0.625rem);
 			}
 
 			& span {
@@ -1184,7 +1181,7 @@ div#container-wrap {
 		& h2 {
 			& span {
 				margin-top: calc(((var(--header-height-on-mobile) / 2) + (var(--header-h1-font-size) / 2) + 0.5rem));
-				margin-left: calc(var(--header-height-on-mobile) - .425rem);
+				margin-left: calc(var(--header-height-on-mobile) - 0.425rem);
 				line-height: 1;
 			}
 		}
@@ -1197,7 +1194,6 @@ div#container-wrap {
 	}
 
 	/* ***LOGIN/SEARCH BOX*** */
-
 	#search-top-box {
 		inset: 2em 3% auto auto;
 	}
@@ -1296,7 +1292,6 @@ div#container-wrap {
 	}
 
 	/* ***TOP BAR*** */
-
 	#header div#top-bar {
 		height: var(--topbar-height-on-mobile);
 		margin: calc(var(--header-height-on-mobile)) 0 1.75rem 0;
@@ -1319,7 +1314,6 @@ div#container-wrap {
 	}
 
 	/* ul */
-
 	#header div[class*="top-bar"] {
 		> ul {
 			width: calc(100% - var(--topbar-height-on-mobile));
@@ -1357,7 +1351,7 @@ div#container-wrap {
 						}
 
 						&:nth-of-type(even) ul {
-							left: 0%;
+							left: 0;
 						}
 					}
 

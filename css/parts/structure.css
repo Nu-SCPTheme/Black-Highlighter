@@ -49,8 +49,7 @@
 			"slnt" var(--slnt, 0),
 			"CASL" var(--CASL, 0),
 			"CRSV" var(--CRSV, 0),
-			"MONO" var(--MONO, 0),
-			"FLAR" var(--FLAR, 0);
+			"MONO" var(--MONO, 0);
 	}
 
 	@supports (font-feature-settings: inherit) {
@@ -145,6 +144,7 @@ body {
 	}
 
 	/* Bold/Italic Font Globals */
+
 	& strong,
 	& strong *,
 	& b,
@@ -497,7 +497,6 @@ input[type="radio"] {
 		box-sizing: border-box;
 		padding: 0;
 		overflow: hidden;
-		outline: 0;
 	}
 
 	&::before,
@@ -565,8 +564,7 @@ input[type="radio"] {
 #new-thread-form.data-form {
 	padding: 0;
 	background-color: transparent;
-	font-size: 0.8125rem;
-	font-size: max(0.8125rem, min(2.5vw, var(--base-font-size)));
+	font-size: var(--base-font-size);
 
 	&,
 	& * {
@@ -598,6 +596,7 @@ input[type="radio"] {
 		}
 
 		/* ===DATA-FORM LABEL STYLING=== */
+
 		.form-labels {
 			z-index: 2;
 			margin: -1em 0 -0.5em 1rem;
@@ -666,6 +665,7 @@ input[type="radio"] {
 		}
 
 		/* ===DATA-FORM GENERAL INPUT STYLING=== */
+
 		& span.field-select-long,
 		& div.dataform-pagepath-chooser {
 			display: flex;
@@ -755,6 +755,7 @@ input[type="radio"] {
 		}
 
 		/* ===CHECKBOX & RADIO DATAFORM STYLING=== */
+
 		& span.field-select-short,
 		& span.field-checkbox {
 			& label {
@@ -795,11 +796,13 @@ input[type="radio"] {
 		}
 
 		/* ===STATIC DATAFORM STYLING=== */
+
 		& div.field-static {
 			font-size: 1.2em !important; /* Overwriting inline styling */
 		}
 
 		/* ===PASSWORD STYLING=== */
+
 		& span.field-password {
 			text-indent: 1rem;
 
@@ -810,6 +813,7 @@ input[type="radio"] {
 		}
 
 		/* ===SELECT & PAGE SELECT STYLING=== */
+
 		& span.field-pagepage {
 			& div[class*="dataform-pagepath"] {
 				> span {
@@ -1281,6 +1285,7 @@ h6 {
 	}
 
 	/* Ordered Lists */
+
 	& ol {
 		list-style: decimal outside;
 		margin-left: 1em;
@@ -1292,6 +1297,7 @@ h6 {
 	}
 
 	/* Special Hierarchical Ordered List */
+
 	:is(.hierarch, .heirarch) {
 		counter-reset: hierarch;
 		list-style-type: none;
@@ -1315,6 +1321,7 @@ h6 {
 	}
 
 	/* Definition Lists */
+
 	& dl {
 		padding: 1.5ex 2ch;
 		border: 0.0625rem solid rgb(var(--dl-content-border-color));
@@ -1374,6 +1381,7 @@ a {
 	}
 
 	/* Line-Through Link Coloring on Chrome/Safari */
+
 	[style*="line-through"] &,
 	[style*="line-through"] &:is(:visited, :active) {
 		text-decoration-color: inherit;

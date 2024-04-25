@@ -4,8 +4,8 @@ $(function () {
 	let styleSheets = [];
 	const bhlSheets = "bhl";
 
-	var bhlMinDetect;
-	var bhlDetect;
+	let bhlMinDetect;
+	let bhlDetect;
 
 	//BHL Stylesheets
 	fetch("./css/black-highlighter.css")
@@ -117,7 +117,7 @@ $(function () {
 	(function (DOMParser) {
 		"use strict";
 
-		var DOMParser_proto = DOMParser.prototype,
+		const DOMParser_proto = DOMParser.prototype,
 			real_parseFromString = DOMParser_proto.parseFromString;
 
 		// Firefox/Opera/IE throw errors on unsupported types
@@ -133,7 +133,7 @@ $(function () {
 
 		DOMParser_proto.parseFromString = function (markup, type) {
 			if (/^\s*text\/html\s*(?:;|$)/i.test(type)) {
-				var doc = document.implementation.createHTMLDocument("");
+				const doc = document.implementation.createHTMLDocument("");
 				if (markup.toLowerCase().indexOf("<!doctype") > -1) {
 					doc.documentElement.innerHTML = markup;
 				} else {
@@ -161,7 +161,7 @@ $(function () {
 	const changeStyleSheet = async (cssFile, cssId) => {
 		try {
 			let cssIdSelect = "#" + cssId;
-			if ($(cssIdSelect) && cssFile.length == 1) {
+			if ($(cssIdSelect) && cssFile.length === 1) {
 				$(cssIdSelect).href = cssFile;
 			} else {
 				for (let i = 0; i < cssFile.length; i++) {
@@ -335,7 +335,7 @@ $(function () {
 			await getNewElems();
 			await wait(1000);
 			await refreshScripts().then(() => {
-				if (bhlDetect == -1 && bhlMinDetect == -1) {
+				if (bhlDetect === -1 && bhlMinDetect === -1) {
 					changeStyleSheet(styleSheets, bhlSheets);
 				}
 			});

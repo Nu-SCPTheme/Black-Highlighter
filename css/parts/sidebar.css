@@ -36,16 +36,14 @@
 		background-color 0.15s var(--ease-in-out),
 		scrollbar-color 0.15s var(--ease-in-out),
 		border-color 0.15s var(--ease-in-out);
-	border: none;
-	border-color: rgba(var(--swatch-tertiary-color), 0.4);
+	border: none rgba(var(--swatch-tertiary-color), 0.4);
 	background-color: rgb(var(--sidebar-bg-color));
 	color: rgb(var(--sidebar-links-text));
 	font-family: var(--UI-font, var(--header-font));
 	direction: rtl;
 	scrollbar-width: thin;
 	overscroll-behavior: contain;
-	scrollbar-color:
-		/* Thumb */ rgba(var(--swatch-primary-darker), 0.1) /* Track */ rgba(var(--swatch-tertiary-color), 0.05);
+	scrollbar-color: /* Thumb */ rgba(var(--swatch-primary-darker), 0.1) /* Track */ rgba(var(--swatch-tertiary-color), 0.05);
 	justify-self: start;
 
 	@supports (-moz-appearance: none) and (background-attachment: local) and (not (-moz-osx-font-smoothing: auto)) {
@@ -54,6 +52,7 @@
 	}
 
 	/* Hover Scrollbar Behavior */
+
 	&:is(:hover, :active, :focus-within) {
 		scrollbar-color: rgb(var(--swatch-primary-darker)) /* Thumb */ rgb(var(--swatch-menubg-color)); /* Track */
 		border-color: rgb(var(--swatch-primary-darker));
@@ -74,6 +73,7 @@
 	}
 
 	/* Manually style each of the sidebar blocks for compatibility with the old sidebar design */
+
 	& div[style*="#f0fff6"] {
 		background-color: rgba(var(--swatch-primary-darker), 0.25) !important;
 	}
@@ -95,7 +95,7 @@
 	}
 }
 
-	/* ===SUB-BLOCK=== */
+/* ===SUB-BLOCK=== */
 
 .side-block {
 	#side-bar &,
@@ -113,6 +113,7 @@
 
 	#side-bar & {
 		/* Social Media Icons */
+
 		&.media {
 			& a {
 				position: relative;
@@ -201,6 +202,7 @@
 		}
 
 		/* Forcing default sidebar coloring on any INT branches that still use Background Color */
+
 		&[style*="background-color"] {
 			background-color: rgba(var(--dark-accent), 0.15) !important;
 		}
@@ -260,6 +262,7 @@
 	}
 
 	/* ===MENU ITEMS=== */
+
 	& div.menu-item {
 		&,
 		> p,
@@ -323,6 +326,7 @@
 		/* ===SUB-TEXT=== */
 
 		/* Sub-Text Styling for select Int Branches */
+
 		.sub-text {
 			display: inline-flex;
 			min-width: 35%;
@@ -334,6 +338,7 @@
 		}
 
 		/* ===MAIN LINKS & TEXT=== */
+
 		& a {
 			--wght: var(--ui-wght);
 
@@ -371,6 +376,7 @@
 			/* ===MAIN LINKS HOVER BG BAR=== */
 
 			/* Menu Item Hover Color Bar */
+
 			&::before {
 				--clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
@@ -469,6 +475,7 @@
 		}
 
 		/* ===SCP & TALES SERIES== */
+
 		&.scp-series a,
 		&.scp-tales a,
 		&.small a:not([href*="shortest"]),
@@ -504,6 +511,7 @@
 	}
 
 	/* there's an empty menu item in the old sidebar design */
+
 	.close-menu,
 	& div.menu-item:empty {
 		display: none;
@@ -652,6 +660,7 @@
 			color: rgb(var(--sidebar-collapsible-link-color));
 
 			/* create a dropdown triangle next to the collapsible */
+
 			&::after {
 				content: "";
 				position: absolute;
@@ -771,12 +780,14 @@
 		}
 
 		/* create a gap next to the collapsible contents */
+
 		&.collapsible-block-content {
 			box-sizing: border-box;
 			border-right: 2rem solid rgb(var(--sidebar-border-color));
 			background-color: rgb(var(--sidebar-collapsible-body-bg));
 
 			/* hide the last border within the collapsible */
+
 			.menu-item {
 				&:last-of-type {
 					border-bottom: none;

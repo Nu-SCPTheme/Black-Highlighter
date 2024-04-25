@@ -46,7 +46,7 @@
 		padding: 0;
 		zoom: unset;
 		border: 0;
-		box-shadow: 0 0.3125rem 0 0 var(--tab-bottom-border-color);
+		box-shadow: 0 0.3125rem 0 0 var(--tabs-bottom-border-color);
 		font-family: var(--UI-font, var(--header-font));
 		clip-path: var(--clip-path);
 
@@ -64,7 +64,11 @@
 			margin: 0;
 			padding: 0;
 			translate: 0 0;
-			transition: box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), translate 0.2s var(--ease-in-out);
+			transition:
+				box-shadow 0.2s var(--ease-in-out),
+				color 0.15s var(--ease-in-out),
+				background-color 0.15s var(--ease-in-out),
+				translate 0.2s var(--ease-in-out);
 			border: none;
 			background-color: rgb(var(--tabs-bg));
 			box-shadow: 0 0 0 0 rgb(var(--tabs-selected-outline));
@@ -72,7 +76,11 @@
 
 			@supports not (translate: 0 0) {
 				transform: translate(0, 0);
-				transition: box-shadow 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), background-color 0.15s var(--ease-in-out), transform 0.2s var(--ease-in-out)
+				transition:
+					box-shadow 0.2s var(--ease-in-out),
+					color 0.15s var(--ease-in-out),
+					background-color 0.15s var(--ease-in-out),
+					transform 0.2s var(--ease-in-out);
 			}
 
 			& a {
@@ -96,14 +104,20 @@
 					width: 101%;
 					height: 101%;
 					will-change: background-color, clip-path;
-					transition: background-color 0.05s var(--ease-in-out), clip-path 0.2s var(--ease-in-out);
+					transition:
+						background-color 0.05s var(--ease-in-out),
+						clip-path 0.2s var(--ease-in-out);
 					background-color: rgb(var(--tabs-bottom-border-color));
 					pointer-events: none;
 					clip-path: var(--clip-path);
 				}
 
 				& em {
-					transition: color 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), font-weight 0.15s var(--ease-in-out);
+					transition:
+						color 0.15s var(--ease-in-out),
+						font-weight 0.15s var(--ease-in-out),
+						font-variation-settings 0.15s var(--ease-in-out),
+						font-weight 0.15s var(--ease-in-out);
 					border: unset !important; /* Overwriting Wikidot Inline-Styling */
 				}
 
@@ -162,8 +176,7 @@
 
 				&,
 				& em {
-					border: none;
-					border-color: transparent;
+					border: none transparent;
 				}
 
 				&:is(:hover, :active) {
@@ -207,7 +220,10 @@
 	clear: both;
 	border: none;
 	background-color: rgb(var(--blockquote-bg-color));
-	box-shadow: inset 0 0 0 0.0625rem rgba(var(--blockquote-border-color), 0.5), inset 0.0625rem 0 0 0 rgba(var(--blockquote-border-color), 0.5), inset 0 -0.0625rem 0 0 rgba(var(--blockquote-border-color), 0.75);
+	box-shadow:
+		inset 0 0 0 0.0625rem rgba(var(--blockquote-border-color), 0.5),
+		inset 0.0625rem 0 0 0 rgba(var(--blockquote-border-color), 0.5),
+		inset 0 -0.0625rem 0 0 rgba(var(--blockquote-border-color), 0.75);
 
 	&:is(:first-child, :only-child) {
 		margin-block-start: 0;
@@ -219,7 +235,10 @@
 }
 
 .colorbar-quote {
-	box-shadow: inset 0.25rem 0 0 0 rgb(var(--blockquote-colorbar-color)), -0.125rem 0 0.25rem 0 rgba(var(--blockquote-border-color), 0.25), inset 0.0625rem 0 0 0 rgba(var(--blockquote-border-color), 0.5),
+	box-shadow:
+		inset 0.25rem 0 0 0 rgb(var(--blockquote-colorbar-color)),
+		-0.125rem 0 0.25rem 0 rgba(var(--blockquote-border-color), 0.25),
+		inset 0.0625rem 0 0 0 rgba(var(--blockquote-border-color), 0.5),
 		inset 0 -0.0625rem 0 0 rgba(var(--blockquote-border-color), 0.75);
 }
 
@@ -295,12 +314,16 @@
 			content: counter(footnotes) ".";
 			display: inline-flex;
 			justify-content: flex-end;
-			transition: color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out);
+			transition:
+				color 0.15s var(--ease-in-out),
+				font-weight 0.2s var(--ease-in-out);
 			color: rgb(var(--footnotes-footer-num-color));
 			counter-increment: footnotes;
 
 			@supports (font-feature-settings: inherit) {
-				transition: color 0.15s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+				transition:
+					color 0.15s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
 			}
 		}
 
@@ -341,24 +364,24 @@
 	}
 }
 
-.math-equation{
+.math-equation {
 	display: none;
 	text-align: center;
 	padding: 0.5em 0;
 }
 
-.equation-number{
+.equation-number {
 	float: right;
 	margin-top: 1em;
 	font-size: 1.1em;
 }
 
 .math-inline {
-    display: none;
+	display: none;
 }
 
 span#MathJax_Message {
-    display: none;
+	display: none;
 }
 
 span.math-inline span.merror {
@@ -371,11 +394,11 @@ a:is(.inline-math-error, .math-equation-error) {
 }
 
 a.inline-math-error {
-    padding: 0 0.5em;
+	padding: 0 0.5em;
 }
 
 a.math-equation-error {
-    padding: 0 2em;
+	padding: 0 2em;
 }
 
 /* ===HOVER BLOCKS=== */
@@ -400,9 +423,13 @@ a.math-equation-error {
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		animation: bhl-lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards, bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
+		animation:
+			bhl-lift-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards,
+			bhl-slide-in 0.2s var(--ease-in-out) 0.1s 1 alternate forwards;
 		background-color: transparent;
-		box-shadow: 0 0 0 0 rgba(var(--swatch-alternate-color), 0.25), inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
+		box-shadow:
+			0 0 0 0 rgba(var(--swatch-alternate-color), 0.25),
+			inset 0 0 0 0.0625rem rgb(var(--swatch-primary-darkest));
 	}
 
 	.content {
@@ -470,7 +497,7 @@ a.math-equation-error {
 	align-items: center;
 	min-width: 30%;
 	max-width: 100%;
-	gap:0.0625rem;
+	gap: 0.0625rem;
 
 	&,
 	& * {
@@ -509,7 +536,7 @@ a.math-equation-error {
 
 		box-sizing: border-box;
 		width: 100%;
-		padding: 0.5ex .5ch 1ex;
+		padding: 0.5ex 0.5ch 1ex;
 		background-color: rgb(var(--swatch-secondary-color));
 		font-size: 0.9em;
 		font-weight: var(--wght);
@@ -613,8 +640,7 @@ div.page-rate-widget-box {
 
 	:is(.rateup, .ratedown) {
 		& a {
-			background: unset;
-			background-color: transparent;
+			background: transparent;
 		}
 	}
 
@@ -861,7 +887,9 @@ div.heritage-rating-module {
 		border: none;
 		border-radius: 0;
 		background: rgb(var(--modal-bg)) !important; /* Overwrite inline styling */
-		box-shadow: inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color), 0.25), 0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color), 0.25);
+		box-shadow:
+			inset 0 0 0 0.125rem rgba(var(--swatch-alternate-color), 0.25),
+			0.5rem 0.25rem 1rem 0 rgba(var(--swatch-alternate-color), 0.25);
 
 		> hr:is(:first-of-type, :last-of-type) {
 			display: none;
@@ -920,7 +948,7 @@ div.heritage-rating-module {
 	}
 
 	.close-credits {
-		inset: .875em .875em auto auto;
+		inset: 0.875em 0.875em auto auto;
 		width: 1.75em;
 		height: 1.75em !important; /* Overwrite inline styling */
 
@@ -955,7 +983,9 @@ div.heritage-rating-module {
 
 				rotate: 0deg;
 				scale: 1;
-				transition: rotate 0.2s var(--ease-in-out), scale 0.2s var(--ease-in-out);
+				transition:
+					rotate 0.2s var(--ease-in-out),
+					scale 0.2s var(--ease-in-out);
 				background-color: rgb(var(--modal-header-bg));
 				mask: var(--mask-image) center / 0.75em no-repeat;
 
@@ -1064,7 +1094,7 @@ div.heritage-rating-module {
 /* ===COLLAPSIBLE BLOCKS=== */
 
 .collapsible-block-unfolded-link * {
-  overflow-wrap: anywhere;
+	overflow-wrap: anywhere;
 }
 
 /* Nested Collapsible Block Fix */
@@ -1096,7 +1126,9 @@ table[style*="margin:0"] * {
 	min-width: var(--sidebar-width-on-desktop);
 	max-width: var(--sidebar-width-on-desktop);
 	margin: 0 0 1ex;
-	box-shadow: -0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25), inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
+	box-shadow:
+		-0.125rem 0 0.25rem 0 rgba(var(--swatch-tertiary-color), 0.25),
+		inset 0 -0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.75);
 	font-family: var(--UI-font);
 }
 
@@ -1128,7 +1160,11 @@ table[style*="margin:0"] * {
 			width: 100%;
 			height: 100%;
 			padding: 0.25em 0.25em 0.25em 0;
-			transition: font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out), opacity 0.2s var(--ease-in-out), filter 0.2s var(--ease-in-out);
+			transition:
+				font-weight 0.15s var(--ease-in-out),
+				font-variation-settings 0.15s var(--ease-in-out),
+				opacity 0.2s var(--ease-in-out),
+				filter 0.2s var(--ease-in-out);
 			pointer-events: all;
 
 			&::before {
@@ -1145,7 +1181,9 @@ table[style*="margin:0"] * {
 				content: var(--text-tableofcontents);
 				position: absolute;
 				left: 100%;
-				transition: font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out);
+				transition:
+					font-weight 0.15s var(--ease-in-out),
+					font-variation-settings 0.15s var(--ease-in-out);
 				white-space: nowrap;
 			}
 
@@ -1201,7 +1239,9 @@ table[style*="margin:0"] * {
 
 		display: flex !important; /* Overwriting JS-injected inline styling */
 		align-items: center;
-		transition: font-weight 0.15s var(--ease-in-out), font-variation-settings 0.15s var(--ease-in-out);
+		transition:
+			font-weight 0.15s var(--ease-in-out),
+			font-variation-settings 0.15s var(--ease-in-out);
 		background-color: rgb(var(--toc-header-bg-color));
 		color: rgb(var(--toc-header-text-color));
 		font-weight: var(--wght);
@@ -1226,7 +1266,6 @@ table[style*="margin:0"] * {
 		padding-top: 0.25rem;
 		overflow: auto;
 		overflow-x: hidden;
-		overflow-y: auto;
 		background-color: rgb(var(--toc-body-bg-color));
 		box-shadow: 0 -0.25rem 0 0 rgb(var(--toc-header-bg-color));
 		font-size: calc(var(--base-font-size) * (13 / 15));
@@ -1340,7 +1379,10 @@ table[style*="margin:0"] * {
 		& a {
 			display: inline-block;
 			position: relative;
-			transition: font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out), translate 0.2s var(--ease-in-out);
+			transition:
+				font-weight 0.2s var(--ease-in-out),
+				font-variation-settings 0.2s var(--ease-in-out),
+				translate 0.2s var(--ease-in-out);
 
 			&::before {
 				content: "";
@@ -1351,7 +1393,10 @@ table[style*="margin:0"] * {
 				height: 1em;
 				rotate: y 25deg;
 				translate: -1.25em -50%;
-				transition: rotate 0.15s var(--ease-in-out), translate 0.15s var(--ease-in-out), opacity 0.2s var(--ease-in-out);
+				transition:
+					rotate 0.15s var(--ease-in-out),
+					translate 0.15s var(--ease-in-out),
+					opacity 0.2s var(--ease-in-out);
 				opacity: 0;
 				background-color: rgb(var(--toc-body-hover-arrow-color));
 				pointer-events: none;
@@ -1359,7 +1404,9 @@ table[style*="margin:0"] * {
 
 				@supports not (rotate: y 25deg) {
 					transform: rotateY(25deg) translate(-1.25em -50%);
-					transition: transform 0.15s var(--ease-in-out), opacity 0.2s var(--ease-in-out);
+					transition:
+						transform 0.15s var(--ease-in-out),
+						opacity 0.2s var(--ease-in-out);
 				}
 			}
 
@@ -1482,7 +1529,11 @@ table[style*="margin:0"] * {
 		& span {
 			grid-column: span 2;
 			grid-row: 1;
-			transition: background-color 0.2s var(--ease-in-out), color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+			transition:
+				background-color 0.2s var(--ease-in-out),
+				color 0.15s var(--ease-in-out),
+				font-weight 0.2s var(--ease-in-out),
+				font-variation-settings 0.2s var(--ease-in-out);
 
 			@media (--viewport-tablet) {
 				grid-row: 2;
@@ -1577,7 +1628,10 @@ table[style*="margin:0"] * {
 				width: 100%;
 				padding-inline: 0.25em;
 				overflow: hidden;
-				transition: color 0.15s var(--ease-in-out), font-weight 0.2s var(--ease-in-out), font-variation-settings 0.2s var(--ease-in-out);
+				transition:
+					color 0.15s var(--ease-in-out),
+					font-weight 0.2s var(--ease-in-out),
+					font-variation-settings 0.2s var(--ease-in-out);
 				text-overflow: ellipsis;
 
 				&,
@@ -1599,7 +1653,6 @@ table[style*="margin:0"] * {
 					--clip-path: polygon(0 100%, 100% 115%, 100% 0, 0 -15%);
 				}
 			}
-
 		}
 
 		& span.dots,
@@ -1703,7 +1756,9 @@ div.wiki-note {
 	background-color: rgb(var(--note-color));
 	background-image: linear-gradient(to bottom, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0.1)), linear-gradient(to bottom, rgb(255 255 255 / 0), rgb(255 255 255 / 0.2));
 	background-repeat: no-repeat, repeat;
-	background-size: 100% 1.5em, contain;
+	background-size:
+		100% 1.5em,
+		contain;
 	font-family: var(--mono-font);
 	background-blend-mode: overlay, normal;
 
@@ -1716,7 +1771,9 @@ div.wiki-note {
 		width: 70%;
 		height: 55%;
 		max-height: 40%;
-		box-shadow: inset 0 -0.5em 1.05em rgb(0 0 0 / 0.3), 0 0.5em 1.05em rgb(0 0 0 / 0.3);
+		box-shadow:
+			inset 0 -0.5em 1.05em rgb(0 0 0 / 0.3),
+			0 0.5em 1.05em rgb(0 0 0 / 0.3);
 	}
 
 	&::before {
@@ -1790,8 +1847,13 @@ div.sexy-box {
 	padding: 0.0625rem 0.1875rem;
 	border-radius: 0.1875em;
 	background: rgb(var(--swatch-background));
-	box-shadow: 0 -0.03125rem 0 rgba(var(--swatch-tertiary-color), 0.5), 0 0.03125em 0 rgb(var(--swatch-secondary-color)), 0 0.0625em 0 rgb(var(--swatch-secondary-color)), 0 0.125em 0 rgb(var(--swatch-secondary-color)),
-		0 0.125em 0 0.0625em rgba(var(--swatch-tertiary-color), 0.25), 0 0.125em 0 0.125em rgba(var(--swatch-tertiary-color), 0.5);
+	box-shadow:
+		0 -0.03125rem 0 rgba(var(--swatch-tertiary-color), 0.5),
+		0 0.03125em 0 rgb(var(--swatch-secondary-color)),
+		0 0.0625em 0 rgb(var(--swatch-secondary-color)),
+		0 0.125em 0 rgb(var(--swatch-secondary-color)),
+		0 0.125em 0 0.0625em rgba(var(--swatch-tertiary-color), 0.25),
+		0 0.125em 0 0.125em rgba(var(--swatch-tertiary-color), 0.5);
 	font-size: 0.85em;
 	box-decoration-break: clone;
 }
@@ -1880,7 +1942,11 @@ div.block-left {
 	margin: 0.625em 0 0.938em;
 	border-radius: 0.625rem;
 	background-color: rgba(var(--gray-monochrome), 0.5);
-	box-shadow: 0 0.188em 0.375em var(--box-shadow-1), 0 0.188em 0.375em var(--box-shadow-2), 0 0 0.0625rem 0 var(--box-shadow-3) inset, 0 0 0.0625rem 0 var(--box-shadow-3);
+	box-shadow:
+		0 0.188em 0.375em var(--box-shadow-1),
+		0 0.188em 0.375em var(--box-shadow-2),
+		0 0 0.0625rem 0 var(--box-shadow-3) inset,
+		0 0 0.0625rem 0 var(--box-shadow-3);
 
 	&.standalone {
 		box-sizing: border-box;
@@ -1946,12 +2012,12 @@ div.block-left {
 
 		&,
 		& a {
-			color: rgb(var(--swatch--text-tertiary-color));
+			color: rgb(var(--swatch-text-tertiary-color));
 		}
 	}
 
 	.content-toc {
-		--box-shadow: rgba(var(--swatch-menutxt-dark-color) . 0.15);
+		--box-shadow: rgba(var(--swatch-menutxt-dark-color) 0 0.15);
 
 		margin: 1.25rem 0 0.313rem 0.313rem;
 		padding: 0 1.25rem;
