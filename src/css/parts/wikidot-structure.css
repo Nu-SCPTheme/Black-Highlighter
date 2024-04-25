@@ -56,7 +56,7 @@
 		"content-wrap"
 		"footer"
 		"license";
-	grid-template-columns: minmax(0,1fr);
+	grid-template-columns: minmax(0, 1fr);
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -98,9 +98,7 @@
 	grid-template-columns: repeat(6, 1fr);
 	max-width: min(90vw, var(--body-width-on-desktop));
 	margin: 0 auto;
-	padding: 2rem 1rem;
-	padding-right: 0;
-	padding-left: 0;
+	padding: 2rem 0;
 	background-color: transparent;
 	overflow-wrap: break-word;
 
@@ -418,6 +416,7 @@ div.page-watch-options {
 	}
 
 	/* Hiding Hidden Tags */
+
 	[href^="/system:page-tags/tag/_"] {
 		display: none;
 	}
@@ -622,7 +621,7 @@ div[id*="page-options-bottom"] {
 		align-items: center;
 		justify-content: center;
 		font-size: 0;
-		padding: 0 .25rem 0 0;
+		padding: 0 0.25rem 0 0;
 		color: transparent;
 
 		&,
@@ -638,8 +637,8 @@ div[id*="page-options-bottom"] {
 				justify-content: center;
 				height: 1em;
 				order: 1;
-				font-size: calc(var(--base-font-size)*.75);
-				padding-right: .4em;
+				font-size: calc(var(--base-font-size) * 0.75);
+				padding-right: 0.4em;
 				box-shadow: 0.0625rem 0 0 0 rgb(var(--swatch-text-secondary-color));
 			}
 		}
@@ -893,8 +892,8 @@ form#new-thread-form {
 			-0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 			0.0625rem 0 0 0 rgba(var(--swatch-tertiary-color), 0.5),
 			0 0.0625rem 0 0 rgba(var(--swatch-tertiary-color), 0.5);
-		font-size: 0.8125rem;
-		font-size: max(0.8125rem, min(2.5vw, var(--base-font-size)));
+		font-size: var(--max-font-size);
+		font-size: var(--base-font-size);
 
 		&,
 		& * {
@@ -923,6 +922,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR CAPTCHA FIELDS=== */
+
 	#page_id {
 		grid-area: pageid;
 	}
@@ -940,6 +940,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR TITLE BOX=== */
+
 	& table.form:first-of-type {
 		& tr {
 			& td {
@@ -1037,6 +1038,7 @@ form#new-thread-form {
 			}
 
 			/* Template Dropdown Styling */
+
 			&:not(:only-of-type) {
 				&:first-of-type > td:last-of-type {
 					grid-column: 1 / span 5;
@@ -1082,7 +1084,6 @@ form#new-thread-form {
 		--wght: var(--ui-wght);
 
 		grid-area: title-box;
-		box-shadow: 0 -0.0625em 0 0 rgba(var(--swatch-tertiary-color), 0.5);
 		width: calc(100% - 2rem);
 		margin: 0.5rem 1rem;
 		padding: 0.25em;
@@ -1147,6 +1148,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR TOOLBAR=== */
+
 	.wd-editor-toolbar-panel {
 		--icon-size: max(1.5em, min(5.75vw, calc((var(--body-width-on-desktop) - 6em) / 22)));
 
@@ -1605,6 +1607,7 @@ form#new-thread-form {
 			}
 
 			/* ===TOOLBAR ICONS === */
+
 			&.weditor-h1::before {
 				--edit-menu-mask: var(--h1-mask);
 			}
@@ -1775,6 +1778,7 @@ form#new-thread-form {
 		}
 
 		/* ===EDITOR TEXTAREA=== */
+
 		+ div {
 			position: relative;
 			grid-area: editbox;
@@ -1800,6 +1804,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR HELP LINKS=== */
+
 	.edit-help-34 {
 		--wght: var(--ui-wght);
 
@@ -1874,6 +1879,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR TEXTAREA HEIGHT BUTTONS=== */
+
 	.change-textarea-size {
 		display: grid;
 		grid-area: text-resize;
@@ -1916,6 +1922,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR DESCRIPTION BOX=== */
+
 	.edit-page-bottomtable tr > td:nth-of-type(1) > div:nth-of-type(1) {
 		--wght: var(--ui-hvr-wght);
 
@@ -2014,6 +2021,7 @@ form#new-thread-form {
 	}
 
 	/* ===DESCRIPTION CHAR COUNT=== */
+
 	.edit-page-bottomtable div.sub {
 		z-index: 5;
 		grid-area: descsub;
@@ -2025,6 +2033,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR LOCK INFO=== */
+
 	#lock-info {
 		grid-area: info-lock;
 		margin: 0.25em auto;
@@ -2035,6 +2044,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR NOTIFY CHECKBOX=== */
+
 	& div.do-not-notify {
 		display: flex;
 		grid-area: nonotif;
@@ -2054,6 +2064,7 @@ form#new-thread-form {
 	}
 
 	/* ===EDITOR BUTTONS=== */
+
 	& div.buttons {
 		display: grid;
 		gap: 1ch;
@@ -2604,7 +2615,7 @@ table.page-files {
 	[id*="files-"] & {
 		& tbody tr {
 			grid-template-columns: 1.5fr 1.5fr 1fr 2fr;
-			padding: .5em 0;
+			padding: 0.5em 0;
 		}
 	}
 }
@@ -2861,6 +2872,7 @@ table.page-files {
 	}
 
 	/* ===WANTED PAGES=== */
+
 	& div.wanted-pages-module {
 		display: contents;
 
@@ -2977,7 +2989,6 @@ table.page-files {
 
 	> a:not([href="javascript:;"]) {
 		justify-content: flex-end;
-		padding-right: 0.125em;
 		text-align: right;
 
 		&,
@@ -3292,7 +3303,6 @@ table.page-files {
 		#parent-page-name-list {
 			.yui-ac-content {
 				border: 0.0625rem solid rgba(var(--swatch-border-color), 0.25);
-				border-top: unset;
 				background-color: rgb(var(--swatch-background));
 			}
 
@@ -3623,15 +3633,7 @@ table.page-files {
 	}
 
 	@supports selector(div:has(p)) {
-		&:has(
-			form[onsubmit*="setParent"],
-			#who-rated-page-area,
-			form[onsubmit*="PageTagsModule"],
-			table.page-files, #edit-meta-addbutton,
-			ul[style="list-style: none"],
-			#page-block-checkbox,
-			#rename-option-rename,
-			#rename-option-delete) {
+		&:has(form[onsubmit*="setParent"], #who-rated-page-area, form[onsubmit*="PageTagsModule"], table.page-files, #edit-meta-addbutton, ul[style="list-style: none"], #page-block-checkbox, #rename-option-rename, #rename-option-delete) {
 			& p:not(:has(a[id*="backlinks"], a[onclick*="showWho"], a.btn)) {
 				--wght: var(--ui-wght);
 
@@ -3663,6 +3665,7 @@ table.page-files {
 	}
 
 	/* Delete Radio Buttons */
+
 	> a + h1 + p + table.form {
 		display: grid;
 		grid-auto-flow: row;
@@ -3715,6 +3718,7 @@ table.page-files {
 	}
 
 	/* Rename Backlinks */
+
 	#rename-backlinks-box {
 		& table.form {
 			display: grid;
@@ -3864,8 +3868,7 @@ div.odialog-shader-iframe {
 				display: block;
 				width: 1.5rem;
 				height: 1.5rem;
-				margin: -0.9rem auto;
-				margin-top: 0.6rem;
+				margin: 0.6rem auto -0.9rem;
 				animation: bhl-loading 1.2s linear infinite;
 				border-top: 0.3rem solid rgb(var(--modal-header-stripe));
 				border-right: 0.3rem solid transparent;
@@ -3884,6 +3887,7 @@ div.odialog-shader-iframe {
 		}
 
 		/* User Screen Styling */
+
 		> div.modal-body > img[style*="padding: 2px 8px;"]:first-child {
 			grid-column: 1;
 			grid-row: 1;
@@ -4010,13 +4014,13 @@ div.odialog-shader-iframe {
 		> h1 ~ table {
 			display: grid;
 			grid-auto-rows: 0.5fr;
-			grid-column: 1/span 2;
+			grid-column: 1 / span 2;
 			grid-template-columns: 1fr 1fr;
 			align-items: center;
 			height: max-content;
-			margin-top: .25rem;
+			margin-top: 0.25rem;
 			line-height: 1.25;
-			row-gap: .5ex;
+			row-gap: 0.5ex;
 
 			:is(tbody, tr) {
 				display: contents;
@@ -4086,6 +4090,7 @@ div.odialog-shader-iframe {
 	}
 
 	/* Objectionable Content Modal */
+
 	#ohandle-1 + .content {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(3, min-content);
@@ -4102,7 +4107,7 @@ div.odialog-shader-iframe {
 			> * {
 				/* Overwriting Inline Styling */
 				margin: 0 !important;
-				padding: .25em !important;
+				padding: 0.25em !important;
 				border: none !important;
 				color: rgb(var(--swatch-background)) !important;
 			}
@@ -4167,6 +4172,7 @@ div.odialog-shader-iframe {
 	}
 
 	/* Editor Modals */
+
 	[id*="wd-ed-imagewizard-by"] {
 		&,
 		& + * {
@@ -4255,8 +4261,6 @@ div.odialog-shader-iframe {
 
 	& div[class*="autocomplete"] {
 		width: 100%;
-
-
 	}
 }
 
@@ -4355,12 +4359,7 @@ div.odialog-shader-iframe {
 
 		padding: 0.5em 1em;
 		border-radius: 0.3125rem 0.3125rem 0 0;
-		background:
-			linear-gradient(
-					to bottom,
-					rgba(var(--swatch-primary), 0.25),
-					rgba(var(--swatch-secondary-color), 0.25)
-				);
+		background: linear-gradient(to bottom, rgba(var(--swatch-primary), 0.25), rgba(var(--swatch-secondary-color), 0.25));
 		box-shadow: inset 0.125rem 0.1875rem 0.375rem var(--box-shadow);
 		background-blend-mode: screen;
 
@@ -4385,7 +4384,7 @@ div.odialog-shader-iframe {
 @media (--viewport-tablet) {
 	#content-wrap {
 		grid-template-areas: "content content content";
-		grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 		justify-content: center;
 		min-height: calc(100vh - var(--final-header-height-on-mobile));
 		margin: calc(var(--topbar-height-on-mobile) - 0.125rem) auto 0 !important;
@@ -4472,7 +4471,7 @@ div.odialog-shader-iframe {
 		--wght: 700;
 
 		container-type: normal;
-		margin: .5em 0 1em;
+		margin: 0.5em 0 1em;
 		padding: 0;
 		font-family: var(--title-font);
 		font-size: 1.5em;
