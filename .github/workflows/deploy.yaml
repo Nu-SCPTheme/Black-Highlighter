@@ -23,10 +23,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
@@ -34,7 +34,7 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Build
-        run: ./build.sh
+        run: make
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -44,6 +44,9 @@ jobs:
       - name: Deploy (GitHub Pages)
         uses: actions/deploy-pages@v4
         id: deployment
+
+      - name: Clean up for S3
+        run: make clean-up-s3
 
       - name: Upload to S3
         run: |
