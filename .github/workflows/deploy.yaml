@@ -1,58 +1,63 @@
-name: Build
+name: Deploy
+
 on:
   push:
-    paths:
-      - 'build/**/'
-      - 'legacy/*'
-      - 'package.json'
-      - 'src/**/*'
-      - '.github/workflows/deploy.yaml'
+    branches:
+      - main
 
 env:
   BUCKET_PATH: theme/en/black-highlighter
 
 jobs:
   build-and-deploy:
+    name: Deploy CSS
     runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Build
-        run: make
+        run: ./build.sh
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
 
       - name: Deploy (GitHub Pages)
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        if: ${{ github.ref == 'refs/heads/master' }}
-        with:
-          branch: gh-pages
-          folder: dist
+        uses: actions/deploy-pages@v4
+        id: deployment
 
-      - name: Clean up for S3
-        run: make clean-up-s3
-
-      - name: Deploy (S3)
-        uses: emmiegit/s3-sync-action@main
-        if: ${{ github.ref == 'refs/heads/master' }}
-        with:
-          args: --delete
+      - name: Upload to S3
+        run: |
+          export sync_args=( "--delete" "--acl" "public-read" "dist" "s3://${{ vars.AWS_S3_BUCKET }}/${{ env.BUCKET_PATH }}" )
+          # Manually set content-types for anything aws-cli can't guess correctly
+          aws s3 sync ${sync_args[@]} --exclude "*" --include "*.css" --content-type "text/css; charset=utf-8"
+          aws s3 sync ${sync_args[@]} --exclude "*.css"
         env:
-          AWS_S3_BUCKET: ${{ vars.AWS_S3_BUCKET }}
-          AWS_REGION: ${{ vars.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          SOURCE_DIR: dist
-          DEST_DIR: ${{ env.BUCKET_PATH }}
+          AWS_ENDPOINT_URL: 'https://${{ vars.DIGITALOCEAN_SPACES_REGION }}.digitaloceanspaces.com'
+          AWS_DEFAULT_REGION: 'us-east-1'
 
-      - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
-        if: ${{ github.ref == 'refs/heads/master' }}
+      - name: Invalidate Spaces Cache
+        run: doctl compute cdn flush $DIGITALOCEAN_CDN_ID
         env:
-          DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION }}
-          PATHS: /${{ env.BUCKET_PATH }}/ /${{ env.BUCKET_PATH}}/*
-          AWS_REGION: ${{ vars.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          DIGITALOCEAN_CDN_ID: ${{ vars.DIGITALOCEAN_CDN_ID }}
