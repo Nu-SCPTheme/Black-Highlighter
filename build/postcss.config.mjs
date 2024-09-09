@@ -5,21 +5,45 @@ import postcssMixins from "postcss-mixins";
 import stylelint from "stylelint";
 import postcssLightningcss from "postcss-lightningcss";
 import reporter from "postcss-reporter";
-import { bundle } from "lightningcss";
+import { bundleAsync } from "lightningcss";
 
 const lightningcssBundle = (opts = {}) => {
 	return {
 		postcssPlugin: "lightningcss-bundle",
-		Once(root, { result }) {
+		async Once(root, { result }) {
 			const filename = opts.filename || result.opts.from;
-			const { code } = bundle({
-				filename,
-				...opts.lightningcssOptions
-			});
+			const tempRoot = postcss.root();
 
-			root.removeAll();
-			const parsedCode = postcss.parse(code);
-			root.append(parsedCode);
+			try {
+				const { code } = await bundleAsync({
+					filename,
+					...opts.lightningcssOptions,
+					resolver: {
+						read(filePath) {
+							if (filePath.startsWith('http')) {
+								return '';
+							}
+							return fs.readFileSync(filePath, 'utf8');
+						},
+						resolve(specifier, from) {
+							if (specifier.startsWith('http')) {
+								return from;
+							}
+							const resolvedPath = path.resolve(path.dirname(from), specifier);
+							const content = fs.readFileSync(resolvedPath, 'utf8');
+							tempRoot.append(postcss.parse(content));
+							return resolvedPath;
+						}
+					}
+				});
+
+				root.removeAll();
+				root.append(tempRoot);
+				root.append(postcss.parse(code));
+			} catch (error) {
+				console.error("LightningCSS bundling error:", error);
+				throw error;
+			}
 		}
 	};
 };
