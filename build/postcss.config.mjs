@@ -5,45 +5,41 @@ import postcssMixins from "postcss-mixins";
 import stylelint from "stylelint";
 import postcssLightningcss from "postcss-lightningcss";
 import reporter from "postcss-reporter";
-import { bundleAsync } from "lightningcss";
+import browserslist from "browserslist";
+import { bundleAsync, browserslistToTargets } from "lightningcss";
 
 const lightningcssBundle = (opts = {}) => {
 	return {
 		postcssPlugin: "lightningcss-bundle",
-		async Once(root, { result }) {
+		Once(root, { result }) {
 			const filename = opts.filename || result.opts.from;
-			const tempRoot = postcss.root();
-
-			try {
-				const { code } = await bundleAsync({
-					filename,
-					...opts.lightningcssOptions,
-					resolver: {
-						read(filePath) {
-							if (filePath.startsWith('http')) {
-								return '';
+			return (async () => {
+				try {
+					const { code } = await bundleAsync({
+						filename,
+						resolver: {
+							read(filePath) {
+								if (filePath.startsWith('http')) {
+									return '';
+								}
+								return fs.readFileSync(filePath, 'utf8');
+							},
+							resolve(specifier, from) {
+								if (specifier.startsWith('http')) {
+									return from;
+								}
+								const resolvedPath = path.resolve(path.dirname(from), specifier);
+								return resolvedPath;
 							}
-							return fs.readFileSync(filePath, 'utf8');
-						},
-						resolve(specifier, from) {
-							if (specifier.startsWith('http')) {
-								return from;
-							}
-							const resolvedPath = path.resolve(path.dirname(from), specifier);
-							const content = fs.readFileSync(resolvedPath, 'utf8');
-							tempRoot.append(postcss.parse(content));
-							return resolvedPath;
 						}
-					}
-				});
-
-				root.removeAll();
-				root.append(tempRoot);
-				root.append(postcss.parse(code));
-			} catch (error) {
-				console.error("LightningCSS bundling error:", error);
-				throw error;
-			}
+					});
+					root.removeAll();
+					root.append(postcss.parse(code));
+				} catch (error) {
+					console.error("LightningCSS bundling error:", error);
+					throw error;
+				}
+		})();
 		}
 	};
 };
@@ -53,7 +49,8 @@ export default (ctx) => {
 	const dev = nodeEnv === "development";
 
 	const browserslistpath = path.resolve(ctx.file.dirname, "../../.browserslistrc");
-	const browserslist = fs.readFileSync(browserslistpath, "utf8").trim();
+	const browserslistText = fs.readFileSync(browserslistpath, "utf8").trim();
+	const browserTargets = browserslistToTargets(browserslist(browserslistText));
 
 	const stylelintOptions = {
 		configFile: path.join(ctx.cwd, "/.stylelintrc"),
@@ -64,16 +61,14 @@ export default (ctx) => {
 		mixinsDir: path.join(ctx.file.dirname, "/parts")
 	};
 
-	lightningcssBundle.postcss = true;
-
 	const lightningcssOptions = {
-		browsers: browserslist,
+		browsers: browserslistText,
 		lightningcssOptions: {
 			minify: !dev,
 			sourceMap: true,
 			cssModules: false,
+			targets: browserTargets,
 			drafts: {
-				nesting: true,
 				customMedia: true
 			},
 			visitor: {
