@@ -272,7 +272,7 @@
 		font-weight: var(--wght);
 	}
 
-	& a[href*="javascript"]::before,
+	& .footnote-footer > a[href*="javascript"]::before,
 	.bibitem::after {
 		--MONO: 1;
 		--wght: calc(var(--ui-wght) + 100);
@@ -295,7 +295,7 @@
 		margin: 0.25em 0 0 6ch;
 	}
 
-	& a[href*="javascript"] {
+	& .footnote-footer > a[href*="javascript"] {
 		&,
 		&:visited {
 			--MONO: 1;
