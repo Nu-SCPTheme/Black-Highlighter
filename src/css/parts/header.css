@@ -198,6 +198,7 @@ div#container-wrap {
 		background-color: rgb(var(--search-icon-color));
 		color: transparent;
 		mask: var(--search-icon-mask) 0.375rem 0.3125rem / calc((var(--search-height) + 0.25rem) / 2) calc((var(--search-height) + 0.25rem) / 2) no-repeat;
+		overflow: hidden;
 	}
 
 	&:is(:hover, :active) {
