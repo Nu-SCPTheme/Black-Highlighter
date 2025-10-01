@@ -272,7 +272,7 @@
 		font-weight: var(--wght);
 	}
 
-	& a[href*="javascript"]::before,
+	& :where(.footnote-footer) > a[onclick*="footnoteref"]::before,
 	.bibitem::after {
 		--MONO: 1;
 		--wght: calc(var(--ui-wght) + 100);
